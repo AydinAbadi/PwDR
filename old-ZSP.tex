@@ -1,0 +1,65 @@
+% !TEX root =main.tex
+
+\subsubsection{Zero-sum Pseudorandom Values Agreement Protocol.}
+
+Below, we present ``Zero-sum Pseudorandom Values Agreement'' ($\mathtt{ZSPA}$), a protocol that lets $m$ arbiters  to efficiently agree on ($b$ vectors each of which having) $m$ pseudorandom values such that their sum equals zero. At a high level, the protocol works as follows. First, parties agree on a fresh key  of a pseudorandom function, e.g., by running a secure coin tossing protocol. Then, one of the parties generates $m-1$ pseudorandom values using the same key and sets the last value as additive inverse of the sum of the values generated. It sends the result to all parties which can locally check if the relation holds. Note, in the literature,   there exist protocols that allows parties to agree on zero-sum pseudorandom values, e.g., in \cite{}; however, they are less efficient than $\mathtt{ZSPA}$, as their security requirements are different than ours, i.e., they assume the participants are malicious whereas we assume the arbiters who participate in this protocol  are honest. Figure \ref{fig:ZSPA} presents ZSPA in more detail. 
+
+
+%Next, it commits to each value, where it uses $k_{\st 2}$ to generate the randomness of each commitment. Then, it constructs a Merkel tree on top of the commitments and  stores only the root of the tree  and the hash value of the keys (so in total three values) in  the smart contract.  Then, each party (using the keys) locally checks if the values and commitments have been constructed correctly; if so, each sends  an ``approved" message to the contract. 
+%
+%
+%
+%Informally, there are three main security requirements that $\mathtt{ZSPA}$ must meet: (a) privacy, (b)  non-refutability, and (c) indistinguishability. Privacy here means given the state of the  contract, an external party cannot learn any information about any of the (pseudorandom) values:  $z_{\st j}$; while non-refutability  means that if a party sends ``approved" then in future cannot deny the knowledge  of the values whose representation is stored in the contract. Furthermore, indistinguishability means that every $z_{\st j}$ ($1\leq j \leq m$) should be indistinguishable from a truly random value. In Fig. \ref{fig:ZSPA}, we provide $\mathtt{ZSPA}$ that efficiently generates $b$ vectors  where each vector elements is sum to zero. 
+
+
+
+\begin{figure}[ht]
+\setlength{\fboxsep}{0.7pt}
+\begin{center}
+\begin{boxedminipage}{12.3cm}
+
+\small{
+
+\begin{enumerate}
+\item[$\bullet$]  \textit{Parties:} $\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$
+\item[$\bullet$]  \textit{Public Parameters and Functions:} A pseudorandom function: $\mathtt{PRF}(.)$, and total number of participants: $n$. 
+\item[$\bullet$] \textit{Output}:  All parties agree on $b$ vectors $[r_{\st 1,1},..., r_{\st 1,n}],...,[r_{\st b,1},..., r_{\st b,n}]$, of pseudorandom values, such that the sum of each vector's elements equals zero: $\sum\limits^{\st n}_{\st j=1} r_{\st i,j}=0$
+
+
+\item All participants agree on a fresh key, $\bar k_{\st 0}$, of a pseudorandom function, $\mathtt{PRF}$. 
+
+\item\label{ZSPA:val-gen} Each party, $\mathcal{D}_{\st j}$, computes $m$ pseudorandom values as follows. 
+
+$\forall i, 1\leq i\leq b:$
+ 
+\begin{itemize}
+\item[$\bullet$] if $j< n: r_{\st i,j}=\mathtt{PRF}(\bar k_{\st 0}, i||j)$ 
+%
+\item[$\bullet$]  if $j=n: r_{\st i, n}=-\sum\limits^{\st n-1}_{\st j=1} r_{\st i,j}$
+\end{itemize}
+% $\forall j$, $  1\leq j \leq n-1: r_{\st i,j}=\mathtt{PRF}(\bar k_{\st 0}, i||j)$,  $\ \ \ \ \ \  j=n$:  $ r_{\st i, n}=-\sum\limits^{\st n-1}_{\st j=1} r_{\st i,j}$
+
+
+
+%\item\label{ZSPA:val-gen} Each party, $\mathcal{D}_{\st j}$, computes $m$ pseudorandom values as follows. 
+%%
+%$\forall i, 1\leq i\leq b$:
+% %
+% \begin{center}
+% $\forall j$, $  1\leq j \leq n-1: r_{\st i,j}=\mathtt{PRF}(\bar k_{\st 0}, i||j)$,  $\ \ \ \ \ \  j=n$:  $ r_{\st i, n}=-\sum\limits^{\st n-1}_{\st j=1} r_{\st i,j}$
+ %
+ %\end{center}
+%
+%\end{enumerate}
+%
+%\item\label{ZSPA:verify} The rest of parties (given $\bar k_{\st 0}$) check if, all $r_{\st i,j}$ values have been correctly generated (by retaking  step \ref{ZSPA:val-gen}). If not passed, each party sends a singed ``not-approved'' message to the  rest. Otherwise, it accepts the result. 
+%
+ \end{enumerate}
+}
+\end{boxedminipage}
+\end{center}
+\caption{Zero-sum Pseudorandom Values Agreement ($\mathtt{ZSPA}$) Protocol} 
+\label{fig:ZSPA}
+\end{figure}
+
+

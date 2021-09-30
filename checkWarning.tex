@@ -1,0 +1,61 @@
+% !TEX root =main.tex
+
+
+
+\subsubsection{Checking Warning's Effectiveness.}
+
+
+
+To help the committee members deterministically and accurately compile a victim's  complaint about the effectiveness of a warning (that bank provides during the payment journey), we propose a process,  called $\mathtt{checkWarning}$.  This process is run locally by each committee member. It also allows the victims to provide a certificate/evidence as part of their complaints.   The process outputs a pair $(w_{\st 2}, w_{\st 3})$. It  sets $w_{\st 2}=1$  if the given warning message is effective, and sets $w_{\st 2}=0$, if it is not. It sets $w_{\st 3}=1$ if the certificate that the victim provided is valid (or empty) and sets $w_{\st 3}=0$ if it is invalid.  This process is presented in figure \ref{fig:checkWarning}.
+
+
+\begin{figure}[!htbp]
+\setlength{\fboxsep}{0.7pt}
+\begin{center}
+\begin{boxedminipage}{12.3cm}
+\small{
+\underline{$\mathtt{checkWarning}(add_{\st\mathcal{S}}, z, m^{\st\mathcal{(B)}},  aux')\rightarrow (w_{\st 2},  w_{\st 3})$}\\
+%
+\begin{itemize}
+%
+\item \noindent\textit{Input}. $add_{\st\mathcal{S}}$: the address of smart contract $\mathcal{S}$, $z$:  $\mathcal{C}$'s complaint, $m^{\st\mathcal{(B)}}$:  $\mathcal{B}$'s warning message,  and $aux'$: auxiliary information, e.g., guideline on warnings' effectiveness. 
+%
+\item\noindent\textit{Output}. $w_{\st 3}=1$: if the certificate in $z$ is valid or no certificate is provided; $ w_{\st 3}=0$: if the certificate is invalid. Also, 
+$w_{\st 2}=1$: if the given warning message is effective; $w_{\st 2}=0$: if the  warning message is ineffective.
+
+\end{itemize}
+
+
+\begin{enumerate}
+%
+\item parse $z= m||sig||pk||\text{``challenge warning''}$. If the certificate $sig$ is  empty, then it  sets $w_{\st 3}=0$ and proceeds to  step \ref{check-m}. Otherwise, it:
+%
+\begin{enumerate} 
+%
+\item verifies the certificate: $\mathtt{Sig.ver}(pk, m, sig)\rightarrow h$. 
+%
+\item if  the certificate is rejected (i.e., $h=0$),  it sets $w_{\st 3}=1$. It  goes to step \ref{return}. 
+%
+\item otherwise (i.e., $h=1$), it sets $w_{\st 3}=0$ and moves onto the next step. 
+\end{enumerate}
+%
+%\item  reads the content of $m$ in $\mathcal{S}$.
+%
+\item\label{check-m} checks if ``warning'' $\in m^{\st\mathcal{(B)}}$.  If the check is passed, it proceeds to the next step. Otherwise, it aborts. 
+%
+\item checks the warning's effectiveness, with the assistance of the evidence $m$ and auxiliary information $aux'$. 
+%
+\begin{itemize}
+\item[$\bullet$]  if it is effective,  it sets $w_{\st 2} = 1$.
+\item [$\bullet$] otherwise, it sets $w_{\st 2} = 0$.
+\end{itemize}
+\item\label{return} returns $(w_{\st 2}, w_{\st 3})$.
+\end{enumerate}
+ 
+}
+\end{boxedminipage}
+\end{center}
+\caption{Process to Check Warning's Effectiveness} 
+\label{fig:checkWarning}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

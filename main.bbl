@@ -1,0 +1,68 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{cryptoeprint:2021:1145}
+Abadi, A., Murdoch, S.J., Zacharias, T.: Recurring contingent payment for
+  proofs of retrievability. Cryptology ePrint Archive, Report 2021/1145 (2021),
+  \url{https://ia.cr/2021/1145}
+
+\bibitem{brinton2016users}
+Brinton~Anderson, B., Vance, A., Kirwan, C.B., Eargle, D., Jenkins, J.L.: How
+  users perceive and respond to security messages: a neurois research agenda
+  and empirical study. European Journal of Information Systems  25(4),
+  364--390 (2016)
+
+\bibitem{CampanelliGGN17}
+Campanelli, M., Gennaro, R., Goldfeder, S., Nizzardo, L.: Zero-knowledge
+  contingent payments revisited: Attacks and payments for services. In:
+  {CCS}'17
+
+\bibitem{CoP}
+{Confirmation of Payee Team}: Confirmation of payee: Response to consultation
+  cp20/1 and decision on varying specific direction 10  (2020),
+  \url{https://www.psr.org.uk/media/qrbc03jm/psr-ps20-1-variation-of-specific-direction-10-february-2020.pdf}
+
+\bibitem{felt2014experimenting}
+Felt, A.P., Reeder, R.W., Almuhimedi, H., Consolvo, S.: Experimenting at scale
+  with google chrome's ssl warning. In: Proceedings of the SIGCHI conference on
+  human factors in computing systems (2014)
+
+\bibitem{GarayKL15}
+Garay, J.A., Kiayias, A., Leonardos, N.: The bitcoin backbone protocol:
+  Analysis and applications. In: {EUROCRYPT} (2015)
+
+\bibitem{DBLP:books/crc/KatzLindell2014}
+Katz, J., Lindell, Y.: Introduction to Modern Cryptography, Second Edition.
+  {CRC} Press (2014),
+  \url{https://www.crcpress.com/Introduction-to-Modern-Cryptography-Second-Edition/Katz-Lindell/p/book/9781466570269}
+
+\bibitem{laughery2006designing}
+Laughery, K.R., Wogalter, M.S.: Designing effective warnings. Reviews of human
+  factors and ergonomics  (2006)
+
+\bibitem{CRM-code}
+{Lending Standards Board}: Contingent reimbursement model code for authorised
+  push payment scams  (2021),
+  \url{https://www.lendingstandardsboard.org.uk/wp-content/uploads/2021/04/CRM-Code-LSB-Final-April-2021.pdf}
+
+\bibitem{bitcoin}
+Nakamoto, S.: Bitcoin: A peer-to-peer electronic cash system. Tech. rep. (2019)
+
+\bibitem{Pedersen91}
+Pedersen, T.P.: Non-interactive and information-theoretic secure verifiable
+  secret sharing. In: {CRYPTO} (1991)
+
+\bibitem{Schneier0078909}
+Schneier, B.: Applied cryptography - protocols, algorithms, and source code in
+  C, 2nd Edition. Wiley (1996)
+
+\bibitem{Regulations}
+{The Financial Conduct Authority}: The payment services regulations  (2017),
+  \url{https://www.legislation.gov.uk/uksi/2017/752/contents/made}
+
+\bibitem{ethereum}
+Wood, G., et~al.: Ethereum: A secure decentralised generalised transaction
+  ledger. Ethereum project yellow paper  (2014)
+
+\end{thebibliography}

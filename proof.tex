@@ -1,0 +1,43 @@
+% !TEX root =main.tex
+
+
+\section{Security Analysis of the PwDR Protocol}
+
+To prove the main theorem (i.e., Theorem \ref{theorem::PwDR-security}), we show that the PwDR scheme satisfies all security properties defined in Section \ref{sec::def}. We first prove that it meets security against a malicious victim. 
+
+
+\begin{lemma} If the digital signature is existentially unforgeable under chosen message attacks, the SAP and  blockchain are secure, and the correctness of verdict encoding-decoding protocols (i.e., PVE and FVD) holds, then the PwDR scheme is secure against a malicious victim, with regard to Definition \ref{def::Security-against-malicious-victim}. 
+\end{lemma}
+
+\begin{proof}
+ First, we focus on event $\text{\MakeUppercase{\romannumeral 1}}: \Big((m^{\st\mathcal{(B)}}_{\st1} = warning) \wedge (\sum\limits_{\st j=1}^{\st n} w_{\st 1,j}< {n})\Big)$ which considers the case where $\mathcal{B}$ has provided a warning message but $\mathcal{C}$ manages to make at least one of the arbiters  set its verdict to $0$, that ultimately results in $\sum\limits_{\st j=1}^{\st n}w_{\st 1,j}< {n}$. We argue that the adversary's success probability in this event is negligible  in the security parameter. In particular, due to the security of SAP, $\mathcal{C}$ cannot convince an arbiter to accept a different decryption key, e.g., $k'\in \ddot\pi'$, that will be used to decrypt $\mathcal{B}$'s encrypted message $\hat {m}^{\st(\mathcal {B})}_{\st 1}$, other than what was agreed between $\mathcal{C}$ and $\mathcal{B}$ in the initiation phase, i.e., $\bar k_{\st 1}\in \ddot \pi_{\st 1}$.  To be more precise, it cannot persuade an arbiter to accept a statement $\ddot \pi'$, where $\ddot \pi'\neq \ddot \pi_{\st 1}$ except with a negligible probability, $\mu(\lambda)$. This ensures that  honest $\mathcal{B}$’s original message is accessed by every arbiter with a high probability. Next, we consider event  $\text{\MakeUppercase{\romannumeral 2}}:\Big((\sum\limits_{\st j=1}^{\st n}w_{\st 1,j}={n}) \wedge ( {v}_{\st 1}=0)\Big)$ that captures the case where all arbiters approved that the pass message was given correctly or the missing message could not prevent the APP fraud, but the final verdict that $\mathcal{DR}$ extracts does not imply that. We argue that the probability that this event occurs is negligible in the security parameter. Specifically, due to the security of the SAP,  $\mathcal{C}$ cannot persuade (a)  an arbiter to accept a different encryption key and (b) $\mathcal{DR}$ to accept a different decryption key other than what was agreed between $\mathcal{C}$ and $\mathcal{B}$ in the initiation phase. Specifically, it cannot persuade them to accept a statement $\ddot \pi'$, where $\ddot \pi'\neq \ddot \pi_{\st 2}$ except with a negligible probability, $\mu(\lambda)$. Furthermore, as discussed in Section \ref{sec::PwDR-Subroutines}, due to the correctness of the verdict encoding-decoding protocols (i.e., PVE and FVD), the probability that multiple representations of verdict  $1$ cancel out each other is negligible too, $\frac{1}{2^{\st |p|}}$. Thus, the second event occurs only with a negligible probability. 
+ 
+ 
+ Now, we move on to event   $\text{\MakeUppercase{\romannumeral 3}}: \Big((\mathtt{checkWarning}(m^{\st\mathcal{(B)}}_{\st1})= 1) \wedge (\sum\limits_{\st j=1}^{\st n}w_{\st 2,j}< {n})\Big)$. It captures the case where $\mathcal{B}$ has provided an effective warning message but $\mathcal{C}$ manages to make at least one of the arbiters  set its verdict to $0$, that ultimately results in $\sum\limits_{\st j=1}^{\st n}w_{\st 2,j}< {n}$. The same argument provided to event $\text{\MakeUppercase{\romannumeral 1}}$ is applicable to this even too. Briefly, due to the security of SAP, $\mathcal{C}$ cannot persuade an arbiter to accept a different decryption key other than what was agreed between $\mathcal{C}$ and $\mathcal{B}$ in the initiation phase; therefore, all arbiters will receive the original message of $\mathcal{B}$, except a negligible probability, $\mu(\lambda)$. Now, we consider  event $\text{\MakeUppercase{\romannumeral 4}}:  \Big((\sum\limits_{\st j=1}^{\st n}w_{\st 2,j}= {n}) \wedge ({v}_{\st 2}=0)\Big)$, which captures the case where all arbiters  approved that the warning message was effective but   the final verdict that $\mathcal{DR}$
+extracts does not indicate that. The security argument of  event \text{\MakeUppercase{\romannumeral 2}} applies to this event as well. In short, due to the security of the SAP, $\mathcal{C}$ cannot persuade  an arbiter to accept a different encryption key, and cannot convince $\mathcal{DR}$ to accept a different decryption key other than what was initially agreed between $\mathcal{C}$ and $\mathcal{B}$, except a negligible probability, $\mu(\lambda)$. Furthermore, due to the correctness of PVE and FVD protocols,  the probability that multiple representations
+of verdict $1$ cancel out each other is negligible, $\frac{1}{2^{\st |p|}}$. Thus, the probability that this event takes place is negligible. Now, we analyse event  $\text{\MakeUppercase{\romannumeral 5}}: \Big(u\notin Q \wedge\mathtt{Sig.ver}( pk, u, sig) =1\Big)$. This even captures the case where the malicious victim comes up with a valid signature/certificate on a message that has never been queried to the signing oracle.  Nevertheless, due to the existential unforgeability of the digital signature scheme, the probability that such an event occurs is negligible, $\mu(\lambda)$. Next, we focus on event
+ $\text{\MakeUppercase{\romannumeral 6}}: \Big((\sum\limits_{\st j=1}^{\st n}w_{\st 3,j}< {n}) \wedge ( {v}_{\st 3}=0)\Big)$ that considers the case where a subset of arbiters indicated that the signature (in $\mathcal{C}$'s complaint) is invalid, but   the final verdict that $\mathcal{DR}$ extracts implies that all arbiters approved it. This means the adversary has managed to switch the verdicts of those arbiters which voted $0$ to $1$. However, the probability that this even occurs is negligible as well. Because, due to the SAP's security,  $\mathcal{C}$ cannot convince  an arbiter and $\mathcal{DR}$ to accept   different encryption and decryption keys other than what was initially agreed between $\mathcal{C}$ and $\mathcal{B}$, except a negligible probability, $\mu(\lambda)$.  Therefore, with a negligible probability the adversary can switch a verdict for $0$ to the verdict for $1$. 
+ 
+ 
+ Moreover, a malicious $\mathcal{C}$ cannot frame an honest $\mathcal{B}$ for providing an invalid message by manipulating the smart contract’s content,  e.g., by replacing an effective warning with an ineffective one in $\mathcal{S}$, or excluding a warning from $\mathcal{S}$. In particular, to do that, it has to either  forge the honest party’s signature, so it can send an invalid message on its behalf, or fork the blockchain so the chain comprising a valid message is discarded. In the former case, the adversary’s probability of success is negligible as long as the signature is secure. The adversary has the same success probability in the latter case, because it has to generate a long enough chain that excludes the valid message which has a negligible success probability, under the assumption that the hash power of the adversary is lower than those of honest miners and due to the blockchain’s liveness property an honestly generated transaction will eventually appear on an honest miner’s chain \cite{GarayKL15}. 
+ %
+\end{proof}
+
+
+Now, we first present a lemma   formally stating that the PwDR scheme is secure against a malicious bank and then prove this lemma. 
+
+
+\begin{lemma} If the  SAP and  blockchain are secure, and the correctness of verdict encoding-decoding protocols (i.e., PVE and FVD) holds, then the PwDR scheme is secure against a malicious bank, with regard to Definition \ref{def::Security-against-malicious-bank}. 
+\end{lemma}
+
+
+
+\begin{proof}
+
+We first focus on event $\text{\MakeUppercase{\romannumeral 1}}:\Big( (\sum\limits_{\st j=1}^{\st n}w_{\st 1,j}< {n}) \wedge ( v_{\st 1}=1)\Big)$ which captures the case where 
+
+\end{proof}
+
+
+
+

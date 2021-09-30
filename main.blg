@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: splncs03.bst
+Database file #1: ref.bib
+Warning--empty year in CampanelliGGN17
+Warning--empty journal in CoP
+Warning--empty journal in CRM-code
+Warning--missing institution in bitcoin
+Warning--empty journal in Regulations
+You've used 14 entries,
+            2785 wiz_defined-function locations,
+            662 strings with 6957 characters,
+and the built_in function-call counts, 5709 in all, are:
+= -- 426
+> -- 183
+< -- 2
++ -- 78
+- -- 62
+* -- 336
+:= -- 795
+add.period$ -- 11
+call.type$ -- 14
+change.case$ -- 83
+chr.to.int$ -- 0
+cite$ -- 19
+duplicate$ -- 545
+empty$ -- 544
+format.name$ -- 70
+if$ -- 1195
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 120
+newline$ -- 47
+num.names$ -- 28
+pop$ -- 248
+preamble$ -- 1
+purify$ -- 58
+quote$ -- 0
+skip$ -- 132
+stack$ -- 0
+substring$ -- 216
+swap$ -- 234
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 52
+warning$ -- 5
+while$ -- 44
+width$ -- 16
+write$ -- 129
+(There were 5 warnings)
