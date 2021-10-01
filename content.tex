@@ -259,13 +259,13 @@ Every Arbiter, $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\
 \begin{itemize}
 
 %
-\item[$\bullet$]  if  ``challenge message'' $\notin z_{\st 1}$, it sets $w_{\st 1,j}= 1$. Otherwise,  it runs $\mathtt{verStat}(add_{\st\mathcal{S}}, m_{\st 1}^{\st(\mathcal{B})},  \bm{l}, \Delta, {aux})\rightarrow w_{\st 1, j}$, to determine if a warning (in $m_{\st 1}^{\st(\mathcal{B})}$) should have been given (instead of the ``pass'' or no message). %It sends $d_{\st i}$ to $\mathcal{S}$, at time $T_{\st 8}$. %If  $k=\phi$, then it does nothing  in this step.
+\item[$\bullet$]  if  ``challenge message'' $\notin z_{\st 1}$, it sets $w_{\st 1,j}= 0$. Otherwise,  it runs $\mathtt{verStat}(add_{\st\mathcal{S}}, m_{\st 1}^{\st(\mathcal{B})},  \bm{l}, \Delta, {aux})\rightarrow w_{\st 1, j}$, to determine if a warning (in $m_{\st 1}^{\st(\mathcal{B})}$) should have been given (instead of the ``pass'' or no message). %It sends $d_{\st i}$ to $\mathcal{S}$, at time $T_{\st 8}$. %If  $k=\phi$, then it does nothing  in this step.
 %
-\item[$\bullet$]  if ``challenge warning'' $\notin z_{\st 2}$, it sets $w_{\st 2, j}= w_{\st 3, j}= 1$. Otherwise, it runs $\mathtt{checkWarning}(add_{\st\mathcal{S}}, z_{\st 2}, m_{\st 1}^{\st(\mathcal{B})},$ $  {aux}')\rightarrow (w_{\st 2, j}, w_{\st 3, j})$, to determine the effectiveness of the warning (in $m_{\st 1}^{\st(\mathcal{B})}$). %It sends $(v_{\st i}, \bar v_{\st i})$ to $\mathcal{S}$, at time $T_{\st 9}$.
+\item[$\bullet$]  if ``challenge warning'' $\notin z_{\st 2}$, it sets $w_{\st 2, j}= w_{\st 3, j}= 0$. Otherwise, it runs $\mathtt{checkWarning}(add_{\st\mathcal{S}}, z_{\st 2}, m_{\st 1}^{\st(\mathcal{B})},$ $  {aux}')\rightarrow (w_{\st 2, j}, w_{\st 3, j})$, to determine the effectiveness of the warning (in $m_{\st 1}^{\st(\mathcal{B})}$). %It sends $(v_{\st i}, \bar v_{\st i})$ to $\mathcal{S}$, at time $T_{\st 9}$.
 
 
 
-\item[$\bullet$]  if ``challenge payment'' $\in z_{\st 3}$, it checks whether the  payment has been  made.   If the check passes, it sets  $w_{\st 4, j}=0$. If the check fails,   it sets $w_{\st 4, j}=1$.  If ``challenge payment'' $\notin z_{\st 3}$, it checks if  ``paid'' is in ${m}_{\st 2}^{\st(\mathcal C)}$. If the check passes, it sets $w_{\st 4, j}=0$. Otherwise, it sets $w_{\st 4, j}=1$. 
+\item[$\bullet$]  if ``challenge payment'' $\in z_{\st 3}$, it checks whether the  payment has been  made.   If the check passes, it sets  $w_{\st 4, j}=1$. If the check fails,   it sets $w_{\st 4, j}=0$.  If ``challenge payment'' $\notin z_{\st 3}$, it checks if  ``paid'' is in ${m}_{\st 2}^{\st(\mathcal C)}$. If the check passes, it sets $w_{\st 4, j}=1$. Otherwise, it sets $w_{\st 4, j}=0$. 
 %
 \end{itemize}
 %
@@ -384,7 +384,7 @@ $ \bar {\bm w}_{\st j}= \mathtt{Dec}(\bar k_{\st 2}, \hat{\bm w}_{\st j})$, wher
 Customer $\mathcal{C}$ must be reimbursed if the final verdict is that (i)  the ``pass'' message or  missing message should have been a warning or (ii)  the warning was ineffective and the provided evidence was not invalid, and (iii) the payment has been made. Stated formally, the following relation must hold: 
 %
 \begin{center}
-$\Big( \underbrace{(v_{\st 1}=0)}_{\st (\text{i})}\vee  \underbrace{(v_{\st 2}=0\ \wedge\ v_{\st 3}=0)}_{\st (\text {ii})}\Big)\wedge\Big(\underbrace{v_{\st 4}=0}_{\st (\text{iii})}\Big)$,
+$\Big( \underbrace{(v_{\st 1}=1)}_{\st (\text{i})}\vee  \underbrace{(v_{\st 2}=1\ \wedge\ v_{\st 3}=1)}_{\st (\text {ii})}\Big)\wedge\Big(\underbrace{v_{\st 4}=1}_{\st (\text{iii})}\Big)$,
 \end{center}
 %
  where $v_{\st i}\in \bm v$.

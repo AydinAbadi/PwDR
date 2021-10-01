@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  29 SEP 2021 20:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  1 OCT 2021 13:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1431,12 +1431,12 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./commitment.tex) (./SAP.tex [2])) (./content.tex (./PwDR-Overview.tex
 [3]) (./Definition.tex [4] [5]
-Overfull \hbox (14.2093pt too wide) detected at line 200
+Overfull \hbox (14.2093pt too wide) detected at line 197
 []
  []
 
 [6]
-Overfull \hbox (14.2093pt too wide) detected at line 294
+Overfull \hbox (14.2093pt too wide) detected at line 291
 []
  []
 
@@ -1445,10 +1445,7 @@ Overfull \hbox (13.52104pt too wide) detected at line 51
 []
  []
 
-
-Underfull \vbox (badness 7649) has occurred while \output is active []
-
- [8]
+[8]
 Overfull \hbox (6.67793pt too wide) detected at line 115
 []
  []
@@ -1474,7 +1471,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--133
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
+Underfull \hbox (badness 10000) in paragraph at lines 198--201
 
  []
 
@@ -1482,7 +1479,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 197--200
 Overfull \hbox (4.8112pt too wide) in paragraph at lines 264--265
 []\OT1/cmr/m/n/10 if ``chal-lenge warn-ing'' $[] \OML/cmm/m/it/10 z[]$\OT1/cmr/
 m/n/10 , it sets $\OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[] \
-OT1/cmr/m/n/10 = 1$. Oth-er-wise, it runs $[](\OML/cmm/m/it/10 add[]; z[]; m[];
+OT1/cmr/m/n/10 = 0$. Oth-er-wise, it runs $[](\OML/cmm/m/it/10 add[]; z[]; m[];
 $
  []
 
@@ -1544,8 +1541,8 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 40856 strings out of 480608
- 944633 string characters out of 5903630
+ 40855 strings out of 480608
+ 944626 string characters out of 5903630
  1368238 words of memory out of 5000000
  55768 multiletter control sequences out of 15000+600000
  548105 words of font info for 89 fonts, out of 8000000 for 9000
@@ -1583,10 +1580,10 @@ t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2020/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (22 pages, 428718 bytes).
+Output written on main.pdf (22 pages, 430439 bytes).
 PDF statistics:
- 522 PDF objects out of 1000 (max. 8388607)
- 423 compressed objects within 5 object streams
- 170 named destinations out of 1000 (max. 500000)
+ 521 PDF objects out of 1000 (max. 8388607)
+ 422 compressed objects within 5 object streams
+ 169 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

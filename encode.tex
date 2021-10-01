@@ -3,7 +3,7 @@
 \subsubsection{Verdict Encoding-Decoding Protocols.}
 
 
-Here, we present two efficient verdict encoding and decoding protocols; namely, Private Verdict Encoding (PVE) and Final Verdict Decoding (FVD) protocols. Their goal is to let a third party $\mathcal{I}$, e.g., $\mathcal{DR}$, find out whether at least one arbiter voted $0$, while satisfying the following  requirements.  The protocols should (1) generate unlinkable verdicts, (2)  not require arbiters to interact with each other for each customer, and (3) be  efficient. Since, the second and third requirements are self-explanatory,  we only explain the first one.  Informally, the first property requires  that the protocols should generate encoded verdicts and final verdict in a way that $\mathcal{I}$,  given the encoded verdicts and final verdict, should not be able to (a)   link a  verdict to an arbiter (except when all arbiters' verdicts are $1$), and (b) find out the total number of $1$ or $0$ verdicts when they provide different verdicts. 
+Here, we present two efficient verdict encoding and decoding protocols; namely, Private Verdict Encoding (PVE) and Final Verdict Decoding (FVD) protocols. Their goal is to let a third party $\mathcal{I}$, e.g., $\mathcal{DR}$, find out whether at least one arbiter voted $1$, while satisfying the following  requirements.  The protocols should (1) generate unlinkable verdicts, (2)  not require arbiters to interact with each other for each customer, and (3) be  efficient. Since, the second and third requirements are self-explanatory,  we only explain the first one.  Informally, the first property requires  that the protocols should generate encoded verdicts and final verdict in a way that $\mathcal{I}$,  given the encoded verdicts and final verdict, should not be able to (a)   link a  verdict to an arbiter (except when all arbiters' verdicts are $0$), and (b) find out the total number of $1$ or $0$ verdicts when they provide different verdicts. 
 
 
 
@@ -13,10 +13,10 @@ Here, we present two efficient verdict encoding and decoding protocols; namely, 
  
  
  
-Each arbiter represents its verdict by (i) representing it as a parameter which is set to either $1$ if the verdict is $1$ or to a random value if the verdict is $0$, and then (ii) masking this parameter by the above  pseudorandom value.  It sends the result to $\mathcal{I}$.  To decode the final verdict and find out whether any arbiter voted $0$, $\mathcal{I}$  does XOR all encoded verdicts. This removes the masks and XORs are verdicts' representations.  If the result is $0$, then    all arbiters must have voted $1$; therefore,  the final verdict is $1$. However, if the result is not $0$ (i.e., a random value), then at least one of the arbiters voted $0$, so  the final verdict is $0$. We present the encoding  and decoding protocols in figures \ref{fig:PVE} and \ref{fig:FVD} respectively.
+Each arbiter represents its verdict by (i) representing it as a parameter which is set to either $0$ if the verdict is $0$ or to a random value if the verdict is $1$, and then (ii) masking this parameter by the above  pseudorandom value.  It sends the result to $\mathcal{I}$.  To decode the final verdict and find out whether any arbiter voted $1$, $\mathcal{I}$  does XOR all encoded verdicts. This removes the masks and XORs are verdicts' representations.  If the result is $0$, then    all arbiters must have voted $0$; therefore,  the final verdict is $0$. However, if the result is not $0$ (i.e., a random value), then at least one of the arbiters voted $1$, so  the final verdict is $1$. We present the encoding  and decoding protocols in figures \ref{fig:PVE} and \ref{fig:FVD} respectively.
  
  
- Not that the protocols' correctness holds, except  a negligible  probability. In particular, if two arbiters  represent their verdict by an identical random value, then when they are XORed they would cannel out each other which can affect the result's correctness. The same holds if the XOR of  multiple verdicts' representations results in a value that can cancel out another verdict's representation. Nevertheless, the probability that such an event occurs is negligible in the security parameter, i.e., at most   $\frac{1}{2^{\st |p|}}$. It is evident that PVE and FVD protocols meet properties (2) and (3). The primary reason they also meet  property (1) is that each masked verdict reveals nothing about the verdict (and its representation) and  given the final verdict, $\mathcal{I}$ cannot distinguish between the case where there is exactly one arbiter that voted  $0$ and the case where multiple arbiters voted $0$, as in both cases $\mathcal{I}$   extracts only a single random value, which reveals nothing about the number of arbiters which voted $0$ or $1$. 
+ Not that the protocols' correctness holds, except  a negligible  probability. In particular, if two arbiters  represent their verdict by an identical random value, then when they are XORed they would cannel out each other which can affect the result's correctness. The same holds if the XOR of  multiple verdicts' representations results in a value that can cancel out another verdict's representation. Nevertheless, the probability that such an event occurs is negligible in the security parameter, i.e., at most   $\frac{1}{2^{\st \lambda}}$. It is evident that PVE and FVD protocols meet properties (2) and (3). The primary reason they also meet  property (1) is that each masked verdict reveals nothing about the verdict (and its representation) and  given the final verdict, $\mathcal{I}$ cannot distinguish between the case where there is exactly one arbiter that voted  $1$ and the case where multiple arbiters voted $1$, as in both cases $\mathcal{I}$   extracts only a single random value, which reveals nothing about the number of arbiters which voted $0$ or $1$. 
  
 %  
 % To encode a verdict $w$, each arbiter represents it as a polynomial. It randomises this polynomial and then  masks this polynomial with the pseudorandom masking polynomial. It sends the result to $\mathcal{I}$. To decode the final verdict and find out whether all arbiters agreed on the same verdict, i.e., unanimous decision,  $\mathcal{I}$  adds all polynomials up. This removes the masks. Next, it  evaluates the result polynomial at $v=1$ and $v=0$. It considers $v$ as the final verdict if the evaluation is  $0$. We present the encoding  and decoding protocols in figures \ref{fig:PVE} and \ref{fig:FVD} respectively. 
@@ -148,8 +148,9 @@ Arbiter $\mathcal{D}_{\st j}$ takes the following steps.
 \begin{equation*}
    w'_{\st j}= 
 \begin{cases}
-1,              & \text{if } w_{\st j}=1\\
-   \alpha_{\st j}\stackrel{\st\$}\leftarrow \mathbb{F}_{\st p} ,& \text{if } w_{\st j}=0
+   0,              & \text{if } w_{\st j}=0\\
+   \alpha_{\st j}\stackrel{\st\$}\leftarrow \mathbb{F}_{\st p} ,& \text{if } w_{\st j}=1\\
+
     %0,              & \text{if } w_{\st j}=0
 \end{cases}
 \end{equation*}
@@ -212,7 +213,7 @@ A third-party $\mathcal{I}$ takes the following steps.
 $c= \bigoplus\limits^{\st n}_{\st j=1} \bar w_{\st j}$
 % $$\forall i, 1\leq i\leq 3: g_{\st i}=\sum\limits^{\st n}_{\st j=1} \bar{w}_{\st i,j} \bmod p$$
 %
-\item if $n$ is odd, then sets $c=c\oplus 1$. 
+%\item if $n$ is odd, then sets $c=c\oplus 1$. 
 %
 \item sets the final verdict $v$ depending on the content of $c$. Specifically, 
 %
@@ -226,8 +227,8 @@ $c= \bigoplus\limits^{\st n}_{\st j=1} \bar w_{\st j}$
 \begin{equation*}
    v= 
 \begin{cases}
-    1,              &\text{if } c= 0\\
-   0 ,& \text{otherwise }\\
+    0,              &\text{if } c= 0\\
+   1 ,& \text{otherwise }\\
 
 \end{cases}
 \end{equation*}
