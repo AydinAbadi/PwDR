@@ -1,9 +1,9 @@
 % !TEX root =main.tex
 
 
-\subsubsection{Determining Bank's Message Status.}
+\subsection{A Subroutine for Determining Bank's Message Status}
 
-  As we stated earlier, in the payment journey the customer may receive a ``pass'' message or even nothing at all, e.g., due to a system failure. In such cases,  a victim of  an APP fraud may complain that if the pass or missing message was   a warning message, then it   would have prevented the victim from falling to the APP fraud. To assist the committee members to deal with  such complaints deterministically, we propose a process,  called $\mathtt{verStat}$. It is run locally by each committee member. It outputs $0$ if a pass message was given correctly or the missing message could not  prevent the scam, and outputs $1$ otherwise. The process is presented in figure \ref{fig:verStat}.
+As we stated earlier, in the payment journey the customer may receive a ``pass'' message or even nothing at all, e.g., due to a system failure. In such cases,  a victim of  an APP fraud may complain that if the pass or missing message was   a warning message, then it   would have prevented the victim from falling to the APP fraud. To assist the committee members to deal with  such complaints deterministically, we propose a process,  called $\mathtt{verStat}$. It is run locally by each committee member. It outputs $0$ if a pass message was given correctly or the missing message could not  prevent the scam, and outputs $1$ otherwise. The process is presented in figure \ref{fig:verStat}.
 
 
 \begin{figure}[!htbp]

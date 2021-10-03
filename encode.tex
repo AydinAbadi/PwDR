@@ -1,6 +1,6 @@
 % !TEX root =main.tex
 
-\subsubsection{Verdict Encoding-Decoding Protocols.}
+\subsection{Subroutines for  Encoding-Decoding Verdicts}
 
 
 Here, we present two efficient verdict encoding and decoding protocols; namely, Private Verdict Encoding (PVE) and Final Verdict Decoding (FVD) protocols. Their goal is to let a third party $\mathcal{I}$, e.g., $\mathcal{DR}$, find out whether at least one arbiter voted $1$, while satisfying the following  requirements.  The protocols should (1) generate unlinkable verdicts, (2)  not require arbiters to interact with each other for each customer, and (3) be  efficient. Since, the second and third requirements are self-explanatory,  we only explain the first one.  Informally, the first property requires  that the protocols should generate encoded verdicts and final verdict in a way that $\mathcal{I}$,  given the encoded verdicts and final verdict, should not be able to (a)   link a  verdict to an arbiter (except when all arbiters' verdicts are $0$), and (b) find out the total number of $1$ or $0$ verdicts when they provide different verdicts. 

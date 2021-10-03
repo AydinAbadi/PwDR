@@ -2,14 +2,14 @@
 
 
 
-\subsubsection{Checking Warning's Effectiveness.}
+\subsection{A Subroutine for Checking Warning's Effectiveness}
 
 
 
 To help the committee members deterministically and accurately compile a victim's  complaint about the effectiveness of a warning (that bank provides during the payment journey) we propose a process,  called $\mathtt{checkWarning}$.  This process is run locally by each committee member. It also allows the victims to provide a certificate/evidence as part of their complaints.   The process outputs a pair $(w_{\st 2}, w_{\st 3})$. It  sets $w_{\st 2}=0$  if the given warning message is effective, and sets $w_{\st 2}=1$, if it is not. It sets $w_{\st 3}=1$ if the certificate that the victim provided is valid (or empty) and sets $w_{\st 3}=0$ if it is invalid.  This process is presented in figure \ref{fig:checkWarning}.
 
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
 \setlength{\fboxsep}{0.7pt}
 \begin{center}
 \begin{boxedminipage}{12.3cm}
@@ -52,8 +52,10 @@ To help the committee members deterministically and accurately compile a victim'
 \item [$\bullet$] otherwise, it sets $w_{\st 2} = 1$.
 \end{itemize}
 \item\label{return} returns $(w_{\st 2}, w_{\st 3})$.
+
+\
+
 \end{enumerate}
- 
 }
 \end{boxedminipage}
 \end{center}
