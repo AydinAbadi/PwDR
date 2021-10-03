@@ -7,6 +7,15 @@ Abadi, A., Murdoch, S.J., Zacharias, T.: Recurring contingent payment for
   proofs of retrievability. Cryptology ePrint Archive, Report 2021/1145 (2021),
   \url{https://ia.cr/2021/1145}
 
+\bibitem{DBLP:journals/cacm/Bloom70}
+Bloom, B.H.: Space/time trade-offs in hash coding with allowable errors.
+  Commun.  (1970)
+
+\bibitem{BoseGKMMMST08}
+Bose, P., Guo, H., Kranakis, E., Maheshwari, A., Morin, P., Morrison, J., Smid,
+  M.H.M., Tang, Y.: On the false-positive rate of bloom filters. Inf. Process.
+  Lett.  (2008)
+
 \bibitem{brinton2016users}
 Brinton~Anderson, B., Vance, A., Kirwan, C.B., Eargle, D., Jenkins, J.L.: How
   users perceive and respond to security messages: a neurois research agenda
