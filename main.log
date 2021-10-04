@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  4 OCT 2021 13:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  4 OCT 2021 14:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1463,22 +1463,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--21
 
  []
 
-) (./encode.tex [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 111--114
+) (./encode.tex [11] [12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 123--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--128
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--169
+Underfull \hbox (badness 10000) in paragraph at lines 178--181
 
  []
 
-)) [13] [14] [15]
+)) [14] [15]
 Overfull \hbox (4.8112pt too wide) in paragraph at lines 264--265
 []\OT1/cmr/m/n/10 if ``chal-lenge warn-ing'' $[] \OML/cmm/m/it/10 z[]$\OT1/cmr/
 m/n/10 , it sets $\OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[] \
@@ -1486,12 +1486,12 @@ OT1/cmr/m/n/10 = 0$. Oth-er-wise, it runs $[](\OML/cmm/m/it/10 add[]; z[]; m[];
 $
  []
 
-[16] (./proof.tex [17]
+[16] (./proof.tex [17] [18]
 
-LaTeX Warning: Reference `sec::PwDR-Subroutines' on page 18 undefined on input 
+LaTeX Warning: Reference `sec::PwDR-Subroutines' on page 19 undefined on input 
 line 38.
 
-[18]) [19]
+) [19]
 
 LaTeX Warning: Reference `DR::check-m1c' on page 20 undefined on input line 481
 .
@@ -1542,12 +1542,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--136
 
  []
 
-
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 213--216
 
  []
 
-) [24] [25]
+) [25] [26]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
  (./main.aux)
@@ -1564,8 +1564,8 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 40890 strings out of 480608
- 945114 string characters out of 5903630
+ 40892 strings out of 480608
+ 945134 string characters out of 5903630
  1368659 words of memory out of 5000000
  55777 multiletter control sequences out of 15000+600000
  548105 words of font info for 89 fonts, out of 8000000 for 9000
@@ -1603,10 +1603,10 @@ t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2020/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (25 pages, 456939 bytes).
+Output written on main.pdf (26 pages, 459482 bytes).
 PDF statistics:
- 571 PDF objects out of 1000 (max. 8388607)
- 466 compressed objects within 5 object streams
- 191 named destinations out of 1000 (max. 500000)
+ 577 PDF objects out of 1000 (max. 8388607)
+ 471 compressed objects within 5 object streams
+ 193 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
