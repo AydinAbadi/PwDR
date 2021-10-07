@@ -9,10 +9,10 @@ In this section, we present verdict encoding and decoding protocols. They let a 
 \subsubsection{Variant 1: Highly Efficient Verdict  Encoding-Decoding Protocols.}
 
 
-Here, we present two efficient verdict encoding and decoding protocols; namely, Private Verdict Encoding (PVE) and Final Verdict Decoding (FVD) protocols, that lets $\mathcal{I}$ find out whether at least one arbiter voted $1$, while satisfying the above requirements.  The protocols rely on our observation that if we XOR a set of random values and $0$s, then the result   reveals nothing, e.g.,  about the number of non-zero and  zero values. Below, we formally state and prove it.  
+Below, we present two efficient verdict encoding and decoding protocols; namely, Private Verdict Encoding (PVE) and Final Verdict Decoding (FVD) protocols, that lets $\mathcal{I}$ find out whether at least one arbiter voted $1$, while satisfying the above requirements.  The protocols rely on the observation that if   a set of random values and $0$s are XORed, then the result   reveals nothing, e.g.,  about the number of non-zero and  zero values. Below, we formally state and prove it.  
 
 \begin{theorem}\label{set-xor}
-Let set $S=\{s_{\st 1},..., s_{\st m}\}$ consist of  two disjoint subsets $S'$ and $S''$, where $S'$ contains non-zero random values pick uniformly  from a finite field $\mathbb{F}_{\st p}$, $S''$ contains zeros, $|S'|\geq c'=1$, $|S''|\geq c''=0$, and pair $(c',c'')$ is public information. Then, $r= \bigoplus\limits^{\st m}_{\st i=1} s_{\st i}$ reveals nothing beyond the public information.  
+Let set $S=\{s_{\st 1},..., s_{\st m}\}$ be the union of  two disjoint subsets $S'$ and $S''$, where $S'$ contains non-zero random values pick uniformly  from a finite field $\mathbb{F}_{\st p}$, $S''$ contains zeros, $|S'|\geq c'=1$, $|S''|\geq c''=0$, and pair $(c',c'')$ is public information. Then, $r= \bigoplus\limits^{\st m}_{\st i=1} s_{\st i}$ reveals nothing beyond the public information.  
 \end{theorem}
 
 \begin{proof}
