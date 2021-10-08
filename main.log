@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  7 OCT 2021 09:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  8 OCT 2021 19:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1463,22 +1463,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--21
 
  []
 
-) (./encode.tex [11] [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 123--126
+) (./encode.tex [11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 147--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--140
+Underfull \hbox (badness 10000) in paragraph at lines 162--164
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--181
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 202--205
 
  []
 
-)) [14] [15]
+))
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+[15]
 Overfull \hbox (4.8112pt too wide) in paragraph at lines 264--265
 []\OT1/cmr/m/n/10 if ``chal-lenge warn-ing'' $[] \OML/cmm/m/it/10 z[]$\OT1/cmr/
 m/n/10 , it sets $\OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[] \
@@ -1486,12 +1490,12 @@ OT1/cmr/m/n/10 = 0$. Oth-er-wise, it runs $[](\OML/cmm/m/it/10 add[]; z[]; m[];
 $
  []
 
-[16] (./proof.tex [17] [18]
+[16] (./proof.tex [17]
 
-LaTeX Warning: Reference `sec::PwDR-Subroutines' on page 19 undefined on input 
+LaTeX Warning: Reference `sec::PwDR-Subroutines' on page 18 undefined on input 
 line 38.
 
-) [19]
+[18]) [19]
 
 LaTeX Warning: Reference `DR::check-m1c' on page 20 undefined on input line 481
 .
@@ -1532,7 +1536,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--57
 tandardsboard . org . uk / wp-[]content / uploads / 2021 / 04 /
  []
 
-) (./bloom-filter.tex) (./Generic-encode.tex
+) (./bloom-filter.tex) (./set-XOR-Theorem-proof.tex [24])
+(./set-BF-theorem-proof.tex) (./Generic-encode.tex
 Underfull \hbox (badness 10000) in paragraph at lines 115--118
 
  []
@@ -1542,17 +1547,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--136
 
  []
 
-[24]
+
 Underfull \hbox (badness 10000) in paragraph at lines 213--216
 
  []
 
 ) [25] [26]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 10103F8095BD767C7D39B60C7364E6AF;90.
 
@@ -1564,10 +1569,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 40892 strings out of 480608
- 945134 string characters out of 5903630
- 1368659 words of memory out of 5000000
- 55777 multiletter control sequences out of 15000+600000
+ 40903 strings out of 480608
+ 945367 string characters out of 5903630
+ 1368913 words of memory out of 5000000
+ 55782 multiletter control sequences out of 15000+600000
  548105 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,103p,2822b,1537s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1603,10 +1608,10 @@ t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2020/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (26 pages, 459474 bytes).
+Output written on main.pdf (26 pages, 462369 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
- 471 compressed objects within 5 object streams
- 193 named destinations out of 1000 (max. 500000)
+ 582 PDF objects out of 1000 (max. 8388607)
+ 476 compressed objects within 5 object streams
+ 195 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
