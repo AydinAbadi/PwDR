@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  9 OCT 2021 14:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  9 OCT 2021 19:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1433,17 +1433,20 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./commitment.tex) (./SAP.tex [2])) (./content.tex (./PwDR-Overview.tex
-[3]) [4] (./Definition.tex [5] [6]
+[3]) (./Definition.tex [4] [5]
 Overfull \hbox (14.2093pt too wide) detected at line 197
 []
  []
 
-[7]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
 Overfull \hbox (14.2093pt too wide) detected at line 291
 []
  []
 
-(./privacy-def.tex
+[7] (./privacy-def.tex
 Overfull \hbox (13.52104pt too wide) detected at line 51
 []
  []
@@ -1453,17 +1456,20 @@ Overfull \hbox (6.67793pt too wide) detected at line 115
 []
  []
 
-[9])) (./check-pass.tex (./verStat.tex [10]
+) [9]) (./check-pass.tex (./verStat.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--17
 
  []
 
-) (./checkWarning.tex
+) (./checkWarning.tex [10]
 Underfull \hbox (badness 10000) in paragraph at lines 17--21
 
  []
 
-) (./encode.tex [11] [12]
+) (./encode.tex [11]
+Underfull \vbox (badness 1648) has occurred while \output is active []
+
+ [12]
 Underfull \hbox (badness 10000) in paragraph at lines 142--145
 
  []
@@ -1473,16 +1479,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--159
 
  []
 
-[13]
+
 Underfull \hbox (badness 10000) in paragraph at lines 197--200
 
  []
 
-))
-Underfull \vbox (badness 1661) has occurred while \output is active []
-
- [14]
-[15]
+)) [13] [14] [15]
 Overfull \hbox (4.8112pt too wide) in paragraph at lines 264--265
 []\OT1/cmr/m/n/10 if ``chal-lenge warn-ing'' $[] \OML/cmm/m/it/10 z[]$\OT1/cmr/
 m/n/10 , it sets $\OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[] \
@@ -1490,48 +1492,47 @@ OT1/cmr/m/n/10 = 0$. Oth-er-wise, it runs $[](\OML/cmm/m/it/10 add[]; z[]; m[];
 $
  []
 
-[16] (./proof.tex [17] [18]
+[16] (./proof.tex [17] [18]) (./evaluation.tex
 
-LaTeX Warning: Reference `sec::PwDR-Subroutines' on page 19 undefined on input 
-line 38.
+LaTeX Warning: Reference `' on page 19 undefined on input line 4.
 
-)) (./main.bbl [19]
-Underfull \hbox (badness 10000) in paragraph at lines 31--34
+[19])) (./main.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
 []\OT1/cmr/m/n/9 Confirmation of Payee Team: Con-fir-ma-tion of payee: Re-spons
 e to con-sul-ta-tion cp20/1 and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--34
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
 \OT1/cmr/m/n/9 de-ci-sion on vary-ing spe-cific di-rec-tion 10 (2020), []$\OT1/
 cmtt/m/n/9 https : / / www . psr . org . uk / media / qrbc03jm /
  []
 
 
-Underfull \hbox (badness 3907) in paragraph at lines 45--48
+Underfull \hbox (badness 3907) in paragraph at lines 29--32
 []\OT1/cmr/m/n/9 Katz, J., Lin-dell, Y.: In-tro-duc-tion to Mod-ern Cryp-tog-ra
 -phy, Sec-ond Edi-tion. CRC Press (2014),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--48
+Underfull \hbox (badness 10000) in paragraph at lines 29--32
 []$\OT1/cmtt/m/n/9 https : / / www . crcpress . com / Introduction-[]to-[]Moder
 n-[]Cryptography-[]Second-[]Edition / Katz-[]Lindell / p /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--63
+Underfull \hbox (badness 10000) in paragraph at lines 40--43
 []\OT1/cmr/m/n/9 Lending Stan-dards Board: Con-tin-gent re-im-burse-ment model 
 code for au-tho-rised push pay-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--63
+Underfull \hbox (badness 10000) in paragraph at lines 40--43
 \OT1/cmr/m/n/9 ment scams (2021), []$\OT1/cmtt/m/n/9 https : / / www . lendings
 tandardsboard . org . uk / wp-[]content / uploads / 2021 / 04 /
  []
 
-) (./bloom-filter.tex) (./set-XOR-Theorem-proof.tex [20])
+) (./bloom-filter.tex [20]) (./set-XOR-Theorem-proof.tex)
 (./set-BF-theorem-proof.tex) (./Generic-encode.tex
 Underfull \hbox (badness 10000) in paragraph at lines 115--118
 
@@ -1564,13 +1565,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 40887 strings out of 480608
- 945216 string characters out of 5903630
- 1369602 words of memory out of 5000000
- 55779 multiletter control sequences out of 15000+600000
+ 40892 strings out of 480608
+ 945268 string characters out of 5903630
+ 1369794 words of memory out of 5000000
+ 55784 multiletter control sequences out of 15000+600000
  548105 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,20n,103p,2822b,1537s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,20n,103p,3395b,1537s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1603,10 +1604,10 @@ t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2020/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (23 pages, 444874 bytes).
+Output written on main.pdf (23 pages, 447165 bytes).
 PDF statistics:
- 532 PDF objects out of 1000 (max. 8388607)
- 433 compressed objects within 5 object streams
- 180 named destinations out of 1000 (max. 500000)
+ 538 PDF objects out of 1000 (max. 8388607)
+ 439 compressed objects within 5 object streams
+ 178 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

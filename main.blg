@@ -3,50 +3,48 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: splncs03.bst
 Database file #1: ref.bib
-Warning--empty year in CampanelliGGN17
 Warning--empty journal in CoP
 Warning--empty journal in CRM-code
 Warning--missing institution in bitcoin
-Warning--empty journal in Regulations
-You've used 17 entries,
+You've used 12 entries,
             2785 wiz_defined-function locations,
-            679 strings with 7590 characters,
-and the built_in function-call counts, 7201 in all, are:
-= -- 531
-> -- 259
-< -- 2
-+ -- 109
-- -- 90
-* -- 433
-:= -- 1010
-add.period$ -- 15
-call.type$ -- 17
-change.case$ -- 108
+            650 strings with 6543 characters,
+and the built_in function-call counts, 4840 in all, are:
+= -- 353
+> -- 169
+< -- 0
++ -- 71
+- -- 58
+* -- 285
+:= -- 690
+add.period$ -- 11
+call.type$ -- 12
+change.case$ -- 72
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 678
-empty$ -- 667
-format.name$ -- 100
-if$ -- 1498
+cite$ -- 15
+duplicate$ -- 460
+empty$ -- 461
+format.name$ -- 64
+if$ -- 1006
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 153
-newline$ -- 56
-num.names$ -- 34
-pop$ -- 316
+int.to.str$ -- 12
+missing$ -- 104
+newline$ -- 41
+num.names$ -- 24
+pop$ -- 216
 preamble$ -- 1
-purify$ -- 78
+purify$ -- 52
 quote$ -- 0
-skip$ -- 157
+skip$ -- 100
 stack$ -- 0
-substring$ -- 255
-swap$ -- 295
-text.length$ -- 2
+substring$ -- 163
+swap$ -- 190
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 64
-warning$ -- 5
-while$ -- 53
-width$ -- 19
-write$ -- 157
-(There were 5 warnings)
+type$ -- 44
+warning$ -- 3
+while$ -- 36
+width$ -- 14
+write$ -- 113
+(There were 3 warnings)

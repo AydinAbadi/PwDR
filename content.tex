@@ -108,19 +108,19 @@ $\mathcal{B}$ takes the following steps.
 
 
 \vspace{2mm}
-\item \underline{\textit{Customer-side Initiation}}\label{RCSP::Server-side-Initiation}. $\mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a$
+\item \underline{\textit{Customer-side Initiation}}\label{customer-side-Initiation}. $\mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a$
 
 $\mathcal{C}$ takes the following steps. 
 
 \begin{enumerate}
 %
-\item calls   $\mathtt{SAP.agree}(\pi_{\st i}, r_{\st i}, g_{\st i}, adr_{\st\mathcal{B}}, adr_{\st\text{SAP}})\rightarrow (g'_{\st i}, b_{\st i})$, to check the correctness of parameters in $T_{\st i}\in T$ and (if accepted) to agree on these parameters, where $(\pi_{\st i}, r_{\st i}) \in \ddot{\pi}_{\st i}\in T_{\st i}$ and $1\leq i \leq 2$. Note,  if both $\mathcal{B}$ and $\mathcal{C}$ are honest, then $g_{\st i}=g'_{\st i}$. It also checks $\Delta$ in  $\mathcal{S}$, e.g., to see whether it is sufficiently large.
+\item\label{customer-side-Initiation-SAP-agree} calls   $\mathtt{SAP.agree}(\pi_{\st i}, r_{\st i}, g_{\st i}, adr_{\st\mathcal{B}}, adr_{\st\text{SAP}})\rightarrow (g'_{\st i}, b_{\st i})$, to check the correctness of parameters in $T_{\st i}\in T$ and (if accepted) to agree on these parameters, where $(\pi_{\st i}, r_{\st i}) \in \ddot{\pi}_{\st i}\in T_{\st i}$ and $1\leq i \leq 2$. Note,  if both $\mathcal{B}$ and $\mathcal{C}$ are honest, then $g_{\st i}=g'_{\st i}$. It also checks $\Delta$ in  $\mathcal{S}$, e.g., to see whether it is sufficiently large.
 %
 \item if the above checks fail,  it sets $a=0$. Otherwise, it sets $a=1$. It sends $a$ to $\mathcal{S}$. 
 \end{enumerate}
 %
 \vspace{2mm}
-\item \underline{\textit{Generating  Update Request}}. $\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}$
+\item\label{genUpdateRequest} \underline{\textit{Generating  Update Request}}. $\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}$
 
 $\mathcal{C}$ takes the following steps. 
 
@@ -135,7 +135,7 @@ $\mathcal{C}$ takes the following steps.
 \item[$\bullet$] if $\mathtt{ammendExistingPayee}(.)$  is called, then it sets $m_{\st 1}^{\st(\mathcal C)}:=(i, f)$, where $i$ is the index of the element in $\bm l$ that should be changed to $f$.  %In this case, $\mathcal{S}$ replaces $i$-th emement of $l$ with $p$, i.e., $l[i]=p$.
 
 \end{itemize}
-\item at time $t_{\st 0}$, sends to $\mathcal{S}$  the encryption of $m_{\st 1}^{\st(\mathcal C)}$, i.e., $\hat m_{\st 1}^{\st(\mathcal C)}=\mathtt{Enc}(\bar k_{\st 1}, m_{\st 1}^{\st(\mathcal C)})$. 
+\item\label{send-update-req} at time $t_{\st 0}$, sends to $\mathcal{S}$  the encryption of $m_{\st 1}^{\st(\mathcal C)}$, i.e., $\hat m_{\st 1}^{\st(\mathcal C)}=\mathtt{Enc}(\bar k_{\st 1}, m_{\st 1}^{\st(\mathcal C)})$. 
 \end{enumerate}
 %
 % Inserting New Payee
@@ -157,7 +157,7 @@ $\mathcal{S}$ takes the following steps.
 
  % Generating Warning
  \vspace{2mm}
-\item \underline{\textit{Generating Warning}}. $\mathtt{genWarning}(T, {\hat{\bm l}}, aux)\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}$
+\item\label{Generating-Warning} \underline{\textit{Generating Warning}}. $\mathtt{genWarning}(T, {\hat{\bm l}}, aux)\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}$
 %
 
 $\mathcal{B}$ takes the following steps. 
@@ -177,13 +177,13 @@ $\mathcal{B}$ takes the following steps.
 $\mathcal{C}$ takes the following steps. 
 \begin{enumerate}
 %
-\item at time $t_{\st 2}$, decrypts the content of $\hat{\bm{l}}$ and $\hat m_{\st 1}^{\st(\mathcal{B})}$.  It sets a payment request $m_{\st 2}^{\st(\mathcal C)}$ to  $\phi$ or  $in_{\st f}$, where $in_{\st f}$ contains the payment's detail, e.g., the payee's detail in $\bm l$ and the amount it wants to transfer. 
+\item\label{decrypt-warning} at time $t_{\st 2}$, decrypts the content of $\hat{\bm{l}}$ and $\hat m_{\st 1}^{\st(\mathcal{B})}$.  It sets a payment request $m_{\st 2}^{\st(\mathcal C)}$ to  $\phi$ or  $in_{\st f}$, where $in_{\st f}$ contains the payment's detail, e.g., the payee's detail in $\bm l$ and the amount it wants to transfer. 
 %
-\item at time $t_{\st 3}$, sends  to $\mathcal{S}$ the encryption of $m_{\st 2}^{\st(\mathcal C)}$, i.e., $\hat m_{\st 2}^{\st(\mathcal{C})}= \mathtt{Enc}(\bar k_{\st 1}, m_{\st 2}^{\st(\mathcal C)})$.
+\item\label{send-payment-req} at time $t_{\st 3}$, sends  to $\mathcal{S}$ the encryption of $m_{\st 2}^{\st(\mathcal C)}$, i.e., $\hat m_{\st 2}^{\st(\mathcal{C})}= \mathtt{Enc}(\bar k_{\st 1}, m_{\st 2}^{\st(\mathcal C)})$.
 \end{enumerate}
 %
 \vspace{2mm}
-\item \underline{\textit{Making Payment}}. $\mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}$
+\item\label{Making-Payment} \underline{\textit{Making Payment}}. $\mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}$
 
 $\mathcal{B}$ takes the following steps. 
 \begin{enumerate}
@@ -195,7 +195,7 @@ $\mathcal{B}$ takes the following steps.
 \end{enumerate}
 %
 \vspace{2mm}
-\item  \underline{\textit{Generating Complaint}}. $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, {aux}_{\st f})\rightarrow  (\hat z, \hat{\ddot \pi})$
+\item\label{Generating-Complaint}  \underline{\textit{Generating Complaint}}. $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, {aux}_{\st f})\rightarrow  (\hat z, \hat{\ddot \pi})$
 
 $\mathcal{C}$ takes the following steps. 
 \begin{enumerate}
@@ -428,212 +428,5 @@ The above PwDR scheme is secure, with regard to definition \ref{def::PwDR-securi
 
 \input{proof}
 
-%\subsection{Extensions}
-%
-%\subsubsection{Micro-enterprise or Charity Customer.} There is a clause in the CRM code that  allows a bank to refuse reimbursing a victim of an APP scam, if (i) the victim is an organisation (i.e., Micro-enterprise or Charity), (ii) the organisation has internal payment procedures that are effective in preventing the APP scam, and (iii) the victim has not followed those procedures. Below, we outline how the PwDR protocol can be extended to capture these requirements. The modified PwDR allows a customer to prove it has followed those requirements (or to prove there were not such  procedures), which ultimately benefits an honest customer during the dispute resolution phase (i.e., phase \ref{DR::DisputeResolution}).   We present the extension in two phases. In phase I, we provide a subprotocol that determines whether the customer has met the above requirements. In phase II, we show how the subprotocol can be integrated into the PwDR protocol.  
-%
-%\noindent\textit{{Phase I.}} In this phase, we provide an overview of a  subprotocol that determines if the customer has met the above requirements. At a high level, this subprotocol works as follows.
-%
-%
-% \begin{enumerate}[label=(\Alph*)]
-%\item\label{C-side} $\mathcal{C}$ sends the organisation's internal procedure specification and the specification's certificate  to  $\mathcal{S}$. Moreover,   it sends to $\mathcal{S}$  a proof, $p$, asserting that it has followed the above procedure. 
-%
-%\item\label{D-side} Every  $\mathcal{D}_{\st i}$ takes the following steps:
-% 
-% \begin{enumerate}
-% \item checks the certificate by running procedure $\mathtt{Sig.ver}(.)\rightarrow h_{\st i}$. It sends $h_{\st i}$ to $\mathcal{S}$. It waits until all arbiters provide their inputs. Then, it locally runs $\mathtt{f.verdict}(h_{\st 1},...,h_{\st n})$ to determine if the certificate has been approved (by the majority of arbiters). It only proceeds to the next step if $\mathtt{f.verdict}(.)$ returns $1$.  
-%%
-% \item\label{subprotocol::evaluate-procedure}  checks whether the  procedure could prevent the APP scam. If the check passes, then it sends $v'_{\st i}=1$  to $\mathcal{S}$; otherwise, it sends $v'_{\st i}=0$  to $\mathcal{S}$. Again, it waits until all arbiters provide their inputs. Next, it locally runs $\mathtt{f.verdict}(v'_{\st 1},...,v'_{\st n})$. It only proceeds to the next step if $\mathtt{f.verdict}(.)$ returns $1$.
-% %
-% \item verifies  proof $p$. If the check passes, then it sends $v''_{\st i}=1$  to $\mathcal{S}$. Otherwise, it sends $v'_{\st i}=0$  to $\mathcal{S}$.
-% 
-% \end{enumerate} 
-% 
-%\item\label{S-side} $\mathcal{S}$ computes and stores the following values:
-%  \begin{itemize}
-%  %
-%  \item [$\bullet$] $h=\mathtt{f.verdict}(h_{\st 1},...,h_{\st n})$.
-%  %
-%  \item [$\bullet$] if $h=1$, then $v'=\mathtt{f.verdict}(v'_{\st 1},...,v'_{\st n})$.
-%  %
-%  \item [$\bullet$] if $v'=1$, then $v''=\mathtt{f.verdict}(v''_{\st 1},...,v''_{\st n})$.
-%   \item [$\bullet$] sets $g=1$, if one of the  following two conditions holds:  
-%   
-%   \begin{itemize}
-%   \item[*]  $h=0$.
-%   \item[*]   $h\wedge v'' =1$.
-%  \end{itemize}
-% otherwise (if neither condition holds), sets $g=0$. 
-%  %
-%   \end{itemize} 
-% \end{enumerate} 
-% 
-%% checks whether the  certificate is valid and the procedure could prevent the APP scam. If both checks pass, then $\mathcal{D}_{\st i}$ sends $v'_{\st i}=1$  to $\mathcal{S}$. Otherwise, it sends $v'_{\st i}=0$ to it. Furthermore, in the case where $\mathcal{D}_{\st i}$  sent $v'_{\st i}=1$ to $\mathcal{S}$, it  checks $p$'s validity. If the check passes, then it sends $v''_{\st 1}=1$ to $\mathcal{S}$; if the check fails, it sends $v''_{\st 1}=0$ to $\mathcal{S}$. In the case where 
-%%
-%%
-%%After all arbiters provide their inputs, $\mathcal{S}$ executes    $\mathtt{effective}(v'_{\st 1}, ..., v'_{\st n})\rightarrow b'$ and   $\mathtt{effective}(v''_{\st 1}, ..., v''_{\st n})\rightarrow b''$. 
-%
-%%
-%%Next $\mathcal{C}$ checks $b'$, if it has been set to $1$, then it sends to $\mathcal{S}$  a proof, $p$, asserting that it has followed the above procedure. Otherwise (i.e., $b'=0$), it does not need to send any proof; note that in this case the arbiters reaches to the consensus that there was not effective internal procedure to prevent the APP scam. Given the customer's input, every  arbiter $\mathcal{D}_{\st i}$ checks the proof's validity. If the check passes, then it sends $v''_{\st 1}$ to $\mathcal{S}$; otherwise, it sends $v''_{\st 1}$ to $\mathcal{S}$. Once all arbiter's inputs are provided,  $\mathcal{S}$ runs $\mathtt{effective}(v''_{\st 1}, ..., v''_{\st n})\rightarrow b''$. 
-%
-%
-%
-%\noindent\textit{{Phase II.}} Now describe how the  above subprotocol's phases can be integrated into  the PwDR protocol.  First,  phases \ref{C-side} and \ref{D-side},  of the subprotocol, are added to steps \ref{DR::C-sends-complaint} and \ref{arbiters-verdict}, of the PwDR protocol, respectively. Second, the checks in phase \ref{DR::check-m1c}  of the PwDR protocol need to also ensure that $g=1$, by taking the steps of  phase \ref{S-side}   in the subprotocol. 
-%
-%
-%Note that in step \ref{subprotocol::evaluate-procedure} of the subprotocol, it is assumed that each arbiter uses a well-defined process to evaluate whether the customer's internal payment procedures could have prevented the APP scam. Nevertheless,  effective   payment procedures that  prevent the APP fraud have not been appropriately defined  by the CRM code. This leads to a  manual and inefficient evaluation process.    Therefore, one may ask:
-%
-%
-%
-%\stepcounter{counter}
-%%\arabic{counter}
-%
-%
-%
-%
-%  \begin{center}\textit{Q\arabic{counter}: which measures exactly should be included in the internal payment procedures of an organisation to prevent  APP scams?}
-% \end{center}
-% 
-%Given an explicit list of payment procedures  that  prevent  APP scams,  we could make the above evaluation procedure autonomous and transparent. In particular, such a list could be encoded into the  smart contract $\mathcal{S}$ which receives inputs from the customer (and possibly arbiters) and check if those internal payment procedures were effective in preventing the APP scam. 
-%
-%
-%\subsubsection{Security against exploitative victim.}
-%
-%Having in place a transparent deterministic procedure (e.g.,  the PwDR protocol)  for evaluating victims' requests for reimbursement  could potentially create opportunities for exploitations. In particular, an honest victim  of the APP fraud who had been reimbursed in the past due to the payment system's vulnerability, e.g., ineffective payment, may be tempted to  exploit the same  known vulnerability multiple times.  Below, we outline two cases in which the malicious victim may exploit a known vulnerability and describe how they can be dealt with.  
-%
-%\begin{itemize}
-%\item Case 1: A genuine victim, who  previously had been reimbursed,  colludes with a certain payee. In this case, the malicious victim uses the previous working strategy (e.g., the same certificates and complaints) to declare that it has been a victim of the APP fraud but this time it  exploits the weakness (e.g., ignores the ineffective warning). Note, the colluding payee acts exactly the same way as a real scammer does in the APP scam, e.g., after receiving the payment, it transfers the money to another account abroad. 
-%
-%
-%\item Case 2: A genuine victim shares (or sells) its knowledge of the vulnerability to a  malicious customer who colludes with a payee to claim it has been a victim of the APP scam. Therefore, this case is similar to Case 1 with the main difference that the claimant's  identity  changes each time a claim is made. %which makes tracking the victim harder than the one in Case 1. 
-%\end{itemize}
-%
-%
-%Ideally, the bank should patch the vulnerability as soon as the first  incident occurs; however, this may not be the case in the real world as the cost of improving a  (payment) system to deal with such an incident may far exceed the  bank's monetary loss in that incident. Currently, neither the CRM code nor the ``Payment Services Regulations'' \cite{Regulations} explicitly offer any solution for the above cases.  To address the issue in Case 1, we propose the following remedy. First, we introduce two (set of) parameters; namely, threshold and counters. We let  bank $\mathcal{B}$  define the value of the threshold  in the smart contract, $\mathcal{S}$. Also, we require the protocol to keep track of the number of times the same customer is reimbursed for the same complaint, e.g., ineffective warning. Now we outline how these parameters can assist the  protocol to rectify the issue. Each time the protocol receives a customer's complaint, it checks whether  the total number of times the same customer is reimbursed for that specific  complaint exceeds the predefined threshold; if so, the protocol discards that complaint. Otherwise, it proceeds as before. More specifically, we amend the PwDR protocol as follows. 
-%
-%\begin{itemize}
-%\item[$\bullet$]  $\mathcal{S}$ maintains a  counter vector, $\bm q^{\st (\mathcal{C})}=[(q_{\st e}, e),(q_{\st  x}, x),(q_{\st y}, y)]$,  for each customer $\mathcal{C}$, where  $q_{\st e}, q_{\st x}$, and $q_{\st y}$ are initially set to $0$ while $e, x$ and $y$ are the types of complaint, as they were defined in the PwDR scheme. 
-%
-%\item[$\bullet$]    $\mathcal{B}$ defines a fixed threshold $t$ in   $\mathcal{S}$,  where $t >1$. 
-%
-%\item[$\bullet$] In Phase \ref{DR::DisputeResolution}, $\mathcal{S}$ increments counter $q_{\st j}$ by $1$, each time   $\mathcal{C}$ is reimbursed for complaint $j$, where $j\in \{e,x,y\}$. 
-%
-%
-%%\item[$\bullet$]   $\mathtt{verComplaint}(.)$,  $\mathtt{checkWarEff}(.)$, and $\mathtt{verStat}(.)$ take $\bm q^{\st (\mathcal{C})}$ and $t$ as inputs as well.  
-%
-%\item[$\bullet$]  Algorithm $\mathtt{verComplaint}(.)$ takes extra parameters $\bm q^{\st (\mathcal{C})}$ and $t$ as inputs.  
-%
-%
-%\item[$\bullet$] In Phase \ref{VerifyingComplaint}, when a committee member, $\mathcal{D}_{\st i}$, wants to examine  $\mathcal{C}$'s  complaint, it reads the content of $\bm q^{\st (\mathcal{C})}$ and $t$ from $\mathcal{S}$ and passes them to $\mathtt{verComplaint}(.)$, which first checks whether the counter in $\bm q^{\st (\mathcal{C})}$ exceeds  $t$ for the complaint that $\mathcal{C}$ is making. If the check passes, it sets $d_{\st i}= v_{\st i}= \bar v_{\st i}=  w_{\st i}=\phi$ and outputs $(d_{\st i}, v_{\st i}, \bar v_{\st i},  w_{\st i})$ without requiring $\mathcal{D}_{\st i}$ to process $\mathcal{C}$'s claim. Otherwise,  $\mathcal{D}_{\st i}$ checks the claim as before.  
-%
-%\end{itemize}
-%
-%Now, we move on to the issue in Case 2 which is harder to identify than the one in Case 1. Because, in the former case, the identity of a malicious customer which wrongly claims that it has fallen victim to the APP fraud changes continuously and  is hardly distinguishable from a genuine victim without the assistance of extra information (e.g., phone records, emails) that is not trivial  to attain without  external intervention, e.g., a subpoena. To address this issue, we  propose the following mitigation.  Briefly, we require $\mathcal{B}$ to enhance its system and rectify the issue when the number of complaints related to the same issue exceeds a global threshold. Specifically, $\mathcal{B}$  defines in $\mathcal{S}$ a \emph{global} threshold $gt$ and global counter vector $\bm g=[(g_{\st e}, e),(g_{\st  x}, x),(g_{\st y}, y)]$,   where the vector's elements are defined the same way as those are defined in $\bm q$, with the difference that they are global and are not for a specific customer. Each time a customer is reimbursed for a reason   the related counter in $\bm g$ is incremented by $1$. When a counter exceeds the value of $gt$, $\mathcal{S}$ notifies $\mathcal{B}$ which patches the issue and then sets the related counter to $0$. Note that the value of $gt$ can be set such that when the monetary loss exceeds the upgrade costs, then  $\mathcal{B}$ upgrades the system.  
-
-
-
-
-
-
-
-
-
-
-%$\bm q^{\st (\mathcal{C})}=[(q_{\st e}, e),(q_{\st  x}, x),(q_{\st y}, y)]$,  for each customer $\mathcal{C}$, where  $q_{\st e}, q_{\st x}$, and $q_{\st y}$ are initially set to $0$ while $e, x$ and $y$ are the types of complaint
-
-
-
-%we can introduce a threshold for each vulnerability to the system. When it is exceeded, then that vulnerability needs to be dealt with (or in general the system should be upgraded).
-
-
-%\section{Discussion}
-% 
-% 
-% \subsection{Effective Warning}
-%In the protocol, in step \ref{clinet-at-T2}, to which value  $\mathcal{C}$ sets its message $m_{\st 2}^{\st(\mathcal C)}$ is not totally deterministic  and depends on various (external) factors, e.g., warning effectiveness,  human factors. It is very  likely that  if $m_{\st 1}^{\st(\mathcal B)}=$ ``pass'', then $\mathcal{C}$ acts deterministically, by asking $\mathcal{B}$ to make the payment, i.e.,  $\mathcal{C}$ sets  $m_{\st 2}^{\st(\mathcal C)}=in_{\st p}$.   However,  to which value $\mathcal{C}$ sets $m_{\st 2}^{\st(\mathcal C)}$ when (a) $m_{\st 1}^{\st(\mathcal B)}= \text{warning}$ or (b) no message is provided by $\mathcal{B}$ at time $T_{\st 2}$, depends on many factors. For instance, if the warning is not effective and does not concern $\mathcal{C}$, then $\mathcal{C}$ still would  set    $m_{\st 2}^{\st(\mathcal C)}=in_{\st p}$. Similarly, if  $\mathcal B$ does not send $m_{\st 1}^{\st(\mathcal B)}$, it is still possible that $\mathcal{C}$ sets $m_{\st 2}^{\st(\mathcal C)}=in_{\st p}$, for instance when it is distracted and does not pay attention to the absence of  the message that was supposed to be provided by $\mathcal{B}$ on time. On the other hand, if the warning is effective, or $\mathcal{C}$ in general is highly sensitive to warnings and  the absence of $\mathcal B$'s message, then it  does not make any payment, i.e.,  it sets $m_{\st 2}^{\st(\mathcal C)}=\phi$. Despite the above challenges, the proposed protocol ensures that $\mathcal{C}$ will be identified as the party who should be reimbursed,  if it acts according to the protocol, makes a payment but the warning was ineffective or no message was provided by $\mathcal{B}$ in step \ref{clinet-at-T2}. Therefore, the following questions would  follow: 
-%
-%\stepcounter{counter}
-%%\arabic{counter}
-%
-%  \begin{center}\textit{Q\arabic{counter}: what percentage of customers after encountering the warning do still proceed to make a payment (i.e., set $m_{\st 2}^{\st(\mathcal C)}=in_{\st p}$)?}
-%\end{center}
-%
-%\stepcounter{counter}
-%
-%  \begin{center}\textit{Q\arabic{counter}: how to make the above rate negligibly small?}
-%  \end{center}
-%
-%
-%
-%There exists  a comprehensive research line in determining the effectiveness of warnings, e.g., in \cite{laughery2006designing,brinton2016users,felt2014experimenting}. These traditional research line  studies which factors make warnings effective and how a warning recipient is attracted to and follows the warning message.  However, in the context of APP scams, there is a vital  unique factor  that can directly influence a warning effectiveness; the factor is    \emph{the ability of the scammer to interact directly with the victim} (or warning recipient). This lets a scammer to actively try to negate  the effectiveness of banks' warnings and persuade the warning recipient to ignore the warning (and make  payment). Such a factor was not (needed to be) taken into account in the traditional study of warnings. Therefore, one may ask: 
-%
-%\stepcounter{counter}
-%  \begin{center}\textit{Q\arabic{counter}: to what extent can a scammer  negate a warning effectiveness in the onctext of APP scams?}
-%  \end{center}
-%
-%
-%One way to answer the above question is to study each individual bank's statistics and find out how successful they have been in combatting the APP scams, as each bank designs its payment system and warnings independent of other banks. Thus, it would be interesting to find out:
-%\stepcounter{counter}
-%  \begin{center}\textit{Q\arabic{counter}: which bank  does have  the  lowest rate of APP scams and how did its warnings contribute to the low rate?}  
-%  \end{center}
-%
-%
-%Furthermore, in step \ref{arbiters-verdict}, it is implicitly assumed that in order for each arbiter, $\mathcal{D}_{\st i}$, to judge  the effectiveness of the warning and reach a verdict, it has access to the payment system and it can interact  with  $\mathcal{C}$ offline, e.g., to obtain further evidence from it.  Nevertheless, this process can be time consuming and a verdict may not be released in the real time once $\mathcal{C}$ sends its complaint to $\mathcal{S}$. Thus, it is natural to ask: 
-%
-%\stepcounter{counter}
-%\begin{center}\textit{Q\arabic{counter}: to what extent can the role of the arbiters  be automated and accurately played by a computer program?}
-%\end{center}
-%
-%%Recall, the  above protocol assumes that the customer does not collude with the APP scammer. However, this assumption may not always hold in the real world. The two parties may collude to exploit  the payment system's weaknesses, e.g., ineffective warning.  In this case,  the malicious customer honestly participates in the protocol but   ignores the warning and makes a payment. Later, it raises a dispute and challenges the warning's effectiveness. It would succeed and be identified as a party who should be reimbursed, if the committee approves that the warning is indeed ineffective. The main difference between this case and the one  where the customer falls victim to an APP scam  is that in the former  the  customer makes extra money while in the latter  it does not. Hence, it is reasonable to ask:
-%%
-%%\stepcounter{counter}
-%%\begin{center}\textit{Q\arabic{counter}: how to relax the above non-colluding assumption while being able to distinguish an honest customer who has fallen victim to  an APP scam from a malicious customer who colludes with the APP scammer?}
-%%\end{center}
-%
-% \subsection{Ensuring the Payment is for Genuine Goods and Services}\label{sec:genuine-goods}
-% 
-% 
-% 
-%There are a set of terms in the CRM code  that states: 
-%
-%\noindent\textit{``In all the circumstances at the time of the payment, in particular the characteristics of the Customer and the complexity and sophistication of the APP scam, the Customer made the payment without a reasonable basis for believing that:}
-%\begin{itemize}
-%\item[(i)] \textit{the payee was the person the Customer was expecting to pay;}
-%\item[(ii)] \textit{the payment was for genuine goods or services; and/or}
-%\item[(iii)] \textit{the person or business with whom they transacted was legitimate".}
-%\end{itemize}
-%
-%
-%We argue that    clause (ii) plays a minor role in  preventing a APP scam, as it is effective only when the seller wrongly claims it is in possession of a certain goods or can deliver certain services. It is ineffective when   a customer  ensures goods or services it wants to receive are indeed genuine but the seller avoids delivering the goods/services.  In this case, a seller (regardless of whether it is legitimate or not) may prove to the customer that the goods and services are genuine and belong to it (e.g., by sending a copy of related genuine  document), but it   still avoids delivering them once it receives the money. To capture the above issue as well, the above clause should be modified as follows: 
-%
-%%\begin{center}\textit{``... the payment was made (if and) only if the delivery of genuine good or services are guaranteed''.}
-%% \end{center}
-% 
-%\begin{center}\textit{``... the delivery of genuine goods or services are guaranteed...''.}
-% \end{center}
-% 
-%There are at least two ways to have the above guarantee: (a) involving a reputable trusted third-party intermediary which can compensate the customer if the seller misbehaves, e.g., eBay, amazon, or (b)  using a secure ``contingent service payment" scheme (e.g., in  \cite{CampanelliGGN17}) that supports the  fair exchange of digital goods or services and money without the involvement of the above trusted third-party intermediary. In this case, there would be no need for the customer to ensure if the seller is legitimate, because it pays only if  genuine goods or services are delivered. The existing fair exchange schemes  allow a seller and buyer to trade with each other \emph{outside of the bank payment system} by using a blockchain. However, these schemes can be embedded into the bank payment system such that the bank (or a group of banks) maintains the blockchain and converts internally  a customer's  fiat currency  to a digital one when the customer wants to trade in a fair manner with a party whose authenticity cannot be verified. 
-%
-%
-%\subsection{Ensuring the Legitimacy and Authenticity of Payee}
-%
-%We highlight that even though clauses (i) and (iii), presented in  Section \ref{sec:genuine-goods}, can prevent a customer from falling to an APP scam, only in certain cases they would   benefit a victim of an APP fraud during the process of allocating liability or dispute resolution.  In particular, if the victim declares that (a)   it has used a   secure authentication mechanism (e.g., digital signature) to ensure  the legitimacy and authenticity of the payee or (b)  it has not performed any authentication, then it would not receive the reimbursement. In the former case, it has transferred the  money to the party it knows. However,   this  is not an APP scam,  according to the scam's general definition.  In the latter case, the firm can avoid reimbursing it, according to the CRM code (as the customer has not performed its part). The only case in which the customer might be reimbursed is when it (a) uses an insecure means for authentication (e.g., phone call) and (b) can prove it has done such a check. For instance, in the case where the victim has been asked by a scammer to make a phone call to its bank while the scammer  answers the phone call that the victim makes later. In this case, the victim needs to  prove that it has made a phone call to the bank, which may not be always possible (e.g., if the scammer uses a method to reply to the call before the real connection between the customer and bank is made).  In this case, in order for the customer to be reimbursed it needs to provide an evidence while there is no evidence left behind by the scammer. Thus, it is natural to ask:
-%
-%\stepcounter{counter}
-%\begin{center}\textit{Q\arabic{counter}: how can the victim prove it has been a victim of an APP scam, in the above case?}
-%\end{center}
-%
-%\subsection{Lack of Gross Negligence Definition}
-%
-%One of the conditions in the CRM code that allows a bank to avoid reimbursing the customer is clause R2(1)(e) which states: 
-%
-%
-%\begin{center}\textit{``The Customer has been grossly negligent. For the avoidance of doubt the provisions of R2(1)(a)-(d) should not be taken to define gross negligence in this context.''}
-% \end{center}
-% 
-% Nevertheless, neither the CRM code  nor the Payment Services Regulations   explicitly define under which circumstances the customer is considered ``grossly negligent'' in the context of the APP scam. In particular, in the CRM code, the only terms that discuss customer's misbehaviour are  the provisions of R2(1)(a)-(d); however, as stated above, they should be excluded from the definition of the term gross negligence. On the  other hand,  in the Payment Services Regulations, this term is used three times, i.e.,  twice in regulation 75 and once in regulation 77. But in all  three cases it is used for frauds related to \emph{unauthorised payments} which are  different types of frauds from the APP scams. Therefore, even the Payment Services Regulations does not define the term in the context of the APP scam. 
-% 
-% When an  accurate definition of the term is in place,  its conditions can be encoded into the smart contract of the PwDR protocol. This allows the PwDR protocol to transparently resolve  disputes  between the bank and customer, if the bank claims that the customer has been  grossly negligent. 
-
-
+\input{evaluation}
 
