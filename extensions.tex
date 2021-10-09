@@ -1,0 +1,106 @@
+% !TEX root =main.tex
+
+
+\subsection{Extensions}
+
+\subsubsection{Micro-enterprise or Charity Customer.} There is a clause in the CRM code that  allows a bank to refuse reimbursing a victim of an APP scam, if (i) the victim is an organisation (i.e., Micro-enterprise or Charity), (ii) the organisation has internal payment procedures that are effective in preventing the APP scam, and (iii) the victim has not followed those procedures. Below, we outline how the PwDR protocol can be extended to capture these requirements. The modified PwDR allows a customer to prove it has followed those requirements (or to prove there were not such  procedures), which ultimately benefits an honest customer during the dispute resolution phase (i.e., phase \ref{DR::DisputeResolution}).   We present the extension in two phases. In phase I, we provide a subprotocol that determines whether the customer has met the above requirements. In phase II, we show how the subprotocol can be integrated into the PwDR protocol.  
+
+\noindent\textit{{Phase I.}} In this phase, we provide an overview of a  subprotocol that determines if the customer has met the above requirements. At a high level, this subprotocol works as follows.
+
+
+ \begin{enumerate}[label=(\Alph*)]
+\item\label{C-side} $\mathcal{C}$ sends the organisation's internal procedure specification and the specification's certificate  to  $\mathcal{S}$. Moreover,   it sends to $\mathcal{S}$  a proof, $p$, asserting that it has followed the above procedure. 
+
+\item\label{D-side} Every  $\mathcal{D}_{\st i}$ takes the following steps:
+ 
+ \begin{enumerate}
+ \item checks the certificate by running procedure $\mathtt{Sig.ver}(.)\rightarrow h_{\st i}$. It sends $h_{\st i}$ to $\mathcal{S}$. It waits until all arbiters provide their inputs. Then, it locally runs $\mathtt{f.verdict}(h_{\st 1},...,h_{\st n})$ to determine if the certificate has been approved (by the majority of arbiters). It only proceeds to the next step if $\mathtt{f.verdict}(.)$ returns $1$.  
+%
+ \item\label{subprotocol::evaluate-procedure}  checks whether the  procedure could prevent the APP scam. If the check passes, then it sends $v'_{\st i}=1$  to $\mathcal{S}$; otherwise, it sends $v'_{\st i}=0$  to $\mathcal{S}$. Again, it waits until all arbiters provide their inputs. Next, it locally runs $\mathtt{f.verdict}(v'_{\st 1},...,v'_{\st n})$. It only proceeds to the next step if $\mathtt{f.verdict}(.)$ returns $1$.
+ %
+ \item verifies  proof $p$. If the check passes, then it sends $v''_{\st i}=1$  to $\mathcal{S}$. Otherwise, it sends $v'_{\st i}=0$  to $\mathcal{S}$.
+ 
+ \end{enumerate} 
+ 
+\item\label{S-side} $\mathcal{S}$ computes and stores the following values:
+  \begin{itemize}
+  %
+  \item [$\bullet$] $h=\mathtt{f.verdict}(h_{\st 1},...,h_{\st n})$.
+  %
+  \item [$\bullet$] if $h=1$, then $v'=\mathtt{f.verdict}(v'_{\st 1},...,v'_{\st n})$.
+  %
+  \item [$\bullet$] if $v'=1$, then $v''=\mathtt{f.verdict}(v''_{\st 1},...,v''_{\st n})$.
+   \item [$\bullet$] sets $g=1$, if one of the  following two conditions holds:  
+   
+   \begin{itemize}
+   \item[*]  $h=0$.
+   \item[*]   $h\wedge v'' =1$.
+  \end{itemize}
+ otherwise (if neither condition holds), sets $g=0$. 
+  %
+   \end{itemize} 
+ \end{enumerate} 
+ 
+% checks whether the  certificate is valid and the procedure could prevent the APP scam. If both checks pass, then $\mathcal{D}_{\st i}$ sends $v'_{\st i}=1$  to $\mathcal{S}$. Otherwise, it sends $v'_{\st i}=0$ to it. Furthermore, in the case where $\mathcal{D}_{\st i}$  sent $v'_{\st i}=1$ to $\mathcal{S}$, it  checks $p$'s validity. If the check passes, then it sends $v''_{\st 1}=1$ to $\mathcal{S}$; if the check fails, it sends $v''_{\st 1}=0$ to $\mathcal{S}$. In the case where 
+%
+%
+%After all arbiters provide their inputs, $\mathcal{S}$ executes    $\mathtt{effective}(v'_{\st 1}, ..., v'_{\st n})\rightarrow b'$ and   $\mathtt{effective}(v''_{\st 1}, ..., v''_{\st n})\rightarrow b''$. 
+
+%
+%Next $\mathcal{C}$ checks $b'$, if it has been set to $1$, then it sends to $\mathcal{S}$  a proof, $p$, asserting that it has followed the above procedure. Otherwise (i.e., $b'=0$), it does not need to send any proof; note that in this case the arbiters reaches to the consensus that there was not effective internal procedure to prevent the APP scam. Given the customer's input, every  arbiter $\mathcal{D}_{\st i}$ checks the proof's validity. If the check passes, then it sends $v''_{\st 1}$ to $\mathcal{S}$; otherwise, it sends $v''_{\st 1}$ to $\mathcal{S}$. Once all arbiter's inputs are provided,  $\mathcal{S}$ runs $\mathtt{effective}(v''_{\st 1}, ..., v''_{\st n})\rightarrow b''$. 
+
+
+
+\noindent\textit{{Phase II.}} Now describe how the  above subprotocol's phases can be integrated into  the PwDR protocol.  First,  phases \ref{C-side} and \ref{D-side},  of the subprotocol, are added to steps \ref{DR::C-sends-complaint} and \ref{arbiters-verdict}, of the PwDR protocol, respectively. Second, the checks in phase \ref{DR::check-m1c}  of the PwDR protocol need to also ensure that $g=1$, by taking the steps of  phase \ref{S-side}   in the subprotocol. 
+
+
+Note that in step \ref{subprotocol::evaluate-procedure} of the subprotocol, it is assumed that each arbiter uses a well-defined process to evaluate whether the customer's internal payment procedures could have prevented the APP scam. Nevertheless,  effective   payment procedures that  prevent the APP fraud have not been appropriately defined  by the CRM code. This leads to a  manual and inefficient evaluation process.    Therefore, one may ask:
+
+
+
+\stepcounter{counter}
+%\arabic{counter}
+
+
+
+
+  \begin{center}\textit{Q\arabic{counter}: which measures exactly should be included in the internal payment procedures of an organisation to prevent  APP scams?}
+ \end{center}
+ 
+Given an explicit list of payment procedures  that  prevent  APP scams,  we could make the above evaluation procedure autonomous and transparent. In particular, such a list could be encoded into the  smart contract $\mathcal{S}$ which receives inputs from the customer (and possibly arbiters) and check if those internal payment procedures were effective in preventing the APP scam. 
+
+
+\subsubsection{Security against exploitative victim.}
+
+Having in place a transparent deterministic procedure (e.g.,  the PwDR protocol)  for evaluating victims' requests for reimbursement  could potentially create opportunities for exploitations. In particular, an honest victim  of the APP fraud who had been reimbursed in the past due to the payment system's vulnerability, e.g., ineffective payment, may be tempted to  exploit the same  known vulnerability multiple times.  Below, we outline two cases in which the malicious victim may exploit a known vulnerability and describe how they can be dealt with.  
+
+\begin{itemize}
+\item Case 1: A genuine victim, who  previously had been reimbursed,  colludes with a certain payee. In this case, the malicious victim uses the previous working strategy (e.g., the same certificates and complaints) to declare that it has been a victim of the APP fraud but this time it  exploits the weakness (e.g., ignores the ineffective warning). Note, the colluding payee acts exactly the same way as a real scammer does in the APP scam, e.g., after receiving the payment, it transfers the money to another account abroad. 
+
+
+\item Case 2: A genuine victim shares (or sells) its knowledge of the vulnerability to a  malicious customer who colludes with a payee to claim it has been a victim of the APP scam. Therefore, this case is similar to Case 1 with the main difference that the claimant's  identity  changes each time a claim is made. %which makes tracking the victim harder than the one in Case 1. 
+\end{itemize}
+
+
+Ideally, the bank should patch the vulnerability as soon as the first  incident occurs; however, this may not be the case in the real world as the cost of improving a  (payment) system to deal with such an incident may far exceed the  bank's monetary loss in that incident. Currently, neither the CRM code nor the ``Payment Services Regulations'' \cite{Regulations} explicitly offer any solution for the above cases.  To address the issue in Case 1, we propose the following remedy. First, we introduce two (set of) parameters; namely, threshold and counters. We let  bank $\mathcal{B}$  define the value of the threshold  in the smart contract, $\mathcal{S}$. Also, we require the protocol to keep track of the number of times the same customer is reimbursed for the same complaint, e.g., ineffective warning. Now we outline how these parameters can assist the  protocol to rectify the issue. Each time the protocol receives a customer's complaint, it checks whether  the total number of times the same customer is reimbursed for that specific  complaint exceeds the predefined threshold; if so, the protocol discards that complaint. Otherwise, it proceeds as before. More specifically, we amend the PwDR protocol as follows. 
+
+\begin{itemize}
+\item[$\bullet$]  $\mathcal{S}$ maintains a  counter vector, $\bm q^{\st (\mathcal{C})}=[(q_{\st e}, e),(q_{\st  x}, x),(q_{\st y}, y)]$,  for each customer $\mathcal{C}$, where  $q_{\st e}, q_{\st x}$, and $q_{\st y}$ are initially set to $0$ while $e, x$ and $y$ are the types of complaint, as they were defined in the PwDR scheme. 
+
+\item[$\bullet$]    $\mathcal{B}$ defines a fixed threshold $t$ in   $\mathcal{S}$,  where $t >1$. 
+
+\item[$\bullet$] In Phase \ref{DR::DisputeResolution}, $\mathcal{S}$ increments counter $q_{\st j}$ by $1$, each time   $\mathcal{C}$ is reimbursed for complaint $j$, where $j\in \{e,x,y\}$. 
+
+
+%\item[$\bullet$]   $\mathtt{verComplaint}(.)$,  $\mathtt{checkWarEff}(.)$, and $\mathtt{verStat}(.)$ take $\bm q^{\st (\mathcal{C})}$ and $t$ as inputs as well.  
+
+\item[$\bullet$]  Algorithm $\mathtt{verComplaint}(.)$ takes extra parameters $\bm q^{\st (\mathcal{C})}$ and $t$ as inputs.  
+
+
+\item[$\bullet$] In Phase \ref{VerifyingComplaint}, when a committee member, $\mathcal{D}_{\st i}$, wants to examine  $\mathcal{C}$'s  complaint, it reads the content of $\bm q^{\st (\mathcal{C})}$ and $t$ from $\mathcal{S}$ and passes them to $\mathtt{verComplaint}(.)$, which first checks whether the counter in $\bm q^{\st (\mathcal{C})}$ exceeds  $t$ for the complaint that $\mathcal{C}$ is making. If the check passes, it sets $d_{\st i}= v_{\st i}= \bar v_{\st i}=  w_{\st i}=\phi$ and outputs $(d_{\st i}, v_{\st i}, \bar v_{\st i},  w_{\st i})$ without requiring $\mathcal{D}_{\st i}$ to process $\mathcal{C}$'s claim. Otherwise,  $\mathcal{D}_{\st i}$ checks the claim as before.  
+
+\end{itemize}
+
+Now, we move on to the issue in Case 2 which is harder to identify than the one in Case 1. Because, in the former case, the identity of a malicious customer which wrongly claims that it has fallen victim to the APP fraud changes continuously and  is hardly distinguishable from a genuine victim without the assistance of extra information (e.g., phone records, emails) that is not trivial  to attain without  external intervention, e.g., a subpoena. To address this issue, we  propose the following mitigation.  Briefly, we require $\mathcal{B}$ to enhance its system and rectify the issue when the number of complaints related to the same issue exceeds a global threshold. Specifically, $\mathcal{B}$  defines in $\mathcal{S}$ a \emph{global} threshold $gt$ and global counter vector $\bm g=[(g_{\st e}, e),(g_{\st  x}, x),(g_{\st y}, y)]$,   where the vector's elements are defined the same way as those are defined in $\bm q$, with the difference that they are global and are not for a specific customer. Each time a customer is reimbursed for a reason   the related counter in $\bm g$ is incremented by $1$. When a counter exceeds the value of $gt$, $\mathcal{S}$ notifies $\mathcal{B}$ which patches the issue and then sets the related counter to $0$. Note that the value of $gt$ can be set such that when the monetary loss exceeds the upgrade costs, then  $\mathcal{B}$ upgrades the system.  
+
+

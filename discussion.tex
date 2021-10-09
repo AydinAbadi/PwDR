@@ -1,0 +1,91 @@
+% !TEX root =main.tex
+
+
+\section{Discussion}
+ 
+ 
+ \subsection{Effective Warning}
+In the protocol, in step \ref{clinet-at-T2}, to which value  $\mathcal{C}$ sets its message $m_{\st 2}^{\st(\mathcal C)}$ is not totally deterministic  and depends on various (external) factors, e.g., warning effectiveness,  human factors. It is very  likely that  if $m_{\st 1}^{\st(\mathcal B)}=$ ``pass'', then $\mathcal{C}$ acts deterministically, by asking $\mathcal{B}$ to make the payment, i.e.,  $\mathcal{C}$ sets  $m_{\st 2}^{\st(\mathcal C)}=in_{\st p}$.   However,  to which value $\mathcal{C}$ sets $m_{\st 2}^{\st(\mathcal C)}$ when (a) $m_{\st 1}^{\st(\mathcal B)}= \text{warning}$ or (b) no message is provided by $\mathcal{B}$ at time $T_{\st 2}$, depends on many factors. For instance, if the warning is not effective and does not concern $\mathcal{C}$, then $\mathcal{C}$ still would  set    $m_{\st 2}^{\st(\mathcal C)}=in_{\st p}$. Similarly, if  $\mathcal B$ does not send $m_{\st 1}^{\st(\mathcal B)}$, it is still possible that $\mathcal{C}$ sets $m_{\st 2}^{\st(\mathcal C)}=in_{\st p}$, for instance when it is distracted and does not pay attention to the absence of  the message that was supposed to be provided by $\mathcal{B}$ on time. On the other hand, if the warning is effective, or $\mathcal{C}$ in general is highly sensitive to warnings and  the absence of $\mathcal B$'s message, then it  does not make any payment, i.e.,  it sets $m_{\st 2}^{\st(\mathcal C)}=\phi$. Despite the above challenges, the proposed protocol ensures that $\mathcal{C}$ will be identified as the party who should be reimbursed,  if it acts according to the protocol, makes a payment but the warning was ineffective or no message was provided by $\mathcal{B}$ in step \ref{clinet-at-T2}. Therefore, the following questions would  follow: 
+
+\stepcounter{counter}
+%\arabic{counter}
+
+  \begin{center}\textit{Q\arabic{counter}: what percentage of customers after encountering the warning do still proceed to make a payment (i.e., set $m_{\st 2}^{\st(\mathcal C)}=in_{\st p}$)?}
+\end{center}
+
+\stepcounter{counter}
+
+  \begin{center}\textit{Q\arabic{counter}: how to make the above rate negligibly small?}
+  \end{center}
+
+
+
+There exists  a comprehensive research line in determining the effectiveness of warnings, e.g., in \cite{laughery2006designing,brinton2016users,felt2014experimenting}. These traditional research line  studies which factors make warnings effective and how a warning recipient is attracted to and follows the warning message.  However, in the context of APP scams, there is a vital  unique factor  that can directly influence a warning effectiveness; the factor is    \emph{the ability of the scammer to interact directly with the victim} (or warning recipient). This lets a scammer to actively try to negate  the effectiveness of banks' warnings and persuade the warning recipient to ignore the warning (and make  payment). Such a factor was not (needed to be) taken into account in the traditional study of warnings. Therefore, one may ask: 
+
+\stepcounter{counter}
+  \begin{center}\textit{Q\arabic{counter}: to what extent can a scammer  negate a warning effectiveness in the onctext of APP scams?}
+  \end{center}
+
+
+One way to answer the above question is to study each individual bank's statistics and find out how successful they have been in combatting the APP scams, as each bank designs its payment system and warnings independent of other banks. Thus, it would be interesting to find out:
+\stepcounter{counter}
+  \begin{center}\textit{Q\arabic{counter}: which bank  does have  the  lowest rate of APP scams and how did its warnings contribute to the low rate?}  
+  \end{center}
+
+
+Furthermore, in step \ref{arbiters-verdict}, it is implicitly assumed that in order for each arbiter, $\mathcal{D}_{\st i}$, to judge  the effectiveness of the warning and reach a verdict, it has access to the payment system and it can interact  with  $\mathcal{C}$ offline, e.g., to obtain further evidence from it.  Nevertheless, this process can be time consuming and a verdict may not be released in the real time once $\mathcal{C}$ sends its complaint to $\mathcal{S}$. Thus, it is natural to ask: 
+
+\stepcounter{counter}
+\begin{center}\textit{Q\arabic{counter}: to what extent can the role of the arbiters  be automated and accurately played by a computer program?}
+\end{center}
+
+%Recall, the  above protocol assumes that the customer does not collude with the APP scammer. However, this assumption may not always hold in the real world. The two parties may collude to exploit  the payment system's weaknesses, e.g., ineffective warning.  In this case,  the malicious customer honestly participates in the protocol but   ignores the warning and makes a payment. Later, it raises a dispute and challenges the warning's effectiveness. It would succeed and be identified as a party who should be reimbursed, if the committee approves that the warning is indeed ineffective. The main difference between this case and the one  where the customer falls victim to an APP scam  is that in the former  the  customer makes extra money while in the latter  it does not. Hence, it is reasonable to ask:
+%
+%\stepcounter{counter}
+%\begin{center}\textit{Q\arabic{counter}: how to relax the above non-colluding assumption while being able to distinguish an honest customer who has fallen victim to  an APP scam from a malicious customer who colludes with the APP scammer?}
+%\end{center}
+
+ \subsection{Ensuring the Payment is for Genuine Goods and Services}\label{sec:genuine-goods}
+ 
+ 
+ 
+There are a set of terms in the CRM code  that states: 
+
+\noindent\textit{``In all the circumstances at the time of the payment, in particular the characteristics of the Customer and the complexity and sophistication of the APP scam, the Customer made the payment without a reasonable basis for believing that:}
+\begin{itemize}
+\item[(i)] \textit{the payee was the person the Customer was expecting to pay;}
+\item[(ii)] \textit{the payment was for genuine goods or services; and/or}
+\item[(iii)] \textit{the person or business with whom they transacted was legitimate".}
+\end{itemize}
+
+
+We argue that    clause (ii) plays a minor role in  preventing a APP scam, as it is effective only when the seller wrongly claims it is in possession of a certain goods or can deliver certain services. It is ineffective when   a customer  ensures goods or services it wants to receive are indeed genuine but the seller avoids delivering the goods/services.  In this case, a seller (regardless of whether it is legitimate or not) may prove to the customer that the goods and services are genuine and belong to it (e.g., by sending a copy of related genuine  document), but it   still avoids delivering them once it receives the money. To capture the above issue as well, the above clause should be modified as follows: 
+
+%\begin{center}\textit{``... the payment was made (if and) only if the delivery of genuine good or services are guaranteed''.}
+% \end{center}
+ 
+\begin{center}\textit{``... the delivery of genuine goods or services are guaranteed...''.}
+ \end{center}
+ 
+There are at least two ways to have the above guarantee: (a) involving a reputable trusted third-party intermediary which can compensate the customer if the seller misbehaves, e.g., eBay, amazon, or (b)  using a secure ``contingent service payment" scheme (e.g., in  \cite{CampanelliGGN17}) that supports the  fair exchange of digital goods or services and money without the involvement of the above trusted third-party intermediary. In this case, there would be no need for the customer to ensure if the seller is legitimate, because it pays only if  genuine goods or services are delivered. The existing fair exchange schemes  allow a seller and buyer to trade with each other \emph{outside of the bank payment system} by using a blockchain. However, these schemes can be embedded into the bank payment system such that the bank (or a group of banks) maintains the blockchain and converts internally  a customer's  fiat currency  to a digital one when the customer wants to trade in a fair manner with a party whose authenticity cannot be verified. 
+
+
+\subsection{Ensuring the Legitimacy and Authenticity of Payee}
+
+We highlight that even though clauses (i) and (iii), presented in  Section \ref{sec:genuine-goods}, can prevent a customer from falling to an APP scam, only in certain cases they would   benefit a victim of an APP fraud during the process of allocating liability or dispute resolution.  In particular, if the victim declares that (a)   it has used a   secure authentication mechanism (e.g., digital signature) to ensure  the legitimacy and authenticity of the payee or (b)  it has not performed any authentication, then it would not receive the reimbursement. In the former case, it has transferred the  money to the party it knows. However,   this  is not an APP scam,  according to the scam's general definition.  In the latter case, the firm can avoid reimbursing it, according to the CRM code (as the customer has not performed its part). The only case in which the customer might be reimbursed is when it (a) uses an insecure means for authentication (e.g., phone call) and (b) can prove it has done such a check. For instance, in the case where the victim has been asked by a scammer to make a phone call to its bank while the scammer  answers the phone call that the victim makes later. In this case, the victim needs to  prove that it has made a phone call to the bank, which may not be always possible (e.g., if the scammer uses a method to reply to the call before the real connection between the customer and bank is made).  In this case, in order for the customer to be reimbursed it needs to provide an evidence while there is no evidence left behind by the scammer. Thus, it is natural to ask:
+
+\stepcounter{counter}
+\begin{center}\textit{Q\arabic{counter}: how can the victim prove it has been a victim of an APP scam, in the above case?}
+\end{center}
+
+\subsection{Lack of Gross Negligence Definition}
+
+One of the conditions in the CRM code that allows a bank to avoid reimbursing the customer is clause R2(1)(e) which states: 
+
+
+\begin{center}\textit{``The Customer has been grossly negligent. For the avoidance of doubt the provisions of R2(1)(a)-(d) should not be taken to define gross negligence in this context.''}
+ \end{center}
+ 
+ Nevertheless, neither the CRM code  nor the Payment Services Regulations   explicitly define under which circumstances the customer is considered ``grossly negligent'' in the context of the APP scam. In particular, in the CRM code, the only terms that discuss customer's misbehaviour are  the provisions of R2(1)(a)-(d); however, as stated above, they should be excluded from the definition of the term gross negligence. On the  other hand,  in the Payment Services Regulations, this term is used three times, i.e.,  twice in regulation 75 and once in regulation 77. But in all  three cases it is used for frauds related to \emph{unauthorised payments} which are  different types of frauds from the APP scams. Therefore, even the Payment Services Regulations does not define the term in the context of the APP scam. 
+ 
+ When an  accurate definition of the term is in place,  its conditions can be encoded into the smart contract of the PwDR protocol. This allows the PwDR protocol to transparently resolve  disputes  between the bank and customer, if the bank claims that the customer has been  grossly negligent. 

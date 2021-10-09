@@ -46,6 +46,12 @@ Katz, J., Lindell, Y.: Introduction to Modern Cryptography, Second Edition.
   {CRC} Press (2014),
   \url{https://www.crcpress.com/Introduction-to-Modern-Cryptography-Second-Edition/Katz-Lindell/p/book/9781466570269}
 
+\bibitem{KustersL00020}
+K{\"{u}}sters, R., Liedtke, J., M{\"{u}}ller, J., Rausch, D., Vogt, A.:
+  Ordinos: {A} verifiable tally-hiding e-voting system. In: {IEEE} European
+  Symposium on Security and Privacy, EuroS{\&}P 2020, Genoa, Italy, September
+  7-11, 2020. {IEEE} (2020)
+
 \bibitem{laughery2006designing}
 Laughery, K.R., Wogalter, M.S.: Designing effective warnings. Reviews of human
   factors and ergonomics  (2006)
