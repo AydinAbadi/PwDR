@@ -73,7 +73,7 @@ In GFVD, to decode and extract the final verdict, as in Variant 1, party $\mathc
  \end{equation*}
  
  %
- For instance, when $n=10$ and  $e=6$, then $W$'s cardinality is only $476$.  In the above scheme, instead of inserting the combinations into $\mathtt{BF}$ we could simply hash  the combinations and give the hash values to $\mathcal{I}$. However, using a Bloom filter allows us to save considerable communication cost. For instance, when $n=10$, $e=6$, and SHA-256 is used, then $\mathcal{D}_{\st n}$ needs to send  $121856=476\times 256$ bits to $\mathcal{I}$, whereas  if they are inserted to a Bloom filter, then it only needs to send $27480$ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it  can save  communication costs by at least a factor of  $4$. We refer readers to Appendix \ref{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol} for  further discussion on the verdict encoding-decoding protocols. 
+ For instance, when $n=10$ and  $e=6$, then $W$'s cardinality is only $386$.  In the above scheme, instead of inserting the combinations into $\mathtt{BF}$ we could simply hash  the combinations and give the hash values to $\mathcal{I}$. However, using a Bloom filter allows us to save considerable communication cost. For instance, when $n=10$, $e=6$, and SHA-256 is used, then $\mathcal{D}_{\st n}$ needs to send  $98816=386\times 256$ bits to $\mathcal{I}$, whereas  if they are inserted to a Bloom filter, then it only needs to send $22276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it  can save  communication costs by at least a factor of  $4$. We refer readers to Appendix \ref{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol} for  further discussion on the verdict encoding-decoding protocols. 
  
  
  
