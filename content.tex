@@ -126,13 +126,18 @@ $\mathcal{C}$ takes the following steps.
 
 \begin{enumerate}
 %
-\item sets the inputs of algorithm $\mathcal{I}\in \{\mathtt{setupNewPayee}(.), $ $ \mathtt{ammendExistingPayee}(.)\}$ as below. 
+\item sets its request parameter $m_{\st 1}^{\st(\mathcal C)}$ as below. 
 %
 \begin{itemize}
 
-\item[$\bullet$] if $\mathtt{setupNewPayee}(.)$ is called, then it sets $m_{\st 1}^{\st(\mathcal C)}:=(\phi,f)$, where $f$ is new payee's detail.  %In this case, $\mathcal{S}$ appends $p$ to the payee list, $l$. 
+\item[$\bullet$] if it wants to setup a new payee, then it sets $m_{\st 1}^{\st(\mathcal C)}:=(\phi,f)$, where $f$ is new payee's detail.  %In this case, $\mathcal{S}$ appends $p$ to the payee list, $l$. 
+
+%\item[$\bullet$] if $\mathtt{setupNewPayee}(.)$ is called, then it sets $m_{\st 1}^{\st(\mathcal C)}:=(\phi,f)$, where $f$ is new payee's detail.  %In this case, $\mathcal{S}$ appends $p$ to the payee list, $l$. 
 %
-\item[$\bullet$] if $\mathtt{ammendExistingPayee}(.)$  is called, then it sets $m_{\st 1}^{\st(\mathcal C)}:=(i, f)$, where $i$ is the index of the element in $\bm l$ that should be changed to $f$.  %In this case, $\mathcal{S}$ replaces $i$-th emement of $l$ with $p$, i.e., $l[i]=p$.
+\item[$\bullet$] if it wants to amend existing payee's detail,  then it sets $m_{\st 1}^{\st(\mathcal C)}:=(i, f)$, where $i$ is the index of the element in $\bm l$ that should be changed to $f$.  %In this case, $\mathcal{S}$ replaces $i$-th emement of $l$ with $p$, i.e., $l[i]=p$.
+
+
+%\item[$\bullet$] if $\mathtt{ammendExistingPayee}(.)$  is called, then it sets $m_{\st 1}^{\st(\mathcal C)}:=(i, f)$, where $i$ is the index of the element in $\bm l$ that should be changed to $f$.  %In this case, $\mathcal{S}$ replaces $i$-th emement of $l$ with $p$, i.e., $l[i]=p$.
 
 \end{itemize}
 \item\label{send-update-req} at time $t_{\st 0}$, sends to $\mathcal{S}$  the encryption of $m_{\st 1}^{\st(\mathcal C)}$, i.e., $\hat m_{\st 1}^{\st(\mathcal C)}=\mathtt{Enc}(\bar k_{\st 1}, m_{\st 1}^{\st(\mathcal C)})$. 
