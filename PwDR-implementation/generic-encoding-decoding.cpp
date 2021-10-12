@@ -226,5 +226,5 @@ int main(){
 
 
 
-//g++ -I /Users/aydinabadi/desktop/c++-test/cryptopp Rand.o  main.cpp /Users/aydinabadi/desktop/c++-test/cryptopp/libcryptopp.a  -o main -lgmpxx -lgmp
-//g++ -I /Users/aydinabadi/desktop/c++-test/cryptopp Rand.o  modified-merkle-tree.cpp /Users/aydinabadi/desktop/c++-test/cryptopp/libcryptopp.a  -o main -lgmpxx -lgmp
+//g++ -I /Users/xx/desktop/c++-test/cryptopp Rand.o  main.cpp /Users/xxx/desktop/c++-test/cryptopp/libcryptopp.a  -o main -lgmpxx -lgmp
+//g++ -I /Users/xx/desktop/c++-test/cryptopp Rand.o  modified-merkle-tree.cpp /Users/xx/desktop/c++-test/cryptopp/libcryptopp.a  -o main -lgmpxx -lgmp
