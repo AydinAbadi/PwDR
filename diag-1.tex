@@ -1,0 +1,54 @@
+
+% !TEX root =main.tex
+
+\begin{center}
+\begin{tikzpicture}[scale=.65]
+
+\begin{loglogaxis}[
+	xlabel={\small Number of arbiters },
+	ylabel={\small Parties runtime  in ms}
+]
+
+
+\addplot[green,ultra thick] coordinates {
+  
+     (1, 0.013)
+     (6, 0.108)
+     (7, 0.146)
+      (8, 0.163)
+      (9, 0.182)
+      (10, 0.190)
+      (11, 0.228)
+      (12, 0.356)
+
+};
+
+\addplot[orange, ultra thick] coordinates{
+
+        (1, 0.019)
+       (6, 0.225)
+       (7, 0.352)
+      (8, 0.582)
+      (9, 0.91)
+      (10, 2.9)
+      (11, 4.7)
+      (12, 8.1)
+};
+
+\addplot[purple, ultra thick]  coordinates{
+
+  (1, 0.001)
+        (6, 0.012)
+        (7, 0.016)
+      (8, 0.021)
+      (9, 0.023)
+      (10, 0.04)
+      (11, 0.07)
+      (12, 0.10)
+};
+
+
+\legend{\small $\mathcal{D}_{\st j}$,\small$\mathcal{D}_{\st n}$,\small $\mathcal{DR}$}
+\end{loglogaxis}
+\end{tikzpicture}
+\end{center}

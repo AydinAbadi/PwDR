@@ -20,18 +20,29 @@ for two cases: (a) $e = 1$ and (b) $e \in (1, n]$. In the former case (in which 
 
 \subsection{Concrete Performance Analysis}
 
-As Table \ref{table::PwDR-Asymptotic-Cost} in the previous section indicates, the customer's and bank's complexity is very low; however, one of the arbiters, i.e., arbiter $\mathcal{D}_{\st n}$, and the dispute resolver have complexity linear with the total number of arbiters, i.e., $O(n)$.  This linear cost is imposed by the verdict inducing-decoding protocols. Therefore, to study these parties' runtime in the PwDR, we have implemented both variants of the verdict encoding-decoding protocols (that were presented in Section  \ref{sec::Encoding-Decoding-Verdicts}). The protocols have been implemented in C++. The source of the variant 1 and 2 is available in \cite{} and \cite{} respectively. To conduct the experiment, we used a MacBook Pro laptop with quad-core Intel core $i5$, $2$ GHz CPU and $16$ GB RAM. We ran the experiment on average $10$ times. The prototype implementation utilises the ``Cryptopp'' library\footnote{https://www.cryptopp.com}  for cryptographic primitives, the ``GMP'' library\footnote{https://gmplib.org} for arbitrary precision arithmetics, and ``Bloom Filter'' library \footnote{http://www.partow.net/programming/bloomfilter/index.html}. In the experiment, we set the false-positive rate in a Bloom filter to $2^{\st -40}$ and  the finite field size to $128$ bits. 
+As we saw  in the previous section, the customer's and bank's complexity is very low; however, one of the arbiters, i.e., arbiter $\mathcal{D}_{\st n}$, and the dispute resolver have non-constant complexities.  These non-constant  costs were  imposed by the verdict inducing-decoding protocols. Therefore, to study these parties' runtime in the PwDR, we  implemented both variants of the verdict encoding-decoding protocols (that were presented in Section  \ref{sec::Encoding-Decoding-Verdicts}). They  were implemented in C++. The source of the variant 1 and 2 is available in \cite{} and \cite{} respectively. To conduct the experiment, we used a MacBook Pro laptop with quad-core Intel core $i5$, $2$ GHz CPU and $16$ GB RAM. We ran the experiment on average $10$ times. The prototype implementation utilises the ``Cryptopp'' library\footnote{https://www.cryptopp.com}  for cryptographic primitives, the ``GMP'' library\footnote{https://gmplib.org} for arbitrary precision arithmetics, and the ``Bloom Filter'' library \footnote{http://www.partow.net/programming/bloomfilter/index.html}. In the experiment, we set the false-positive rate in a Bloom filter to $2^{\st -40}$ and  the finite field size to $128$ bits. Table \ref{table::PwDR-runtime} provides the runtime of the three types of parties for various numbers of arbiters in two cases; namely, when the threshold is $1$ and when it is greater than $1$. In the former case, we used the PVE and FVD protocols.  In the latter case, we used the GPVE and GFVD ones. 
 
+\vspace{-5mm}
 \input{Performance-table}
+\vspace{-3mm}
+
+As the above table depicts, the runtime increases gradually when the number of arbiters grows. Nevertheless, the overall costs is very low. In particular, the highest runtime is only about $10$ milliseconds which belongs to $\mathcal{D}_{\st n}$ when $n=12$ and $e=7$. It is also evident that the parties' runtime in the PVE and FVD protocols is much lower than their runtime in the GPVE and GFVD ones. To compare the  parties' runtime, we also fixed the threshold to $6$ and ran the experiment for different values of $n$. Figure  \ref{plot::runtime} summarises the result. As this figure indicates, the parties' runtime almost linearly grows when the number of arbiters increases; moreover, among these three types of parties, $\mathcal{D}_{\st n}$ and $\mathcal{DR}$ have the highest and lowest runtime respectively. 
 
 
 
 
+\vspace{-2mm}
+
+\begin{figure}[!htb]
+\centering
+%\includegraphics[width=0.53 \textwidth]{pics/Comm-cost-new.pdf}
+{\input{diag-1}}
+\caption{\small Parties' runtime in the PwDR.}\label{plot::runtime}
+\end{figure}
 
 
 
-
-
+\clearpage
 
 
 

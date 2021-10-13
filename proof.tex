@@ -6,7 +6,7 @@
 To prove the main theorem (i.e., Theorem \ref{theorem::PwDR-security}), we show that the PwDR scheme satisfies all security properties defined in Section \ref{sec::def}. We first prove that it meets security against a malicious victim. 
 
 
-\begin{lemma} If the digital signature is existentially unforgeable under chosen message attacks, and the SAP and  blockchain are secure, then the PwDR scheme is secure against a malicious victim, with regard to Definition \ref{def::Security-against-malicious-victim}. 
+\begin{lemma}\label{lemma::secure-against-a-malicious-victim} If the digital signature is existentially unforgeable under chosen message attacks, and the SAP and  blockchain are secure, then the PwDR scheme is secure against a malicious victim, with regard to Definition \ref{def::Security-against-malicious-victim}. 
 \end{lemma}
 
 \begin{proof}
@@ -28,7 +28,7 @@ To prove the main theorem (i.e., Theorem \ref{theorem::PwDR-security}), we show 
 
 Now, we first present a lemma   formally stating that the PwDR scheme is secure against a malicious bank and then prove this lemma. 
 
-\begin{lemma} If the  SAP and  blockchain are secure, and the correctness of verdict encoding-decoding protocols (i.e., PVE and FVD) holds, then the PwDR scheme is secure against a malicious bank, with regard to Definition \ref{def::Security-against-malicious-bank}. 
+\begin{lemma}\label{lemma::secure-against-a-malicious-bank} If the  SAP and  blockchain are secure, and the correctness of verdict encoding-decoding protocols (i.e., PVE and FVD) holds, then the PwDR scheme is secure against a malicious bank, with regard to Definition \ref{def::Security-against-malicious-bank}. 
 \end{lemma}
 
 
@@ -43,7 +43,7 @@ We first focus on event $\text{\MakeUppercase{\romannumeral 1}}: \Big( (\sum\lim
 Next, we prove the PwDR protocol's privacy. As before, we first formally state the related lemma and then prove it. 
 
 
-\begin{lemma}
+\begin{lemma}\label{lemma::privacy}
 If the encryption schemes are semantically secure, and the SAP and encoding-decoding schemes (i.e., PVE and FVD)  are secure, then the PwDR scheme is privacy-preserving with regard to Definition \ref{def::privacy}.  
 \end{lemma}
 
@@ -55,6 +55,16 @@ committed values, $(\bar k_{\st 1}, \bar k_{\st 2})$, except with a negligible p
 
 %\hat {\bm m}, \hat{\bm l}, \hat z, \hat{\ddot \pi}, \hat{\bm{w}}
  %(e.g., o, l, padπ , padq , and k ̄), 
+\end{proof}
+
+\begin{theorem}
+The PwDR is secure according to Definition \ref{def::PwDR-security}.
+\end{theorem}
+
+
+
+\begin{proof}
+Due to Lemma \ref{lemma::secure-against-a-malicious-victim}, the PwDR scheme is secure against a malicious victim. Also, due to lemmas \ref{lemma::secure-against-a-malicious-bank} and \ref{lemma::privacy} it is  secure against a malicious bank and is privacy preserving, respectively. Thus, it satisfies all the properties of Definition \ref{def::PwDR-security}, meaning that  the PwDR is indeed secure according to this definition. 
 \end{proof}
 
 

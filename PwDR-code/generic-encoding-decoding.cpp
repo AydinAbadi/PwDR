@@ -165,8 +165,8 @@ int GFVD(int n, bigint* w, bloom_filter filter){
 
 int main(){
 
-  int n = 8;// total number of arbiters
-  int e = 5;// threshold
+  int n = 11;// total number of arbiters
+  int e = 6;// threshold
   int combination_size = factorial(n)/(factorial(e)* factorial(n-e));
   int total_combination_size = 0;
   for (int j = e; j < n + 1; j++){
