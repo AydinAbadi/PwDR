@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  13 OCT 2021 12:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  13 OCT 2021 14:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1575,13 +1575,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 41399 strings out of 480608
- 958680 string characters out of 5903630
- 1386775 words of memory out of 5000000
- 56268 multiletter control sequences out of 15000+600000
+ 41387 strings out of 480608
+ 958437 string characters out of 5903630
+ 1381519 words of memory out of 5000000
+ 56256 multiletter control sequences out of 15000+600000
  548105 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,21n,106p,3760b,2279s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,21n,106p,3760b,2281s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1626,7 +1626,7 @@ t/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2020/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fo
 nts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2020/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (25 pages, 488905 bytes).
+Output written on main.pdf (25 pages, 488600 bytes).
 PDF statistics:
  595 PDF objects out of 1000 (max. 8388607)
  489 compressed objects within 5 object streams

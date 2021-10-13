@@ -24,9 +24,9 @@ As we saw  in the previous section, the customer's and bank's complexity is very
 
 \vspace{-5mm}
 \input{Performance-table}
-\vspace{-3mm}
+\vspace{-4mm}
 
-As the above table depicts, the runtime increases gradually when the number of arbiters grows. Nevertheless, the overall costs is very low. In particular, the highest runtime is only about $10$ milliseconds which belongs to $\mathcal{D}_{\st n}$ when $n=12$ and $e=7$. It is also evident that the parties' runtime in the PVE and FVD protocols is much lower than their runtime in the GPVE and GFVD ones. To compare the  parties' runtime, we also fixed the threshold to $6$ and ran the experiment for different values of $n$. Figure  \ref{plot::runtime} summarises the result. As this figure indicates, the parties' runtime almost linearly grows when the number of arbiters increases; moreover, among these three types of parties, $\mathcal{D}_{\st n}$ and $\mathcal{DR}$ have the highest and lowest runtime respectively. 
+As the above table depicts, the runtime of $\mathcal{D}_{\st n}$ and $\mathcal{DR}$   increases gradually when the number of arbiters grows, while  $\mathcal{D}_{\st 1},...\mathcal{D}_{\st n-1}$ having a constant runtime.  Nevertheless, the overall costs is very low. In particular, the highest runtime is only about $10$ milliseconds which belongs to $\mathcal{D}_{\st n}$ when $n=12$ and $e=7$. It is also evident that the parties' runtime in the PVE and FVD protocols is much lower than their runtime in the GPVE and GFVD ones. To compare the  parties' runtime, we also fixed the threshold to $6$ and ran the experiment for different values of $n$. Figure  \ref{plot::runtime} summarises the result. As this figure indicates, the  runtime of  $\mathcal{D}_{\st n}$ and $\mathcal{DR}$ almost linearly grows when the number of arbiters increases; moreover, among these three types of parties, $\mathcal{D}_{\st n}$  has the highest  runtime. 
 
 
 
