@@ -6,45 +6,45 @@ Database file #1: ref.bib
 Warning--empty journal in CoP
 Warning--empty journal in CRM-code
 Warning--missing institution in bitcoin
-You've used 12 entries,
+You've used 14 entries,
             2785 wiz_defined-function locations,
-            650 strings with 6543 characters,
-and the built_in function-call counts, 4840 in all, are:
-= -- 353
-> -- 169
+            657 strings with 6859 characters,
+and the built_in function-call counts, 5488 in all, are:
+= -- 401
+> -- 183
 < -- 0
-+ -- 71
-- -- 58
-* -- 285
-:= -- 690
++ -- 77
+- -- 62
+* -- 317
+:= -- 772
 add.period$ -- 11
-call.type$ -- 12
-change.case$ -- 72
+call.type$ -- 14
+change.case$ -- 82
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 460
-empty$ -- 461
-format.name$ -- 64
-if$ -- 1006
+cite$ -- 17
+duplicate$ -- 520
+empty$ -- 535
+format.name$ -- 68
+if$ -- 1148
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 104
-newline$ -- 41
-num.names$ -- 24
-pop$ -- 216
+int.to.str$ -- 14
+missing$ -- 116
+newline$ -- 47
+num.names$ -- 28
+pop$ -- 250
 preamble$ -- 1
-purify$ -- 52
+purify$ -- 58
 quote$ -- 0
-skip$ -- 100
+skip$ -- 116
 stack$ -- 0
-substring$ -- 163
-swap$ -- 190
+substring$ -- 193
+swap$ -- 216
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 44
+type$ -- 52
 warning$ -- 3
-while$ -- 36
-width$ -- 14
-write$ -- 113
+while$ -- 42
+width$ -- 16
+write$ -- 129
 (There were 3 warnings)

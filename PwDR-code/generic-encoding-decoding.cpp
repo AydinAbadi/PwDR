@@ -165,7 +165,7 @@ int GFVD(int n, bigint* w, bloom_filter filter){
 
 int main(){
 
-  int n = 11;// total number of arbiters
+  int n = 12;// total number of arbiters
   int e = 6;// threshold
   int combination_size = factorial(n)/(factorial(e)* factorial(n-e));
   int total_combination_size = 0;
@@ -260,8 +260,3 @@ int main(){
     cout<<endl;
     cout<<endl;
 }
-
-
-
-//g++ -I /Users/aydinabadi/desktop/c++-test/cryptopp Rand.o  main.cpp /Users/aydinabadi/desktop/c++-test/cryptopp/libcryptopp.a  -o main -lgmpxx -lgmp
-//g++ -I /Users/aydinabadi/desktop/c++-test/cryptopp Rand.o  modified-merkle-tree.cpp /Users/aydinabadi/desktop/c++-test/cryptopp/libcryptopp.a  -o main -lgmpxx -lgmp

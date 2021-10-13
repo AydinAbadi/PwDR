@@ -2,6 +2,15 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
+\bibitem{variant-1}
+Abadi, A.: Variant 1: Highly efficient verdict encoding-decoding protocol
+  (2021),
+  \url{https://github.com/AydinAbadi/PwDR/blob/main/PwDR-code/encoding-decoding.cpp}
+
+\bibitem{variant-2}
+Abadi, A.: Variant 2: Generic verdict encoding-decoding protocol (2021),
+  \url{https://github.com/AydinAbadi/PwDR/blob/main/PwDR-code/generic-encoding-decoding.cpp}
+
 \bibitem{cryptoeprint:2021:1145}
 Abadi, A., Murdoch, S.J., Zacharias, T.: Recurring contingent payment for
   proofs of retrievability. Cryptology ePrint Archive, Report 2021/1145 (2021),
