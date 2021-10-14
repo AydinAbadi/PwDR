@@ -4,47 +4,48 @@ The top-level auxiliary file: main.aux
 The style file: splncs03.bst
 Database file #1: ref.bib
 Warning--empty journal in CoP
+Warning--empty journal in Which?-super-complaint
 Warning--empty journal in CRM-code
 Warning--missing institution in bitcoin
-You've used 14 entries,
+You've used 15 entries,
             2785 wiz_defined-function locations,
-            657 strings with 6859 characters,
-and the built_in function-call counts, 5488 in all, are:
-= -- 401
-> -- 183
+            663 strings with 7090 characters,
+and the built_in function-call counts, 5826 in all, are:
+= -- 426
+> -- 190
 < -- 0
-+ -- 77
-- -- 62
-* -- 317
-:= -- 772
++ -- 80
+- -- 64
+* -- 338
+:= -- 819
 add.period$ -- 11
-call.type$ -- 14
-change.case$ -- 82
+call.type$ -- 15
+change.case$ -- 87
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 520
-empty$ -- 535
-format.name$ -- 68
-if$ -- 1148
+cite$ -- 19
+duplicate$ -- 556
+empty$ -- 568
+format.name$ -- 70
+if$ -- 1217
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 116
-newline$ -- 47
-num.names$ -- 28
-pop$ -- 250
+int.to.str$ -- 15
+missing$ -- 124
+newline$ -- 50
+num.names$ -- 30
+pop$ -- 265
 preamble$ -- 1
-purify$ -- 58
+purify$ -- 61
 quote$ -- 0
-skip$ -- 116
+skip$ -- 124
 stack$ -- 0
-substring$ -- 193
-swap$ -- 216
+substring$ -- 208
+swap$ -- 229
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
-warning$ -- 3
-while$ -- 42
-width$ -- 16
-write$ -- 129
-(There were 3 warnings)
+type$ -- 56
+warning$ -- 4
+while$ -- 45
+width$ -- 17
+write$ -- 137
+(There were 4 warnings)
