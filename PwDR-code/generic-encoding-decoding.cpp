@@ -165,7 +165,7 @@ int GFVD(int n, bigint* w, bloom_filter filter){
 
 int main(){
 
-  int n = 12;// total number of arbiters
+  int n = 10;// total number of arbiters
   int e = 6;// threshold
   int combination_size = factorial(n)/(factorial(e)* factorial(n-e));
   int total_combination_size = 0;
@@ -193,6 +193,17 @@ int main(){
   int w_1 = 0;
   int w_2 = 0;
   int w[n];
+  int f;
+
+  float Dj_ = 0;
+  float Dn_ = 0;
+  float DR_ = 0;
+  int number_of_experiments= 1000;
+
+
+  for(int j = 0;j < number_of_experiments; j++){
+
+
   for (int i = 0; i < n; i++){
     w[i] = 0;
   }
@@ -226,37 +237,39 @@ int main(){
     cout<<"\n w_["<<i<<"]:"<<w_[i]<<endl;
   }
   Dj = end_Dj - start_Dj;//*time
-  float Dj_ = Dj / (double) CLOCKS_PER_SEC;
-
+  Dj_ += Dj / (double) CLOCKS_PER_SEC;
 
   double start_Dn = clock();//*time
   filter = GPVE(key, key_size, iv, w[n-1], e, n, n-1, bf_parameters, temp_2);
   end_Dn = clock();
   Dn = end_Dn - start_Dn;//*time
-  float Dn_ = Dn / (double) CLOCKS_PER_SEC;
+  Dn_ += Dn / (double) CLOCKS_PER_SEC;
   mpz_init_set(w_[n-1], temp_2[0]);
   cout<<"\n w_["<<n-1<<"]:"<<w_[n-1]<<endl;
 
 
   double start_DR = clock();//*time
-  int f= GFVD(n, w_, filter);
+  f = GFVD(n, w_, filter);
   double end_DR = clock();//*time
 
 
   DR = end_DR - start_DR;//*time
-  float DR_ = DR / (double) CLOCKS_PER_SEC;
+  DR_ += DR / (double) CLOCKS_PER_SEC;
+
+}
 
   cout<<"\n\t\t\t ========= FINAL VERDICT:   "<<f<<" =========="<<endl;
   cout<<endl;
+  cout<<"\n number_of_experiments: "<<number_of_experiments<<endl;
   cout<<endl;
     cout<<"\n\t\t\t ========= Runtime =========="<<endl;
-    cout<<"\n Dj_: "<<Dj_<<endl;
+    cout<<"\n Dj_: "<<Dj_/number_of_experiments<<endl;
     cout<<endl;
     cout<<endl;
-    cout<<"\n Dn_: "<<Dn_<<endl;
+    cout<<"\n Dn_: "<<Dn_/number_of_experiments<<endl;
     cout<<endl;
     cout<<endl;
-    cout<<"\n Dn_: "<<DR_<<endl;
+    cout<<"\n DR_: "<<DR_/number_of_experiments<<endl;
     cout<<endl;
     cout<<endl;
 }

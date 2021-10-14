@@ -7,45 +7,46 @@ Warning--empty journal in CoP
 Warning--empty journal in Which?-super-complaint
 Warning--empty journal in CRM-code
 Warning--missing institution in bitcoin
-You've used 15 entries,
+Warning--empty journal in Financial-Ombudsman-Service-response
+You've used 16 entries,
             2785 wiz_defined-function locations,
-            663 strings with 7090 characters,
-and the built_in function-call counts, 5826 in all, are:
-= -- 426
-> -- 190
+            668 strings with 7468 characters,
+and the built_in function-call counts, 6164 in all, are:
+= -- 451
+> -- 197
 < -- 0
-+ -- 80
-- -- 64
-* -- 338
-:= -- 819
++ -- 83
+- -- 66
+* -- 359
+:= -- 866
 add.period$ -- 11
-call.type$ -- 15
-change.case$ -- 87
+call.type$ -- 16
+change.case$ -- 92
 chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 556
-empty$ -- 568
-format.name$ -- 70
-if$ -- 1217
+cite$ -- 21
+duplicate$ -- 592
+empty$ -- 601
+format.name$ -- 72
+if$ -- 1286
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 124
-newline$ -- 50
-num.names$ -- 30
-pop$ -- 265
+int.to.str$ -- 16
+missing$ -- 132
+newline$ -- 53
+num.names$ -- 32
+pop$ -- 280
 preamble$ -- 1
-purify$ -- 61
+purify$ -- 64
 quote$ -- 0
-skip$ -- 124
+skip$ -- 132
 stack$ -- 0
-substring$ -- 208
-swap$ -- 229
+substring$ -- 223
+swap$ -- 242
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
-warning$ -- 4
-while$ -- 45
-width$ -- 17
-write$ -- 137
-(There were 4 warnings)
+type$ -- 60
+warning$ -- 5
+while$ -- 48
+width$ -- 18
+write$ -- 145
+(There were 5 warnings)

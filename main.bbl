@@ -66,6 +66,12 @@ Pedersen, T.P.: Non-interactive and information-theoretic secure verifiable
 Schneier, B.: Applied cryptography - protocols, algorithms, and source code in
   C, 2nd Edition. Wiley (1996)
 
+\bibitem{Financial-Ombudsman-Service-response}
+{The Financial Ombudsman Service}: Lending standards board review of the
+  contingent reimbursement model code for authorised push payment
+  scams-financial ombudsman service response  (2020),
+  \url{https://www.financial-ombudsman.org.uk/files/289009/2020-10-02-LSB-CRM-Code-Review-Financial-Ombudsman-Service-Response.pdf}
+
 \bibitem{ethereum}
 Wood, G., et~al.: Ethereum: A secure decentralised generalised transaction
   ledger. Ethereum project yellow paper  (2014)
