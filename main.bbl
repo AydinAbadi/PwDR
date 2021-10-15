@@ -22,6 +22,10 @@ Allen, S., {\v{C}}apkun, S., Eyal, I., Fanti, G., Ford, B.A., Grimmelmann, J.,
   Design choices for central bank digital currency: Policy and technical
   considerations. Tech. rep., National Bureau of Economic Research (2020)
 
+\bibitem{FCA-Glossary}
+Authority, F.C.: {FCA} glossary (2021),
+  \url{https://www.handbook.fca.org.uk/handbook/glossary/G3566a.html}
+
 \bibitem{CBDC-core-features}
 {Bank of Canada, European Central Bank, Bank of Japan, Sveriges Riksbank, Swiss
   National Bank, Bank of England, Board of Governors Federal Reserve System,
@@ -92,6 +96,10 @@ Schneier, B.: Applied cryptography - protocols, algorithms, and source code in
   contingent reimbursement model code for authorised push payment
   scams-financial ombudsman service response  (2020),
   \url{https://www.financial-ombudsman.org.uk/files/289009/2020-10-02-LSB-CRM-Code-Review-Financial-Ombudsman-Service-Response.pdf}
+
+\bibitem{2021-Half-Year-Fraud-Update}
+{UK Finance}: 2021 half year fraud update (2021),
+  \url{https://www.ukfinance.org.uk/system/files/Half-year-fraud-update-2021-FINAL.pdf}
 
 \bibitem{ethereum}
 Wood, G., et~al.: Ethereum: A secure decentralised generalised transaction
