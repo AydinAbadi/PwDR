@@ -16,6 +16,19 @@ Abadi, A., Murdoch, S.J., Zacharias, T.: Recurring contingent payment for
   proofs of retrievability. Cryptology ePrint Archive, Report 2021/1145 (2021),
   \url{https://ia.cr/2021/1145}
 
+\bibitem{CBDC}
+Allen, S., {\v{C}}apkun, S., Eyal, I., Fanti, G., Ford, B.A., Grimmelmann, J.,
+  Juels, A., Kostiainen, K., Meiklejohn, S., Miller, A., Wust, K., Zhang, F.:
+  Design choices for central bank digital currency: Policy and technical
+  considerations. Tech. rep., National Bureau of Economic Research (2020)
+
+\bibitem{CBDC-core-features}
+{Bank of Canada, European Central Bank, Bank of Japan, Sveriges Riksbank, Swiss
+  National Bank, Bank of England, Board of Governors Federal Reserve System,
+  Bank for International Settlements}: Central bank digital currencies:
+  foundational principles and core features. Tech. rep. (2020),
+  \url{https://www.bis.org/publ/othp33.pdf}
+
 \bibitem{DBLP:journals/cacm/Bloom70}
 Bloom, B.H.: Space/time trade-offs in hash coding with allowable errors.
   Commun.  (1970)
@@ -25,8 +38,12 @@ Bose, P., Guo, H., Kranakis, E., Maheshwari, A., Morin, P., Morrison, J., Smid,
   M.H.M., Tang, Y.: On the false-positive rate of bloom filters. Inf. Process.
   Lett.  (2008)
 
+\bibitem{abs-2103-00254}
+Chaum, D., Grothoff, C., Moser, T.: How to issue a central bank digital
+  currency. CoRR  abs/2103.00254 (2021), \url{https://arxiv.org/abs/2103.00254}
+
 \bibitem{CoP}
-{Confirmation of Payee Team}: Confirmation of payee: Response to consultation
+{Confirmation of Payee Team}: Confirmation of payee- response to consultation
   cp20/1 and decision on varying specific direction 10  (2020),
   \url{https://www.psr.org.uk/media/qrbc03jm/psr-ps20-1-variation-of-specific-direction-10-february-2020.pdf}
 
@@ -66,6 +83,10 @@ Pedersen, T.P.: Non-interactive and information-theoretic secure verifiable
 Schneier, B.: Applied cryptography - protocols, algorithms, and source code in
   C, 2nd Edition. Wiley (1996)
 
+\bibitem{Regulations}
+{The Financial Conduct Authority}: The payment services regulations  (2017),
+  \url{https://www.legislation.gov.uk/uksi/2017/752/contents/made}
+
 \bibitem{Financial-Ombudsman-Service-response}
 {The Financial Ombudsman Service}: Lending standards board review of the
   contingent reimbursement model code for authorised push payment
@@ -75,5 +96,10 @@ Schneier, B.: Applied cryptography - protocols, algorithms, and source code in
 \bibitem{ethereum}
 Wood, G., et~al.: Ethereum: A secure decentralised generalised transaction
   ledger. Ethereum project yellow paper  (2014)
+
+\bibitem{WustKCC19}
+W{\"{u}}st, K., Kostiainen, K., Capkun, V., Capkun, S.: Prcash: Fast, private
+  and regulated transactions for digital currencies. In: Financial Cryptography
+  and Data Security {FC} (2019)
 
 \end{thebibliography}
