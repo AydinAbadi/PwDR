@@ -1,7 +1,7 @@
 % !TEX root =main.tex
 
 \section{Evaluation}
-In this section, we provide the PwDR protocol’s asymptotic computation and communication cost analysis. Table \ref{table::PwDR-Asymptotic-Cost} summarises the result. 
+In this section, we first provide the PwDR protocol’s asymptotic computation and communication cost analysis. Table \ref{table::PwDR-Asymptotic-Cost} summarises the result. Then, we study the  protocol's performance which is summarised in Table \ref{table::PwDR-runtime}. 
 
 
 \input{table-cost}
@@ -21,17 +21,17 @@ for two cases: (a) $e = 1$ and (b) $e \in (1, n]$. In the former case (in which 
 \subsection{Concrete Performance Analysis}
 
 As we saw  in the previous section, the customer's and bank's complexity is very low; however, one of the arbiters, i.e., arbiter $\mathcal{D}_{\st n}$, and the dispute resolver have non-constant complexities.  These non-constant  overheads were  imposed by the verdict inducing-decoding protocols. Therefore, to study these parties' runtime in the PwDR, we  implemented both variants of the verdict encoding-decoding protocols (that were presented in Section  \ref{sec::Encoding-Decoding-Verdicts}). They  were implemented in C++. The source of the variant 1 and 2 is available in \cite{variant-1} and \cite{variant-2} respectively. To conduct the experiment, we used a MacBook Pro laptop with quad-core Intel core $i5$, $2$ GHz CPU and $16$ GB RAM. We ran the experiment on average $10$ times. The prototype implementation uses the ``Cryptopp'' library\footnote{https://www.cryptopp.com}  for cryptographic primitives, the ``GMP'' library\footnote{https://gmplib.org} for arbitrary precision arithmetics, and the ``Bloom Filter'' library \footnote{http://www.partow.net/programming/bloomfilter/index.html}. In the experiment, we set the false-positive rate in a Bloom filter to $2^{\st -40}$ and  the finite field size to $128$ bits. Table \ref{table::PwDR-runtime} provides the runtime of the three types of parties for various numbers of arbiters in two cases; namely, when the threshold is $1$ and when it is greater than $1$. In the former case, we used the PVE and FVD protocols.  In the latter case, we used the GPVE and GFVD ones. 
-%
+
+
+\vspace{-3mm}
+
 \input{Performance-table}
-%
+
+\vspace{-2mm}
+
 As the  table depicts, the runtime of $\mathcal{D}_{\st n}$    increases gradually from $0.019$ to $10.15$ milliseconds when the number of arbiters grows from $n=6$ to $n=12$.  In contrast, the runtime of $\mathcal{DR}$ grows slower; it increases from  $0.001$ to $0.09$ milliseconds when the number of arbiters increases. Nevertheless, the overall costs is very low. In particular, the highest runtime is only about $10$ milliseconds which belongs to $\mathcal{D}_{\st n}$ when $n=12$ and $e=7$. It is also evident that the parties' runtime in the PVE and FVD protocols is much lower than their runtime in the GPVE and GFVD ones. To compare the  parties' runtime, we also fixed the threshold to $6$ and ran the experiment for different values of $n$. Figure  \ref{plot::runtime} summarises the result. As this figure indicates, the  runtime of  $\mathcal{D}_{\st n}$ and $\mathcal{DR}$ almost linearly grows when the number of arbiters increases. Moreover,   $\mathcal{D}_{\st n}$  has the highest  runtime and its runtime growth is faster than that of $\mathcal{DR}$. 
-
-
-
-
-
-
-\begin{figure}[!htb]
+%
+\begin{figure}[H]
 \centering
 %\includegraphics[width=0.53 \textwidth]{pics/Comm-cost-new.pdf}
 {\input{diag-1}}

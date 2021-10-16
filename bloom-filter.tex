@@ -1,5 +1,7 @@
-% !TEX root =Feather.tex
+% !TEX root =main.tex
 
+
+\clearpage
 \section{Bloom Filter}\label{sec::bloom-filter-}
 
 In this work, we use Bloom filters to let parties (in Feather) identify real set elements from errors.  A Bloom filter \cite{DBLP:journals/cacm/Bloom70} is a compact data structure for probabilistic efficient  elements'  membership checking. A Bloom filter is an array of $m$ bits that are  initially all set to zero. It  represents $n$  elements.  A Bloom filter comes along with  $k$ independent hash functions. To insert an element, all the  hash values of the element are computed and their corresponding bits in the filter are set to $1$. To check an element's  membership, all its hash values are re-computed and checked whether all are set to one in the filter. If all the corresponding bits are one, then the element is probably in the filter; otherwise, it is not. In Bloom filters false positives are possible, i.e. it is possible that an element is not in the set, but the membership query shows that it is. According to \cite{BoseGKMMMST08}, the upper bound of the false positive probability is: $q=p^{\scriptscriptstyle k}(1+O(\frac{k}{p}\sqrt{\frac{\ln m - k \ln p}{m}}))$,  where $p$ is the probability that a particular bit in the filter is set to $1$ and calculated as: $p=1-(1-\frac{1}{m})^{\scriptscriptstyle kn}$. The efficiency of a Bloom filter depends
