@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  17 OCT 2021 19:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  17 OCT 2021 20:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1441,15 +1441,12 @@ Overfull \hbox (13.87532pt too wide) in paragraph at lines 42--43
  []
 
 [3] (./commitment.tex) (./SAP.tex [4])) (./content.tex (./PwDR-Overview.tex
-[5]) (./Definition.tex [6] [7]
+[5]) (./Definition.tex [6] [7] [8]
 Overfull \hbox (14.20929pt too wide) detected at line 197
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8]
 Overfull \hbox (14.20929pt too wide) detected at line 291
 []
  []
@@ -1601,7 +1598,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  41418 strings out of 480608
  959001 string characters out of 5903630
- 1385266 words of memory out of 5000000
+ 1385264 words of memory out of 5000000
  56267 multiletter control sequences out of 15000+600000
  548440 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1652,7 +1649,7 @@ onts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2020/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-d
 ist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (27 pages, 514047 bytes).
+Output written on main.pdf (27 pages, 513793 bytes).
 PDF statistics:
  662 PDF objects out of 1000 (max. 8388607)
  539 compressed objects within 6 object streams
