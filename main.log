@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  16 OCT 2021 18:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  17 OCT 2021 18:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -951,11 +951,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
 \Hy@SectionHShift=\skip57
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/preprint/fullpage.sty
-Package: fullpage 1999/02/23 1.1 (PWD)
-\FP@margin=\skip58
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/float/float.sty
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count344
 \float@exts=\toks48
@@ -966,7 +962,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/boxedminipage/boxedminipage.sty)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip59
+\labelindent=\skip58
 \enit@outerparindent=\dimen301
 \enit@toks=\toks50
 \enit@inbox=\box126
@@ -1000,7 +996,7 @@ Package: algorithm2e 2017/07/18 v5.2 algorithms environments
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\algocf@hangindent=\skip60
+\algocf@hangindent=\skip59
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
@@ -1012,36 +1008,36 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip61
-\skiplinenumber=\skip62
-\skiprule=\skip63
-\skiphlne=\skip64
-\skiptext=\skip65
-\skiplength=\skip66
-\algomargin=\skip67
-\skipalgocfslide=\skip68
+\skiptotal=\skip60
+\skiplinenumber=\skip61
+\skiprule=\skip62
+\skiphlne=\skip63
+\skiptext=\skip64
+\skiplength=\skip65
+\algomargin=\skip66
+\skipalgocfslide=\skip67
 \algowidth=\dimen302
 \inoutsize=\dimen303
 \inoutindent=\dimen304
 \interspacetitleruled=\dimen305
 \interspacealgoruled=\dimen306
 \interspacetitleboxruled=\dimen307
-\algocf@ruledwidth=\skip69
+\algocf@ruledwidth=\skip68
 \algocf@inoutbox=\box127
 \algocf@inputbox=\box128
-\AlCapSkip=\skip70
-\AlCapHSkip=\skip71
-\algoskipindent=\skip72
+\AlCapSkip=\skip69
+\AlCapHSkip=\skip70
+\algoskipindent=\skip71
 \algocf@nlbox=\box129
 \algocf@hangingbox=\box130
 \algocf@untilbox=\box131
-\algocf@skipuntil=\skip73
+\algocf@skipuntil=\skip72
 \algocf@capbox=\box132
-\algocf@lcaptionbox=\skip74
-\algoheightruledefault=\skip75
-\algoheightrule=\skip76
-\algotitleheightruledefault=\skip77
-\algotitleheightrule=\skip78
+\algocf@lcaptionbox=\skip73
+\algoheightruledefault=\skip74
+\algoheightrule=\skip75
+\algotitleheightruledefault=\skip76
+\algotitleheightrule=\skip77
 \c@algocfline=\count349
 \c@algocfproc=\count350
 \c@algocf=\count351
@@ -1083,21 +1079,21 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
 \c@KVtest=\count354
-\sf@farskip=\skip79
+\sf@farskip=\skip78
 \sf@captopadj=\dimen315
-\sf@capskip=\skip80
-\sf@nearskip=\skip81
+\sf@capskip=\skip79
+\sf@nearskip=\skip80
 \c@subfigure=\count355
 \c@subfigure@save=\count356
 \c@lofdepth=\count357
 \c@subtable=\count358
 \c@subtable@save=\count359
 \c@lotdepth=\count360
-\sf@top=\skip82
-\sf@bottom=\skip83
+\sf@top=\skip81
+\sf@bottom=\skip82
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip84
+\OuterFrameSep=\skip83
 \fb@frw=\dimen316
 \fb@frh=\dimen317
 \FrameRule=\dimen318
@@ -1139,12 +1135,12 @@ Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bcount=\count365
 \calc@Adimen=\dimen326
 \calc@Bdimen=\dimen327
-\calc@Askip=\skip85
-\calc@Bskip=\skip86
+\calc@Askip=\skip84
+\calc@Bskip=\skip85
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count366
-\calc@Cskip=\skip87
+\calc@Cskip=\skip86
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
@@ -1155,7 +1151,7 @@ LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
 \g_MT_multlinerow_int=\count367
 \l_MT_multwidth_dim=\dimen328
-\origjot=\skip88
+\origjot=\skip87
 \l_MT_shortvdotswithinadjustabove_dim=\dimen329
 \l_MT_shortvdotswithinadjustbelow_dim=\dimen330
 \l_MT_above_intertext_sep=\dimen331
@@ -1269,9 +1265,9 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headfont=\toks56
 \thm@notefont=\toks57
 \thm@headpunct=\toks58
-\thm@preskip=\skip89
-\thm@postskip=\skip90
-\thm@headsep=\skip91
+\thm@preskip=\skip88
+\thm@postskip=\skip89
+\thm@headsep=\skip90
 \dth@everypar=\toks59
 LaTeX Info: Redefining \qed on input line 274.
 )
@@ -1283,9 +1279,9 @@ Package: appendix 2020/02/08 v1.2c extra appendix facilities
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
-\multirow@colwidth=\skip92
+\multirow@colwidth=\skip91
 \multirow@cntb=\count392
-\multirow@dima=\skip93
+\multirow@dima=\skip92
 \bigstrutjot=\dimen350
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tablefootnote/tablefootnote.sty
@@ -1426,25 +1422,44 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 105.
 
-(./introduction.tex) (./related-work.tex
-Underfull \vbox (badness 3199) has occurred while \output is active []
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 109.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 109.
+(./introduction.tex [1
 
- [1
-
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
-(./Preliminary.tex [2]
-Overfull \hbox (13.87532pt too wide) in paragraph at lines 42--43
-[]\OT1/cmr/m/it/10 A sig-na-ture scheme in-volves three sub-processes, $[] \OT1
-/cmr/m/n/10 := ([]\OML/cmm/m/it/10 ;$ $[]; []\OT1/cmr/m/n/10 )$\OT1/cmr/m/it/10
- ,
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./rel
+ated-work.tex [2] [3]) (./Preliminary.tex
+Overfull \hbox (11.75249pt too wide) detected at line 57
+\OML/cmm/m/it/10 Pr[]  []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 pk; u; []\OT1/cmr/m/
+n/10 (\OML/cmm/m/it/10 sk; pk; u\OT1/cmr/m/n/10 )) = 1  :  [](1[]) \OMS/cmsy/m/
+n/10 ! \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 sk; pk\OT1/cmr/m/n/10 )[] = 1
  []
 
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 65.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 65.
-[3] (./commitment.tex) (./SAP.tex [4])) (./content.tex (./PwDR-Overview.tex
-[5]) (./Definition.tex [6] [7]
+[4] (./commitment.tex) (./SAP.tex [5]) [6]) (./content.tex (./PwDR-Overview.tex
+[7]) [8] (./Definition.tex
+Overfull \hbox (210.42188pt too wide) in paragraph at lines 68--69
+\OT1/cmr/m/it/10 pro-cesses $[] \OT1/cmr/m/n/10 := ([]\OML/cmm/m/it/10 ;$ $[]; 
+[]; []; []; []; []; [] 
+ []
+
+[9]
+Overfull \hbox (12.61684pt too wide) in paragraph at lines 106--109
+\OT1/cmr/m/it/10 kens' pub-lic pa-ram-e-ters $\OML/cmm/m/it/10 g \OT1/cmr/m/n/1
+0 := (\OML/cmm/m/it/10 g[]; g[]\OT1/cmr/m/n/10 )$\OT1/cmr/m/it/10 , en-coded me
+s-sages $[] \OT1/cmr/m/n/10 = [[]$\OT1/cmr/m/it/10 , $[]\OML/cmm/m/it/10 ; []; 
+[]\OT1/cmr/m/n/10 ]$\OT1/cmr/m/it/10 ,
+ []
+
+[10]
+Overfull \hbox (88.40729pt too wide) in paragraph at lines 133--136
+[]\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ;$ $\OML/cmm/b/it/10 l\OT1/cmr/m/n/10 ) \
+OMS/cmsy/m/n/10 ! []$\OT1/cmr/m/it/10 , $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T;
+ []; []\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ! []$\OT1/cmr/m/it/10 , $[]\OT1/cmr/m
+/n/10 (\OML/cmm/m/it/10 T; in[]; []; []\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 !
+ []
+
+[11]
 Overfull \hbox (14.20929pt too wide) detected at line 197
 []
  []
@@ -1452,35 +1467,56 @@ Overfull \hbox (14.20929pt too wide) detected at line 197
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8]
+ [12]
 Overfull \hbox (14.20929pt too wide) detected at line 291
 []
  []
 
-[9] (./privacy-def.tex
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
+(./privacy-def.tex [14]
 Overfull \hbox (13.52103pt too wide) detected at line 51
 []
  []
 
-[10]
+
 Overfull \hbox (6.67792pt too wide) detected at line 115
 []
  []
 
-) [11]) (./check-pass.tex (./verStat.tex
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]))
+[16] (./check-pass.tex (./verStat.tex [17]
 Underfull \hbox (badness 10000) in paragraph at lines 14--17
 
  []
 
-) (./checkWarning.tex [12]
+
+Overfull \hbox (2.84544pt too wide) in paragraph at lines 12--36
+ []$ 
+ []
+
+) (./checkWarning.tex
 Underfull \hbox (badness 10000) in paragraph at lines 17--21
 
  []
 
-) (./encode.tex [13]
-Underfull \vbox (badness 1648) has occurred while \output is active []
 
- [14]
+Overfull \hbox (2.84544pt too wide) in paragraph at lines 15--61
+ []$ 
+ []
+
+) (./encode.tex [18] [19]
+Overfull \hbox (5.25pt too wide) in paragraph at lines 46--47
+ []\OT1/cmr/bx/n/10 Variant 2: Generic Ver-dict Encoding-Decoding Pro-to-col.[]
+ \OT1/cmr/m/n/10 Now, we present
+ []
+
+[20] [21]
 Underfull \hbox (badness 10000) in paragraph at lines 145--148
 
  []
@@ -1491,87 +1527,132 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--162
  []
 
 
+Overfull \hbox (2.84544pt too wide) in paragraph at lines 143--190
+ []$ 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 200--203
 
  []
 
-)) [15] [16] [17]
-Overfull \hbox (4.8112pt too wide) in paragraph at lines 269--270
-[]\OT1/cmr/m/n/10 if ``chal-lenge warn-ing'' $[] \OML/cmm/m/it/10 z[]$\OT1/cmr/
-m/n/10 , it sets $\OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[] \
-OT1/cmr/m/n/10 = 0$. Oth-er-wise, it runs $[](\OML/cmm/m/it/10 add[]; z[]; m[];
-$
+
+Overfull \hbox (2.84544pt too wide) in paragraph at lines 198--233
+ []$ 
  []
 
-[18] (./proof.tex [19] [20]) (./evaluation.tex (./table-cost.tex) [21] [22]
-(./Performance-table.tex) (./diag-1.tex))) (./main.bbl
-Underfull \hbox (badness 1112) in paragraph at lines 6--9
+)) [22] [23]
+Overfull \hbox (11.27878pt too wide) in paragraph at lines 214--215
+[]\OT1/cmr/m/n/10 if $\OMS/cmsy/m/n/10 C$ \OT1/cmr/m/n/10 want to make one of t
+he two be-low state-ments, it sets $\OML/cmm/m/it/10 z[] \OT1/cmr/m/n/10 =$``ch
+allenge
+ []
+
+[24] [25] [26] (./proof.tex [27] [28] [29]) (./evaluation.tex (./table-cost.tex
+) [30] [31] (./Performance-table.tex) (./diag-1.tex) [32])) (./main.bbl
+Underfull \hbox (badness 4686) in paragraph at lines 6--9
 []\OT1/cmr/m/n/9 Abadi, A.: Vari-ant 1: Highly ef-fi-cient ver-dict encoding-de
-coding pro-to-col (2021), []$\OT1/cmtt/m/n/9 https : / / github . com /
+coding pro-to-
  []
 
-[23]
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--9
+\OT1/cmr/m/n/9 col (2021), []$\OT1/cmtt/m/n/9 https : / / github . com / AydinA
+badi / PwDR / blob / main / PwDR-[]code /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+[]\OT1/cmr/m/n/9 Abadi, A.: Vari-ant 2: Generic ver-dict encoding-decoding pro-
+to-col
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+\OT1/cmr/m/n/9 (2021), []$\OT1/cmtt/m/n/9 https : / / github . com / AydinAbadi
+ / PwDR / blob / main / PwDR-[]code /
+ []
+
+
+Underfull \hbox (badness 2229) in paragraph at lines 26--28
+[]\OT1/cmr/m/n/9 Authority, F.C.: FCA glos-sary (2021), []$\OT1/cmtt/m/n/9 http
+s : / / www . handbook . fca . org . uk /
+ []
+
+[33]
 Underfull \hbox (badness 10000) in paragraph at lines 50--53
 []\OT1/cmr/m/n/9 Confirmation of Payee Team: Con-fir-ma-tion of payee- re-spons
-e to con-sul-ta-tion cp20/1 and
+e
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 50--53
-\OT1/cmr/m/n/9 de-ci-sion on vary-ing spe-cific di-rec-tion 10 (2020), []$\OT1/
-cmtt/m/n/9 https : / / www . psr . org . uk / media / qrbc03jm /
+\OT1/cmr/m/n/9 to con-sul-ta-tion cp20/1 and de-ci-sion on vary-ing spe-cific d
+i-
  []
 
 
-Underfull \hbox (badness 3907) in paragraph at lines 64--67
-[]\OT1/cmr/m/n/9 Katz, J., Lin-dell, Y.: In-tro-duc-tion to Mod-ern Cryp-tog-ra
--phy, Sec-ond Edi-tion. CRC Press (2014),
+Underfull \hbox (badness 10000) in paragraph at lines 50--53
+\OT1/cmr/m/n/9 rec-tion 10 (2020), []$\OT1/cmtt/m/n/9 https : / / www . psr . o
+rg . uk / media / qrbc03jm /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 64--67
-[]$\OT1/cmtt/m/n/9 https : / / www . crcpress . com / Introduction-[]to-[]Moder
-n-[]Cryptography-[]Second-[]Edition / Katz-[]Lindell / p /
+[]\OT1/cmr/m/n/9 Katz, J., Lin-dell, Y.: In-tro-duc-tion to Mod-ern Cryp-tog-ra
+-phy, Sec-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--78
-[]\OT1/cmr/m/n/9 Lending Stan-dards Board: Con-tin-gent re-im-burse-ment model 
-code for au-tho-rised push pay-
+Underfull \hbox (badness 10000) in paragraph at lines 64--67
+\OT1/cmr/m/n/9 ond Edi-tion. CRC Press (2014), []$\OT1/cmtt/m/n/9 https : / / w
+ww . crcpress . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--78
-\OT1/cmr/m/n/9 ment scams (2021), []$\OT1/cmtt/m/n/9 https : / / www . lendings
-tandardsboard . org . uk / wp-[]content / uploads / 2021 / 04 /
+Underfull \hbox (badness 10000) in paragraph at lines 64--67
+\OT1/cmtt/m/n/9 Introduction-[]to-[]Modern-[]Cryptography-[]Second-[]Edition / 
+Katz-[]Lindell / p /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 95--99
 []\OT1/cmr/m/n/9 The Fi-nan-cial Om-buds-man Ser-vice: Lend-ing stan-dards boar
-d re-view of the con-tin-
+d re-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 95--99
-\OT1/cmr/m/n/9 gent re-im-burse-ment model code for au-tho-rised push pay-ment 
-scams-financial om-buds-
+\OT1/cmr/m/n/9 view of the con-tin-gent re-im-burse-ment model code for au-tho-
+
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 95--99
-\OT1/cmr/m/n/9 man ser-vice re-sponse (2020), []$\OT1/cmtt/m/n/9 https : / / ww
-w . financial-[]ombudsman . org . uk / files / 289009 /
+\OT1/cmr/m/n/9 rised push pay-ment scams-financial om-buds-man ser-vice re-spon
+se
  []
 
 
-Underfull \hbox (badness 7981) in paragraph at lines 101--103
-[]\OT1/cmr/m/n/9 UK Fi-nance: 2021 half year fraud up-date (2021), []$\OT1/cmtt
-/m/n/9 https : / / www . ukfinance . org . uk / system / files /
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
+\OT1/cmr/m/n/9 (2020), []$\OT1/cmtt/m/n/9 https : / / www . financial-[]ombudsm
+an . org . uk / files / 289009 /
  []
 
-) (./bloom-filter.tex [24]) (./set-XOR-Theorem-proof.tex)
-(./set-BF-theorem-proof.tex) (./Generic-encode.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--99
+\OT1/cmtt/m/n/9 2020-[]10-[]02-[]LSB-[]CRM-[]Code-[]Review-[]Financial-[]Ombuds
+man-[]Service-[]Response .
+ []
+
+) (./bloom-filter.tex [34]) (./set-XOR-Theorem-proof.tex)
+(./set-BF-theorem-proof.tex
+Underfull \vbox (badness 1609) has occurred while \output is active []
+
+ [35
+
+])
+(./Generic-encode.tex
 Underfull \hbox (badness 10000) in paragraph at lines 115--118
 
  []
@@ -1581,19 +1662,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--136
 
  []
 
-[25
 
-]
+Overfull \hbox (5.69046pt too wide) in paragraph at lines 113--202
+ []$ 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 213--216
 
  []
 
-) (./further-discussion.tex [26]) [27]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
+
+Overfull \hbox (5.69046pt too wide) in paragraph at lines 211--260
+ []$ 
+ []
+
+) (./further-discussion.tex [36] [37]) [38]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 119.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 119.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 10103F8095BD767C7D39B60C7364E6AF;90.
 
@@ -1602,10 +1691,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 41418 strings out of 480608
- 959001 string characters out of 5903630
- 1385264 words of memory out of 5000000
- 56267 multiletter control sequences out of 15000+600000
+ 41409 strings out of 480608
+ 958702 string characters out of 5903630
+ 1383728 words of memory out of 5000000
+ 56251 multiletter control sequences out of 15000+600000
  548440 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,21n,106p,3760b,2277s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1655,10 +1744,10 @@ onts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2020/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-d
 ist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (27 pages, 511112 bytes).
+Output written on main.pdf (38 pages, 524632 bytes).
 PDF statistics:
- 662 PDF objects out of 1000 (max. 8388607)
- 539 compressed objects within 6 object streams
- 206 named destinations out of 1000 (max. 500000)
+ 720 PDF objects out of 1000 (max. 8388607)
+ 586 compressed objects within 6 object streams
+ 217 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

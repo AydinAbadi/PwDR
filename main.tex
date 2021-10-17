@@ -27,7 +27,7 @@
 \usepackage{pgfplots, pgfplotstable}
 
 \usepackage{hyperref}
-\usepackage{fullpage}
+
 \usepackage{float}
 \newcommand{\st}{\scriptscriptstyle}
 \newcommand{\mb}{\mathbf}
@@ -92,7 +92,7 @@
 
 
 %%%%%
-
+%\usepackage{fullpage}
 \begin{document}
 
 
@@ -103,6 +103,13 @@
 
 \date{}
 \maketitle{}
+
+
+\begin{abstract}
+An ``Authorised Push Payment'' (APP) fraud occurs when fraudsters deceive a victim  to make  a payment  to a bank account controlled by them.  Total financial losses due to  APP frauds have been  growing. Although  authorities   provided guidelines to  improve victims’ protection, the guidelines are  vague and  the victims are not receiving sufficient protection. To protect the  victims,  we propose the notion of ``Payment with Dispute Resolution'' (PwDR) and formally define it. The PwDR lets an honest victim  prove its innocence to a third-party dispute resolver  (to be reimbursed) while preserving the involved parties' privacy. We also propose a  candidate protocol  and formally prove its security. The protocol  makes black-box use of a standard online banking system. We evaluate its    asymptotic cost and study its runtime  via a prototype implementation. Our evaluation shows that the protocol is  efficient. It imposes only $O(1)$ overheads to the customer and bank.  Also, a dispute resolver can  settle a dispute between the two  in $0.09$ milliseconds.
+
+
+\end{abstract}
 
 \input{introduction}
 \input{related-work}
