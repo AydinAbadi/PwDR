@@ -170,7 +170,7 @@ $\mathcal{B}$ takes the following steps.
 %
 \item  checks if the most recent list $\hat{\bm{l}}$ is not empty. If it is empty, it halts. Otherwise, it proceeds to the next step. 
 %
-\item  decrypts each element of $\hat{\bm l}$ and checks their correctness, e.g., checks whether each element meets its internal policy or CoP requirements stated in $aux$. If the check passes, it sets $m_{\st 1}^{\st(\mathcal{B})}= \text{``pass''}$. Otherwise, it sets $m_{\st 1}^{\st(\mathcal{B})}=\text{warning}$, where $\text{warning}$ is a  string that contains a warning's detail concatenated with the string $\text{``warning''}$.
+\item  decrypts each element of $\hat{\bm l}$ and checks it correctness, e.g., checks whether each element meets its internal policy or CoP requirements stated in $aux$. If the check passes, it sets $m_{\st 1}^{\st(\mathcal{B})}= \text{``pass''}$. Otherwise, it sets $m_{\st 1}^{\st(\mathcal{B})}=\text{warning}$, where $\text{warning}$ is a  string that contains a warning's detail concatenated with the string $\text{``warning''}$.
 %
 \item at time $t_{\st 1}$, sends to $\mathcal{S}$ the encryption of $m_{\st 1}^{\st(\mathcal{B})}$, i.e.,  $\hat m_{\st 1}^{\st(\mathcal{B})}= \mathtt{Enc}(\bar k_{\st 1}, m_{\st 1}^{\st(\mathcal B)})$. 
 \end{enumerate}
@@ -211,7 +211,7 @@ $\mathcal{C}$ takes the following steps.
 %
 %\item  [$\bullet$] if $\mathcal{C}$ want to complain that $\mathcal{B}$ has not provided any message (i.e., neither pass nor warning) and 
 %
- \item  [$\bullet$] if $\mathcal{C}$ want to make one of the two below statements, it sets  $z_{\st 1}=$``challenge message".
+ \item  [$\bullet$] if $\mathcal{C}$ wants to make one of the two below statements, it sets  $z_{\st 1}=$``challenge message".
  
  \begin{enumerate}[label=(\roman*)]
   \item the ``pass'' message (in $m^{\st\mathcal{(B)}}_{\st 1}$)  should have been a warning.
@@ -233,7 +233,7 @@ z_{\st 3}=\phi $.
     
     \begin{itemize}
      \item[$\bullet$] the encryption of complaint $z$, i.e.,   $\hat z= \mathtt{Enc}(\bar k_{\st 1}, z)$.
-     \item[$\bullet$] the encryption of $\ddot{\pi}:=(\ddot{\pi}_{\st 1}, \ddot{\pi}_{\st 2})$, i.e., $\hat{\ddot \pi}=\mathtt{\tilde{Enc}}({pk}_{\st\mathcal {D}}, \ddot \pi)$. Note, $\ddot \pi$ contains the openings of the private statements' commitments (i.e., $g_{\st 1}, g_{\st 2}$), and is encrypted under each $\mathcal{D}_{\st j}$'s public key. 
+     \item[$\bullet$] the encryption of $\ddot{\pi}:=(\ddot{\pi}_{\st 1}, \ddot{\pi}_{\st 2})$, i.e., $\hat{\ddot \pi}=\mathtt{\tilde{Enc}}({pk}_{\st\mathcal {D}}, \ddot \pi)$. Note, $\ddot \pi$ contains the openings of the private statements' commitments (i.e., $g_{\st 1}$ and $g_{\st 2}$), and is encrypted under each $\mathcal{D}_{\st j}$'s public key. 
      \end{itemize}
 \end{enumerate}
 
@@ -427,7 +427,7 @@ Note that in the above PwDR protocol, even $\mathcal{C}$ and $\mathcal{B}$ that 
 
 
 \begin{theorem}\label{theorem::PwDR-security}
-The above PwDR scheme is secure, with regard to definition \ref{def::PwDR-security}, if the digital signature is existentially unforgeable under chosen message attacks,  the blockchain, SAP, and pseudorandom function $\mathtt{PRF}(.)$ are secure, and the encryption schemes are semantically secure. 
+The above PwDR scheme is secure, with regard to definition \ref{def::PwDR-security}, if the digital signature is existentially unforgeable under chosen message attacks,  the blockchain, SAP, and pseudorandom function $\mathtt{PRF}(.)$ are secure,  the encryption schemes are semantically secure, and the correctness of verdict encoding-decoding protocols (i.e., PVE and FVD) holds. 
 \end{theorem}
 
 
