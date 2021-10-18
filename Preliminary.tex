@@ -39,12 +39,12 @@ A digital signature is a scheme for verifying the authenticity of digital messag
 
 
 \begin{definition}\label{sec::def}
-A signature scheme  involves three sub-processes, $\mathtt{Signature}:=(\mathtt{Sig.keyGen}, $ $\mathtt{Sig.sign}, \mathtt{Sig.ver})$, that are defined as follows.
+A signature scheme  involves three algorithms, $\mathtt{Signature}:=(\mathtt{Sig.keyGen}, $ $\mathtt{Sig.sign}, \mathtt{Sig.ver})$, that are defined as follows.
 
 \begin{itemize} 
 \item[$\bullet$] $\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$.  A probabilistic algorithm run by  a  signer. It takes as input a security parameter. It outputs a key pair: $(sk,pk)$, consisting of secret: $sk$, and public: $pk$ keys. 
-\item[$\bullet$] $\mathtt{Sig.sign}(sk, pk, u)\rightarrow sig$. An algorithm run  the signer. It takes as input  key pair: $(sk,pk)$ and a file: $u$. It outputs a signature: $sig$.
-\item[$\bullet$]  $\mathtt{Sig.ver}( pk, u, sig)\rightarrow h\in\{0,1\}$. A deterministic algorithm run by a verifier. It takes as input  public key: $pk$,  file: $u$, and signature: $sig$. It checks the signature's validity.   If the verification passes, then it outputs $1$; otherwise, it outputs $0$. 
+\item[$\bullet$] $\mathtt{Sig.sign}(sk, pk, u)\rightarrow sig$. An algorithm run  the signer. It takes as input  key pair: $(sk,pk)$ and a message: $u$. It outputs a signature: $sig$.
+\item[$\bullet$]  $\mathtt{Sig.ver}( pk, u, sig)\rightarrow h\in\{0,1\}$. A deterministic algorithm run by a verifier. It takes as input  public key: $pk$,  message: $u$, and signature: $sig$. It checks the signature's validity.   If the verification passes, then it outputs $1$; otherwise, it outputs $0$. 
 \end{itemize}
 \end{definition}
 
@@ -56,7 +56,7 @@ A digital signature scheme should meet the following properties:
 $$Pr\Big[\  \  \mathtt{Sig.ver}( pk, u, \mathtt{Sig.sign}(sk, pk, u))=1\ : \
 \mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk, pk)  \Big]=1$$
 %
-\item[$\bullet$] \textit{Existential unforgeability under chosen message attacks.} A (PPT) adversary that obtains $pk$ and has access to a signing  oracle for messages of its choice, cannot create a valid pair $(u^{\st *},sig^{\st *})$ for a new file $u^{\st *}$  (that was never a query to the signing oracle), except with a small probability, $\sigma$. More formally: 
+\item[$\bullet$] \textit{Existential unforgeability under chosen message attacks.} A probabilistic polynomial time (PPT) adversary that obtains $pk$ and has access to a signing  oracle for messages of its choice, cannot create a valid pair $(u^{\st *},sig^{\st *})$ for a new message $u^{\st *}$  (that was never a query to the signing oracle), except with a small probability, $\sigma$. More formally: 
 
 
 
@@ -91,7 +91,7 @@ where $Q$ is the set of queries that $\mathcal{A}$ sent to the certificate gener
 
 
 
-\subsection{Smart Contract}\label{subsec:SC} Cryptocurrencies, such as Bitcoin \cite{bitcoin} and Ethereum \cite{ethereum}, beyond offering a decentralised currency,  support  computations on  transactions. In this setting, often a certain computation logic is encoded in a computer program, called a \emph{``smart contract''}. Although Bitcoin, the first decentralised cryptocurrency, supports smart contracts, the functionality of Bitcoin's smart contracts is very limited, due to the use of the underlying programming language that does not support arbitrary tasks. To address this limitation, Ethereum, as a generic smart contract platform, was designed. Thus far, Ethereum has been the most predominant cryptocurrency framework that lets users define arbitrary smart. This framework allows users to create an account with a unique account number or address. Such users are often called external account holders, which can send (or deploy) their contracts to the framework’s blockchain. In this framework, a contract's code and its related data  is held by every node in the blockchain's network. Ethereum smart contracts are often written in a high-level Turing-complete programming language called ``Solidity''.The program execution's  correctness  is  guaranteed by the security of the underlying blockchain components. To prevent  a denial of service attack, the framework requires a transaction creator to pay a  fee, called \emph{``gas''}, depending on the complexity of the contract running on  it.  
+\subsection{Smart Contract}\label{subsec:SC} Cryptocurrencies, such as Bitcoin \cite{bitcoin} and Ethereum \cite{ethereum}, beyond offering a decentralised currency,  support  computations on  transactions. In this setting, often a certain computation logic is encoded in a computer program, called a \emph{``smart contract''}. Although Bitcoin, the first decentralised cryptocurrency, supports smart contracts, the functionality of Bitcoin's smart contracts is very limited, due to the use of the underlying programming language that does not support arbitrary tasks. To address this limitation, Ethereum, as a generic smart contract platform, was designed. Thus far, Ethereum has been the most predominant cryptocurrency framework that lets users define arbitrary smart. This framework allows users to create an account with a unique account number or address. Such users are often called external account holders, which can send (or deploy) their contracts to the framework’s blockchain. In this framework, a contract's code and its related data  is held by every node in the blockchain's network. Ethereum smart contracts are often written in a high-level Turing-complete programming language called ``Solidity''.The program execution's  correctness  is  guaranteed by the security of the underlying blockchain components. To prevent  a denial of service attack, the framework requires a transaction creator to pay a  fee, called \emph{``gas''}. %, depending on the complexity of the contract running on  it.  
 
 
 \input{commitment}
@@ -100,14 +100,14 @@ where $Q$ is the set of queries that $\mathcal{A}$ sent to the certificate gener
 \subsection{Pseudorandom Function}
 
 
-Informally, a pseudorandom function is a deterministic function that takes a key of length $\Lambda$ and an input; and outputs a value  indistinguishable from that of  a truly random function.  In this paper, we use  pseudorandom function:   $\mathtt {PRF}: \{0,1\}^{\st \Lambda}\times \{0,1\}^{\st *} \rightarrow  \mathbb{F}_p$, where $p$ is a large prime number, $|p|=\lambda$, and $(\Lambda,\lambda)$ are the security parameters. In practice, a pseudorandom function can be obtained from an efficient block cipher \cite{DBLP:books/crc/KatzLindell2014}.
+Informally, a pseudorandom function is a deterministic function that takes a key of length $\Lambda$ and an input; and outputs a value  indistinguishable from that of  a truly random function.  In this paper, we use  pseudorandom function:   $\mathtt {PRF}: \{0,1\}^{\st \Lambda}\times \{0,1\}^{\st *} \rightarrow  \mathbb{F}_p$, where $p$ is a large prime number, $|p|=\lambda$, and $(\Lambda,\lambda)$ are the security parameters. In practice, a pseudorandom function can be obtained from an efficient block cipher. We refer reader to \cite{DBLP:books/crc/KatzLindell2014} for a formal definition of a pseudorandom function.
 
 
 \subsection{Bloom Filter}
 \vspace{-1mm}
 
 A Bloom filter \cite{DBLP:journals/cacm/Bloom70} is a compact data structure that allows us to 
-efficiently check an  element membership. It is an array of $m$ bits (initially all set to zero), that  represents $n$  elements. It is accompanied with $k$ independent hash functions. To insert an element, all the  hash values of the element are computed and their corresponding bits in the filter are set to $1$. To check an element membership, all its hash values are re-computed and checked whether all are set to $1$ in the filter. If all the corresponding bits are $1$, then the element is probably in the filter; otherwise, it is not. In Bloom filters  it is possible that an element is not in the set, but the membership query indicates it is, i.e., false positives. In this work, we require that a Bloom filter uses \emph{cryptographic} hash functions. Also, we ensure that the false positive probability is negligible, e.g.,  $2^{\st - 40}$. In Appendix \ref{sec::bloom-filter-}, we explain how the Bloom filter's parameters can be set.
+efficiently check an  element membership. It is an array of $m$ bits (initially all set to zero), that  represents $n$  elements. It is accompanied with $k$ independent hash functions. To insert an element, all the  hash values of the element are computed and their corresponding bits in the filter are set to $1$. To check an element membership, all its hash values are re-computed and checked whether all are set to $1$ in the filter. If all the corresponding bits are $1$, then the element is probably in the filter; otherwise, it is not. In Bloom filters  it is possible that an element is not in the set, but the membership query indicates it is, i.e., false positives. In this work, we ensure that the false positive probability is negligible, e.g.,  $2^{\st - 40}$. Also, we require that a Bloom filter uses \emph{cryptographic} hash functions. In Appendix \ref{sec::bloom-filter-}, we explain how the Bloom filter's parameters can be set.
 
 %Informally, a digital certificate's security requires that no one can generate a valid certificate that was not previously produced by the certificate generator. The security of a digital certificate relies on the security of the digital signature scheme used.  Below, we present the formal definition of the digital signature.
 
