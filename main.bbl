@@ -42,6 +42,12 @@ Bose, P., Guo, H., Kranakis, E., Maheshwari, A., Morin, P., Morrison, J., Smid,
   M.H.M., Tang, Y.: On the false-positive rate of bloom filters. Inf. Process.
   Lett.  (2008)
 
+\bibitem{brinton2016users}
+Brinton~Anderson, B., Vance, A., Kirwan, C.B., Eargle, D., Jenkins, J.L.: How
+  users perceive and respond to security messages: a neurois research agenda
+  and empirical study. European Journal of Information Systems  25(4),
+  364--390 (2016)
+
 \bibitem{abs-2103-00254}
 Chaum, D., Grothoff, C., Moser, T.: How to issue a central bank digital
   currency. CoRR  abs/2103.00254 (2021), \url{https://arxiv.org/abs/2103.00254}
@@ -50,6 +56,11 @@ Chaum, D., Grothoff, C., Moser, T.: How to issue a central bank digital
 {Confirmation of Payee Team}: Confirmation of payee- response to consultation
   cp20/1 and decision on varying specific direction 10  (2020),
   \url{https://www.psr.org.uk/media/qrbc03jm/psr-ps20-1-variation-of-specific-direction-10-february-2020.pdf}
+
+\bibitem{felt2014experimenting}
+Felt, A.P., Reeder, R.W., Almuhimedi, H., Consolvo, S.: Experimenting at scale
+  with google chrome's ssl warning. In: Proceedings of the SIGCHI conference on
+  human factors in computing systems (2014)
 
 \bibitem{Which?-super-complaint}
 French, A.: Which? makes scams super-complaint-banks must protect those tricked
@@ -70,6 +81,10 @@ K{\"{u}}sters, R., Liedtke, J., M{\"{u}}ller, J., Rausch, D., Vogt, A.:
   Ordinos: {A} verifiable tally-hiding e-voting system. In: {IEEE} European
   Symposium on Security and Privacy, EuroS{\&}P 2020, Genoa, Italy, September
   7-11, 2020. {IEEE} (2020)
+
+\bibitem{laughery2006designing}
+Laughery, K.R., Wogalter, M.S.: Designing effective warnings. Reviews of human
+  factors and ergonomics  (2006)
 
 \bibitem{CRM-code}
 {Lending Standards Board}: Contingent reimbursement model code for authorised
