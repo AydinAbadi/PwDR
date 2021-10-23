@@ -22,6 +22,11 @@ Allen, S., {\v{C}}apkun, S., Eyal, I., Fanti, G., Ford, B.A., Grimmelmann, J.,
   Design choices for central bank digital currency: Policy and technical
   considerations. Tech. rep., National Bureau of Economic Research (2020)
 
+\bibitem{anderson2019measuring}
+Anderson, R., Barton, C., B{\"o}lme, R., Clayton, R., Gan{\'a}n, C., Grasso,
+  T., Levi, M., Moore, T., Vasek, M.: Measuring the changing cost of cybercrime
+   (2019)
+
 \bibitem{FCA-Glossary}
 Authority, F.C.: {FCA} glossary (2021),
   \url{https://www.handbook.fca.org.uk/handbook/glossary/G3566a.html}
@@ -76,6 +81,11 @@ Katz, J., Lindell, Y.: Introduction to Modern Cryptography, Second Edition.
   {CRC} Press (2014),
   \url{https://www.crcpress.com/Introduction-to-Modern-Cryptography-Second-Edition/Katz-Lindell/p/book/9781466570269}
 
+\bibitem{kjorven2020pays}
+Kj{\o}rven, M.E.: Who pays when things go wrong? online financial fraud and
+  consumer protection in scandinavia and europe. European Business Law Review
+  (2020)
+
 \bibitem{KustersL00020}
 K{\"{u}}sters, R., Liedtke, J., M{\"{u}}ller, J., Rausch, D., Vogt, A.:
   Ordinos: {A} verifiable tally-hiding e-voting system. In: {IEEE} European
@@ -101,6 +111,10 @@ Pedersen, T.P.: Non-interactive and information-theoretic secure verifiable
 \bibitem{Schneier0078909}
 Schneier, B.: Applied cryptography - protocols, algorithms, and source code in
   C, 2nd Edition. Wiley (1996)
+
+\bibitem{taylor2020new}
+Taylor, J.L., Galica, T.: A new code to protect victims in the uk from
+  authorised push payments fraud. Banking \& Finance Law Review  (2020)
 
 \bibitem{Regulations}
 {The Financial Conduct Authority}: The payment services regulations  (2017),
