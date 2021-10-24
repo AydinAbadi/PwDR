@@ -27,6 +27,11 @@ Anderson, R., Barton, C., B{\"o}lme, R., Clayton, R., Gan{\'a}n, C., Grasso,
   T., Levi, M., Moore, T., Vasek, M.: Measuring the changing cost of cybercrime
    (2019)
 
+\bibitem{anderson2007closing}
+Anderson, R., et~al.: Closing the phishing hole--fraud, risk and nonbanks. In:
+  Federal Reserve Bank of Kansas City--Payment System Research Conferences. pp.
+  41--56 (2007)
+
 \bibitem{FCA-Glossary}
 Authority, F.C.: {FCA} glossary (2021),
   \url{https://www.handbook.fca.org.uk/handbook/glossary/G3566a.html}
@@ -38,9 +43,19 @@ Authority, F.C.: {FCA} glossary (2021),
   foundational principles and core features. Tech. rep. (2020),
   \url{https://www.bis.org/publ/othp33.pdf}
 
+\bibitem{BeckerHAABMSS17}
+Becker, I., Hutchings, A., Abu{-}Salma, R., Anderson, R.J., Bohm, N., Murdoch,
+  S.J., Sasse, M.A., Stringhini, G.: International comparison of bank fraud
+  reimbursement: customer perceptions and contractual terms. J. Cybersecur.
+  (2017)
+
 \bibitem{DBLP:journals/cacm/Bloom70}
 Bloom, B.H.: Space/time trade-offs in hash coding with allowable errors.
   Commun.  (1970)
+
+\bibitem{BohmBG00}
+Bohm, N., Brown, I., Gladman, B.: Electronic commerce: Who carries the risk of
+  fraud? J. Inf. Law Technol.  2000 (2000)
 
 \bibitem{BoseGKMMMST08}
 Bose, P., Guo, H., Kranakis, E., Maheshwari, A., Morin, P., Morrison, J., Smid,
@@ -53,6 +68,10 @@ Brinton~Anderson, B., Vance, A., Kirwan, C.B., Eargle, D., Jenkins, J.L.: How
   and empirical study. European Journal of Information Systems  25(4),
   364--390 (2016)
 
+\bibitem{buchwald2019smart}
+Buchwald, M.: Smart contract dispute resolution: the inescapable flaws of
+  blockchain-based arbitration. U. Pa. L. Rev.  (2019)
+
 \bibitem{abs-2103-00254}
 Chaum, D., Grothoff, C., Moser, T.: How to issue a central bank digital
   currency. CoRR  abs/2103.00254 (2021), \url{https://arxiv.org/abs/2103.00254}
@@ -61,6 +80,19 @@ Chaum, D., Grothoff, C., Moser, T.: How to issue a central bank digital
 {Confirmation of Payee Team}: Confirmation of payee- response to consultation
   cp20/1 and decision on varying specific direction 10  (2020),
   \url{https://www.psr.org.uk/media/qrbc03jm/psr-ps20-1-variation-of-specific-direction-10-february-2020.pdf}
+
+\bibitem{DongWAMM17}
+Dong, C., Wang, Y., Aldweesh, A., McCorry, P., van Moorsel, A.: Betrayal,
+  distrust, and rationality: Smart counter-collusion contracts for verifiable
+  cloud computing. In: {CCS} (2017)
+
+\bibitem{DziembowskiEF18}
+Dziembowski, S., Eckey, L., Faust, S.: Fairswap: How to fairly exchange digital
+  goods. In: {CCS} (2018)
+
+\bibitem{EckeyFS20}
+Eckey, L., Faust, S., Schlosser, B.: Optiswap: Fast optimistic fair exchange.
+  In: {ASIA} {CCS} (2020)
 
 \bibitem{felt2014experimenting}
 Felt, A.P., Reeder, R.W., Almuhimedi, H., Consolvo, S.: Experimenting at scale
@@ -75,6 +107,11 @@ French, A.: Which? makes scams super-complaint-banks must protect those tricked
 \bibitem{GarayKL15}
 Garay, J.A., Kiayias, A., Leonardos, N.: The bitcoin backbone protocol:
   Analysis and applications. In: {EUROCRYPT} (2015)
+
+\bibitem{Bolt}
+Green, M., Miers, I.: Bolt: Anonymous payment channels for decentralized
+  currencies. In: Thuraisingham, B.M., Evans, D., Malkin, T., Xu, D. (eds.)
+  {CCS} (2017)
 
 \bibitem{DBLP:books/crc/KatzLindell2014}
 Katz, J., Lindell, Y.: Introduction to Modern Cryptography, Second Edition.
@@ -104,9 +141,23 @@ Laughery, K.R., Wogalter, M.S.: Designing effective warnings. Reviews of human
 \bibitem{bitcoin}
 Nakamoto, S.: Bitcoin: A peer-to-peer electronic cash system. Tech. rep. (2019)
 
+\bibitem{ortolani2016self}
+Ortolani, P.: Self-enforcing online dispute resolution: lessons from bitcoin.
+  Oxford Journal of Legal Studies  (2016)
+
+\bibitem{ortolani2019impact}
+Ortolani, P.: The impact of blockchain technologies and smart contracts on
+  dispute resolution: arbitration and court litigation at the crossroads.
+  Uniform law review  (2019)
+
 \bibitem{Pedersen91}
 Pedersen, T.P.: Non-interactive and information-theoretic secure verifiable
   secret sharing. In: {CRYPTO} (1991)
+
+\bibitem{Lightning-Network}
+Poon, J., Dryja, T.: The bitcoin lightning network: Scalable off-chain instant
+  payments. Tech. rep. (2016),
+  \url{https://lightning.network/lightning-network-paper.pdf}
 
 \bibitem{Schneier0078909}
 Schneier, B.: Applied cryptography - protocols, algorithms, and source code in

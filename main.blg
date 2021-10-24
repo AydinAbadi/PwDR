@@ -9,47 +9,48 @@ Warning--empty journal in CoP
 Warning--empty journal in Which?-super-complaint
 Warning--empty journal in CRM-code
 Warning--missing institution in bitcoin
+Warning--missing institution in Lightning-Network
 Warning--empty journal in Regulations
 Warning--empty journal in Financial-Ombudsman-Service-response
-You've used 30 entries,
+You've used 41 entries,
             2785 wiz_defined-function locations,
-            739 strings with 10396 characters,
-and the built_in function-call counts, 12510 in all, are:
-= -- 915
-> -- 460
-< -- 3
-+ -- 193
-- -- 160
-* -- 759
-:= -- 1747
-add.period$ -- 22
-call.type$ -- 30
-change.case$ -- 193
+            794 strings with 12291 characters,
+and the built_in function-call counts, 17444 in all, are:
+= -- 1284
+> -- 650
+< -- 5
++ -- 272
+- -- 226
+* -- 1054
+:= -- 2443
+add.period$ -- 34
+call.type$ -- 41
+change.case$ -- 268
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 1174
-empty$ -- 1150
-format.name$ -- 174
-if$ -- 2590
+cite$ -- 50
+duplicate$ -- 1641
+empty$ -- 1592
+format.name$ -- 249
+if$ -- 3616
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 268
-newline$ -- 95
-num.names$ -- 60
-pop$ -- 560
+int.to.str$ -- 41
+missing$ -- 373
+newline$ -- 128
+num.names$ -- 84
+pop$ -- 771
 preamble$ -- 1
-purify$ -- 139
+purify$ -- 191
 quote$ -- 0
-skip$ -- 259
+skip$ -- 364
 stack$ -- 0
-substring$ -- 447
-swap$ -- 519
-text.length$ -- 3
+substring$ -- 618
+swap$ -- 727
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
-warning$ -- 8
-while$ -- 93
-width$ -- 32
-write$ -- 272
-(There were 8 warnings)
+type$ -- 160
+warning$ -- 9
+while$ -- 130
+width$ -- 43
+write$ -- 374
+(There were 9 warnings)
