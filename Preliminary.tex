@@ -15,7 +15,7 @@ The PwDR scheme consists of six types of parties. Below, we informally explain e
 %
 \begin{itemize}
 %
-\item[$\bullet$] Customer $\mathcal{C}$: it is a regular customer of a bank. We call a customer  a victim after it falls to an APP fraud. We assume a victim is corrupted by a non-colluding active (or malicious) adversary. %; for instance, an unqualified victim  tries to make itself appear qualified for reimbursement. 
+\item[$\bullet$] Customer $\mathcal{C}$: it is a regular customer of a bank. We call a customer  a victim after it falls victim to an APP fraud. We assume a victim is corrupted by a non-colluding active (or malicious) adversary. %; for instance, an unqualified victim  tries to make itself appear qualified for reimbursement. 
 %
 \item[$\bullet$] Bank $\mathcal{B}$: it is a regular bank that provides a standard online banking system. We assume it is corrupted by a non-colluding active adversary. We assume  any change to the source code of the online banking system is transparent and  can be detected. %, e.g., the bank  uses a cryptographic commitment to commit to the source code. 
 %
@@ -25,7 +25,7 @@ The PwDR scheme consists of six types of parties. Below, we informally explain e
 %
 \item[$\bullet$]  A committee of arbiters $\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$: it consists of  trusted third-party authorities, auditors, or regulators (e.g.,  financial conduct authority, prudential regulation authority, financial ombudsman service). Given a set of complaints, they compile the complaints    and provide  their binary verdicts. If needed, they are authorised to access the banking  system's backend software to carry out investigations. We assume all arbiters have interacted with each other once,  to agree on (a) a secret key, $\bar k_{\st 0}$, and (b) a pair of keys $({pk}_{\st\mathcal {D}}, {sk}_{\st\mathcal {D}})$  of an asymmetric key encryption.
 %
-\item[$\bullet$]  Dispute resolver $\mathcal{DR}$: it is an aggregator of arbiters' votes (e.g., public court). Given a collection of votes, it extracts and announces the final verdict. We assume it is corrupted by a passive adversary. 
+\item[$\bullet$]  Dispute resolver $\mathcal{DR}$: it is an aggregator of arbiters' votes (e.g., public court). Given a collection of votes, it extracts and announces the final verdict. We assume it is corrupted by a non-colluding passive adversary. 
 %
 \end{itemize}
 
