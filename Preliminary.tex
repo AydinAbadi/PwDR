@@ -17,7 +17,9 @@ The PwDR scheme consists of six types of parties. Below, we informally explain e
 %
 \item[$\bullet$] Customer $\mathcal{C}$: it is a regular customer of a bank. We call a customer  a victim after it falls victim to an APP fraud. We assume a victim is corrupted by a non-colluding active (or malicious) adversary. %; for instance, an unqualified victim  tries to make itself appear qualified for reimbursement. 
 %
-\item[$\bullet$] Bank $\mathcal{B}$: it is a regular bank that provides a standard online banking system. We assume it is corrupted by a non-colluding active adversary. We assume  any change to the source code of the online banking system is transparent and  can be detected. %, e.g., the bank  uses a cryptographic commitment to commit to the source code. 
+\item[$\bullet$] Bank $\mathcal{B}$: it is a regular bank that provides a standard online banking system. We assume it is corrupted by a non-colluding active adversary. We assume  any change to the source code of the online banking system is transparent and  can be detected. Note that in the real-world a bank is  not usually an active adversary and cares about its reputation, such as a ``rational'' or ``covert'' adversary which is weaker than the active one. However, to ensure our solution offers  a strong security guarantee, we assume the adversary is strong too, i.e., active one. 
+
+%, e.g., the bank  uses a cryptographic commitment to commit to the source code. 
 %
 \item[$\bullet$] Smart contract $\mathcal{S}$: it is a standard  smart contract of a public  blockchain (e.g., Ethereum). It mainly acts as a tamper-proof public bulletin board to store different parties' messages.  We do not assume that a smart contract itself can offer any privacy. 
 %
