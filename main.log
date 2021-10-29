@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  27 OCT 2021 19:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  29 OCT 2021 12:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1433,15 +1433,15 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 (./introduction.tex [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./bac
-kground.tex [2]) (./Preliminary.tex
+kground.tex [2]) (./Preliminary.tex [3]
 Overfull \hbox (2.63103pt too wide) in paragraph at lines 67--68
 []\OT1/cmr/m/it/10 A sig-na-ture scheme in-volves three al-go-rithms, $[] \OT1/
 cmr/m/n/10 := ([]\OML/cmm/m/it/10 ;$ $[]; []\OT1/cmr/m/n/10 )$\OT1/cmr/m/it/10 
 ,
  []
 
-[3] (./commitment.tex) (./SAP.tex [4])) (./content.tex (./PwDR-Overview.tex
-[5]) (./Definition.tex [6]
+(./commitment.tex) (./SAP.tex [4]) [5]) (./content.tex (./PwDR-Overview.tex
+[6]) (./Definition.tex
 Overfull \hbox (4.50354pt too wide) in paragraph at lines 68--69
 []\OT1/cmr/m/it/10 A pay-ment with dis-pute res-o-lu-tion scheme in-cludes the 
 fol-low-ing al-go-rithms $[] \OT1/cmr/m/n/10 := ([]\OML/cmm/m/it/10 ;$
@@ -1457,7 +1457,7 @@ Overfull \hbox (14.20929pt too wide) detected at line 291
 []
  []
 
-(./privacy-def.tex [10]
+[10] (./privacy-def.tex
 Overfull \hbox (13.52103pt too wide) detected at line 51
 []
  []
@@ -1467,17 +1467,21 @@ Overfull \hbox (6.67792pt too wide) detected at line 125
 []
  []
 
-[11])) (./check-pass.tex (./verStat.tex [12]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]))
+[12] (./check-pass.tex (./verStat.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--17
 
  []
 
-) (./checkWarning.tex
+) (./checkWarning.tex [13]
 Underfull \hbox (badness 10000) in paragraph at lines 17--21
 
  []
 
-) (./encode.tex [13] [14] [15]
+) (./encode.tex [14] [15]
 Underfull \hbox (badness 10000) in paragraph at lines 145--148
 
  []
@@ -1492,11 +1496,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 200--203
 
  []
 
-))
-Underfull \vbox (badness 1354) has occurred while \output is active []
-
- [16]
-[17]
+)) [16] [17] [18]
 Overfull \hbox (4.8112pt too wide) in paragraph at lines 269--270
 []\OT1/cmr/m/n/10 if ``chal-lenge warn-ing'' $[] \OML/cmm/m/it/10 z[]$\OT1/cmr/
 m/n/10 , it sets $\OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[] \
@@ -1504,64 +1504,88 @@ OT1/cmr/m/n/10 = 0$. Oth-er-wise, it runs $[](\OML/cmm/m/it/10 add[]; z[]; m[];
 $
  []
 
-[18] (./proof.tex [19] [20]) (./evaluation.tex (./table-cost.tex [21]) [22]
+[19] (./proof.tex [20] [21]) (./evaluation.tex (./table-cost.tex) [22]
 (./Performance-table.tex) (./diag-1.tex) [23])) (./future-research.tex [24])
-(./related-work.tex [25]) (./conclusion.tex) (./main.bbl [26]
-Underfull \hbox (badness 10000) in paragraph at lines 79--82
+(./related-work.tex [25] [26]) (./conclusion.tex) (./main.bbl
+Underfull \hbox (badness 1917) in paragraph at lines 6--9
+[]\OT1/cmr/m/n/9 A P20 Fraud and Crim-i-nal Trans-ac-tions Work-ing Group Pa-pe
+r: Best prac-tice ap-proaches for com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--9
+\OT1/cmr/m/n/9 bat-ing payee scams (2021), []$\OT1/cmtt/m/n/9 https : / / stati
+c1 . squarespace . com / static / 5efcc6dae323db37b4d01d19 / t /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--9
+\OT1/cmtt/m/n/9 60958e7453a1e0728b445470 / 1620414069082 / P20 + Report + -[] +
+ Best + Practice + Approaches + For + Combating +
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
 []\OT1/cmr/m/n/9 Confirmation of Payee Team: Con-fir-ma-tion of payee- re-spons
 e to con-sul-ta-tion cp20/1 and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--82
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
 \OT1/cmr/m/n/9 de-ci-sion on vary-ing spe-cific di-rec-tion 10 (2020), []$\OT1/
 cmtt/m/n/9 https : / / www . psr . org . uk / media / qrbc03jm /
  []
 
 
-Underfull \hbox (badness 3907) in paragraph at lines 114--117
+Underfull \hbox (badness 1215) in paragraph at lines 102--104
+[]\OT1/cmr/m/n/9 Federal Bu-reau of In-ves-ti-ga-tion (FBI): In-ter-net crime r
+e-port (2020), []$\OT1/cmtt/m/n/9 https : / / www . ic3 . gov / Media / PDF /
+ []
+
+
+Underfull \hbox (badness 3907) in paragraph at lines 123--126
 []\OT1/cmr/m/n/9 Katz, J., Lin-dell, Y.: In-tro-duc-tion to Mod-ern Cryp-tog-ra
 -phy, Sec-ond Edi-tion. CRC Press (2014),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--117
+Underfull \hbox (badness 10000) in paragraph at lines 123--126
 []$\OT1/cmtt/m/n/9 https : / / www . crcpress . com / Introduction-[]to-[]Moder
 n-[]Cryptography-[]Second-[]Edition / Katz-[]Lindell / p /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--135
+Underfull \hbox (badness 10000) in paragraph at lines 141--144
 []\OT1/cmr/m/n/9 Lending Stan-dards Board: Con-tin-gent re-im-burse-ment model 
 code for au-tho-rised push pay-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--135
+Underfull \hbox (badness 10000) in paragraph at lines 141--144
 \OT1/cmr/m/n/9 ment scams (2021), []$\OT1/cmtt/m/n/9 https : / / www . lendings
 tandardsboard . org . uk / wp-[]content / uploads / 2021 / 04 /
  []
 
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 170--174
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--187
 []\OT1/cmr/m/n/9 The Fi-nan-cial Om-buds-man Ser-vice: Lend-ing stan-dards boar
 d re-view of the con-tin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--174
+Underfull \hbox (badness 10000) in paragraph at lines 183--187
 \OT1/cmr/m/n/9 gent re-im-burse-ment model code for au-tho-rised push pay-ment 
 scams-financial om-buds-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--174
+Underfull \hbox (badness 10000) in paragraph at lines 183--187
 \OT1/cmr/m/n/9 man ser-vice re-sponse (2020), []$\OT1/cmtt/m/n/9 https : / / ww
 w . financial-[]ombudsman . org . uk / files / 289009 /
  []
 
 
-Underfull \hbox (badness 7981) in paragraph at lines 176--178
+Underfull \hbox (badness 7981) in paragraph at lines 189--191
 []\OT1/cmr/m/n/9 UK Fi-nance: 2021 half year fraud up-date (2021), []$\OT1/cmtt
 /m/n/9 https : / / www . ukfinance . org . uk / system / files /
  []
@@ -1606,15 +1630,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 41501 strings out of 480608
- 960383 string characters out of 5903630
- 1401532 words of memory out of 5000000
- 56308 multiletter control sequences out of 15000+600000
+ 41508 strings out of 480608
+ 960509 string characters out of 5903630
+ 1404362 words of memory out of 5000000
+ 56311 multiletter control sequences out of 15000+600000
  548440 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,21n,106p,3756b,2277s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
+, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
 , replaced by a fixed one
@@ -1660,10 +1687,10 @@ st/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2020/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/tex
 mf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (32 pages, 565224 bytes).
+Output written on main.pdf (32 pages, 568894 bytes).
 PDF statistics:
- 783 PDF objects out of 1000 (max. 8388607)
- 636 compressed objects within 7 object streams
- 240 named destinations out of 1000 (max. 500000)
+ 802 PDF objects out of 1000 (max. 8388607)
+ 652 compressed objects within 7 object streams
+ 244 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

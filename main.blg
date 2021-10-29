@@ -3,54 +3,57 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: splncs03.bst
 Database file #1: ref.bib
+Warning--empty journal in P20-report
 Warning--empty journal in anderson2019measuring
 Warning--missing institution in CBDC-core-features
 Warning--empty journal in CoP
+Warning--empty journal in internet-crime-report
 Warning--empty journal in Which?-super-complaint
 Warning--empty journal in CRM-code
 Warning--missing institution in bitcoin
 Warning--missing institution in Lightning-Network
+Warning--empty journal in Fraud-Classifier
 Warning--empty journal in Regulations
 Warning--empty journal in Financial-Ombudsman-Service-response
-You've used 41 entries,
+You've used 44 entries,
             2785 wiz_defined-function locations,
-            792 strings with 12008 characters,
-and the built_in function-call counts, 17308 in all, are:
-= -- 1279
-> -- 637
+            806 strings with 12637 characters,
+and the built_in function-call counts, 18322 in all, are:
+= -- 1354
+> -- 658
 < -- 5
-+ -- 268
-- -- 222
-* -- 1040
-:= -- 2424
++ -- 277
+- -- 228
+* -- 1103
+:= -- 2565
 add.period$ -- 33
-call.type$ -- 41
-change.case$ -- 268
+call.type$ -- 44
+change.case$ -- 283
 chr.to.int$ -- 0
-cite$ -- 50
-duplicate$ -- 1629
-empty$ -- 1584
-format.name$ -- 244
-if$ -- 3590
+cite$ -- 56
+duplicate$ -- 1737
+empty$ -- 1683
+format.name$ -- 250
+if$ -- 3797
 int.to.chr$ -- 0
-int.to.str$ -- 41
-missing$ -- 368
-newline$ -- 128
-num.names$ -- 82
-pop$ -- 765
+int.to.str$ -- 44
+missing$ -- 392
+newline$ -- 137
+num.names$ -- 88
+pop$ -- 810
 preamble$ -- 1
-purify$ -- 191
+purify$ -- 200
 quote$ -- 0
-skip$ -- 366
+skip$ -- 390
 stack$ -- 0
-substring$ -- 618
-swap$ -- 715
+substring$ -- 663
+swap$ -- 754
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 160
-warning$ -- 9
-while$ -- 129
-width$ -- 43
-write$ -- 373
-(There were 9 warnings)
+type$ -- 172
+warning$ -- 12
+while$ -- 138
+width$ -- 46
+write$ -- 397
+(There were 12 warnings)

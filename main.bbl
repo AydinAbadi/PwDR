@@ -2,6 +2,11 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
+\bibitem{P20-report}
+{A P20 Fraud and Criminal Transactions Working Group Paper}: Best practice
+  approaches for combating payee scams  (2021),
+  \url{https://static1.squarespace.com/static/5efcc6dae323db37b4d01d19/t/60958e7453a1e0728b445470/1620414069082/P20+Report+-+Best+Practice+Approaches+For+Combating+Payee+Scams.pdf}
+
 \bibitem{variant-1}
 Abadi, A.: Variant 1: Efficient verdict encoding-decoding protocol (2021),
   \url{https://github.com/AydinAbadi/PwDR/blob/main/PwDR-code/encoding-decoding.cpp}
@@ -93,6 +98,10 @@ Dziembowski, S., Eckey, L., Faust, S.: Fairswap: How to fairly exchange digital
 Eckey, L., Faust, S., Schlosser, B.: Optiswap: Fast optimistic fair exchange.
   In: {ASIA} {CCS} (2020)
 
+\bibitem{internet-crime-report}
+{Federal Bureau of Investigation (FBI)}: Internet crime report  (2020),
+  \url{https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf}
+
 \bibitem{felt2014experimenting}
 Felt, A.P., Reeder, R.W., Almuhimedi, H., Consolvo, S.: Experimenting at scale
   with google chrome's {SSL} warning. In: {CHI} (2014)
@@ -161,6 +170,10 @@ Schneier, B.: Applied cryptography - protocols, algorithms, and source code in
 \bibitem{taylor2020new}
 Taylor, J.L., Galica, T.: A new code to protect victims in the uk from
   authorised push payments fraud. Banking \& Finance Law Review  (2020)
+
+\bibitem{Fraud-Classifier}
+{The Federal Reserve}: Fraud classifier  (2020),
+  \url{https://fedpaymentsimprovement.org/wp-content/uploads/fraudclassifier-industry-adoption-roadmap.pdf}
 
 \bibitem{Regulations}
 {The Financial Conduct Authority}: The payment services regulations  (2017),
