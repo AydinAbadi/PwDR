@@ -173,6 +173,11 @@ Poon, J., Dryja, T.: The bitcoin lightning network: Scalable off-chain instant
 Schneier, B.: Applied cryptography - protocols, algorithms, and source code in
   C, 2nd Edition. Wiley (1996)
 
+\bibitem{statista}
+{Statista}: Online frauds encountered by internet users in china as of december
+  2020, by type (2020),
+  \url{https://www.statista.com/statistics/1003979/china-main-online-frauds-by-type/}
+
 \bibitem{taylor2020new}
 Taylor, J.L., Galica, T.: A new code to protect victims in the uk from
   authorised push payments fraud. Banking \& Finance Law Review  (2020)
@@ -205,6 +210,10 @@ Taylor, J.L., Galica, T.: A new code to protect victims in the uk from
 {UK Finance}: 2021 half year fraud update (2021),
   \url{https://www.ukfinance.org.uk/system/files/Half-year-fraud-update-2021-FINAL.pdf}
 
+\bibitem{overview-of-payment-fraud}
+{UK Finance}: The definitive overview of payment industry fraud (2021),
+  \url{https://www.ukfinance.org.uk/system/files/Fraud\%20The\%20Facts\%202021-\%20FINAL.pdf}
+
 \bibitem{ethereum}
 Wood, G., et~al.: Ethereum: A secure decentralised generalised transaction
   ledger. Ethereum project yellow paper  (2014)
@@ -216,5 +225,10 @@ W{\"{u}}st, K., Kostiainen, K., Capkun, V., Capkun, S.: Prcash: Fast, private
 \bibitem{zee2021shifting}
 Zee, S.V.D.: Shifting the blame? investigation of user compliance with digital
   payment regulations. In: Cybercrime in Context. Springer (2021)
+
+\bibitem{pig-butchering}
+Zuo, M.: Online ``pig butchering'' love scams have gone global after getting
+  their start in china (2021),
+  \url{https://www.scmp.com/news/people-culture/social-welfare/article/3150688/online-pig-butchering-love-scams-have-gone}
 
 \end{thebibliography}

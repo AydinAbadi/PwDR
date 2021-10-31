@@ -15,45 +15,45 @@ Warning--missing institution in Lightning-Network
 Warning--empty journal in Fraud-Classifier
 Warning--empty journal in Regulations
 Warning--empty journal in Financial-Ombudsman-Service-response
-You've used 47 entries,
+You've used 50 entries,
             2785 wiz_defined-function locations,
-            820 strings with 13407 characters,
-and the built_in function-call counts, 19362 in all, are:
-= -- 1433
-> -- 684
+            831 strings with 13985 characters,
+and the built_in function-call counts, 20334 in all, are:
+= -- 1505
+> -- 705
 < -- 5
-+ -- 288
-- -- 236
-* -- 1158
-:= -- 2702
++ -- 297
+- -- 242
+* -- 1206
+:= -- 2825
 add.period$ -- 34
-call.type$ -- 47
-change.case$ -- 299
+call.type$ -- 50
+change.case$ -- 314
 chr.to.int$ -- 0
-cite$ -- 59
-duplicate$ -- 1837
-empty$ -- 1792
-format.name$ -- 259
-if$ -- 4020
+cite$ -- 62
+duplicate$ -- 1927
+empty$ -- 1903
+format.name$ -- 265
+if$ -- 4233
 int.to.chr$ -- 0
-int.to.str$ -- 47
-missing$ -- 413
-newline$ -- 146
-num.names$ -- 94
-pop$ -- 860
+int.to.str$ -- 50
+missing$ -- 431
+newline$ -- 155
+num.names$ -- 100
+pop$ -- 911
 preamble$ -- 1
-purify$ -- 210
+purify$ -- 219
 quote$ -- 0
-skip$ -- 414
+skip$ -- 438
 stack$ -- 0
-substring$ -- 708
-swap$ -- 796
+substring$ -- 753
+swap$ -- 835
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 184
+type$ -- 196
 warning$ -- 12
-while$ -- 147
-width$ -- 49
-write$ -- 423
+while$ -- 156
+width$ -- 52
+write$ -- 447
 (There were 12 warnings)
