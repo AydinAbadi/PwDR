@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  3 NOV 2021 11:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  3 NOV 2021 11:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1656,10 +1656,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 41527 strings out of 480608
- 960783 string characters out of 5903630
- 1403872 words of memory out of 5000000
- 56318 multiletter control sequences out of 15000+600000
+ 41528 strings out of 480608
+ 960794 string characters out of 5903630
+ 1403870 words of memory out of 5000000
+ 56319 multiletter control sequences out of 15000+600000
  548777 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,21n,106p,3756b,2277s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1717,7 +1717,7 @@ st/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist
 ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/tex
 mf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2020/texmf
 -dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (33 pages, 575325 bytes).
+Output written on main.pdf (33 pages, 575328 bytes).
 PDF statistics:
  851 PDF objects out of 1000 (max. 8388607)
  692 compressed objects within 7 object streams
