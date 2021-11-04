@@ -1,0 +1,237 @@
+% !TEX root =main.tex
+
+\subsection{Subroutines for  Encoding-Decoding Verdicts}\label{sec::Encoding-Decoding-Verdicts}
+
+
+In this section, we present verdict encoding and decoding protocols. They let a third party $\mathcal{I}$, e.g., $\mathcal{DR}$, find out whether threshold  arbiters voted $1$, while satisfying the following  requirements.  The protocols should (1) generate unlinkable verdicts, (2)  not require arbiters to interact with each other for each customer, and (3) be  efficient. Since the second and third requirements are self-explanatory,  we only explain the first one.  Informally, the first property requires  that the protocols should generate encoded verdicts and final verdict in a way that $\mathcal{I}$,  given the encoded verdicts and final verdict, should not be able to (a)   link a  verdict to an arbiter (except when all arbiters' verdicts are $0$), and (b) find out the total number of $1$ or $0$ verdicts when they provide different verdicts.  In this section, we present two variants of verdict encoding and decoding protocol. The first variant is highly efficient and suitable for the case where the threshold is $1$. The second variant is  generic and works for any threshold. The latter variant is slightly less efficient than the former one. These two variants might be of independent interest. Below, we explain each variant. 
+
+
+\subsubsection{Variant 1:  Efficient Verdict  Encoding-Decoding Protocol.}
+
+
+Below, we present  efficient verdict encoding and decoding protocols; namely, Private Verdict Encoding (PVE) and Final Verdict Decoding (FVD). They  let $\mathcal{I}$ find out whether at least one arbiter voted $1$, while satisfying the above requirements.   This variant  mainly relies on our observation that   if   a set of random values and $0$s are XORed, then the result   reveals nothing, e.g.,  about the number of non-zero and  zero values. Below, we formally state it.  We refer readers to Appendix \ref{sec::Variant-1-Theorem-proof} for the proof.
+
+\begin{theorem}\label{set-xor}
+Let set $S=\{s_{\st 1},..., s_{\st m}\}$ be the union of  two disjoint sets $S'$ and $S''$, where $S'$ contains non-zero random values pick uniformly  from a finite field $\mathbb{F}_{\st p}$, $S''$ contains zeros, $|S'|\geq c'=1$, $|S''|\geq c''=0$, and pair $(c',c'')$ is public information. Then, $r= \bigoplus\limits^{\st m}_{\st i=1} s_{\st i}$ reveals nothing beyond the public information.  
+\end{theorem}
+
+%\begin{proof}
+%Let $s_{\st 1}$ and $s$, be two random values picked uniformly at random from $\mathbb{F}_{\st p}$. Let $\bar s=s_{\st 1}\oplus \underbrace{0\oplus... \oplus 0}_{\st |S''|}$. Since  $\bar s=s_{\st 1}$, two values $\bar s$ and $s$ have identical distribution. Thus, $\bar s$ reveals nothing in this case. Next, let $\tilde s=\underbrace{ s_{\st 1}\oplus s_{\st 2}\oplus... \oplus s_{\st j}}_{\st |S'|}$, where $s_{\st i}\in S'$. Since each $s_{\st i}$ is a uniformly random value,  the XOR of them is a uniformly random value too. That means values $\tilde s$ and $s$ have identical distribution. Thus, $\tilde s$ reveals nothing in this case as well. Also, it is not hard to see that the combination of the above two cases reveals nothing too, i.e., $\bar s\oplus \tilde s$ and $s$ have    identical distribution. 
+%%
+%\end{proof}
+
+
+
+
+
+At a high level, PVE and  FVD work as follows.  The arbiters only once for all customers agree on a secret key of a pseudorandom function. This key will let each of them, in PVE,  generate a pseudorandom masking value such that if all masking values are XORed, they would cancel out each other and result in $0$.\footnote{This is similar to the idea used in the XOR-based secret sharing \cite{Schneier0078909}.} In PVE, each arbiter encodes its verdict by (i) representing it as a parameter which is set to  $0$ if the verdict is $0$, or to a random value if the verdict is $1$, and then (ii) masking this parameter by the above  pseudorandom value.  It sends the result to $\mathcal{I}$.  In FVD, to decode the final verdict and find out whether any arbiter voted $1$, $\mathcal{I}$   XORs all encoded verdicts. This removes the masks and XORs are verdicts' representations.  If the result is $0$, then  it concludes that  all arbiters must have voted $0$; therefore,  the final verdict is $0$. However, if the result is not $0$ (i.e., a random value), then it knows that at least one of the arbiters voted $1$, so  the final verdict is $1$. %In summary, by requiring each arbiter to represent  its verdict $1$ with a distinct random value and add a masking layer to each verdict representation, the protocols can meet the above requirements. 
+
+It is evident that the protocols meet properties (2) and (3). The primary reason they also meet  property (1) is that each masked verdict reveals nothing about the verdict (and its representation) and  given the final verdict, $\mathcal{I}$ cannot distinguish between the case where there is exactly one arbiter that voted  $1$ and the case where multiple arbiters voted $1$, as in both cases $\mathcal{I}$   extracts only a single random value, which reveals nothing about the number of arbiters which voted $0$ or $1$ (due to Theorem \ref{set-xor}).   Note,  the protocols' correctness holds with an overwhelming probability, i.e., $1-\frac{1}{2^{\st \lambda}}$. Specifically, if two arbiters  represent their verdict by an identical random value, then when they are XORed they would cancel out each other which can affect the result's correctness. The same holds if the XOR of  multiple verdicts' representations results in a value that can cancel out another verdict's representation. Nevertheless, the probability that such an event occurs is negligible in the security parameter $|p|=\lambda$, i.e., at most   $\frac{1}{2^{\st \lambda}}$. %We will use this variant in the PwDR protocol.
+ 
+ 
+
+ 
+ 
+
+
+
+
+
+%Here, we present two efficient verdict encoding and decoding protocols; namely, Private Verdict Encoding (PVE) and Final Verdict Decoding (FVD) protocols, that lets $\mathcal{I}$ find out whether at least one arbiter voted $1$, while satisfying the above requirements.  At a high level, the protocols work as follows.  The arbiters only once for all customers agree on a secret key of a pseudorandom function. This key will let each of them   generate a pseudorandom masking values such that if all masking values are ``XOR''ed, they would cancel out each other and result $0$.\footnote{This is similar to the idea used in the XOR-based secret sharing \cite{Schneier0078909}.} Each arbiter represents its verdict by (i) representing it as a parameter which is set to either $0$ if the verdict is $0$ or a random value if the verdict is $1$, and then (ii) masking this parameter by the above  pseudorandom value.  It sends the result to $\mathcal{I}$.  To decode the final verdict and find out whether any arbiter voted $1$, $\mathcal{I}$  does XOR all encoded verdicts. This removes the masks and XORs are verdicts' representations.  If the result is $0$, then    all arbiters must have voted $0$; therefore,  the final verdict is $0$. However, if the result is not $0$ (i.e., a random value), then at least one of the arbiters voted $1$, so  the final verdict is $1$. We present the encoding  and decoding protocols in figures \ref{fig:PVE} and \ref{fig:FVD} respectively.
+% 
+% 
+% Not that the protocols' correctness holds with an overwhelming probability. In particular, if two arbiters  represent their verdict by an identical random value, then when they are XORed they would cannel out each other which can affect the result's correctness. The same holds if the XOR of  multiple verdicts' representations results in a value that can cancel out another verdict's representation. Nevertheless, the probability that such an event occurs is negligible in the security parameter $|p|=\lambda$, i.e., at most   $\frac{1}{2^{\st \lambda}}$. It is evident that PVE and FVD protocols meet properties (2) and (3). The primary reason they also meet  property (1) is that each masked verdict reveals nothing about the verdict (and its representation) and  given the final verdict, $\mathcal{I}$ cannot distinguish between the case where there is exactly one arbiter that voted  $1$ and the case where multiple arbiters voted $1$, as in both cases $\mathcal{I}$   extracts only a single random value, which reveals nothing about the number of arbiters which voted $0$ or $1$. We will use this variant in the PwDR protocol. 
+ 
+
+\subsubsection{Variant 2: Generic Verdict  Encoding-Decoding Protocol.} Now, we present  an efficient \emph{generic} verdict  encoding-decoding protocol, denoted by GPVE and GFVD. They   let $\mathcal{I}$ find out whether at least $e$ arbiters voted $1$, where $e$ can be set to an integer in the range $[1, n]$. This variant is  built upon the previous one;  however, it also uses a novel combination of   Bloom filter and combinatorics. It  relies on our observation that a Bloom filter  encoding a set of random values reveals nothing about the set's elements, except with a negligible probability. We formally state it in Theorem \ref{set-bf} whose proof is given in Appendix \ref{sec::Variant-2-Theorem-proof}. 
+
+
+% however, it also relies on our observation that a Bloom filter that encodes a set of random values reveals nothing about the set's elements, except with a negligible probability. Below, we formally state and prove it. 
+
+
+\begin{theorem}\label{set-bf}
+Let set $S=\{s_{\st 1},..., s_{\st m}\}$ be a set of random values picked uniformly from $\mathbb{F}_{\st p}$, where the cardinality of $S$ is  public information. Let $\mathtt{BF}$ be a Bloom filter encoding all elements of   $S$. Then,  $\mathtt{BF}$ reveals nothing about any element of $S$, beyond the public information, except with a negligible probability in the security parameter. 
+\end{theorem}
+
+%\begin{proof}
+%
+%
+%First, we consider the simplest case where only a single element  of $S$ is encoded in $\mathtt{BF}$. In this case, due to the pre-image resistance of the Bloom filter's hash functions and the fact that the set's element was picked uniformly at random from $\mathbb{F}_{\st p}$, the probability that $\mathtt{BF}$ reveals anything about the original element is at most $\frac{1}{2^{\st \lambda}}$. Now, we move on to the  case where all elements of $S$ are encoded in $\mathtt{BF}$. In this case, the probability that $\mathtt{BF}$ reveals anything about at least an element of the set is $\frac{|S|}{2^{\st \lambda}}$, due to  the pre-image resistance of the hash functions,  the fact that all elements were selected  uniformly at random from the finite field, and the union bound. Nevertheless, when a $\mathtt{BF}$'s size is set appropriately to avoid false-positive without wasting storage, this reveals the number of elements encoded in it, which is public information.  Thus, the only information $\mathtt{BF}$ reveals is the public one.  
+% %
+%\end{proof}
+
+
+The arbiters (similar to Variant 1) agree on a secret key of a pseudorandom function. In GPVE,  as before, each arbiter will use this key to  generate a pseudorandom masking value such that if all arbiters' masking values are XORed, they would cancel out each other. Then, each arbiter represents its verdict by a parameter. In particular, if its verdict is $0$, then  it  sets the parameter to  $0$. However, if   its verdict is $1$, it sets the parameter to a fresh \emph{pseudorandom} value $\alpha_{\st j}$ (instead of a random value used in Variant 1),  where this  pseudorandom value is also derived from the above key. Therefore, there would be a set $A=\{\alpha_{\st 1},..., \alpha_{\st n}\}$ from which  $\mathcal{D}_{\st j}$ would pick $\alpha_{\st j}$ to represent its verdict if its verdict is $1$. Next, each arbiter masks its verdict representation by its masking  value. It sends the result to $\mathcal{I}$. Arbiter $\mathcal{D}_{\st n}$ also generates a new set $W$ that contains all  combinations of verdict $1$'s representations that satisfy the threshold, $e$. More specifically,  for every integer $i$ in the range $[e, n]$, it computes the combinations (without repetition) of $i$ elements from set $A=\{\alpha_{\st 1},..., \alpha_{\st n}\}$. In the case where  multiple elements are taken at a time (i.e., $i>1$), the elements are XORed with each other.   Note, $\mathcal{D}_{\st n}$ generates  set $B$  regardless of whether a certain arbiter's  vote is $0$ or $1$. Let $W=\{(\alpha_{\st 1}\oplus ... \oplus \alpha_{\st e}),  (\alpha_{\st 2}\oplus  ... \oplus \alpha_{\st e+1}), ..., (\alpha_{\st 1}\oplus ... \oplus \alpha_{\st n})\}$ be the result. For instance, if the total number of arbiters, $n$, is $3$ and the threshold, $e$, is $2$,  then $W=\{(\alpha_{\st 1}\oplus \alpha_{\st 2}),  (\alpha_{\st 2}\oplus  \alpha_{\st 3}), (\alpha_{\st 1}\oplus \alpha_{\st 3}), (\alpha_{\st 1}\oplus \alpha_{\st 2} \oplus \alpha_{\st n})\}$. After that, it generates an empty Bloom filter and  inserts all elements of $W$ into this Bloom filter. Let $\mathtt{BF}$ be the Bloom filter that encodes $W$'s elements. It sends $\mathtt{BF}$ to $\mathcal{I}$. Note that inserting the combinations into $\mathtt{BF}$ ensures that the privacy of  each vote's representation (e.g., $\alpha_{\st j}$) is protected from $\mathcal{I}$. 
+
+
+
+In GFVD, to decode and extract the final verdict, as in Variant 1, party $\mathcal{I}$  XORs all masked verdict representations which  removes the masking values and XORs all verdicts’ representations. Let $c$ be the result.  If $c=0$, then $\mathcal{I}$ concludes that all arbiters must have voted $0$ (with a high probability); so, it sets the final verdict to $0$. However, if $c$ is a non-zero value, then it checks whether $c$ is in the Bloom filter. If it is, then it concludes that at least threshold arbiters voted $1$, so it sets the final vector to $1$. Otherwise (if $c$ is not in the Bloom filter), it concludes that less than threshold arbiters voted $1$; therefore, it sets the final verdict to $0$.  Figures \ref{fig:GPVE} and \ref{fig:GFVD}, in Appendix \ref{sec::Generic-Verdict-Encoding-Decoding-Protocols}, present the  GPVE and GFVD protocols in detail. Note that since $\mathtt{BF}$ contains all possible combinations of verdict $1$'s representations that meet the threshold,  $\mathcal{DR}$ can always find out if $c$ meets the threshold by just checking if $c$ is in the $\mathtt{BF}$. The total number of the combinations, i.e., the cardinality of $W$, is relatively small when the number of arbiters is not very high. In general,  due to the  binomial theorem, the cardinality of $W$ is determined as follows:
+%
+
+\begin{equation*}
+|W|=\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!}
+ \end{equation*}
+ 
+ %
+ For instance, when $n=10$ and  $e=6$, then $W$'s cardinality is only $386$.  In the above scheme, instead of inserting the combinations into $\mathtt{BF}$ we could simply hash  the combinations and give the hash values to $\mathcal{I}$. However, using a Bloom filter allows us to save considerable communication costs. For instance, when $n=10$, $e=6$, and SHA-256 is used, then $\mathcal{D}_{\st n}$ needs to send  $98816=386\times 256$ bits to $\mathcal{I}$, whereas  if they are inserted into a Bloom filter, then it only needs to send $22276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it  can save  communication costs by at least a factor of  $4$. We refer readers to Appendix \ref{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol} for  further discussion on the verdict encoding-decoding protocols. 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+
+
+
+%Arbiter $\mathcal{D}_{\st n}$ also generates a Bloom filter that contains the combinations of set $A$'s elements, regardless of whether a certain arbiter's  vote is $0$ or $1$. More specifically,  for every integer $i$ in the range $[e,n]$, computes the combinations, without repetition, of $i$ elements from set $A=\{\alpha_{\st 1},..., \alpha_{\st n}\}$, where when multiple elements are taken at a time (i.e., $i>1$), the elements are XORed with each other. Let $W=\{(\alpha_{\st 1}\oplus ... \oplus \alpha_{\st e}),  (\alpha_{\st 2}\oplus  ... \oplus \alpha_{\st e+1}), ..., (\alpha_{\st 1}\oplus ... \oplus \alpha_{\st n})\}$ be the result. For instance, when $n=3$ and $e=2$,  we would have $W=\{(\alpha_{\st 1}\oplus \alpha_{\st 2}),  (\alpha_{\st 2}\oplus  \alpha_{\st 3}), (\alpha_{\st 1}\oplus \alpha_{\st 3}), (\alpha_{\st 1}\oplus \alpha_{\st 2} \oplus \alpha_{\st n})\}$. After that, it generates an empty Bloom filter and  inserts all elements of $W$ into this Bloom filter. Let $\mathtt{BF}$ be the Bloom filter that encodes $W$'s elements. It sends $\mathtt{BF}$ to $\mathcal{I}$. To decode and extract the final verdict, as in Variant 1, $\mathcal{I}$ does XOR all masked verdict representations which  removes the masking values and XORs are verdicts’ representations. If the result is $0$, then $\mathcal{I}$ concludes that all arbiters must have voted $0$ (with a high probability); so, it sets the final verdict to $0$. However, if the result is a non-zero value, then it checks whether the value is in the Bloom filter. If it is, then it concludes that at least threshold arbiters voted $1$, so it sets the final vector to $1$. Otherwise (if the value is not in the Bloom filter), it concludes that less than threshold arbiters voted $1$; therefore, it sets the final verdict to $0$.  Figures \ref{fig:GPVE} and \ref{fig:GFVD}, in Appendix \ref{sec::Generic-Verdict-Encoding-Decoding-Protocols}, present the  GPVE and GFVD protocols in detail. 
+
+
+
+%\item[$\bullet$] for every integer $i$ in the range $[e,n]$, computes the combinations (without repetition) of $i$ elements from set $\{\alpha_{\st 1},..., \alpha_{\st n}\}$, where the combination operation is XOR. Let $W=\{(\alpha_{\st 1}\oplus \alpha_{\st 2}\oplus... \oplus \alpha_{\st e}), (\alpha_{\st 2}\oplus \alpha_{\st 3}\oplus ... \oplus \alpha_{\st e+1}), ..., (\alpha_{\st 1}\oplus \alpha_{\st 2}\oplus... \oplus \alpha_{\st n})\}$ be the result.  
+%
+
+%\item[$\bullet$] constructs an empty Bloom filter. Then, it inserts all elements of $W$ into this Bloom filter. Let $\mathtt{BF}$ be the Bloom filter encoding $W$'s elements. 
+ 
+  
+  
+ 
+ 
+ 
+ 
+
+
+
+ %and then (ii) masking this parameter by the above pseudorandom value. It sends the result to I. 
+
+%Now, we explain how the GPVE and GFVD work. 
+
+
+
+
+
+%In Appendix \ref{sec::bloom-filter-}, we explain how the Bloom filter parameters can be set.  
+
+
+
+
+%
+%Here, we present two efficient verdict encoding and decoding protocols; namely, Private Verdict Encoding (PVE) and Final Verdict Decoding (FVD) protocols. Their goal is to let a third party $\mathcal{I}$, e.g., $\mathcal{DR}$, find out whether at least one arbiter voted $1$, while satisfying the following  requirements.  The protocols should (1) generate unlinkable verdicts, (2)  not require arbiters to interact with each other for each customer, and (3) be  efficient. Since, the second and third requirements are self-explanatory,  we only explain the first one.  Informally, the first property requires  that the protocols should generate encoded verdicts and final verdict in a way that $\mathcal{I}$,  given the encoded verdicts and final verdict, should not be able to (a)   link a  verdict to an arbiter (except when all arbiters' verdicts are $0$), and (b) find out the total number of $1$ or $0$ verdicts when they provide different verdicts. 
+%
+%
+%
+% At a high level, the protocols work as follows.  The arbiters only once for all customers agree on a secret key of a pseudorandom function. This key will allow each of them to generate a pseudorandom masking values such that if all masking values are ``XOR''ed, they would cancel out each other and result $0$.\footnote{This is similar to the idea used in the XOR-based secret sharing \cite{Schneier0078909}.}
+% 
+% 
+% 
+% 
+% 
+%Each arbiter represents its verdict by (i) representing it as a parameter which is set to either $0$ if the verdict is $0$ or to a random value if the verdict is $1$, and then (ii) masking this parameter by the above  pseudorandom value.  It sends the result to $\mathcal{I}$.  To decode the final verdict and find out whether any arbiter voted $1$, $\mathcal{I}$  does XOR all encoded verdicts. This removes the masks and XORs are verdicts' representations.  If the result is $0$, then    all arbiters must have voted $0$; therefore,  the final verdict is $0$. However, if the result is not $0$ (i.e., a random value), then at least one of the arbiters voted $1$, so  the final verdict is $1$. We present the encoding  and decoding protocols in figures \ref{fig:PVE} and \ref{fig:FVD} respectively.
+% 
+% 
+% Not that the protocols' correctness holds, except  a negligible  probability. In particular, if two arbiters  represent their verdict by an identical random value, then when they are XORed they would cannel out each other which can affect the result's correctness. The same holds if the XOR of  multiple verdicts' representations results in a value that can cancel out another verdict's representation. Nevertheless, the probability that such an event occurs is negligible in the security parameter, i.e., at most   $\frac{1}{2^{\st \lambda}}$. It is evident that PVE and FVD protocols meet properties (2) and (3). The primary reason they also meet  property (1) is that each masked verdict reveals nothing about the verdict (and its representation) and  given the final verdict, $\mathcal{I}$ cannot distinguish between the case where there is exactly one arbiter that voted  $1$ and the case where multiple arbiters voted $1$, as in both cases $\mathcal{I}$   extracts only a single random value, which reveals nothing about the number of arbiters which voted $0$ or $1$. 
+% 
+%
+
+
+
+
+\begin{figure}[!ht]
+\setlength{\fboxsep}{0.7pt}
+\begin{center}
+\begin{boxedminipage}{12cm}
+\small{
+\underline{$\mathtt{PVE}(\bar{k}_{\st 0}, \text{ID},  w_{\st j}, o, n,  j)\rightarrow  \bar{  w}_{\st j}$}\\
+%
+\begin{itemize}
+\item \noindent\textit{Input.} $\bar{k}_{\st 0}$: a key of  pseudorandom function $\mathtt{PRF}(.)$, $\text{ID}$: a unique identifier, $ w_{\st j}$: a  verdict, $o$: an offset, $n$: the total number of  arbiters,  and  $j$: an arbiter's index.
+%
+\item \noindent\textit{Output.} $\bar{  w}_{\st j}$:  an  encoded verdict.  
+%
+\end{itemize}
+Arbiter $\mathcal{D}_{\st j}$ takes the following steps.
+\begin{enumerate}
+%
+\item\label{ZSPA:val-gen} computes a  pseudorandom  value,  as follows. 
+%
+\begin{itemize}
+%
+\item[$\bullet$]$ \text{ if } j< n: r_{\st j}=\mathtt{PRF}(\bar k_{\st 0}, o||j||\text{ID})$.\\
+%
+\item [$\bullet$] $ \text{ if } j=n: r_{\st j}= \bigoplus\limits^{\st n-1}_{\st i=1} r_{\st i}$.
+%
+\end{itemize}
+%
+\item  sets a fresh parameter, $w'_{\st j}$, as below. 
+%
+\begin{equation*}
+   w'_{\st j}= 
+\begin{cases}
+   0,              & \text{if } w_{\st j}=0\\
+   \alpha_{\st j}\stackrel{\st\$}\leftarrow \mathbb{F}_{\st p} ,& \text{if } w_{\st j}=1\\
+
+    %0,              & \text{if } w_{\st j}=0
+\end{cases}
+\end{equation*}
+%
+\item encodes  $w'_{\st j}$ as follows. %$\forall i,1\leq i\leq s:$
+%
+$\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
+%
+\item outputs $\bar{ w}_{\st j}$.
+
+
+\
+ \end{enumerate}
+}
+\end{boxedminipage}
+\end{center}
+\caption{Private Verdict Encoding  (PVE) Protocol} 
+\label{fig:PVE}
+\end{figure}
+%
+%\vspace{-3mm} 
+\begin{figure}[!ht]
+\setlength{\fboxsep}{0.7pt}
+\begin{center}
+\begin{boxedminipage}{12cm}
+\small{
+\underline{$\mathtt{FVD}(n,  \bar{\bm w})\rightarrow  v$}\\
+%
+\begin{itemize}
+\item \noindent\textit{Input.} $n$:  the total number of  arbiters,  and  $\bar{\bm w}=[\bar{ w}_{\st 1},..., \bar{ w}_{\st n}]$:  a vector of all arbiters' encodes  verdicts.
+%
+\item \noindent\textit{Output.} $v$: final verdict.  
+%
+\end{itemize}
+A third-party $\mathcal{I}$ takes the following steps.
+\begin{enumerate}
+%
+\item combines  all arbiters' encoded verdicts, $\bar w_{\st j}\in \bar{\bm {w}}$, as follows. 
+%
+$c= \bigoplus\limits^{\st n}_{\st j=1} \bar w_{\st j}$
+%
+\item sets the final verdict $v$ depending on the content of $c$. Specifically, 
+%
+\begin{equation*}
+   v= 
+\begin{cases}
+    0,              &\text{if } c= 0\\
+   1 ,& \text{otherwise }\\
+
+\end{cases}
+\end{equation*}
+%
+\item outputs  $v$. 
+
+\
+ \end{enumerate}
+ 
+}
+\end{boxedminipage}
+\end{center}
+\caption{Final Verdict Decoding  (FVD) Protocol} 
+\label{fig:FVD}
+\end{figure}
+

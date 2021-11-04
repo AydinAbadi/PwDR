@@ -1,0 +1,37 @@
+% !TEX root =main.tex
+
+
+\section{Challenges to Overcome}\label{sec:: challenges}
+
+
+Our starting point in defining and  designing the PwDR scheme is the CRM code, as this code (although vaguely) sets out the primary requirements a victim must meet to be reimbursed.  To design such a scheme, we need to address  several challenges. The rest of this section  highlights these challenges. 
+
+%In this section, we provide an overview of a Payment with Dispute Resolution (PwDR) scheme. Simply put, a PwDR scheme  allows a customer to interact with its bank (via the online banking platform) to transfer a certain amount of money from its account to another account in a transparent manner; meanwhile, it  offers a distinct  feature. Namely, when an APP fraud takes place, it lets an honest customer raise a dispute and \emph{prove} to a third-party dispute resolver that it has acted honestly, so it can be reimbursed. It offers other features too. For instance,  an honest bank can also prove it has acted honestly; it lets the parties prove their innocence  without their counter-party's collaboration,  it  ensures the message exchanged between a bank and customer remains confidential, and even the party which resolves the dispute between the two learns as little information as possible.  The PwDR scheme can be considered as an extension of the existing   online banking system. Our starting point in defining and  designing the PwDR scheme is the CRM code, as this code (although vaguely) sets out the primary requirements a victim must meet to be reimbursed.  To design such a scheme, we need to address  several challenges. The rest of this section  highlights these challenges. 
+
+
+
+
+\subsection{Challenge 1: Lack of Transparent Logs} 
+In the current online  banking system, during a payment journey, the messages exchanged between customer and bank are usually logged by the bank and are not accessible to the customer without the bank's collaboration. Even if the bank provides access to the transaction logs, there is no guarantee that the logs have remained intact. Due to the lack of a transparent logging mechanism, a customer or bank can wrongly claim that (a) it has sent a certain message or warning to its counter-party or (b) it has never  received a certain message, e.g., due to hardware or software failure.  Thus, it would be hard for an honest party (especially a customer) to prove its innocence. To address this challenge, the PwDR protocol uses a standard smart contract (as a public bulletin board) to which  each party needs to send (a copy of) all outgoing messages, e.g., payment requests, warnings, and  confirmation of payments. 
+
+
+
+
+\subsection{Challenge 2: Lack of Effective Warning's Accurate Definition in Banking}\label{sec::Lack-of-Effective-Warning-Definition}
+
+One of the determining  factors in the process of allocating liability to  customers (after an APP fraud occurs) is paying attention to and following ``warning(s)'', according to the CRM code. However, there exists  no  publicly available study  on the  effectiveness of every warning  provided by  a bank. Therefore, we cannot hold a customer accountable for becoming the fraud's victim,  even if the related warnings are ignored.    To address this challenge, we let a warning's effectiveness be determined on a case-by-case basis after an APP fraud takes place. In particular, the protocol provides an opportunity to a victim to  challenge a certain warning whose effectiveness will be assessed by a \emph{committee}, i.e., a  set of arbiters. In this setting, each member of the  committee provides (an encoding of) its verdict to the smart contract, from which a dispute resolver retrieves all verdicts to find out the final verdict. The scheme ensures that the final verdict is  in the customer's favor if at least threshold  committee members voted so. Thus, unlike the traditional setting where a central party determines a warning's effectiveness which is error-prone, we let a collection of arbiters   determines it (in a secure manner).
+
+
+
+
+\subsection{Challenge 3: Linking Off-chain Payments with a Smart Contract}\label{sec::Linking Off-chain-Payments-with-contract}
+ Recall that an APP fraud occurs when a payment is made. In the case where a  bank  sends a message (to the smart contract) to  claim  that it has transferred the money following the customer's request, it is not possible to automatically validate such a claim, as the money  transfer takes place  outside of the blockchain network. To address this challenge, the protocol lets a customer raise a dispute and report it to the smart contract when it detects an inconsistency, e.g., the bank did not transfer the money but it wrongly declared it did so, or  it transferred the money but did not declare it. In this case, the above committee members investigate and provide their  verdicts to the smart contract that allows the dispute resolver to extract the final verdict. 
+
+
+
+\subsection{Challenge 4: Preserving Privacy}
+ Although the use of a public transparent logging mechanism plays a vital role in resolving disputes, if it does not use a  privacy-preserving mechanism, then the parties' privacy would be violated, e.g., the customers' payment detail,  bank's messages to the customer, or even each arbiter's verdict. To protect the  privacy of the bank's and customers' messages against the public (and other customers), the PwDR protocol lets the customer and bank provably agree on encoding-decoding tokens that let them  encode their outgoing messages (sent to the smart contract). Later, either party can provide the token to a third party which can independently check the tokens' correctness, and decode the messages. To protect the privacy of the committee members' verdicts from the  dispute resolver, the PwDR protocol  ensures that  the dispute resolver can learn only the final verdict without being able to link a verdict to a specific  member of the committee or even learn the number of yes and no (or $1$ and $0$) votes. To this end, we develop and use a novel threshold voting protocol. 
+ 
+ 
+ 
+ 
