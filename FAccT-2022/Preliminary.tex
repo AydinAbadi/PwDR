@@ -62,53 +62,80 @@ We use $\mathtt{Enc}(.)$  and $\mathtt{Dec}(.)$ to denote the encrypting and dec
 
 \subsection{Digital Signature}\label{subsec:DS}
 
-A digital signature is a scheme for verifying the authenticity of digital messages or documents. Below, we restate its formal definition, taken from \cite{DBLP:books/crc/KatzLindell2014}. 
-
-
+A digital signature is a scheme for verifying the authenticity of digital messages and is formally defined in \cite{DBLP:books/crc/KatzLindell2014}  as below.
+%
+%Below, we restate its formal definition, taken from \cite{DBLP:books/crc/KatzLindell2014}. 
+%
 \begin{definition}\label{sec::def}
-A signature scheme  involves three algorithms, $\mathtt{Signature}:=(\mathtt{Sig.keyGen}, $ $\mathtt{Sig.sign}, \mathtt{Sig.ver})$, that are defined as follows.
-
-\begin{itemize} 
-\item[$\bullet$] $\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$.  A probabilistic algorithm run by  a  signer. It takes as input a security parameter. It outputs a key pair: $(sk,pk)$, consisting of secret: $sk$, and public: $pk$ keys. 
-\item[$\bullet$] $\mathtt{Sig.sign}(sk, pk, u)\rightarrow sig$. An algorithm run by the signer. It takes as input  key pair: $(sk,pk)$ and a message: $u$. It outputs a signature: $sig$.
-\item[$\bullet$]  $\mathtt{Sig.ver}( pk, u, sig)\rightarrow h\in\{0,1\}$. A deterministic algorithm run by a verifier. It takes as input  public key: $pk$,  message: $u$, and signature: $sig$. It checks the signature's validity.   If the verification passes, then it outputs $1$; otherwise, it outputs $0$. 
-\end{itemize}
+A signature scheme  involves three algorithms, $\mathtt{Signature}:=(\mathtt{Sig.keyGen}, $ $\mathtt{Sig.sign}, \mathtt{Sig.ver})$, that are defined as follows. (1) $\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$ is probabilistic algorithm run by  a  signer. It takes as input a security parameter. It outputs a key pair: $(sk,pk)$, consisting of secret: $sk$, and public: $pk$ keys. (2) $\mathtt{Sig.sign}(sk, pk, u)\rightarrow sig$ is an algorithm run by the signer. It takes as input  key pair: $(sk,pk)$ and a message: $u$. It outputs a signature: $sig$. (3) $\mathtt{Sig.ver}( pk, u, sig)\rightarrow h\in\{0,1\}$ is  deterministic algorithm run by a verifier. It takes as input  public key: $pk$,  message: $u$, and signature: $sig$. It checks the signature's validity.   If the verification passes, then it outputs $1$; otherwise, it outputs $0$. 
 \end{definition}
 
-A digital signature scheme should meet the following properties:
+%\begin{itemize} 
+%\item[$\bullet$] $\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$.  A probabilistic algorithm run by  a  signer. It takes as input a security parameter. It outputs a key pair: $(sk,pk)$, consisting of secret: $sk$, and public: $pk$ keys. 
+%\item[$\bullet$] $\mathtt{Sig.sign}(sk, pk, u)\rightarrow sig$. An algorithm run by the signer. It takes as input  key pair: $(sk,pk)$ and a message: $u$. It outputs a signature: $sig$.
+%\item[$\bullet$]  $\mathtt{Sig.ver}( pk, u, sig)\rightarrow h\in\{0,1\}$. A deterministic algorithm run by a verifier. It takes as input  public key: $pk$,  message: $u$, and signature: $sig$. It checks the signature's validity.   If the verification passes, then it outputs $1$; otherwise, it outputs $0$. 
+%\end{itemize}
+%\end{definition}
 
-\begin{itemize} 
-\item[$\bullet$]  \textit{Correctness.} For every input $u$ it holds that:
+A digital signature scheme should meet  two properties. (1) \textit{Correctness:} For every input $u$ it holds that:
 %
-$$Pr\Big[\  \  \mathtt{Sig.ver}( pk, u, \mathtt{Sig.sign}(sk, pk, u))=1\ : \
-\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk, pk)  \Big]=1$$
+$Pr\Big[\  \  \mathtt{Sig.ver}( pk,\\ u, \mathtt{Sig.sign}(sk, pk, u))=1\ : \
+\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk, pk)  \Big]=1$. And 
 %
-\item[$\bullet$] \textit{Existential unforgeability under chosen message attacks.} A probabilistic polynomial time (PPT) adversary that obtains $pk$ and has access to a signing  oracle for messages of its choice, cannot create a valid pair $(u^{\st *},sig^{\st *})$ for a new message $u^{\st *}$  (that was never a query to the signing oracle), except with a small probability, $\sigma$. More formally: 
-
-
-
-
+(2) \textit{Existential unforgeability under chosen message attacks:} A probabilistic polynomial time (PPT) adversary that obtains $pk$ and has access to a signing  oracle for messages of its choice, cannot create a valid pair $(u^{\st *},sig^{\st *})$ for a new message $u^{\st *}$, except with a small probability, $\sigma$. More formally: 
+%
 \small{
 $$ \Pr\left[
   \begin{array}{l}
-  
   u^{\st *}\not\in Q\ \wedge \\
    \mathtt{Sig.ver}( pk,  u^{\st *}, sig^{\st *}) =1\\
-  
-  
-    
+% 
 %(M(u^{\scriptscriptstyle *},k)\neq \sigma \lor Q(\text{aux},k)\neq q) \wedge\\ (a=1 \ \vee b=1)
 \end{array} : 
     \begin{array}{l}
-   
     \mathtt{Cer.keyGen}(1^{\st \lambda})\rightarrow (sk,pk) \\
-  \mathcal{A}^{\mathtt{Sig.sign}(k,)}(pk)\rightarrow(u^{\st *}, sig^{\st *})
-
-     
+  \mathcal{A}^{\mathtt{Sig.sign}(k,)}(pk)\rightarrow(u^{\st *}, sig^{\st *}) 
 \end{array}    \right]\leq \mu(\lambda)$$
 }
 where $Q$ is the set of queries that $\mathcal{A}$ sent to the certificate generator oracle.
-\end{itemize}
+
+
+
+
+
+
+%\begin{itemize} 
+%\item[$\bullet$]  \textit{Correctness.} For every input $u$ it holds that:
+%%
+%$$Pr\Big[\  \  \mathtt{Sig.ver}( pk, u, \mathtt{Sig.sign}(sk, pk, u))=1\ : \
+%\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk, pk)  \Big]=1$$
+%%
+%\item[$\bullet$] \textit{Existential unforgeability under chosen message attacks.} A probabilistic polynomial time (PPT) adversary that obtains $pk$ and has access to a signing  oracle for messages of its choice, cannot create a valid pair $(u^{\st *},sig^{\st *})$ for a new message $u^{\st *}$  (that was never a query to the signing oracle), except with a small probability, $\sigma$. More formally: 
+%
+%
+%
+%
+%\small{
+%$$ \Pr\left[
+%  \begin{array}{l}
+%  
+%  u^{\st *}\not\in Q\ \wedge \\
+%   \mathtt{Sig.ver}( pk,  u^{\st *}, sig^{\st *}) =1\\
+%  
+%  
+%    
+%%(M(u^{\scriptscriptstyle *},k)\neq \sigma \lor Q(\text{aux},k)\neq q) \wedge\\ (a=1 \ \vee b=1)
+%\end{array} : 
+%    \begin{array}{l}
+%   
+%    \mathtt{Cer.keyGen}(1^{\st \lambda})\rightarrow (sk,pk) \\
+%  \mathcal{A}^{\mathtt{Sig.sign}(k,)}(pk)\rightarrow(u^{\st *}, sig^{\st *})
+%
+%     
+%\end{array}    \right]\leq \mu(\lambda)$$
+%}
+%where $Q$ is the set of queries that $\mathcal{A}$ sent to the certificate generator oracle.
+%\end{itemize}
 
 
 
@@ -118,7 +145,7 @@ where $Q$ is the set of queries that $\mathcal{A}$ sent to the certificate gener
 
 
 
-\subsection{Smart Contract}\label{subsec:SC} Cryptocurrencies, such as Bitcoin \cite{bitcoin} and Ethereum \cite{ethereum}, beyond offering a decentralised currency,  support  computations on  transactions. In this setting, often a certain computation logic is encoded in a computer program, called a \emph{``smart contract''}. Although Bitcoin, the first decentralised cryptocurrency, supports smart contracts, the functionality of Bitcoin's smart contracts is very limited, due to the use of the underlying programming language that does not support arbitrary tasks. To address this limitation, Ethereum, as a generic smart contract platform, was designed. Thus far, Ethereum has been the most predominant cryptocurrency framework that lets users define arbitrary smart. This framework allows users to create an account with a unique account number or address. Such users are often called external account holders, which can send (or deploy) their contracts to the framework’s blockchain. In this framework, a contract's code and its related data  are held by every node in the blockchain's network. Ethereum smart contracts are often written in a high-level Turing-complete programming language called ``Solidity''.The program execution's  correctness  is  guaranteed by the security of the underlying blockchain components. To prevent  a denial of service attack, the framework requires a transaction creator to pay a  fee, called \emph{``gas''}. %, depending on the complexity of the contract running on  it.  
+\subsection{Smart Contract}\label{subsec:SC} Cryptocurrencies, such as Bitcoin \cite{bitcoin} and Ethereum \cite{ethereum}, beyond offering a decentralised currency,  support  computations on  transactions. In this setting,  a certain computation logic is encoded in a computer program, called a \emph{``smart contract''}. Although Bitcoin, the first decentralised cryptocurrency, supports smart contracts, the functionality of Bitcoin's smart contracts is  limited. To address this limitation, Ethereum, as a generic smart contract platform, was designed. Thus far, Ethereum has been the most predominant cryptocurrency framework that lets users define arbitrary smart contracts. In this framework, a contract's code and its related data  are held by every node in the blockchain's network. The program execution's  correctness  is  guaranteed by the security of the underlying blockchain components. To prevent  a denial of service attack, the framework requires a transaction creator to pay a  fee, called \emph{``gas''}. %, depending on the complexity of the contract running on  it.  
 
 
 \input{commitment}

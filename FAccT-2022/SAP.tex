@@ -16,7 +16,7 @@ Recently, a scheme called ``Statement Agreement Protocol'' (SAP)  has been propo
  The following steps are taken   by  $\mathcal B$.
  
   \begin{enumerate}
-  \item\label{SAP::deploy-contract}  Deploys a smart contract that  explicitly states both parties'  addresses, $adr_{\st\mathcal{B}}$ and  $adr_{\st\mathcal{C}}$. Let $adr_{\st\text{SAP}}$ be the deployed contract's address. 
+  \item\label{SAP::deploy-contract}  Deploys a smart contract that   states both parties'  addresses, $adr_{\st\mathcal{B}}$ and  $adr_{\st\mathcal{C}}$. Let $adr_{\st\text{SAP}}$ be the deployed contract's address. 
 
    \item  Picks a random value $r$, and commits to the statement, $\mathtt{Com}(\pi, r)=g_{\st \mathcal{B}}$.
    \item Sends $adr_{\st\text{SAP}}$ and $\ddot{\pi}:=(\pi, r)$  to  $\mathcal C$, and $g_{\st\mathcal B}$ to the contract. 
@@ -31,7 +31,7 @@ Recently, a scheme called ``Statement Agreement Protocol'' (SAP)  has been propo
  %
    \item Checks  if $g_{\st \mathcal{B}}$ was  sent  from $adr_{\st \mathcal{B}}$, and checks locally $\mathtt{Ver}(g_{\st\mathcal B}, \ddot{\pi})=1$.
    %
-   \item If the checks pass, it sets $b=1$,    computes locally $\mathtt{Com}(\pi, r)=g_{\st\mathcal C}$, and sends $g_{\st\mathcal C}$ to the contract. Otherwise, it sets $b=0$ and $g_{\st\mathcal C}=\bot$.
+   \item If the checks pass, it sets $b=1$,    computes locally $\mathtt{Com}(\pi, r)=g_{\st\mathcal C}$, and sends $g_{\st\mathcal C}$ to the contract. Else, it sets $b=0$ and $g_{\st\mathcal C}=\bot$.
  %
    %\item  If $b=1$, then sends $g_{\st\mathcal S}$ to the contract. % using its account.
     \end{enumerate}
