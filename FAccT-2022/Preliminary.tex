@@ -23,11 +23,11 @@ The PwDR scheme consists of six types of parties. Below, we informally explain e
 
 %, e.g., the bank  uses a cryptographic commitment to commit to the source code. 
 %
-\item[$\bullet$] Smart contract $\mathcal{S}$: it is a standard  smart contract of a public  blockchain (e.g., Ethereum). It mainly acts as a tamper-proof public bulletin board to store different parties' messages.  We do not assume that a smart contract itself can offer any privacy. 
+\item[$\bullet$] Smart contract $\mathcal{S}$: it is a standard  smart contract of a public  blockchain (e.g., Ethereum). It mainly acts as a tamper-proof public bulletin board to store different parties' messages.  %We do not assume that a smart contract itself can offer any privacy. 
 %
 \item[$\bullet$] Certificate generator $\mathcal{G}$: it is a trusted third party (e.g., hospital, registry office) which provides signed digital certificates (e.g., certificate of   divorce, disability) to customers. %Its involvement is more implicit than the other  parties.
 %
-\item[$\bullet$]  A committee of arbiters $\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$: it consists of  trusted third-party authorities, auditors, or regulators (e.g.,  financial conduct authority, financial ombudsman service). Given a set of complaints, they compile the complaints    and provide  their binary verdicts. If needed, they are authorised to access the banking  system's backend software to carry out investigations. We assume all arbiters have interacted with each other once,  to agree on (a) a secret key, $\bar k_{\st 0}$, and (b) a pair of keys $({pk}_{\st\mathcal {D}}, {sk}_{\st\mathcal {D}})$  of an asymmetric key encryption.
+\item[$\bullet$]  A committee of arbiters $\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$: it consists of  trusted third-party authorities or regulators (e.g.,  financial conduct authority, financial ombudsman service). They compile  complaints    and provide    verdicts. If needed, they can access the banking  system's backend software to conduct  investigations. We assume the arbiters  interacted with each other   to agree on (a) a secret key, $\bar k_{\st 0}$, and (b) a pair of keys $({pk}_{\st\mathcal {D}}, {sk}_{\st\mathcal {D}})$  of an asymmetric key encryption.
 %
 \item[$\bullet$]  Dispute resolver $\mathcal{DR}$: it is an aggregator of arbiters' votes (e.g., public court). Given a collection of votes, it extracts and announces the final verdict. We assume it is corrupted by a non-colluding passive adversary. We assume $\mathcal C$ and $\mathcal B$  use a secure channel when they  send a message directly to $\mathcal{DR}$. 
 %
@@ -77,12 +77,12 @@ A signature scheme  involves three algorithms, $\mathtt{Signature}:=(\mathtt{Sig
 %\end{itemize}
 %\end{definition}
 
-A digital signature scheme should meet  two properties. (1) \textit{Correctness:} For every input $u$ it holds that:
+A digital signature scheme should meet  two properties. (1) \textit{Correctness:} for every input $u$ it holds that:
 %
 $Pr\Big[\  \  \mathtt{Sig.ver}( pk,\\ u, \mathtt{Sig.sign}(sk, pk, u))=1\ : \
 \mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk, pk)  \Big]=1$. And 
 %
-(2) \textit{Existential unforgeability under chosen message attacks:} A probabilistic polynomial time (PPT) adversary that obtains $pk$ and has access to a signing  oracle for messages of its choice, cannot create a valid pair $(u^{\st *},sig^{\st *})$ for a new message $u^{\st *}$, except with a small probability, $\sigma$. More formally: 
+(2) \textit{Existential unforgeability under chosen message attacks:} a probabilistic polynomial time (PPT) adversary that obtains $pk$ and has access to a signing  oracle for messages of its choice, cannot create a valid pair $(u^{\st *},sig^{\st *})$ for a new message $u^{\st *}$, except with a small probability, $\sigma$. More formally: 
 %
 \small{
 $$ \Pr\left[
