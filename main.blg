@@ -17,37 +17,37 @@ Warning--empty journal in Regulations
 Warning--empty journal in Financial-Ombudsman-Service-response
 You've used 50 entries,
             2785 wiz_defined-function locations,
-            831 strings with 13985 characters,
-and the built_in function-call counts, 20334 in all, are:
-= -- 1505
-> -- 705
+            830 strings with 13851 characters,
+and the built_in function-call counts, 20420 in all, are:
+= -- 1511
+> -- 715
 < -- 5
-+ -- 297
-- -- 242
-* -- 1206
-:= -- 2825
-add.period$ -- 34
++ -- 301
+- -- 246
+* -- 1215
+:= -- 2844
+add.period$ -- 35
 call.type$ -- 50
-change.case$ -- 314
+change.case$ -- 315
 chr.to.int$ -- 0
 cite$ -- 62
-duplicate$ -- 1927
-empty$ -- 1903
-format.name$ -- 265
-if$ -- 4233
+duplicate$ -- 1936
+empty$ -- 1901
+format.name$ -- 270
+if$ -- 4245
 int.to.chr$ -- 0
 int.to.str$ -- 50
-missing$ -- 431
+missing$ -- 434
 newline$ -- 155
 num.names$ -- 100
-pop$ -- 911
+pop$ -- 912
 preamble$ -- 1
-purify$ -- 219
+purify$ -- 221
 quote$ -- 0
 skip$ -- 438
 stack$ -- 0
-substring$ -- 753
-swap$ -- 835
+substring$ -- 751
+swap$ -- 838
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
@@ -55,5 +55,5 @@ type$ -- 196
 warning$ -- 12
 while$ -- 156
 width$ -- 52
-write$ -- 447
+write$ -- 448
 (There were 12 warnings)

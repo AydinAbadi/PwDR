@@ -20,6 +20,10 @@ Abadi, A., Murdoch, S.J., Zacharias, T.: Recurring contingent payment for
   proofs of retrievability. Cryptology ePrint Archive, Report 2021/1145 (2021),
   \url{https://ia.cr/2021/1145}
 
+\bibitem{AbadiMZ21a}
+Abadi, A., Murdoch, S.J., Zacharias, T.: Recurring contingent payment for
+  proofs of retrievability. {IACR} Cryptol. ePrint Arch.  (2021)
+
 \bibitem{CBDC}
 Allen, S., {\v{C}}apkun, S., Eyal, I., Fanti, G., Ford, B.A., Grimmelmann, J.,
   Juels, A., Kostiainen, K., Meiklejohn, S., Miller, A., Wust, K., Zhang, F.:
@@ -172,11 +176,6 @@ Poon, J., Dryja, T.: The bitcoin lightning network: Scalable off-chain instant
 \bibitem{Schneier0078909}
 Schneier, B.: Applied cryptography - protocols, algorithms, and source code in
   C, 2nd Edition. Wiley (1996)
-
-\bibitem{statista}
-{Statista}: Online frauds encountered by internet users in china as of december
-  2020, by type (2020),
-  \url{https://www.statista.com/statistics/1003979/china-main-online-frauds-by-type/}
 
 \bibitem{taylor2020new}
 Taylor, J.L., Galica, T.: A new code to protect victims in the uk from
