@@ -1,0 +1,388 @@
+%!TEX root = main.tex
+
+
+
+
+
+
+\section{ Definition of Payment with Dispute Resolution Scheme}\label{sec::def}
+
+
+
+%We first present a formal definition of a certificate scheme. We present  a generic definition that can capture both digital and hard copy certificates to reflect the real-world setting in which both kinds of certificates are being used. 
+
+
+%\begin{definition}\label{sec::def}
+%A certificate scheme  involves three sub-processes, $\mathtt{Cer}:=(\mathtt{Cer.genPar}, $ $\mathtt{Cer.gen}, \mathtt{Cer.ver})$, that are defined as follows.
+%
+%\begin{itemize} 
+%\item[$\bullet$] $\mathtt{Cer.genPar}(1^{\st \lambda})\rightarrow (sk,pk)$.  A process executed by  a certificate generator. It takes as input a security parameter. It outputs a parameter pair: $(sk,pk)$, consisting of secret: $sk$, and public: $pk$ parameters. 
+%\item[$\bullet$] $\mathtt{Cer.genCrt}(sk, pk, u)\rightarrow crt$. A process executed by  a certificate generator. It takes as input  parameter pair: $(sk,pk)$ and a file: $u$. It outputs a certificate: $crt$.
+%\item[$\bullet$]  $\mathtt{Cer.verCrt}( pk, u, crt)\rightarrow h\in\{0,1\}$. A process run by a verifier. It takes as input  public parameter: $pk$,  file: $u$, and certificate: $crt$. It checks the certificate validity.   If the verification passes, then it outputs $1$; otherwise, it outputs $0$. 
+%\end{itemize}
+%\end{definition}
+%
+%The $\mathtt{Cer}$ should meet the following properties:
+%
+%\begin{itemize} 
+%\item[$\bullet$]  \textit{Correctness.} For every input $u$ it holds that:
+%
+%$$Pr\Big[\  \  \mathtt{Cer.verCrt}( pk, u, \mathtt{Cer.genCrt}(sk, pk, u))=1\ : \
+%\mathtt{Cer.genPar}(1^{\st \lambda})\rightarrow (sk, pk)  \Big]=1$$
+%
+%\item[$\bullet$] \textit{Existential unforgeability under chosen message attacks.} A (PPT) adversary that obtains $pk$ and has access to a certificate generation oracle for messages of its choice, cannot create a valid pair $(u^{\st *},crt^{\st *})$ for a new file $u^{\st *}$  (that was never a query to the signing oracle), except with a small probability, $\sigma$. More formally: 
+%
+%
+%
+%
+%\small{
+%$$ \Pr\left[
+%  \begin{array}{l}
+%  
+%  u^{\st *}\not\in Q\ \wedge \\
+%   \mathtt{Cer.verCrt}( pk,  u^{\st *}, crt^{\st *}) =1\\
+%  
+%  
+%    
+%%(M(u^{\scriptscriptstyle *},k)\neq \sigma \lor Q(\text{aux},k)\neq q) \wedge\\ (a=1 \ \vee b=1)
+%\end{array} : 
+%    \begin{array}{l}
+%   
+%    \mathtt{Cer.genPar}(1^{\st \lambda})\rightarrow (sk,pk) \\
+%  \mathcal{A}^{\mathtt{Cer.genCrt}(k,)}(pk)\rightarrow(u^{\st *},crt^{\st *})
+%
+%     
+%\end{array}    \right]\leq \sigma$$
+%}
+%where $Q$ is the set of queries that $\mathcal{A}$ sent to the certificate generator oracle.
+%\end{itemize}
+%
+%
+%
+%In the case where a digital certificate is considered, then $\mathtt{Cer}$ definition is equivalent to the definition of a digital signature scheme. In this case, it holds $\sigma=neg(\lambda)$, where $neg$ is a negligible function and $\lambda$ is a security parameter. Now, we briefly explain the procedures' input/output when a hard copy certificate is considered.  The process $\mathtt{Cer.genPar}(.)$ outputs a blank legitimate stamped certificate as a private parameter: $sk$, and the description of a standard legitimate certificate as a public parameter: $pk$. Morevoer, the process $\mathtt{Cer.genCrt}(k, u)$ takes $k$ and the file $u$ on which a certificate should be generated and outputs a stamped certificate with the information printed on it. The process $\mathtt{Cer.verCrt}( pk, u, crt)$ takes the public parameter, the file,  and the hard copy of the certificate and outputs $1$ if it is valid and $0$ if it is not. In the case where a hard copy certificate is considered, it is not possible to precisely define the probability $\sigma$, as it depends on the technology available to the adversary to generate a blank stamped certificate that looks like a legitimate one. In the real world however, this probability is usually small (but it may not be negligible). 
+
+
+In this section, we present a formal definition of a  PwDR scheme. We first provide the scheme's syntax.  Then, we   formally define its correctness  and security properties. 
+
+
+\begin{definition} A payment with dispute resolution  scheme  includes the following   algorithms $\text{PwDR}:=(\mathtt{keyGen}, $ $\mathtt{bankInit}, \mathtt{customerInit},  \mathtt{genUpdateRequest}, \mathtt{insertNewPayee}, \mathtt{genWarning}, \mathtt{genPaymentRequest}, \\$ $\mathtt{makePayment}, $ $ \mathtt{genComplaint}, $ $\mathtt{verComplaint},$ $ \mathtt{resDispute})$. It involves  six   types of entities; namely,  bank $\mathcal{B}$, customer $\mathcal{C}$,  smart contract $\mathcal{S}$,  certificate generator $\mathcal{G}$,   set of arbiters $\mathcal{D}:\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$, and  dispute resolver $\mathcal{DR}$. Below, we define these algorithms.  
+
+%\item \item[$\bullet$] $\mathtt{setup}(1^{\st \lambda})\rightarrow k:=(sk,pk)$. %%% this might be needed when other security properties, e.g., privacy, are added to the scheme. 
+%
+\
+
+\item [$\bullet$]  $\mathtt{keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$. It is a probabilistic  algorithm run independently by  $\mathcal{G}$ and one of the arbiters, $\mathcal{D}_{\st j}$. It takes as input a security parameter $1^{\st \lambda}$. It outputs a pair of secret keys $sk:=(sk_{\st\mathcal {G}},sk_{\st\mathcal {D}})$ and public keys $pk:=(pk_{\st\mathcal {G}},pk_{\st\mathcal {D}})$. The public key pair, $pk$, is sent to all participants. 
+
+
+\vspace{2mm}
+\item[$\bullet$] $\mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm{l})$. It is  run by  $\mathcal{B}$. It takes as input  security parameter $1^{\st \lambda}$.  It allocates private parameters to  $\ddot\pi_{\st 1}$ and $\ddot\pi_{\st 2}$. It generates an encoding-decoding token $T$, where  $T:=(T_{\st 1},T_{\st 2})$,  each $T_{\st i}$  contains  a secret value $\ddot\pi_{\st i}$ and its public witness $g_{\st i}$.    Given a  value and its witness anyone can check if they match. It also generates a set of (additional) public parameters,  $pp$, one of which is $e$ that is a threshold parameter.  It also generates an  empty list, $\bm{l}$. It outputs $T, pp$ and $\bm l$.  $\mathcal{B}$ sends $(\ddot\pi_{\st 1}, \ddot\pi_{\st 2})$ to $\mathcal{C}$ and sends $(g_{\st 1}, g_{\st 2},  pp, \bm {l})$ to $\mathcal{S}$.
+
+\vspace{2mm}
+\item[$\bullet$] $\mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a$. It is a deterministic  algorithm run by  $\mathcal{C}$. It takes as input security parameter $1^{\st \lambda}$,  token $T$, and  set $pp$ of public parameters. It checks the correctness of the elements in $T$ and $pp$. If the checks pass, it outputs $1$. Otherwise, it outputs $0$. 
+
+\vspace{2mm}
+\item [$\bullet$] $\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}$.  It is a deterministic algorithm run by $\mathcal{C}$.  It takes as input token $T$,  new payee's detail $f$ and empty payees' list $ {\bm l}$. It  generates $m^{\st\mathcal{(C)}}_{\st 1}$ which is an  update request to the payees' list. It uses $T_{\st 1}\in T$ and encoding algorithm $\mathtt{Encode}(T_{\st 1}, .)$ to encode $m^{\st\mathcal{(C)}}_{\st 1}$ which results in $\hat {m}^{\st\mathcal{(C)}}_{\st 1}$. It outputs $\hat  m^{\st\mathcal{(C)}}_{\st 1}$. $\mathcal{C}$ sends the output to $\mathcal{S}$.
+%
+\vspace{2mm}
+\item [$\bullet$] $\mathtt{insertNewPayee}(\hat{m}^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow  \hat{\bm l}$. It is a deterministic algorithm run by $\mathcal{S}$. It takes as input $\mathcal{C}$'s encoded update request  $\hat{m}^{\st\mathcal{(C)}}_{\st 1}$, and $\mathcal{C}$'s payees' list ${\bm l}$. It inserts the new payee's detail into ${\bm l}$ and outputs an updated list, $\hat{\bm l}$.
+%
+\vspace{2mm}
+\item  [$\bullet$] $\mathtt{genWarning}(T, \hat{\bm l}, \text{aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}$. It is run by $\mathcal{B}$. It takes as input token $T$, $\mathcal{C}$'s encoded   payees' list $ \hat{\bm l}$ and auxiliary information: $\text{aux}$, e.g., a set of policies. Using $T_{\st 1}\in T$, it decodes and checks  all elements of the list, e.g., whether they comply with the policies. If the check  passes,  it sets $m^{\st\mathcal{(B)}}_{\st1}=\text{``pass''}$; otherwise, it sets $m^{\st\mathcal{(B)}}_{\st1}={warning}$, where the $warning$ is a string  containing a warning detail along with
+the string ``warning''. It uses  $T_{\st 1}$ and $\mathtt{Encode}(T_{\st 1}, .)$ to encode $m^{\st\mathcal{(B)}}_{\st1}$ which yields $\hat m^{\st\mathcal{(B)}}_{\st1}$. It outputs  $\hat m^{\st\mathcal{(B)}}_{\st1}$.  $\mathcal{B}$ sends $\hat m^{\st\mathcal{(B)}}_{\st1}$ to $\mathcal{S}$.
+%
+\vspace{2mm}
+\item  [$\bullet$] $\mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}$. It is  run by $\mathcal{C}$. It takes as input token $T$, a payment detail $in_{\st f}$, encoded payees' list $\hat{\bm{l}}$, and encoded warning message,  $\hat m^{\st\mathcal{(B)}}_{\st1}$. Using $T_{\st 1}\in T$, it decodes  $\hat{\bm{l}}$ and $\hat m^{\st\mathcal{(B)}}_{\st1}$ yielding ${\bm{l}}$ and $m^{\st\mathcal{(B)}}_{\st1}$ respectively. It checks the warning.  It sets   $m^{\st\mathcal{(C)}}_{\st2}=\phi$, if it does not want to proceed. Otherwise, it  sets $m^{\st\mathcal{(C)}}_{\st2}$ according to the content of $in_{\st f}$ and  ${\bm{l}}$ (e.g., the amount of payment and payee's detail). It uses $T_{\st 1}$ and  $\mathtt{Encode}(T_{\st 1}, .)$ to encode $m^{\st\mathcal{(C)}}_{\st2}$ resulting in $\hat m^{\st\mathcal{(C)}}_{\st2}$. It outputs $\hat m^{\st\mathcal{(C)}}_{\st2}$. $\mathcal{C}$ sends $\hat m^{\st\mathcal{(C)}}_{\st2}$ to $\mathcal{S}$. 
+%
+\vspace{2mm}
+\item  [$\bullet$] $\mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}$. It is a deterministic algorithm run by $\mathcal{B}$. It takes as input token $T$,  and encoded payment  detail $\hat m^{\st\mathcal{(C)}}_{\st2}$. Using $T_{\st 1}\in T$, it decodes $\hat m^{\st\mathcal{(C)}}_{\st2}$ and  checks the result's validity, e.g., ensures it is well-formed or $\mathcal{C}$ has enough credit. If the check  passes,  it makes the payment and  sets $m^{\st\mathcal{(B)}}_{\st2}=\text{``paid''}$. Otherwise, it sets $m^{\st\mathcal{(B)}}_{\st2}=\phi$. It uses $T_{\st 1}$ and  $\mathtt{Encode}(T_{\st 1}, .)$ to encode $m^{\st\mathcal{(B)}}_{\st2}$ yielding $\hat m^{\st\mathcal{(B)}}_{\st2}$. It outputs $\hat m^{\st\mathcal{(B)}}_{\st2}$. $\mathcal{B}$ sends $\hat m^{\st\mathcal{(B)}}_{\st2}$ to $\mathcal{S}$.
+%
+\vspace{2mm}
+\item  [$\bullet$] $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, \text{aux}_{\st f})\rightarrow (\hat z, \hat{\ddot \pi})$. It is run by $\mathcal{C}$. It takes as input   the encoded warning message $\hat m^{\st\mathcal{(B)}}_{\st1}$, encoded payment message $\hat m^{\st\mathcal{(B)}}_{\st2}$,  token $T$, public key $pk$, and  auxiliary information $\text{aux}_{\st f}$. It initially sets fresh strings $(z_{\st 1}, z_{\st 2}, z_{\st 3})$ to null. Using $T_{\st 1}\in T$, it decodes  $\hat m^{\st\mathcal{(B)}}_{\st 1}$ and $\hat m^{\st\mathcal{(B)}}_{\st2}$ and checks the results' content. If it wants to complain that (i)   “pass” message should have been a warning  or (ii) no  message was provided,   it sets $z_{\st 1}$ to ``challenge message''. If its complaint is about the warning's effectiveness,  it sets $z_{\st 2}$ to a combination of an evidence $u\in aux_{\st f}$, the evidence's certificate $sig\in aux_{\st f}$, the certificate's public parameter,   and ``challenge warning'', where the certificate is obtained from  $\mathcal{G}$ via a query, $Q$. In certain cases, the certificate might be empty.  If its complaint is  about the   payment, it sets $z_{\st 3}$ to ``challenge payment''.  It uses $T_{\st 1}$ and  $\mathtt{Encode}(T_{\st 1}, .)$ to encode $z:=(z_{\st 1}, z_{\st 2}, z_{\st 3})$ and uses $pk_{\st\mathcal D}$ and another encoding algorithm  $\bar{\mathtt{Encode}}(pk_{\st\mathcal D}, .)$ to encode  $\ddot \pi:=(\ddot \pi_{\st 1},\ddot \pi_{\st 2})\in T$. This  results in $\hat z$ and $\hat {\ddot \pi}$ respectively. It outputs $(\hat z, \hat {\ddot \pi})$. $\mathcal{C}$ sends the pair to $\mathcal{S}$.
+%
+%%
+%\item  [$\bullet$] $\mathtt{genComplaint}( m^{\st\mathcal{(S)}}_{\st1},m^{\st\mathcal{(S)}}_{\st2}, \text{aux}')\rightarrow z:=(k,x,y)$. It is run by $\mathcal{C}$. It takes as input  the warning message: $m^{\st\mathcal{(S)}}_{\st1}$, payment message: $m^{\st\mathcal{(S)}}_{\st2}$, and some auxiliary information: $\text{aux}'$. If $\mathcal{C}$ wants to complain that (i)  the “pass” message (given by B) should have been a warning  or (ii) no  message was provided at all, then it sets $k$ to ``challenge message''. Otherwise, it sets $k=\phi$. If $\mathcal{C}$'s complaint is about the warning effectiveness, then it sets $x$ to a combination of an evidence  and ``challenge warning''.  Otherwise, it sets $x=\phi$. If its complaint is  about the   payment, it sets $y$ to {``challenge payment''}; otherwise, it sets $y=\phi$. It sends $z:=(k,x, y)$ to  $\mathcal{S}$.
+%
+\vspace{2mm}
+\item  [$\bullet$] $\mathtt{verComplaint}( \hat z, \hat{\ddot{\pi}}, g, \hat{\bm m}, \hat{\bm{l}}, j, sk_{\st\mathcal D}, aux, pp)\rightarrow \hat{\bm{w}_{\st j}}$. It is run by every arbiter $\mathcal{D}_{\st  j}$. It takes as input  $\mathcal{C}$'s encoded complaint $\hat z$,  encoded private parameters $\hat{\ddot{\pi}}$,  the tokens' public parameters $g:=(g_{\st 1}, g_{\st 2})$,  encoded  messages $\hat{\bm m}=[\hat{m}_{\st 1}^{\st(\mathcal C)}$, $\hat{m}_{\st 2}^{\st(\mathcal C)}, \hat{m}_{\st 1}^{\st(\mathcal B)}, \hat{m}_{\st 2}^{\st(\mathcal B)}]$, encoded payees' list $ \hat{\bm{l}}$,  the  arbiter's index $j$, secret key $sk_{\st\mathcal D}$,   auxiliary information $aux$, and set of public parameters $pp$.  It uses $sk_{\st\mathcal D}$ to decode $\hat{\ddot{\pi}}$ that yields  $\ddot{\pi}:=(\ddot{\pi}_{\st 1}, \ddot{\pi}_{\st 2})$. It uses $\ddot{\pi}_{\st 1}$ to decode  $\hat z,  \hat{\bm{m}}$, and  $\hat{\bm{l}}$ that results in $z:=(z_{\st 1}, z_{\st 2}, z_{\st 3}), {\bm m}$, and  ${\bm{l}}$ respectively.  It checks if $\ddot{\pi}_{\st i}$ matches  $g_{\st i}$. If the check fails, it aborts.  It  checks  if ${m}_{\st 1}^{\st(\mathcal C)}$ and ${m}_{\st 2}^{\st(\mathcal C)}$ are non-empty; it aborts if the checks fail. It  sets  fresh parameters $(w_{\st 1,j}, w_{\st 2,j},  w_{\st 3,j},   w_{\st 4,j})$ to $\phi$. If ``challenge message'' $\in z_{\st 1}$, given $\bm l$,  it checks whether  ``pass''  message (in ${m}^{\st\mathcal{(B)}}_{\st1}$) was given correctly or the missing message did not play any role in preventing the fraud.  If either checks passes, it sets  $w_{\st 1,j}=0$;  otherwise,  it sets $w_{\st 1,j}=1$. If ``challenge warning'' $\in z_{\st 2}$,   it verifies  the certificate in $z_{\st 2}$.  If it is invalid,  it sets $ w_{\st 3,j}=0$.  If it is valid, it sets  $w_{\st 3,j}=1$. It  determines the effectiveness of the warning (in ${m}^{\st\mathcal{(B)}}_{\st1}$), by running an algorithm which  determines that, i.e., $\mathtt{checkWarning}(.)\in aux$. If  it is effective, i.e., $\mathtt{checkWarning}({m}^{\st\mathcal{(B)}}_{\st1})= 1$,  it sets its verdict to $0$, i.e., $w_{\st 2,j}=0$; otherwise, it sets $w_{\st 2,j}=1$.  If ``challenge payment'' $\in z_{\st 3}$,    it checks if the payment was made (with the help of ${m}_{\st 2}^{\st(\mathcal B)}$). If the check passes,  it sets $w_{\st 4,j}=1$; otherwise, it sets $w_{\st 4,j}=0$.  It uses $\ddot \pi_{\st 2}$ to encode  $\bm{w}_{\st j} = [w_{\st 1,j}, w_{\st 2, j}, w_{\st 3, j}, w_{\st 4, j}]$ yielding  $\hat{\bm{w}}_{\st j}= [\hat {w}_{\st 1,j}, \hat{w}_{\st 2, j}, \hat{w}_{\st 3, j}, \hat{w}_{\st 4, j}]$. It outputs $\hat{\bm{w}}_{\st j}$. $\mathcal{D}_{\st  j}$ sends $\hat{\bm{w}}_{\st j}$ to  $\mathcal{S}$. 
+%
+\vspace{2mm}
+\item  [$\bullet$] $\mathtt{resDispute}(T_{\st2}, \hat {\bm w}, pp)\rightarrow {\bm v}$. It is a deterministic algorithm run by $\mathcal {DR}$. It takes as input token $T_{\st 2}$,   arbiters' encoded verdicts  $\hat{ \bm{w}}=[\hat{\bm{w}}_{\st 1},..., \hat{\bm{w}}_{\st n}]$, and  public parameters set $pp$. It checks if the token's parameters match. If the check fails, it aborts. It uses $\ddot \pi_{\st 2}\in T_{\st 2}$  to decode $\hat {\bm w}$ and from the result it extracts final verdicts $\bm v= [v_{\st 1},...,v_{\st 4}]$.  The extraction procedure ensures each $v_{\st i}$ is set to $1$ only if at least  $e$ arbiters' original verdicts (i.e., $w_{\st i,j,}$) is $1$, where $e\in pp$.  It outputs $\bm v$. If $v_{\st 4}=1$ and (i) either $v_{\st 1}=1$ (ii) or $v_{\st 2}=1$ and $v_{\st 3}=1$, then  $\mathcal C$  is reimbursed.
+\end{definition}
+
+
+
+%
+% $\hat{m}_{\st 1}^{\st(\mathcal C)}, \hat {m}_{\st 2}^{\st(\mathcal C)}$, and $\hat{m}_{\st 2}^{\st(\mathcal B)}$ which results in ${m}_{\st 1}^{\st(\mathcal C)},  {m}_{\st 2}^{\st(\mathcal C)}$, and ${m}_{\st 2}^{\st(\mathcal B)}$ respectively. It extracts from $\hat {\bm w}$ decoded combined verdicts $[v_{\st 1},...,v_{\st 4}]$. It sets $\bar v_{\st 0}=1$ and proceeds, if  $m_{\st 1}^{\st(\mathcal C)}$ and $m_{\st 2}^{\st(\mathcal C)}$ are  not empty.  Otherwise, it aborts. It sets $\bar v_{\st 1}=1$, if $v_{\st 1}$ indicates that the majority of the arbiters believe that ``pass'' or missing message should have been a warning message.  It sets $\bar v_{\st 2}=1$, if $v_{\st 2}$ indicates that
+%the majority of the arbiters believe that the warning was ineffective.  It sets $\bar v_{\st 3}=1$, if $v_{\st 3}$ indicates that  the majority of the arbiters believe that $\mathcal C$ did not provide an invalid certificate. It sets $\bar v_{\st 4}=1$, if  $v_{\st 4}$ (or ${m}_{\st 2}^{\st(\mathcal B)}$) indicates that  the majority of the arbiters believe that the payment was made. It outputs $\bar{\bm v}=[\bar v_{\st 0},..., \bar v_{\st 4}]$.  Note, $\mathcal{C}$ is reimbursed only if $\bar v_{\st 0}=\bar v_{\st 3}=\bar v_{\st 4}=1$ and $\bar v_{\st 1}$ or $\bar v_{\st 2}$ is $1$. $\mathcal{DR }$ sends the output to  $\mathcal{C}$ and $\mathcal{B}$. 
+
+
+
+
+
+%\item  [$\bullet$] $\mathtt{resDispute}(\hat{m}_{\st 1}^{\st(\mathcal C)}, \hat {m}_{\st 2}^{\st(\mathcal C)}, \hat{m}_{\st 2}^{\st(\mathcal B)}, T, \hat {\bm w})\rightarrow c$. It is a deterministic algorithm run by $\mathcal {DR}$. It takes as input, $\mathcal C$'s encoded  update request  $\hat m_{\st 1}^{\st(\mathcal C)}$, $\mathcal C$'s encoded payment request  $\hat m_{\st 2}^{\st(\mathcal C)}$,  $\mathcal S$'s encoded payment message $\hat m_{\st 2}^{\st(\mathcal B)}$,  token $T$, and arbiters' encoded verdicts  $\hat{ \bm{w}}$. Checks if the token's parameters match,  i.e., $\mathtt{match}({\ddot{\pi}}, g)=1$. If the check fails, it aborts; otherwise, it continues. It decodes $\hat{m}_{\st 1}^{\st(\mathcal C)}, \hat {m}_{\st 2}^{\st(\mathcal C)}$, and $\hat{m}_{\st 2}^{\st(\mathcal B)}$ which results in ${m}_{\st 1}^{\st(\mathcal C)},  {m}_{\st 2}^{\st(\mathcal C)}$, and ${m}_{\st 2}^{\st(\mathcal B)}$ respectively. It extracts from $\hat {\bm w}$ decoded combined verdicts $[v_{\st 1},...,v_{\st 4}]$. It proceeds if  $m_{\st 1}^{\st(\mathcal C)}$ and $m_{\st 2}^{\st(\mathcal C)}$ are  not empty.  Otherwise, it aborts. It sets $c=1$ (i.e., $\mathcal{C}$ must be reimbursed), if $\mathcal C$ requested a money transfer, $v_{\st 4}$ (or ${m}_{\st 2}^{\st(\mathcal B)}$) indicates that the payment was made, $v_{\st 3}$ indicates that $\mathcal C$ did not provide an invalid certificate, and one the following  conditions holds (i) $v_{\st 2}$ indicates that the warning was ineffective, or (ii) $v_{\st 1}$ indicates that  ``pass'' or missing message should have been a warning message. Otherwise, it sets $c=0$. It returns $c$.
+
+
+
+
+
+%Note, algorithms $\mathtt{genWarning}(.)$-$\mathtt{resDispute}(.)$ implicitly take another input, $state_{\st\mathcal S}$, which is $\mathcal{S}$'s current state, i.e., data registered in $\mathcal{S}$. For the sake of simplicity, we avoided explicitly passing this input  to these processes.  
+
+Informally, a PwDR scheme has two  properties; namely, \emph{correctness} and \emph{security}. Correctness requires that (in the absence of a fraudster) the payment journey is completed without the need for (i) the honest customer to complain and (ii)  the honest bank to reimburse the customer. Below, we formally state it.  
+
+
+\begin{definition}[Correctness] A PwDR scheme is correct if the key generation algorithm produces keys $\mathtt{keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$ such that for any payee's detail $f$, payment's detail $in_{\st f}$, and auxiliary information $(aux, aux_{\st f})$, if $\ \mathtt{bankInit}($ $1^{\st \lambda})\rightarrow (T, pp, \bm{l})$, $\mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a$, $\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}$, $\mathtt{insertNewPayee}(\hat{m}^{\st\mathcal{(C)}}_{\st 1}, $ ${\bm l})\rightarrow  \hat{\bm l}$, $\mathtt{genWarning}(T, \hat{\bm l}, \text{aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}$, $\mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}$, $\mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}$, $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, \text{aux}_{\st f})\rightarrow (\hat z, \hat{\ddot \pi})$, 
+$\forall j\in [n]:\\ \Big(\mathtt{verComplaint}( \hat z, \hat{\ddot{\pi}}, g, \bm{\hat{m}}, \hat{\bm{l}}, j, sk_{\st\mathcal D}, aux, pp)\rightarrow \hat{\bm{w}_{\st j}}\Big)$, 
+ $\mathtt{resDispute}(T_{\st 2}, \hat {\bm w}, pp)\rightarrow {\bm v}$, then $(z_{\st 1}=z_{\st 2}=z_{\st 3}=\phi) \wedge({\bm{v}}=0)$, where $g:=(g_{\st 1}, g_{\st 2})\in T$,   $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}]$,   $\hat {\bm w}=[{\hat{\bm w}}_{\st 1},...,{\hat{\bm w}}_{\st n}]$,  and $z:=(z_{\st 1}, z_{\st 2}, z_{\st 3})$ is the result of  decoding  $\hat{z}$.
+\end{definition}
+
+
+
+
+%Informally, security against a malicious victim requires that the victim of the APP scam which is not qualified for the reimbursement should not be reimbursed  (despite  it tries to be). More specifically, a corrupt victim cannot (a) make committee members, $\mathcal{D}_{\st j}$s,  conclude that $\mathcal{B}$ should have provided a warning, although $\mathcal{B}$ has done so, or (b) make $\mathcal{DR}$ conclude that the  ``pass'' message was incorrectly given or a vital warning message was missing despite the majority of $\mathcal{D}_{\st j}$s do not believe so, or (c) persuade $\mathcal{D}_{\st j}$s to  conclude that the warning was ineffective although it was effective, or (d)  make $\mathcal{DR}$ believe that the warning message was ineffective although the majority of $\mathcal{D}_{\st j}$s do not believe that, or (e)  convince  $\mathcal{D}_{\st j}$s to accept an invalid certificate, or (f) make $\mathcal{DR}$ believe that the majority of $\mathcal{D}_{\st j}$s accepted the certificate  although they did not, except for a negligible probability. 
+
+A PwDR scheme is  secure if it satisfies three main properties; namely, (a) security against a malicious victim, (b) security against a malicious bank, and (c) privacy. Below, we formally define  them. Intuitively, security against a malicious victim requires that the victim of an APP fraud which is not qualified for the reimbursement should not be reimbursed  (despite  it tries to be). More specifically, a corrupt victim cannot (a) make at least threshold committee members, $\mathcal{D}_{\st j}$s,  conclude that $\mathcal{B}$ should have provided a warning, although $\mathcal{B}$ has done so, or (b) make $\mathcal{DR}$ conclude that   the pass message was incorrectly given or a vital warning message was missing despite only less than threshold  $\mathcal{D}_{\st j}$s  believe so, or (c) persuade at least threshold $\mathcal{D}_{\st j}$s to  conclude that the warning was ineffective although it was effective, or (d)  make $\mathcal{DR}$ believe that the warning message was ineffective although only less than threshold $\mathcal{D}_{\st j}$s   believe that, or (e)  convince  $\mathcal{D}_{\st j}$s to accept an invalid certificate, or  (f) make $\mathcal{DR}$ believe that at least  threshold $\mathcal{D}_{\st j}$s accepted the certificate  although they did not, except for a negligible probability. 
+
+
+% (f) make $\mathcal{DR}$ believe that all $\mathcal{D}_{\st j}$s accepted the certificate  although they did not, except for a negligible probability. 
+
+
+
+
+
+
+
+\begin{definition}[Security against a malicious victim]\label{def::Security-against-malicious-victim} A PwDR scheme is secure against a malicious victim, if for any security parameter $\lambda$,  auxiliary information $aux$, and   probabilistic polynomial-time adversary $\mathcal{A}$, there exists a negligible function $\mu(\cdot)$, such that for an experiment $\mathsf{Exp}_{\st 1}^{\mathcal{A}}$:
+
+%for functions $ M, Q ,E$, and $D$, if   for every $j$ (where $1\leq j\leq z$), and any probabilistic polynomial time adversary $\mathcal{A}$, there exists a negligible function $\mu(\cdot)$, such that for any security parameter $\lambda$ and experiment $\mathsf{Exp}_{\st 2}^{\mathcal{A},j}$:
+
+
+\begin{center}
+\begin{mybox}[colback=white,  width=120mm, height=62mm,]{$\mathsf{Exp}_{\st 1}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  {aux})$}
+%\fbox{\begin{minipage}{3.8 in}
+$$
+  \begin{array}{l}
+%  \mathsf{Exp}_{\st 1}^{\mathcal{A}}(\mathsf{In}:=(1^{\st\lambda}, p, \bm{l})): \\
+  
+    \mathtt{keyGen}(1^{\st\lambda})\rightarrow (sk,pk)\\
+  
+  
+  \mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm{l})\\
+  
+      \mathcal{A}( 1^{\st \lambda}, T, pp, \bm{l} )\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}\\
+   
+\mathtt{insertNewPayee}(\hat{m}^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow \hat{\bm l}\\
+
+\mathtt{genWarning}(T, \hat{\bm l}, \text{aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}\\
+
+
+
+   \mathcal{A}(T,  \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}\\
+   
+   
+   \mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}\\
+   
+
+
+  
+\mathcal{A}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk)\rightarrow (\hat z, \hat{\ddot \pi})\\
+
+
+ \forall j, j\in [n]:\\
+\Big(\mathtt{verComplaint}( \hat z, \hat{\ddot{\pi}}, g, \hat{\bm{m}}, \hat{\bm{l}}, j, sk_{\st\mathcal D}, aux, pp)\rightarrow \hat{\bm{w}}_{\st j}= [\hat w_{\st 1,j}, \hat w_{\st 2, j}, \hat w_{\st 3, j}, \hat w_{\st 4, j}]\Big)\\
+
+
+\mathtt{resDispute}(T_{\st 2}, \hat {\bm w}, pp)\rightarrow \bm v=[v_{\st 1},..., v_{\st 4}]\\
+
+   \end{array} 
+$$
+\end{mybox}
+%\end{minipage}}
+\end{center}
+
+
+it holds that:
+
+%{\small
+$$ \Pr\left[
+  \begin{array}{l}
+%
+%\Bigg(
+%
+  \Big((m^{\st\mathcal{(B)}}_{\st1}=warning) \wedge (\sum\limits_{\st j=1}^{\st n}w_{\st 1,j}\geq {e})\Big)\\
+  %
+  \vee \Big((\sum\limits_{\st j=1}^{\st n}w_{\st 1,j}<{e}) \wedge ( {v}_{\st 1}=1)\Big)
+ % \Bigg)
+  \\
+  %
+\vee
+  %\Bigg(
+    \Big((\mathtt{checkWarning}(m^{\st\mathcal{(B)}}_{\st1})= 1) \wedge (\sum\limits_{\st j=1}^{\st n}w_{\st 2,j}\geq {e})\Big)\\
+  %
+  \vee \Big((\sum\limits_{\st j=1}^{\st n}w_{\st 2,j}< {e}) \wedge ({v}_{\st 2}=1)\Big)
+  %\Bigg)
+  \\
+  %
+  \vee 
+  %\Bigg(
+  \Big(u\notin Q \wedge\mathtt{Sig.ver}( pk,  u, sig) =1\Big) \\
+  %
+  \vee \Big((\sum\limits_{\st j=1}^{\st n}w_{\st 3,j}< {e}) \wedge ( {v}_{\st 3}=1)\Big)
+  %
+  %\Bigg)
+  \\
+  %
+ 
+
+
+  
+  
+
+
+
+
+%\text{s.t.}\\
+%y_{\st j}= E^{\st -1}_{\st 2}(y^{\st *}_{\st j},t_{\st qp})\\
+%E^{\st -1}_{\st 2},t_{\st qp}\in en\\
+\end{array} :
+    \begin{array}{l}
+    \mathsf{Exp}_{\st 1}^{\st\mathcal{A}}(\mathsf{input})\\
+\end{array}    \right]\leq \mu(\lambda),$$
+%}
+where $g:=(g_{\st 1}, g_{\st 2})\in T$,  $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}]$, $(w_{\st 1,j},..,w_{\st 3,j})$ are the result of decoding   $(\hat w_{\st 1,j},..,\hat w_{\st 3,j})\in \hat {\bm w}$,  $\mathtt{checkWarning}(.)$ determines a warning's effectiveness,   $\mathsf{input}:=(1^{\st\lambda}, {aux})$,  $(u, sig)\in x$, $ sk_{\st \mathcal{D}}\in sk$, and $n$ is the total number of arbiters. The probability is taken over the uniform choice of $sk$, randomness used in the blockchain's primitives (e.g., in signatures), randomness used during the encoding,   and  the randomness of $\mathcal{A}$. 
+\end{definition}
+
+
+Intuitively, security against a malicious bank requires that a malicious bank should not be able to disqualify an honest victim of an APP fraud from being reimbursed. In particular,  a corrupt bank cannot  (a) make $\mathcal{DR}$ conclude that the  ``pass'' message was correctly given or an important warning message was not missing despite at least threshold  $\mathcal{D}_{\st j}$s  do not believe so, or (b) convince $\mathcal{DR}$  that the warning message was effective although at least threshold $\mathcal{D}_{\st j}$s do not believe so, or (c) make $\mathcal{DR}$ believe that less than threshold $\mathcal{D}_{\st j}$s did  not accept the certificate  although at least threshold of them did that, or (d) make $\mathcal{DR}$ believe that no payment was  made, although at least threshold $\mathcal{D}_{\st j}$s believe the opposite, except for a negligible probability. 
+
+\begin{definition}[Security against a malicious bank]\label{def::Security-against-malicious-bank} A PwDR scheme is secure against a malicious bank, if for any security parameter $\lambda$, auxiliary information $ {aux}$, and   probabilistic polynomial-time adversary $\mathcal{A}$, there exists a negligible function $\mu(\cdot)$, such that for an experiment $\mathsf{Exp}_{\st 2}^{\mathcal{A}}$:
+
+
+\begin{center}
+\begin{mybox}[colback=white,  width=120mm, height=65mm,]{$\mathsf{Exp}_{\st 2}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  {aux})$}
+%\fbox{\begin{minipage}{3.8 in}
+$$
+  \begin{array}{l}
+%
+ \mathtt{keyGen}(1^{\st\lambda})\rightarrow (sk,pk)\\
+%
+\mathcal{A}(1^{\st \lambda})\rightarrow (T, pp, \bm{l}, f,  in_{\st f}, \text{aux}_{\st f})\\
+%
+\mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a\\
+%
+\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}\\
+%
+\mathtt{insertNewPayee}(\hat{m}^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow  \hat{\bm l}\\
+%
+\mathcal{A}(T, \hat{\bm l}, \text{aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}\\
+%
+\mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}\\
+%
+\mathcal{A}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}\\
+%
+\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, \text{aux}_{\st f})\rightarrow (\hat z, \hat{\ddot \pi})\\
+%
+ \forall j, j\in [n]:\\
+\Big(\mathtt{verComplaint}( \hat z, \hat{\ddot{\pi}}, g, \hat{\bm m}, \hat{\bm{l}}, j, sk_{\st\mathcal D}, aux, pp)\rightarrow \hat{\bm{w}_{\st j}}= [\hat {w}_{\st 1,j}, \hat{w}_{\st 2, j}, \hat{w}_{\st 3, j}, \hat{w}_{\st 4, j}]
+\Big)
+\\
+%
+\mathtt{resDispute}(T_{\st 2}, \hat {\bm w}, pp)\rightarrow \bm v=[v_{\st 1},...,   v_{\st 4}]\\
+   \end{array} 
+$$
+\end{mybox}
+%\end{minipage}}
+\end{center}
+
+it holds that:
+
+%{\small
+$$ \Pr\left[
+  \begin{array}{l}
+  
+ 
+\Big( (\sum\limits_{\st j=1}^{\st n}w_{\st 1,j}\geq e) \wedge ( v_{\st 1}=0)\Big) \\
+ %
+ 
+ \vee \Big(( \sum\limits_{\st j=1}^{\st n}w_{\st 2,j}\geq e) \wedge ( v_{\st 2}=0)\Big) \\
+ %
+ \vee  \Big(( \sum\limits_{\st j=1}^{\st n}w_{\st 3,j}\geq e) \wedge ( v_{\st 3}=0)\Big) \\
+ %
+  \vee  \Big(( \sum\limits_{\st j=1}^{\st n}w_{\st 4,j}\geq e) \wedge ( v_{\st 4}=0)\Big) \\
+ %
+\end{array} :
+    \begin{array}{l}
+    \mathsf{Exp}_{\st 2}^{\st\mathcal{A}}(\mathsf{input})\\
+\end{array}    \right]\leq \mu(\lambda),$$
+%}
+where $g:=(g_{\st 1}, g_{\st 2})\in T$, $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}]$, $(w_{\st 1,j},..,w_{\st 3,j})$ are the result of decoding   $(\hat w_{\st 1,j},..,\hat w_{\st 3,j})\in \hat {\bm w}$, $\mathsf{input}:=(1^{\st\lambda},  {aux})$, $ sk_{\st \mathcal{D}}\in sk$, $n$ is the total number of arbiters. The probability is taken over the uniform choice of $sk$, randomness used in the blockchain's primitives, randomness used during the encoding, and  the randomness of $\mathcal{A}$. 
+\end{definition}
+
+
+A careful reader may ask why the following two conditions (some forms of which were in the events of Definition \ref{def::Security-against-malicious-victim}) are not added to the above events list: (a) $\mathcal{B}$ makes at least threshold committee members conclude that it  has provided a warning, although $\mathcal{B}$ has not (i.e., $ m^{\st\mathcal{(B)}}_{\st1}\neq warning \wedge \sum\limits_{\st j=1}^{\st n}w_{\st 1,j}<  e$), and (b) $\mathcal{B}$ persuades at least threshold $\mathcal{D}_{\st j}$s  to conclude that the warning was effective although it was not (i.e., $\mathtt{checkWarning}(m^{\st\mathcal{(B)}}_{\st1})= 0 \wedge \sum\limits_{\st j=1}^{\st n}w_{\st 2,j}< e$). The answer is that  $\mathcal{B}$ does not generate a complaint  and interact directly with $\mathcal{D}_{\st j}$s; therefore, we do not need to add these two events to the above events' list. Now we move on to privacy. Informally, a PwDR is privacy-preserving if it protects the privacy of (1) the customers', bank's, and arbiters' messages (except public parameters) from  non-participants of the protocol, including other customers, and (2) each   arbiter's verdict from $\mathcal{DR}$  which sees the final verdict. 
+
+
+
+
+\input{privacy-def}
+
+
+\begin{definition}[Security]\label{def::PwDR-security}
+A PwDR is secure if it meets security against a malicious victim,  security against a malicious bank, and preserves privacy with respect to definitions \ref{def::Security-against-malicious-victim}, \ref{def::Security-against-malicious-bank}, and \ref{def::privacy} respectively. 
+\end{definition}
+
+
+%Definition 13 (RC-PoR-P Security). A RC-PoR-P scheme is secure if it satisfies security against a malicious server, security against a malicious client, and preserves privacy, w.r.t. Definitions 10-12.
+
+%\begin{mybox}[colback=white]{Title}
+%This is my box.
+%\end{mybox}
+
+%{\small
+%\begin{center}
+%\fbox{\begin{minipage}{3.8 in}
+%$$
+%  \begin{array}{l}
+%  \mathsf{Exp}_{\st 1}^{\mathcal{A}}(\mathsf{In}:=(1^{\st\lambda}, p, \bm{l})): \\
+%  
+%  \ \  \mathtt{keyGen}(1^{\st\lambda})\rightarrow (sk,pk)\\
+%  
+%   \ \   \mathcal{A}(1^{\st\lambda}, p, \bm{l}, pk)\rightarrow m^{\st\mathcal{(C)}}_{\st 1}\\
+%   
+%   
+%    \ \ \mathtt{insertNewPayee}(m^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow {\bm l'}\\
+%   
+%   
+%   \ \ \mathtt{genWarning}( {\bm l'}, \text{aux})\rightarrow m^{\st\mathcal{(B)}}_{\st1}\\
+%   
+%
+%   \ \   \mathcal{A}(in_{\st p}, \bm{l}', m^{\st\mathcal{(B)}}_{\st1})\rightarrow m^{\st\mathcal{(C)}}_{\st 2}\\
+%
+%\ \ \mathtt{makePayment}(m^{\st\mathcal{(C)}}_{\st2})\rightarrow m^{\st\mathcal{(B)}}_{\st2}\\
+%  
+%
+%
+% \ \   \mathcal{A}(m^{\st\mathcal{(B)}}_{\st1},m^{\st\mathcal{(B)}}_{\st 2}, aux')\rightarrow z:=(k,x,y)\\
+%
+%
+%\ \ \forall i, i\in [n]:\\
+%\ \  \Big(\mathtt{verComplaint}( z, m^{\st\mathcal{(B)}}_{\st1},i)\rightarrow (d_{\st i}, v_{\st i}, \bar v_{\st i},  w_{\st i})\Big)\\
+%
+%\ \ \mathtt{resDispute}(m_{\st 1}^{\st(\mathcal C)}, m_{\st 2}^{\st(\mathcal C)}, m_{\st 1}^{\st(\mathcal B)}, m_{\st 2}^{\st(\mathcal B)}, z, \bm{d}, \bm{v}, \bm{\bar v}, \bm{w})\rightarrow c\\
+%   \end{array} 
+%$$
+%\end{minipage}}
+%\end{center}
+%}
+
+
+
+
+
+
+
+
+
+
+
+
+

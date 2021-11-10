@@ -6,43 +6,42 @@
 \begin{definition}[Privacy]\label{def::privacy} A PwDR preserves privacy if  the following two properties are satisfied.
 \begin{enumerate}
 
-\item For any PPT  adversary $\mathcal{A}_{\st 1}$,  security parameter $\lambda$, and  auxiliary information $aux$, there exists a negligible function $\mu(\cdot)$, such that for any  experiment $\mathsf{Exp}_{\st 3}^{\mathcal{A}_{\st 1}}$:
+\item For any probabilistic polynomial-time  adversary $\mathcal{A}_{\st 1}$,  security parameter $\lambda$, and  auxiliary information $aux$, there exists a negligible function $\mu(\cdot)$, such that for any  experiment $\mathsf{Exp}_{\st 3}^{\mathcal{A}_{\st 1}}$:
 
 
 
 \begin{center}
-\begin{mybox}[colback=white,  width=116mm, height=39mm,]{$\mathsf{Exp}_{\st 3}^{\st\mathcal{A}_{\st 1}}(1^{\st\lambda}\text{, }  {aux})$}
+\begin{mybox}[colback=white,  width=88mm, height=71mm,]{$\mathsf{Exp}_{\st 3}^{\st\mathcal{A}_{\st 1}}(1^{\st\lambda}\text{, }  {aux})$}
 %\fbox{\begin{minipage}{3.8 in}
-\vspace{-1.2mm}
 $$
   \begin{array}{l}
 %
- \mathtt{keyGen}(1^{\st\lambda})\rightarrow (sk,pk), \
+ \mathtt{keyGen}(1^{\st\lambda})\rightarrow (sk,pk)\\
 %
-  \mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm{l}), \
+  \mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm{l})\\
 %
 \mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a\\
 %
 \mathcal{A}_{\st 1}(1^{\st \lambda}, pk, a, pp, g, \bm{l})\rightarrow \Big((f_{\st 0}, f_{\st 1}),(in_{\st f_{\st_{\st 0}}},in_{\st f_{\st _1}}),(\text{aux}_{\st f_{0}},\text{aux}_{\st f_{\st1}})\Big)\\
 %
-\gamma\stackrel{\st \$}\leftarrow\{0,1\}, \
+\gamma\stackrel{\st \$}\leftarrow\{0,1\}\\
 %
-\mathtt{genUpdateRequest}(T, f_{\st \gamma}, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}, \
+\mathtt{genUpdateRequest}(T, f_{\st \gamma}, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}\\
 %
 \mathtt{insertNewPayee}(\hat{m}^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow  \hat{\bm l}\\
 %
-\mathtt{genWarning}(T, \hat{\bm l}, \text{aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}, \
+\mathtt{genWarning}(T, \hat{\bm l}, \text{aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}\\
 %
 \mathtt{genPaymentRequest}(T, in_{\st f_{_\gamma}}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}\\
 %
-\mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}, \
+\mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}\\
 %
 \mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, \text{aux}_{\st f_{_\gamma}})\rightarrow (\hat z, \hat{\ddot \pi})\\
 %
  \forall j, j\in [n]:\\
 \Big(\mathtt{verComplaint}( \hat z, \hat{\ddot{\pi}}, g, \hat{\bm m}, \hat{\bm{l}}, j, sk_{\st\mathcal D}, aux, pp)\rightarrow \hat{\bm{w}}_{\st j}
 \Big)
-, \
+\\
 \mathtt{resDispute}(T_{\st 2}, \hat {\bm w}, pp)\rightarrow \bm v
 \\
 %
@@ -53,13 +52,14 @@ $$
 \end{mybox}
 %\end{minipage}}
 \end{center}
-%
+
 it holds that:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 $$ \Pr\left[
   \begin{array}{l}
-  %
+  
+ 
 \mathcal{A}_{\st 1}(g, \hat {\bm m}, \hat{\bm l}, \hat z, \hat{\ddot \pi}, \hat{\bm{w}})\rightarrow \gamma
 \end{array} :
     \begin{array}{l}
@@ -71,42 +71,41 @@ $$ \Pr\left[
 
 
 
-\item For any PPT  adversaries $\mathcal{A}_{\st 2}$ and  $\mathcal{A}_{\st 3}$, security parameter $\lambda$, and  auxiliary information $aux$, there exists a negligible function $\mu(\cdot)$, such that for any  experiment $\mathsf{Exp}_{\st 4}^{\mathcal{A}_{\st 2}}$:
+\item For any probabilistic polynomial-time  adversaries $\mathcal{A}_{\st 2}$ and  $\mathcal{A}_{\st 3}$, security parameter $\lambda$, and  auxiliary information $aux$, there exists a negligible function $\mu(\cdot)$, such that for any  experiment $\mathsf{Exp}_{\st 4}^{\mathcal{A}_{\st 2}}$:
 
 %%%%%%%%%%%%%%%--EXp_4%%%%%%%%%%%%%%%
 \begin{center}
-\begin{mybox}[colback=white,  width=116mm, height=38mm,]{$\mathsf{Exp}_{\st 4}^{\st\mathcal{A}_{\st 2}}(1^{\st\lambda}\text{, }  {aux})$}
+\begin{mybox}[colback=white,  width=88mm, height=76mm,]{$\mathsf{Exp}_{\st 4}^{\st\mathcal{A}_{\st 2}}(1^{\st\lambda}\text{, }  {aux})$}
 %\fbox{\begin{minipage}{3.8 in}
-\vspace{-1.2mm}
 $$
   \begin{array}{l}
 %
- \mathtt{keyGen}(1^{\st\lambda})\rightarrow (sk,pk), \
+ \mathtt{keyGen}(1^{\st\lambda})\rightarrow (sk,pk)\\
 %
-  \mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm{l}), \
+  \mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm{l})\\
 %
 \mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a\\
 %
-\mathcal{A}_{\st 2}(1^{\st \lambda}, pk, a, pp, \bm{l})\rightarrow (f, in_{\st f}, \text{aux}_{\st f}), \
+\mathcal{A}_{\st 2}(1^{\st \lambda}, pk, a, pp, \bm{l})\rightarrow (f, in_{\st f}, \text{aux}_{\st f})\\
 %
 \mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}\\
 %
-\mathtt{insertNewPayee}(\hat{m}^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow  \hat{\bm l}, \
+\mathtt{insertNewPayee}(\hat{m}^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow  \hat{\bm l}\\
 %
-\mathcal{A}_{\st 2}(T, \hat{\bm l}, \text{aux})\rightarrow  m^{\st\mathcal{(B)}}_{\st1}, \
+\mathcal{A}_{\st 2}(T, \hat{\bm l}, \text{aux})\rightarrow  m^{\st\mathcal{(B)}}_{\st1}\\
 %
 \mathtt{Encode}(T_{\st 1}, m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}\\
 %
 \mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}\\
 %
 
-\mathcal{A}_{\st 2}(T,  pk, \text{aux}_{\st f}, \hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow ( m^{\st\mathcal{(B)}}_{\st2},  z, {\ddot \pi}),\
+\mathcal{A}_{\st 2}(T,  pk, \text{aux}_{\st f}, \hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow ( m^{\st\mathcal{(B)}}_{\st2},  z, {\ddot \pi})\\
 %
 \mathtt{Encode}(T_{\st 1}, m^{\st\mathcal{(B)}}_{\st 2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}\\
 %
-\mathtt{Encode}(T_{\st 1},  z)\rightarrow \hat z, \
+\mathtt{Encode}(T_{\st 1},  z)\rightarrow \hat z\\
 %
-{\bar{ \mathtt{Encode}}}(pk_{\st\mathcal{D}}, \ddot \pi)\rightarrow  \hat{\ddot \pi}, \
+\mathtt{\bar{ Encode}}(pk_{\st\mathcal{D}}, \ddot \pi)\rightarrow  \hat{\ddot \pi}\\
 %
 %
 %\mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}\\
@@ -116,7 +115,7 @@ $$
  \forall j, j\in [n]:\\
 \Big(\mathtt{verComplaint}( \hat z, \hat{\ddot{\pi}}, g, \hat{\bm m}, \hat{\bm{l}}, j, sk_{\st\mathcal D}, aux, pp)\rightarrow \hat{\bm{w}}_{\st j}
 \Big)
-, \
+\\
 \mathtt{resDispute}(T_{\st 2}, \hat {\bm w}, pp)\rightarrow \bm v
 \\
 %
@@ -127,7 +126,10 @@ $$
 \end{mybox}
 %\end{minipage}}
 \end{center}
-%
+
+
+
+
 it holds that:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -141,7 +143,7 @@ $$ \Pr\left[
     \mathsf{Exp}_{\st 4}^{\st\mathcal{A}_{\st 2}}(\mathsf{input})\\
 \end{array}    \right]\leq {Pr}'+\mu(\lambda),$$
 %}
-where  $g:=(g_{\st 1}, g_{\st 2})\in T$,   $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}], \hat {\bm w}=[\hat {\bm w}_{\st 1},.., \hat{\bm w}_{\st n}]$, $\mathsf{input}:=(1^{\st\lambda}, aux)$, $T_{\st 1}\in T$, $pk_{\st \mathcal{D}}\in pk$, $sk_{\st \mathcal{D}}\in sk$, $n$ is the total number of arbiters. Moreover, $Pr'$ is defined as follows. Let arbiter $\mathcal{D}_{\st i}$ output $0$ and $1$ with probabilities $Pr_{\st i,0}$ and $Pr_{\st i,1}$ respectively. Then, $Pr'$ is defined as  $Max\{Pr_{\st 1,0},Pr_{\st 1,1}, ..., Pr_{\st n,0}, $ $Pr_{\st n,1} \}$. %In the above privacy definition, the probability is taken over the uniform choice of $sk$, the probability that each  $\mathcal{D}_{\st j}$ outputs $0$ or $1$, the randomness used in the blockchain's primitives,  the randomness used during the encoding, and  the randomness of $\mathcal{A}_{\st 1}$ in $\mathsf{Exp}_{\st 3}^{\mathcal{A}_{\st 1}}$ and $\mathcal{A}_{\st 2}$ in $\mathsf{Exp}_{\st 4}^{\mathcal{A}_{\st 2}}$. 
+where  $g:=(g_{\st 1}, g_{\st 2})\in T$,   $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}], \hat {\bm w}=[\hat {\bm w}_{\st 1},.., \hat{\bm w}_{\st n}]$, $\mathsf{input}:=(1^{\st\lambda}, aux)$, $T_{\st 1}\in T$, $pk_{\st \mathcal{D}}\in pk$, $sk_{\st \mathcal{D}}\in sk$, $n$ is the total number of arbiters. Moreover, $Pr'$ is defined as follows. Let arbiter $\mathcal{D}_{\st i}$ output $0$ and $1$ with probabilities $Pr_{\st i,0}$ and $Pr_{\st i,1}$ respectively. Then, $Pr'$ is defined as  $Max\{Pr_{\st 1,0},Pr_{\st 1,1}, ..., Pr_{\st n,0}, $ $Pr_{\st n,1} \}$. In the above privacy definition, the probability is taken over the uniform choice of $sk$, the probability that each  $\mathcal{D}_{\st j}$ outputs $0$ or $1$, the randomness used in the blockchain's primitives,  the randomness used during the encoding, and  the randomness of $\mathcal{A}_{\st 1}$ in $\mathsf{Exp}_{\st 3}^{\mathcal{A}_{\st 1}}$ and $\mathcal{A}_{\st 2}$ in $\mathsf{Exp}_{\st 4}^{\mathcal{A}_{\st 2}}$. 
 
 
 \end{enumerate}
