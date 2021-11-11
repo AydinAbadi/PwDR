@@ -87,13 +87,13 @@ $Pr\Big[\  \  \mathtt{Sig.ver}( pk,\\ u, \mathtt{Sig.sign}(sk, pk, u))=1\ : \
 \small{
 $$ \Pr\left[
   \begin{array}{l}
-  u^{\st *}\not\in Q\ \wedge \\
+  u^{\st *}\not\in Q\ \wedge \ \
    \mathtt{Sig.ver}( pk,  u^{\st *}, sig^{\st *}) =1\\
 % 
 %(M(u^{\scriptscriptstyle *},k)\neq \sigma \lor Q(\text{aux},k)\neq q) \wedge\\ (a=1 \ \vee b=1)
 \end{array} : 
     \begin{array}{l}
-    \mathtt{Cer.keyGen}(1^{\st \lambda})\rightarrow (sk,pk) \\
+    \mathtt{Cer.keyGen}(1^{\st \lambda})\rightarrow (sk,pk), \ \
   \mathcal{A}^{\mathtt{Sig.sign}(k,)}(pk)\rightarrow(u^{\st *}, sig^{\st *}) 
 \end{array}    \right]\leq \mu(\lambda)$$
 }
@@ -156,7 +156,7 @@ where $Q$ is the set of queries that $\mathcal{A}$ sent to the certificate gener
 
 Informally, a pseudorandom function is a deterministic function that takes a key of length $\Lambda$ and an input; and outputs a value  indistinguishable from that of  a truly random function.  In this paper, we use the pseudorandom function:   $\mathtt {PRF}: \{0,1\}^{\st \Lambda}\times \{0,1\}^{\st *} \rightarrow  \mathbb{F}_p$, where $p$ is a large prime number, $|p|=\lambda$, and $(\Lambda,\lambda)$ are the security parameters. In practice, a pseudorandom function can be obtained from an efficient block cipher. We refer readers to \cite{DBLP:books/crc/KatzLindell2014} for a formal definition of a pseudorandom function.
 
-\vspace{-2mm}
+\vspace{-3mm}
 \subsection{Bloom Filter}
 
 
