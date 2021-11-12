@@ -3,13 +3,13 @@
 
 \subsection{A Subroutine for Determining Bank's Message Status}
 
-As we stated earlier, in the payment journey the customer may receive a ``pass'' message or even nothing at all, e.g., due to a system failure. In such cases,  a victim of  an APP fraud must be able to complain that if the pass or missing message was   a warning message, then it   would have prevented the victim from falling to the APP fraud. To assist the committee members to deal with  such complaints deterministically, we propose an algorithm,  called $\mathtt{verStat}$. It is run locally by each committee member. It outputs $0$ if a pass message was given correctly or the missing message could not  prevent the fraud, and outputs $1$ otherwise. The algorithm is presented in figure \ref{fig:verStat}.
+As we stated earlier, in the payment journey the customer may receive a ``pass'' message or even nothing at all, e.g., due to a system failure. In such cases,  a victim  must be able to complain that if the pass or missing message was   a warning message, then it   would have prevented it  from falling victim. To assist the committee members to deal with  such complaints deterministically, we propose an algorithm,  called $\mathtt{verStat}(.)$. It is run locally by each committee member. It outputs $0$ if a pass message was given correctly or the missing message could not  prevent the fraud, and outputs $1$ otherwise. The algorithm is presented in Figure \ref{fig:verStat}.
 
 
 \begin{figure}[!htbp]
-\setlength{\fboxsep}{0.7pt}
+\setlength{\fboxsep}{1pt}
 \begin{center}
-\begin{boxedminipage}{12cm}
+\begin{boxedminipage}{13.3cm}
 \small{
 \underline{$\mathtt{verStat}(add_{\st\mathcal{S}}, m^{\st\mathcal{(B)}},  \bm l, \Delta, aux)\rightarrow w_{\st 1}$}\\
 %
@@ -19,15 +19,14 @@ As we stated earlier, in the payment journey the customer may receive a ``pass''
 \item\noindent\textit{Output}. $ w_{\st 1}=0$: if the ``pass'' message had been given correctly or the missing message did not play any role in preventing the fraud; $ w_{\st 1}=1$: otherwise. 
 \end{itemize}
 \begin{enumerate}
-\item reads the content of   $\mathcal{S}$. It checks if $m^{\st\mathcal{(B)}}=$``pass''  or the encrypted warning message was not sent on time (i.e., never sent or sent after    $t_{\st 0}+\Delta$).  If one of the checks passes, it proceeds to the next step. Otherwise, it aborts. 
+\item reads the content of   $\mathcal{S}$. It checks if $m^{\st\mathcal{(B)}}=$``pass''  or the encrypted warning message was not sent on time (i.e., never sent or sent after    $t_{\st 0}+\Delta$).  If one of the checks passes, it proceeds; Otherwise, it aborts. 
 \item checks the validity of  customer's most recent payees' list $\bm l$, with the help of the auxiliary information, $aux$. 
 \begin{itemize}
 \item[$\bullet$]  if $\bm l$ contains an invalid element,  it sets $ w_{\st 1}=1$.
 \item [$\bullet$] otherwise, it sets $ w_{\st 1}=0$.
 \end{itemize}
 \item returns $ w_{\st 1}$.
-
-\
+\vspace{1mm}
 
 \end{enumerate}
 
