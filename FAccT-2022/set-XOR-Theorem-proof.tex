@@ -1,12 +1,22 @@
 % !TEX root =main.tex
 
-\section{Variant 1 Encoding-Decoding Protocol's Main Theorem and Proof}\label{sec::Variant-1-Theorem-proof}
+\section{Further Discussion on Variant 1 Encoding-Decoding Protocol}\label{sec::Variant-1-Theorem-proof}
+In this section, we first formally state  our observation on which  Variant 1 encoding-decoding protocol relies and then prove it. After that, we explain why this variant meets the three properties  we laid out in Section \ref{sec::Encoding-Decoding-Verdicts}, i.e., it should (1) generate unlinkable verdicts, (2) not require arbiters to interact with each other for each customer, and (3) be efficient.
 
-\begin{reptheorem}{set-xor}
+
+
+\begin{theorem}\label{set-xor}
 Let set $S=\{s_{\st 1},..., s_{\st m}\}$ be the union of  two disjoint sets $S'$ and $S''$, where $S'$ contains non-zero random values pick uniformly  from a finite field $\mathbb{F}_{\st p}$, $S''$ contains zeros, $|S'|\geq c'=1$, $|S''|\geq c''=0$, and pair $(c',c'')$ is public information. Then, $r= \bigoplus\limits^{\st m}_{\st i=1} s_{\st i}$ reveals nothing beyond the public information.  
-\end{reptheorem}
+\end{theorem}
 
 \begin{proof}
 Let $s_{\st 1}$ and $s$, be two random values picked uniformly at random from $\mathbb{F}_{\st p}$. Let $\bar s=s_{\st 1}\oplus \underbrace{0\oplus... \oplus 0}_{\st |S''|}$. Since  $\bar s=s_{\st 1}$, two values $\bar s$ and $s$ have identical distribution. Thus, $\bar s$ reveals nothing in this case. Next, let $\tilde s=\underbrace{ s_{\st 1}\oplus s_{\st 2}\oplus... \oplus s_{\st j}}_{\st |S'|}$, where $s_{\st i}\in S'$. Since each $s_{\st i}$ is a uniformly random value,  the XOR of them is a uniformly random value too. That means values $\tilde s$ and $s$ have identical distribution. Thus, $\tilde s$ reveals nothing in this case as well. Also, it is not hard to see that the combination of the above two cases reveals nothing too, i.e., $\bar s\oplus \tilde s$ and $s$ have    identical distribution. 
 %
 \end{proof}
+
+
+
+The primary reason this variant meets  property (1) is that each masked verdict reveals nothing about the verdict (and its representation) and  given the final verdict, $\mathcal{I}$ cannot distinguish between the case where there is exactly one arbiter that voted  $1$ and the case where multiple arbiters voted $1$, as in both cases $\mathcal{I}$   extracts only a single random value, which reveals nothing about the number of arbiters which voted $0$ or $1$ (due to Theorem \ref{set-xor}).   Note,  the protocols' correctness holds with an overwhelming probability, i.e., $1-\frac{1}{2^{\st \lambda}}$. Specifically, if two arbiters  represent their verdict by an identical random value, then when they are XORed they would cancel out each other which can affect the result's correctness. The same holds if the XOR of  multiple verdicts' representations results in a value that can cancel out another verdict's representation. Nevertheless, the probability that such an event occurs is negligible in the security parameter $|p|=\lambda$, i.e., at most   $\frac{1}{2^{\st \lambda}}$. It is evident that this variant meets property (2) as the arbiters interact with each other \emph{only once} (to agree on a key) for all customers. It also meets property (3) as it involves pseudorandom function invocations and XOR operations which are  highly  efficient operations. 
+
+
+%We will use this variant in the PwDR protocol.

@@ -107,11 +107,15 @@ Figures \ref{fig:GPVE} and \ref{fig:GFVD} present the generic verdict encoding-d
 
 
 
-\begin{figure}[hbt!]
-\setlength{\fboxsep}{0.7pt}
+\begin{figure}[!htbp]
+\setlength{\fboxsep}{1pt}
 \begin{center}
-\begin{boxedminipage}{12cm}
-\small{
+    \begin{tcolorbox}[enhanced,width=5.5in,
+    drop fuzzy shadow southwest,
+    colframe=red!50!black,colback=yellow!10]
+    \small{
+    \vspace{-1.3mm}
+
 \underline{$\mathtt{GPVE}(\bar{k}_{\st 0}, \text{ID},  w_{\st j}, o, e, n,  j)\rightarrow  (\bar{  w}_{\st j}, \mathtt{BF})$}\\
 %
 \begin{itemize}
@@ -191,25 +195,24 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 %%
 %\item return $\bar{\bm w}_{\st j}=[ \bar w_{\st 1,j},..., \bar w_{\st 3,j}]$.
 
-
-
-
-\
  \end{enumerate}
- 
 }
-\end{boxedminipage}
+\end{tcolorbox}
 \end{center}
 \caption{Generic Private Verdict Encoding  (GPVE) Protocol} 
 \label{fig:GPVE}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\begin{figure}[hbt!]
-\setlength{\fboxsep}{0.7pt}
+
+\begin{figure}[!htbp]
+\setlength{\fboxsep}{1pt}
 \begin{center}
-\begin{boxedminipage}{12cm}
-\small{
+    \begin{tcolorbox}[enhanced,width=5.5in,
+    drop fuzzy shadow southwest,
+    colframe=red!50!black,colback=yellow!10]
+    \small{
+    \vspace{-1.3mm}
 \underline{$\mathtt{GFVD}(n,  \bar{\bm w}, \mathtt{BF})\rightarrow  v$}\\
 %
 \begin{itemize}
@@ -251,12 +254,10 @@ $c= \bigoplus\limits^{\st n}_{\st j=1} \bar w_{\st j}$
 \end{equation*}
 %
 \item outputs  $v$. 
-
-\
  \end{enumerate}
  
 }
-\end{boxedminipage}
+\end{tcolorbox}
 \end{center}
 \caption{Generic Final Verdict Decoding  (GFVD) Protocol} 
 \label{fig:GFVD}
