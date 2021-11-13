@@ -91,7 +91,7 @@ The certificate generator  takes   step \ref{signature-keygen} and an arbiter ta
 %(1^{\st \lambda})\rightarrow k:=(sk_{\st\mathcal{D}}, pk_{\st\mathcal{D}})%
 
 Let $sk:=(sk_{\st\mathcal{G}}, sk_{\st\mathcal{D}})$ and $pk:=(pk_{\st\mathcal{G}}, pk_{\st\mathcal{D}})$. Note, this   phase takes place only once for all customers.
-\vspace{2mm}
+
 \item\label{RCPoRP::Bank-side-Initiation} \underline{\textit{Bank-side Initiation}}. $\mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm l)$
 
 $\mathcal{B}$ takes the following steps. 
@@ -107,7 +107,6 @@ $\mathcal{B}$ takes the following steps.
 \end{enumerate}
 
 
-\vspace{2mm}
 \item \underline{\textit{Customer-side Initiation}}\label{customer-side-Initiation}. $\mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a$
 
 $\mathcal{C}$ takes the following steps. 
@@ -119,7 +118,7 @@ $\mathcal{C}$ takes the following steps.
 \item if the above checks fail,  it sets $a=0$. Otherwise, it sets $a=1$. It sends $a$ to $\mathcal{S}$. 
 \end{enumerate}
 %
-\vspace{2mm}
+
 \item\label{genUpdateRequest} \underline{\textit{Generating  Update Request}}. $\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}$
 
 $\mathcal{C}$ takes the following steps. 
@@ -144,7 +143,7 @@ $\mathcal{C}$ takes the following steps.
 \end{enumerate}
 %
 % Inserting New Payee
-\vspace{2mm}
+
  \item \underline{\textit{Inserting New Payee}}. $\mathtt{insertNewPayee}(\hat m^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow {\hat{\bm l}}$
  
 $\mathcal{S}$ takes the following steps. 
@@ -161,7 +160,7 @@ $\mathcal{S}$ takes the following steps.
 
 
  % Generating Warning
- \vspace{2mm}
+
 \item\label{Generating-Warning} \underline{\textit{Generating Warning}}. $\mathtt{genWarning}(T, {\hat{\bm l}}, aux)\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}$
 %
 
@@ -176,7 +175,7 @@ $\mathcal{B}$ takes the following steps.
 \end{enumerate}
 
 
-\vspace{2mm}
+
 \item\label{clinet-at-T2} \underline{\textit{Generating Payment Request}}. $\mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}$
 
 $\mathcal{C}$ takes the following steps. 
@@ -187,7 +186,7 @@ $\mathcal{C}$ takes the following steps.
 \item\label{send-payment-req} at time $t_{\st 3}$, sends  to $\mathcal{S}$ the encryption of $m_{\st 2}^{\st(\mathcal C)}$, i.e., $\hat m_{\st 2}^{\st(\mathcal{C})}= \mathtt{Enc}(\bar k_{\st 1}, m_{\st 2}^{\st(\mathcal C)})$.
 \end{enumerate}
 %
-\vspace{2mm}
+
 \item\label{Making-Payment} \underline{\textit{Making Payment}}. $\mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}$
 
 $\mathcal{B}$ takes the following steps. 
@@ -199,7 +198,7 @@ $\mathcal{B}$ takes the following steps.
  %
 \end{enumerate}
 %
-\vspace{2mm}
+
 \item\label{Generating-Complaint}  \underline{\textit{Generating Complaint}}. $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, {aux}_{\st f})\rightarrow  (\hat z, \hat{\ddot \pi})$
 
 $\mathcal{C}$ takes the following steps. 
@@ -240,7 +239,7 @@ z_{\st 3}=\phi $.
 
 %\item\label{VerifyingComplaint}  \underline{\textit{Verifying Complaint}}. $\mathtt{verComplaint}(\hat z, \hat{\ddot{\pi}}, g, \hat m^{\st\mathcal{(C)}}_{\st1},\hat m^{\st\mathcal{(C)}}_{\st 2}, \hat m^{\st\mathcal{(B)}}_{\st1}, \hat m^{\st\mathcal{(B)}}_{\st 2}, \hat{\bm{l}},  j, {sk}_{\st\mathcal {D}}, aux, pp)\rightarrow \hat{\bm w}_{\st j}$
 
-\vspace{2mm}
+
 \item\label{VerifyingComplaint}  \underline{\textit{Verifying Complaint}}. $\mathtt{verComplaint}(\hat z, \hat{\ddot{\pi}}, g, \hat {\bm m}, \hat{\bm{l}},  j, {sk}_{\st\mathcal {D}}, aux, pp)\rightarrow \hat{\bm w}_{\st j}$
 
 Every Arbiter, $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\st n}\}$, takes the following steps.
@@ -335,7 +334,7 @@ $ \hat {\bm w}_{\st j}= \mathtt{Enc}(\bar k_{\st 2}, \bar{\bm w}_{\st j})$.
 \end{enumerate}
 
 
-\vspace{2mm}
+
 \item\label{DR::DisputeResolution}  \underline{\textit{Resolving Dispute}}. $\mathtt{resDispute}(T_{\st 2}, \hat {\bm w}, pp)\rightarrow \bm v$
 
 

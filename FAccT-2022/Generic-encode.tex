@@ -2,7 +2,7 @@
 
 \section{Generic Verdict Encoding-Decoding Protocol}\label{sec::Generic-Verdict-Encoding-Decoding-Protocols}
 
-Figures \ref{fig:GPVE} and \ref{fig:GFVD} present the generic verdict encoding-decoding protocols (i.e., GPVE and GFVD), that let a semi-honest third party $\mathcal{I}$ find out if at least $e$ arbiters voted $1$, where $e$ can be any integer in the range $[1, n]$.
+Figures \ref{fig:GPVE} and \ref{fig:GFVD} present the generic verdict encoding-decoding protocols (i.e., GPVE and GFVD), that let a semi-honest third party $\mathcal{I}$ find out if at least $e$ arbiters voted $1$, where $e$ can be any integer in the range $[1, n]$.  Note,  in this variant, instead of inserting the combinations into $\mathtt{BF}$ we could  hash  the combinations and give the hash values to $\mathcal{I}$. But, using a Bloom filter allows us to save considerable communication costs. For instance, when $n=10$, $e=6$, and SHA-256 is used, then $\mathcal{D}_{\st n}$ needs to send  $98816=386\times 256$ bits to $\mathcal{I}$, whereas  if they are inserted into a Bloom filter, then it only needs to send $22276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it  can save  communication costs by at least a factor of  $4$.  
 
 
 %
@@ -112,7 +112,7 @@ Figures \ref{fig:GPVE} and \ref{fig:GFVD} present the generic verdict encoding-d
 \begin{center}
     \begin{tcolorbox}[enhanced,width=5.5in,
     drop fuzzy shadow southwest,
-    colframe=red!50!black,colback=yellow!10]
+    colframe=black,colback=white]
     \small{
     \vspace{-1.3mm}
 
@@ -210,7 +210,7 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 \begin{center}
     \begin{tcolorbox}[enhanced,width=5.5in,
     drop fuzzy shadow southwest,
-    colframe=red!50!black,colback=yellow!10]
+    colframe=black,colback=white]
     \small{
     \vspace{-1.3mm}
 \underline{$\mathtt{GFVD}(n,  \bar{\bm w}, \mathtt{BF})\rightarrow  v$}\\
