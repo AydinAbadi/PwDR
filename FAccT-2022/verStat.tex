@@ -1,11 +1,16 @@
 % !TEX root =main.tex
 
+\vspace{-2mm}
+\subsection{A Subroutines for Determining Bank's Message Status}
 
-\subsection{A Subroutine for Determining Bank's Message Status}
+As we stated earlier, in the payment journey the customer may receive a ``pass'' message or even nothing at all, e.g., due to a system failure. In such cases,  a victim  must be able to complain that if the pass or missing message was   a warning, then it   would have prevented it  from falling victim. To assist the committee members to deal with  such complaints deterministically, we propose    $\mathtt{verStat}(.)$ algorithm, which is run locally by each committee member. This algorithm is presented in Figure \ref{fig:verStat}. 
 
-As we stated earlier, in the payment journey the customer may receive a ``pass'' message or even nothing at all, e.g., due to a system failure. In such cases,  a victim  must be able to complain that if the pass or missing message was   a warning message, then it   would have prevented it  from falling victim. To assist the committee members to deal with  such complaints deterministically, we propose an algorithm,  called $\mathtt{verStat}(.)$. It is run locally by each committee member. It outputs $0$ if a pass message was given correctly or the missing message could not  prevent the fraud, and outputs $1$ otherwise. The algorithm is presented in Figure \ref{fig:verStat}.
+%To assist the committee members deterministically  compile a victim's  complaint about a warning's  effectiveness, we propose an algorithm,  called $\mathtt{checkWarning}(.)$  run locally by each committee member. It also allows the victims to provide a certificate/evidence as part of their complaints.   This algorithm is presented in Figure \ref{fig:checkWarning}.
 
-
+%
+%It outputs $0$ if a pass message was given correctly or the missing message could not  prevent the fraud, and outputs $1$ otherwise. 
+%
+ \vspace{-2mm}
 \begin{figure}[!htbp]
 \setlength{\fboxsep}{1pt}
 \begin{center}
