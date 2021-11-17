@@ -67,7 +67,7 @@ Once $\mathcal{C}$ realises that it has fallen victim, it  raises a dispute. In 
 \input{check-pass}
 
 
-\subsection{The PwDR Protocol}
+\subsection{The PwDR Protocol}\label{sec::PwDR-protocol}
 In this section, we present the PwDR protocol in detail. 
 
 
@@ -75,14 +75,14 @@ In this section, we present the PwDR protocol in detail.
 
 %At a high level, the protocol works as follows. 
 
+\begin{enumerate}[leftmargin=.46cm]
+
+\item \underline{\textit{Generating  Certificate Parameters}}:  $\mathtt{keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$. Party $\mathcal{G}$ and one of the arbiters   take   steps \ref{signature-keygen} and   \ref{encryption-keygen} respectively. 
+
+
+
 \begin{enumerate}
-
-\item \underline{\textit{Generating  Certificate Parameters}}.  $\mathtt{keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$
-
-The certificate generator  takes   step \ref{signature-keygen} and an arbiter takes step \ref{encryption-keygen} below. 
-
-\begin{enumerate}
-\item\label{signature-keygen} calls $\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk_{\st\mathcal{G}}, pk_{\st\mathcal{G}})$ to generate  signing secret key $sk_{\st\mathcal{G}}$ and  verifying public key $pk_{\st\mathcal{G}}$. It publishes the public key, $pk_{\st\mathcal{G}}$.
+\item\label{signature-keygen} calls $\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk_{\st\mathcal{G}}, pk_{\st\mathcal{G}})$ to generate   secret key $sk_{\st\mathcal{G}}$ and   public key $pk_{\st\mathcal{G}}$. It publishes the public key, $pk_{\st\mathcal{G}}$.
 %
 \item\label{encryption-keygen} calls $\tilde{\mathtt{keyGen}}(1^{\st\lambda})\rightarrow({sk}_{\st\mathcal {D}}, {pk}_{\st\mathcal {D}})$ to generate  decrypting secret key ${sk}_{\st\mathcal {D}}$ and encrypting public key ${pk}_{\st\mathcal {D}}$. It publishes the public key ${pk}_{\st\mathcal {D}}$ and sends ${sk}_{\st\mathcal {D}}$ to the rest of the arbiters.
 \end{enumerate}
@@ -91,9 +91,9 @@ The certificate generator  takes   step \ref{signature-keygen} and an arbiter ta
 
 Let $sk:=(sk_{\st\mathcal{G}}, sk_{\st\mathcal{D}})$ and $pk:=(pk_{\st\mathcal{G}}, pk_{\st\mathcal{D}})$. Note, this   phase takes place only once for all customers.
 
-\item\label{RCPoRP::Bank-side-Initiation} \underline{\textit{Bank-side Initiation}}. $\mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm l)$
-
-$\mathcal{B}$ takes the following steps. 
+\item\label{RCPoRP::Bank-side-Initiation} \underline{\textit{Bank-side Initiation}}: $\mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm l)$.
+%
+Bank $\mathcal{B}$ takes the following steps. 
 \begin{enumerate}
 
 \item\label{RCPoRP::setup} picks   secret keys $\bar k_{\st 1}$ and $\bar k_{\st 2}$ for  symmetric key encryption scheme and  pseudorandom function $\mathtt{PRF}$ respectively. It  sets two private statements as $\pi_{\st 1}=\bar k_{\st 1}$ and $\pi_{\st 2}= \bar k_{\st 2}$.
@@ -106,9 +106,9 @@ $\mathcal{B}$ takes the following steps.
 \end{enumerate}
 
 
-\item \underline{\textit{Customer-side Initiation}}\label{customer-side-Initiation}. $\mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a$
-
-$\mathcal{C}$ takes the following steps. 
+\item \underline{\textit{Customer-side Initiation}}\label{customer-side-Initiation}: $\mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a$.
+%
+Customer $\mathcal{C}$ takes the following steps. 
 
 \begin{enumerate}
 %
@@ -118,9 +118,9 @@ $\mathcal{C}$ takes the following steps.
 \end{enumerate}
 %
 
-\item\label{genUpdateRequest} \underline{\textit{Generating  Update Request}}. $\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}$
-
-$\mathcal{C}$ takes the following steps. 
+\item\label{genUpdateRequest} \underline{\textit{Generating  Update Request}}: $\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}$.
+%
+Customer $\mathcal{C}$ takes the following steps. 
 
 \begin{enumerate}
 %
@@ -143,9 +143,9 @@ $\mathcal{C}$ takes the following steps.
 %
 % Inserting New Payee
 
- \item \underline{\textit{Inserting New Payee}}. $\mathtt{insertNewPayee}(\hat m^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow {\hat{\bm l}}$
- 
-$\mathcal{S}$ takes the following steps. 
+ \item \underline{\textit{Inserting New Payee}}: $\mathtt{insertNewPayee}(\hat m^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow {\hat{\bm l}}$.
+ %
+Smart contract $\mathcal{S}$ takes the following steps. 
   %
  \begin{itemize}
  %
@@ -160,10 +160,9 @@ $\mathcal{S}$ takes the following steps.
 
  % Generating Warning
 
-\item\label{Generating-Warning} \underline{\textit{Generating Warning}}. $\mathtt{genWarning}(T, {\hat{\bm l}}, aux)\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}$
+\item\label{Generating-Warning} \underline{\textit{Generating Warning}}: $\mathtt{genWarning}(T, {\hat{\bm l}}, aux)\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}$.
 %
-
-$\mathcal{B}$ takes the following steps. 
+Bank $\mathcal{B}$ takes the following steps. 
 \begin{enumerate}
 %
 \item  checks if the most recent list $\hat{\bm{l}}$ is not empty. If it is empty, it halts. Otherwise, it proceeds to the next step. 
@@ -175,9 +174,9 @@ $\mathcal{B}$ takes the following steps.
 
 
 
-\item\label{clinet-at-T2} \underline{\textit{Generating Payment Request}}. $\mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}$
-
-$\mathcal{C}$ takes the following steps. 
+\item\label{clinet-at-T2} \underline{\textit{Generating Payment Request}}: $\mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}$.
+%
+Customer $\mathcal{C}$ takes the following steps. 
 \begin{enumerate}
 %
 \item\label{decrypt-warning} at time $t_{\st 2}$, decrypts the content of $\hat{\bm{l}}$ and $\hat m_{\st 1}^{\st(\mathcal{B})}$.  It sets a payment request $m_{\st 2}^{\st(\mathcal C)}$ to  $\phi$ or  $in_{\st f}$, where $in_{\st f}$ contains the payment's detail, e.g., the payee's detail in $\bm l$ and the amount it wants to transfer. 
@@ -186,9 +185,9 @@ $\mathcal{C}$ takes the following steps.
 \end{enumerate}
 %
 
-\item\label{Making-Payment} \underline{\textit{Making Payment}}. $\mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}$
-
-$\mathcal{B}$ takes the following steps. 
+\item\label{Making-Payment} \underline{\textit{Making Payment}}: $\mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}$.
+%
+Bank $\mathcal{B}$ takes the following steps. 
 \begin{enumerate}
 %
  \item at time $t_{\st 4}$, decrypts  the content of $\hat m_{\st 2}^{\st(\mathcal C)}$, i.e.,  $ m_{\st 2}^{\st(\mathcal{C})}= \mathtt{Dec}(\bar k_{\st 1}, \hat m_{\st 2}^{\st(\mathcal C)})$.
@@ -198,9 +197,9 @@ $\mathcal{B}$ takes the following steps.
 \end{enumerate}
 %
 
-\item\label{Generating-Complaint}  \underline{\textit{Generating Complaint}}. $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, {aux}_{\st f})\rightarrow  (\hat z, \hat{\ddot \pi})$
-
-$\mathcal{C}$ takes the following steps. 
+\item\label{Generating-Complaint}  \underline{\textit{Generating Complaint}}: $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, {aux}_{\st f})\rightarrow  (\hat z, \hat{\ddot \pi})$. 
+%
+Customer $\mathcal{C}$ takes the following steps. 
 \begin{enumerate}
 %
 \item\label{DR::C-sends-complaint} decrypts $ \hat m^{\st\mathcal{(B)}}_{\st 1}$ and $\hat m^{\st\mathcal{(B)}}_{\st2}$; this results in $  m^{\st\mathcal{(B)}}_{\st 1}$ and $ m^{\st\mathcal{(B)}}_{\st2}$ respectively. Depending on the content of  the decrypted values, it sets its complaint's parameters $z:=(z_{\st 1}, z_{\st 2}, z_{\st 3})$ as follows.  %sends a complaint: $z:=(k, x, y)$ to $\mathcal{S}$ at time $T_{\st 6}$, where $k, x$ and $y$ are   set as follows.  
@@ -214,7 +213,7 @@ $\mathcal{C}$ takes the following steps.
  \begin{enumerate}[label=(\roman*)]
   \item the ``pass'' message (in $m^{\st\mathcal{(B)}}_{\st 1}$)  should have been a warning.
   
- \item $\mathcal{B}$ has not provided any message (i.e., neither pass nor warning)   and if $\mathcal{B}$  provided a warning  then  the fraud would have been  prevented.  
+ \item $\mathcal{B}$ did not provide any message (i.e.,  pass or warning)   and if $\mathcal{B}$  provided a warning,    the fraud would have been  prevented.  
  
 
    \end{enumerate}
@@ -239,9 +238,9 @@ z_{\st 3}=\phi $.
 %\item\label{VerifyingComplaint}  \underline{\textit{Verifying Complaint}}. $\mathtt{verComplaint}(\hat z, \hat{\ddot{\pi}}, g, \hat m^{\st\mathcal{(C)}}_{\st1},\hat m^{\st\mathcal{(C)}}_{\st 2}, \hat m^{\st\mathcal{(B)}}_{\st1}, \hat m^{\st\mathcal{(B)}}_{\st 2}, \hat{\bm{l}},  j, {sk}_{\st\mathcal {D}}, aux, pp)\rightarrow \hat{\bm w}_{\st j}$
 
 
-\item\label{VerifyingComplaint}  \underline{\textit{Verifying Complaint}}. $\mathtt{verComplaint}(\hat z, \hat{\ddot{\pi}}, g, \hat {\bm m}, \hat{\bm{l}},  j, {sk}_{\st\mathcal {D}}, aux, pp)\rightarrow \hat{\bm w}_{\st j}$
-
-Every Arbiter, $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\st n}\}$, takes the following steps.
+\item\label{VerifyingComplaint}  \underline{\textit{Verifying Complaint}}: $\mathtt{verComplaint}(\hat z, \hat{\ddot{\pi}}, g, \hat {\bm m}, \hat{\bm{l}},  j, {sk}_{\st\mathcal {D}}, aux, pp)\rightarrow \hat{\bm w}_{\st j}$.
+%
+Every $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\st n}\}$ takes the following steps.
 \begin{enumerate}
 
 %
@@ -268,7 +267,7 @@ Every Arbiter, $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\
 
 
 
-\item[$\bullet$]  if ``challenge payment'' $\in z_{\st 3}$, it checks whether the  payment has been  made.   If the check passes, it sets  $w_{\st 4, j}=1$. If the check fails,   it sets $w_{\st 4, j}=0$.  If ``challenge payment'' $\notin z_{\st 3}$, it checks if  ``paid'' is in ${m}_{\st 2}^{\st(\mathcal C)}$. If the check passes, it sets $w_{\st 4, j}=1$. Otherwise, it sets $w_{\st 4, j}=0$. 
+\item[$\bullet$]  if ``challenge payment'' $\in z_{\st 3}$, it checks if the  payment was  made.   If the check passes, it sets  $w_{\st 4, j}=1$. If the check fails,   it sets $w_{\st 4, j}=0$.  If ``challenge payment'' $\notin z_{\st 3}$, it checks if  ``paid''  $\in{m}_{\st 2}^{\st(\mathcal C)}$. If it passes, it sets $w_{\st 4, j}=1$. Otherwise, it sets $w_{\st 4, j}=0$. 
 %
 \end{itemize}
 %
@@ -285,11 +284,11 @@ Every Arbiter, $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\
 \begin{enumerate}
 %
 
-\item[$\bullet$] calls $\mathtt{PVE}(\bar{k}_{\st 0}, adr_{\st\mathcal{C}},  w_{\st i, j}, o_{\st adr_{\st{c}}}, n,  j)\rightarrow  \bar{  w}_{\st i,j}$
+\item[$\bullet$] calls $\mathtt{PVE}(\bar{k}_{\st 0}, adr_{\st\mathcal{C}},  w_{\st i, j}, o_{\st adr_{\st{c}}}, n,  j)\rightarrow  \bar{  w}_{\st i,j}$, and  sets $o_{\st adr_{\st{c}}}=o_{\st adr_{\st{c}}}+1$.
 
 %\item[$\bullet$] calls $\mathtt{PVE}(\bar{k}_{\st 0}, adr_{\st\mathcal{C}}, w_{\st i, j}, n, \bm x, \textit{offset}_{\st adr_{\st{c}}}, j)\rightarrow  \bar{\bm w}_{\st i,j}$.
 %
-\item[$\bullet$] $o_{\st adr_{\st{c}}}=o_{\st adr_{\st{c}}}+1$.
+%\item[$\bullet$] $o_{\st adr_{\st{c}}}=o_{\st adr_{\st{c}}}+1$.
 %
 \end{enumerate}
 By the end of this step, a vector ${\bar {\bm w}}_{\st j}$ of four encoded verdicts is computed, i.e., $\bar {\bm w}_{\st j}=[ \bar{  w}_{\st 1,j},..., \bar{  w}_{\st 4,j}]$.
@@ -334,11 +333,9 @@ $ \hat {\bm w}_{\st j}= \mathtt{Enc}(\bar k_{\st 2}, \bar{\bm w}_{\st j})$.
 
 
 
-\item\label{DR::DisputeResolution}  \underline{\textit{Resolving Dispute}}. $\mathtt{resDispute}(T_{\st 2}, \hat {\bm w}, pp)\rightarrow \bm v$
-
-
-
- $\mathcal{DR}$ takes the below steps at time $t_{\st 9}$, when it is invoked by $\mathcal{C}$ or  $\mathcal{S}$ which sends $\ddot\pi_{\st 2}\in T_{\st 2}$ to it.
+\item\label{DR::DisputeResolution}  \underline{\textit{Resolving Dispute}}: $\mathtt{resDispute}(T_{\st 2}, \hat {\bm w}, pp)\rightarrow \bm v$.
+%
+ Party $\mathcal{DR}$ takes the below steps at time $t_{\st 9}$, if it is invoked by $\mathcal{C}$ or  $\mathcal{S}$ which sends $\ddot\pi_{\st 2}\in T_{\st 2}$ to it.
 
 \begin{enumerate}
 %
@@ -355,11 +352,11 @@ $ \hat {\bm w}_{\st j}= \mathtt{Enc}(\bar k_{\st 2}, \bar{\bm w}_{\st j})$.
 \begin{enumerate}
 %
 \item uses $\bar k_{\st 2}\in \ddot \pi_{\st 2}$ to decrypt the arbiters' encoded verdicts, as follows. $ \forall j, 1\leq j \leq n:$
-
+%
 $ \bar {\bm w}_{\st j}= \mathtt{Dec}(\bar k_{\st 2}, \hat{\bm w}_{\st j})$, where $\hat{\bm w}_{\st j}\in \hat{\bm w}$.
  % 
  \item constructs four vectors, $[\bm u_{\st 1},...,\bm u_{\st 4}]$, and sets  each vector $\bm u_{\st i}$ as follows. $\forall i, 1\leq i \leq 4:$
- 
+ %
   $\bm u_{\st i}=[\bar{w}_{\st i,1},...,\bar{w}_{\st i,n}]$, where $\bar{w}_{\st i,j}\in \bar {\bm w}_{\st j}$. 
 % $\forall i, 1\leq i \leq 4: \bar {\bm w}_{\st i,j}= \mathtt{Dec}(\bar k_{\st 2}, \hat{\bm w}_{\st i,j})$.
 %
@@ -379,16 +376,15 @@ $ \bar {\bm w}_{\st j}= \mathtt{Dec}(\bar k_{\st 2}, \hat{\bm w}_{\st j})$, wher
 %
 \end{enumerate}
 %
-
 \item outputs $\bm v=[v_{\st 1},...,v_{\st 4}]$.
+\end{enumerate}
+\end{enumerate}
 
-\end{enumerate}
-\end{enumerate}
-Customer $\mathcal{C}$ must be reimbursed if the final verdict is that (i)  the ``pass'' message or  missing message should have been a warning or (ii)  the warning was ineffective and the provided evidence was not invalid, and (iii) the payment has been made. Stated formally, the following relation must hold: 
+Customer $\mathcal{C}$ must be reimbursed if the final verdict is that (i)  the ``pass'' message or  missing message should have been a warning or (ii)  the warning was ineffective and the provided evidence was not invalid, and (iii) the payment has been made. Stated formally, the following relation must hold: $\Big( \underbrace{(v_{\st 1}=1)}_{\st (\text{i})}\vee  \underbrace{(v_{\st 2}=1\ \wedge\ v_{\st 3}=1)}_{\st (\text {ii})}\Big)\wedge\Big(\underbrace{v_{\st 4}=1}_{\st (\text{iii})}\Big)$.
 %
-\begin{center}
-$\Big( \underbrace{(v_{\st 1}=1)}_{\st (\text{i})}\vee  \underbrace{(v_{\st 2}=1\ \wedge\ v_{\st 3}=1)}_{\st (\text {ii})}\Big)\wedge\Big(\underbrace{v_{\st 4}=1}_{\st (\text{iii})}\Big)$.
-\end{center}
+%\begin{center}
+%$\Big( \underbrace{(v_{\st 1}=1)}_{\st (\text{i})}\vee  \underbrace{(v_{\st 2}=1\ \wedge\ v_{\st 3}=1)}_{\st (\text {ii})}\Big)\wedge\Big(\underbrace{v_{\st 4}=1}_{\st (\text{iii})}\Big)$.
+%\end{center}
 %
  %where $v_{\st i}\in \bm v$.
 %
@@ -411,24 +407,19 @@ $\Big( \underbrace{(v_{\st 1}=1)}_{\st (\text{i})}\vee  \underbrace{(v_{\st 2}=1
 %%
 %\item  the encryption of  ``paid'' (in ${m}_{\st 2}^{\st(\mathcal C)}$) was registered by $\mathcal{S}$ at time $t_{\st 5}$.
 %
-
-
-
 %If  the above conditions  in steps  \ref{DR::check-warning-related-message} and \ref{DR::check-payment-related-conditions} hold,  it outputs $1$. Otherwise, it outputs $0$. 
 %\end{enumerate}
 %\end{enumerate}
+%
+Note, in the above PwDR protocol, even $\mathcal{C}$ and $\mathcal{B}$ that know the decryption secret keys, $(\bar k_{\st 1}, \bar k_{\st 2})$, cannot link a certain verdict to an arbiter, for two main reasons; namely,  (a) they do not know the masking random values used by arbiters to mask each verdict and (b) the final verdicts $(v_{\st 1},..., v_{\st 4})$ reveal nothing about the number of $1$ or $0$ verdicts, except when all arbiters vote $0$.  We highlight that we used PVE and FVD in the PwDR protocol only because they are highly efficient. However, it is easy to replace them with GPVE and GFVD, e.g., when the required threshold is greater than one. We present the PwDR protocol's  main theorem and its proof in Appendix \ref{sec::proof}.  
 
 
 
-Note that in the above PwDR protocol, even $\mathcal{C}$ and $\mathcal{B}$ that know the decryption secret keys, $(\bar k_{\st 1}, \bar k_{\st 2})$, cannot link a certain verdict to an arbiter, for two main reasons; namely,  (a) they do not know the masking random values used by arbiters to mask each verdict and (b) the final verdicts $(v_{\st 1},..., v_{\st 4})$ reveal nothing about the number of $1$ or $0$ verdicts, except when all arbiters vote $0$.  We highlight that we used PVE and FVD in the PwDR protocol only because they are highly efficient. However, it is easy to replace them with GPVE and GFVD, e.g., when the required threshold is greater than one. 
 
+%\begin{theorem}\label{theorem::PwDR-security}
+%The above PwDR protocol is secure, with regard to definition \ref{def::PwDR-security}, if the digital signature is existentially unforgeable under chosen message attacks,  the blockchain, SAP, and pseudorandom function $\mathtt{PRF}(.)$ are secure,  the encryption schemes are semantically secure, and the correctness of verdict encoding-decoding protocols (i.e., PVE and FVD) holds. 
+%\end{theorem}
 
-
-\begin{theorem}\label{theorem::PwDR-security}
-The above PwDR protocol is secure, with regard to definition \ref{def::PwDR-security}, if the digital signature is existentially unforgeable under chosen message attacks,  the blockchain, SAP, and pseudorandom function $\mathtt{PRF}(.)$ are secure,  the encryption schemes are semantically secure, and the correctness of verdict encoding-decoding protocols (i.e., PVE and FVD) holds. 
-\end{theorem}
-
-We provide the above theorem's proof in Appendix \ref{sec::proof}.  
 
 %\input{proof}
 

@@ -1,6 +1,6 @@
 % !TEX root =main.tex
 
-\vspace{-2mm}
+%\vspace{-1mm}
 \subsection{Subroutines for  Encoding-Decoding Verdicts}\label{sec::Encoding-Decoding-Verdicts}
 
 
@@ -8,7 +8,7 @@ In this section, we present verdict encoding and decoding protocols. They let a 
 
 %The latter variant is slightly less efficient than the former one. These two variants might be of independent interest. Below, we explain each variant. 
 
-
+\vspace{-2mm}
 \subsubsection{Variant 1:  Efficient Verdict  Encoding-Decoding Protocol.}
 
 
@@ -33,19 +33,16 @@ This variant includes two protocols,  Private Verdict Encoding (PVE) and Final V
 % 
 % Not that the protocols' correctness holds with an overwhelming probability. In particular, if two arbiters  represent their verdict by an identical random value, then when they are XORed they would cannel out each other which can affect the result's correctness. The same holds if the XOR of  multiple verdicts' representations results in a value that can cancel out another verdict's representation. Nevertheless, the probability that such an event occurs is negligible in the security parameter $|p|=\lambda$, i.e., at most   $\frac{1}{2^{\st \lambda}}$. It is evident that PVE and FVD protocols meet properties (2) and (3). The primary reason they also meet  property (1) is that each masked verdict reveals nothing about the verdict (and its representation) and  given the final verdict, $\mathcal{I}$ cannot distinguish between the case where there is exactly one arbiter that voted  $1$ and the case where multiple arbiters voted $1$, as in both cases $\mathcal{I}$   extracts only a single random value, which reveals nothing about the number of arbiters which voted $0$ or $1$. We will use this variant in the PwDR protocol. 
  
-
-\subsubsection{Variant 2: Generic Verdict  Encoding-Decoding Protocol.} This variant also includes two protocols, Generic Private Verdict Encoding (GPVE) and Generic Final Verdict Decoding (GFVD) which   let $\mathcal{I}$ learn if at least $e$ arbiters voted $1$, where $e$ can be set to an integer in the range $[1, n]$. This variant is  built upon the previous one;  however, it also uses a novel combination of   Bloom filter and combinatorics. It  relies on our observation that a Bloom filter  encoding a set of random values reveals nothing about the set's elements, except with a negligible probability. We refer readers to Appendix \ref{sec::Variant-2-Theorem-proof} for the above observation's formal statement and  proof.  
+\vspace{-2mm}
+\subsubsection{Variant 2: Generic Verdict  Encoding-Decoding Protocol.} This variant also includes two protocols, Generic Private Verdict Encoding (GPVE) and Generic Final Verdict Decoding (GFVD) which   let $\mathcal{I}$ learn if at least $e$ arbiters voted $1$, where $e$ is an integer in  $[1, n]$. It  uses a novel combination of   Bloom filter and combinatorics. It  relies on our observation that a Bloom filter  encoding a set of random values reveals nothing about the set's elements.  Appendix \ref{sec::Variant-2-Theorem-proof} presents the above observation's formal statement and  proof.  
 
 
 In this variant  also, the arbiters initially agree on a secret key  used  to  generate a pseudorandom masking value. Each arbiter represents its verdict by a parameter, such that if its verdict is $0$,   it  sets the parameter to  $0$; but, if   the verdict is $1$, it sets the parameter to a fresh \emph{pseudorandom} value $\alpha_{\st j}$ also derived from the above key. Thus, there is a set $A=\{\alpha_{\st 1},..., \alpha_{\st n}\}$ from which  $\mathcal{D}_{\st j}$ would pick $\alpha_{\st j}$ to represent its verdict $1$. Each arbiter masks its verdict representation by its masking  value. It sends the result to $\mathcal{I}$. Also, arbiter $\mathcal{D}_{\st n}$  generates a set $W$  of all  combinations of arbiters' verdict $1$'s representations that satisfy the threshold, $e$.  Specifically,  for every integer $i$ in $[e, n]$, it computes the combinations (without repetition) of $i$ elements from  $A=\{\alpha_{\st 1},..., \alpha_{\st n}\}$. If  multiple elements are taken at a time (i.e., $i>1$), they are XORed with each other.   Note, $\mathcal{D}_{\st n}$ computes these values    regardless of what an  arbiter  votes.   Let $W=\{(\alpha_{\st 1}\oplus ... \oplus \alpha_{\st e}),  (\alpha_{\st 2}\oplus  ... \oplus \alpha_{\st e+1}), ..., (\alpha_{\st 1}\oplus ... \oplus \alpha_{\st n})\}$ be the result. To protect  the privacy of  the votes' representations (from $\mathcal{I}$), it inserts all elements of $W$ into a Bloom filter. Let $\mathtt{BF}$ be the resulting Bloom filter. It sends $\mathtt{BF}$ to $\mathcal{I}$. 
 
 
-%Note that inserting the combinations into $\mathtt{BF}$ ensures that the privacy of  each vote's representation (e.g., $\alpha_{\st j}$) is protected from $\mathcal{I}$. 
-
-%It inserts all elements of $W$ into a Bloom filter. Let $\mathtt{BF}$ be the resulting Bloom filter. It sends $\mathtt{BF}$ to $\mathcal{I}$. Note that inserting the combinations into $\mathtt{BF}$ ensures that the privacy of  each vote's representation (e.g., $\alpha_{\st j}$) is protected from $\mathcal{I}$. 
 
 
-In GFVD, to decode and extract the final verdict,  $\mathcal{I}$  XORs all masked verdict representations which  removes the masking values and XORs the representations. Let $c$ be the result.  If $c=0$,  $\mathcal{I}$ concludes that all arbiters  voted $0$; so, it sets the final verdict to $0$. But, if $c\neq 0$,  it checks if $c\in \mathtt{BF}$. If it is, then it concludes that at least threshold arbiters voted $1$, so it sets the final verdict to $1$. Otherwise ($c\notin \mathtt{BF}$), it learns that less than threshold arbiters voted $1$; so, it sets the final verdict to $0$.  Figures \ref{fig:GPVE} and \ref{fig:GFVD}, in Appendix \ref{sec::Generic-Verdict-Encoding-Decoding-Protocols}, present the  GPVE and GFVD protocols in detail. The total number of the combinations, i.e., the cardinality of $W$, is relatively small when the number of arbiters is not very high. In general,  due to the  binomial theorem, the cardinality of $W$ is determined as follows: $|W|=\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!}$. 
+In GFVD, to decode and extract the final verdict,  $\mathcal{I}$  XORs all masked verdict representations which  removes the masking values and XORs the representations. Let $c$ be the result.  If $c=0$,  $\mathcal{I}$ concludes that all arbiters  voted $0$; so, it sets the final verdict to $0$. If $c\neq 0$,  it checks if $c\in \mathtt{BF}$. If it is, then it concludes that at least threshold arbiters voted $1$, so it sets the final verdict to $1$. Otherwise ($c\notin \mathtt{BF}$), it learns that less than threshold arbiters voted $1$; so, it sets the final verdict to $0$.  Figures \ref{fig:GPVE} and \ref{fig:GFVD}, in Appendix \ref{sec::Generic-Verdict-Encoding-Decoding-Protocols}, present the  GPVE and GFVD protocols in detail. The total number of the combinations, i.e., the cardinality of $W$, is  small when the number of arbiters is not very high. In general,  due to the  binomial theorem, the cardinality of $W$ is determined as follows: $|W|=\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!}$. 
 %
 %\vspace{-1mm}
 %\begin{equation*}
@@ -53,7 +50,8 @@ In GFVD, to decode and extract the final verdict,  $\mathcal{I}$  XORs all maske
 % \end{equation*}
  %
  For instance, when $n=10$ and  $e=6$, then $|W|$ is only $386$. Appendix \ref{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol} provides  further discussion on the above protocols.
- \vspace{-1mm}
+ 
+ %\vspace{-1mm}
  
 % 
 %   In the above scheme, instead of inserting the combinations into $\mathtt{BF}$ we could  hash  the combinations and give the hash values to $\mathcal{I}$. But, using a Bloom filter allows us to save considerable communication costs. For instance, when $n=10$, $e=6$, and SHA-256 is used, then $\mathcal{D}_{\st n}$ needs to send  $98816=386\times 256$ bits to $\mathcal{I}$, whereas  if they are inserted into a Bloom filter, then it only needs to send $22276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it  can save  communication costs by at least a factor of  $4$. We refer readers to Appendix \ref{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol} for  further discussion on the verdict encoding-decoding protocols. 
@@ -182,7 +180,7 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 %\vspace{-3mm} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
- \vspace{-4mm}
+ \vspace{-2mm}
 \begin{figure}[!htbp]
 \setlength{\fboxsep}{1pt}
 \begin{center}
@@ -227,4 +225,5 @@ $c= \bigoplus\limits^{\st n}_{\st j=1} \bar w_{\st j}$
 \caption{Final Verdict Decoding  (FVD) Protocol} 
 \label{fig:FVD}
 \end{figure}
+
 

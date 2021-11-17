@@ -173,6 +173,8 @@ where $g:=(g_{\st 1}, g_{\st 2})\in T$,  $\hat {\bm m}=[\hat {m}^{\st (\mathcal{
 
 Intuitively, security against a malicious bank requires that a malicious bank should not be able to disqualify an honest victim of an APP fraud from being reimbursed. %In particular,  a corrupt bank cannot  (a) make $\mathcal{DR}$ conclude that the  ``pass'' message was correctly given or an important warning message was not missing despite at least threshold  $\mathcal{D}_{\st j}$s  do not believe so, or (b) convince $\mathcal{DR}$  that the warning message was effective although at least threshold $\mathcal{D}_{\st j}$s do not believe so, or (c) make $\mathcal{DR}$ believe that less than threshold $\mathcal{D}_{\st j}$s did  not accept the certificate  although at least threshold of them did that, or (d) make $\mathcal{DR}$ believe that no payment was  made, although at least threshold $\mathcal{D}_{\st j}$s believe the opposite, except for a negligible probability. 
 
+
+
 \begin{definition}[Security against a malicious bank]\label{def-a::Security-against-malicious-bank} A PwDR scheme is secure against a malicious bank, if for any security parameter $\lambda$, auxiliary information $ {aux}$, and   PPT adversary $\mathcal{A}$, there exists a negligible function $\mu(\cdot)$, such that for an experiment $\mathsf{Exp}_{\st 2}^{\mathcal{A}}$:
 %
 \vspace{-2mm}
@@ -246,6 +248,7 @@ Informally, a PwDR is privacy-preserving if it protects the privacy of (1) the c
 
 
 \input{privacy-def}
+
 
 
 \begin{definition}[Security]\label{def-a::PwDR-security}
