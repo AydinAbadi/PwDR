@@ -65,17 +65,18 @@ In this section, we outline a formal definition of a  PwDR scheme. We refer read
 %{\bar{ \mathtt{Encode}}}(pk_{\st\mathcal{D}}, \ddot \pi)
 
 %Note, algorithms $\mathtt{genWarning}(.)$-$\mathtt{resDispute}(.)$ implicitly take another input, $state_{\st\mathcal S}$, which is $\mathcal{S}$'s current state, i.e., data registered in $\mathcal{S}$. For the sake of simplicity, we avoided explicitly passing this input  to these processes.  
-
+\vspace{-1.7mm}
 Informally, a PwDR scheme has two  properties; namely, \emph{correctness} and \emph{security}. Correctness requires that (in the absence of a fraudster) the payment journey is completed without the need for (i) the honest customer to complain and (ii)  the honest bank to reimburse the customer.  A PwDR scheme is  secure if it satisfies three main properties; namely, (a) security against a malicious victim, (b) security against a malicious bank, and (c) privacy. Below, we present a brief formal definition of   them. Intuitively, security against a malicious victim requires that the victim of an APP fraud which is not qualified for the reimbursement should not be reimbursed. 
-%
+
+
 \begin{definition}[Security against a malicious victim]\label{def-a::Security-against-malicious-victim} A PwDR scheme is secure against a malicious victim, if for any security parameter $\lambda$,  auxiliary information $aux$, and   PPT adversary $\mathcal{A}$, there exists a negligible function $\mu(\cdot)$, such that for an experiment $\mathsf{Exp}_{\st 1}^{\mathcal{A}}$:
 %
 
-\vspace{-2mm}
+\vspace{-.5mm}
 \begin{center}
-\begin{mybox}[colback=white,  width=119mm, height=29mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 1}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  {aux})$}
+\begin{mybox}[colback=white,  width=119mm, height=28mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 1}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  {aux})$}
 %\fbox{\begin{minipage}{3.8 in}
-\vspace{-1mm}
+\vspace{-1.6mm}
 $$
   \begin{array}{l}
 %  \mathsf{Exp}_{\st 1}^{\mathcal{A}}(\mathsf{In}:=(1^{\st\lambda}, p, \bm{l})): \\
@@ -116,6 +117,7 @@ $$
 %
 \end{center}
 %
+\vspace{-2mm}
 it holds that:
 %
 %{\small
@@ -174,14 +176,14 @@ where $g:=(g_{\st 1}, g_{\st 2})\in T$,  $\hat {\bm m}=[\hat {m}^{\st (\mathcal{
 Intuitively, security against a malicious bank requires that a malicious bank should not be able to disqualify an honest victim of an APP fraud from being reimbursed. %In particular,  a corrupt bank cannot  (a) make $\mathcal{DR}$ conclude that the  ``pass'' message was correctly given or an important warning message was not missing despite at least threshold  $\mathcal{D}_{\st j}$s  do not believe so, or (b) convince $\mathcal{DR}$  that the warning message was effective although at least threshold $\mathcal{D}_{\st j}$s do not believe so, or (c) make $\mathcal{DR}$ believe that less than threshold $\mathcal{D}_{\st j}$s did  not accept the certificate  although at least threshold of them did that, or (d) make $\mathcal{DR}$ believe that no payment was  made, although at least threshold $\mathcal{D}_{\st j}$s believe the opposite, except for a negligible probability. 
 
 
-
+\vspace{-1mm}
 \begin{definition}[Security against a malicious bank]\label{def-a::Security-against-malicious-bank} A PwDR scheme is secure against a malicious bank, if for any security parameter $\lambda$, auxiliary information $ {aux}$, and   PPT adversary $\mathcal{A}$, there exists a negligible function $\mu(\cdot)$, such that for an experiment $\mathsf{Exp}_{\st 2}^{\mathcal{A}}$:
 %
-\vspace{-2mm}
+\vspace{-.5mm}
 \begin{center}
-\begin{mybox}[colback=white,  width=119mm, height=33.2mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 2}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  {aux})$}
+\begin{mybox}[colback=white,  width=119mm, height=32.5mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 2}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  {aux})$}
 %\fbox{\begin{minipage}{3.8 in}
-\vspace{-1mm}
+\vspace{-1.4mm}
 $$
   \begin{array}{l}
 %
@@ -250,7 +252,7 @@ Informally, a PwDR is privacy-preserving if it protects the privacy of (1) the c
 \input{privacy-def}
 
 
-
+\vspace{-3mm}
 \begin{definition}[Security]\label{def-a::PwDR-security}
 A PwDR is secure if it meets security against a malicious victim,  security against a malicious bank, and preserves privacy with respect to definitions \ref{def-a::Security-against-malicious-victim}, \ref{def-a::Security-against-malicious-bank}, and \ref{def-a::privacy} respectively. 
 \end{definition}

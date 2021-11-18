@@ -1,7 +1,7 @@
 % !TEX root =main.tex
 
 
-\vspace{-4mm}
+%\vspace{-4mm}
 \subsection{A Subroutine for Checking a Warning's Effectiveness}
 
 
@@ -12,9 +12,9 @@ To assist the committee members deterministically  compile a victim's  complaint
 
 
 
-
+\vspace{-2mm}
 \begin{figure}[!htbp]
-\setlength{\fboxsep}{1pt}
+\setlength{\fboxsep}{.9pt}
 \begin{center}
     \begin{tcolorbox}[enhanced,width=5.5in,
     drop fuzzy shadow southwest,
@@ -52,8 +52,8 @@ To assist the committee members deterministically  compile a victim's  complaint
 \item checks the warning's effectiveness, with the assistance of the evidence $m$ and auxiliary information $aux'$. 
 %
 \begin{itemize}
-\item[$\bullet$]  if it is effective,  it sets $w_{\st 2} = 0$.
-\item [$\bullet$] otherwise, it sets $w_{\st 2} = 1$.
+\item[$\bullet$]  if it is effective,  it sets $w_{\st 2} = 0$. Otherwise, it sets $w_{\st 2} = 1$.
+%\item [$\bullet$] otherwise, it sets $w_{\st 2} = 1$.
 \end{itemize}
 \item\label{return} returns $(w_{\st 2}, w_{\st 3})$.
 \vspace{-1mm}
@@ -61,6 +61,7 @@ To assist the committee members deterministically  compile a victim's  complaint
 }   
 \end{tcolorbox}
 \end{center}
+\vspace{-1mm}
 \caption{Algorithm to Check Warning's Effectiveness} 
 \label{fig:checkWarning}
 \end{figure}
