@@ -11,6 +11,7 @@ In this section, we outline a formal definition of a  PwDR scheme. We refer read
 %
 %In this section, we outline a formal definition of a  PwDR scheme. We first provide the scheme's syntax.  Then, we   formally define its correctness  and security properties. We refer readers to Appendix \ref{sec::long-def} for a full version of the formal definition. 
 %
+\vspace{-1mm}
 \begin{definition}\label{def-a::sytax} A payment with dispute resolution  scheme  involves six   types of entities; namely,  bank $\mathcal{B}$, customer $\mathcal{C}$,  smart contract $\mathcal{S}$,  certificate generator $\mathcal{G}$,   set of arbiters $\mathcal{D}:\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$, and  dispute resolver $\mathcal{DR}$. It also includes the following    algorithms.  
 
 %\item \item[$\bullet$] $\mathtt{setup}(1^{\st \lambda})\rightarrow k:=(sk,pk)$. %%% this might be needed when other security properties, e.g., privacy, are added to the scheme. 
@@ -67,14 +68,20 @@ In this section, we outline a formal definition of a  PwDR scheme. We refer read
 %Note, algorithms $\mathtt{genWarning}(.)$-$\mathtt{resDispute}(.)$ implicitly take another input, $state_{\st\mathcal S}$, which is $\mathcal{S}$'s current state, i.e., data registered in $\mathcal{S}$. For the sake of simplicity, we avoided explicitly passing this input  to these processes.  
 \vspace{-1.7mm}
 Informally, a PwDR scheme has two  properties; namely, \emph{correctness} and \emph{security}. Correctness requires that (in the absence of a fraudster) the payment journey is completed without the need for (i) the honest customer to complain and (ii)  the honest bank to reimburse the customer.  A PwDR scheme is  secure if it satisfies three main properties; namely, (a) security against a malicious victim, (b) security against a malicious bank, and (c) privacy. Below, we present a brief formal definition of   them. Intuitively, security against a malicious victim requires that the victim of an APP fraud which is not qualified for the reimbursement should not be reimbursed. 
+%
+More specifically, a corrupt victim cannot (a) make at least threshold committee members, $\mathcal{D}_{\st j}$s,  conclude that $\mathcal{B}$ should have provided a warning, although $\mathcal{B}$ has done so, or (b) make $\mathcal{DR}$ conclude that   the pass message was incorrectly given or a vital warning message was missing despite only less than threshold  $\mathcal{D}_{\st j}$s  believe so, or (c) persuade at least threshold $\mathcal{D}_{\st j}$s to  conclude that the warning was ineffective although it was effective, or (d)  make $\mathcal{DR}$ believe that the warning message was ineffective although only less than threshold $\mathcal{D}_{\st j}$s   believe that, or (e)  convince  $\mathcal{D}_{\st j}$s to accept an invalid certificate, or  (f) make $\mathcal{DR}$ believe that at least  threshold $\mathcal{D}_{\st j}$s accepted the certificate  although they did not, except for a negligible probability.
+%%%%%%%%%%%%%
 
-
+\vspace{-2mm}
 \begin{definition}[Security against a malicious victim]\label{def-a::Security-against-malicious-victim} A PwDR scheme is secure against a malicious victim, if for any security parameter $\lambda$,  auxiliary information $aux$, and   PPT adversary $\mathcal{A}$, there exists a negligible function $\mu(\cdot)$, such that for an experiment $\mathsf{Exp}_{\st 1}^{\mathcal{A}}$:
 %
 
-\vspace{-.5mm}
+
+\vspace{-2mm}
 \begin{center}
-\begin{mybox}[colback=white,  width=119mm, height=28mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 1}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  {aux})$}
+\begin{mybox}[colback=white,  width=119mm, height=28mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 1}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  
+{aux})$}
+
 %\fbox{\begin{minipage}{3.8 in}
 \vspace{-1.6mm}
 $$
@@ -107,20 +114,17 @@ $$
 
  \forall j, j\in [n]:
 \Big(\mathtt{verComplaint}( \hat z, \hat{\ddot{\pi}}, g, \hat{\bm{m}}, \hat{\bm{l}}, j, sk_{\st\mathcal D}, aux, pp)\rightarrow \hat{\bm{w}}_{\st j}= [\hat w_{\st 1,j}, \hat w_{\st 2, j}, \hat w_{\st 3, j}, \hat w_{\st 4, j}]\Big), \\
-
-
 \mathtt{resDispute}(T_{\st 2}, \hat {\bm w}, pp)\rightarrow \bm v=[v_{\st 1},..., v_{\st 4}]
-
    \end{array} 
 $$
 \end{mybox}
 %
 \end{center}
+
 %
-\vspace{-2mm}
+\vspace{-2.2mm}
 it holds that:
 %
-%{\small
 $$ \Pr\left[
   \begin{array}{l}
 %
@@ -161,29 +165,32 @@ $$ \Pr\left[
 %\text{s.t.}\\
 %y_{\st j}= E^{\st -1}_{\st 2}(y^{\st *}_{\st j},t_{\st qp})\\
 %E^{\st -1}_{\st 2},t_{\st qp}\in en\\
+
 \end{array} :
     \begin{array}{l}
     \mathsf{Exp}_{\st 1}^{\st\mathcal{A}}(\mathsf{input})\\
 \end{array}    \right]\leq \mu(\lambda),$$
-%}
-where $g:=(g_{\st 1}, g_{\st 2})\in T$,  $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}]$, $(w_{\st 1,j},..,w_{\st 3,j})$ are the decoding of  $(\hat w_{\st 1,j},..,\hat w_{\st 3,j})\in \hat {\bm w}$,  and $\mathsf{input}:=(1^{\st\lambda}, {aux})$.
+
+where  $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}]$, $(w_{\st 1,j},..,w_{\st 3,j})$ are the decoding of  $(\hat w_{\st 1,j},..,\hat w_{\st 3,j})\in \hat {\bm w}$,  and $\mathsf{input}:=(1^{\st\lambda}, {aux})$.
 
 
 %$\mathtt{checkWarning}(.)$ determines a warning's effectiveness,   $\mathsf{input}:=(1^{\st\lambda}, {aux})$,   $ sk_{\st \mathcal{D}}\in sk$, and $n$ is the total number of arbiters. %The probability is taken over the uniform choice of $sk$, randomness used in the blockchain's primitives (e.g., in signatures), randomness used during the encoding,   and  the randomness of $\mathcal{A}$. 
 \end{definition}
 
 
-Intuitively, security against a malicious bank requires that a malicious bank should not be able to disqualify an honest victim of an APP fraud from being reimbursed. %In particular,  a corrupt bank cannot  (a) make $\mathcal{DR}$ conclude that the  ``pass'' message was correctly given or an important warning message was not missing despite at least threshold  $\mathcal{D}_{\st j}$s  do not believe so, or (b) convince $\mathcal{DR}$  that the warning message was effective although at least threshold $\mathcal{D}_{\st j}$s do not believe so, or (c) make $\mathcal{DR}$ believe that less than threshold $\mathcal{D}_{\st j}$s did  not accept the certificate  although at least threshold of them did that, or (d) make $\mathcal{DR}$ believe that no payment was  made, although at least threshold $\mathcal{D}_{\st j}$s believe the opposite, except for a negligible probability. 
+Intuitively, security against a malicious bank requires that a malicious bank should not be able to disqualify an honest victim of an APP fraud from being reimbursed. 
+%
+In particular,  a corrupt bank cannot  (a) make $\mathcal{DR}$ conclude that the  ``pass'' message was correctly given or an important warning message was not missing despite at least threshold  $\mathcal{D}_{\st j}$s  do not believe so, or (b) convince $\mathcal{DR}$  that the warning message was effective although at least threshold $\mathcal{D}_{\st j}$s do not believe so, or (c) make $\mathcal{DR}$ believe that less than threshold $\mathcal{D}_{\st j}$s did  not accept the certificate  although at least threshold of them did that, or (d) make $\mathcal{DR}$ believe that no payment was  made, although at least threshold $\mathcal{D}_{\st j}$s believe the opposite, except for a negligible probability. 
+%%%%%%%%%%%
 
-
-\vspace{-1mm}
+\vspace{-1.5mm}
 \begin{definition}[Security against a malicious bank]\label{def-a::Security-against-malicious-bank} A PwDR scheme is secure against a malicious bank, if for any security parameter $\lambda$, auxiliary information $ {aux}$, and   PPT adversary $\mathcal{A}$, there exists a negligible function $\mu(\cdot)$, such that for an experiment $\mathsf{Exp}_{\st 2}^{\mathcal{A}}$:
 %
-\vspace{-.5mm}
+\vspace{-.7mm}
 \begin{center}
-\begin{mybox}[colback=white,  width=119mm, height=32.5mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 2}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  {aux})$}
+\begin{mybox}[colback=white,  width=119mm, height=31.1mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 2}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  {aux})$}
 %\fbox{\begin{minipage}{3.8 in}
-\vspace{-1.4mm}
+\vspace{-2.3mm}
 $$
   \begin{array}{l}
 %
@@ -238,7 +245,7 @@ $$ \Pr\left[
     \mathsf{Exp}_{\st 2}^{\st\mathcal{A}}(\mathsf{input})\\
 \end{array}    \right]\leq \mu(\lambda),$$
 %}
-where $g:=(g_{\st 1}, g_{\st 2})\in T$, $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}]$, $(w_{\st 1,j},..,w_{\st 3,j})$ are the  decoding of   $(\hat w_{\st 1,j},..,\hat w_{\st 3,j})\in \hat {\bm w}$, and $\mathsf{input}:=(1^{\st\lambda},  {aux})$. %, $ sk_{\st \mathcal{D}}\in sk$, $n$ is the total number of arbiters. %The probability is taken over the uniform choice of $sk$, randomness used in the blockchain's primitives, randomness used during the encoding, and  the randomness of $\mathcal{A}$. 
+where $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}]$, $(w_{\st 1,j},..,w_{\st 3,j})$ are the  decoding of   $(\hat w_{\st 1,j},..,\hat w_{\st 3,j})\in \hat {\bm w}$, and $\mathsf{input}:=(1^{\st\lambda},  {aux})$. %, $ sk_{\st \mathcal{D}}\in sk$, $n$ is the total number of arbiters. %The probability is taken over the uniform choice of $sk$, randomness used in the blockchain's primitives, randomness used during the encoding, and  the randomness of $\mathcal{A}$. 
 \end{definition}
 
 

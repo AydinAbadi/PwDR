@@ -222,7 +222,7 @@ Customer $\mathcal{C}$ takes the following steps.
   % $x =$ ``challenge warning''. 
 
  %
-  \item [$\bullet$] if $\mathcal{C}$ wants to complain about the inconsistency of the payment (in $m^{\st\mathcal{(B)}}_{\st 2}$), then it sets  $z_{\st 3} =$ ``challenge payment''. Otherwise, it sets $
+  \item [$\bullet$] if $\mathcal{C}$ wants to complain about the inconsistency of the payment (in $m^{\st\mathcal{(B)}}_{\st 2}$),  it sets  $z_{\st 3} =$ ``challenge payment''; else, it sets $
 z_{\st 3}=\phi $.
 
     \end{itemize}
@@ -339,7 +339,7 @@ $ \hat {\bm w}_{\st j}= \mathtt{Enc}(\bar k_{\st 2}, \bar{\bm w}_{\st j})$.
 
 \begin{enumerate}
 %
-\item checks the validity of $\ddot{\pi}_{\st 2}$ by locally running  the SAP's verification, i.e., $\mathtt{SAP.verify}(.)$, that  returns  $s$. If $s=0$, it halts. Otherwise, it proceeds to the next step. 
+\item checks the validity of $\ddot{\pi}_{\st 2}$ by locally running  the SAP's verification, i.e., $\mathtt{SAP.verify}(.)$, that  returns  $s$. If $s=0$, it halts. %Otherwise, it proceeds to the next step. 
 %
 %\item decrypts $\hat{m}_{\st 1}^{\st(\mathcal C)}$, $\hat{m}_{\st 2}^{\st(\mathcal C)}$, and $\hat{m}_{\st 2}^{\st(\mathcal B)}$  using $\mathtt{Dec}(\bar k_1,.)$, where $\bar k_1\in\ddot \pi$. Let ${m}_{\st 1}^{\st(\mathcal C)}$,  ${m}_{\st 2}^{\st(\mathcal C)}$, and ${m}_{\st 2}^{\st(\mathcal B)}$ be the result respectively. 
 %

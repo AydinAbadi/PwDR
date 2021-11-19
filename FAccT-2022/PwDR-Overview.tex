@@ -1,6 +1,6 @@
 % !TEX root =main.tex
 
-\vspace{-3.1mm}
+\vspace{-2.5mm}
 \section{Challenges to Overcome}\label{sec:: challenges}
 
 
@@ -10,13 +10,13 @@ Our starting point in defining and  designing the PwDR scheme is the CRM code, a
 
 
 
-\vspace{-3.1mm}
+\vspace{-2.5mm}
 \subsection{Challenge 1: Lack of Transparent Logs} 
 In the current online  banking system, during a payment journey, the messages exchanged between customer and bank are usually logged by the bank and are not accessible to the customer without the bank's collaboration. Even if the bank provides access to the transaction logs, there is no guarantee that the logs have remained intact. Due to the lack of a transparent logging mechanism, a customer or bank can wrongly claim that (a) it has sent a certain message or warning to its counter-party or (b) it has never  received a certain message.  Thus, it would be hard for an honest party  to prove its innocence. To address this challenge, the PwDR protocol uses a  smart contract (as a public bulletin board) to which  each party sends (a copy of) its outgoing messages. %, e.g., payment requests, warnings, and  confirmation of payments. 
 
 
 
-\vspace{-3mm}
+\vspace{-2.5mm}
 \subsection{Challenge 2: Lack of Effective Warning's Accurate Definition in Banking}\label{sec::Lack-of-Effective-Warning-Definition}
 
 One of the determining  factors in the process of allocating liability to  customers (after an APP fraud occurs) is paying attention to and following ``warning(s)'', according to the CRM code. However, there exists  no  publicly available study  on the  effectiveness of every warning  provided by  a bank. Therefore, we cannot hold a customer accountable for becoming the fraud's victim,  even if the related warnings are ignored.    To address this challenge, we let a warning's effectiveness be determined on a case-by-case basis after an APP fraud takes place. The protocol lets  victim   challenge a certain warning whose effectiveness will be assessed by a \emph{committee}, i.e., a  set of arbiters. In this setting, each member of the  committee provides (an encoding of) its verdict to the smart contract, from which a dispute resolver retrieves all verdicts to find out the final verdict. The scheme ensures that the final verdict is  in the customer's favor if at least threshold  committee members voted so. Thus, unlike the traditional setting where a central party determines a warning's effectiveness which is error-prone, we let a collection of arbiters   determines it (in a secure manner).
