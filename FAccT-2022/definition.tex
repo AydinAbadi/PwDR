@@ -12,7 +12,7 @@ In this section, we outline a formal definition of a  PwDR scheme. We refer read
 %In this section, we outline a formal definition of a  PwDR scheme. We first provide the scheme's syntax.  Then, we   formally define its correctness  and security properties. We refer readers to Appendix \ref{sec::long-def} for a full version of the formal definition. 
 %
 \vspace{-1mm}
-\begin{definition}\label{def-a::sytax} A payment with dispute resolution  scheme  involves six   types of entities; namely,  bank $\mathcal{B}$, customer $\mathcal{C}$,  smart contract $\mathcal{S}$,  certificate generator $\mathcal{G}$,   set of arbiters $\mathcal{D}:\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$, and  dispute resolver $\mathcal{DR}$. It also includes the following    algorithms.  
+\begin{definition}\label{def-a::sytax} A PwDR  scheme  involves six   types of entities; namely,  bank $\mathcal{B}$, customer $\mathcal{C}$,  smart contract $\mathcal{S}$,  certificate generator $\mathcal{G}$,   set of arbiters $\mathcal{D}:\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$, and  dispute resolver $\mathcal{DR}$. It also includes the following    algorithms.  
 
 %\item \item[$\bullet$] $\mathtt{setup}(1^{\st \lambda})\rightarrow k:=(sk,pk)$. %%% this might be needed when other security properties, e.g., privacy, are added to the scheme. 
 %
@@ -251,7 +251,7 @@ where $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathc
 
 %A careful reader may ask why the following two conditions (some forms of which were in the events of Definition \ref{def::Security-against-malicious-victim}) are not added to the above events list: (a) $\mathcal{B}$ makes at least threshold committee members conclude that it  has provided a warning, although $\mathcal{B}$ has not (i.e., $ m^{\st\mathcal{(B)}}_{\st1}\neq warning \wedge \sum\limits_{\st j=1}^{\st n}w_{\st 1,j}<  e$), and (b) $\mathcal{B}$ persuades at least threshold $\mathcal{D}_{\st j}$s  to conclude that the warning was effective although it was not (i.e., $\mathtt{checkWarning}(m^{\st\mathcal{(B)}}_{\st1})= 0 \wedge \sum\limits_{\st j=1}^{\st n}w_{\st 2,j}< e$). The answer is that  $\mathcal{B}$ does not generate a complaint  and interact directly with $\mathcal{D}_{\st j}$s; therefore, we do not need to add these two events to the above events' list. 
 
-Informally, a PwDR is privacy-preserving if it protects the privacy of (1) the customers', bank's, and arbiters' sensitive messages from  non-participants of the protocol, including other customers, and (2) each   arbiter's verdict from $\mathcal{DR}$  which sees the final verdict. 
+Informally, a PwDR scheme is privacy-preserving if it protects the privacy of (1)  customers', bank's, and arbiters' sensitive messages from  non-participants of the protocol, including other customers, and (2) each   arbiter's verdict from $\mathcal{DR}$  which sees the final verdict. 
 
 
 
@@ -261,7 +261,7 @@ Informally, a PwDR is privacy-preserving if it protects the privacy of (1) the c
 
 \vspace{-3mm}
 \begin{definition}[Security]\label{def-a::PwDR-security}
-A PwDR is secure if it meets security against a malicious victim,  security against a malicious bank, and preserves privacy with respect to definitions \ref{def-a::Security-against-malicious-victim}, \ref{def-a::Security-against-malicious-bank}, and \ref{def-a::privacy} respectively. 
+A PwDR scheme is secure if it meets security against a malicious victim,  security against a malicious bank, and preserves privacy with respect to definitions \ref{def-a::Security-against-malicious-victim}, \ref{def-a::Security-against-malicious-bank}, and \ref{def-a::privacy} respectively. 
 \end{definition}
 
 

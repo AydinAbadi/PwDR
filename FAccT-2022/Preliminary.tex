@@ -161,11 +161,11 @@ where $Q$ is the set of queries that $\mathcal{A}$ sent to the certificate gener
 \input{commitment}
 \input{SAP}
 
-\vspace{-2mm}
+\vspace{-1.5mm}
 \subsection{Pseudorandom Function}
 
 
-Informally, a pseudorandom function is a deterministic function that takes a key of length $\Lambda$ and an input; and outputs a value  indistinguishable from that of  a truly random function.  In this paper, we use the pseudorandom function:   $\mathtt {PRF}: \{0,1\}^{\st \Lambda}\times \{0,1\}^{\st *} \rightarrow  \mathbb{F}_p$, where $p$ is a large prime number, $|p|=\lambda$, and $(\Lambda,\lambda)$ are the security parameters. In practice, a pseudorandom function can be obtained from an efficient block cipher. We refer readers to \cite{DBLP:books/crc/KatzLindell2014} for a formal definition of a pseudorandom function.
+Informally, a pseudorandom function is a deterministic function that takes a key of length $\Lambda$ and an input; it outputs a value  indistinguishable from that of  a truly random function.  In this paper, we use the pseudorandom function:   $\mathtt {PRF}: \{0,1\}^{\st \Lambda}\times \{0,1\}^{\st *} \rightarrow  \mathbb{F}_p$, where $p$ is a large prime number, $|p|=\lambda$, and $(\Lambda,\lambda)$ are the security parameters. In practice, a pseudorandom function can be obtained from an efficient block cipher. We refer readers to \cite{DBLP:books/crc/KatzLindell2014} for a formal definition of a pseudorandom function.
 
 \vspace{-3mm}
 \subsection{Bloom Filter}
