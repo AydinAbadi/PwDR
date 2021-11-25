@@ -79,7 +79,7 @@ A payment with dispute resolution  scheme  includes the following   algorithms $
 
 \
 
-\item[$\bullet$] $\mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm{l})$. It is  run by  $\mathcal{B}$. It takes as input  security parameter $1^{\st \lambda}$.  It allocates private parameters to  $\ddot\pi_{\st 1}$ and $\ddot\pi_{\st 2}$. It generates an encoding-decoding token $T$, where  $T:=(T_{\st 1},T_{\st 2})$,  each $T_{\st i}$  contains  a secret value $\ddot\pi_{\st i}$ and its public witness $g_{\st i}$.    Given a  value and its witness anyone can check if they match. It also generates a set of (additional) public parameters,  $pp$, one of which is $e$ that is a threshold parameter.  It also generates an  empty list, $\bm{l}$. It outputs $T, pp$ and $\bm l$.  $\mathcal{B}$ sends $(\ddot\pi_{\st 1}, \ddot\pi_{\st 2})$ to $\mathcal{C}$ and sends $(g_{\st 1}, g_{\st 2},  pp, \bm {l})$ to $\mathcal{S}$.
+\item[$\bullet$] $\mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm{l})$. It is  run by  $\mathcal{B}$. It takes as input  security parameter $1^{\st \lambda}$.  It sets private parameters   $\ddot\pi_{\st 1}$ and $\ddot\pi_{\st 2}$. It generates an encoding-decoding token $T$, where  $T:=(T_{\st 1},T_{\st 2})$,  each $T_{\st i}$  contains  a secret parameter $\ddot\pi_{\st i}$ and its public witness $g_{\st i}$.    Given a  value and its witness anyone can check if they match. It also generates a set of (additional) public parameters,  $pp$, one of which is $e$ that is a threshold parameter.  It also generates an  empty list, $\bm{l}$. It outputs $T, pp$ and $\bm l$.  $\mathcal{B}$ sends $(\ddot\pi_{\st 1}, \ddot\pi_{\st 2})$ to $\mathcal{C}$ and sends $(g_{\st 1}, g_{\st 2},  pp, \bm {l})$ to $\mathcal{S}$.
 
 \
 
