@@ -10,20 +10,18 @@
 \begin{tabular}{|c|c|c|c|c|} 
 
    \hline
-   
-
-
+   %
 \multirow{2}{*}{\scriptsize \textbf{Party}}& \multicolumn{2}{c|}{\scriptsize {\textbf{  Setting}}}&\multirow{2}{*}{\scriptsize \textbf{Computation  Cost}}&\multirow{2}{*}{\scriptsize \textbf{Communication Cost}}\\
      \cline{2-3}  
 &\scriptsize$e=1$&\scriptsize$e>1$& &\\
 \hline
 
     %SO-PoR 1st row
-\scriptsize Customer&\scriptsize$\checkmark$&\scriptsize$\checkmark$& \cellcolor{gray!20}   \scriptsize$O(1)$& \cellcolor{gray!20}  \scriptsize$O(1)$\\
+\scriptsize Customer $\mathcal{C}$&\scriptsize$\checkmark$&\scriptsize$\checkmark$& \cellcolor{gray!20}   \scriptsize$O(1)$& \cellcolor{gray!20}  \scriptsize$O(1)$\\
  %  { }
      \cline{1-5}  
      %SO-PoR 2nd row
-\scriptsize Bank&\scriptsize$\checkmark$&\scriptsize$\checkmark$&   \cellcolor{gray!20}\scriptsize$O(1)$ &    \cellcolor{gray!20}\scriptsize$O(1)$\\
+\scriptsize Bank $\mathcal{B}$&\scriptsize$\checkmark$&\scriptsize$\checkmark$&   \cellcolor{gray!20}\scriptsize$O(1)$ &    \cellcolor{gray!20}\scriptsize$O(1)$\\
       \cline{1-5}   
       
 
@@ -38,7 +36,7 @@
 \multirow{-2}{*}{\scriptsize Arbiter $\mathcal{D}_{\st n}$}&&\scriptsize$\checkmark$&    \cellcolor{gray!20}\scriptsize$O(\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!})$&    \cellcolor{gray!20}\scriptsize$ O(\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!})$\\
      \cline{1-5}  
      
- \scriptsize Dispute resolver&\scriptsize$\checkmark$&\scriptsize$\checkmark$& \cellcolor{gray!20}\scriptsize $O(n)$&    \cellcolor{gray!20}\scriptsize$O(1)$\\
+ \scriptsize Dispute resolver $\mathcal{DR}$&\scriptsize$\checkmark$&\scriptsize$\checkmark$& \cellcolor{gray!20}\scriptsize $O(n)$&    \cellcolor{gray!20}\scriptsize$O(1)$\\
  
     \cline{1-5}  
      %[3] 2nd row 

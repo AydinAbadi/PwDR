@@ -68,16 +68,17 @@ Once $\mathcal{C}$ realises that it has fallen victim, it  raises a dispute. In 
 
 
 \subsection{The PwDR Protocol}\label{sec::PwDR-protocol}
+%\vspace{-1mm}
 In this section, we present the PwDR protocol in detail. 
 
 
-
+%\vspace{-1.73mm}
 
 %At a high level, the protocol works as follows. 
 
 \begin{enumerate}[leftmargin=.46cm]
 
-\item \underline{\textit{Generating  Certificate Parameters}}:  $\mathtt{keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$. Party $\mathcal{G}$ and one of the arbiters   take   steps \ref{signature-keygen} and   \ref{encryption-keygen} respectively. 
+\item \underline{\textit{Generating $\mathcal{G}$'s and  $\mathcal{D}_{\st j}$'s  Parameters}}:  $\mathtt{keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$. Party $\mathcal{G}$ and an arbiter $\mathcal{D}_{\st j}$   take   steps \ref{signature-keygen} and   \ref{encryption-keygen} respectively. 
 
 
 
@@ -167,7 +168,7 @@ Bank $\mathcal{B}$ takes the following steps.
 %
 \item  checks if the most recent list $\hat{\bm{l}}$ is not empty. If it is empty, it halts. Otherwise, it proceeds to the next step. 
 %
-\item  decrypts each element of $\hat{\bm l}$ and checks its correctness, e.g., checks whether each element meets its internal policy or CoP requirements stated in $aux$. If the check passes, it sets $m_{\st 1}^{\st(\mathcal{B})}= \text{``pass''}$. Otherwise, it sets $m_{\st 1}^{\st(\mathcal{B})}=\text{warning}$, where the warning is a  string that contains a warning's detail concatenated with the string $\text{``warning''}$.
+\item  decrypts each element of $\hat{\bm l}$ and checks its correctness, e.g., checks whether each element meets its internal policy  stated in $aux$. If the check passes, it sets $m_{\st 1}^{\st(\mathcal{B})}= \text{``pass''}$. Otherwise, it sets $m_{\st 1}^{\st(\mathcal{B})}=\text{warning}$, where the warning is a  string that contains a warning's detail concatenated with the string $\text{``warning''}$.
 %
 \item at time $t_{\st 1}$, sends to $\mathcal{S}$ the encryption of $m_{\st 1}^{\st(\mathcal{B})}$, i.e.,  $\hat m_{\st 1}^{\st(\mathcal{B})}= \mathtt{Enc}(\bar k_{\st 1}, m_{\st 1}^{\st(\mathcal B)})$. 
 \end{enumerate}
@@ -179,7 +180,7 @@ Bank $\mathcal{B}$ takes the following steps.
 Customer $\mathcal{C}$ takes the following steps. 
 \begin{enumerate}
 %
-\item\label{decrypt-warning} at time $t_{\st 2}$, decrypts the content of $\hat{\bm{l}}$ and $\hat m_{\st 1}^{\st(\mathcal{B})}$.  It sets a payment request $m_{\st 2}^{\st(\mathcal C)}$ to  $\phi$ or  $in_{\st f}$, where $in_{\st f}$ contains the payment's detail, e.g., the payee's detail in $\bm l$ and the amount it wants to transfer. 
+\item\label{decrypt-warning} at time $t_{\st 2}$, decrypts the content of $\hat{\bm{l}}$ and $\hat m_{\st 1}^{\st(\mathcal{B})}$.  Depending on the warning's content, it sets a payment request $m_{\st 2}^{\st(\mathcal C)}$ to  $\phi$ or  $in_{\st f}$, where $in_{\st f}$ contains the payment's detail, e.g., the payee's detail in $\hat {\bm l}$ and the amount it wants to transfer. 
 %
 \item\label{send-payment-req} at time $t_{\st 3}$, sends  to $\mathcal{S}$ the encryption of $m_{\st 2}^{\st(\mathcal C)}$, i.e., $\hat m_{\st 2}^{\st(\mathcal{C})}= \mathtt{Enc}(\bar k_{\st 1}, m_{\st 2}^{\st(\mathcal C)})$.
 \end{enumerate}
@@ -190,7 +191,7 @@ Customer $\mathcal{C}$ takes the following steps.
 Bank $\mathcal{B}$ takes the following steps. 
 \begin{enumerate}
 %
- \item at time $t_{\st 4}$, decrypts  the content of $\hat m_{\st 2}^{\st(\mathcal C)}$, i.e.,  $ m_{\st 2}^{\st(\mathcal{C})}= \mathtt{Dec}(\bar k_{\st 1}, \hat m_{\st 2}^{\st(\mathcal C)})$.
+ \item at time $t_{\st 4}$, decrypts   $\hat m_{\st 2}^{\st(\mathcal C)}$, i.e.,  $ m_{\st 2}^{\st(\mathcal{C})}= \mathtt{Dec}(\bar k_{\st 1}, \hat m_{\st 2}^{\st(\mathcal C)})$.
  %
  \item at time $t_{\st 5}$, checks the content of $m_{\st 2}^{\st(\mathcal C)}$. If $m_{\st 2}^{\st(\mathcal C)}$ is non-empty, i.e., $m_{\st 2}^{\st(\mathcal C)}=in_{\st f}$, it checks if the payee's detail in $in_{\st f}$ has already been checked and the payment's amount does not exceed the customer's credit. If the checks pass, it  runs the off-chain payment algorithm, $\mathtt{pay}(in_{\st f})$.  In this case, it sets $m_{\st 2}^{\st(\mathcal B)}$=``paid''. Otherwise (i.e., if $m_{\st 2}^{\st(\mathcal C)}=\phi$ or neither checks pass), it sets $m_{\st 2}^{\st(\mathcal B)}=\phi$. It sends  to $\mathcal{S}$ the encryption of  $m_{\st 2}^{\st(\mathcal B)}$, i.e., $\hat m_{\st 2}^{\st(\mathcal{B})}= \mathtt{Enc}(\bar k_{\st 1}, m_{\st 2}^{\st(\mathcal B)})$.  %Otherwise (i.e., if $m_{\st 2}^{\st(\mathcal C)}=\phi$ or neither checks pass),  it halts.
  %
@@ -230,7 +231,7 @@ z_{\st 3}=\phi $.
     
     \begin{itemize}
      \item[$\bullet$] the encryption of complaint $z$, i.e.,   $\hat z= \mathtt{Enc}(\bar k_{\st 1}, z)$.
-     \item[$\bullet$] the encryption of $\ddot{\pi}:=(\ddot{\pi}_{\st 1}, \ddot{\pi}_{\st 2})$, i.e., $\hat{\ddot \pi}={\tilde{\mathtt{Enc}}}({pk}_{\st\mathcal {D}}, \ddot \pi)$. Note, $\ddot \pi$ contains the openings of the private statements' commitments (i.e., $g_{\st 1}$ and $g_{\st 2}$), and is encrypted under each $\mathcal{D}_{\st j}$'s public key. 
+     \item[$\bullet$] the encryption of $\ddot{\pi}:=(\ddot{\pi}_{\st 1}, \ddot{\pi}_{\st 2})$, i.e., $\hat{\ddot \pi}={\tilde{\mathtt{Enc}}}({pk}_{\st\mathcal {D}}, \ddot \pi)$. %Note, $\ddot \pi$ contains the openings of the private statements' commitments (i.e., $g_{\st 1}$ and $g_{\st 2}$), and is encrypted under each $\mathcal{D}_{\st j}$'s public key. 
      \end{itemize}
 \end{enumerate}
 
@@ -261,7 +262,7 @@ Every $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\st n}\}$ 
 \begin{itemize}
 
 %
-\item[$\bullet$]  if  ``challenge message'' $\notin z_{\st 1}$, it sets $w_{\st 1,j}= 0$. Otherwise,  it runs $\mathtt{verStat}(add_{\st\mathcal{S}}, m_{\st 1}^{\st(\mathcal{B})},  \bm{l}, \Delta, {aux})\rightarrow w_{\st 1, j}$, to determine if a warning (in $m_{\st 1}^{\st(\mathcal{B})}$) should have been given (instead of the ``pass'' or no message). %It sends $d_{\st i}$ to $\mathcal{S}$, at time $T_{\st 8}$. %If  $k=\phi$, then it does nothing  in this step.
+\item[$\bullet$]  if  ``challenge message'' $\notin z_{\st 1}$, it sets $w_{\st 1,j}= 0$. Otherwise,  it runs $\mathtt{verStat}(add_{\st\mathcal{S}}, m_{\st 1}^{\st(\mathcal{B})},  \bm{l}, \Delta, {aux})\rightarrow w_{\st 1, j}$, to determine if a warning (in $m_{\st 1}^{\st(\mathcal{B})}$) should have been given (instead of the pass or no message). %It sends $d_{\st i}$ to $\mathcal{S}$, at time $T_{\st 8}$. %If  $k=\phi$, then it does nothing  in this step.
 %
 \item[$\bullet$]  if ``challenge warning'' $\notin z_{\st 2}$, it sets $w_{\st 2, j}= w_{\st 3, j}= 0$. Otherwise, it runs $\mathtt{checkWarning}(add_{\st\mathcal{S}}, z_{\st 2}, m_{\st 1}^{\st(\mathcal{B})},$ $  {aux}')\rightarrow (w_{\st 2, j}, w_{\st 3, j})$, to determine the effectiveness of the warning (in $m_{\st 1}^{\st(\mathcal{B})}$). %It sends $(v_{\st i}, \bar v_{\st i})$ to $\mathcal{S}$, at time $T_{\st 9}$.
 
@@ -284,7 +285,8 @@ Every $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\st n}\}$ 
 \begin{enumerate}
 %
 
-\item[$\bullet$] calls $\mathtt{PVE}(\bar{k}_{\st 0}, adr_{\st\mathcal{C}},  w_{\st i, j}, o_{\st adr_{\st{c}}}, n,  j)\rightarrow  \bar{  w}_{\st i,j}$, and  sets $o_{\st adr_{\st{c}}}=o_{\st adr_{\st{c}}}+1$.
+\item[$\bullet$] calls $\mathtt{PVE}(\bar{k}_{\st 0}, adr_{\st\mathcal{C}},  w_{\st i, j}, o_{\st adr_{\st{c}}}, n,  j)\rightarrow  \bar{  w}_{\st i,j}$. %, and  
+\item[$\bullet$] sets $o_{\st adr_{\st{c}}}=o_{\st adr_{\st{c}}}+1$.
 
 %\item[$\bullet$] calls $\mathtt{PVE}(\bar{k}_{\st 0}, adr_{\st\mathcal{C}}, w_{\st i, j}, n, \bm x, \textit{offset}_{\st adr_{\st{c}}}, j)\rightarrow  \bar{\bm w}_{\st i,j}$.
 %
