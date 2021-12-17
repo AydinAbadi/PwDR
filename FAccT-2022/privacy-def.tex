@@ -2,16 +2,18 @@
 
 
 
-\vspace{-2mm}
+\vspace{-2.2mm}
 \begin{definition}[Privacy]\label{def-a::privacy} A $\mathsf{pwdr}$ scheme preserves privacy if  the following two properties are satisfied.
 \begin{enumerate}
 
+\vspace{-1.4mm}
 \item For any PPT  adversary $\mathcal{A}_{\st 1}$,  security parameter $\lambda$, and  auxiliary information $aux$, there exists a negligible function $\mu(\cdot)$, such that for any  experiment $\mathsf{Exp}_{\st 3}^{\mathcal{A}_{\st 1}}$:
 
 
 \vspace{-2mm}
+{\small{
 \begin{center}
-\begin{mybox}[colback=white,  width=121mm, height=33.5mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 3}^{\st\mathcal{A}_{\st 1}}(1^{\st\lambda}\text{, }  {aux})$}
+\begin{mybox}[colback=white,  width=121mm, height=33.3mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 3}^{\st\mathcal{A}_{\st 1}}(1^{\st\lambda}\text{, }  {aux})$}
 %\fbox{\begin{minipage}{3.8 in}
 \vspace{-2mm}
 $$
@@ -53,11 +55,14 @@ $$
 \end{mybox}
 %\end{minipage}}
 \end{center}
+}}
 %
 \vspace{-1mm}
 it holds that:
+\vspace{-1mm}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\small{
 $$ \Pr\left[
   \begin{array}{l}
   %
@@ -66,18 +71,19 @@ $$ \Pr\left[
     \begin{array}{l}
     \mathsf{Exp}_{\st 3}^{\st\mathcal{A}_{\st 1}}(\mathsf{input})\\
 \end{array}    \right]\leq \frac{1}{2}+\mu(\lambda).$$
-%}
-%where   $g:=(g_{\st 1}, g_{\st 2})\in T$,   $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}], \hat {\bm w}=[\hat {\bm w}_{\st 1},.., \hat{\bm w}_{\st n}]$, $\mathsf{input}:=(1^{\st\lambda}, aux)$, $ sk_{\st \mathcal{D}}\in sk$, $n$ is the total number of arbiters. The probability is taken over the uniform choice of $sk$, randomness used in the blockchain's primitives, and  the randomness of $\mathcal{A}_{\st 1}$. 
+}}
+%where   $g:=(g_{\st 1}, g_{\st 2})\in T$,   $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}], \hat {\bm w}=[\hat {\bm w}_{\st 1},.., \hat{\bm w}_{\st n}]$, $\mathsf{input}:=(1^{\st\lambda}, aux)$, $ sk_{\st \mathcal{D}}\in sk$, $n$ is the total number of auditors. The probability is taken over the uniform choice of $sk$, randomness used in the blockchain's primitives, and  the randomness of $\mathcal{A}_{\st 1}$. 
 
 
-
+\vspace{-3mm}
 
 \item For any PPT  adversaries $\mathcal{A}_{\st 2}$ and  $\mathcal{A}_{\st 3}$, security parameter $\lambda$, and  auxiliary information $aux$, there exists a negligible function $\mu(\cdot)$, such that for any  experiment $\mathsf{Exp}_{\st 4}^{\mathcal{A}_{\st 2}}$:
 
 %%%%%%%%%%%%%%%--EXp_4%%%%%%%%%%%%%%%
-\vspace{-2.8mm}
+\vspace{-1mm}
 \begin{center}
-\begin{mybox}[colback=white,  width=121mm, height=36.5mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 4}^{\st\mathcal{A}_{\st 2}}(1^{\st\lambda}\text{, }  {aux})$}
+{\small{
+\begin{mybox}[colback=white,  width=121mm, height=36.2mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 4}^{\st\mathcal{A}_{\st 2}}(1^{\st\lambda}\text{, }  {aux})$}
 %\fbox{\begin{minipage}{3.8 in}
 \vspace{-2mm}
 $$
@@ -128,22 +134,26 @@ $$
 $$
 \end{mybox}
 %\end{minipage}}
+}}
 \end{center}
+\vspace{-2mm}
 %
 it holds that:
 %
+\vspace{-2mm}
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\small{
 $$ \Pr\left[
   \begin{array}{l}
-  
- 
+%
 \mathcal{A}_{\st 3}(T_{\st 2}, pk, pp, g, \hat{\bm m}, \hat{\bm l},  \hat z, \hat{\ddot \pi}, \hat{\bm{w}}, \bm v)\rightarrow w_{\st j}
 \end{array} :
     \begin{array}{l}
     \mathsf{Exp}_{\st 4}^{\st\mathcal{A}_{\st 2}}(\mathsf{input})\\
 \end{array}    \right]\leq {Pr}'+\mu(\lambda),$$
-%}
-where   $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}], \hat {\bm w}=[\hat {\bm w}_{\st 1},.., \hat{\bm w}_{\st n}]$, and $\mathsf{input}:=(1^{\st\lambda}, aux)$. Let arbiter $\mathcal{D}_{\st i}$ output $0$ and $1$ with probabilities $Pr_{\st i,0}$ and $Pr_{\st i,1}$ respectively. Then, $Pr'$ is defined as  $Max\{Pr_{\st 1,0},Pr_{\st 1,1}, ..., Pr_{\st n,0}, $ $Pr_{\st n,1} \}$. %In the above privacy definition, the probability is taken over the uniform choice of $sk$, the probability that each  $\mathcal{D}_{\st j}$ outputs $0$ or $1$, the randomness used in the blockchain's primitives,  the randomness used during the encoding, and  the randomness of $\mathcal{A}_{\st 1}$ in $\mathsf{Exp}_{\st 3}^{\mathcal{A}_{\st 1}}$ and $\mathcal{A}_{\st 2}$ in $\mathsf{Exp}_{\st 4}^{\mathcal{A}_{\st 2}}$. 
+}}
+where   $\hat {\bm m}=[\hat {m}^{\st (\mathcal{C})}_{\st 1}, \hat {m}^{\st (\mathcal{C})}_{\st 2}, \hat {m}^{\st (\mathcal{B})}_{\st 1}, \hat {m}^{\st (\mathcal{B})}_{\st 2}], \hat {\bm w}=[\hat {\bm w}_{\st 1},.., \hat{\bm w}_{\st n}]$, and $\mathsf{input}:=(1^{\st\lambda}, aux)$. Let auditor $\mathcal{D}_{\st i}$ output $0$ and $1$ with probabilities $Pr_{\st i,0}$ and $Pr_{\st i,1}$ respectively. Then, $Pr'$ is defined as  $Max\{Pr_{\st 1,0},Pr_{\st 1,1}, ..., Pr_{\st n,0}, $ $Pr_{\st n,1} \}$. %In the above privacy definition, the probability is taken over the uniform choice of $sk$, the probability that each  $\mathcal{D}_{\st j}$ outputs $0$ or $1$, the randomness used in the blockchain's primitives,  the randomness used during the encoding, and  the randomness of $\mathcal{A}_{\st 1}$ in $\mathsf{Exp}_{\st 3}^{\mathcal{A}_{\st 1}}$ and $\mathcal{A}_{\st 2}$ in $\mathsf{Exp}_{\st 4}^{\mathcal{A}_{\st 2}}$. 
 
 
 \end{enumerate}

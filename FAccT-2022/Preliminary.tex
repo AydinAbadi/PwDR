@@ -5,21 +5,21 @@
 
 
 
-
+\vspace{-1.5mm}
 \section{Preliminaries} \label{preliminaries}
 
 
-
+\vspace{-1.7mm}
 \subsection{Notations}
 
-\vspace{-1.5mm}
+\vspace{-2.5mm}
 
 \input{notation-Table-}
 
 
-\vspace{-4.2mm}
+\vspace{-7.5mm}
 \subsection{Informal Thread Model and Assumptions}\label{Notations-and-Assumptions}
-
+\vspace{-1.2mm}
 A payment with dispute resolution scheme involves six types of parties. Below, we informally explain each type of party's role. 
 %
 %Below, we informally explain each type of party's role and the security assumption we make about each of them. 
@@ -28,9 +28,10 @@ We will provide a formal definition of the   scheme in Section \ref{sec::def}.
 %
 \begin{itemize}
 %
+\vspace{-1.5mm}
 \item[$\bullet$] Customer $\mathcal{C}$: it is a regular customer of a bank. We call a customer  a victim after it falls victim to an APP fraud. We assume a victim is corrupted by a non-colluding active (or malicious) adversary. %; for instance, an unqualified victim  tries to make itself appear qualified for reimbursement. 
 %
-\item[$\bullet$] Bank $\mathcal{B}$: it is a regular bank that provides a standard online banking system. We assume it is corrupted by a non-colluding active adversary. We assume  any change to the source code of the online banking system is transparent and  can be detected. 
+\item[$\bullet$] Bank $\mathcal{B}$: it is a regular bank  providing an online banking. We assume it is corrupted by a non-colluding active adversary. We assume  any change to the online banking system's source code is transparent and  can be detected. 
 
 %Note that in the real-world a bank is  not usually an active adversary and cares about its reputation, such as a ``rational'' or ``covert'' adversary which is weaker than the active one. However, to ensure our solution offers  a strong security guarantee, we assume the adversary is strong too, i.e., active one. 
 
@@ -40,9 +41,12 @@ We will provide a formal definition of the   scheme in Section \ref{sec::def}.
 %
 \item[$\bullet$] Certificate generator $\mathcal{G}$: it is a trusted third party (e.g., hospital, registry office) which provides signed digital certificates (e.g., certificate of  disability, divorce) to customers. %Its involvement is more implicit than the other  parties.
 %
-\item[$\bullet$]  A committee of arbiters $\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$: it consists of  trusted third-party authorities or regulators (e.g.,  financial conduct authority, financial ombudsman service). They compile  complaints    and provide their   verdicts. If needed, they can access the banking   backend software to conduct  investigations. We assume the arbiters  interacted with each other   to agree on (a) a secret key, $\bar k_{\st 0}$, and (b) a pair of keys $({pk}_{\st\mathcal {D}}, {sk}_{\st\mathcal {D}})$  of an asymmetric key encryption.
+\item[$\bullet$]  A committee of auditors $\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$: it consists of  trusted third-party authorities or regulators (e.g.,  FCA, financial ombudsman service). They compile  complaints    and provide their   verdicts.
 %
-\item[$\bullet$]  Dispute resolver $\mathcal{DR}$: it is an aggregator of arbiters' votes (e.g., public court). Given a collection of votes, it extracts and announces the final verdict. We assume it is corrupted by a non-colluding passive adversary. We assume $\mathcal C$ and $\mathcal B$  use a secure channel when they  send a message directly to $\mathcal{DR}$. 
+ %If needed, they can access the banking   backend software to conduct  investigations. 
+ We assume they   interacted with each  other,  to agree on a secret key, $\bar k_{\st 0}$, and a pair of keys $({pk}_{\st\mathcal {D}}, {sk}_{\st\mathcal {D}})$  of an asymmetric key encryption.
+%
+\item[$\bullet$]  Dispute resolver $\mathcal{DR}$: it is an aggregator of auditors' votes (e.g., public court). Given a collection of votes, it extracts and announces the final verdict. We assume it is corrupted by a non-colluding passive adversary. We assume $\mathcal C$ and $\mathcal B$  use a secure channel when they  send a message directly to $\mathcal{DR}$. 
 %
 \end{itemize}
 
@@ -53,26 +57,26 @@ We will provide a formal definition of the   scheme in Section \ref{sec::def}.
 %We use $\mathtt{Enc}(.)$  and $\mathtt{Dec}(.)$ to denote the encrypting and decrypting algorithms of   a semantically-secure symmetric key encryption scheme respectively. We also use  ${ \tilde {\mathtt{Enc}}}({pk}_{\st\mathcal {D}}, .)$ and   ${\tilde{\mathtt {Dec}}}({sk}_{\st\mathcal {D}}, .)$ to denote the encrypting and decrypting algorithms of   a semantically secure asymmetric key encryption scheme  which has  the following key generating algorithm:  $\tilde{\mathtt{keyGen}}(1^{\st\lambda})\rightarrow({sk}_{\st\mathcal {D}}, {pk}_{\st\mathcal {D}})$ and its  public key, ${pk}_{\st\mathcal {D}}$, is known to everyone.  We denote the banking system's internal payment  algorithm by  $\mathtt{pay}(.)$.  We use $in_{\st p}$ to denote the inputs of this algorithm.  We also use $\phi$ to denote a null value. In Appendix \ref{sec:notation-table}, we provide a notation table. 
 
 
-%We use $\mathtt{Enc}(.)$  and $\mathtt{Dec}(.)$ to denote the encrypting and decrypting algorithms of   a semantically secure symmetric key encryption scheme. In this work, we use a committee of honest arbiters $\mathcal{D}:\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$. Each arbiter,  given a set of  inputs, provides a binary verdict.    We  assume  $\mathcal{D}_{\st i}$'s share a pair of keys $({pk}_{\st\mathcal {D}}, {sk}_{\st\mathcal {D}})$ of an asymmetric key encryption. The encryption scheme has  key generating  $\tilde{\mathtt{keyGen}}(1^{\st\lambda})\rightarrow({sk}_{\st\mathcal {D}}, {pk}_{\st\mathcal {D}})$,   encrypting $\mathtt{ \tilde {Enc}}({pk}_{\st\mathcal {D}}, .)$ and  decrypting $\mathtt{\tilde{Dec}}({sk}_{\st\mathcal {D}}, .)$ algorithms, where its public key is known to everyone.  Also, we assume all arbiters have interacted with each other to agree on a secret key, $\bar k_{\st 0}$.  In this work, a third party dispute resolver, $\mathcal{DR}$, is involved, which can be potentially semi-honest, i.e., a passive adversary. We assume bank and customer are potentially malicious, i.e., active adversary. We use $\phi$ to denote a null value.  Our proposed solution is built upon the existing online banking system. We assume the banking system has  algorithm  $\mathtt{pay}(.)$ that  transfers money from the customer's account to a payee's account that is specific by the customer.  We denote the inputs of this algorithm $in_{\st p}$. We assume the source code of the online banking system is static, and any change to the source code is transparent and  can be detected, e.g., the bank  uses a cryptographic commitment to commit to the source code. Moreover, we assume the online banking  system is secure. In Appendix \ref{sec:notation-table}, we provide a notation table. 
+%We use $\mathtt{Enc}(.)$  and $\mathtt{Dec}(.)$ to denote the encrypting and decrypting algorithms of   a semantically secure symmetric key encryption scheme. In this work, we use a committee of honest auditors $\mathcal{D}:\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$. Each auditor,  given a set of  inputs, provides a binary verdict.    We  assume  $\mathcal{D}_{\st i}$'s share a pair of keys $({pk}_{\st\mathcal {D}}, {sk}_{\st\mathcal {D}})$ of an asymmetric key encryption. The encryption scheme has  key generating  $\tilde{\mathtt{keyGen}}(1^{\st\lambda})\rightarrow({sk}_{\st\mathcal {D}}, {pk}_{\st\mathcal {D}})$,   encrypting $\mathtt{ \tilde {Enc}}({pk}_{\st\mathcal {D}}, .)$ and  decrypting $\mathtt{\tilde{Dec}}({sk}_{\st\mathcal {D}}, .)$ algorithms, where its public key is known to everyone.  Also, we assume all auditors have interacted with each other to agree on a secret key, $\bar k_{\st 0}$.  In this work, a third party dispute resolver, $\mathcal{DR}$, is involved, which can be potentially semi-honest, i.e., a passive adversary. We assume bank and customer are potentially malicious, i.e., active adversary. We use $\phi$ to denote a null value.  Our proposed solution is built upon the existing online banking system. We assume the banking system has  algorithm  $\mathtt{pay}(.)$ that  transfers money from the customer's account to a payee's account that is specific by the customer.  We denote the inputs of this algorithm $in_{\st p}$. We assume the source code of the online banking system is static, and any change to the source code is transparent and  can be detected, e.g., the bank  uses a cryptographic commitment to commit to the source code. Moreover, we assume the online banking  system is secure. In Appendix \ref{sec:notation-table}, we provide a notation table. 
 
 
 
 
 
-% Similar to the \emph{optimistic} fair cryptographic protocols that aim  at efficiency, e.g., in \cite{AsokanSW97,eurocrypt/AsokanSW98,BaoDM98,DongCCR13}, we assume the existence of a trusted third party arbiter   which remains offline most of the time but can be invoked to resolve a part of dispute. We emphasise that if the bank and customers behave honestly, then the arbiter is never involved. Even the (offline) presence of such an arbiter threatens adversarial behaviour and acts as a deterrence.  %The idea is akin to deterrence in criminology,  i.e.,  the threat of punishment will deter people from committing crimes.
-
-
-
-
-
-
+% Similar to the \emph{optimistic} fair cryptographic protocols that aim  at efficiency, e.g., in \cite{AsokanSW97,eurocrypt/AsokanSW98,BaoDM98,DongCCR13}, we assume the existence of a trusted third party auditor   which remains offline most of the time but can be invoked to resolve a part of dispute. We emphasise that if the bank and customers behave honestly, then the auditor is never involved. Even the (offline) presence of such an auditor threatens adversarial behaviour and acts as a deterrence.  %The idea is akin to deterrence in criminology,  i.e.,  the threat of punishment will deter people from committing crimes.
 
 
 
 
 
 
-\vspace{-3mm}
+
+
+
+
+
+
+\vspace{-4mm}
 
 \subsection{Digital Signature}\label{subsec:DS}
 
@@ -80,6 +84,7 @@ A digital signature is a scheme for verifying the authenticity of digital messag
 %
 %Below, we restate its formal definition, taken from \cite{DBLP:books/crc/KatzLindell2014}. 
 %
+
 \begin{definition}\label{sec::def}
 A signature scheme  involves three algorithms, $\mathtt{Signature}:=(\mathtt{Sig.keyGen}, $ $\mathtt{Sig.sign}, \mathtt{Sig.ver})$, that are defined as follows. (1) $\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$ is probabilistic algorithm run by  a  signer. It takes as input a security parameter. It outputs a key pair: $(sk,pk)$, consisting of secret: $sk$, and public: $pk$ keys. (2) $\mathtt{Sig.sign}(sk, pk, u)\rightarrow sig$ is an algorithm run by the signer. It takes as input  key pair: $(sk,pk)$ and a message: $u$. It outputs a signature: $sig$. (3) $\mathtt{Sig.ver}( pk, u, sig)\rightarrow h\in\{0,1\}$ is  deterministic algorithm run by a verifier. It takes as input  public key: $pk$,  message: $u$, and signature: $sig$. It checks the signature's validity.   If the verification passes, then it outputs $1$; otherwise, it outputs $0$. 
 \end{definition}
@@ -91,14 +96,15 @@ A signature scheme  involves three algorithms, $\mathtt{Signature}:=(\mathtt{Sig
 %\end{itemize}
 %\end{definition}
 
+\vspace{-2mm}
 A digital signature scheme should meet  two properties. (1) \textit{Correctness:} for every input $u$ it holds that:
 %
 $Pr\Big[\  \  \mathtt{Sig.ver}( pk,\\ u, \mathtt{Sig.sign}(sk, pk, u))=1\ : \
 \mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk, pk)  \Big]=1$. And 
 %
 (2) \textit{Existential unforgeability under chosen message attacks:} a probabilistic polynomial time (PPT) adversary that obtains $pk$ and has access to a signing  oracle for messages of its choice, cannot create a valid pair $(u^{\st *},sig^{\st *})$ for a new message $u^{\st *}$, except with a small probability, $\sigma$. More formally: 
-%
-\small{
+\vspace{-3mm}
+{\small{
 $$ \Pr\left[
   \begin{array}{l}
   u^{\st *}\not\in Q\ \wedge \ \
@@ -110,7 +116,7 @@ $$ \Pr\left[
     \mathtt{Cer.keyGen}(1^{\st \lambda})\rightarrow (sk,pk), \ \
   \mathcal{A}^{\mathtt{Sig.sign}(k,)}(pk)\rightarrow(u^{\st *}, sig^{\st *}) 
 \end{array}    \right]\leq \mu(\lambda)$$
-}
+}}
 where $Q$ is the set of queries that $\mathcal{A}$ sent to the certificate generator oracle.
 
 
@@ -157,26 +163,29 @@ where $Q$ is the set of queries that $\mathcal{A}$ sent to the certificate gener
 %An application of a digital signature is in digital certificate, which is a  document digitally signed  by a certificate generator. Given a certificate and its parameters,  anyone can check whether it has been correctly generated by a valid generator. There is a case  where 
 %a \emph{hard copy} certificate is used.  In this case,  the process $\mathtt{Sig.keyGen}(.)$ outputs a blank legitimate stamped certificate as a private parameter: $sk$, and the description of a standard legitimate certificate as a public parameter: $pk$. Moreover, the process $\mathtt{Sig.sign}(k, u)$ takes $k$ and the file $u$ on which a certificate should be generated and outputs a stamped certificate with the information printed on it. The process $\mathtt{Sig.ver}( pk, u, sig)$ takes the public parameter, the file,  and the hard copy of the certificate and outputs $1$ if it is valid and $0$ if it is not. Note, when  a hard copy certificate is considered, it is not possible to precisely define the success probability of the adversary, as it depends on the technology available to the adversary to generate a blank stamped certificate that looks like a legitimate one. In the real world however, this probability is usually small (but it may not be negligible). In this paper, we mainly consider a digital certificate; however, our solution can adopt hard copy certificates as well with the above caveat  regarding the adversary's success probability. 
 
-\vspace{-2.1mm}
+\vspace{-3.6mm}
 
-\subsection{Smart Contract}\label{subsec:SC} Cryptocurrencies, such as Bitcoin \cite{bitcoin} and Ethereum \cite{ethereum}, beyond offering a decentralised currency,  support  computations on  transactions. In this setting,  a certain computation logic is encoded in a computer program, called a \emph{``smart contract''}. Although Bitcoin, the first decentralised cryptocurrency, supports smart contracts, the functionality of Bitcoin's smart contracts is  limited. To address this limitation, Ethereum, as a generic smart contract platform, was designed. Thus far, Ethereum has been the most predominant cryptocurrency framework that lets users define arbitrary smart contracts. In this framework, a contract's code and its related data  are held by every node in the blockchain's network. The program execution's  correctness  is  guaranteed by the security of the underlying blockchain components. To prevent  a denial of service attack, the framework requires a transaction creator to pay a  fee, called \emph{``gas''}. %, depending on the complexity of the contract running on  it.  
+\subsection{Smart Contract}\label{subsec:SC}
+\vspace{-1.2mm}
+ Cryptocurrencies, such as Bitcoin \cite{bitcoin} and Ethereum \cite{ethereum}, beyond offering a decentralised currency,  support  computations on  transactions. In this setting,  a certain computation logic is encoded in a computer program, called a \emph{``smart contract''}. Although Bitcoin, the first decentralised cryptocurrency, supports smart contracts, the functionality of Bitcoin's smart contracts is  limited. To address this limitation, Ethereum, as a generic smart contract platform, was designed. Thus far, Ethereum has been the most predominant cryptocurrency framework that lets users define arbitrary smart contracts.  To prevent  a denial of service attack, Ethereum requires a transaction creator to pay a  fee, called \emph{``gas''}. %, depending on the complexity of the contract running on  it.  
 
 
 \input{commitment}
 \input{SAP}
 
-\vspace{-1.5mm}
+\vspace{-4mm}
 \subsection{Pseudorandom Function}
+\vspace{-1.2mm}
 
+Informally, a pseudorandom function (as is defined in \cite{DBLP:books/crc/KatzLindell2014}) is a deterministic function that takes a key of length $\Lambda$ and an input; it outputs a value  indistinguishable from that of  a truly random function.  In this paper, we use the pseudorandom function:   $\mathtt {PRF}: \{0,1\}^{\st \Lambda}\times \{0,1\}^{\st *} \rightarrow  \mathbb{F}_p$, where $p$ is a large prime number, $|p|=\lambda$, and $(\Lambda,\lambda)$ are the security parameters. %In practice, a pseudorandom function can be obtained from an efficient block cipher. 
+%We refer readers to \cite{DBLP:books/crc/KatzLindell2014} for a formal definition of a pseudorandom function.
 
-Informally, a pseudorandom function is a deterministic function that takes a key of length $\Lambda$ and an input; it outputs a value  indistinguishable from that of  a truly random function.  In this paper, we use the pseudorandom function:   $\mathtt {PRF}: \{0,1\}^{\st \Lambda}\times \{0,1\}^{\st *} \rightarrow  \mathbb{F}_p$, where $p$ is a large prime number, $|p|=\lambda$, and $(\Lambda,\lambda)$ are the security parameters. In practice, a pseudorandom function can be obtained from an efficient block cipher. We refer readers to \cite{DBLP:books/crc/KatzLindell2014} for a formal definition of a pseudorandom function.
-
-\vspace{-3mm}
+\vspace{-4mm}
 \subsection{Bloom Filter}
+\vspace{-1.2mm}
 
-
-A Bloom filter \cite{DBLP:journals/cacm/Bloom70} is a compact data structure that allows us to 
-efficiently check an  element membership. It is an array of $m$ bits (initially all set to zero), that  represents $n$  elements. It is accompanied by $k$ independent hash functions. To insert an element, all the  hash values of the element are computed and their corresponding bits in the filter are set to $1$. To check an element membership, all its hash values are re-computed and checked whether all are set to $1$ in the filter. If all the corresponding bits are $1$, then the element is probably in the filter; otherwise, it is not. In Bloom filters,  it is possible that an element is not in the set, but the membership query indicates it is, i.e., false positives. In this work, we ensure that the false positive probability is negligible, e.g.,  $2^{\st - 40}$. Also, we require that a Bloom filter uses \emph{cryptographic} hash functions. In Appendix \ref{sec::bloom-filter-}, we explain how the Bloom filter's parameters can be set.
+A Bloom filter \cite{DBLP:journals/cacm/Bloom70} is a compact data structure that lets us  
+efficiently check an  element membership. It is an array of $m$ bits (initially all set to zero), that  represents $n$  elements. It is accompanied by $k$ independent hash functions. To insert an element, all the  hash values of the element are computed and their corresponding bits in the filter are set to $1$. To check an element membership, all its hash values are re-computed and checked whether all are set to $1$ in the filter. If all the corresponding bits are $1$, then the element is probably in the filter; otherwise, it is not. In this work,  we require that a Bloom filter uses \emph{cryptographic} hash functions. In Appendix \ref{sec::bloom-filter-}, we explain how the Bloom filter's parameters can be set.
 
 %Informally, a digital certificate's security requires that no one can generate a valid certificate that was not previously produced by the certificate generator. The security of a digital certificate relies on the security of the digital signature scheme used.  Below, we present the formal definition of the digital signature.
 

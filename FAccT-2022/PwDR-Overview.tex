@@ -1,6 +1,6 @@
 % !TEX root =main.tex
 
-\vspace{-2.5mm}
+\vspace{-5mm}
 \section{Challenges to Overcome}\label{sec:: challenges}
 
 
@@ -10,27 +10,30 @@ Our starting point in defining and  designing a payment with dispute resolution 
 
 
 
-\vspace{-2.5mm}
+\vspace{-4.6mm}
 \subsection{Challenge 1: Lack of Transparent Logs} 
-In the current online  banking system, during a payment journey, the messages exchanged between customer and bank are usually logged by the bank and are not accessible to the customer without the bank's collaboration. Even if the bank provides access to the transaction logs, there is no guarantee that the logs have remained intact. Due to the lack of a transparent logging mechanism, a customer or bank can wrongly claim that (a) it has sent a certain message or warning to its counter-party or (b) it has never  received a certain message.  Thus, it would be hard for an honest party  to prove its innocence. To address this challenge, our scheme will use a  smart contract (as a public bulletin board) to which  each party sends (a copy of) its outgoing messages. %, e.g., payment requests, warnings, and  confirmation of payments. 
+In the current online  banking system, during a payment journey, the messages exchanged between customer and bank are usually logged by the bank and are not accessible to the customer without the bank's collaboration. Even if the bank provides access to the transaction logs, there is no guarantee that the logs have remained intact. Due to the lack of a transparent logging mechanism, a customer or bank can wrongly claim that (a) it has sent a certain message or warning to its counter-party or (b) it has never  received a certain message.  Thus, it would be hard for an honest party  to prove its innocence. To address this challenge, our scheme will use a  smart contract  to which  each party sends  its  messages.
+
+
+%To address this challenge, our scheme will use a  smart contract (as a public bulletin board) to which  each party sends (a copy of) its outgoing messages. %, e.g., payment requests, warnings, and  confirmation of payments. 
 
 
 
-\vspace{-1.5mm}
+\vspace{-4mm}
 \subsection{Challenge 2: Lack of Effective Warning's Accurate Definition in Banking}\label{sec::Lack-of-Effective-Warning-Definition}
+\vspace{-1mm}
+One of the determining  factors in the process of allocating liability to an APP fraud victim  is following ``warning(s)'', according to the CRM code. But, there exists  no  publicly available study  on the  effectiveness of  banks' warnings. So, we cannot hold a customer accountable for becoming the fraud's victim,  even if the related warnings are ignored.    To address this challenge, we let a warning's effectiveness be determined on a case-by-case basis after an APP fraud occures. The protocol lets  a victim   challenge a certain warning whose effectiveness will be assessed by a \emph{committee}, i.e., a  set of auditors. In this setting, each auditor provides its verdict  (encoded) to the smart contract, from which a dispute resolver retrieves all verdicts to learn the final verdict. The scheme ensures that the final verdict is  in the customer's favour if at least threshold  auditors voted so. Thus, unlike the traditional setting where a central party determines a warning's effectiveness, which is error-prone, we let a collection of auditors   determines it.
 
-One of the determining  factors in the process of allocating liability to  customers (after an APP fraud occurs) is paying attention to and following ``warning(s)'', according to the CRM code. However, there exists  no  publicly available study  on the  effectiveness of every warning  provided by  a bank. Therefore, we cannot hold a customer accountable for becoming the fraud's victim,  even if the related warnings are ignored.    To address this challenge, we let a warning's effectiveness be determined on a case-by-case basis after an APP fraud takes place. The protocol lets  a victim   challenge a certain warning whose effectiveness will be assessed by a \emph{committee}, i.e., a  set of arbiters. In this setting, each member of the  committee provides (an encoding of) its verdict to the smart contract, from which a dispute resolver retrieves all verdicts to find out the final verdict. The scheme ensures that the final verdict is  in the customer's favor if at least threshold  committee members voted so. Thus, unlike the traditional setting where a central party determines a warning's effectiveness, which is error-prone, we let a collection of arbiters   determines it (in a secure manner).
 
 
-
-\vspace{-2mm}
+\vspace{-3.5mm}
 \subsection{Challenge 3: Linking Off-chain Payments with a Smart Contract}\label{sec::Linking Off-chain-Payments-with-contract}
- Recall that an APP fraud occurs when a payment is made. In the case where a  bank  sends  (to the smart contract) a confirmation of payment message, it is not possible to automatically validate such a claim, as the money  transfer occurs  outside of the blockchain network. To address this challenge, our scheme lets a customer raise a dispute and report it to the smart contract when it detects an inconsistency. In this case, the above committee members investigate and provide their  verdicts to the smart contract that allows the dispute resolver to extract the final verdict. 
+ Recall that an APP fraud occurs when a payment is made. In the case where a  bank  sends  (to the smart contract) a confirmation of payment message, it is not possible to automatically validate such a claim, as the money  transfer occurs  outside of the blockchain network. To address this challenge, our scheme lets a customer raise a dispute and report it to the smart contract when it detects an inconsistency. In this case, the above auditors investigate and provide their  verdicts to the smart contract that lets the dispute resolver, $\mathcal{DR}$,  extract the final verdict. 
 
 
-\vspace{-3mm}
+\vspace{-4mm}
 \subsection{Challenge 4: Preserving Privacy}
- Although the use of a public transparent logging mechanism plays a vital role in resolving disputes, if it does not use a  privacy-preserving mechanism, then  parties' privacy would be violated. To protect the  privacy of the bank's and customers' messages against the public (and other customers), our scheme lets the customer and bank provably agree on encoding-decoding tokens that let them  encode their outgoing messages. Later, either party can provide the token to a third party which can independently check the token's correctness, and decode the messages. To protect the privacy of the committee members' verdicts from the  dispute resolver, the scheme   ensures that  the dispute resolver can learn only the final verdict without being able to link a verdict to a specific  member of the committee or even learn the number of yes/$1$ and no/$0$ votes. To this end, we develop and use a novel threshold voting protocol. 
+ Although the use of a public  logging mechanism is essential  in resolving disputes, if it does not use a  privacy-preserving mechanism, then  parties' privacy would be violated. To protect the  privacy of the bank's and customers' messages against the public, our scheme lets them provably agree on encoding-decoding tokens  with which they can  encode their  messages. Later, either party can provide the token to a third party which    checks the token's correctness, and decodes the messages. To protect the privacy of the committee members' verdicts from $\mathcal{DR}$, the scheme   ensures that  $\mathcal{DR}$ can learn only the final verdict without being able to link a verdict to a specific  auditor or even learn the number of yes/$1$ and no/$0$ votes. To this end, we develop and use a novel threshold voting protocol. 
  
  
  

@@ -3,10 +3,10 @@
 
  \begin{table*}[!htb]
 
-\caption{ \small The PwDR protocol's asymptotic cost. In the table, $n$ is the  number of arbiters and $e$ is the threshold.} \label{table::PwDR-Asymptotic-Cost} 
- \vspace{-2mm}
+\caption{ {\small{ The PwDR protocol's asymptotic cost. In the table, $n$ is the  number of auditors and $e$ is the threshold.}}} \label{table::PwDR-Asymptotic-Cost} 
+ \vspace{-3mm}
 \begin{center}
-
+\renewcommand{\arraystretch}{.8}
 \begin{tabular}{|c|c|c|c|c|} 
 
    \hline
@@ -27,20 +27,20 @@
 
        %[3] 1st row 
        
-   \scriptsize   {Arbiter $\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n-1}$ }&\scriptsize$\checkmark$&\scriptsize$\checkmark$&   \cellcolor{gray!20}\scriptsize$O(1)$&  \cellcolor{gray!20}\scriptsize$ O(1)$\\      
+   \scriptsize   {Auditor $\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n-1}$ }&\scriptsize$\checkmark$&\scriptsize$\checkmark$&   \cellcolor{gray!20}\scriptsize$O(1)$&  \cellcolor{gray!20}\scriptsize$ O(1)$\\      
             \cline{1-5} 
 
  % \scriptsize \ \ \ \ \ \ \ \ --------------&&\\
 &\scriptsize$\checkmark$&&    \cellcolor{gray!20}\scriptsize$O(n)$&    \cellcolor{gray!20}\scriptsize$ O(1)$\\
      \cline{2-5}
-\multirow{-2}{*}{\scriptsize Arbiter $\mathcal{D}_{\st n}$}&&\scriptsize$\checkmark$&    \cellcolor{gray!20}\scriptsize$O(\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!})$&    \cellcolor{gray!20}\scriptsize$ O(\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!})$\\
+\multirow{-2}{*}{\scriptsize Auditor $\mathcal{D}_{\st n}$}&&\scriptsize$\checkmark$&    \cellcolor{gray!20}\scriptsize$O(\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!})$&    \cellcolor{gray!20}\scriptsize$ O(\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!})$\\
      \cline{1-5}  
      
  \scriptsize Dispute resolver $\mathcal{DR}$&\scriptsize$\checkmark$&\scriptsize$\checkmark$& \cellcolor{gray!20}\scriptsize $O(n)$&    \cellcolor{gray!20}\scriptsize$O(1)$\\
  
     \cline{1-5}  
      %[3] 2nd row 
-       %\scriptsize Arbiter&\scriptsize $O(z'  \log_{\scriptscriptstyle2}(m))$&\scriptsize$ O(1)$\\
+       %\scriptsize auditor&\scriptsize $O(z'  \log_{\scriptscriptstyle2}(m))$&\scriptsize$ O(1)$\\
 
 
  %\cline{1-3}  

@@ -1,12 +1,12 @@
 % !TEX root =main.tex
-
+\vspace{-3mm}
 \section{Variant 2 Encoding-Decoding Protocol's Main Theorem and Proof}\label{sec::Variant-2-Theorem-proof}
 
 In this section, we first formally state our main observation on which Variant 2 encoding-decoding protocol relies. After that, we  prove it.
 
 
 \begin{theorem}
-Let set $S=\{s_{\st 1},..., s_{\st m}\}$ be a set of random values picked uniformly from $\mathbb{F}_{\st p}$, where the cardinality of $S$ is  public information. Let $\mathtt{BF}$ be a Bloom filter encoding all elements of   $S$. Then,  $\mathtt{BF}$ reveals nothing about any element of $S$, beyond the public information, except with a negligible probability in the security parameter, i.e., with a probability at most $\frac{|S|}{2^{\st \lambda}}$. 
+Let  $S=\{s_{\st 1},..., s_{\st m}\}$ be a set of random values picked uniformly from $\mathbb{F}_{\st p}$, where the cardinality of $S$ is  public information. Let $\mathtt{BF}$ be a Bloom filter encoding all elements of   $S$. Then,  $\mathtt{BF}$ reveals nothing about any element of $S$, beyond the public information, except with a negligible probability in the security parameter, i.e., with a probability at most $\frac{|S|}{2^{\st \lambda}}$. 
 \end{theorem}
 
 \begin{proof}

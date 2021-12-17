@@ -7,16 +7,16 @@
 
 
 We summarise our notations in Table \ref{table:notation-table}.
-
+\vspace{-3mm}
 \vspace{-2.2mm}
 \begin{table*}[!htbp]
 \begin{scriptsize}
 \begin{center}
 \footnotesize{
 \caption{ \small{Notation Table}.}\label{commu-breakdown-party} 
-\vspace{-2mm}
+\vspace{-3mm}
 \renewcommand{\arraystretch}{.88}
-\scalebox{1.0881}{
+\scalebox{1.08}{
 % 1st table
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} 
 
@@ -52,15 +52,15 @@ We summarise our notations in Table \ref{table:notation-table}.
   %
 \cellcolor{white!20}\scriptsize$\mathtt{Ver}(.)$ &\cellcolor{white!20}\scriptsize  Commitment's verify\\   
 %                    
-\cellcolor{gray!20}\scriptsize$\mathtt{H}(.)$ &\cellcolor{gray!20}\scriptsize Hash function\\
+%\cellcolor{gray!20}\scriptsize$\mathtt{H}(.)$ &\cellcolor{gray!20}\scriptsize Hash function\\
 %
-\cellcolor{white!20}\scriptsize$\mathtt{PRF}(.)$ &\cellcolor{white!20}\scriptsize  Pseudorandom function \\ 
+%\cellcolor{white!20}\scriptsize$\mathtt{PRF}(.)$ &\cellcolor{white!20}\scriptsize  Pseudorandom function \\ 
 %
 \cellcolor{gray!20}\scriptsize$\mathcal{C}$ &\cellcolor{gray!20}\scriptsize Customer  \\  
 %
 \cellcolor{white!20}\scriptsize$\mathcal{B}$ &\cellcolor{white!20}\scriptsize Bank  \\
 %  
-\cellcolor{gray!20}\scriptsize$\mathcal{D}_{\st 1},... , \mathcal{D}_{\st n}$ &\cellcolor{gray!20}\scriptsize Arbiters  \\  
+\cellcolor{gray!20}\scriptsize$\mathcal{D}_{\st 1},... , \mathcal{D}_{\st n}$ &\cellcolor{gray!20}\scriptsize Auditors  \\  
 %
 \cellcolor{white!20}\scriptsize$\mathcal{DR}$ &\cellcolor{white!20}\scriptsize Dispute resolver  \\  
 %
@@ -68,7 +68,9 @@ We summarise our notations in Table \ref{table:notation-table}.
 %
 \cellcolor{white!20}\scriptsize$\mathcal{G}$ &\cellcolor{white!20}\scriptsize Certificate generator  \\  
 %
-\cellcolor{gray!20}\scriptsize{SAP} &\cellcolor{gray!20}\scriptsize  Statement agreement protocol\\ 
+%\cellcolor{gray!20}\scriptsize{SAP} &\cellcolor{gray!20}\scriptsize  Statement agreement protocol\\ 
+%
+\cellcolor{gray!20}\scriptsize PPT&\cellcolor{gray!20}\scriptsize  Probabilistic polynomial time \\    
 %
 \cellcolor{white!20}\scriptsize{PVE} &\cellcolor{white!20}\scriptsize  Private verdict encoding protocol\\ 
 %
@@ -78,11 +80,11 @@ We summarise our notations in Table \ref{table:notation-table}.
 %
 \cellcolor{gray!20}\scriptsize{GFVD} &\cellcolor{gray!20}\scriptsize  Generic final verdict decoding protocol\\ 
 %
-\cellcolor{white!20}\scriptsize$\oplus$ &\cellcolor{white!20}\scriptsize  XOR operator \\ 
+%\cellcolor{white!20}\scriptsize$\oplus$ &\cellcolor{white!20}\scriptsize  XOR operator \\ 
 %
-\cellcolor{gray!20}\scriptsize$\Delta$ &\cellcolor{gray!20}\scriptsize  time parameter \\ 
+\cellcolor{white!20}\scriptsize$\Delta$ &\cellcolor{white!20}\scriptsize  time parameter \\ 
 %
-\cellcolor{white!20}\scriptsize$add_{\st I}$ &\cellcolor{white!20}\scriptsize  Address of $I$\\ 
+%\cellcolor{white!20}\scriptsize$add_{\st I}$ &\cellcolor{white!20}\scriptsize  Address of $I$\\ 
 %
 %\cellcolor{white!20}\scriptsize$\mathtt{BF}$ &\cellcolor{white!20}\scriptsize  Bloom filter\\ 
 %
@@ -96,9 +98,9 @@ We summarise our notations in Table \ref{table:notation-table}.
 %
 %
 
-\cellcolor{gray!20}\scriptsize PPT&\cellcolor{gray!20}\scriptsize  Probabilistic polynomial time \\    
+%\cellcolor{gray!20}\scriptsize PPT&\cellcolor{gray!20}\scriptsize  Probabilistic polynomial time \\    
 % {   }\scriptsize$t_{\st i}$ &\scriptsize  time point\\ 
-\cellcolor{white!20}\scriptsize$\mathtt{BF}$ &\cellcolor{white!20}\scriptsize  Bloom filter\\ 
+%\cellcolor{white!20}\scriptsize$\mathtt{BF}$ &\cellcolor{white!20}\scriptsize  Bloom filter\\ 
 \hline 
 
 
@@ -118,13 +120,13 @@ We summarise our notations in Table \ref{table:notation-table}.
 %\multirow{10}{*}{\rotatebox[origin=c]{90}{\scriptsize  \textbf{Generic}}}
 %
 
-\cellcolor{gray!20}\scriptsize$\bm{l}$ &\cellcolor{gray!20}\scriptsize  $\mathcal{C}$'s payees list\\ 
+%\cellcolor{gray!20}\scriptsize$\bm{l}$ &\cellcolor{gray!20}\scriptsize  $\mathcal{C}$'s payees list\\ 
 %
-\cellcolor{white!20}\scriptsize$\hat{\bm{l}}$ &\cellcolor{white!20}\scriptsize  $\mathcal{C}$'s encoded payees list\\ 
+\cellcolor{gray!20}\scriptsize$\hat{\bm{l}}$ &\cellcolor{gray!20}\scriptsize  $\mathcal{C}$'s encoded payees list\\ 
 %
 
 
-\cellcolor{gray!20}\scriptsize$ k_{\st 0}$ &\cellcolor{gray!20}\scriptsize   A secret key of $\mathtt{PRF}$\\ 
+%\cellcolor{gray!20}\scriptsize$ k_{\st 0}$ &\cellcolor{gray!20}\scriptsize   A secret key of $\mathtt{PRF}$\\ 
 %               
 \cellcolor{white!20}\scriptsize$f$ &\cellcolor{white!20}\scriptsize New payee’s detail  \\ 
  %                            
@@ -142,11 +144,11 @@ We summarise our notations in Table \ref{table:notation-table}.
 %          
      \cellcolor{gray!20}\scriptsize$sk$ and $pk$ &\cellcolor{gray!20}\scriptsize Secret  and public keys\\     
 %
-   \cellcolor{white!20}\scriptsize$sk_{\st\mathcal{D}}$ &\cellcolor{white!20}\scriptsize Arbiters' secret key\\     
+   \cellcolor{white!20}\scriptsize$sk_{\st\mathcal{D}}$ &\cellcolor{white!20}\scriptsize Auditors' secret key\\     
 %    
-\cellcolor{gray!20}\scriptsize$pp$ &\cellcolor{gray!20}\scriptsize Public parameter\\  
+%\cellcolor{gray!20}\scriptsize$pp$ &\cellcolor{gray!20}\scriptsize Public parameter\\  
 %
-\cellcolor{white!20}\scriptsize$j$ &\cellcolor{white!20}\scriptsize  Arbiter's index,  $1\leq j\leq n$ \\ 
+%\cellcolor{white!20}\scriptsize$j$ &\cellcolor{white!20}\scriptsize  Auditor's index,  $1\leq j\leq n$ \\ 
 %
 \cellcolor{gray!20}\scriptsize$T, T_{\st 1},T_{\st 2}$ &\cellcolor{gray!20}\scriptsize  Tokens, where  $T:=( T_{\st 1},T_{\st 2})$\\ 
 %
@@ -160,7 +162,7 @@ We summarise our notations in Table \ref{table:notation-table}.
 %
 \cellcolor{white!20}\scriptsize$e$ &\cellcolor{white!20}\scriptsize  Threshold\\ 
 %            
- \cellcolor{gray!20}\scriptsize$w_{\st i,j}$ &\cellcolor{gray!20}\scriptsize  Arbiter's plain verdict\\ 
+ \cellcolor{gray!20}\scriptsize$w_{\st i,j}$ &\cellcolor{gray!20}\scriptsize  Auditor's plain verdict\\ 
 %     
 \cellcolor{white!20}\scriptsize$o$ &\cellcolor{white!20}\scriptsize  Offset\\  
  %
@@ -180,11 +182,11 @@ We summarise our notations in Table \ref{table:notation-table}.
 %
 \cellcolor{gray!20}\scriptsize$\phi$ &\cellcolor{gray!20}\scriptsize  Null\\ 
 %
-\cellcolor{white!20}\scriptsize$n$ &\cellcolor{white!20}\scriptsize  Total number of arbiters\\  
+\cellcolor{white!20}\scriptsize$n$ &\cellcolor{white!20}\scriptsize  Total number of auditors\\  
 %           
-\cellcolor{gray!20}\scriptsize$z$ &\cellcolor{gray!20}\scriptsize  $\mathcal{C}$'s complaint, where $z:=(z_{\st 1}, z_{\st 2}, z_{\st 3})$\\ 
+%\cellcolor{gray!20}\scriptsize$z$ &\cellcolor{gray!20}\scriptsize  $\mathcal{C}$'s complaint, where $z:=(z_{\st 1}, z_{\st 2}, z_{\st 3})$\\ 
 %
-\cellcolor{white!20}\scriptsize $g:=(g_{\st 1}, g_{\st 2})$&\cellcolor{white!20}\scriptsize  Commitment values \\    
+%\cellcolor{white!20}\scriptsize $g:=(g_{\st 1}, g_{\st 2})$&\cellcolor{white!20}\scriptsize  Commitment values \\    
 %
 
 \cellcolor{gray!20}\scriptsize$\mathtt{pwdr}$ &\cellcolor{gray!20}\scriptsize  payment with dispute resolution notion\\ 
