@@ -4,14 +4,14 @@
 
 
 
-\vspace{-3.5mm}
+\vspace{-3mm}
 \section{ Definition of Payment with Dispute Resolution Scheme}\label{sec::def}
 
 In this section, we outline a formal definition of a  payment with dispute resolution  ($\mathsf{pwdr}$) notion. We refer readers to Appendix \ref{sec::long-def} for a full version of the  definition. 
 %
 %In this section, we outline a formal definition of a  PwDR scheme. We first provide the scheme's syntax.  Then, we   formally define its correctness  and security properties. We refer readers to Appendix \ref{sec::long-def} for a full version of the formal definition. 
 %
-\vspace{-3.5mm}
+\vspace{-3mm}
 \begin{definition}\label{def-a::sytax} A $\mathsf{pwdr}$    involves six   types of entities; namely,  bank $\mathcal{B}$, customer $\mathcal{C}$,  smart contract $\mathcal{S}$,  certificate generator $\mathcal{G}$,   set of auditors $\mathcal{D}:\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$, and  dispute resolver $\mathcal{DR}$. It also includes the following    algorithms.  
 
 %\item \item[$\bullet$] $\mathtt{setup}(1^{\st \lambda})\rightarrow k:=(sk,pk)$. %%% this might be needed when other security properties, e.g., privacy, are added to the scheme. 
@@ -28,7 +28,7 @@ In this section, we outline a formal definition of a  payment with dispute resol
 %
 \item [$\bullet$] $\mathtt{insertNewPayee}(\hat{m}^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow  \hat{\bm l}$. It is  an algorithm that inserts a new payee's detail into ${\bm l}$ and outputs an updated list $\hat{\bm l}$.
 %
-\item  [$\bullet$] $\mathtt{genWarning}(T, \hat{\bm l}, \text{aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}$. It is a warning generating algorithm that outputs an encoded (warning) message $\hat m^{\st\mathcal{(B)}}_{\st1}$, with the help of auxiliary data $\text{aux}$ and $\mathtt{Encode}(T_{\st 1},.)$, where the decoded message is either pass or warning string. 
+\item  [$\bullet$] $\mathtt{genWarning}(T, \hat{\bm l}, {aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}$. It is a warning generating algorithm that outputs an encoded (warning) message $\hat m^{\st\mathcal{(B)}}_{\st1}$, with the help of auxiliary data ${aux}$ and $\mathtt{Encode}(T_{\st 1},.)$, where the decoded message is either pass or warning string. 
 %
 \item  [$\bullet$] $\mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}$. It an algorithm that generates an encoded payment request  $\hat m^{\st\mathcal{(C)}}_{\st2}$, with the help of new payment's detail $in_{\st f}$ and $\mathtt{Encode}(T_{\st 1},.)$. It outputs  $\hat m^{\st\mathcal{(C)}}_{\st2}$.  
 %
@@ -36,7 +36,7 @@ In this section, we outline a formal definition of a  payment with dispute resol
 %
 
 
-%\item  [$\bullet$] $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, \text{aux}_{\st f})\rightarrow (\hat z, \hat{\ddot \pi})$. It  generates complaints with the help of auxiliary data $\text{aux}_{\st f}$. It 
+%\item  [$\bullet$] $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, {aux}_{\st f})\rightarrow (\hat z, \hat{\ddot \pi})$. It  generates complaints with the help of auxiliary data ${aux}_{\st f}$. It 
 % generates and outputs  encoded complaints $\hat z$ using  $\mathtt{Encode}(T_{\st 1},.)$ and encoded secret  parameters $\hat{\ddot \pi}$  using another encoding algorithm $\bar{\mathtt{Encode}}(pk_{\st \mathcal{D}},.)$.   
  
  
@@ -67,7 +67,7 @@ In this section, we outline a formal definition of a  payment with dispute resol
 
 %Note, algorithms $\mathtt{genWarning}(.)$-$\mathtt{resDispute}(.)$ implicitly take another input, $state_{\st\mathcal S}$, which is $\mathcal{S}$'s current state, i.e., data registered in $\mathcal{S}$. For the sake of simplicity, we avoided explicitly passing this input  to these processes.  
 \vspace{-2.5mm}
-Informally, a $\mathsf{pwdr}$  has two  properties, namely, \emph{correctness} and \emph{security}. Correctness requires that  the payment journey is completed without the need for (i) the honest customer to complain and (ii)  the honest bank to reimburse.  A $\mathsf{pwdr}$  is  secure if it satisfies three main properties; namely, (a) security against a malicious victim, (b) security against a malicious bank, and (c) privacy. 
+Informally, a $\mathsf{pwdr}$  has two  properties, namely, \emph{correctness} and \emph{security}. Correctness requires that  the payment journey is completed (in the absence of an adversary) without the need for (i) the honest customer to complain and (ii)  the honest bank to reimburse.  A $\mathsf{pwdr}$  is  secure if it meets three main properties,  (a) security against a malicious victim, (b) security against a malicious bank, and (c) privacy. 
 %
 %Below, we present a brief formal definition of   them. 
 %
@@ -76,7 +76,7 @@ Informally, a $\mathsf{pwdr}$  has two  properties, namely, \emph{correctness} a
 Specifically, a corrupt victim cannot (a) make at least threshold auditors, $\mathcal{D}_{\st j}$s,  conclude that $\mathcal{B}$ should have provided a warning, although $\mathcal{B}$ has done so, or (b) make $\mathcal{DR}$ conclude that   the pass message was incorrectly given or a vital warning message was missing despite only less than threshold  $\mathcal{D}_{\st j}$s  believe so, or (c) persuade at least threshold $\mathcal{D}_{\st j}$s to  conclude that the warning was ineffective although it was effective, or (d)  make $\mathcal{DR}$ believe that the warning message was ineffective although only less than threshold $\mathcal{D}_{\st j}$s   believe that, or (e)  convince  $\mathcal{D}_{\st j}$s to accept an invalid certificate, or  (f) make $\mathcal{DR}$ believe that at least  threshold $\mathcal{D}_{\st j}$s accepted the certificate  although they did not, except for a negligible probability.
 %%%%%%%%%%%%%
 %
-\vspace{-2.52mm}
+\vspace{-2.51mm}
 \begin{definition}[Security against a malicious victim]\label{def-a::Security-against-malicious-victim} A $\mathsf{pwdr}$  is secure against a malicious victim, if for any security parameter $\lambda$,  auxiliary data $aux$, and   PPT adversary $\mathcal{A}$, there is a negligible function $\mu(\cdot)$, s.t. for  experiment $\mathsf{Exp}_{\st 1}^{\mathcal{A}}$:
 %
 
@@ -85,7 +85,7 @@ Specifically, a corrupt victim cannot (a) make at least threshold auditors, $\ma
 
 {\small{
 \begin{center}
-\begin{mybox}[colback=white,  width=119mm, height=27mm, drop fuzzy shadow southwest]{{{$\mathsf{Exp}_{\st 1}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  
+\begin{mybox}[colback=white,  width=119mm, height=27.2mm, drop fuzzy shadow southwest]{{{$\mathsf{Exp}_{\st 1}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  
 {aux})$}}}
 
 %\fbox{\begin{minipage}{3.8 in}
@@ -102,7 +102,7 @@ $$
 %   
 \mathtt{insertNewPayee}(\hat{m}^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow \hat{\bm l}, \ \ \
 %
-\mathtt{genWarning}(T, \hat{\bm l}, \text{aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}, \ \ \
+\mathtt{genWarning}(T, \hat{\bm l}, {aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}, \ \ \
 %
    \mathcal{A}(T,  \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}, \\
 %
@@ -121,8 +121,9 @@ $$
 \end{center}
 }}
 %
-\vspace{-2.6mm}
+\vspace{-2.38mm}
 it holds that:
+\vspace{-1mm}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\small{
@@ -176,10 +177,10 @@ Security against a malicious bank requires that a malicious bank cannot disquali
 Particularly,  a corrupt bank cannot  (a) make $\mathcal{DR}$ conclude that the  ``pass'' message was correctly given or an important warning  was not missing despite at least threshold  $\mathcal{D}_{\st j}$s  do not believe so, or (b) convince $\mathcal{DR}$  that the warning message was effective although at least threshold $\mathcal{D}_{\st j}$s do not believe so, or (c) make $\mathcal{DR}$ believe that less than threshold $\mathcal{D}_{\st j}$s did  not accept the certificate  although at least threshold of them did that, or (d) make $\mathcal{DR}$ believe that no payment was  made, although at least threshold $\mathcal{D}_{\st j}$s believe the opposite, except for a negligible probability. 
 %%%%%%%%%%%
 
-\vspace{-1.5mm}
+\vspace{-1.6mm}
 \begin{definition}[Security against a malicious bank]\label{def-a::Security-against-malicious-bank} A $\mathsf{pwdr}$ scheme is secure against a malicious bank, if for any  $\lambda$,  $ {aux}$, and   PPT adversary $\mathcal{A}$, there exists a negligible function $\mu(\cdot)$, such that for an experiment $\mathsf{Exp}_{\st 2}^{\mathcal{A}}$:
 %
-%\vspace{-.6mm}
+\vspace{-.6mm}
 {\small{
 \begin{center}
 \begin{mybox}[colback=white,  width=119mm, height=31.6mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 2}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  {aux})$}
@@ -190,7 +191,7 @@ $$
 %
  \mathtt{keyGen}(1^{\st\lambda})\rightarrow (sk,pk), \ \ \
 %
-\mathcal{A}(1^{\st \lambda})\rightarrow (T, pp, \bm{l}, f,  in_{\st f}, \text{aux}_{\st f}), \ \ \
+\mathcal{A}(1^{\st \lambda})\rightarrow (T, pp, \bm{l}, f,  in_{\st f}, {aux}_{\st f}), \ \ \
 %
 \mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a, \\
 %
@@ -198,13 +199,13 @@ $$
 %
 \mathtt{insertNewPayee}(\hat{m}^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow  \hat{\bm l}, \ \ \
 %
-\mathcal{A}(T, \hat{\bm l}, \text{aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}, \\
+\mathcal{A}(T, \hat{\bm l}, {aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}, \\
 %
 \mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}, \ \ \
 %
 \mathcal{A}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}, \\
 %
-\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, \text{aux}_{\st f})\rightarrow (\hat z, \hat{\ddot \pi}), \\
+\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, {aux}_{\st f})\rightarrow (\hat z, \hat{\ddot \pi}), \\
 %
  \forall j, j\in [n]:
 \Big(\mathtt{verComplaint}( \hat z, \hat{\ddot{\pi}}, g, \hat{\bm m}, \hat{\bm{l}}, j, sk_{\st\mathcal D}, aux, pp)\rightarrow \hat{\bm{w}_{\st j}}= [\hat {w}_{\st 1,j}, \hat{w}_{\st 2, j}, \hat{w}_{\st 3, j}, \hat{w}_{\st 4, j}]
@@ -285,7 +286,7 @@ A $\mathsf{pwdr}$ scheme is secure if it meets security against a malicious vict
 %    \ \ \mathtt{insertNewPayee}(m^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow {\bm l'}\\
 %   
 %   
-%   \ \ \mathtt{genWarning}( {\bm l'}, \text{aux})\rightarrow m^{\st\mathcal{(B)}}_{\st1}\\
+%   \ \ \mathtt{genWarning}( {\bm l'}, {aux})\rightarrow m^{\st\mathcal{(B)}}_{\st1}\\
 %   
 %
 %   \ \   \mathcal{A}(in_{\st p}, \bm{l}', m^{\st\mathcal{(B)}}_{\st1})\rightarrow m^{\st\mathcal{(C)}}_{\st 2}\\

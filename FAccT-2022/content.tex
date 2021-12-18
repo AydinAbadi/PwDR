@@ -88,7 +88,6 @@ In this section, we present the PwDR protocol in detail.
 \item\label{encryption-keygen} calls $\tilde{\mathtt{keyGen}}(1^{\st\lambda})\rightarrow({sk}_{\st\mathcal {D}}, {pk}_{\st\mathcal {D}})$ to generate  decrypting secret key ${sk}_{\st\mathcal {D}}$ and encrypting public key ${pk}_{\st\mathcal {D}}$. It publishes the public key ${pk}_{\st\mathcal {D}}$ and sends ${sk}_{\st\mathcal {D}}$ to the rest of the auditors.
 \end{enumerate}
 
-%(1^{\st \lambda})\rightarrow k:=(sk_{\st\mathcal{D}}, pk_{\st\mathcal{D}})%
 
 Let $sk:=(sk_{\st\mathcal{G}}, sk_{\st\mathcal{D}})$ and $pk:=(pk_{\st\mathcal{G}}, pk_{\st\mathcal{D}})$. Note, this   phase takes place only once for all customers.
 
@@ -231,8 +230,8 @@ Customer $\mathcal{C}$ takes the following steps.
 z_{\st 3}=\phi $.
 
     \end{itemize}
-    \item at time $t_{\st 6}$, sends to $\mathcal{S}$   the encryption of complaint $z$, i.e.,   $\hat z= \mathtt{Enc}(\bar k_{\st 1}, z)$ and 
- the encryption of $\ddot{\pi}:=(\ddot{\pi}_{\st 1}, \ddot{\pi}_{\st 2})$, i.e., $\hat{\ddot \pi}={\tilde{\mathtt{Enc}}}({pk}_{\st\mathcal {D}}, \ddot \pi)$.
+    \item at time $t_{\st 6}$, sends     $\hat z= \mathtt{Enc}(\bar k_{\st 1}, z)$ and 
+ $\hat{\ddot \pi}={\tilde{\mathtt{Enc}}}({pk}_{\st\mathcal {D}}, \ddot \pi)$  to $\mathcal{S}$.
     
 %    \begin{itemize}
 %     \item[$\bullet$] the encryption of complaint $z$, i.e.,   $\hat z= \mathtt{Enc}(\bar k_{\st 1}, z)$.
@@ -273,7 +272,7 @@ Every $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\st n}\}$ 
 
 
 
-\item[$\bullet$]  if ``challenge payment'' $\in z_{\st 3}$, it checks if the  payment was  made.   If the check passes, it sets  $w_{\st 4, j}=1$. If the check fails,   it sets $w_{\st 4, j}=0$.  If ``challenge payment'' $\notin z_{\st 3}$, it checks if  ``paid''  $\in{m}_{\st 2}^{\st(\mathcal C)}$. If it passes, it sets $w_{\st 4, j}=1$. Otherwise, it sets $w_{\st 4, j}=0$. 
+\item[$\bullet$]  if ``challenge payment'' $\in z_{\st 3}$, it checks if the  payment was  made.   If it passes, it sets  $w_{\st 4, j}=1$. If it failes,   it sets $w_{\st 4, j}=0$.  If ``challenge payment'' $\notin z_{\st 3}$, it checks if  ``paid''  $\in{m}_{\st 2}^{\st(\mathcal C)}$. If it passes, it sets $w_{\st 4, j}=1$. Else, it sets $w_{\st 4, j}=0$. 
 %
 \end{itemize}
 %
@@ -325,9 +324,9 @@ $ \hat {\bm w}_{\st j}= \mathtt{Enc}(\bar k_{\st 2}, \bar{\bm w}_{\st j})$.
 
 
 %%. 
-%\item[$\bullet$]  if  ``challenge message'' $\in k$, then it runs $\mathtt{verStat}(add_{\st\mathcal{S}}, m_{\st 1}^{\st(\mathcal{B})}, T, l', \text{aux})\rightarrow d_{\st i}$ to determine whether a warning should have been given (instead of the ``pass'' or no message).  It sends $d_{\st i}$ to $\mathcal{S}$, at time $T_{\st 8}$. %If  $k=\phi$, then it does nothing  in this step.
+%\item[$\bullet$]  if  ``challenge message'' $\in k$, then it runs $\mathtt{verStat}(add_{\st\mathcal{S}}, m_{\st 1}^{\st(\mathcal{B})}, T, l', {aux})\rightarrow d_{\st i}$ to determine whether a warning should have been given (instead of the ``pass'' or no message).  It sends $d_{\st i}$ to $\mathcal{S}$, at time $T_{\st 8}$. %If  $k=\phi$, then it does nothing  in this step.
 %%
-%\item[$\bullet$]  if  ``challenge warning'' $\in x$, then it runs $\mathtt{checkWarEff}(add_{\st\mathcal{S}}, x, m_{\st 1}^{\st(\mathcal{B})},  \text{aux}')\rightarrow (v_{\st i}, \bar v_{\st i})$ to determine the warning's effectiveness.  It sends $(v_{\st i}, \bar v_{\st i})$ to $\mathcal{S}$, at time $T_{\st 9}$.
+%\item[$\bullet$]  if  ``challenge warning'' $\in x$, then it runs $\mathtt{checkWarEff}(add_{\st\mathcal{S}}, x, m_{\st 1}^{\st(\mathcal{B})},  {aux}')\rightarrow (v_{\st i}, \bar v_{\st i})$ to determine the warning's effectiveness.  It sends $(v_{\st i}, \bar v_{\st i})$ to $\mathcal{S}$, at time $T_{\st 9}$.
 %
 %
 %

@@ -1,6 +1,6 @@
 % !TEX root =main.tex
 
-\vspace{-3.1mm}
+\vspace{-3mm}
 \subsection{A Subroutines for Determining Bank's Message Status}
 \vspace{-.5mm}
 In the payment journey, the customer may receive a ``pass'' message or even nothing at all, e.g., due to a system failure. In such cases,  a victim  must be able to complain that if the pass or missing message was   a warning, then it   would have prevented it  from falling victim. To assist the committee members to deal with  such complaints deterministically, we propose    $\mathtt{verStat}(.)$ algorithm, which is run locally by each committee member. This algorithm is presented in Figure \ref{fig:verStat}. 
@@ -10,7 +10,7 @@ In the payment journey, the customer may receive a ``pass'' message or even noth
 %
 %It outputs $0$ if a pass message was given correctly or the missing message could not  prevent the fraud, and outputs $1$ otherwise. 
 %
- \vspace{-2.6mm}
+ \vspace{-2.5mm}
 \begin{figure}[!htbp]
 \setlength{\fboxsep}{1pt}
 \begin{center}
@@ -40,7 +40,7 @@ In the payment journey, the customer may receive a ``pass'' message or even noth
 }}
 \end{tcolorbox}
 \end{center}
-\vspace{-3mm}
+\vspace{-3.2mm}
 \caption{Algorithm to Determine a Bank's Message Status} 
 \label{fig:verStat}
 \end{figure}

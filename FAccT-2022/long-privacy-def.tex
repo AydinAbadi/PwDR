@@ -1,20 +1,22 @@
 % !TEX root =main.tex
 
 
-
+%\vspace{-12mm}
 
 \begin{definition}[Privacy]\label{def::privacy} A $\mathsf{pwdr}$ preserves privacy if  the following two properties are satisfied.
 \begin{enumerate}
 
+%\vspace{-1mm}
 \item For any probabilistic polynomial-time  adversary $\mathcal{A}_{\st 1}$,  security parameter $\lambda$, and  auxiliary information $aux$, there exists a negligible function $\mu(\cdot)$, such that for any  experiment $\mathsf{Exp}_{\st 3}^{\mathcal{A}_{\st 1}}$:
 
 
-
+%\vspace{-2mm}
 \begin{center}
 {\small{
-\begin{mybox}[colback=white,  width=88mm, height=71mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 3}^{\st\mathcal{A}_{\st 1}}(1^{\st\lambda}\text{, }  {aux})$}
+\begin{mybox}[colback=white,  width=80mm, height=71mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 3}^{\st\mathcal{A}_{\st 1}}(1^{\st\lambda}\text{, }  {aux})$}
 %\fbox{\begin{minipage}{3.8 in}
 $$
+\vspace{-1.5mm}
   \begin{array}{l}
 %
  \mathtt{keyGen}(1^{\st\lambda})\rightarrow (sk,pk)\\
@@ -23,7 +25,7 @@ $$
 %
 \mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a\\
 %
-\mathcal{A}_{\st 1}(1^{\st \lambda}, pk, a, pp, g, \bm{l})\rightarrow \Big((f_{\st 0}, f_{\st 1}),(in_{\st f_{\st_{\st 0}}},in_{\st f_{\st _1}}),(\text{aux}_{\st f_{0}},\text{aux}_{\st f_{\st1}})\Big)\\
+\mathcal{A}_{\st 1}(1^{\st \lambda}, pk, a, pp, g, \bm{l})\rightarrow \Big((f_{\st 0}, f_{\st 1}),(in_{\st f_{\st_{\st 0}}},in_{\st f_{\st _1}}),({aux}_{\st f_{0}},{aux}_{\st f_{\st1}})\Big)\\
 %
 \gamma\stackrel{\st \$}\leftarrow\{0,1\}\\
 %
@@ -31,13 +33,13 @@ $$
 %
 \mathtt{insertNewPayee}(\hat{m}^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow  \hat{\bm l}\\
 %
-\mathtt{genWarning}(T, \hat{\bm l}, \text{aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}\\
+\mathtt{genWarning}(T, \hat{\bm l}, {aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}\\
 %
 \mathtt{genPaymentRequest}(T, in_{\st f_{_\gamma}}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}\\
 %
 \mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}\\
 %
-\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, \text{aux}_{\st f_{_\gamma}})\rightarrow (\hat z, \hat{\ddot \pi})\\
+\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, {aux}_{\st f_{_\gamma}})\rightarrow (\hat z, \hat{\ddot \pi})\\
 %
  \forall j, j\in [n]:\\
 \Big(\mathtt{verComplaint}( \hat z, \hat{\ddot{\pi}}, g, \hat{\bm m}, \hat{\bm{l}}, j, sk_{\st\mathcal D}, aux, pp)\rightarrow \hat{\bm{w}}_{\st j}
@@ -54,7 +56,7 @@ $$
 %\end{minipage}}
 }}
 \end{center}
-
+\vspace{-5mm}
 it holds that:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,10 +80,11 @@ $$ \Pr\left[
 %%%%%%%%%%%%%%%--EXp_4%%%%%%%%%%%%%%%
 \begin{center}
 {\small{
-\begin{mybox}[colback=white,  width=88mm, height=76mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 4}^{\st\mathcal{A}_{\st 2}}(1^{\st\lambda}\text{, }  {aux})$}
+\begin{mybox}[colback=white,  width=80mm, height=77.8mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 4}^{\st\mathcal{A}_{\st 2}}(1^{\st\lambda}\text{, }  {aux})$}
 %\fbox{\begin{minipage}{3.8 in}
 $$
   \begin{array}{l}
+  \vspace{-1mm}
 %
  \mathtt{keyGen}(1^{\st\lambda})\rightarrow (sk,pk)\\
 %
@@ -89,20 +92,20 @@ $$
 %
 \mathtt{customerInit} (1^{\st \lambda}, T, pp)\rightarrow a\\
 %
-\mathcal{A}_{\st 2}(1^{\st \lambda}, pk, a, pp, \bm{l})\rightarrow (f, in_{\st f}, \text{aux}_{\st f})\\
+\mathcal{A}_{\st 2}(1^{\st \lambda}, pk, a, pp, \bm{l})\rightarrow (f, in_{\st f}, {aux}_{\st f})\\
 %
 \mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}\\
 %
 \mathtt{insertNewPayee}(\hat{m}^{\st\mathcal{(C)}}_{\st 1}, {\bm l})\rightarrow  \hat{\bm l}\\
 %
-\mathcal{A}_{\st 2}(T, \hat{\bm l}, \text{aux})\rightarrow  m^{\st\mathcal{(B)}}_{\st1}\\
+\mathcal{A}_{\st 2}(T, \hat{\bm l}, {aux})\rightarrow  m^{\st\mathcal{(B)}}_{\st1}\\
 %
 \mathtt{Encode}(T_{\st 1}, m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}\\
 %
 \mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}\\
 %
 
-\mathcal{A}_{\st 2}(T,  pk, \text{aux}_{\st f}, \hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow ( m^{\st\mathcal{(B)}}_{\st2},  z, {\ddot \pi})\\
+\mathcal{A}_{\st 2}(T,  pk, {aux}_{\st f}, \hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow ( m^{\st\mathcal{(B)}}_{\st2},  z, {\ddot \pi})\\
 %
 \mathtt{Encode}(T_{\st 1}, m^{\st\mathcal{(B)}}_{\st 2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}\\
 %
@@ -113,7 +116,7 @@ $$
 %
 %\mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}\\
 %%
-%\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, \text{aux}_{\st f_{_\gamma}})\rightarrow (\hat z, \hat{\ddot \pi})\\
+%\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, {aux}_{\st f_{_\gamma}})\rightarrow (\hat z, \hat{\ddot \pi})\\
 %
  \forall j, j\in [n]:\\
 \Big(\mathtt{verComplaint}( \hat z, \hat{\ddot{\pi}}, g, \hat{\bm m}, \hat{\bm{l}}, j, sk_{\st\mathcal D}, aux, pp)\rightarrow \hat{\bm{w}}_{\st j}
