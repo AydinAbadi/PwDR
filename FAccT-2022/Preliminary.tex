@@ -24,29 +24,29 @@ A payment with dispute resolution scheme involves six types of parties. Below, w
 %
 %Below, we informally explain each type of party's role and the security assumption we make about each of them. 
 %
-We will provide a formal definition of the   scheme in Section \ref{sec::def}. 
+We will provide a formal definition of the scheme in Section \ref{sec::def}. 
 %
 \begin{itemize}
 %
-\vspace{-1.5mm}
-\item[$\bullet$] Customer $\mathcal{C}$: it is a regular customer of a bank. We call a customer  a victim after it falls victim to an APP fraud. We assume a victim is corrupted by a non-colluding active (or malicious) adversary. %; for instance, an unqualified victim  tries to make itself appear qualified for reimbursement. 
+\vspace{-1mm}
+\item[$\bullet$] Customer ($\mathcal{C}$): it is a regular customer of a bank. We call a customer a victim after it falls victim to an APP fraud. We assume a victim is corrupted by a non-colluding active (or malicious) adversary. %; for instance, an unqualified victim  tries to make itself appear qualified for reimbursement. 
 %
-\item[$\bullet$] Bank $\mathcal{B}$: it is a regular bank providing online banking. We assume it is corrupted by a non-colluding active adversary. We assume  any change to the online banking system's source code is transparent and  can be detected. 
+\item[$\bullet$] Bank ($\mathcal{B}$): it is a regular bank providing online banking. We assume it is corrupted by a non-colluding active adversary. We assume any change to the online banking system's source code is transparent and can be detected. 
 
 %Note that in the real-world a bank is  not usually an active adversary and cares about its reputation, such as a ``rational'' or ``covert'' adversary which is weaker than the active one. However, to ensure our solution offers  a strong security guarantee, we assume the adversary is strong too, i.e., active one. 
 
 %, e.g., the bank  uses a cryptographic commitment to commit to the source code. 
 %
-\item[$\bullet$] Smart contract $\mathcal{S}$: it is a standard  smart contract of a public  blockchain (e.g., Ethereum). It mainly acts as a tamper-proof public bulletin board to store different parties' messages.  %We do not assume that a smart contract itself can offer any privacy. 
+\item[$\bullet$] Smart contract ($\mathcal{S}$): it is a standard smart contract of a public blockchain (e.g., Ethereum). It mainly acts as a tamper-proof public bulletin board to store different parties' messages.  %We do not assume that a smart contract itself can offer any privacy. 
 %
-\item[$\bullet$] Certificate generator $\mathcal{G}$: it is a trusted third party (e.g., hospital, registry office) which provides signed digital certificates (e.g., certificate of  disability, divorce) to customers. %Its involvement is more implicit than the other  parties.
+\item[$\bullet$] Certificate generator ($\mathcal{G}$): it is a trusted third party (e.g., hospital, registry office) which provides signed digital certificates (e.g., certificate of disability, divorce) to customers. %Its involvement is more implicit than the other  parties.
 %
-\item[$\bullet$]  A committee of auditors $\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$: it consists of  trusted third-party authorities or regulators (e.g.,  FCA, financial ombudsman service). They compile  complaints    and provide their   verdicts.
+\item[$\bullet$]  A committee of auditors ($\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}$): it consists of trusted third-party authorities or regulators (e.g.,  FCA, financial ombudsman service). They compile complaints and provide their verdicts.
 %
  %If needed, they can access the banking   backend software to conduct  investigations. 
- We assume they   interacted with each  other,  to agree on a secret key, $\bar k_{\st 0}$, and a pair of keys $({pk}_{\st\mathcal {D}}, {sk}_{\st\mathcal {D}})$  of an asymmetric key encryption.
+ We assume they   interacted with each  other once,  to agree on a secret key, $\bar k_{\st 0}$, and a pair of keys $({pk}_{\st\mathcal {D}}, {sk}_{\st\mathcal {D}})$  of an asymmetric key encryption.
 %
-\item[$\bullet$]  Dispute resolver $\mathcal{DR}$: it is an aggregator of auditors' votes (e.g., public court). Given a collection of votes, it extracts and announces the final verdict. We assume it is corrupted by a non-colluding passive adversary. We assume $\mathcal C$ and $\mathcal B$  use a secure channel when they  send a message directly to $\mathcal{DR}$. 
+\item[$\bullet$]  Dispute resolver ($\mathcal{DR}$): it is an aggregator of auditors' votes (e.g., public court). Given a collection of votes, it extracts and announces the final verdict. We assume it is corrupted by a non-colluding passive adversary. We assume $\mathcal C$ and $\mathcal B$  use a secure channel when they send a message directly to $\mathcal{DR}$. 
 %
 \end{itemize}
 
@@ -167,7 +167,7 @@ where $Q$ is the set of queries that $\mathcal{A}$ sent to the certificate gener
 
 \subsection{Smart Contract}\label{subsec:SC}
 \vspace{-1.2mm}
- Cryptocurrencies, such as Bitcoin \cite{bitcoin} and Ethereum \cite{ethereum}, beyond offering a decentralised currency,  support  computations on  transactions. In this setting,  a certain computation logic is encoded in a computer program, called a \emph{``smart contract''}. Although Bitcoin, the first decentralised cryptocurrency, supports smart contracts, the functionality of Bitcoin's smart contracts is  limited. To address this limitation, Ethereum, as a generic smart contract platform, was designed. Thus far, Ethereum has been the most predominant cryptocurrency framework that lets users define arbitrary smart contracts.  To prevent  a denial-of-service attack, Ethereum requires a transaction creator to pay a  fee, called \emph{``gas''}. %, depending on the complexity of the contract running on  it.  
+ Cryptocurrencies, such as Bitcoin \cite{bitcoin} and Ethereum \cite{ethereum}, beyond offering a decentralised currency,  support computations on transactions. In this setting,  a certain computation logic is encoded in a computer program, called a \emph{``smart contract''}. Although Bitcoin, the first decentralised cryptocurrency, supports smart contracts, the functionality of Bitcoin's smart contracts is limited. To address this limitation, Ethereum, as a generic smart contract platform, was designed. Thus far, Ethereum has been the most predominant cryptocurrency framework that lets users define arbitrary smart contracts.  To prevent a denial-of-service attack, Ethereum requires a transaction creator to pay a  fee, called \emph{``gas''}. %, depending on the complexity of the contract running on  it.  
 
 
 \input{commitment}
@@ -185,7 +185,7 @@ Informally, a pseudorandom function (as is defined in \cite{DBLP:books/crc/KatzL
 \vspace{-1mm}
 
 A Bloom filter \cite{DBLP:journals/cacm/Bloom70} is a compact data structure that lets us  
-efficiently check an  element membership. It is an array of $m$ bits (initially all set to zero), that  represents $n$  elements. It is accompanied by $k$ independent hash functions. To insert an element, all the  hash values of the element are computed and their corresponding bits in the filter are set to $1$. To check an element membership, all its hash values are re-computed and checked whether all are set to $1$ in the filter. If all the corresponding bits are $1$, then the element is probably in the filter; otherwise, it is not. In this work,  we require that a Bloom filter uses \emph{cryptographic} hash functions. In Appendix \ref{sec::bloom-filter-}, we explain how the Bloom filter's parameters can be set.
+efficiently check an element membership. It is an array of $m$ bits (initially all set to zero), that represents $n$  elements. It is accompanied by $k$ independent hash functions. To insert an element, all the hash values of the element are computed and their corresponding bits in the filter are set to $1$. To check an element membership, all its hash values are re-computed and checked whether all are set to $1$ in the filter. If all the corresponding bits are $1$, then the element is probably in the filter; otherwise, it is not. In this work,  we require that a Bloom filter uses \emph{cryptographic} hash functions. In Appendix \ref{sec::bloom-filter-}, we explain how the Bloom filter's parameters can be set.
 
 %Informally, a digital certificate's security requires that no one can generate a valid certificate that was not previously produced by the certificate generator. The security of a digital certificate relies on the security of the digital signature scheme used.  Below, we present the formal definition of the digital signature.
 
