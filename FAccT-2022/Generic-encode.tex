@@ -7,7 +7,7 @@
 In this section, we present the  generic verdict encoding-decoding protocols (i.e., GPVE and GFVD) in detail, in Figures \ref{fig:GPVE} and \ref{fig:GFVD}. They  let a semi-honest third party $\mathcal{I}$ find out if at least $e$ auditors voted $1$, where $e$ can be any integer in the range $[1, n]$.  
 
 
-As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::Encoding-Decoding-Verdicts}) after $\mathcal{D}_{\st n}$ generates all combinations of verdict $1$'s  representations, it inserts the combinations into a Bloom filter, to preserve the representations' privacy from $\mathcal{I}$. Nevertheless, instead of inserting the combinations into a Bloom filter, we could  \emph{hash}  the combinations and give the hash values to $\mathcal{I}$. But, using a Bloom filter allows us to save considerable communication costs. Now, we provide a concrete example. Let $n=10$, $e=6$, and the hash function be SHA-256.  If the latter (hash-based) approach is used,  $\mathcal{D}_{\st n}$ needs to send  $|W|\times 256= 386\times 256=98,816$ bits to $\mathcal{I}$, whereas  if the former (Bloom filter-based) approach is used, then it only needs to send $|\mathtt{BF}|=22,276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it  can save  communication costs by at least a factor of  $4$.  
+As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::Encoding-Decoding-Verdicts}) after $\mathcal{D}_{\st n}$ generates all combinations of verdict $1$'s  representations, it inserts the combinations into a Bloom filter, to preserve the representations' privacy from $\mathcal{I}$. Nevertheless, instead of inserting the combinations into a Bloom filter, we could  \emph{hash}  the combinations and give the hash values to $\mathcal{I}$. However, using a Bloom filter lets us save considerable communication costs. Let us see a concrete example. Let $n=10$, $e=6$, and the hash function be SHA-256.  If the latter (hash-based) approach is used,  $\mathcal{D}_{\st n}$ needs to send  $|W|\times 256= 386\times 256=98,816$ bits to $\mathcal{I}$, whereas  if the former (Bloom filter-based) approach is used, then it only needs to send $|\mathtt{BF}|=22,276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it can save communication costs by at least a factor of  $4$.  
 
 
 %
@@ -130,10 +130,10 @@ As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::
 %
 %$\bm r_{\st j}$:  $j$-th row of an $n\times m$ matrix, such that  if $i$-th element of $\bm r_{\st j}$ is added with  the rest of elements in $i$-th column of the same matrix, the result would be  $0$. 
 \end{itemize}
-auditor $\mathcal{D}_{\st j}$ takes the following steps.
+Auditor $\mathcal{D}_{\st j}$ takes the following steps.
 \begin{enumerate}
 %
-\item\label{ZSPA:val-gen} computes a  pseudorandom  value,  as follows. 
+\item\label{ZSPA:val-gen} computes a pseudorandom value, as follows. 
 %
 %$\forall i,1\leq i\leq s:$
 %

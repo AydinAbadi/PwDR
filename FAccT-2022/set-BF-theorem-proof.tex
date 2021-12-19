@@ -3,14 +3,14 @@
 %\vspace{-3mm}
 \section{Variant 2 Encoding-Decoding Protocol's Main Theorem and Proof}\label{sec::Variant-2-Theorem-proof}
 
-In this section, we first formally state our main observation on which Variant 2 encoding-decoding protocol relies. After that, we  prove it.
+In this section, we first formally state our main observation on which Variant 2 encoding-decoding protocol relies. After that, we prove it.
 
 
 \begin{theorem}
-Let  $S=\{s_{\st 1},..., s_{\st m}\}$ be a set of random values picked uniformly from $\mathbb{F}_{\st p}$, where the cardinality of $S$ is  public information. Let $\mathtt{BF}$ be a Bloom filter encoding all elements of   $S$. Then,  $\mathtt{BF}$ reveals nothing about any element of $S$, beyond the public information, except with a negligible probability in the security parameter, i.e., with a probability at most $\frac{|S|}{2^{\st \lambda}}$. 
+Let  $S=\{s_{\st 1},..., s_{\st m}\}$ be a set of random values picked uniformly from finite field $\mathbb{F}_{\st p}$, where the cardinality of $S$ is public information. Let $\mathtt{BF}$ be a Bloom filter encoding all elements of   $S$. Then,  $\mathtt{BF}$ reveals nothing about any element of $S$, beyond the public information, except with a negligible probability in the security parameter $\lambda$, i.e., with a probability at most $\frac{|S|}{2^{\st \lambda}}$. 
 \end{theorem}
 
 \begin{proof}
-First, we consider the simplest case where only a single element  of $S$ is encoded in $\mathtt{BF}$. In this case, due to the pre-image resistance of the Bloom filter's hash functions and the fact that the set's element was picked uniformly at random from $\mathbb{F}_{\st p}$, the probability that $\mathtt{BF}$ reveals anything about the original element is at most $\frac{1}{2^{\st \lambda}}$. Now, we move on to the  case where all elements of $S$ are encoded in $\mathtt{BF}$. In this case, the probability that $\mathtt{BF}$ reveals anything about at least an element of the set is $\frac{|S|}{2^{\st \lambda}}$, due to  the pre-image resistance of the hash functions,  the fact that all elements were selected  uniformly at random from the finite field, and the union bound. Nevertheless, when a $\mathtt{BF}$'s size is set appropriately to avoid false-positive without wasting storage, this reveals the number of elements encoded in it, which is public information.  Thus, the only information $\mathtt{BF}$ reveals is the public one.  
+First, we consider the simplest case where only a single element of $S$ is encoded in $\mathtt{BF}$. In this case, due to the pre-image resistance of the Bloom filter's hash functions and the fact that the set's element was picked uniformly at random from $\mathbb{F}_{\st p}$, the probability that $\mathtt{BF}$ reveals anything about the original element is at most $\frac{1}{2^{\st \lambda}}$. Now, we move on to the case where all elements of $S$ are encoded in $\mathtt{BF}$. In this case, the probability that $\mathtt{BF}$ reveals anything about at least an element of the set is $\frac{|S|}{2^{\st \lambda}}$, due to the pre-image resistance of the hash functions,  the fact that all elements were selected uniformly at random from the finite field, and the union bound. Nevertheless, when a $\mathtt{BF}$'s size is set appropriately to avoid false-positive without wasting storage, this reveals the number of elements encoded in it, which is public information.  Thus, the only information $\mathtt{BF}$ reveals is the public one.  
  %
 \end{proof}
