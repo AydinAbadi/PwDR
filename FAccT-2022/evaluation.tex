@@ -2,14 +2,14 @@
 
 
 \vspace{-2.5mm}
-\section{Evaluation}%\label{sec::eval}
+\section{Evaluation}\label{sec::eval-}
 
 
 
 
 
 
-We analysed the PwDR protocol's asymptotic cost. Table \ref{table::PwDR-Asymptotic-Cost} summarises the analysis result.  As the table indicates, the customer's and bank's complexity is constant,  i.e., independent of $n$. However, one of the auditors, i.e., auditor $\mathcal{D}_{\st n}$, and the dispute resolver have non-constant complexities which are mainly imposed by our verdict inducing-decoding protocols. Thus, to study these parties' runtime in the PwDR, we have implemented both variants of the verdict encoding-decoding protocols. The source code of  variants 1 and 2 is available in \cite{variant-1} and \cite{variant-2} respectively.  Table \ref{table::PwDR-runtime} summarises the study's result. As this table shows,  the overall cost is low. In particular, the highest runtime is only about $10$ milliseconds which belongs to $\mathcal{D}_{\st n}$ when $n=12$ and $e=7$. It is also evident that the parties' runtime in the PVE and FVD protocols is much lower than their runtime in the GPVE and GFVD ones.  Appendix \ref{sec::eval} provides more details about the above    analysis.
+We analysed the PwDR protocol's asymptotic cost. Table \ref{table::PwDR-Asymptotic-Cost} summarises the analysis result.  As the table indicates, the customer's and bank's complexity is constant,  i.e., independent of $n$. However, one of the auditors, i.e., auditor $\mathcal{D}_{\st n}$, and the dispute resolver have non-constant complexities which are mainly imposed by our verdict inducing-decoding protocols. Thus, to study these parties' runtime in the PwDR, we have implemented both variants of the verdict encoding-decoding protocols. The source code of  variants 1 and 2 is available in \cite{variant-1} and \cite{variant-2} respectively.  Table \ref{table::PwDR-runtime} summarises the study's result. As this table shows,  the overall cost is low. Specifically, the highest runtime is only about $10$ milliseconds which belongs to $\mathcal{D}_{\st n}$ when $n=12$ and $e=7$. It is also evident that the parties' runtime in the PVE and FVD protocols is much lower than their runtime in the GPVE and GFVD ones.  Appendix \ref{sec::eval} provides more details about the above    analysis.
 
 
 

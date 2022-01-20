@@ -31,7 +31,7 @@
 
 \vspace{-.5mm}
 
-\subsection{An Overview of  the PwDR Protocol}
+\subsection{An Overview of  the  Protocol}
 \vspace{-.5mm}
 
 In this section, we provide an overview of the   PwDR. Initially,     $\mathcal{C}$ and   $\mathcal{B}$   agree on a smart contract  $\mathcal{S}$. They also use the SAP to agree on two private statements including two secret keys that will be used to encrypt outgoing messages. When $\mathcal{C}$ wants to transfer money to a new payee, it signs into its online banking.  It generates an update request (that specifies the new payee's detail),  encrypts it, and sends the result to  $\mathcal{S}$. Then, $\mathcal{B}$ decrypts and checks the request, e.g.,  whether it meets its internal policy. Depending on the request, $\mathcal{B}$ generates a pass or warning message. It encrypts the message and sends the result to $\mathcal{S}$. Next, $\mathcal{C}$ checks $\mathcal{B}$'s message and decides whether to make payment. If it decides to do so,  it sends an encrypted payment detail to $\mathcal{S}$. After that, $\mathcal{B}$  decrypts the message and locally transfers the amount of money specified in $\mathcal{C}$'s message. Once the money is transferred, $\mathcal{B}$ sends an encrypted  ``paid'' message to $\mathcal{S}$. 
@@ -54,7 +54,7 @@ In this section, we provide an overview of the   PwDR. Initially,     $\mathcal{
 %Once the money is transferred, $\mathcal{B}$ sends the message ``paid" to $\mathcal{S}$. 
 
 
-Once $\mathcal{C}$ realises that it has fallen victim, it raises a dispute. Particularly, it generates an encrypted complaint that can challenge the effectiveness of the warning and/or any payment inconsistency. It can include in the complaint an evidence/certificate, e.g., asserting that it falls into the vulnerable customer category as defined in the CRM code. $\mathcal{C}$ encrypts the complaint and sends to $\mathcal{S}$ the result and a proof asserting the secret key's correctness.  Then, each auditor verifies the proof. If the verification passes, it decrypts and compiles $\mathcal{C}$'s complaint to generate a (set of) verdict. Each auditor encodes its verdict and sends the encoded verdict's encryption to $\mathcal{S}$. To resolve a dispute between $\mathcal{C}$ and $\mathcal{B}$, either of them invokes $\mathcal{DR}$. To do so, it directly sends to $\mathcal{DR}$ one of the above secret keys and a proof asserting that key was generated correctly.   $\mathcal{DR}$ verifies the proof. If approved, it locally decrypts the encrypted encoded verdicts (retrieved from $\mathcal{S}$) and finds out the final verdict.  If the final verdict indicates the legitimacy of  $\mathcal{C}$'s complaint, then $\mathcal{C}$ must be reimbursed.   Note, the verdicts are encoded in a way that even after decrypting them, $\mathcal{DR}$ cannot link a verdict to a committee member or even figure out how many $1$ or $0$ verdicts were provided  (except when all verdicts are $0$). However, it can find out whether at least threshold auditors voted in favour of $\mathcal{C}$. %Shortly, we present  novel verdict encoding-decoding (voting) protocols that offer the above features. 
+Once $\mathcal{C}$ realises that it has fallen victim, it raises a dispute. Specifically, it generates an encrypted complaint that can challenge the effectiveness of the warning and/or any payment inconsistency. It can include in the complaint an evidence/certificate, e.g., asserting that it falls into the vulnerable customer category as defined in the CRM code. $\mathcal{C}$ encrypts the complaint and sends to $\mathcal{S}$ the result and a proof asserting the secret key's correctness.  Then, each auditor verifies the proof. If the verification passes, it decrypts and compiles $\mathcal{C}$'s complaint to generate a (set of) verdict. Each auditor encodes its verdict and sends the encoded verdict's encryption to $\mathcal{S}$. To resolve a dispute between $\mathcal{C}$ and $\mathcal{B}$, either of them invokes $\mathcal{DR}$. To do so, it directly sends to $\mathcal{DR}$ one of the above secret keys and a proof asserting that key was generated correctly.   $\mathcal{DR}$ verifies the proof. If approved, it locally decrypts the encrypted encoded verdicts (retrieved from $\mathcal{S}$) and finds out the final verdict.  If the final verdict indicates the legitimacy of  $\mathcal{C}$'s complaint, then $\mathcal{C}$ must be reimbursed.   Note, the verdicts are encoded in a way that even after decrypting them, $\mathcal{DR}$ cannot link a verdict to a committee member or even figure out how many $1$ or $0$ verdicts were provided  (except when all verdicts are $0$). However, it can find out whether at least threshold auditors voted in favour of $\mathcal{C}$. %Shortly, we present  novel verdict encoding-decoding (voting) protocols that offer the above features. 
 
 
 
@@ -118,7 +118,7 @@ Customer $\mathcal{C}$ takes the following steps.
 \end{enumerate}
 %
 
-\item\label{genUpdateRequest}  {\underline{\textit{Generating  Update Request}}: $\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}$}
+\item\label{genUpdateRequest}  {\underline{\textit{Generating  Update Request}}: $\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}$}.
 %
 Customer $\mathcal{C}$ takes the following steps. 
 
@@ -417,7 +417,7 @@ Customer $\mathcal{C}$ must be reimbursed if the final verdict is that (i)  the 
 %\end{enumerate}
 %\end{enumerate}
 %
-Note, in the above PwDR protocol, even $\mathcal{C}$ and $\mathcal{B}$ that know the decryption secret keys, $(\bar k_{\st 1}, \bar k_{\st 2})$, cannot link a certain verdict to an auditor, for two main reasons; namely,  (a) they do not know the masking random values used by auditors to mask each verdict and (b) the final verdicts $(v_{\st 1},..., v_{\st 4})$ reveal nothing about the number of $1$ or $0$ verdicts, except when all auditors vote $0$.  We used PVE and FVD in the PwDR only because they are highly efficient. However, it is easy to replace them with GPVE and GFVD. We present the PwDR protocol's main theorem and its proof in Appendix \ref{sec::proof}.  
+Note, in the above PwDR protocol, even $\mathcal{C}$ and $\mathcal{B}$ that know the decryption secret keys, $(\bar k_{\st 1}, \bar k_{\st 2})$, cannot link a certain verdict to an auditor, for two main reasons; namely,  (a) they do not know the masking random values used by auditors to mask each verdict and (b) the final verdicts $(v_{\st 1},..., v_{\st 4})$ reveal nothing about the number of $1$ or $0$ verdicts, except when all auditors vote $0$.   In the PwDR, we used PVE and FVD only because they are highly efficient. However, it is easy to replace them with GPVE and GFVD. We present the PwDR protocol's main theorem and its proof in Appendix \ref{sec::proof}.  
 
 
 
