@@ -1,4 +1,4 @@
-
+//Author: Aydin Abadi
 #include "Rand.h"
 
 
