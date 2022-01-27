@@ -16,42 +16,42 @@ Warning--empty journal in Financial-Ombudsman-Service-response
 You've used 45 entries,
             2785 wiz_defined-function locations,
             804 strings with 12594 characters,
-and the built_in function-call counts, 18025 in all, are:
-= -- 1340
+and the built_in function-call counts, 18001 in all, are:
+= -- 1337
 > -- 600
-< -- 4
+< -- 3
 + -- 254
 - -- 204
-* -- 1055
-:= -- 2505
+* -- 1053
+:= -- 2503
 add.period$ -- 31
 call.type$ -- 45
 change.case$ -- 273
 chr.to.int$ -- 0
 cite$ -- 55
-duplicate$ -- 1718
-empty$ -- 1714
+duplicate$ -- 1715
+empty$ -- 1713
 format.name$ -- 225
-if$ -- 3767
+if$ -- 3761
 int.to.chr$ -- 0
 int.to.str$ -- 45
-missing$ -- 378
+missing$ -- 377
 newline$ -- 140
 num.names$ -- 90
-pop$ -- 802
+pop$ -- 803
 preamble$ -- 1
 purify$ -- 190
 quote$ -- 0
 skip$ -- 400
 stack$ -- 0
 substring$ -- 682
-swap$ -- 729
-text.length$ -- 4
+swap$ -- 725
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 176
 warning$ -- 10
 while$ -- 141
 width$ -- 47
-write$ -- 400
+write$ -- 399
 (There were 10 warnings)
