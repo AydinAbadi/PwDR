@@ -24,12 +24,6 @@ Abadi, A., Murdoch, S.J., Zacharias, T.: Recurring contingent payment for
 Abadi, A., Murdoch, S.J., Zacharias, T.: Recurring contingent payment for
   proofs of retrievability. {IACR} Cryptol. ePrint Arch.  (2021)
 
-\bibitem{CBDC}
-Allen, S., {\v{C}}apkun, S., Eyal, I., Fanti, G., Ford, B.A., Grimmelmann, J.,
-  Juels, A., Kostiainen, K., Meiklejohn, S., Miller, A., Wust, K., Zhang, F.:
-  Design choices for central bank digital currency: Policy and technical
-  considerations. Tech. rep., National Bureau of Economic Research (2020)
-
 \bibitem{anderson2019measuring}
 Anderson, R., Barton, C., B{\"o}lme, R., Clayton, R., Gan{\'a}n, C., Grasso,
   T., Levi, M., Moore, T., Vasek, M.: Measuring the changing cost of cybercrime
@@ -43,13 +37,6 @@ Anderson, R., et~al.: Closing the phishing hole--fraud, risk and nonbanks. In:
 \bibitem{FCA-Glossary}
 Authority, F.C.: {FCA} glossary (2021),
   \url{https://www.handbook.fca.org.uk/handbook/glossary/G3566a.html}
-
-\bibitem{CBDC-core-features}
-{Bank of Canada, European Central Bank, Bank of Japan, Sveriges Riksbank, Swiss
-  National Bank, Bank of England, Board of Governors Federal Reserve System,
-  Bank for International Settlements}: Central bank digital currencies:
-  foundational principles and core features. Tech. rep. (2020),
-  \url{https://www.bis.org/publ/othp33.pdf}
 
 \bibitem{BeckerHAABMSS17}
 Becker, I., Hutchings, A., Abu{-}Salma, R., Anderson, R.J., Bohm, N., Murdoch,
@@ -79,15 +66,6 @@ Brinton~Anderson, B., Vance, A., Kirwan, C.B., Eargle, D., Jenkins, J.L.: How
 \bibitem{buchwald2019smart}
 Buchwald, M.: Smart contract dispute resolution: the inescapable flaws of
   blockchain-based arbitration. U. Pa. L. Rev.  (2019)
-
-\bibitem{abs-2103-00254}
-Chaum, D., Grothoff, C., Moser, T.: How to issue a central bank digital
-  currency. CoRR  abs/2103.00254 (2021), \url{https://arxiv.org/abs/2103.00254}
-
-\bibitem{CoP}
-{Confirmation of Payee Team}: Confirmation of payee- response to consultation
-  cp20/1 and decision on varying specific direction 10  (2020),
-  \url{https://www.psr.org.uk/media/qrbc03jm/psr-ps20-1-variation-of-specific-direction-10-february-2020.pdf}
 
 \bibitem{DongWAMM17}
 Dong, C., Wang, Y., Aldweesh, A., McCorry, P., van Moorsel, A.: Betrayal,
@@ -216,10 +194,6 @@ Taylor, J.L., Galica, T.: A new code to protect victims in the uk from
 \bibitem{ethereum}
 Wood, G., et~al.: Ethereum: A secure decentralised generalised transaction
   ledger. Ethereum project yellow paper  (2014)
-
-\bibitem{WustKCC19}
-W{\"{u}}st, K., Kostiainen, K., Capkun, V., Capkun, S.: Prcash: Fast, private
-  and regulated transactions for digital currencies. In: {FC} (2019)
 
 \bibitem{zee2021shifting}
 Zee, S.V.D.: Shifting the blame? investigation of user compliance with digital

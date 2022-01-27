@@ -19,6 +19,7 @@
 \citation{FCA-Glossary}
 \citation{overview-of-payment-fraud}
 \citation{2021-Half-Year-Fraud-Update}
+\citation{2021-Half-Year-Fraud-Update}
 \citation{internet-crime-report}
 \citation{interpol-notce}
 \citation{pig-butchering}
@@ -32,26 +33,29 @@
 \newlabel{sec::intro}{{1}{1}{Introduction}{section.1.1}{}}
 \citation{Which?-super-complaint}
 \citation{CRM-code}
-\citation{CoP}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Background}{2}{section.1.2}\protected@file@percent }
 \newlabel{sec::background}{{2}{2}{Background}{section.1.2}{}}
 \citation{Financial-Ombudsman-Service-response}
 \citation{Regulations}
 \citation{P20-report}
-\citation{internet-crime-report}
 \citation{Fraud-Classifier}
 \citation{kjorven2020pays,McIlroy2021}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Preliminaries}{3}{section.1.3}\protected@file@percent }
 \newlabel{preliminaries}{{3}{3}{Preliminaries}{section.1.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Informal Thread Model and Assumptions}{3}{subsection.1.3.1}\protected@file@percent }
-\newlabel{Notations-and-Assumptions}{{3.1}{3}{Informal Thread Model and Assumptions}{subsection.1.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Notations}{3}{subsection.1.3.1}\protected@file@percent }
+\newlabel{sec:notation-table}{{3.1}{3}{Notations}{subsection.1.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Informal Threat Model and Assumptions}{3}{subsection.1.3.2}\protected@file@percent }
+\newlabel{Notations-and-Assumptions}{{3.2}{3}{Informal Threat Model and Assumptions}{subsection.1.3.2}{}}
 \citation{DBLP:books/crc/KatzLindell2014}
-\citation{bitcoin}
-\citation{ethereum}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Notations}{4}{subsection.1.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces  \relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip {Notation Table}.\relax }}{4}{table.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{commu-breakdown-party}{{1}{4}{\small {Notation Table}.\relax }{table.caption.2}{}}
+\newlabel{table:notation-table}{{1}{4}{\small {Notation Table}.\relax }{table.caption.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Digital Signature}{4}{subsection.1.3.3}\protected@file@percent }
 \newlabel{subsec:DS}{{3.3}{4}{Digital Signature}{subsection.1.3.3}{}}
 \newlabel{sec::def}{{1}{4}{Digital Signature}{definition.1.1}{}}
+\citation{bitcoin}
+\citation{ethereum}
 \citation{Pedersen91}
 \citation{cryptoeprint:2021:1145}
 \citation{cryptoeprint:2021:1145}
@@ -59,106 +63,116 @@
 \newlabel{subsec:SC}{{3.4}{5}{Smart Contract}{subsection.1.3.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Commitment Scheme}{5}{subsection.1.3.5}\protected@file@percent }
 \newlabel{subsec:commit}{{3.5}{5}{Commitment Scheme}{subsection.1.3.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Statement Agreement Protocol}{5}{subsection.1.3.6}\protected@file@percent }
-\newlabel{SAP}{{3.6}{5}{Statement Agreement Protocol}{subsection.1.3.6}{}}
-\newlabel{SAP::deploy-contract}{{1a}{5}{Statement Agreement Protocol}{Item.5}{}}
 \citation{DBLP:books/crc/KatzLindell2014}
 \citation{DBLP:journals/cacm/Bloom70}
-\newlabel{SAP::check-adr}{{4a}{6}{Statement Agreement Protocol}{Item.13}{}}
-\newlabel{SAP::check-commit}{{4b}{6}{Statement Agreement Protocol}{Item.14}{}}
+\citation{BoseGKMMMST08}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Statement Agreement Protocol}{6}{subsection.1.3.6}\protected@file@percent }
+\newlabel{SAP}{{3.6}{6}{Statement Agreement Protocol}{subsection.1.3.6}{}}
+\newlabel{SAP::deploy-contract}{{1a}{6}{Statement Agreement Protocol}{Item.2}{}}
+\newlabel{SAP::check-adr}{{4a}{6}{Statement Agreement Protocol}{Item.10}{}}
+\newlabel{SAP::check-commit}{{4b}{6}{Statement Agreement Protocol}{Item.11}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Pseudorandom Function}{6}{subsection.1.3.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Bloom Filter}{6}{subsection.1.3.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Challenges to Overcome}{6}{section.1.4}\protected@file@percent }
-\newlabel{sec:: challenges}{{4}{6}{Challenges to Overcome}{section.1.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Challenge 1: Lack of Transparent Logs}{6}{subsection.1.4.1}\protected@file@percent }
+\newlabel{sec::bloom-filter-}{{3.8}{6}{Bloom Filter}{subsection.1.3.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Challenges to Overcome}{7}{section.1.4}\protected@file@percent }
+\newlabel{sec:: challenges}{{4}{7}{Challenges to Overcome}{section.1.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Challenge 1: Lack of Transparent Logs}{7}{subsection.1.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Challenge 2: Lack of Effective Warning's Accurate Definition in Banking}{7}{subsection.1.4.2}\protected@file@percent }
 \newlabel{sec::Lack-of-Effective-Warning-Definition}{{4.2}{7}{Challenge 2: Lack of Effective Warning's Accurate Definition in Banking}{subsection.1.4.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Challenge 3: Linking Off-chain Payments with a Smart Contract}{7}{subsection.1.4.3}\protected@file@percent }
 \newlabel{sec::Linking Off-chain-Payments-with-contract}{{4.3}{7}{Challenge 3: Linking Off-chain Payments with a Smart Contract}{subsection.1.4.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Challenge 4: Preserving Privacy}{7}{subsection.1.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5} Definition of Payment with Dispute Resolution Scheme}{7}{section.1.5}\protected@file@percent }
-\newlabel{sec::def}{{5}{7}{Definition of Payment with Dispute Resolution Scheme}{section.1.5}{}}
-\newlabel{def::Security-against-malicious-victim}{{4}{9}{Definition of Payment with Dispute Resolution Scheme}{definition.1.4}{}}
-\newlabel{def::Security-against-malicious-bank}{{5}{10}{Definition of Payment with Dispute Resolution Scheme}{definition.1.5}{}}
-\newlabel{def::privacy}{{6}{11}{Definition of Payment with Dispute Resolution Scheme}{definition.1.6}{}}
-\newlabel{def::PwDR-security}{{7}{13}{Definition of Payment with Dispute Resolution Scheme}{definition.1.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Payment with Dispute Resolution Definition}{8}{section.1.5}\protected@file@percent }
+\newlabel{sec::long-def}{{5}{8}{Payment with Dispute Resolution Definition}{section.1.5}{}}
+\newlabel{def::Security-against-malicious-victim}{{4}{10}{Payment with Dispute Resolution Definition}{definition.1.4}{}}
+\newlabel{def::Security-against-malicious-bank}{{5}{11}{Payment with Dispute Resolution Definition}{definition.1.5}{}}
+\newlabel{def::privacy}{{6}{11}{Payment with Dispute Resolution Definition}{definition.1.6}{}}
+\newlabel{def::PwDR-security}{{7}{13}{Payment with Dispute Resolution Definition}{definition.1.7}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Payment with Dispute Resolution Protocol}{13}{section.1.6}\protected@file@percent }
 \newlabel{sec::PwDR-Protocol}{{6}{13}{Payment with Dispute Resolution Protocol}{section.1.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}An Overview of the PwDR Protocol}{13}{subsection.1.6.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}A Subroutine for Determining Bank's Message Status}{13}{subsection.1.6.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Algorithm to Determine a Bank's Message Status\relax }}{14}{figure.caption.2}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:verStat}{{1}{14}{Algorithm to Determine a Bank's Message Status\relax }{figure.caption.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}A Subroutine for Checking Warning's Effectiveness}{14}{subsection.1.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Subroutines for Encoding-Decoding Verdicts}{14}{subsection.1.6.4}\protected@file@percent }
-\newlabel{sec::Encoding-Decoding-Verdicts}{{6.4}{14}{Subroutines for Encoding-Decoding Verdicts}{subsection.1.6.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}A Subroutine for Checking a Warning's Effectiveness}{13}{subsection.1.6.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Algorithm to Determine a Bank's Message Status\relax }}{14}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:verStat}{{1}{14}{Algorithm to Determine a Bank's Message Status\relax }{figure.caption.3}{}}
+\newlabel{check-m}{{2}{14}{A Subroutine for Checking a Warning's Effectiveness}{Item.22}{}}
+\newlabel{return}{{4}{14}{A Subroutine for Checking a Warning's Effectiveness}{Item.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Algorithm to Check Warning's Effectiveness\relax }}{14}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:checkWarning}{{2}{14}{Algorithm to Check Warning's Effectiveness\relax }{figure.caption.4}{}}
 \citation{Schneier0078909}
-\newlabel{check-m}{{2}{15}{A Subroutine for Checking Warning's Effectiveness}{Item.25}{}}
-\newlabel{return}{{4}{15}{A Subroutine for Checking Warning's Effectiveness}{Item.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Algorithm to Check Warning's Effectiveness\relax }}{15}{figure.caption.3}\protected@file@percent }
-\newlabel{fig:checkWarning}{{2}{15}{Algorithm to Check Warning's Effectiveness\relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Variant 1: Efficient Verdict Encoding-Decoding Protocol.}{15}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Subroutines for Encoding-Decoding Verdicts}{15}{subsection.1.6.4}\protected@file@percent }
+\newlabel{sec::Encoding-Decoding-Verdicts}{{6.4}{15}{Subroutines for Encoding-Decoding Verdicts}{subsection.1.6.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Variant 1: Efficient Verdict Encoding-Decoding Protocol.}{15}{section*.5}\protected@file@percent }
 \newlabel{set-xor}{{1}{15}{Variant 1: Efficient Verdict Encoding-Decoding Protocol}{theorem.1.6.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Variant 2: Generic Verdict Encoding-Decoding Protocol.}{16}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Variant 2: Generic Verdict Encoding-Decoding Protocol.}{15}{section*.8}\protected@file@percent }
+\newlabel{ZSPA:val-gen}{{1}{16}{Variant 1: Efficient Verdict Encoding-Decoding Protocol}{Item.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Private Verdict Encoding (PVE) Protocol\relax }}{16}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:PVE}{{3}{16}{Private Verdict Encoding (PVE) Protocol\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Final Verdict Decoding (FVD) Protocol\relax }}{16}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:FVD}{{4}{16}{Final Verdict Decoding (FVD) Protocol\relax }{figure.caption.7}{}}
 \newlabel{set-bf}{{2}{16}{Variant 2: Generic Verdict Encoding-Decoding Protocol}{theorem.1.6.2}{}}
-\newlabel{ZSPA:val-gen}{{1}{17}{Variant 2: Generic Verdict Encoding-Decoding Protocol}{Item.28}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Private Verdict Encoding (PVE) Protocol\relax }}{17}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:PVE}{{3}{17}{Private Verdict Encoding (PVE) Protocol\relax }{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Final Verdict Decoding (FVD) Protocol\relax }}{17}{figure.caption.7}\protected@file@percent }
-\newlabel{fig:FVD}{{4}{17}{Final Verdict Decoding (FVD) Protocol\relax }{figure.caption.7}{}}
+\newlabel{ZSPA:val-gen}{{1}{17}{Variant 2: Generic Verdict Encoding-Decoding Protocol}{Item.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Generic Private Verdict Encoding (GPVE) Protocol\relax }}{17}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:GPVE}{{5}{17}{Generic Private Verdict Encoding (GPVE) Protocol\relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Generic Final Verdict Decoding (GFVD) Protocol\relax }}{18}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:GFVD}{{6}{18}{Generic Final Verdict Decoding (GFVD) Protocol\relax }{figure.caption.10}{}}
+\newlabel{w-cardinality}{{1}{18}{Variant 2: Generic Verdict Encoding-Decoding Protocol}{equation.1.6.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.5}The PwDR Protocol}{18}{subsection.1.6.5}\protected@file@percent }
-\newlabel{signature-keygen}{{1a}{18}{The PwDR Protocol}{Item.36}{}}
-\newlabel{encryption-keygen}{{1b}{18}{The PwDR Protocol}{Item.37}{}}
-\newlabel{RCPoRP::Bank-side-Initiation}{{2}{18}{The PwDR Protocol}{Item.38}{}}
-\newlabel{RCPoRP::setup}{{2a}{18}{The PwDR Protocol}{Item.39}{}}
-\newlabel{RCPoRP::set-qp}{{2b}{18}{The PwDR Protocol}{Item.40}{}}
-\newlabel{customer-side-Initiation}{{3}{18}{The PwDR Protocol}{Item.42}{}}
-\newlabel{customer-side-Initiation-SAP-agree}{{3a}{18}{The PwDR Protocol}{Item.43}{}}
-\newlabel{genUpdateRequest}{{4}{18}{The PwDR Protocol}{Item.45}{}}
-\newlabel{send-update-req}{{4b}{18}{The PwDR Protocol}{Item.47}{}}
-\newlabel{Generating-Warning}{{6}{18}{The PwDR Protocol}{Item.49}{}}
-\newlabel{clinet-at-T2}{{7}{18}{The PwDR Protocol}{Item.53}{}}
-\newlabel{decrypt-warning}{{7a}{19}{The PwDR Protocol}{Item.54}{}}
-\newlabel{send-payment-req}{{7b}{19}{The PwDR Protocol}{Item.55}{}}
-\newlabel{Making-Payment}{{8}{19}{The PwDR Protocol}{Item.56}{}}
-\newlabel{Generating-Complaint}{{9}{19}{The PwDR Protocol}{Item.59}{}}
-\newlabel{DR::C-sends-complaint}{{9a}{19}{The PwDR Protocol}{Item.60}{}}
-\newlabel{VerifyingComplaint}{{10}{19}{The PwDR Protocol}{Item.64}{}}
-\newlabel{arbiters-verdict}{{10f}{19}{The PwDR Protocol}{Item.70}{}}
-\newlabel{DR::DisputeResolution}{{11}{20}{The PwDR Protocol}{Item.76}{}}
-\newlabel{theorem::PwDR-security}{{3}{20}{The PwDR Protocol}{theorem.1.6.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Security Analysis of the PwDR Protocol}{20}{section.1.7}\protected@file@percent }
-\newlabel{sec::proof}{{7}{20}{Security Analysis of the PwDR Protocol}{section.1.7}{}}
-\newlabel{lemma::secure-against-a-malicious-victim}{{1}{20}{Security Analysis of the PwDR Protocol}{lemma.1.1}{}}
+\newlabel{sec::PwDR-auditorprotocol}{{6.5}{18}{The PwDR Protocol}{subsection.1.6.5}{}}
+\newlabel{signature-keygen}{{1a}{18}{The PwDR Protocol}{Item.42}{}}
+\newlabel{encryption-keygen}{{1b}{18}{The PwDR Protocol}{Item.43}{}}
+\newlabel{RCPoRP::Bank-side-Initiation}{{2}{18}{The PwDR Protocol}{Item.44}{}}
+\newlabel{RCPoRP::setup}{{2a}{18}{The PwDR Protocol}{Item.45}{}}
+\newlabel{RCPoRP::set-qp}{{2b}{18}{The PwDR Protocol}{Item.46}{}}
+\newlabel{customer-side-Initiation}{{3}{19}{The PwDR Protocol}{Item.48}{}}
+\newlabel{customer-side-Initiation-SAP-agree}{{3a}{19}{The PwDR Protocol}{Item.49}{}}
+\newlabel{genUpdateRequest}{{4}{19}{The PwDR Protocol}{Item.51}{}}
+\newlabel{send-update-req}{{4b}{19}{The PwDR Protocol}{Item.53}{}}
+\newlabel{Generating-Warning}{{6}{19}{The PwDR Protocol}{Item.55}{}}
+\newlabel{clinet-at-T2}{{7}{19}{The PwDR Protocol}{Item.59}{}}
+\newlabel{decrypt-warning}{{7a}{19}{The PwDR Protocol}{Item.60}{}}
+\newlabel{send-payment-req}{{7b}{19}{The PwDR Protocol}{Item.61}{}}
+\newlabel{Making-Payment}{{8}{19}{The PwDR Protocol}{Item.62}{}}
+\newlabel{Generating-Complaint}{{9}{19}{The PwDR Protocol}{Item.65}{}}
+\newlabel{DR::C-sends-complaint}{{9a}{19}{The PwDR Protocol}{Item.66}{}}
+\newlabel{VerifyingComplaint}{{10}{20}{The PwDR Protocol}{Item.70}{}}
+\newlabel{auditors-verdict}{{10f}{20}{The PwDR Protocol}{Item.76}{}}
+\newlabel{DR::DisputeResolution}{{11}{20}{The PwDR Protocol}{Item.82}{}}
+\newlabel{theorem::PwDR-security}{{3}{21}{The PwDR Protocol}{theorem.1.6.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Security Analysis of the PwDR Protocol}{21}{section.1.7}\protected@file@percent }
+\newlabel{sec::proof}{{7}{21}{Security Analysis of the PwDR Protocol}{section.1.7}{}}
+\newlabel{lemma::secure-against-a-malicious-victim}{{1}{21}{Security Analysis of the PwDR Protocol}{lemma.1.1}{}}
 \citation{GarayKL15}
 \newlabel{lemma::secure-against-a-malicious-bank}{{2}{22}{Security Analysis of the PwDR Protocol}{lemma.1.2}{}}
-\newlabel{lemma::privacy}{{3}{22}{Security Analysis of the PwDR Protocol}{lemma.1.3}{}}
+\newlabel{lemma::privacy}{{3}{23}{Security Analysis of the PwDR Protocol}{lemma.1.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {8}Evaluation}{23}{section.1.8}\protected@file@percent }
 \newlabel{sec::eval}{{8}{23}{Evaluation}{section.1.8}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Asymptotic Cost Analysis}{23}{subsection.1.8.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces  \relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip The PwDR protocol's asymptotic cost. In the table, $n$ is the number of arbiters and $e$ is the threshold.\relax }}{23}{table.caption.8}\protected@file@percent }
-\newlabel{table::PwDR-Asymptotic-Cost}{{1}{23}{\small The PwDR protocol's asymptotic cost. In the table, $n$ is the number of arbiters and $e$ is the threshold.\relax }{table.caption.8}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Computation Cost.}{23}{section*.9}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces  {\relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip { The PwDR's asymptotic cost. In the table, $n$ is the number of auditors and $e$ is the threshold.}}\relax }}{23}{table.caption.11}\protected@file@percent }
+\newlabel{table::PwDR-Asymptotic-Cost}{{2}{23}{{\small { The PwDR's asymptotic cost. In the table, $n$ is the number of auditors and $e$ is the threshold.}}\relax }{table.caption.11}{}}
 \citation{variant-1}
 \citation{variant-2}
-\@writefile{toc}{\contentsline {subsubsection}{Communication Cost.}{24}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Computation Cost.}{24}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Communication Cost.}{24}{section*.13}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Concrete Performance Analysis}{24}{subsection.1.8.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces  \relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip The PwDR's runtime (in ms). Broken-down by parties. In the table, $n$ is the number of arbiters and $e$ is the threshold.\relax }}{24}{table.caption.11}\protected@file@percent }
-\newlabel{table::PwDR-runtime}{{2}{24}{\small The PwDR's runtime (in ms). Broken-down by parties. In the table, $n$ is the number of arbiters and $e$ is the threshold.\relax }{table.caption.11}{}}
 \citation{brinton2016users,felt2014experimenting,laughery2006designing}
-\citation{zee2021shifting}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip Parties' runtime in the PwDR.\relax }}{25}{figure.caption.12}\protected@file@percent }
-\newlabel{plot::runtime}{{5}{25}{\small Parties' runtime in the PwDR.\relax }{figure.caption.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces  \relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip The PwDR's runtime (in ms). Broken-down by parties. In the table, $n$ is the number of arbiters and $e$ is the threshold.\relax }}{25}{table.caption.14}\protected@file@percent }
+\newlabel{table::PwDR-runtime}{{3}{25}{\small The PwDR's runtime (in ms). Broken-down by parties. In the table, $n$ is the number of arbiters and $e$ is the threshold.\relax }{table.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip Parties' runtime in the PwDR.\relax }}{25}{figure.caption.15}\protected@file@percent }
+\newlabel{plot::runtime}{{7}{25}{\small Parties' runtime in the PwDR.\relax }{figure.caption.15}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {9}Future Research}{25}{section.1.9}\protected@file@percent }
 \newlabel{sec::Future-Research}{{9}{25}{Future Research}{section.1.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Improving Warnings' Effectiveness}{25}{subsection.1.9.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Protecting APP Fraud Victims of Alternative Payment Platforms}{25}{subsection.1.9.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Studying Users' Compliance with the CRM Code's Guidelines}{25}{subsection.1.9.3}\protected@file@percent }
-\citation{2021-Half-Year-Fraud-Update}
-\citation{CRM-code}
+\citation{zee2021shifting}
 \citation{anderson2019measuring}
 \citation{taylor2020new}
 \citation{kjorven2020pays}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Improving Warnings' Effectiveness}{26}{subsection.1.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Protecting APP Fraud Victims of Alternative Payment Platforms}{26}{subsection.1.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Studying Users' Compliance with the CRM Code's Guidelines}{26}{subsection.1.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Ensuring Security Against Exploitative Victims}{26}{subsection.1.9.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Related Work}{26}{section.1.10}\protected@file@percent }
+\newlabel{sec::related-work}{{10}{26}{Related Work}{section.1.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Authorised Push Payment Fraud}{26}{subsection.1.10.1}\protected@file@percent }
 \citation{BohmBG00}
 \citation{anderson2007closing}
 \citation{BeckerHAABMSS17}
@@ -169,17 +183,7 @@
 \citation{DongWAMM17}
 \citation{Bolt}
 \citation{Lightning-Network}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Ensuring Security Against Exploitative Victims}{26}{subsection.1.9.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}Related Work}{26}{section.1.10}\protected@file@percent }
-\newlabel{sec::related-work}{{10}{26}{Related Work}{section.1.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Authorised Push Payment Fraud}{26}{subsection.1.10.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Dispute Resolution}{26}{subsection.1.10.2}\protected@file@percent }
-\citation{CBDC}
-\citation{CBDC,CBDC-core-features}
-\citation{abs-2103-00254,WustKCC19}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Central Bank Digital Currency}{27}{subsection.1.10.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {11}Conclusion and Future Work}{27}{section.1.11}\protected@file@percent }
-\newlabel{sec::conclusion}{{11}{27}{Conclusion and Future Work}{section.1.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Dispute Resolution}{27}{subsection.1.10.2}\protected@file@percent }
 \bibstyle{splncs03}
 \bibdata{ref}
 \bibcite{P20-report}{1}
@@ -187,71 +191,52 @@
 \bibcite{variant-2}{3}
 \bibcite{cryptoeprint:2021:1145}{4}
 \bibcite{AbadiMZ21a}{5}
-\bibcite{CBDC}{6}
-\bibcite{anderson2019measuring}{7}
-\bibcite{anderson2007closing}{8}
-\bibcite{FCA-Glossary}{9}
-\bibcite{CBDC-core-features}{10}
-\bibcite{BeckerHAABMSS17}{11}
-\bibcite{DBLP:journals/cacm/Bloom70}{12}
-\bibcite{BohmBG00}{13}
-\bibcite{BoseGKMMMST08}{14}
-\bibcite{brinton2016users}{15}
-\bibcite{buchwald2019smart}{16}
-\bibcite{abs-2103-00254}{17}
-\bibcite{CoP}{18}
-\bibcite{DongWAMM17}{19}
-\bibcite{DziembowskiEF18}{20}
-\bibcite{EckeyFS20}{21}
-\bibcite{internet-crime-report}{22}
-\bibcite{felt2014experimenting}{23}
-\bibcite{Which?-super-complaint}{24}
-\bibcite{GarayKL15}{25}
-\bibcite{Bolt}{26}
-\bibcite{DBLP:books/crc/KatzLindell2014}{27}
-\bibcite{kjorven2020pays}{28}
-\bibcite{KustersL00020}{29}
-\bibcite{laughery2006designing}{30}
-\bibcite{CRM-code}{31}
-\bibcite{McIlroy2021}{32}
-\bibcite{bitcoin}{33}
-\bibcite{ortolani2016self}{34}
-\bibcite{ortolani2019impact}{35}
-\bibcite{Pedersen91}{36}
-\bibcite{Lightning-Network}{37}
-\bibcite{Schneier0078909}{38}
-\bibcite{taylor2020new}{39}
-\bibcite{europol-notice}{40}
-\bibcite{Fraud-Classifier}{41}
-\bibcite{Regulations}{42}
-\bibcite{Financial-Ombudsman-Service-response}{43}
-\bibcite{interpol-notce}{44}
-\bibcite{2021-Half-Year-Fraud-Update}{45}
-\bibcite{overview-of-payment-fraud}{46}
-\bibcite{ethereum}{47}
-\bibcite{WustKCC19}{48}
-\bibcite{zee2021shifting}{49}
-\bibcite{pig-butchering}{50}
-\citation{DBLP:journals/cacm/Bloom70}
-\citation{BoseGKMMMST08}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Notations}{31}{section.A.1}\protected@file@percent }
-\newlabel{sec:notation-table}{{A}{31}{Notations}{section.A.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces  \relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip {Notation Table}.\relax }}{31}{table.caption.14}\protected@file@percent }
-\newlabel{commu-breakdown-party}{{3}{31}{\small {Notation Table}.\relax }{table.caption.14}{}}
-\newlabel{table:notation-table}{{3}{31}{\small {Notation Table}.\relax }{table.caption.14}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Bloom Filter}{31}{section.A.2}\protected@file@percent }
-\newlabel{sec::bloom-filter-}{{B}{31}{Bloom Filter}{section.A.2}{}}
+\bibcite{anderson2019measuring}{6}
+\bibcite{anderson2007closing}{7}
+\bibcite{FCA-Glossary}{8}
+\bibcite{BeckerHAABMSS17}{9}
+\bibcite{DBLP:journals/cacm/Bloom70}{10}
+\bibcite{BohmBG00}{11}
+\bibcite{BoseGKMMMST08}{12}
+\bibcite{brinton2016users}{13}
+\bibcite{buchwald2019smart}{14}
+\bibcite{DongWAMM17}{15}
+\bibcite{DziembowskiEF18}{16}
+\bibcite{EckeyFS20}{17}
+\bibcite{internet-crime-report}{18}
+\bibcite{felt2014experimenting}{19}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Conclusion}{28}{section.1.11}\protected@file@percent }
+\newlabel{sec::conclusion}{{11}{28}{Conclusion}{section.1.11}{}}
+\bibcite{Which?-super-complaint}{20}
+\bibcite{GarayKL15}{21}
+\bibcite{Bolt}{22}
+\bibcite{DBLP:books/crc/KatzLindell2014}{23}
+\bibcite{kjorven2020pays}{24}
+\bibcite{KustersL00020}{25}
+\bibcite{laughery2006designing}{26}
+\bibcite{CRM-code}{27}
+\bibcite{McIlroy2021}{28}
+\bibcite{bitcoin}{29}
+\bibcite{ortolani2016self}{30}
+\bibcite{ortolani2019impact}{31}
+\bibcite{Pedersen91}{32}
+\bibcite{Lightning-Network}{33}
+\bibcite{Schneier0078909}{34}
+\bibcite{taylor2020new}{35}
+\bibcite{europol-notice}{36}
+\bibcite{Fraud-Classifier}{37}
+\bibcite{Regulations}{38}
+\bibcite{Financial-Ombudsman-Service-response}{39}
+\bibcite{interpol-notce}{40}
+\bibcite{2021-Half-Year-Fraud-Update}{41}
+\bibcite{overview-of-payment-fraud}{42}
+\bibcite{ethereum}{43}
+\bibcite{zee2021shifting}{44}
+\bibcite{pig-butchering}{45}
 \citation{KustersL00020}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Variant 1 Encoding-Decoding Protocol's Main Theorem and Proof}{32}{section.A.3}\protected@file@percent }
-\newlabel{sec::Variant-1-Theorem-proof}{{C}{32}{Variant 1 Encoding-Decoding Protocol's Main Theorem and Proof}{section.A.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {D}Generic Verdict Encoding-Decoding Protocol}{32}{section.A.4}\protected@file@percent }
-\newlabel{sec::Generic-Verdict-Encoding-Decoding-Protocols}{{D}{32}{Generic Verdict Encoding-Decoding Protocol}{section.A.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {E}Variant 2 Encoding-Decoding Protocol's Main Theorem and Proof}{32}{section.A.5}\protected@file@percent }
-\newlabel{sec::Variant-2-Theorem-proof}{{E}{32}{Variant 2 Encoding-Decoding Protocol's Main Theorem and Proof}{section.A.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {F}Further Discussion on the Verdict Encoding-decoding Protocol}{32}{section.A.6}\protected@file@percent }
-\newlabel{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol}{{F}{32}{Further Discussion on the Verdict Encoding-decoding Protocol}{section.A.6}{}}
-\newlabel{ZSPA:val-gen}{{1}{33}{Generic Verdict Encoding-Decoding Protocol}{Item.83}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Generic Private Verdict Encoding (GPVE) Protocol\relax }}{33}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:GPVE}{{6}{33}{Generic Private Verdict Encoding (GPVE) Protocol\relax }{figure.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Generic Final Verdict Decoding (GFVD) Protocol\relax }}{34}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:GFVD}{{7}{34}{Generic Final Verdict Decoding (GFVD) Protocol\relax }{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Variant 1 Encoding-Decoding Protocol's Main Theorem and Proof}{30}{section.A.1}\protected@file@percent }
+\newlabel{sec::Variant-1-Theorem-proof}{{A}{30}{Variant 1 Encoding-Decoding Protocol's Main Theorem and Proof}{section.A.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Variant 2 Encoding-Decoding Protocol's Main Theorem and Proof}{30}{section.A.2}\protected@file@percent }
+\newlabel{sec::Variant-2-Theorem-proof}{{B}{30}{Variant 2 Encoding-Decoding Protocol's Main Theorem and Proof}{section.A.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Further Discussion on the Verdict Encoding-decoding Protocol}{30}{section.A.3}\protected@file@percent }
+\newlabel{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol}{{C}{30}{Further Discussion on the Verdict Encoding-decoding Protocol}{section.A.3}{}}

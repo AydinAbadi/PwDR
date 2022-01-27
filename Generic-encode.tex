@@ -1,37 +1,35 @@
 % !TEX root =main.tex
-
-\section{Generic Verdict Encoding-Decoding Protocol}\label{sec::Generic-Verdict-Encoding-Decoding-Protocols}
-
-Figures \ref{fig:GPVE} and \ref{fig:GFVD} present the generic verdict encoding-decoding protocols (i.e., GPVE and GFVD), that let a semi-honest third party $\mathcal{I}$ find out if at least $e$ arbiters voted $1$, where $e$ can be any integer in the range $[1, n]$.
+%
+%As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::Encoding-Decoding-Verdicts}) after $\mathcal{D}_{\st n}$ generates all combinations of verdict $1$'s  representations, it inserts the combinations into a Bloom filter. Instead of inserting the combinations into a Bloom filter, we could  \emph{hash}  the combinations and give the hash values to $\mathcal{I}$. However, using a Bloom filter lets us save considerable communication costs. Let us see a concrete example. Let $n=10$, $e=6$, and the hash function be SHA-256.  If the latter (hash-based) approach is used,  $\mathcal{D}_{\st n}$ needs to send  $|W|\times 256= 386\times 256=98,816$ bits to $\mathcal{I}$, whereas  if the former (Bloom filter-based) approach is used, then it only needs to send $|\mathtt{BF}|=22,276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it can save communication costs by at least a factor of  $4$.  
 
 
 %
-%Here, we present two efficient verdict encoding and decoding protocols; namely, Private Verdict Encoding (PVE) and Final Verdict Decoding (FVD) protocols. Their goal is to let a third party $\mathcal{I}$, e.g., $\mathcal{DR}$, find out whether at least one arbiter voted $1$, while satisfying the following  requirements.  The protocols should (1) generate unlinkable verdicts, (2)  not require arbiters to interact with each other for each customer, and (3) be  efficient. Since, the second and third requirements are self-explanatory,  we only explain the first one.  Informally, the first property requires  that the protocols should generate encoded verdicts and final verdict in a way that $\mathcal{I}$,  given the encoded verdicts and final verdict, should not be able to (a)   link a  verdict to an arbiter (except when all arbiters' verdicts are $0$), and (b) find out the total number of $1$ or $0$ verdicts when they provide different verdicts. 
+%Here, we present two efficient verdict encoding and decoding protocols; namely, Private Verdict Encoding (PVE) and Final Verdict Decoding (FVD) protocols. Their goal is to let a third party $\mathcal{I}$, e.g., $\mathcal{DR}$, find out whether at least one auditor voted $1$, while satisfying the following  requirements.  The protocols should (1) generate unlinkable verdicts, (2)  not require auditors to interact with each other for each customer, and (3) be  efficient. Since, the second and third requirements are self-explanatory,  we only explain the first one.  Informally, the first property requires  that the protocols should generate encoded verdicts and final verdict in a way that $\mathcal{I}$,  given the encoded verdicts and final verdict, should not be able to (a)   link a  verdict to an auditor (except when all auditors' verdicts are $0$), and (b) find out the total number of $1$ or $0$ verdicts when they provide different verdicts. 
 %
 %
 %
-% At a high level, the protocols work as follows.  The arbiters only once for all customers agree on a secret key of a pseudorandom function. This key will allow each of them to generate a pseudorandom masking values such that if all masking values are ``XOR''ed, they would cancel out each other and result $0$.\footnote{This is similar to the idea used in the XOR-based secret sharing \cite{Schneier0078909}.}
+% At a high level, the protocols work as follows.  The auditors only once for all customers agree on a secret key of a pseudorandom function. This key will allow each of them to generate a pseudorandom masking values such that if all masking values are ``XOR''ed, they would cancel out each other and result $0$.\footnote{This is similar to the idea used in the XOR-based secret sharing \cite{Schneier0078909}.}
 % 
 % 
 % 
 % 
 % 
-%Each arbiter represents its verdict by (i) representing it as a parameter which is set to either $0$ if the verdict is $0$ or to a random value if the verdict is $1$, and then (ii) masking this parameter by the above  pseudorandom value.  It sends the result to $\mathcal{I}$.  To decode the final verdict and find out whether any arbiter voted $1$, $\mathcal{I}$  does XOR all encoded verdicts. This removes the masks and XORs are verdicts' representations.  If the result is $0$, then    all arbiters must have voted $0$; therefore,  the final verdict is $0$. However, if the result is not $0$ (i.e., a random value), then at least one of the arbiters voted $1$, so  the final verdict is $1$. We present the encoding  and decoding protocols in figures \ref{fig:PVE} and \ref{fig:FVD} respectively.
+%Each auditor represents its verdict by (i) representing it as a parameter which is set to either $0$ if the verdict is $0$ or to a random value if the verdict is $1$, and then (ii) masking this parameter by the above  pseudorandom value.  It sends the result to $\mathcal{I}$.  To decode the final verdict and find out whether any auditor voted $1$, $\mathcal{I}$  does XOR all encoded verdicts. This removes the masks and XORs are verdicts' representations.  If the result is $0$, then    all auditors must have voted $0$; therefore,  the final verdict is $0$. However, if the result is not $0$ (i.e., a random value), then at least one of the auditors voted $1$, so  the final verdict is $1$. We present the encoding  and decoding protocols in figures \ref{fig:PVE} and \ref{fig:FVD} respectively.
 % 
 % 
-% Not that the protocols' correctness holds, except  a negligible  probability. In particular, if two arbiters  represent their verdict by an identical random value, then when they are XORed they would cannel out each other which can affect the result's correctness. The same holds if the XOR of  multiple verdicts' representations results in a value that can cancel out another verdict's representation. Nevertheless, the probability that such an event occurs is negligible in the security parameter, i.e., at most   $\frac{1}{2^{\st \lambda}}$. It is evident that PVE and FVD protocols meet properties (2) and (3). The primary reason they also meet  property (1) is that each masked verdict reveals nothing about the verdict (and its representation) and  given the final verdict, $\mathcal{I}$ cannot distinguish between the case where there is exactly one arbiter that voted  $1$ and the case where multiple arbiters voted $1$, as in both cases $\mathcal{I}$   extracts only a single random value, which reveals nothing about the number of arbiters which voted $0$ or $1$. 
+% Not that the protocols' correctness holds, except  a negligible  probability. In particular, if two auditors  represent their verdict by an identical random value, then when they are XORed they would cannel out each other which can affect the result's correctness. The same holds if the XOR of  multiple verdicts' representations results in a value that can cancel out another verdict's representation. Nevertheless, the probability that such an event occurs is negligible in the security parameter, i.e., at most   $\frac{1}{2^{\st \lambda}}$. It is evident that PVE and FVD protocols meet properties (2) and (3). The primary reason they also meet  property (1) is that each masked verdict reveals nothing about the verdict (and its representation) and  given the final verdict, $\mathcal{I}$ cannot distinguish between the case where there is exactly one auditor that voted  $1$ and the case where multiple auditors voted $1$, as in both cases $\mathcal{I}$   extracts only a single random value, which reveals nothing about the number of auditors which voted $0$ or $1$. 
 % 
 %  
-% To encode a verdict $w$, each arbiter represents it as a polynomial. It randomises this polynomial and then  masks this polynomial with the pseudorandom masking polynomial. It sends the result to $\mathcal{I}$. To decode the final verdict and find out whether all arbiters agreed on the same verdict, i.e., unanimous decision,  $\mathcal{I}$  adds all polynomials up. This removes the masks. Next, it  evaluates the result polynomial at $v=1$ and $v=0$. It considers $v$ as the final verdict if the evaluation is  $0$. We present the encoding  and decoding protocols in figures \ref{fig:PVE} and \ref{fig:FVD} respectively. 
+% To encode a verdict $w$, each auditor represents it as a polynomial. It randomises this polynomial and then  masks this polynomial with the pseudorandom masking polynomial. It sends the result to $\mathcal{I}$. To decode the final verdict and find out whether all auditors agreed on the same verdict, i.e., unanimous decision,  $\mathcal{I}$  adds all polynomials up. This removes the masks. Next, it  evaluates the result polynomial at $v=1$ and $v=0$. It considers $v$ as the final verdict if the evaluation is  $0$. We present the encoding  and decoding protocols in figures \ref{fig:PVE} and \ref{fig:FVD} respectively. 
  
 
 
 
-% either an specific final verdict  (i.e., $v=0$ or $v=1$) if  all arbiters' verdicts are identical, or  nothing  about the arbiters' inputs if they did not agree on the same specific verdict. The protocols are  primarily  based on ``zero-sum pseudorandom polynomials'' and the techniques often used by private set intersection (PSI) protocols. In particular, the arbiters only once for all customers agree on a secret key of a pseudorandom function. This key will allow each of them to generate a pseudorandom masking polynomial such that if all masking polynomials are summed up, they would cancel out each other and result $0$, i.e., zero-sum pseudorandom polynomials. 
+% either an specific final verdict  (i.e., $v=0$ or $v=1$) if  all auditors' verdicts are identical, or  nothing  about the auditors' inputs if they did not agree on the same specific verdict. The protocols are  primarily  based on ``zero-sum pseudorandom polynomials'' and the techniques often used by private set intersection (PSI) protocols. In particular, the auditors only once for all customers agree on a secret key of a pseudorandom function. This key will allow each of them to generate a pseudorandom masking polynomial such that if all masking polynomials are summed up, they would cancel out each other and result $0$, i.e., zero-sum pseudorandom polynomials. 
 
 
 
-%In this section, we present efficient (verdict) encoding and decoding protocols. The encoding protocol  lets each of the $n$ honest arbiters $\mathcal{D}:\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$ non-interactively encode its verdict such that a third party party $\mathcal{I}$ (where $\mathcal{I}\notin \mathcal{D}$) can extract final verdict if  all arbiters' verdicts are identical with the following security requirements. First,  given individual encoded verdict, $\mathcal{I}$ cannot learn anything about each arbiter's verdict. Second, can find out only final verdict if  all arbiters' verdicts are identical; otherwise, it cannot learn each individual arbiter's verdict.  The decoding protocol lets  $\mathcal{I}$,  combines the encoded verdicts and learn either an specific final verdict  (i.e., $w=0$ or $w=1$) if  all arbiters' verdicts are identical, or  nothing  about the arbiters' inputs if they did not agree on the same specific verdict. The protocols are  primarily  based on ``zero-sum pseudorandom polynomials'' and the techniques often used by private set intersection (PSI) protocols. In particular, the arbiters only once for all customers agree on a secret key of a pseudorandom function. This key will allow each of them to generate a pseudorandom masking polynomial such that if all masking polynomials are summed up, they would cancel out each other and result $0$, i.e., zero-sum pseudorandom polynomials. 
+%In this section, we present efficient (verdict) encoding and decoding protocols. The encoding protocol  lets each of the $n$ honest auditors $\mathcal{D}:\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$ non-interactively encode its verdict such that a third party party $\mathcal{I}$ (where $\mathcal{I}\notin \mathcal{D}$) can extract final verdict if  all auditors' verdicts are identical with the following security requirements. First,  given individual encoded verdict, $\mathcal{I}$ cannot learn anything about each auditor's verdict. Second, can find out only final verdict if  all auditors' verdicts are identical; otherwise, it cannot learn each individual auditor's verdict.  The decoding protocol lets  $\mathcal{I}$,  combines the encoded verdicts and learn either an specific final verdict  (i.e., $w=0$ or $w=1$) if  all auditors' verdicts are identical, or  nothing  about the auditors' inputs if they did not agree on the same specific verdict. The protocols are  primarily  based on ``zero-sum pseudorandom polynomials'' and the techniques often used by private set intersection (PSI) protocols. In particular, the auditors only once for all customers agree on a secret key of a pseudorandom function. This key will allow each of them to generate a pseudorandom masking polynomial such that if all masking polynomials are summed up, they would cancel out each other and result $0$, i.e., zero-sum pseudorandom polynomials. 
 
 
 
@@ -44,13 +42,13 @@ Figures \ref{fig:GPVE} and \ref{fig:GFVD} present the generic verdict encoding-d
 
 
 %
-%Below, we present ``Zero-sum Pseudorandom Values Generator'' (ZPVG), an algorithm that allows each of the $n$ arbiters  to \emph{efficiently} and \emph{independently}  generate a vector of $m$ pseudorandom values for each customer, such that when all arbiters' vectors are summed up component-wise, it would result in a vector of $m$ zeros. ZPVG is based on  the following idea. Each arbiter $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n-1}\}$  uses the secret key $\bar k_{\st 0}$ (as defined in Section \ref{Notations-and-Assumptions}), along with the customer's unique ID (e.g., it blockchain account's address) as the inputs of $\mathtt{PRF}(.)$  to derive $m$ pseudorandom values. However,  $\mathcal{D}_{\st n}$ generates each  $j$-th element of  its vector by computing the additive inverse of the sum of the $j$-th elements that the rest of arbiters generated. Even $\mathcal{D}_{\st n}$ does not need to interact with other arbiters, as it can regenerate their values too. Moreover, the arbiters do not need to interact with each other for every   new customer and can   reuse the same key because the new customer would have a new unique ID that would result in a fresh set of pseudorandom values (with a high probability). Figure \ref{fig:ZSPA} presents ZPVG in more detail. 
+%Below, we present ``Zero-sum Pseudorandom Values Generator'' (ZPVG), an algorithm that allows each of the $n$ auditors  to \emph{efficiently} and \emph{independently}  generate a vector of $m$ pseudorandom values for each customer, such that when all auditors' vectors are summed up component-wise, it would result in a vector of $m$ zeros. ZPVG is based on  the following idea. Each auditor $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n-1}\}$  uses the secret key $\bar k_{\st 0}$ (as defined in Section \ref{Notations-and-Assumptions}), along with the customer's unique ID (e.g., it blockchain account's address) as the inputs of $\mathtt{PRF}(.)$  to derive $m$ pseudorandom values. However,  $\mathcal{D}_{\st n}$ generates each  $j$-th element of  its vector by computing the additive inverse of the sum of the $j$-th elements that the rest of auditors generated. Even $\mathcal{D}_{\st n}$ does not need to interact with other auditors, as it can regenerate their values too. Moreover, the auditors do not need to interact with each other for every   new customer and can   reuse the same key because the new customer would have a new unique ID that would result in a fresh set of pseudorandom values (with a high probability). Figure \ref{fig:ZSPA} presents ZPVG in more detail. 
 
 
 
 
 
-%It sends the result to all parties which can locally check if the relation holds. Note, in the literature,   there exist protocols that allows parties to agree on zero-sum pseudorandom values, e.g., in \cite{}; however, they are less efficient than $\mathtt{ZSPA}$, as their security requirements are different than ours, i.e., they assume the participants are malicious whereas we assume the arbiters who participate in this protocol  are honest. 
+%It sends the result to all parties which can locally check if the relation holds. Note, in the literature,   there exist protocols that allows parties to agree on zero-sum pseudorandom values, e.g., in \cite{}; however, they are less efficient than $\mathtt{ZSPA}$, as their security requirements are different than ours, i.e., they assume the participants are malicious whereas we assume the auditors who participate in this protocol  are honest. 
 
 
 %Next, it commits to each value, where it uses $k_{\st 2}$ to generate the randomness of each commitment. Then, it constructs a Merkel tree on top of the commitments and  stores only the root of the tree  and the hash value of the keys (so in total three values) in  the smart contract.  Then, each party (using the keys) locally checks if the values and commitments have been constructed correctly; if so, each sends  an ``approved" message to the contract. 
@@ -107,24 +105,28 @@ Figures \ref{fig:GPVE} and \ref{fig:GFVD} present the generic verdict encoding-d
 
 
 
-\begin{figure}[hbt!]
-\setlength{\fboxsep}{0.8pt}
+\begin{figure}[!htp]
+\setlength{\fboxsep}{1.5pt}
 \begin{center}
-\begin{boxedminipage}{12cm}
-\small{
+    \begin{tcolorbox}[enhanced,width=5.5in,
+    drop fuzzy shadow southwest,
+    colframe=black,colback=white]
+    {\small{
+   % \vspace{-1mm}
+
 \underline{$\mathtt{GPVE}(\bar{k}_{\st 0}, \text{ID},  w_{\st j}, o, e, n,  j)\rightarrow  (\bar{  w}_{\st j}, \mathtt{BF})$}\\
 %
 \begin{itemize}
-\item \noindent\textit{Input.} $\bar{k}_{\st 0}$: a key of  pseudorandom function $\mathtt{PRF}(.)$, $\text{ID}$: a unique identifier, $ w_{\st j}$: a  verdict, $o$: an offset, $e$: a threshold, $n$: the total number of  arbiters,  and  $j$: an arbiter's index.
+\item \noindent\textit{Input.} $\bar{k}_{\st 0}$: a key of  pseudorandom function $\mathtt{PRF}(.)$, $\text{ID}$: a unique identifier, $ w_{\st j}$: a  verdict, $o$: an offset, $e$: a threshold, $n$: the total number of  auditors,  and  $j$: an auditor's index.
 %
 \item \noindent\textit{Output.} $\bar{  w}_{\st j}$:  an  encoded verdict.  
 %
 %$\bm r_{\st j}$:  $j$-th row of an $n\times m$ matrix, such that  if $i$-th element of $\bm r_{\st j}$ is added with  the rest of elements in $i$-th column of the same matrix, the result would be  $0$. 
 \end{itemize}
-Arbiter $\mathcal{D}_{\st j}$ takes the following steps.
+Auditor $\mathcal{D}_{\st j}$ takes the following steps.
 \begin{enumerate}
 %
-\item\label{ZSPA:val-gen} computes a  pseudorandom  value,  as follows. 
+\item\label{ZSPA:val-gen} computes a pseudorandom value, as follows. 
 %
 %$\forall i,1\leq i\leq s:$
 %
@@ -191,29 +193,29 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 %%
 %\item return $\bar{\bm w}_{\st j}=[ \bar w_{\st 1,j},..., \bar w_{\st 3,j}]$.
 
-
-
-
-\
  \end{enumerate}
- 
-}
-\end{boxedminipage}
+}}
+\end{tcolorbox}
 \end{center}
 \caption{Generic Private Verdict Encoding  (GPVE) Protocol} 
+%\vspace{-3mm}
 \label{fig:GPVE}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\begin{figure}[hbt!]
-\setlength{\fboxsep}{0.7pt}
+
+\begin{figure} [!htb]
+\setlength{\fboxsep}{1.4pt}
 \begin{center}
-\begin{boxedminipage}{12cm}
-\small{
+    \begin{tcolorbox}[enhanced,width=5.5in,
+    drop fuzzy shadow southwest,
+    colframe=black,colback=white]
+    \small{
+    \vspace{-1.3mm}
 \underline{$\mathtt{GFVD}(n,  \bar{\bm w}, \mathtt{BF})\rightarrow  v$}\\
 %
 \begin{itemize}
-\item \noindent\textit{Input.} $n$:  the total number of  arbiters,  and  $\bar{\bm w}=[\bar{ w}_{\st 1},..., \bar{ w}_{\st n}]$:  a vector of all arbiters' encodes  verdicts.
+\item \noindent\textit{Input.} $n$:  the total number of  auditors,  and  $\bar{\bm w}=[\bar{ w}_{\st 1},..., \bar{ w}_{\st n}]$:  a vector of all auditors' encodes  verdicts.
 %
 \item \noindent\textit{Output.} $v$: final verdict.  
 %
@@ -223,7 +225,7 @@ A third-party $\mathcal{I}$ takes the following steps.
 \begin{enumerate}
 %
 %
-\item combines  all arbiters' encoded verdicts, $\bar w_{\st j}\in \bar{\bm {w}}$, as follows. 
+\item combines  all auditors' encoded verdicts, $\bar w_{\st j}\in \bar{\bm {w}}$, as follows. 
 %
 $c= \bigoplus\limits^{\st n}_{\st j=1} \bar w_{\st j}$
 % $$\forall i, 1\leq i\leq 3: g_{\st i}=\sum\limits^{\st n}_{\st j=1} \bar{w}_{\st i,j} \bmod p$$
@@ -251,14 +253,13 @@ $c= \bigoplus\limits^{\st n}_{\st j=1} \bar w_{\st j}$
 \end{equation*}
 %
 \item outputs  $v$. 
-
-\
  \end{enumerate}
  
 }
-\end{boxedminipage}
+\end{tcolorbox}
 \end{center}
 \caption{Generic Final Verdict Decoding  (GFVD) Protocol} 
+\vspace{-3mm}
 \label{fig:GFVD}
 \end{figure}
 

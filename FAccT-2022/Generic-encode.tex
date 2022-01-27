@@ -5,9 +5,8 @@
 \section{Generic Verdict Encoding-Decoding Protocol}\label{sec::Generic-Verdict-Encoding-Decoding-Protocols}
 
 In this section, we present the  generic verdict encoding-decoding protocols (i.e., GPVE and GFVD) in detail, in Figures \ref{fig:GPVE} and \ref{fig:GFVD}. They  let a semi-honest third party $\mathcal{I}$ find out if at least $e$ auditors voted $1$, where $e$ can be any integer in the range $[1, n]$.  
-
-
-As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::Encoding-Decoding-Verdicts}) after $\mathcal{D}_{\st n}$ generates all combinations of verdict $1$'s  representations, it inserts the combinations into a Bloom filter, to preserve the representations' privacy from $\mathcal{I}$. Nevertheless, instead of inserting the combinations into a Bloom filter, we could  \emph{hash}  the combinations and give the hash values to $\mathcal{I}$. However, using a Bloom filter lets us save considerable communication costs. Let us see a concrete example. Let $n=10$, $e=6$, and the hash function be SHA-256.  If the latter (hash-based) approach is used,  $\mathcal{D}_{\st n}$ needs to send  $|W|\times 256= 386\times 256=98,816$ bits to $\mathcal{I}$, whereas  if the former (Bloom filter-based) approach is used, then it only needs to send $|\mathtt{BF}|=22,276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it can save communication costs by at least a factor of  $4$.  
+%
+As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::Encoding-Decoding-Verdicts}) after $\mathcal{D}_{\st n}$ generates all combinations of verdict $1$'s  representations, it inserts the combinations into a Bloom filter, to preserve the representations' privacy from $\mathcal{I}$. But, instead of inserting the combinations into a Bloom filter, we could  \emph{hash}  the combinations and give the hash values to $\mathcal{I}$. However, using a Bloom filter lets us save considerable communication costs. Let us see a concrete example. Let $n=10$, $e=6$, and the hash function be SHA-256.  If the latter (hash-based) approach is used,  $\mathcal{D}_{\st n}$ needs to send  $|W|\times 256= 386\times 256=98,816$ bits to $\mathcal{I}$, whereas  if the former (Bloom filter-based) approach is used, then it only needs to send $|\mathtt{BF}|=22,276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it can save communication costs by at least a factor of  $4$.  
 
 
 %
@@ -112,14 +111,14 @@ As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::
 
 
 
-\begin{figure}[!htbp]
-\setlength{\fboxsep}{1pt}
+\begin{figure}[!htp]
+\setlength{\fboxsep}{1.5pt}
 \begin{center}
     \begin{tcolorbox}[enhanced,width=5.5in,
     drop fuzzy shadow southwest,
     colframe=black,colback=white]
     {\small{
-    \vspace{-1.3mm}
+   % \vspace{-1mm}
 
 \underline{$\mathtt{GPVE}(\bar{k}_{\st 0}, \text{ID},  w_{\st j}, o, e, n,  j)\rightarrow  (\bar{  w}_{\st j}, \mathtt{BF})$}\\
 %
@@ -205,14 +204,14 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 \end{tcolorbox}
 \end{center}
 \caption{Generic Private Verdict Encoding  (GPVE) Protocol} 
-\vspace{-3mm}
+%\vspace{-3mm}
 \label{fig:GPVE}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 
-\begin{figure}[!htbp]
-\setlength{\fboxsep}{1pt}
+\begin{figure} [!htb]
+\setlength{\fboxsep}{1.4pt}
 \begin{center}
     \begin{tcolorbox}[enhanced,width=5.5in,
     drop fuzzy shadow southwest,

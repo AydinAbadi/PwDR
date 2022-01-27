@@ -5,8 +5,6 @@ The style file: splncs03.bst
 Database file #1: ref.bib
 Warning--empty journal in P20-report
 Warning--empty journal in anderson2019measuring
-Warning--missing institution in CBDC-core-features
-Warning--empty journal in CoP
 Warning--empty journal in internet-crime-report
 Warning--empty journal in Which?-super-complaint
 Warning--empty journal in CRM-code
@@ -15,45 +13,45 @@ Warning--missing institution in Lightning-Network
 Warning--empty journal in Fraud-Classifier
 Warning--empty journal in Regulations
 Warning--empty journal in Financial-Ombudsman-Service-response
-You've used 50 entries,
+You've used 45 entries,
             2785 wiz_defined-function locations,
-            830 strings with 13851 characters,
-and the built_in function-call counts, 20420 in all, are:
-= -- 1511
-> -- 715
-< -- 5
-+ -- 301
-- -- 246
-* -- 1215
-:= -- 2844
-add.period$ -- 35
-call.type$ -- 50
-change.case$ -- 315
+            804 strings with 12594 characters,
+and the built_in function-call counts, 18025 in all, are:
+= -- 1340
+> -- 600
+< -- 4
++ -- 254
+- -- 204
+* -- 1055
+:= -- 2505
+add.period$ -- 31
+call.type$ -- 45
+change.case$ -- 273
 chr.to.int$ -- 0
-cite$ -- 62
-duplicate$ -- 1936
-empty$ -- 1901
-format.name$ -- 270
-if$ -- 4245
+cite$ -- 55
+duplicate$ -- 1718
+empty$ -- 1714
+format.name$ -- 225
+if$ -- 3767
 int.to.chr$ -- 0
-int.to.str$ -- 50
-missing$ -- 434
-newline$ -- 155
-num.names$ -- 100
-pop$ -- 912
+int.to.str$ -- 45
+missing$ -- 378
+newline$ -- 140
+num.names$ -- 90
+pop$ -- 802
 preamble$ -- 1
-purify$ -- 221
+purify$ -- 190
 quote$ -- 0
-skip$ -- 438
+skip$ -- 400
 stack$ -- 0
-substring$ -- 751
-swap$ -- 838
-text.length$ -- 5
+substring$ -- 682
+swap$ -- 729
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 196
-warning$ -- 12
-while$ -- 156
-width$ -- 52
-write$ -- 448
-(There were 12 warnings)
+type$ -- 176
+warning$ -- 10
+while$ -- 141
+width$ -- 47
+write$ -- 400
+(There were 10 warnings)
