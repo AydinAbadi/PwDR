@@ -26,7 +26,9 @@ The SAP uses a  smart contract and commitment scheme. It  assumes that each part
    \item Sends $adr_{\st\text{SAP}}$ and $\ddot{\pi}:=(\pi, r)$  to  $\mathcal C$, and $g_{\st\mathcal B}$ to the contract. 
    %\item Sends $g_{\st\mathcal C}$ to the contract, using its account. 
     \end{enumerate}
-     %
+     
+     \vspace{1mm}
+     
     \item\textbf{Agreement}. $\mathtt{SAP.agree}(\pi, r, g_{\st \mathcal{B}}, adr_{\st\mathcal{B}}, adr_{\st\text{SAP}})$
 
      The following steps are taken   by  $\mathcal C$.
@@ -40,11 +42,11 @@ The SAP uses a  smart contract and commitment scheme. It  assumes that each part
    %\item  If $b=1$, then sends $g_{\st\mathcal S}$ to the contract. % using its account.
     \end{enumerate}
      
-     
+          \vspace{1mm}
      
    \item\textbf{Prove}. For either $\mathcal B$ or $\mathcal C$ to prove, it sends $\ddot{\pi}:=(\pi, r)$  to the smart contract. 
    
-   
+        \vspace{1mm}
    
  \item\textbf{Verify}. $\mathtt{SAP.verify}(\ddot{\pi}, g_{\st\mathcal B},g_{\st\mathcal C}, adr_{\st\mathcal{B}}, adr_{\st\mathcal{C}})$
  

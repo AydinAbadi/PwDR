@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  27 JAN 2022 16:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  28 JAN 2022 14:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1306,29 +1306,29 @@ LaTeX Warning: Label `ZSPA:val-gen' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 97.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 97
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 99.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 99
 .
  (/usr/local/texlive/2020/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    ... okay on input line 99.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1364,10 +1364,10 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
 your preamble.
- on input line 97.
+ on input line 99.
 
 \AtBeginShipoutBox=\box143
-Package hyperref Info: Link coloring OFF on input line 97.
+Package hyperref Info: Link coloring OFF on input line 99.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1380,9 +1380,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count401
 )
-LaTeX Info: Redefining \ref on input line 97.
-LaTeX Info: Redefining \pageref on input line 97.
-LaTeX Info: Redefining \nameref on input line 97.
+LaTeX Info: Redefining \ref on input line 99.
+LaTeX Info: Redefining \pageref on input line 99.
+LaTeX Info: Redefining \nameref on input line 99.
  (./main.out) (./main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
@@ -1390,42 +1390,42 @@ LaTeX Info: Redefining \nameref on input line 97.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 111
+LaTeX Font Info:    Trying to load font information for U+msa on input line 113
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 111
+LaTeX Font Info:    Trying to load font information for U+msb on input line 113
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+esvect on input line 
-111.
+113.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 11
-1.
+3.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 111.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 113.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 111.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 113.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 111.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 113.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 111.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 113.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 111.
+(hyperref)                removing `\\' on input line 113.
 
 (./introduction.tex [1
 
@@ -1478,11 +1478,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--82
  []
 
 
+Underfull \vbox (badness 3701) has occurred while \output is active []
+
+ [15]
 Underfull \hbox (badness 10000) in paragraph at lines 133--137
 
  []
 
-[15] [16] (./Generic-encode.tex
+[16] (./Generic-encode.tex
 Underfull \hbox (badness 10000) in paragraph at lines 117--120
 
  []
@@ -1493,15 +1496,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--138
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--218
+Underfull \hbox (badness 10000) in paragraph at lines 218--221
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17])))
-(./PwDR-Protocol.tex [18] [19]
+ [17
+
+]
+Overfull \vbox (15.32817pt too high) has occurred while \output is active []
+
+
+[18]))) (./PwDR-Protocol.tex [19]
 Overfull \hbox (0.89966pt too wide) in paragraph at lines 216--217
 []\OT1/cmr/m/n/10 if ``chal-lenge warn-ing'' $[] \OML/cmm/m/it/10 z[]$\OT1/cmr/
 m/n/10 , it sets $\OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[] \
@@ -1509,13 +1517,9 @@ OT1/cmr/m/n/10 = 0$. Oth-er-wise, it runs $[](\OML/cmm/m/it/10 add[]; z[]; m[];
 $
  []
 
-[20]) (./proof.tex [21
-
-] [22]) (./long-evaluation.tex (./table-cost.tex)
-[23] [24] (./Performance-table.tex) (./diag-1.tex))) (./future-research.tex
-[25]) (./related-work.tex [26
-
-] [27]) (./conclusion.tex) (./main.bbl
+[20]) (./proof.tex [21] [22]) (./long-evaluation.tex (./table-cost.tex [23])
+[24] (./Performance-table.tex) (./diag-1.tex) [25])) (./future-research.tex
+[26]) (./related-work.tex [27]) (./conclusion.tex) (./main.bbl
 Underfull \hbox (badness 1917) in paragraph at lines 6--9
 []\OT1/cmr/m/n/9 A P20 Fraud and Crim-i-nal Trans-ac-tions Work-ing Group Pa-pe
 r: Best prac-tice ap-proaches for com-
@@ -1563,7 +1567,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--126
 tandardsboard . org . uk / wp-[]content / uploads / 2021 / 04 /
  []
 
-
+[29]
 Underfull \hbox (badness 2582) in paragraph at lines 163--166
 []\OT1/cmr/m/n/9 The Eu-ro-pean Union Agency for Law En-force-ment Co-op-er-a-t
 ion: Take con-trol of your dig-i-tal life.
@@ -1605,7 +1609,7 @@ Underfull \hbox (badness 7981) in paragraph at lines 187--189
 /m/n/9 https : / / www . ukfinance . org . uk / system / files /
  []
 
-[29]
+
 Underfull \hbox (badness 8170) in paragraph at lines 203--206
 []\OT1/cmr/m/n/9 Zuo, M.: On-line ``pig butcher-ing'' love scams have gone glob
 al af-ter get-ting their start in
@@ -1617,13 +1621,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 203--206
 news / people-[]culture / social-[]welfare / article / 3150688 /
  []
 
-) (./set-XOR-Theorem-proof.tex) (./set-BF-theorem-proof.tex)
-(./further-discussion.tex [30]) [31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 136.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 136.
+) (./set-XOR-Theorem-proof.tex) (./set-BF-theorem-proof.tex [30])
+(./further-discussion.tex) [31]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 136.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 136.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: C61757E2DE6E128E565CE65D66C235A6;114.
 
@@ -1632,13 +1636,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 41536 strings out of 480608
- 961114 string characters out of 5903630
- 1403955 words of memory out of 5000000
- 56340 multiletter control sequences out of 15000+600000
+ 41537 strings out of 480608
+ 961133 string characters out of 5903630
+ 1404875 words of memory out of 5000000
+ 56341 multiletter control sequences out of 15000+600000
  548777 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,20n,106p,3737b,2277s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,19n,106p,2805b,2277s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1669,31 +1673,29 @@ ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loc
 al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local
 /texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local
 /texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/l
-ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></u
-sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/lo
-cal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local
-/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/texmf
--dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2020/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist
-/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2020/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/tex
-mf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2020/texmf
--dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (31 pages, 572775 bytes).
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2020/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/f
+onts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2020/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf
+-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2020/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (31 pages, 554033 bytes).
 PDF statistics:
- 795 PDF objects out of 1000 (max. 8388607)
- 646 compressed objects within 7 object streams
+ 787 PDF objects out of 1000 (max. 8388607)
+ 640 compressed objects within 7 object streams
  241 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

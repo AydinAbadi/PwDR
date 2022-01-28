@@ -26,7 +26,7 @@ This variant has two protocols,  Private Verdict Encoding (PVE) and Final Verdic
 %This variant  mainly relies on our observation that   if   a set of random values and $0$s are XORed, then the result   reveals nothing, e.g.,  about the number of non-zero and  zero values. Below, we formally state it.  We refer readers to Appendix \ref{sec::Variant-1-Theorem-proof} for the proof.
 
 \begin{theorem}\label{set-xor}
-Let set $S=\{s_{\st 1},..., s_{\st m}\}$ be the union of  two disjoint sets $S'$ and $S''$, where $S'$ contains non-zero random values pick uniformly  from a finite field $\mathbb{F}_{\st p}$, $S''$ contains zeros, $|S'|\geq c'=1$, $|S''|\geq c''=0$, and pair $(c',c'')$ is public information. Then, $r= \bigoplus\limits^{\st m}_{\st i=1} s_{\st i}$ reveals nothing beyond the public information.  
+Let set $S=\{s_{\st 1},..., s_{\st m}\}$ be the union of  two disjoint sets $S'$ and $S''$, where $S'$ contains non-zero random values picked uniformly  from a finite field $\mathbb{F}_{\st p}$, $S''$ contains zeros, $|S'|\geq c'=1$, $|S''|\geq c''=0$, and pair $(c',c'')$ is public information. Then, $r= \bigoplus\limits^{\st m}_{\st i=1} s_{\st i}$ reveals nothing beyond the public information.  
 \end{theorem}
 
 %\begin{proof}
@@ -35,7 +35,7 @@ Let set $S=\{s_{\st 1},..., s_{\st m}\}$ be the union of  two disjoint sets $S'$
 %\end{proof}
 
 
-At a high level, PVE and FVD work as follows.  The auditors only once (for all future customers) agree on a secret key. This key will let each of them, in PVE,  generate a pseudorandom masking value such that if all masking values are XORed, they would cancel out each other.\footnote{This is similar to the idea used in the XOR-based secret sharing \cite{Schneier0078909}.} In PVE, each auditor encodes its verdict by (i) representing it as a parameter which is set to  $0$ if the verdict is $0$, or to a random value if the verdict is $1$, and then (ii) ``masking'' this parameter with the above pseudorandom value.  It sends the result to $\mathcal{I}$.  In FVD,  $\mathcal{I}$   XORs all encoded verdicts. This removes the masks and XORs all verdicts' representations.  If the result is $0$,   it concludes that all auditors voted $0$; so,  the final verdict is $0$. But, if the result is not $0$,  it knows that at least one of the auditors voted $1$, so the final verdict is $1$. Figures \ref{fig:PVE} and \ref{fig:FVD} present  PVE and FVD respectively.  
+At a high level, PVE and FVD work as follows.  The auditors only once (for all future customers) agree on a secret key. This key will let each of them, in PVE,  generate a pseudorandom masking value such that if all masking values are XORed, they would cancel out each other.\footnote{This is similar to the idea used in the XOR-based secret sharing \cite{Schneier0078909}.} In PVE, each auditor encodes its verdict by (i) representing it as a parameter which is set to  $0$ if the verdict is $0$, or to a random value if the verdict is $1$, and then (ii) ``masking'' this parameter with the above pseudorandom value.  It sends the result to $\mathcal{I}$.  In FVD,  party $\mathcal{I}$   XORs all encoded verdicts. This removes the masks and XORs all verdicts' representations.  If the result is $0$,   $\mathcal{I}$ concludes that all auditors voted $0$; therefore,  the final verdict is $0$. But, if the result is not $0$,  it knows that at least one of the auditors voted $1$, so the final verdict is $1$. Figures \ref{fig:PVE} and \ref{fig:FVD} present  PVE and FVD protocols in detail.  
 
 
 
@@ -51,7 +51,7 @@ Intuitively, the primary reason this variant meets property 1 is that each maske
 
 
 % \vspace{-1.7mm}
-\begin{figure}[!htb]
+\begin{figure}[H]
 \setlength{\fboxsep}{1pt}
 \begin{center}
     \begin{tcolorbox}[enhanced,width=5.5in, height=85mm,
@@ -122,7 +122,7 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%
  %\vspace{-2mm}
-\begin{figure}[!htb]
+\begin{figure}[H]
 \setlength{\fboxsep}{1pt}
 \begin{center}
     \begin{tcolorbox}[enhanced,width=5.5in, height=67mm,
@@ -185,7 +185,7 @@ $c= \bigoplus\limits^{\st n}_{\st j=1} \bar w_{\st j}$
 
 
 
-
+\clearpage
 
 
 \subsubsection{Variant 2: Generic Verdict  Encoding-Decoding Protocol.} This variant also includes two protocols, Generic Private Verdict Encoding (GPVE) and Generic Final Verdict Decoding (GFVD) which let $\mathcal{I}$ learn if at least $e$ auditors voted $1$, where $e$ is an integer in  $[1, n]$. It uses a novel combination of   Bloom filter and combinatorics. It relies on our observation that a Bloom filter encoding a set of random values reveals nothing about the set's elements.  We formally state it in Theorem \ref{set-bf} whose proof is given in Appendix \ref{sec::Variant-2-Theorem-proof}. 
@@ -200,7 +200,7 @@ $c= \bigoplus\limits^{\st n}_{\st j=1} \bar w_{\st j}$
 
 
 \begin{theorem}\label{set-bf}
-Let  $S=\{s_{\st 1},..., s_{\st m}\}$ be a set of random values picked uniformly from finite field $\mathbb{F}_{\st p}$, where the cardinality of $S$ is public information. Let $\mathtt{BF}$ be a Bloom filter encoding all elements of   $S$. Then,  $\mathtt{BF}$ reveals nothing about any element of $S$, beyond the public information, except with a negligible probability in the security parameter $\lambda$, i.e., with a probability at most $\frac{|S|}{2^{\st \lambda}}$. 
+Let  $S=\{s_{\st 1},..., s_{\st m}\}$ be a set of random values picked uniformly from finite field $\mathbb{F}_{\st p}$, where the cardinality of $S$ is public information and constant with regard to the security parameter $|p|=\lambda$. Let $\mathtt{BF}$ be a Bloom filter encoding all elements of   $S$. Then,  $\mathtt{BF}$ reveals nothing about any element of $S$, beyond the public information, except with a negligible probability in  $\lambda$, i.e., with a probability at most $\frac{|S|}{2^{\st \lambda}}$. 
 \end{theorem}
 
 %\begin{proof}
@@ -217,22 +217,21 @@ Now we present an overview of this variant. In this variant also, the auditors i
 %In GFVD, to decode and extract the final verdict, as in Variant 1, party $\mathcal{I}$  XORs all masked verdict representations which  removes the masking values and XORs all verdicts’ representations. Let $c$ be the result.  If $c=0$, then $\mathcal{I}$ concludes that all arbiters must have voted $0$ (with a high probability); so, it sets the final verdict to $0$. However, if $c$ is a non-zero value, then it checks whether $c$ is in the Bloom filter. If it is, then it concludes that at least threshold arbiters voted $1$, so it sets the final vector to $1$. Otherwise (if $c$ is not in the Bloom filter), it concludes that less than threshold arbiters voted $1$; therefore, it sets the final verdict to $0$.  
 
 
-In GFVD, to decode and extract the final verdict,  $\mathcal{I}$  XORs all masked verdict representations which removes the masking values and XORs the representations. Let $c$ be the result.  If $c=0$, then $\mathcal{I}$ concludes that all auditors voted $0$; so, it sets the final verdict to $0$. If $c\neq 0$, then it checks if $c\in \mathtt{BF}$. If it is, then it concludes that at least the threshold of the auditors voted $1$, so it sets the final verdict to $1$. Otherwise ($c\notin \mathtt{BF}$), it learns that less than the threshold of the auditors voted $1$; so, it sets the final verdict to $0$. Figures \ref{fig:GPVE} and \ref{fig:GFVD} present the  GPVE and GFVD protocols in detail. 
+In GFVD, to decode and extract the final verdict,  $\mathcal{I}$  XORs all masked verdict representations which removes the masking values and XORs the representations. Let $c$ be the result.  If $c=0$, then $\mathcal{I}$ concludes that all auditors voted $0$; in this case, it sets the final verdict to $0$. If $c\neq 0$, then it checks if $c\in \mathtt{BF}$. If it is, then it concludes that at least the threshold of the auditors voted $1$; in this case,  it sets the final verdict to $1$. Otherwise ($c\notin \mathtt{BF}$), it learns that less than the threshold of the auditors voted $1$; in this case, it sets the final verdict to $0$. Figures \ref{fig:GPVE} and \ref{fig:GFVD} present the  GPVE and GFVD protocols in detail. 
 %
-\input{Generic-encode}
+
+
 
 Note also that the total number of the combinations (i.e., the cardinality of $W$) is relatively small when the number of auditors is not very high. In general,  due to the  binomial theorem, the cardinality of $W$ is determined as follows:
 %
-
 \begin{equation}\label{w-cardinality}
 |W|=\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!}
  \end{equation}
  
- %
  For instance, when $n=10$ and  $e=6$, then $W$'s cardinality is only $386$, according to Equation \ref{w-cardinality}.  In the above scheme, instead of inserting the combinations into $\mathtt{BF}$ we could simply hash  the combinations and give the hash values to $\mathcal{I}$. However, using a Bloom filter allows us to save considerable communication costs. For instance, when $n=10$, $e=6$, and SHA-256 is used, then $\mathcal{D}_{\st n}$ needs to send  $98816=386\times 256$ bits to $\mathcal{I}$, whereas  if they are inserted into a Bloom filter, then it only needs to send $22276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it  can save  communication costs by at least a factor of  $4$. We refer readers to Appendix \ref{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol} for  further discussion on the verdict encoding-decoding protocols. 
  
  
- 
+ \input{Generic-encode}
  
 
  

@@ -170,7 +170,7 @@ Customer $\mathcal{C}$ takes the following steps.
 %z_{\st 3}=\phi $.
 
 
-  \item [$\bullet$] if $\mathcal{C}$ wants to complain about the payment's inconsistency,  it sets  $z_{\st 3} =$ ``challenge payment''; else, it sets $
+  \item [$\bullet$] if $\mathcal{C}$ wants to complain about the payment's inconsistency,  it sets  $z_{\st 3} =$ ``challenge payment''; otherwise, it sets $
 z_{\st 3}=\phi $.
 
     \end{itemize}
@@ -217,7 +217,7 @@ Every $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\st n}\}$ 
 
 
 
-\item[$\bullet$]  if ``challenge payment'' $\in z_{\st 3}$, it checks if the  payment was  made.   If it passes, it sets  $w_{\st 4, j}=1$. If it failes,   it sets $w_{\st 4, j}=0$.  If ``challenge payment'' $\notin z_{\st 3}$, it checks if  ``paid''  $\in{m}_{\st 2}^{\st(\mathcal C)}$. If it passes, it sets $w_{\st 4, j}=1$. Else, it sets $w_{\st 4, j}=0$. 
+\item[$\bullet$]  if ``challenge payment'' $\in z_{\st 3}$, it checks if the  payment was  made.   If it passes, it sets  $w_{\st 4, j}=1$. If it failes,   it sets $w_{\st 4, j}=0$.  If ``challenge payment'' $\notin z_{\st 3}$, it checks if  ``paid''  $\in{m}_{\st 2}^{\st(\mathcal C)}$. If it passes, it sets $w_{\st 4, j}=1$. Otherwise, it sets $w_{\st 4, j}=0$. 
 %
 \end{itemize}
 %
@@ -331,7 +331,9 @@ $ \bar {\bm w}_{\st j}= \mathtt{Dec}(\bar k_{\st 2}, \hat{\bm w}_{\st j})$, wher
 \end{enumerate}
 \end{enumerate}
 
-\clearpage           
+%\clearpage    
+
+\vspace{3mm}       
 In this protocol, customer $\mathcal{C}$ must be reimbursed if the final verdict is that (i)  the ``pass'' message or  missing message should have been a warning or (ii)  the warning was ineffective and the provided evidence was not invalid, and (iii) the payment has been made. Stated formally, the following relation must hold: 
 
 $$\Big( \underbrace{(v_{\st 1}=1)}_{\st (\text{i})}\vee  \underbrace{(v_{\st 2}=1\ \wedge\ v_{\st 3}=1)}_{\st (\text {ii})}\Big)\wedge\Big(\underbrace{v_{\st 4}=1}_{\st (\text{iii})}\Big)$$
@@ -365,4 +367,4 @@ $$\Big( \underbrace{(v_{\st 1}=1)}_{\st (\text{i})}\vee  \underbrace{(v_{\st 2}=
 %\end{enumerate}
 %\end{enumerate}
 %
-Note, in the above PwDR protocol, even $\mathcal{C}$ and $\mathcal{B}$ that know the decryption secret keys, $(\bar k_{\st 1}, \bar k_{\st 2})$, cannot link a certain verdict to an auditor, for two main reasons; namely,  (a) they do not know the masking random values used by auditors to mask each verdict and (b) the final verdicts $(v_{\st 1},..., v_{\st 4})$ reveal nothing about the number of $1$ or $0$ verdicts, except when all auditors vote $0$.   In the PwDR, we used PVE and FVD only because they are highly efficient. However, it is easy to replace them with GPVE and GFVD. %We present the PwDR protocol's main theorem and its proof in Appendix \ref{sec::proof}. 
+Note, in the above PwDR protocol, even $\mathcal{C}$ and $\mathcal{B}$ that know the decryption secret keys, $(\bar k_{\st 1}, \bar k_{\st 2})$, cannot link a certain verdict to an auditor, for two main reasons; namely,  (a) they do not know the masking random values used by auditors to mask each verdict and (b) the final verdicts $(v_{\st 1},..., v_{\st 4})$ reveal nothing about the number of $1$ or $0$ verdicts, except when all auditors vote $0$.   Moreover, in the PwDR, we used PVE and FVD only because they are highly efficient. However, it is easy to replace them with GPVE and GFVD. %We present the PwDR protocol's main theorem and its proof in Appendix \ref{sec::proof}. 

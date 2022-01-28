@@ -105,21 +105,21 @@
 
 
 
-\begin{figure}[!htp]
-\setlength{\fboxsep}{1.5pt}
+\begin{figure}[!htb]%[H]
+\setlength{\fboxsep}{1pt}
 \begin{center}
     \begin{tcolorbox}[enhanced,width=5.5in,
     drop fuzzy shadow southwest,
     colframe=black,colback=white]
-    {\small{
-   % \vspace{-1mm}
+    %{\small{
+    \vspace{-1.5mm}
 
 \underline{$\mathtt{GPVE}(\bar{k}_{\st 0}, \text{ID},  w_{\st j}, o, e, n,  j)\rightarrow  (\bar{  w}_{\st j}, \mathtt{BF})$}\\
 %
 \begin{itemize}
 \item \noindent\textit{Input.} $\bar{k}_{\st 0}$: a key of  pseudorandom function $\mathtt{PRF}(.)$, $\text{ID}$: a unique identifier, $ w_{\st j}$: a  verdict, $o$: an offset, $e$: a threshold, $n$: the total number of  auditors,  and  $j$: an auditor's index.
 %
-\item \noindent\textit{Output.} $\bar{  w}_{\st j}$:  an  encoded verdict.  
+\item \noindent\textit{Output.} $\bar{  w}_{\st j}$:  an  encoded verdict, and $\mathtt{BF}$: Bloom filter.  
 %
 %$\bm r_{\st j}$:  $j$-th row of an $n\times m$ matrix, such that  if $i$-th element of $\bm r_{\st j}$ is added with  the rest of elements in $i$-th column of the same matrix, the result would be  $0$. 
 \end{itemize}
@@ -134,7 +134,7 @@ Auditor $\mathcal{D}_{\st j}$ takes the following steps.
 %
 \item[$\bullet$]$ \text{ if } j< n: r_{\st j}=\mathtt{PRF}(\bar k_{\st 0}, 1||o||j||\text{ID})$.\\
 %
-%\hspace{1mm} 
+\hspace{1mm} 
 \item [$\bullet$] $ \text{ if } j=n: r_{\st j}= \bigoplus\limits^{\st n-1}_{\st i=1} r_{\st i}$.
 %
 \end{itemize}
@@ -194,28 +194,31 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 %\item return $\bar{\bm w}_{\st j}=[ \bar w_{\st 1,j},..., \bar w_{\st 3,j}]$.
 
  \end{enumerate}
-}}
+%}}
 \end{tcolorbox}
 \end{center}
+\vspace{-4mm}
 \caption{Generic Private Verdict Encoding  (GPVE) Protocol} 
-%\vspace{-3mm}
 \label{fig:GPVE}
 \end{figure}
+%\FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 
-\begin{figure} [!htb]
-\setlength{\fboxsep}{1.4pt}
+
+
+\begin{figure} [H]%[H]
+\setlength{\fboxsep}{1pt}
 \begin{center}
     \begin{tcolorbox}[enhanced,width=5.5in,
     drop fuzzy shadow southwest,
     colframe=black,colback=white]
-    \small{
-    \vspace{-1.3mm}
+    %\small{
+    \vspace{-1.5mm}
 \underline{$\mathtt{GFVD}(n,  \bar{\bm w}, \mathtt{BF})\rightarrow  v$}\\
 %
 \begin{itemize}
-\item \noindent\textit{Input.} $n$:  the total number of  auditors,  and  $\bar{\bm w}=[\bar{ w}_{\st 1},..., \bar{ w}_{\st n}]$:  a vector of all auditors' encodes  verdicts.
+\item \noindent\textit{Input.} $n$:  the total number of  auditors,    $\bar{\bm w}=[\bar{ w}_{\st 1},..., \bar{ w}_{\st n}]$:  a vector of all auditors' encodes  verdicts, and $\mathtt{BF}$: Bloom filter.
 %
 \item \noindent\textit{Output.} $v$: final verdict.  
 %
@@ -255,11 +258,13 @@ $c= \bigoplus\limits^{\st n}_{\st j=1} \bar w_{\st j}$
 \item outputs  $v$. 
  \end{enumerate}
  
-}
+%}
 \end{tcolorbox}
 \end{center}
+\vspace{-4mm}
 \caption{Generic Final Verdict Decoding  (GFVD) Protocol} 
-\vspace{-3mm}
+%\vspace{-3mm}
 \label{fig:GFVD}
 \end{figure}
+
 

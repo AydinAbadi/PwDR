@@ -3,7 +3,7 @@
 \section{Variant 2 Encoding-Decoding Protocol's Proof}\label{sec::Variant-2-Theorem-proof}
 
 \begin{reptheorem}{set-bf}
-Let set $S=\{s_{\st 1},..., s_{\st m}\}$ be a set of random values picked uniformly from $\mathbb{F}_{\st p}$, where the cardinality of $S$ is  public information. Let $\mathtt{BF}$ be a Bloom filter encoding all elements of   $S$. Then,  $\mathtt{BF}$ reveals nothing about any element of $S$, beyond the public information, except with a negligible probability in the security parameter, i.e., with a probability at most $\frac{|S|}{2^{\st \lambda}}$. 
+Let  $S=\{s_{\st 1},..., s_{\st m}\}$ be a set of random values picked uniformly from finite field $\mathbb{F}_{\st p}$, where the cardinality of $S$ is public information and constant with regard to the security parameter $|p|=\lambda$. Let $\mathtt{BF}$ be a Bloom filter encoding all elements of   $S$. Then,  $\mathtt{BF}$ reveals nothing about any element of $S$, beyond the public information, except with a negligible probability in  $\lambda$, i.e., with a probability at most $\frac{|S|}{2^{\st \lambda}}$. 
 \end{reptheorem}
 
 \begin{proof}
