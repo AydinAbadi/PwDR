@@ -1,0 +1,44 @@
+% !TEX root =main.tex
+
+\vspace{-1mm}
+\section{Challenges to Overcome}\label{sec:: challenges}
+
+
+Our starting point in defining and designing a payment with dispute resolution scheme is the CRM code, as this code (although vaguely) sets out the primary requirements a victim must meet to be reimbursed.  To design such a scheme, we need to address several challenges. The rest of this section outlines these challenges. 
+
+%In this section, we provide an overview of a Payment with Dispute Resolution (PwDR) scheme. Simply put, a PwDR scheme  allows a customer to interact with its bank (via the online banking platform) to transfer a certain amount of money from its account to another account in a transparent manner; meanwhile, it  offers a distinct  feature. Namely, when an APP fraud takes place, it lets an honest customer raise a dispute and \emph{prove} to a third-party dispute resolver that it has acted honestly, so it can be reimbursed. It offers other features too. For instance,  an honest bank can also prove it has acted honestly; it lets the parties prove their innocence  without their counter-party's collaboration,  it  ensures the message exchanged between a bank and customer remains confidential, and even the party which resolves the dispute between the two learns as little information as possible.  The PwDR scheme can be considered as an extension of the existing   online banking system. Our starting point in defining and  designing the PwDR scheme is the CRM code, as this code (although vaguely) sets out the primary requirements a victim must meet to be reimbursed.  To design such a scheme, we need to address  several challenges. The rest of this section  highlights these challenges. 
+
+
+
+\vspace{-1.1mm}
+\subsection{Challenge 1: Lack of Transparent Logs} 
+In the current online banking system, during a payment journey, the messages exchanged between customer and bank are usually logged by the bank and are not accessible to the customer without the bank's collaboration. Even if the bank provides access to the transaction logs, there is no guarantee that the logs have remained intact. Due to the lack of a transparent logging mechanism, a customer or bank can wrongly claim that (a) it has sent a certain message or warning to its counter-party or (b) it has never received a certain message.  Thus, it would be hard for an honest party to prove its innocence. To address this challenge, our scheme will use a  smart contract to which each party sends its messages.
+
+
+%To address this challenge, our scheme will use a  smart contract (as a public bulletin board) to which  each party sends (a copy of) its outgoing messages. %, e.g., payment requests, warnings, and  confirmation of payments. 
+
+
+
+\vspace{-1.1mm}
+\subsection{Challenge 2: Lack of Effective Warning's Accurate Definition in Banking}\label{sec::Lack-of-Effective-Warning-Definition}
+
+
+One of the determining factors in the process of allocating liability to an APP fraud victim is following ``warning(s)'', according to the CRM code. However, there exists no publicly available study on the effectiveness of banks' warnings. So, we cannot hold a customer accountable for becoming a fraud victim,  even if the related warnings are ignored. Also, currently,  banks assess whether their own warnings are effective. But, in a fair process, such an assessment is conducted by a third party.  To address these challenges, we let a warning's effectiveness be determined on a case-by-case basis after an APP fraud occurs. The protocol lets a victim challenge a certain warning whose effectiveness will be assessed by a \emph{committee}, i.e., a  set of auditors. In this setting, each auditor provides its (encoded) verdict to the smart contract, from which a dispute resolver retrieves all verdicts to learn the final one. The scheme ensures that the final verdict is in the customer's favour if at least a threshold of the auditors voted so. Thus, unlike the traditional setting where a central party determines a warning's effectiveness, which is error-prone, we let a collection of auditors determines it.
+
+
+
+\vspace{-1.1mm}
+
+\subsection{Challenge 3: Linking Off-chain Payments with a Smart Contract}\label{sec::Linking Off-chain-Payments-with-contract}
+
+ Recall that an APP fraud occurs when a payment is made. In the case where a  bank sends  (to the smart contract) a confirmation of payment message, it is not possible to automatically validate such a claim, as the money transfer occurs outside of the blockchain network. To address this challenge, our scheme lets a customer raise a dispute and report it to the smart contract when it detects an inconsistency. In this case, the above auditors investigate and provide their verdicts to the smart contract. Then, dispute resolver $\mathcal{DR}$ extracts them and announces the final verdict. 
+
+
+\vspace{-1.1mm}
+\subsection{Challenge 4: Preserving Privacy}
+
+ Although the use of a public logging mechanism is vital in resolving disputes transparently, if it does not use a  privacy-preserving mechanism, parties' privacy would be violated. To protect the privacy of the bank's and customers' messages from the public, our scheme lets them provably agree on encoding-decoding tokens with which they can encode their messages. Later, either party can provide the token to a third party  (e.g., $\mathcal{D}_{\st i}$) which checks the token's correctness, and decodes the messages. To protect the privacy of the committee members' verdicts from $\mathcal{DR}$, the scheme ensures that  $\mathcal{DR}$  learns only the final verdict without being able to link a verdict to a specific auditor or even learn the number of yes/$1$ and no/$0$ votes. To this end, we develop and use novel threshold voting protocols. 
+ 
+ 
+ 
+ 

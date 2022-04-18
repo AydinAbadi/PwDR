@@ -1,0 +1,58 @@
+% !TEX root =main.tex
+
+
+%\vspace{-2.5mm}
+\section{Evaluation}\label{sec::eval-}
+
+In this section, we analyse the PwDR protocol's (computation and communication) complexity, its concrete runtime, and transactions latency.  Tables \ref{table::PwDR-Asymptotic-Cost} and \ref{table::PwDR-runtime} summarize the asymptotic and performance analysis respectively. 
+\input{table-cost}
+\input{Performance-table}
+\input{long-evaluation}
+
+
+
+%We analysed the PwDR protocol's asymptotic cost. Table \ref{table::PwDR-Asymptotic-Cost} summarises the analysis result.  As the table indicates, the customer's and bank's complexity is constant,  i.e., independent of $n$. However, one of the auditors, i.e., auditor $\mathcal{D}_{\st n}$, and the dispute resolver have non-constant complexities which are mainly imposed by our verdict inducing-decoding protocols. Thus, to study these parties' runtime in the PwDR, we have implemented both variants of the verdict encoding-decoding protocols. The source code of  variants 1 and 2 is available in \cite{variant-1} and \cite{variant-2} respectively.  Table \ref{table::PwDR-runtime} summarises the study's result. As this table shows,  the overall cost is low. Specifically, the highest runtime is only about $10$ milliseconds which belongs to $\mathcal{D}_{\st n}$ when $n=12$ and $e=7$. It is also evident that the parties' runtime in the PVE and FVD protocols is much lower than their runtime in the GPVE and GFVD ones.  Appendix \ref{sec::eval} provides more details about the above    analysis.
+
+
+
+%\vspace{-1mm}
+
+%\vspace{-1mm}
+
+
+%\subsubsection{Computation Cost.} Below, we analyse the computation cost of the protocol. We first analyse $\mathcal{C}$'s cost. In Phase \ref{customer-side-Initiation}, $\mathcal{C}$ invokes a hash function twice to check the correctness of the private statements' parameters. In Phase \ref{genUpdateRequest}, it invokes the symmetric encryption once to encrypt its update request. In Phase \ref{clinet-at-T2}, it invokes  the symmetric encryption twice to decrypt $\mathcal{B}$'s warning message and to encrypt its payment request. In Phase \ref{Generating-Complaint}, it runs  the symmetric encryption three times to decrypt $\mathcal{B}$'s warning and payment messages and to encrypt its complaint. In the same phase, it invokes the asymmetric encryption once to encrypt the private statements' opening. Therefore, $\mathcal{C}$'s complexity   is  $O(1)$. Next, we analyse $\mathcal{B}$'s cost. In Phase \ref{RCPoRP::Bank-side-Initiation}, it invokes the hash function twice to commit  to  two statements. In Phase \ref{Generating-Warning}, it calls the symmetric key encryption once to encrypt its outgoing warning message. In Phase \ref{Making-Payment}, it also invokes  the symmetric key encryption once to encrypt the outgoing payment message. Thus, $\mathcal{B}$'s complexity   is  $O(1)$ too. Next, we analyse each auditor's cost. In Phase \ref{VerifyingComplaint}, each $\mathcal{D}_{\st j}$ invokes the asymmetric key encryption once to decrypt the private statements' openings. It also invokes the hash function twice to verify the openings. It invokes the symmetric key encryption six times to decrypt $\mathcal{C}$'s and $\mathcal{B}$'s messages that were posted on $\mathcal{S}$ (this includes $\mathcal{C}$'s complaint). Recall, in the same phase, each auditor encodes its verdict using a verdict encoding protocol. Now, we evaluate the verdict encoding complexity of each auditor for two cases: (a)   $e=1$ and (b) $e\in(1, n]$. Note, in the former case the PVE is invoked while in the latter GPVE is invoked. In case (a), every auditor $\mathcal{D}_{\st j}$, except $\mathcal{D}_{\st n}$, invokes the pseudorandom function once to encode its verdict. However,  auditor $\mathcal{D}_{\st n}$ invokes the pseudorandom function $n-1$ times and XORs the function's outputs with each other. Thus, in  case (a), auditor $\mathcal{D}_{\st n}$'s complexity is $O(n)$ while the ret of auditors' complexity is $O(1)$.  In case (b), every auditor $\mathcal{D}_{\st j}$, except $\mathcal{D}_{\st n}$, invokes the pseudorandom function twice to encode its verdict.  But,  auditor $\mathcal{D}_{\st n}$ invokes the pseudorandom function $n-1$ times and XORs the function's outputs with each other. It also invokes  the pseudorandom function $n$ times to generate all auditors' representations of verdict $1$. It computes all $y=\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!}$ combinations of the representations that meet the threshold which involves $O(y)$ XORs. It also inserts $y$ elements into a Bloom filter that requires  $O(y)$ hash function evaluations. So, in case (b), auditor $\mathcal{D}_{\st n}$'s complexity is $O(y)$ while the rest of the auditors' complexity is $O(1)$. To conclude, in Phase \ref{VerifyingComplaint},  auditor $\mathcal{D}_{\st n}$'s complexity is either $O(n)$ or $O(y)$, while the rest of  the auditors' complexity is $O(1)$. Now, we analyse $\mathcal{DR}$'s cost in Phase \ref{DR::DisputeResolution}. It invokes the hash function once to check the private statement's correctness. It also performs $O(n)$ symmetric key decryption to decrypt auditors' encoded verdicts. Now, we evaluate the verdict decoding complexity of $\mathcal{DR}$ 
+%for two cases: (a) $e = 1$ and (b) $e \in (1, n]$. In the former case (in which  FVD is invoked), it performs $O(n)$ XOR to combine all verdicts. Its complexity is also $O(n)$ in the latter case (in which  GFVD is invoked), with a small difference that it also invokes the Bloom filter's hash functions, to make a membership query to the Bloom filter.  Thus, $\mathcal{DR}$'s complexity is $O(n)$. 
+%
+%
+%
+%\subsubsection{Communication Cost.} Now, we analyse the communication cost of the PwDR protocol. Briefly, $\mathcal{C}$'s complexity is $O(1)$ as in total it sends only six messages to other parties. Similarly, $\mathcal{B}$'s complexity is $O(1)$ as its total number of outgoing messages is only nine. Each auditor $\mathcal{D}_{\st j}$ sends only four messages to the smart contract, so its complexity is $O(1)$. However, if GFVD is invoked, then auditor $\mathcal{D}_{\st n}$ needs to send also a Bloom filter that costs it $O(y)$. Moreover, $\mathcal{DR}$'s complexity is $O(1)$, as its outgoing messages include  only four binary values. 
+
+
+%\subsection{Concrete Performance Analysis}
+%
+%In this section, we study the  protocol's performance.   Table \ref{table::PwDR-runtime} summarises the result.  As we saw  in the previous section, the customer's and bank's complexity is very low and constant; however, one of the auditors, i.e., auditor $\mathcal{D}_{\st n}$, and the dispute resolver have non-constant complexities.  These non-constant  overheads were mainly imposed by the verdict inducing-decoding protocols. Therefore, to study these parties' runtime in the PwDR, we  implemented both variants of the verdict encoding-decoding protocols (that were presented in Section  \ref{sec::Encoding-Decoding-Verdicts}). They  were implemented in C++. The source of  variants 1 and 2 is available in \cite{variant-1} and \cite{variant-2} respectively. To conduct the experiment, we used a MacBook Pro laptop with quad-core Intel Core $i5$, $2$ GHz CPU, and $16$ GB RAM. We ran the experiment on average $100$ times. The prototype implementation uses the ``Cryptopp'' library\footnote{https://www.cryptopp.com}  for cryptographic primitives, the ``GMP'' library\footnote{https://gmplib.org} for arbitrary precision arithmetics, and the ``Bloom Filter'' library \footnote{http://www.partow.net/programming/bloomfilter/index.html}. In the experiment, we set the false-positive rate in a Bloom filter to $2^{\st -40}$ and  the finite field size to $128$ bits. Table \ref{table::PwDR-runtime} provides the runtime of the three types of parties for various numbers of auditors in two cases; namely, when the threshold is $1$ and when it is greater than $1$. In the former case, we used the PVE and FVD protocols.  In the latter case, we used the GPVE and GFVD ones. 
+
+
+%\vspace{-3mm}
+
+
+
+%\vspace{-2mm}
+
+%As the  table depicts, the runtime of $\mathcal{D}_{\st n}$    increases gradually from $0.019$ to $10.15$ milliseconds when the number of auditors grows from $n=6$ to $n=12$.  In contrast, the runtime of $\mathcal{DR}$ grows slower; it increases from  $0.001$ to $0.09$ milliseconds when the number of auditors increases. Nevertheless, the overall cost is very low. In particular, the highest runtime is only about $10$ milliseconds which belongs to $\mathcal{D}_{\st n}$ when $n=12$ and $e=7$. It is also evident that the parties' runtime in the PVE and FVD protocols is much lower than their runtime in the GPVE and GFVD ones. To compare the  parties' runtime, we also fixed the threshold to $6$ and ran the experiment for different values of $n$. Figure  \ref{plot::runtime} summarises the result. As this figure indicates, the  runtime of  $\mathcal{D}_{\st n}$ and $\mathcal{DR}$ almost linearly grows when the number of auditors increases. Moreover,   $\mathcal{D}_{\st n}$  has a higher  runtime than $\mathcal{DR}$ has,   and its runtime growth is faster than that of $\mathcal{DR}$. 
+%
+%\begin{figure}[H]
+%\centering
+%%\includegraphics[width=0.53 \textwidth]{pics/Comm-cost-new.pdf}
+%{\input{diag-1}}
+%\caption{\small Parties' runtime in the PwDR.}\label{plot::runtime}
+%\end{figure}
+
+
+
+
+
+
+
+
+
