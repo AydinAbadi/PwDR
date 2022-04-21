@@ -30,7 +30,7 @@ In this section, we outline a formal definition of the payment with dispute reso
 %
 \item  [$\bullet$] $\mathtt{genWarning}(T, \hat{\bm l}, {aux})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st1}$. It is a warning generating algorithm that outputs an encoded (warning) message $\hat m^{\st\mathcal{(B)}}_{\st1}$, with the help of auxiliary data ${aux}$ and $\mathtt{Encode}(T_{\st 1},.)$, where the plaintext message is either pass or warning string. 
 %
-\item  [$\bullet$] $\mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}$. It an algorithm that generates an encoded payment request  $\hat m^{\st\mathcal{(C)}}_{\st2}$, with the help of new payment's detail $in_{\st f}$ and $\mathtt{Encode}(T_{\st 1},.)$. It outputs  $\hat m^{\st\mathcal{(C)}}_{\st2}$.  
+\item  [$\bullet$] $\mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}$. It is an algorithm that generates an encoded payment request  $\hat m^{\st\mathcal{(C)}}_{\st2}$, with the help of new payment's detail $in_{\st f}$ and $\mathtt{Encode}(T_{\st 1},.)$. It outputs  $\hat m^{\st\mathcal{(C)}}_{\st2}$.  
 %
 \item  [$\bullet$] $\mathtt{makePayment}(T, \hat m^{\st\mathcal{(C)}}_{\st2})\rightarrow \hat m^{\st\mathcal{(B)}}_{\st2}$. It  generates and outputs an encoded message $\hat m^{\st\mathcal{(B)}}_{\st2}$ for confirmation of payment. 
 %
