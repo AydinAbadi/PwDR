@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  21 APR 2022 14:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  28 APR 2022 12:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1987,10 +1987,7 @@ surrounding objects on input line 192.
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 3.
 
-
-Underfull \vbox (badness 1715) has occurred while \output is active []
-
- [3.3]
+[3.3]
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 13.
@@ -2008,7 +2005,7 @@ Class acmart Warning: \vspace should only be used to provide space above/below
 surrounding objects on input line 37.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2142) has occurred while \output is active []
 
 )
 (./Definition.tex
@@ -2290,49 +2287,49 @@ Underfull \hbox (badness 3108) in paragraph at lines 309--316
 
 LaTeX Info: Redefining \tempurl on input line 378.
 
-Underfull \hbox (badness 3118) in paragraph at lines 499--506
+Underfull \hbox (badness 3118) in paragraph at lines 512--519
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) The Eu-ro-pean Union Agency for Law En-fo
 rce-ment Co-op-er-a-tion. 2021.
  []
 
 
-Underfull \hbox (badness 3657) in paragraph at lines 499--506
+Underfull \hbox (badness 3657) in paragraph at lines 512--519
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) Take con-trol of your dig-i-tal life. Don't
  be a vic-tim of cy-ber scams!
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--506
+Underfull \hbox (badness 10000) in paragraph at lines 512--519
 []$\T1/LinuxLibertineT-TLF/m/n/7 (+20) https : / / www . europol . europa . eu 
 / activities -[] services / public -[] awareness -[] and -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--506
+Underfull \hbox (badness 10000) in paragraph at lines 512--519
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) prevention -[] guides / take -[] control -[
 ] of -[] your -[] digital -[] life -[] don % E2 % 80 % 99t -[] be -[]
  []
 
 
-Underfull \hbox (badness 5563) in paragraph at lines 511--518
+Underfull \hbox (badness 5563) in paragraph at lines 524--531
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) The Fed-eral Re-serve. 2020.  Fraud Clas-
 si-fier.  (2020).   []$https :
  []
 
 
-Underfull \hbox (badness 7522) in paragraph at lines 523--532
+Underfull \hbox (badness 7522) in paragraph at lines 536--545
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) view of the Con-tin-gent Re-im-burse-ment M
 odel Code for Au-tho-rised
  []
 
 
-Underfull \hbox (badness 3039) in paragraph at lines 523--532
+Underfull \hbox (badness 3039) in paragraph at lines 536--545
 \T1/LinuxLibertineT-TLF/m/n/7 (+20) Push Pay-ment Scams-Financial Om-buds-man S
 er-vice re-sponse.  (2020).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 523--532
+Underfull \hbox (badness 10000) in paragraph at lines 536--545
 []$\T1/LinuxLibertineT-TLF/m/n/7 (+11) https : / / www . ^^[nancial -[] ombudsm
 an . org . uk / ^^[les / 289009 / 2020 -[] 10 -[] 02 -[] LSB -[] CRM -[]
  []
@@ -2347,6 +2344,9 @@ Overfull \hbox (5.0681pt too wide) in paragraph at lines 72--73
 []\OML/nxlmi/m/it/9 ;$ $[];$ $[]\LMS/ntxsy/m/n/9 º$\T1/LinuxLibertineT-TLF/m/n/
 9 (-20) . Be-low, we de-fine these
  []
+
+
+Underfull \vbox (badness 1448) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2428,10 +2428,6 @@ Overfull \hbox (3.86136pt too wide) in paragraph at lines 55--55
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 55.
-
-
-Underfull \vbox (badness 1831) has occurred while \output is active []
-
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
@@ -2518,11 +2514,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 49201 strings out of 480608
- 1053229 string characters out of 5903630
- 1504646 words of memory out of 5000000
- 63035 multiletter control sequences out of 15000+600000
- 824936 words of font info for 625 fonts, out of 8000000 for 9000
+ 49208 strings out of 480608
+ 1053362 string characters out of 5903630
+ 1505708 words of memory out of 5000000
+ 63038 multiletter control sequences out of 15000+600000
+ 825209 words of font info for 627 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  67i,20n,108p,3727b,2299s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
@@ -2566,10 +2562,10 @@ ewtx/txexs.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txm
 iaX.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsya.pf
 b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></us
 r/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (20 pages, 707384 bytes).
+Output written on main.pdf (20 pages, 708245 bytes).
 PDF statistics:
- 795 PDF objects out of 1000 (max. 8388607)
- 716 compressed objects within 8 object streams
- 241 named destinations out of 1000 (max. 500000)
+ 799 PDF objects out of 1000 (max. 8388607)
+ 720 compressed objects within 8 object streams
+ 242 named destinations out of 1000 (max. 500000)
  71573 words of extra memory for PDF output out of 74296 (max. 10000000)
 

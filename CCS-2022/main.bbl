@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{46}
+\begin{thebibliography}{47}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -414,6 +414,19 @@
   system}}.
 \newblock \bibinfo{type}{{T}echnical {R}eport}.
 \newblock
+
+
+\bibitem[\protect\citeauthoryear{on~Financial~Services}{on~Financial~Services}{2022}]%
+        {the-bill}
+\bibfield{author}{\bibinfo{person}{{US} House~Committee on
+  Financial~Services}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \bibinfo{title}{Discussion draft: To amend the Electronic Fund
+  Transfer Act to treat fraudulently induced electronic fund transfers in the
+  same manner as unauthorized electronic fund transfer}.
+\newblock
+\newblock
+\newblock
+\shownote{\url{https://docs.house.gov/meetings/BA/BA00/20220428/114690/BILLS-117pih-ProtectingConsumersFromPaym-U1.pdf}.}
 
 
 \bibitem[\protect\citeauthoryear{Ortolani}{Ortolani}{2016}]%
