@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  28 APR 2022 12:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  28 APR 2022 14:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1870,13 +1870,18 @@ Package microtype Info: Loading generic protrusion settings for font family
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 362.
 
-(./introduction.tex
+(./introduction.tex) (./background.tex
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 4.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1.1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ])
-(./background.tex) (./Preliminary.tex
+(./Preliminary.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 7.
@@ -1929,10 +1934,18 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5.5> not available
 LaTeX Font Warning: Font shape `U/lasy/m/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 206.
 
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 212.
+
 )
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 19.
+
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 9.0pt on input line 32.
- [2.2]
+[2.2]
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 79.
@@ -2005,7 +2018,7 @@ Class acmart Warning: \vspace should only be used to provide space above/below
 surrounding objects on input line 37.
 
 
-Underfull \vbox (badness 2142) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
 (./Definition.tex
@@ -2514,11 +2527,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 49208 strings out of 480608
- 1053362 string characters out of 5903630
- 1505708 words of memory out of 5000000
+ 49214 strings out of 480608
+ 1053518 string characters out of 5903630
+ 1505804 words of memory out of 5000000
  63038 multiletter control sequences out of 15000+600000
- 825209 words of font info for 627 fonts, out of 8000000 for 9000
+ 825951 words of font info for 631 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  67i,20n,108p,3727b,2299s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
@@ -2562,7 +2575,7 @@ ewtx/txexs.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txm
 iaX.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsya.pf
 b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></us
 r/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (20 pages, 708245 bytes).
+Output written on main.pdf (20 pages, 708214 bytes).
 PDF statistics:
  799 PDF objects out of 1000 (max. 8388607)
  720 compressed objects within 8 object streams
