@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  25 OCT 2022 08:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  25 OCT 2022 09:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1649,8 +1649,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 (./evaluation.tex (./table-cost.tex) (./Performance-table.tex)
-(./long-evaluation.tex [10] (./diag-1.tex) [11]))) (./future-research.tex)
-(./related-work.tex [12]) (./conclusion.tex) (./main.bbl
+(./long-evaluation.tex [10] (./diag-1.tex)
+Underfull \vbox (badness 6510) has occurred while \output is active []
+
+ [11])))
+(./future-research.tex) (./related-work.tex [12]) (./conclusion.tex)
+(./main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
 []$\OT1/ptm/m/n/8.03 https : / / static1\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 squa
 respace\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 com / static / 5efcc6dae323db37b4d01d
@@ -1910,15 +1914,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D5B2776449590C78195A9BED4C0E3CF6;3732.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 1322C0BDC664A2B2D807779CDCA7604A;3733
-(rerunfilecheck)             After:  D5B2776449590C78195A9BED4C0E3CF6;3732.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 3.24344pt have occurred.
@@ -1930,7 +1928,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  38903 strings out of 480608
  894824 string characters out of 5903630
- 1327869 words of memory out of 5000000
+ 1327816 words of memory out of 5000000
  53727 multiletter control sequences out of 15000+600000
  599208 words of font info for 188 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1969,7 +1967,7 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist
 e1/urw/times/utmbi8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8
 a.pfb>
-Output written on main.pdf (21 pages, 525959 bytes).
+Output written on main.pdf (21 pages, 525919 bytes).
 PDF statistics:
  817 PDF objects out of 1000 (max. 8388607)
  753 compressed objects within 8 object streams

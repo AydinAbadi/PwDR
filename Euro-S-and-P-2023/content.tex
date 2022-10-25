@@ -422,7 +422,7 @@ $$\Big( \underbrace{(v_{\st 1}=1)}_{\st (\text{i})}\vee  \underbrace{(v_{\st 2}=
 %
 Note, in the above PwDR protocol, even $\mathcal{C}$ and $\mathcal{B}$ that know the decryption secret keys, $(\bar k_{\st 1}, \bar k_{\st 2})$, cannot link a certain verdict to an auditor, for two main reasons; namely,  (a) they do not know the masking random values used by auditors to mask each verdict and (b) the final verdicts $(v_{\st 1},..., v_{\st 4})$ reveal nothing about the number of $1$ or $0$ verdicts, except when all auditors vote $0$.   In the PwDR, we used PVE and FVD only because they are highly efficient. However, it is easy to replace them with GPVE and GFVD. 
 
-Below, we present the main security theorem of the PwDR protocol and present its formal proof in Appendix \ref{sec::proof}. 
+Below, we present the security theorem of the PwDR protocol and present its formal proof in Appendix \ref{sec::proof}. 
 
 \begin{theorem}\label{theorem::PwDR-security}
 The above PwDR protocol is secure, with regard to Definition \ref{def::PwDR-security}, if the digital signature is existentially unforgeable under chosen message attacks,  the blockchain, SAP, and the verdict encoding-decoding protocols (i.e., PVE and FVD) are secure,  the encryption schemes are semantically secure, and the correctness of PVE and FVD holds. 
