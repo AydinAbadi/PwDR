@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  28 JAN 2022 14:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  5 SEP 2022 09:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1506,7 +1506,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [17
 
 ]
-Overfull \vbox (15.32817pt too high) has occurred while \output is active []
+Overfull \vbox (21.01872pt too high) has occurred while \output is active []
 
 
 [18]))) (./PwDR-Protocol.tex [19]
@@ -1519,7 +1519,15 @@ $
 
 [20]) (./proof.tex [21] [22]) (./long-evaluation.tex (./table-cost.tex [23])
 [24] (./Performance-table.tex) (./diag-1.tex) [25])) (./future-research.tex
-[26]) (./related-work.tex [27]) (./conclusion.tex) (./main.bbl
+[26]) (./related-work.tex [27]) (./conclusion.tex)
+
+! LaTeX Error: File `Acknowledgments-final.tex' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+(./main.bbl
 Underfull \hbox (badness 1917) in paragraph at lines 6--9
 []\OT1/cmr/m/n/9 A P20 Fraud and Crim-i-nal Trans-ac-tions Work-ing Group Pa-pe
 r: Best prac-tice ap-proaches for com-
@@ -1623,11 +1631,11 @@ news / people-[]culture / social-[]welfare / article / 3150688 /
 
 ) (./set-XOR-Theorem-proof.tex) (./set-BF-theorem-proof.tex [30])
 (./further-discussion.tex) [31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: C61757E2DE6E128E565CE65D66C235A6;114.
 
@@ -1636,10 +1644,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 41537 strings out of 480608
- 961133 string characters out of 5903630
- 1404875 words of memory out of 5000000
- 56341 multiletter control sequences out of 15000+600000
+ 41538 strings out of 480608
+ 961154 string characters out of 5903630
+ 1405875 words of memory out of 5000000
+ 56342 multiletter control sequences out of 15000+600000
  548777 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,19n,106p,2805b,2277s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1692,7 +1700,7 @@ onts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2020/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf
 -dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2020/texmf-d
 ist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (31 pages, 554033 bytes).
+Output written on main.pdf (31 pages, 554524 bytes).
 PDF statistics:
  787 PDF objects out of 1000 (max. 8388607)
  640 compressed objects within 7 object streams

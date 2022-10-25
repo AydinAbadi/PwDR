@@ -1,0 +1,288 @@
+\begin{thebibliography}{10}
+
+\bibitem{P20-report}
+{A P20 Fraud and Criminal Transactions Working Group Paper}.
+\newblock Best practice approaches for combating payee scams.
+\newblock 2021.
+\newblock
+  \url{https://static1.squarespace.com/static/5efcc6dae323db37b4d01d19/t/60958e7453a1e0728b445470/1620414069082/P20+Report+-+Best+Practice+Approaches+For+Combating+Payee+Scams.pdf}.
+
+\bibitem{AbadiMZ21a}
+Aydin Abadi, Steven~J. Murdoch, and Thomas Zacharias.
+\newblock Recurring contingent payment for proofs of retrievability.
+\newblock {\em {IACR} Cryptol. ePrint Arch.}, 2021.
+
+\bibitem{anderson2019measuring}
+Ross Anderson, Chris Barton, Rainer B{\"o}lme, Richard Clayton, Carlos
+  Gan{\'a}n, Tom Grasso, Michael Levi, Tyler Moore, and Marie Vasek.
+\newblock Measuring the changing cost of cybercrime.
+\newblock 2019.
+
+\bibitem{anderson2007closing}
+Ross Anderson et~al.
+\newblock Closing the phishing hole--fraud, risk and nonbanks.
+\newblock In {\em Federal Reserve Bank of Kansas City--Payment System Research
+  Conferences}, pages 41--56, 2007.
+
+\bibitem{variant-1}
+Anonymous.
+\newblock Variant 1: Efficient verdict encoding-decoding protocol, 2021.
+\newblock
+  \url{https://github.com/pwdrprotocol/PwDR/blob/main/encoding-decoding.cpp}.
+
+\bibitem{variant-2}
+Anonymous.
+\newblock Variant 2: Generic verdict encoding-decoding protocol, 2021.
+\newblock
+  \url{https://github.com/pwdrprotocol/PwDR/blob/main/generic-encoding-decoding.cpp}.
+
+\bibitem{BeckerHAABMSS17}
+Ingolf Becker, Alice Hutchings, Ruba Abu{-}Salma, Ross~J. Anderson, Nicholas
+  Bohm, Steven~J. Murdoch, M.~Angela Sasse, and Gianluca Stringhini.
+\newblock International comparison of bank fraud reimbursement: customer
+  perceptions and contractual terms.
+\newblock {\em J. Cybersecur.}, 2017.
+
+\bibitem{DBLP:journals/cacm/Bloom70}
+Burton~H. Bloom.
+\newblock Space/time trade-offs in hash coding with allowable errors.
+\newblock {\em Commun.}, 1970.
+
+\bibitem{BohmBG00}
+Nicholas Bohm, Ian Brown, and Brian Gladman.
+\newblock Electronic commerce: Who carries the risk of fraud?
+\newblock {\em J. Inf. Law Technol.}, 2000, 2000.
+
+\bibitem{BoseGKMMMST08}
+Prosenjit Bose, Hua Guo, Evangelos Kranakis, Anil Maheshwari, Pat Morin, Jason
+  Morrison, Michiel H.~M. Smid, and Yihui Tang.
+\newblock On the false-positive rate of bloom filters.
+\newblock {\em Inf. Process. Lett.}, 2008.
+
+\bibitem{brinton2016users}
+Bonnie Brinton~Anderson, Anthony Vance, C~Brock Kirwan, David Eargle, and
+  Jeffrey~L Jenkins.
+\newblock How users perceive and respond to security messages: a neurois
+  research agenda and empirical study.
+\newblock {\em European Journal of Information Systems}, 25(4):364--390, 2016.
+
+\bibitem{buchwald2019smart}
+Michael Buchwald.
+\newblock Smart contract dispute resolution: the inescapable flaws of
+  blockchain-based arbitration.
+\newblock {\em U. Pa. L. Rev.}, 2019.
+
+\bibitem{CrosbyW09}
+Scott~A. Crosby and Dan~S. Wallach.
+\newblock Efficient data structures for tamper-evident logging.
+\newblock In Fabian Monrose, editor, {\em 18th {USENIX} Security Symposium,
+  Montreal, Canada, August 10-14, 2009, Proceedings}, pages 317--334. {USENIX}
+  Association, 2009.
+
+\bibitem{DongWAMM17}
+Changyu Dong, Yilei Wang, Amjad Aldweesh, Patrick McCorry, and Aad van Moorsel.
+\newblock Betrayal, distrust, and rationality: Smart counter-collusion
+  contracts for verifiable cloud computing.
+\newblock In {\em {CCS}}, 2017.
+
+\bibitem{DziembowskiEF18}
+Stefan Dziembowski, Lisa Eckey, and Sebastian Faust.
+\newblock Fairswap: How to fairly exchange digital goods.
+\newblock In {\em {CCS}}, 2018.
+
+\bibitem{EckeyFS20}
+Lisa Eckey, Sebastian Faust, and Benjamin Schlosser.
+\newblock Optiswap: Fast optimistic fair exchange.
+\newblock In {\em {ASIA} {CCS}}, 2020.
+
+\bibitem{EyalGSR16}
+Ittay Eyal, Adem~Efe Gencer, Emin~G{\"{u}}n Sirer, and Robbert van Renesse.
+\newblock Bitcoin-ng: {A} scalable blockchain protocol.
+\newblock In Katerina~J. Argyraki and Rebecca Isaacs, editors, {\em 13th
+  {USENIX} Symposium on Networked Systems Design and Implementation, {NSDI}
+  2016, Santa Clara, CA, USA, March 16-18, 2016}, pages 45--59. {USENIX}
+  Association, 2016.
+
+\bibitem{internet-crime-report}
+{Federal Bureau of Investigation (FBI)}.
+\newblock Internet crime report.
+\newblock 2020.
+\newblock \url{https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf}.
+
+\bibitem{felt2014experimenting}
+Adrienne~Porter Felt, Robert~W Reeder, Hazim Almuhimedi, and Sunny Consolvo.
+\newblock Experimenting at scale with google chrome's {SSL} warning.
+\newblock In {\em {CHI}}, 2014.
+
+\bibitem{Which?-super-complaint}
+Adam French.
+\newblock Which? makes scams super-complaint-banks must protect those tricked
+  into a bank transfer.
+\newblock 2016.
+\newblock
+  \url{https://www.which.co.uk/news/2016/09/which-makes-scams-super-complaint-453196/}.
+
+\bibitem{GarayKL15}
+Juan~A. Garay, Aggelos Kiayias, and Nikos Leonardos.
+\newblock The bitcoin backbone protocol: Analysis and applications.
+\newblock In {\em {EUROCRYPT}}, 2015.
+
+\bibitem{Bolt}
+Matthew Green and Ian Miers.
+\newblock Bolt: Anonymous payment channels for decentralized currencies.
+\newblock In {\em {CCS}}, 2017.
+
+\bibitem{Hyperledger-Metrics}
+{Hyperledger Foundation}.
+\newblock Hyperledger blockchain performance metrics, 2018.
+\newblock
+  \url{https://www.hyperledger.org/wp-content/uploads/2018/10/HL\_Whitepaper\_Metrics_PDF\_V1.01.pdf}.
+
+\bibitem{DBLP:books/crc/KatzLindell2014}
+Jonathan Katz and Yehuda Lindell.
+\newblock {\em Introduction to Modern Cryptography, Second Edition}.
+\newblock {CRC} Press, 2014.
+
+\bibitem{kjorven2020pays}
+Marte~Eidsand Kj{\o}rven.
+\newblock Who pays when things go wrong? online financial fraud and consumer
+  protection in scandinavia and europe.
+\newblock {\em European Business Law Review}, 2020.
+
+\bibitem{KustersL00020}
+Ralf K{\"{u}}sters, Julian Liedtke, Johannes M{\"{u}}ller, Daniel Rausch, and
+  Andreas Vogt.
+\newblock Ordinos: {A} verifiable tally-hiding e-voting system.
+\newblock In {\em EuroS{\&}P}, 2020.
+
+\bibitem{laughery2006designing}
+Kenneth~R Laughery and Michael~S Wogalter.
+\newblock Designing effective warnings.
+\newblock {\em Reviews of human factors and ergonomics}, 2006.
+
+\bibitem{rfc/rfc6962}
+Ben Laurie, Adam Langley, and Emilia K{\"{a}}sper.
+\newblock Certificate transparency.
+\newblock {\em {RFC}}, 6962:1--27, 2013.
+
+\bibitem{CRM-code}
+{Lending Standards Board}.
+\newblock Contingent reimbursement model code for authorised push payment
+  scams.
+\newblock 2021.
+\newblock
+  \url{https://www.lendingstandardsboard.org.uk/wp-content/uploads/2021/04/CRM-Code-LSB-Final-April-2021.pdf}.
+
+\bibitem{McIlroy2021}
+David McIlroy and Ruhi Sethi-Smith.
+\newblock Prospects for bankers’ liability for authorised push payment fraud.
+\newblock {\em Butterworths Journal of International Banking and Financial
+  Law}, 2021.
+\newblock
+  \url{https://www.forumchambers.com/wp-content/uploads/2021/03/Article-2-Smith.1-1.pdf}.
+
+\bibitem{bitcoin}
+Satoshi Nakamoto.
+\newblock Bitcoin: A peer-to-peer electronic cash system.
+\newblock Technical report, 2019.
+
+\bibitem{the-bill}
+{US} House~Committee on~Financial~Services.
+\newblock Discussion draft: To amend the electronic fund transfer act to treat
+  fraudulently induced electronic fund transfers in the same manner as
+  unauthorized electronic fund transfer, 2022.
+\newblock
+  \url{https://docs.house.gov/meetings/BA/BA00/20220428/114690/BILLS-117pih-ProtectingConsumersFromPaym-U1.pdf}.
+
+\bibitem{ortolani2016self}
+Pietro Ortolani.
+\newblock Self-enforcing online dispute resolution: lessons from bitcoin.
+\newblock {\em Oxford Journal of Legal Studies}, 2016.
+
+\bibitem{ortolani2019impact}
+Pietro Ortolani.
+\newblock The impact of blockchain technologies and smart contracts on dispute
+  resolution: arbitration and court litigation at the crossroads.
+\newblock {\em Uniform law review}, 2019.
+
+\bibitem{Pedersen91}
+Torben~P. Pedersen.
+\newblock Non-interactive and information-theoretic secure verifiable secret
+  sharing.
+\newblock In {\em {CRYPTO}}, 1991.
+
+\bibitem{Lightning-Network}
+Joseph Poon and Thaddeus Dryja.
+\newblock The bitcoin lightning network: Scalable off-chain instant payments.
+\newblock Technical report, 2016.
+\newblock \url{https://lightning.network/lightning-network-paper.pdf}.
+
+\bibitem{Schneier0078909}
+Bruce Schneier.
+\newblock {\em Applied cryptography - protocols, algorithms, and source code in
+  C, 2nd Edition}.
+\newblock Wiley, 1996.
+
+\bibitem{Soriano-Salvador21}
+Enrique Soriano{-}Salvador and Gorka~Guardiola Muzquiz.
+\newblock Sealfs: Storage-based tamper-evident logging.
+\newblock {\em Comput. Secur.}, 2021.
+
+\bibitem{taylor2020new}
+John~L Taylor and Tony Galica.
+\newblock A new code to protect victims in the uk from authorised push payments
+  fraud.
+\newblock {\em Banking \& Finance Law Review}, 2020.
+
+\bibitem{europol-notice}
+{The European Union Agency for Law Enforcement Cooperation}.
+\newblock Take control of your digital life. don't be a victim of cyber scams!,
+  2021.
+\newblock
+  \url{https://www.europol.europa.eu/activities-services/public-awareness-and-prevention-guides/take-control-of-your-digital-life-don\%E2\%80\%99t-be-victim-of-cyber-scams}.
+
+\bibitem{Fraud-Classifier}
+{The Federal Reserve}.
+\newblock Fraud classifier.
+\newblock 2020.
+\newblock
+  \url{https://fedpaymentsimprovement.org/wp-content/uploads/fraudclassifier-industry-adoption-roadmap.pdf}.
+
+\bibitem{Financial-Ombudsman-Service-response}
+{The Financial Ombudsman Service}.
+\newblock Lending standards board review of the contingent reimbursement model
+  code for authorised push payment scams-financial ombudsman service response.
+\newblock 2020.
+\newblock
+  \url{https://www.financial-ombudsman.org.uk/files/289009/2020-10-02-LSB-CRM-Code-Review-Financial-Ombudsman-Service-Response.pdf}.
+
+\bibitem{interpol-notce}
+{The International Criminal Police Organization}.
+\newblock Investment fraud via dating apps, 2021.
+\newblock
+  \url{https://www.interpol.int/en/News-and-Events/News/2021/Investment-fraud-via-dating-apps}.
+
+\bibitem{2021-Half-Year-Fraud-Update}
+{UK Finance}.
+\newblock 2021 half year fraud update, 2021.
+\newblock
+  \url{https://www.ukfinance.org.uk/system/files/Half-year-fraud-update-2021-FINAL.pdf}.
+
+\bibitem{overview-of-payment-fraud}
+{UK Finance}.
+\newblock The definitive overview of payment industry fraud, 2021.
+\newblock
+  \url{https://www.ukfinance.org.uk/system/files/Fraud\%20The\%20Facts\%202021-\%20FINAL.pdf}.
+
+\bibitem{ethereum}
+Gavin Wood et~al.
+\newblock Ethereum: A secure decentralised generalised transaction ledger.
+\newblock {\em Ethereum project yellow paper}, 2014.
+
+\bibitem{zee2021shifting}
+Sophie Van~Der Zee.
+\newblock Shifting the blame? investigation of user compliance with digital
+  payment regulations.
+\newblock In {\em Cybercrime in Context}. Springer, 2021.
+
+\end{thebibliography}

@@ -124,8 +124,8 @@ $ Pr\Big[
    \mathtt{Sig.ver}( pk,  u^{\st *}, sig^{\st *}) =1\ : \ 
 % 
 %(M(u^{\scriptscriptstyle *},k)\neq \sigma \lor Q(\text{aux},k)\neq q) \wedge\\ (a=1 \ \vee b=1)
-    \mathtt{Cer.keyGen}(1^{\st \lambda})\rightarrow (sk,pk), \ \ 
-  \mathcal{A}^{\mathtt{Sig.sign}(k,)}(pk)\rightarrow(u^{\st *}, sig^{\st *}) 
+    \mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk,pk), \ \ 
+  \mathcal{A}^{\mathtt{Sig.sign}(sk,)}(pk)\rightarrow(u^{\st *}, sig^{\st *}) 
    \Big]\leq \mu(\lambda)$}},
 where $Q$ is the set of queries that $\mathcal{A}$ sent to the certificate generator oracle.
 

@@ -136,8 +136,8 @@ $$ \Pr\left[
 \end{array} : 
     \begin{array}{l}
    
-    \mathtt{Cer.keyGen}(1^{\st \lambda})\rightarrow (sk,pk) \\
-  \mathcal{A}^{\mathtt{Sig.sign}(k,)}(pk)\rightarrow(u^{\st *}, sig^{\st *})
+    \mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk,pk) \\
+  \mathcal{A}^{\mathtt{Sig.sign}(sk,)}(pk)\rightarrow(u^{\st *}, sig^{\st *})
 
      
 \end{array}    \right]\leq \mu(\lambda)$$

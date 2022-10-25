@@ -1,0 +1,68 @@
+% !TEX root =main.tex
+
+
+
+%\begin{minipage}{0.5\textwidth}
+ \begin{table*}[ht]
+
+\caption{ {\small{ The PwDR's asymptotic cost. In the table, $n$ is the  number of auditors and $e$ is the threshold.}}} \label{table::PwDR-Asymptotic-Cost} 
+ %\vspace{-3mm}
+\begin{center}
+\renewcommand{\arraystretch}{1}
+
+%\begin{minipage}{\linewidth}
+\scalebox{1}{
+\begin{tabular}{|c|c|c|c|c|} 
+
+   \hline
+   %
+\multirow{2}{*}{\scriptsize \textbf{Party}}& \multicolumn{2}{c|}{\scriptsize {\textbf{  Setting}}}&\multirow{2}{*}{\scriptsize \textbf{Computation  Cost}}&\multirow{2}{*}{\scriptsize \textbf{Communication Cost}}\\
+     \cline{2-3}  
+&\scriptsize$e=1$&\scriptsize$e>1$& &\\
+\hline
+
+    %SO-PoR 1st row
+\scriptsize Customer $\mathcal{C}$&\scriptsize$\checkmark$&\scriptsize$\checkmark$& \cellcolor{gray!20}   \scriptsize$O(1)$& \cellcolor{gray!20}  \scriptsize$O(1)$\\
+ %  { }
+     \cline{1-5}  
+     %SO-PoR 2nd row
+\scriptsize Bank $\mathcal{B}$&\scriptsize$\checkmark$&\scriptsize$\checkmark$&   \cellcolor{gray!20}\scriptsize$O(1)$ &    \cellcolor{gray!20}\scriptsize$O(1)$\\
+      \cline{1-5}   
+      
+
+       %[3] 1st row 
+       
+   \scriptsize   {Auditor $\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n-1}$ }&\scriptsize$\checkmark$&\scriptsize$\checkmark$&   \cellcolor{gray!20}\scriptsize$O(1)$&  \cellcolor{gray!20}\scriptsize$ O(1)$\\      
+            \cline{1-5} 
+
+ % \scriptsize \ \ \ \ \ \ \ \ --------------&&\\
+&\scriptsize$\checkmark$&&    \cellcolor{gray!20}\scriptsize$O(n)$&    \cellcolor{gray!20}\scriptsize$ O(1)$\\
+     \cline{2-5}
+\multirow{-2}{*}{\scriptsize Auditor $\mathcal{D}_{\st n}$}&&\scriptsize$\checkmark$&    \cellcolor{gray!20}\scriptsize$O(\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!})$&    \cellcolor{gray!20}\scriptsize$ O(\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!})$\\
+     \cline{1-5}  
+     
+ \scriptsize Dispute resolver $\mathcal{DR}$&\scriptsize$\checkmark$&\scriptsize$\checkmark$& \cellcolor{gray!20}\scriptsize $O(n)$&    \cellcolor{gray!20}\scriptsize$O(1)$\\
+ 
+    \cline{1-5}  
+     %[3] 2nd row 
+       %\scriptsize auditor&\scriptsize $O(z'  \log_{\scriptscriptstyle2}(m))$&\scriptsize$ O(1)$\\
+
+
+ %\cline{1-3}  
+    %[53] 3rd row %\\\\\\\\\\\\\\\\\\\\\\\\. xx
+%\scriptsize Smart Contract&\scriptsize$O(1)$&-\\ 
+
+
+ %  [gray]{.9}\multirow{-4}{*}{\rotatebox[origin=c]{0}
+ 
+ 
+\end{tabular}  %xxxxxx
+
+}
+%\end{minipage}
+\end{center}
+\end{table*}
+%\end{minipage}
+
+
+

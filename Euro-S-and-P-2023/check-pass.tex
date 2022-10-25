@@ -1,0 +1,154 @@
+%!TEX root = main.tex
+
+%\subsection{The PwDR Protocol's Subroutines}\label{sec::PwDR-Subroutines}
+
+
+%In this section, we present a few subroutines that will be  called  by  the PwDR protocol. 
+
+
+
+%\subsubsection{Determining Bank's Message Status.}
+%
+%  As we stated earlier, in the payment journey the customer may receive a ``pass'' message or even nothing at all, e.g., due to the system failure. In such cases,  a victim of  an APP fraud may complain that the pass or missing message should have been a warning one that  ultimately would have prevented the victim from falling into the APP fraud. To assist the committee members to deal with and process such complaints deterministically, we propose a process  called $\mathtt{verStat}(.)$ that outputs $1$ in the case where a pass message was given correctly or the missing message could not play prevent the scam, and output $0$, otherwise. The process is defined in figure \ref{fig:verstat}.
+  
+  
+\input{verStat}
+  \input{checkWarning}
+  \input{encode}
+  
+  
+  
+  
+  
+  
+  
+
+
+%In this section, we present a set of subroutines that are  called  by  and help each arbiter to  processes a customer's complaint.  As we stated earlier, in the payment journey the customer may receive a ``pass'', or warning message (or nothing at all). In the PwDR protocol, when a customer has fallen to an APP scam, it is allowed to challenge the validity of these messages. In particular, it can complain that (a) the pass message should have been a warning message  or the bank has not provided any message  and if it provided a warning then the scam would be prevented, or (b) the warning message provided by the bank was ineffective. To let the arbiter deal with the above situations and reach a verdict we define two protocols $\mathtt{verStat}(.)$ and $\mathtt{checkWarning}(.)$, presented below. 
+%
+%\small{
+%\begin{center}
+%\fbox{\begin{minipage}{5 in}
+%%\caption{Private Verdict Encoding  (PVE) Protocol} 
+%\underline{$\mathtt{verStat}(add_{\st\mathcal{S}}, m^{\st\mathcal{(B)}},  \bm l, \Delta, aux)\rightarrow w_{\st 1}$}\\
+%%
+%\begin{itemize}
+%\item\noindent\textit{Input}. $add_{\st\mathcal{S}}$: the address of smart contract $\mathcal{S}$, $m^{\st\mathcal{(B)}}$:  $\mathcal{B}$'s warning message,  $\bm l$:  customer's payees' list, $\Delta$: a time parameter, and $aux$: auxiliary information, e.g., bank's policy. 
+%%
+%\item\noindent\textit{Output}. $ w_{\st 1}=1$: if the ``pass'' message had been given correctly or the missing message did not play any role in preventing the scam; $ w_{\st 1}=0$: otherwise. 
+%\end{itemize}
+%\begin{enumerate}
+%\item reads the content of   $\mathcal{S}$. It checks if $m^{\st\mathcal{(B)}}=$``pass''  or the encrypted warning message was not sent on time (i.e., never sent or sent after    $t_{\st 0}+\Delta$).  If one of the checks passes, it proceeds to the next step. Otherwise, it aborts. 
+%\item checks the validity of  customer's most recent payees' list $\bm l$, with the help of the auxiliary information, $aux$. 
+%\begin{itemize}
+%\item[$\bullet$]  if $\bm l$ contains an invalid element,  it sets $ w_{\st 1}=0$.
+%\item [$\bullet$] otherwise, it sets $ w_{\st 1}=1$.
+%\end{itemize}
+%\item returns $ w_{\st 1}$.
+%\end{enumerate}
+%\label{fig:verstat}
+%\end{minipage}}
+%\end{center}
+%}
+
+%%\small{
+%\begin{center}
+%\fbox{\begin{minipage}{5 in}
+%$\mathtt{verPass}(add_{\st\mathcal{S}}, m, l, \text{aux})\rightarrow d\in\{0,1\}$\\
+%------------------
+%\
+%
+%\noindent\textbf{Input}. $add_{\st\mathcal{S}}$: the address of smart contract $\mathcal{S}$, $m$: $\mathcal{S}$'s field that corresponds to $\mathcal{B}$'s message, $l$: $\mathcal{S}$'s field related to customer's payees' list, and \text{aux}: auxiliary information, e.g., bank's policy. 
+%
+%\noindent\textbf{Output}. $d=1$: if the ``pass'' message had been given correctly; $d=0$: otherwise. 
+%\begin{enumerate}
+%\item reads the content of  $m$ in $\mathcal{S}$.
+%\item checks if $m=$``pass''. If the check is passed, it proceeds to the next step. Otherwise, it aborts. 
+%\item checks the validity of  customer's most recent payees' list $l$ on  $\mathcal{S}$, with the help of the auxiliary information $\text{aux}$. 
+%\begin{itemize}
+%\item[$\bullet$]  if $l$ contains an invalid element,  it sets $d=0$.
+%\item [$\bullet$] otherwise, it sets $d=1$.
+%\end{itemize}
+%\item returns $d$.
+%\end{enumerate}
+%\end{minipage}}
+%\end{center}
+%%}
+
+
+
+%\small{
+%\begin{center}
+%\fbox{\begin{minipage}{5 in}
+%\underline{$\mathtt{checkWarning}(add_{\st\mathcal{S}}, z, m^{\st\mathcal{(B)}},  aux')\rightarrow (w_{\st 2},  w_{\st 3})$}\\
+%%
+%\begin{itemize}
+%%
+%\item \noindent\textit{Input}. $add_{\st\mathcal{S}}$: the address of smart contract $\mathcal{S}$, $z$:  $\mathcal{C}$'s complaint, $m^{\st\mathcal{(B)}}$:  $\mathcal{B}$'s warning message,  and $aux'$: auxiliary information, e.g., guideline on warnings' effectiveness. 
+%%
+%\item\noindent\textit{Output}. $w_{\st 3}=1$: if the certificate in $z$ is valid or no certificate is provided; $ w_{\st 3}=0$: if the certificate is invalid. Also, 
+%$w_{\st 2}=1$: if the given warning message is effective; $w_{\st 2}=0$: if the  warning message is ineffective.
+%
+%\end{itemize}
+%
+%
+%\begin{enumerate}
+%%
+%\item parse $z= m||sig||pk||\text{``challenge warning''}$. If the certificate $sig$ is  empty, then it  sets $w_{\st 3}=1$ and proceeds to  step \ref{check-m}. Otherwise, it:
+%%
+%\begin{enumerate} 
+%%
+%\item verifies the certificate: $\mathtt{Sig.ver}(pk, m, sig)\rightarrow h$. 
+%%
+%\item if  the certificate is rejected (i.e., $h=0$),  it sets $w_{\st 3}=0$. It  goes to step \ref{return}. 
+%%
+%\item otherwise (i.e., $h=1$), it sets $w_{\st 3}=1$ and moves onto the next step. 
+%\end{enumerate}
+%%
+%%\item  reads the content of $m$ in $\mathcal{S}$.
+%%
+%\item\label{check-m} checks if ``warning'' $\in m^{\st\mathcal{(B)}}$.  If the check is passed, it proceeds to the next step. Otherwise, it aborts. 
+%%
+%\item checks the warning's effectiveness, with the assistance of the evidence $m$ and auxiliary information $aux'$. 
+%%
+%\begin{itemize}
+%\item[$\bullet$]  if it is effective,  it sets $w_{\st 2} = 1$.
+%\item [$\bullet$] otherwise, it sets $w_{\st 2} = 0$.
+%\end{itemize}
+%\item\label{return} returns $(w_{\st 2}, w_{\st 3})$.
+%\end{enumerate}
+%\end{minipage}}
+%\end{center}
+%%}
+%
+%\input{encode}
+%\input{ZSPA}
+
+
+%%\small{
+%\begin{center}
+%\fbox{\begin{minipage}{5 in}
+%$\mathtt{checkMissedWar}(add_{\st\mathcal{S}},  m, T, l, \text{aux})\rightarrow g\in\{0,1\}$\\
+%------------------
+%\
+%
+%\noindent\textbf{Input}. $add_{\st\mathcal{S}}$: the address of smart contract $\mathcal{S}$, $m$:  $\mathcal{S}$'s field that corresponds to $\mathcal{B}$'s message, $T$: $\mathcal{S}$'s field that specifies the time when $\mathcal{B}$ must register the message, $l$: $\mathcal{S}$'s field related to customer's payees' list, and \text{aux}: auxiliary information. 
+%
+%\noindent\textbf{Output}. $g=1$: if the missing warning could play a role in preventing the scam; $g=0$: otherwise. 
+%\begin{enumerate}
+%%
+%\item reads the bank's signed message $m$ sent to $\mathcal{S}$. If $m$ was not set (to anything) at time $T$, then it proceeds to the next step. Otherwise, it aborts. 
+%%
+%\item checks the validity of  customer's most recent payees' list $l$ on  $\mathcal{S}$, with the help of the auxiliary information $\text{aux}$. 
+%\begin{itemize}
+%\item[$\bullet$]  if $l$ contains an invalid element,  it sets $g=1$.
+%\item [$\bullet$] otherwise, it sets $g=0$.
+%\end{itemize}
+%\item returns $g$.
+%\end{enumerate}
+%\end{minipage}
+%}
+%\end{center}
+%%}
+%
+
