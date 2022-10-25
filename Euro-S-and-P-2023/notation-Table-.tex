@@ -16,7 +16,7 @@ We summarise our notations in Table \ref{table:notation-table}.
 \caption{{Notation Table}.}\label{commu-breakdown-party} 
 \vspace{-2mm}
 \renewcommand{\arraystretch}{.94}
-\scalebox{.96}{
+\scalebox{.95}{
 % 1st table
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} 
 
@@ -56,23 +56,23 @@ We summarise our notations in Table \ref{table:notation-table}.
 %
 %\cellcolor{white!20}\scriptsize$\mathtt{PRF}(.)$ &\cellcolor{white!20}\scriptsize  Pseudorandom function \\ 
 %
-\cellcolor{gray!20}\scriptsize$\mathcal{C}$ &\cellcolor{gray!20}\scriptsize Customer  \\  
+\cellcolor{white!20}\scriptsize$\mathcal{C}$ &\cellcolor{white!20}\scriptsize Customer  \\  
 %
-\cellcolor{white!20}\scriptsize$\mathcal{B}$ &\cellcolor{white!20}\scriptsize Bank  \\
+\cellcolor{gray!20}\scriptsize$\mathcal{B}$ &\cellcolor{gray!20}\scriptsize Bank  \\
 %  
-\cellcolor{gray!20}\scriptsize$\mathcal{D}_{\st 1},... , \mathcal{D}_{\st n}$ &\cellcolor{gray!20}\scriptsize Auditors  \\  
+\cellcolor{white!20}\scriptsize$\mathcal{D}_{\st 1},... , \mathcal{D}_{\st n}$ &\cellcolor{white!20}\scriptsize Auditors  \\  
 %
-\cellcolor{white!20}\scriptsize$\mathcal{DR}$ &\cellcolor{white!20}\scriptsize Dispute resolver  \\  
+\cellcolor{gray!20}\scriptsize$\mathcal{DR}$ &\cellcolor{gray!20}\scriptsize Dispute resolver  \\  
 %
-\cellcolor{gray!20}\scriptsize$\mathcal{S}$ &\cellcolor{gray!20}\scriptsize Smart contract  \\  
+\cellcolor{white!20}\scriptsize$\mathcal{S}$ &\cellcolor{white!20}\scriptsize Smart contract  \\  
 %
-\cellcolor{white!20}\scriptsize$\mathcal{G}$ &\cellcolor{white!20}\scriptsize Certificate generator  \\  
+\cellcolor{gray!20}\scriptsize$\mathcal{G}$ &\cellcolor{gray!20}\scriptsize Certificate generator  \\  
 %
 %\cellcolor{gray!20}\scriptsize{SAP} &\cellcolor{gray!20}\scriptsize  Statement agreement protocol\\ 
 %
-\cellcolor{gray!20}\scriptsize PPT&\cellcolor{gray!20}\scriptsize  Probabilistic polynomial time \\    
+\cellcolor{white!20}\scriptsize PPT&\cellcolor{white!20}\scriptsize  Probabilistic polynomial time \\    
 %
-\cellcolor{white!20}\scriptsize{PVE} &\cellcolor{white!20}\scriptsize  Private verdict encoding  protocol\\ 
+\cellcolor{gray!20}\scriptsize{PVE} &\cellcolor{gray!20}\scriptsize  Private verdict encoding  protocol\\ 
 %
 %\cellcolor{gray!20}\scriptsize{FVD} &\cellcolor{gray!20}\scriptsize  Final verdict decoding protocol\\ 
 %
@@ -80,59 +80,19 @@ We summarise our notations in Table \ref{table:notation-table}.
 %
 \cellcolor{gray!20}\scriptsize{GFVD} &\cellcolor{gray!20}\scriptsize  Generic final verdict decoding protocol\\ 
 %
-%\cellcolor{white!20}\scriptsize$\oplus$ &\cellcolor{white!20}\scriptsize  XOR operator \\ 
-
-%
-
-%
-
-%
-%\cellcolor{white!20}\scriptsize$add_{\st I}$ &\cellcolor{white!20}\scriptsize  Address of $I$\\ 
-%
-%\cellcolor{white!20}\scriptsize$\mathtt{BF}$ &\cellcolor{white!20}\scriptsize  Bloom filter\\ 
-%
-
-%
 \cellcolor{white!20}\scriptsize$z_{\st 1}$ &\cellcolor{white!20}\scriptsize  $\mathcal{C}$'s complaint about $\mathcal{B}$'s message status\\ 
 % 
-\cellcolor{white!20}\scriptsize$z_{\st 2}$ &\cellcolor{white!20}\scriptsize  $\mathcal{C}$'s complaint about a warning's effectiveness\\
+\cellcolor{gray!20}\scriptsize$z_{\st 2}$ &\cellcolor{gray!20}\scriptsize  $\mathcal{C}$'s complaint about a warning's effectiveness\\
 %
-\cellcolor{gray!20}\scriptsize$z_{\st 3}$ &\cellcolor{gray!20}\scriptsize  $\mathcal{C}$'s complaint about payment message  inconsistency\\ 
+\cellcolor{white!20}\scriptsize$z_{\st 3}$ &\cellcolor{white!20}\scriptsize  $\mathcal{C}$'s complaint about payment message  inconsistency\\ 
 %
 \cellcolor{gray!20}\scriptsize$aux, aux'$ &\cellcolor{gray!20}\scriptsize  Auxiliary information\\ 
 %
 %
 \cellcolor{white!20}\scriptsize$\Delta$ &\cellcolor{white!20}\scriptsize  Time parameter \\ 
-%\cellcolor{gray!20}\scriptsize PPT&\cellcolor{gray!20}\scriptsize  Probabilistic polynomial time \\    
-% {   }\scriptsize$t_{\st i}$ &\scriptsize  time point\\ 
-%\cellcolor{white!20}\scriptsize$\mathtt{BF}$ &\cellcolor{white!20}\scriptsize  Bloom filter\\ 
-%\hline 
 
-%*********************************
-%\end{tabular}
-%\renewcommand{\arraystretch}{.73}
-%% 2nd table
-%\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} 
-%
-%    \hline
-%\cellcolor{gray!15} \scriptsize \textbf{Symbol}&\cellcolor{gray!15} \scriptsize \textbf{Description}  \\
-%    \hline
-   %********************************* 
-%\hline
-
-
-%---------------------------------
-%\multirow{10}{*}{\rotatebox[origin=c]{90}{\scriptsize  \textbf{Generic}}}
-%
-
-%\cellcolor{gray!20}\scriptsize$\bm{l}$ &\cellcolor{gray!20}\scriptsize  $\mathcal{C}$'s payees list\\ 
-%
 \cellcolor{gray!20}\scriptsize$\hat{\bm{l}}$ &\cellcolor{gray!20}\scriptsize  $\mathcal{C}$'s encoded payees list\\ 
-%
-
-
-%\cellcolor{gray!20}\scriptsize$ k_{\st 0}$ &\cellcolor{gray!20}\scriptsize   A secret key of $\mathtt{PRF}$\\ 
-%               
+%              
 \cellcolor{white!20}\scriptsize$f$ &\cellcolor{white!20}\scriptsize New payee’s detail  \\ 
  %                            
 \cellcolor{gray!20}\scriptsize$in_{\st f}$ &\cellcolor{gray!20}\scriptsize Payment detail \\ 
@@ -150,14 +110,8 @@ We summarise our notations in Table \ref{table:notation-table}.
      \cellcolor{gray!20}\scriptsize$sk$ and $pk$ &\cellcolor{gray!20}\scriptsize Secret  and public keys\\     
 %
    \cellcolor{white!20}\scriptsize$sk_{\st\mathcal{D}}$ &\cellcolor{white!20}\scriptsize Auditors' secret key\\     
-%    
-%\cellcolor{gray!20}\scriptsize$pp$ &\cellcolor{gray!20}\scriptsize Public parameter\\  
-%
-%\cellcolor{white!20}\scriptsize$j$ &\cellcolor{white!20}\scriptsize  Auditor's index,  $1\leq j\leq n$ \\ 
 %
 \cellcolor{gray!20}\scriptsize$T, T_{\st 1},T_{\st 2}$ &\cellcolor{gray!20}\scriptsize  Tokens, where  $T:=( T_{\st 1},T_{\st 2})$\\ 
-%
-%
 %
 \cellcolor{white!20}\scriptsize$w_{\st 1}$ &\cellcolor{white!20}\scriptsize  Output of $\mathtt{verStat}(.)$\\ 
 %
@@ -177,12 +131,7 @@ We summarise our notations in Table \ref{table:notation-table}.
  %
   \cellcolor{gray!20}\scriptsize$r_{\st j}$ &\cellcolor{gray!20}\scriptsize  Pseudorandom value\\   
  %              
-\cellcolor{white!20}\scriptsize$\lambda$ &\cellcolor{white!20}\scriptsize Security parameter\\  
-%
-%\cellcolor{gray!20}\scriptsize$\mu$ &\cellcolor{gray!20}\scriptsize Negligible function\\  
-
-
-                
+\cellcolor{white!20}\scriptsize$\lambda$ &\cellcolor{white!20}\scriptsize Security parameter\\                
 %
 \cellcolor{gray!20}\scriptsize$\pi$ &\cellcolor{gray!20}\scriptsize Private statement\\        
   %
@@ -193,19 +142,19 @@ We summarise our notations in Table \ref{table:notation-table}.
 %
 \cellcolor{white!20}\scriptsize$n$ &\cellcolor{white!20}\scriptsize  Total number of auditors\\  
 %           
-%\cellcolor{gray!20}\scriptsize$z$ &\cellcolor{gray!20}\scriptsize  $\mathcal{C}$'s complaint, where $z:=(z_{\st 1}, z_{\st 2}, z_{\st 3})$\\ 
-%
-%\cellcolor{white!20}\scriptsize $g:=(g_{\st 1}, g_{\st 2})$&\cellcolor{white!20}\scriptsize  Commitment values \\    
-%
-%
 \cellcolor{gray!20}\scriptsize$PwDR$ &\cellcolor{gray!20}\scriptsize  payment with dispute resolution protocol\\ 
+%
+\cellcolor{white!20}\scriptsize$\mu(.)$ &\cellcolor{white!20}\scriptsize Negligible function\\  
+%
+\cellcolor{gray!20}\scriptsize$\mathtt{PRF}(.)$ &\cellcolor{gray!20}\scriptsize  Pseudorandom function \\ 
+%
+\cellcolor{white!20}\scriptsize$\bar k_{\st 0}$ &\cellcolor{white!20}\scriptsize A key for $\mathtt{PRF}$\\ 
+%
+\cellcolor{gray!20}\scriptsize $\bar k_{\st 1}$, $\bar k_{\st 2}$ &\cellcolor{gray!20}\scriptsize Keys for the symmetric key encryption\\ 
+
+%
 \hline 
-%***********************
-
-      
-
-           
-              
+%***********************              
 \end{tabular}\label{table:notation-table}
 %
 }
