@@ -4,7 +4,7 @@
 
 
 
-\vspace{-2mm}
+\vspace{-1mm}
 \section{ Definition of Payment with Dispute Resolution Scheme}\label{sec::def}
 
 In this section, we outline a formal definition of the payment with dispute resolution  ($\mathsf{pwdr}$) notion. We refer readers to Appendix \ref{sec::long-def} for the full version of the definition. 
@@ -66,23 +66,23 @@ In this section, we outline a formal definition of the payment with dispute reso
 %{\bar{ \mathtt{Encode}}}(pk_{\st\mathcal{D}}, \ddot \pi)
 
 %Note, algorithms $\mathtt{genWarning}(.)$-$\mathtt{resDispute}(.)$ implicitly take another input, $state_{\st\mathcal S}$, which is $\mathcal{S}$'s current state, i.e., data registered in $\mathcal{S}$. For the sake of simplicity, we avoided explicitly passing this input  to these processes.  
-\vspace{-1.4mm}
+%\vspace{-1.4mm}
 
 A $\mathsf{pwdr}$  has two  properties,  \emph{correctness} and \emph{security}. Correctness requires that the payment journey is completed (in the absence of a fraudster) without the need for (i) the honest customer to complain and (ii)  the honest bank to reimburse.  A $\mathsf{pwdr}$  is secure if it meets three main properties,  (a) security against a malicious victim, (b) security against a malicious bank, and (c) privacy. 
 %
 %Below, we present a brief formal definition of   them. 
 %
- Informally, security against a malicious victim states that an APP fraud victim who is not qualified for the reimbursement should not be reimbursed. 
+Security against a malicious victim states that an APP fraud victim who is not qualified for the reimbursement should not be reimbursed. 
 %
 Specifically, a corrupt victim cannot (a) make at least the threshold of the  auditors, $\mathcal{D}_{\st j}$s,  conclude that $\mathcal{B}$ should have provided a warning, although $\mathcal{B}$ has done so, or (b) make $\mathcal{DR}$ conclude that   the pass message was incorrectly given or a vital warning message was missing despite only less than the threshold of  $\mathcal{D}_{\st j}$s  believing so, or (c) persuade at least the threshold of $\mathcal{D}_{\st j}$s to  conclude that the warning was ineffective although it was effective, or (d)  make $\mathcal{DR}$ believe that the warning message was ineffective although only less than the threshold of $\mathcal{D}_{\st j}$s believe it, or (e)  convince  $\mathcal{D}_{\st j}$s to accept an invalid certificate, or  (f) make $\mathcal{DR}$ believe that at least the threshold of $\mathcal{D}_{\st j}$s accepted the certificate  although they did not. Below, we formally state it. 
 %%%%%%%%%%%%%
 %
-\vspace{-2.1mm}
+%\vspace{-2.1mm}
 \begin{definition}[Security against a malicious victim]\label{def-a::Security-against-malicious-victim} A $\mathsf{pwdr}$  is secure against a malicious victim, if for any security parameter $\lambda$,  auxiliary data $aux$, and   PPT adversary $\mathcal{A}$, there is a negligible function $\mu(\cdot)$, such that for  experiment $\mathsf{Exp}_{\st 1}^{\mathcal{A}}$:
 %
 
 
-\vspace{-.7mm}
+%\vspace{-.7mm}
 
 {\small{
 \begin{center}
