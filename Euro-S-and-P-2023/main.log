@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  25 OCT 2022 16:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  26 OCT 2022 11:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1477,13 +1477,13 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 18
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 (./introduction.tex
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 7.
+LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 8.
 
  [1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -1499,11 +1499,8 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <4.91833> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 160.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <3.51312> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 160.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
-(./commitment.tex) (./SAP.tex) [4]) (./content.tex (./PwDR-Overview.tex)
+) [3]
+(./commitment.tex) (./SAP.tex)) (./content.tex (./PwDR-Overview.tex [4])
 (./Definition.tex
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7.0262> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 23.
@@ -1520,6 +1517,9 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <4.51686> not available
 Overfull \hbox (11.60014pt too wide) detected at line 119
 []
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (10.74658pt too wide) detected at line 222
@@ -1546,9 +1546,6 @@ Underfull \hbox (badness 2119) in paragraph at lines 38--41
 \OT1/ptm/b/n/10.03749 Pro-to-col. [][][] \OT1/ptm/m/n/10.03749 This vari-ant al
 so in-cludes two pro-to-cols,
  []
-
-
-Underfull \vbox (badness 4279) has occurred while \output is active []
 
 )) [9]
 Underfull \hbox (badness 10000) in paragraph at lines 109--111
@@ -1651,16 +1648,12 @@ Underfull \hbox (badness 1810) in paragraph at lines 301--303
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1005) has occurred while \output is active []
 
 
 (./evaluation.tex (./table-cost.tex) (./Performance-table.tex)
-(./long-evaluation.tex [11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-(./diag-1.tex) [12]))) (./future-research.tex) (./conclusion.tex [13])
-(./main.bbl
+(./long-evaluation.tex [11] (./diag-1.tex) [12]))) (./future-research.tex)
+(./conclusion.tex) (./main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
 []$\OT1/ptm/m/n/8.03 https : / / static1\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 squa
 respace\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 com / static / 5efcc6dae323db37b4d01d
@@ -1673,7 +1666,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--9
  -[] +
  []
 
-
+[13]
 Underfull \hbox (badness 1810) in paragraph at lines 115--119
 []\OT1/ptm/m/n/8.03 Federal Bu-reau of In-ves-ti-ga-tion (FBI).  In-ter-net cri
 me re-
@@ -1756,7 +1749,7 @@ ML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 gov / meetings / BA / BA00 / 20220428 / 114690
  /
  []
 
-[14]
+
 Underfull \hbox (badness 10000) in paragraph at lines 246--251
 \OT1/ptm/m/n/8.03 public -[] awareness -[] and -[] prevention -[] guides / take
  -[] control -[] of -[] your -[]
@@ -1786,7 +1779,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 260--266
 dsman -[] Service -[]
  []
 
-
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 274--278
 []\OT1/ptm/m/n/8.03 UK Fi-nance.  2021 half year fraud up-date, 2021.
  []
@@ -1814,14 +1807,11 @@ Overfull \hbox (13.59184pt too wide) detected at line 221
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Overfull \hbox (10.74658pt too wide) detected at line 323
 []
  []
 
-[17] (./long-privacy-def.tex
+(./long-privacy-def.tex [17]
 Overfull \hbox (19.56696pt too wide) detected at line 54
 []
  []
@@ -1830,9 +1820,6 @@ Overfull \hbox (19.56696pt too wide) detected at line 54
 Overfull \hbox (20.13602pt too wide) detected at line 131
 []
  []
-
-
-Underfull \vbox (badness 1577) has occurred while \output is active []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 162--163
@@ -1854,32 +1841,26 @@ Underfull \hbox (badness 2753) in paragraph at lines 7--10
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
+Underfull \hbox (badness 10000) in paragraph at lines 142--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--144
-
- []
-
-
-Overfull \hbox (0.64018pt too wide) in paragraph at lines 204--204
+Overfull \hbox (0.64018pt too wide) in paragraph at lines 206--206
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--223
+Underfull \hbox (badness 10000) in paragraph at lines 222--224
 
- []
-
-
-Overfull \hbox (0.64018pt too wide) in paragraph at lines 267--267
- [][] 
  []
 
 ) (./set-BF-theorem-proof.tex
-Overfull \vbox (17.30974pt too high) has occurred while \output is active []
+
+LaTeX Warning: Text page 19 contains only floats.
+
+
+Overfull \vbox (3.68747pt too high) has occurred while \output is active []
 
 
 [19]) (./further-discussion.tex
@@ -1902,7 +1883,11 @@ Underfull \hbox (badness 1762) in paragraph at lines 18--24
 \OT1/ptm/m/n/10.03749 that has never been queried to the sign-ing or-a-cle.
  []
 
-[20] [21])
+
+Underfull \vbox (badness 2617) has occurred while \output is active []
+
+ [20]
+[21])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1936,7 +1921,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  38906 strings out of 480608
  894841 string characters out of 5903630
- 1326793 words of memory out of 5000000
+ 1329378 words of memory out of 5000000
  53728 multiletter control sequences out of 15000+600000
  599208 words of font info for 188 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1975,7 +1960,7 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist
 e1/urw/times/utmbi8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8
 a.pfb>
-Output written on main.pdf (22 pages, 527860 bytes).
+Output written on main.pdf (22 pages, 527106 bytes).
 PDF statistics:
  826 PDF objects out of 1000 (max. 8388607)
  761 compressed objects within 8 object streams

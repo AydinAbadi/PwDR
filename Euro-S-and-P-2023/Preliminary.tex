@@ -4,11 +4,11 @@
 
 
 
-\vspace{-1mm}
+\vspace{-2mm}
 
 \section{Preliminaries} \label{preliminaries}
 
-
+\vspace{-2mm}
 
 \subsection{Notations}
 
@@ -194,9 +194,9 @@ where $Q$ is the set of queries that $\mathcal{A}$ sent to the oracle.
 Informally, a pseudorandom function (as is defined in \cite{DBLP:books/crc/KatzLindell2014}) is a deterministic function that takes a key of length $\Lambda$ and an input; it outputs a value  indistinguishable from that of  a truly random function.  In this paper, we use the pseudorandom function:   $\mathtt {PRF}: \{0,1\}^{\st \Lambda}\times \{0,1\}^{\st *} \rightarrow  \mathbb{F}_p$, where $p$ is a large prime number, $|p|=\lambda$, and $(\Lambda,\lambda)$ are the security parameters. In practice, a pseudorandom function can be obtained from an efficient block cipher, e.g., AES, \cite{DBLP:books/crc/KatzLindell2014}. 
 %We refer readers to \cite{DBLP:books/crc/KatzLindell2014} for a formal definition of a pseudorandom function.
 
-%\vspace{-4mm}
+\vspace{-2mm}
 \subsection{Bloom Filter}
-%\vspace{-1mm}
+\vspace{-1mm}
 
 A Bloom filter \cite{DBLP:journals/cacm/Bloom70} is a compact data structure that lets us  
 efficiently check an element membership. It is an array of $m$ bits (initially all set to zero), that represents $n$  elements. It is accompanied by $k$ independent hash functions. To insert an element, all the hash values of the element are computed and their corresponding bits in the filter are set to $1$. To check an element membership, all its hash values are re-computed and checked whether all are set to $1$ in the filter. If all the corresponding bits are $1$, then the element is probably in the filter; otherwise, it is not. In this work,  we require that a Bloom filter uses \emph{cryptographic} hash functions. In Appendix \ref{sec::bloom-filter-}, we explain how the Bloom filter's parameters can be set.

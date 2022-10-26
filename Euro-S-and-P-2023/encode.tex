@@ -1,15 +1,15 @@
 % !TEX root =main.tex
 
-%\vspace{.6mm}
+\vspace{-3mm}
 \subsection{Subroutines for  Encoding-Decoding Verdicts}\label{sec::Encoding-Decoding-Verdicts}
 
-%\vspace{-1mm}
+\vspace{-1mm}
 
 In this section, we present verdict encoding and decoding protocols. They let a third party $\mathcal{I}$, e.g., $\mathcal{DR}$, learn if a threshold of the auditors voted $1$, while satisfying the following requirements.  The protocols  (1) generate unlinkable verdicts, (2) do not require auditors to interact with each other for each customer, and (3) are efficient. Since the second and third requirements are self-explanatory,  we only explain the first one.  Informally, the first property states that the protocols generate encoded verdicts and final verdict in a way that $\mathcal{I}$,  given these values, cannot (a)   link a  verdict to an auditor (except when all verdicts are $0$), and (b) learn the total number of $1$ or $0$ verdicts when they provide different verdicts.  Shortly, we present two variants of verdict encoding and decoding protocol. The first variant is highly efficient and suitable when the threshold is $1$. The second one is generic and works for any threshold (but is less efficient). 
 
 %The latter variant is slightly less efficient than the former one. These two variants might be of independent interest. Below, we explain each variant. 
 
-%\vspace{-1mm}
+\vspace{-2mm}
 \subsubsection{Variant 1:  Efficient Verdict  Encoding-Decoding Protocol}
 
 
@@ -34,23 +34,21 @@ This variant has two protocols,  Private Verdict Encoding (PVE) and Final Verdic
 % 
 % Not that the protocols' correctness holds with an overwhelming probability. In particular, if two auditors  represent their verdict by an identical random value, then when they are XORed they would cannel out each other which can affect the result's correctness. The same holds if the XOR of  multiple verdicts' representations results in a value that can cancel out another verdict's representation. Nevertheless, the probability that such an event occurs is negligible in the security parameter $|p|=\lambda$, i.e., at most   $\frac{1}{2^{\st \lambda}}$. It is evident that PVE and FVD protocols meet properties (2) and (3). The primary reason they also meet  property (1) is that each masked verdict reveals nothing about the verdict (and its representation) and  given the final verdict, $\mathcal{I}$ cannot distinguish between the case where there is exactly one auditor that voted  $1$ and the case where multiple auditors voted $1$, as in both cases $\mathcal{I}$   extracts only a single random value, which reveals nothing about the number of auditors which voted $0$ or $1$. We will use this variant in the PwDR protocol. 
  
-%\vspace{-1mm}
+\vspace{-2mm}
 \subsubsection{Variant 2: Generic Verdict  Encoding-Decoding Protocol} This variant also includes two protocols, Generic Private Verdict Encoding (GPVE) and Generic Final Verdict Decoding (GFVD) which let $\mathcal{I}$ learn if at least $e$ auditors voted $1$, where $e$ is an integer in  $[1, n]$. It uses a novel combination of   Bloom filter and combinatorics. It relies on our observation that a Bloom filter encoding a set of random values reveals nothing about the set's elements.  Appendix \ref{sec::Variant-2-Theorem-proof} presents the above observation's formal statement and proof.  
 %
 In this variant  also, the auditors initially agree on a secret key  used  to  generate a pseudorandom masking value. Each auditor $\mathcal{D}_{\st j}$ represents its verdict by a parameter, such that if its verdict is $0$,   it  sets the parameter to  $0$; but, if   the verdict is $1$, it sets the parameter to a fresh \emph{pseudorandom} value $\alpha_{\st j}$, also derived from the above key. Thus, there would be a set $A=\{\alpha_{\st 1},..., \alpha_{\st n}\}$ from which   $\mathcal{D}_{\st j}$ would pick $\alpha_{\st j}$ to represent its verdict $1$. 
 
 Each $\mathcal{D}_{\st j}$ masks its verdict representation by its masking value. It sends the result to $\mathcal{I}$. Also, (only) auditor $\mathcal{D}_{\st n}$  generates a set $W$  of all  combinations of auditors' verdict $1$'s representations that satisfy the threshold, $e$.  Specifically,  for every integer $i$ in $[e, n]$, it computes the combinations (without repetition) of $i$ elements from  $A=\{\alpha_{\st 1},..., \alpha_{\st n}\}$. If  multiple elements are taken at a time (i.e., $i>1$), they are XORed with each other.   Let $W=\{(\alpha_{\st 1}\oplus ... \oplus \alpha_{\st e}),  (\alpha_{\st 2}\oplus  ... \oplus \alpha_{\st e+1}), ..., (\alpha_{\st 1}\oplus ... \oplus \alpha_{\st n})\}$ be the result. 
 %
-Note that $\mathcal{D}_{\st n}$ computes each element of $W$ regardless of what specific auditor votes; moreover, it can generate each   $\alpha_{\st i}$ independently (without interacting with other parties), as it knows the single key (of the pseudorandom function) that was used by the parties to generate these values.  
- 
-
- 
- To protect  the votes representations' privacy (from $\mathcal{I}$), it inserts all elements of $W$ into a Bloom filter. Let $\mathtt{BF}$ be the resulting Bloom filter. It sends $\mathtt{BF}$ to $\mathcal{I}$. 
+Note, $\mathcal{D}_{\st n}$ computes each element of $W$ regardless of what specific auditor votes; also, it can generate each   $\alpha_{\st i}$ independently (without interacting with other parties), as it knows the single key (of the pseudorandom function) that was used by the parties to generate these values.  
+ %
+ To protect the votes representations' privacy (from $\mathcal{I}$), it inserts all elements of $W$ into a Bloom filter. Let $\mathtt{BF}$ be the resulting Bloom filter. It sends $\mathtt{BF}$ to $\mathcal{I}$. 
 
 
-In GFVD, to decode and extract the final verdict,  $\mathcal{I}$  XORs all masked verdict representations which removes the masking values and XORs the representations. Let $c$ be the result.  If $c=0$, then $\mathcal{I}$ concludes that all auditors voted $0$; so, it sets the final verdict to $0$. If $c\neq 0$, then it checks if $c\in \mathtt{BF}$. If it is, then it concludes that at least the threshold of the auditors voted $1$, so it sets the final verdict to $1$. Otherwise ($c\notin \mathtt{BF}$), it learns that less than the threshold of the auditors voted $1$; so, it sets the final verdict to $0$.  Figures \ref{fig:GPVE} and \ref{fig:GFVD}, in Appendix \ref{sec::Generic-Verdict-Encoding-Decoding-Protocols}, present the  GPVE and GFVD protocols in detail. Note, the total number of the combinations, i.e., the cardinality of $W$, is small when the number of auditors is not very high. In general,  due to the  binomial theorem, the cardinality of $W$ is determined as follows: 
+In GFVD, to decode and extract the final verdict,  $\mathcal{I}$  XORs all masked verdict representations which removes the masking values and XORs the representations. Let $c$ be the result.  If $c=0$, then $\mathcal{I}$ concludes that all auditors voted $0$; so, it sets the final verdict to $0$. If $c\neq 0$, then it checks if $c\in \mathtt{BF}$. If it is, then it concludes that at least the threshold of the auditors voted $1$, so it sets the final verdict to $1$. Otherwise ($c\notin \mathtt{BF}$), it learns that less than the threshold of the auditors voted $1$; so, it sets the final verdict to $0$.  Figures \ref{fig:GPVE} and \ref{fig:GFVD}, in Appendix \ref{sec::Generic-Verdict-Encoding-Decoding-Protocols}, present the  GPVE and GFVD protocols in detail. Note, the total number of the combinations, i.e., the cardinality of $W$, is small when the number of auditors is not very high. In general,  due to the  binomial theorem, the cardinality of $W$ is determined as: 
 %
-$$|W|=\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!}$$
+$|W|=\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!}$
 
 %
 %\vspace{-1mm}
@@ -60,7 +58,7 @@ $$|W|=\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!}$$
  %
  For instance, when $n=10$ and  $e=6$, then $|W|$ is only $386$. Appendix \ref{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol} provides  further discussion on the above protocols.
  
- %\vspace{-1mm}
+ \vspace{-2mm}
  
 % 
 %   In the above scheme, instead of inserting the combinations into $\mathtt{BF}$ we could  hash  the combinations and give the hash values to $\mathcal{I}$. But, using a Bloom filter allows us to save considerable communication costs. For instance, when $n=10$, $e=6$, and SHA-256 is used, then $\mathcal{D}_{\st n}$ needs to send  $98816=386\times 256$ bits to $\mathcal{I}$, whereas  if they are inserted into a Bloom filter, then it only needs to send $22276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it  can save  communication costs by at least a factor of  $4$. We refer readers to Appendix \ref{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol} for  further discussion on the verdict encoding-decoding protocols. 
@@ -139,7 +137,7 @@ $$|W|=\sum\limits_{\st i=e}^{\st n}\frac{n!}{i!(n- i)!}$$
 %
     \vspace{-1mm}
 \begin{itemize}[leftmargin=4.2mm]
-\item \noindent\textit{Input.} $\bar{k}_{\st 0}$: a key of  pseudorandom function $\mathtt{PRF}(.)$, $\text{ID}$: a unique identifier, $ w_{\st j}$: a  verdict, $o$: an offset, $n$: the total number of  auditors,  and  $j$: an auditor's index.
+\item \noindent\textit{Input.} $\bar{k}_{\st 0}$: a key of  pseudorandom function $\mathtt{PRF}(.)$, $\text{ID}$: a unique identifier, $ w_{\st j}$: a  verdict, $o$: a counter, $n$: the total number of  auditors,  and  $j$: an auditor's index.
 %
 \item \noindent\textit{Output.} $\bar{  w}_{\st j}$:  an  encoded verdict.  
 %
@@ -190,11 +188,11 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 \end{tcolorbox}
 \end{center}
 \vspace{-2mm}
-\caption{Private Verdict Encoding  (PVE) Protocol. In the figure, $\mathcal{D}_{\st n}$ can generate other parties' $r_{\st i}$ values, given $\bar k_{\st 0}$.} 
+\caption{Private Verdict Encoding  (PVE) Protocol. In the figure, $\mathcal{D}_{\st n}$ can generate other parties' $r_{\st i}$ values, given $\bar k_{\st 0}$. Note, $\text{ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text{ID}$ and $o$ are used to ensure each $r_{\st j}$ will be different for each invocation of PVE  although the same key $\bar k_{\st 0}$ is used.} 
 \label{fig:PVE}
 \end{figure}
 %
-%\vspace{-3mm} 
+\vspace{-3mm} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
  \vspace{-2mm}

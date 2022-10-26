@@ -114,7 +114,7 @@ As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::
 \begin{figure}[!htp]
 \setlength{\fboxsep}{1.5pt}
 \begin{center}
-    \begin{tcolorbox}[enhanced,width=83mm, left=0mm,
+    \begin{tcolorbox}[enhanced,width=83mm, height=126mm, left=0mm,
     drop fuzzy shadow southwest,
     colframe=black,colback=white]
     {\small{
@@ -122,6 +122,7 @@ As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::
 
 \underline{$\mathtt{GPVE}(\bar{k}_{\st 0}, \text{ID},  w_{\st j}, o, e, n,  j)\rightarrow  (\bar{  w}_{\st j}, \mathtt{BF})$}\\
 %
+\vspace{-2.4mm}
 \begin{itemize}[leftmargin=4.2mm]
 \item \noindent\textit{Input.} $\bar{k}_{\st 0}$: a key of  pseudorandom function $\mathtt{PRF}(.)$, $\text{ID}$: a unique identifier, $ w_{\st j}$: a  verdict, $o$: an offset, $e$: a threshold, $n$: the total number of  auditors,  and  $j$: an auditor's index.
 %
@@ -148,6 +149,7 @@ Note, the above second step is taken only by $\mathcal{D}_{\st n}$.
 %By the end of this phase, a random polynomial of the following form is generated, $\Psi_{\st j}=r_{\st i+2,j}\cdot x^{\st 2}+r_{\st i+1,j}\cdot x+r_{\st i,j}$.
 %
 \item  sets a fresh parameter, $w'_{\st j}$, that represents a verdict, as below. 
+\vspace{-6mm}
 %
 %$\forall i,1\leq i\leq s:$
 
@@ -203,21 +205,20 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 }}
 \end{tcolorbox}
 \end{center}
-\caption{Generic Private Verdict Encoding  (GPVE) Protocol} 
-%\vspace{-3mm}
+\vspace{-2.8mm}
+\caption{Generic Private Verdict Encoding  (GPVE) Protocol. In the figure, $\mathcal{D}_{\st n}$ can generate other parties' $r_{\st i}$ and $\alpha_{\st j}$ values, given $\bar k_{\st 0}$. Note also that $\text{ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text{ID}$ and $o$ are used to ensure each $r_{\st j}$ will be different for each invocation of PVE  although the same key $\bar k_{\st 0}$ is used.} 
 \label{fig:GPVE}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-
 \begin{figure} [!htb]
-\setlength{\fboxsep}{1.4pt}
+\setlength{\fboxsep}{1.9pt}
 \begin{center}
-    \begin{tcolorbox}[enhanced,width=83mm, left=0mm,
+    \begin{tcolorbox}[enhanced,width=81mm,height=60mm, left=0mm,
     drop fuzzy shadow southwest,
     colframe=black,colback=white]
     \small{
-    \vspace{-1.3mm}
+    \vspace{-2.1mm}
 \underline{$\mathtt{GFVD}(n,  \bar{\bm w}, \mathtt{BF})\rightarrow  v$}\\
 %
 \begin{itemize}[leftmargin=4.2mm]
@@ -243,7 +244,8 @@ $c= \bigoplus\limits^{\st n}_{\st j=1} \bar w_{\st j}$
 \item sets the final verdict $v$ depending on the content of $c$. 
 
 Specifically, 
-%
+\vspace{-3mm}
+
 %\begin{itemize}
 %%
 %\item[$\bullet$] if $c=0$, sets $v=0$.
@@ -266,8 +268,8 @@ Specifically,
 }
 \end{tcolorbox}
 \end{center}
+\vspace{-2mm}
 \caption{Generic Final Verdict Decoding  (GFVD) Protocol} 
-\vspace{-3mm}
 \label{fig:GFVD}
 \end{figure}
 
