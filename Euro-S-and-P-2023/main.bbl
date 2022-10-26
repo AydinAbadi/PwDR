@@ -36,6 +36,11 @@ Anonymous.
 \newblock
   \url{https://github.com/pwdrprotocol/PwDR/blob/main/generic-encoding-decoding.cpp}.
 
+\bibitem{FCA-Glossary}
+Financial~Conduct Authority.
+\newblock {FCA} glossary, 2021.
+\newblock \url{https://www.handbook.fca.org.uk/handbook/glossary/G3566a.html}.
+
 \bibitem{BeckerHAABMSS17}
 Ingolf Becker, Alice Hutchings, Ruba Abu{-}Salma, Ross~J. Anderson, Nicholas
   Bohm, Steven~J. Murdoch, M.~Angela Sasse, and Gianluca Stringhini.
@@ -212,6 +217,11 @@ Pietro Ortolani.
 \newblock The impact of blockchain technologies and smart contracts on dispute
   resolution: arbitration and court litigation at the crossroads.
 \newblock {\em Uniform law review}, 2019.
+
+\bibitem{PSR-APP-def}
+{Payment Systems Regulator}.
+\newblock What are authorised push payment scams, 2022.
+\newblock \url{https://www.psr.org.uk/our-work/app-scams}.
 
 \bibitem{Pedersen91}
 Torben~P. Pedersen.

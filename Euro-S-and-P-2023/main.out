@@ -38,11 +38,12 @@
 \BOOKMARK [2][-]{subsection.9.4}{Security Against Exploitative Victims}{section.9}% 38
 \BOOKMARK [1][-]{section.10}{Conclusion}{}% 39
 \BOOKMARK [1][-]{section*.9}{References}{}% 40
-\BOOKMARK [1][-]{section*.10}{ A: Commitment Scheme}{}% 41
-\BOOKMARK [1][-]{section*.11}{ B: Bloom Filter}{}% 42
-\BOOKMARK [1][-]{section*.12}{ C: Full Version of Definition of Payment with Dispute Resolution Scheme}{}% 43
-\BOOKMARK [1][-]{section*.13}{ D: Further Discussion on Variant 1 Encoding-Decoding Protocol}{}% 44
-\BOOKMARK [1][-]{section*.14}{ E: Generic Verdict Encoding-Decoding Protocol}{}% 45
-\BOOKMARK [1][-]{section*.17}{ F: Variant 2 Encoding-Decoding Protocol's Main Theorem and Proof}{}% 46
-\BOOKMARK [1][-]{section*.18}{ G: Further Discussion on the Verdict Encoding-decoding Protocols}{}% 47
-\BOOKMARK [1][-]{section*.19}{ H: Security Analysis of the PwDR Protocol}{}% 48
+\BOOKMARK [1][-]{section*.10}{ A: Further Definition of APP fraud}{}% 41
+\BOOKMARK [1][-]{section*.11}{ B: Commitment Scheme}{}% 42
+\BOOKMARK [1][-]{section*.12}{ C: Bloom Filter}{}% 43
+\BOOKMARK [1][-]{section*.13}{ D: Full Version of Definition of Payment with Dispute Resolution Scheme}{}% 44
+\BOOKMARK [1][-]{section*.14}{ E: Further Discussion on Variant 1 Encoding-Decoding Protocol}{}% 45
+\BOOKMARK [1][-]{section*.15}{ F: Generic Verdict Encoding-Decoding Protocol}{}% 46
+\BOOKMARK [1][-]{section*.18}{ G: Variant 2 Encoding-Decoding Protocol's Main Theorem and Proof}{}% 47
+\BOOKMARK [1][-]{section*.19}{ H: Further Discussion on the Verdict Encoding-decoding Protocols}{}% 48
+\BOOKMARK [1][-]{section*.20}{ I: Security Analysis of the PwDR Protocol}{}% 49

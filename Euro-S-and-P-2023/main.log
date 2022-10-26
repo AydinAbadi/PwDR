@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  26 OCT 2022 11:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  26 OCT 2022 15:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1503,26 +1503,23 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <3.51312> not available
 (./commitment.tex) (./SAP.tex)) (./content.tex (./PwDR-Overview.tex [4])
 (./Definition.tex
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7.0262> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 23.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 27.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5.01874> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 23.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 27.
  [5]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9.03374> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 100.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 131.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6.32358> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 100.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 131.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <4.51686> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 100.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 131.
 
-Overfull \hbox (11.60014pt too wide) detected at line 119
+Overfull \hbox (11.60014pt too wide) detected at line 150
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (10.74658pt too wide) detected at line 222
+Overfull \hbox (10.74658pt too wide) detected at line 253
 []
  []
 
@@ -1667,131 +1664,132 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--9
  []
 
 [13]
-Underfull \hbox (badness 1810) in paragraph at lines 115--119
+Underfull \hbox (badness 1810) in paragraph at lines 120--124
 []\OT1/ptm/m/n/8.03 Federal Bu-reau of In-ves-ti-ga-tion (FBI).  In-ter-net cri
 me re-
  []
 
 
-Underfull \hbox (badness 3668) in paragraph at lines 126--132
+Underfull \hbox (badness 3668) in paragraph at lines 131--137
 \OT1/ptm/m/n/8.03 must pro-tect those tricked into a bank trans-fer.  2016.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--132
+Underfull \hbox (badness 10000) in paragraph at lines 131--137
 []$\OT1/ptm/m/n/8.03 https : / / www\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 which\OM
 L/cmm/m/it/8 :\OT1/ptm/m/n/8.03 co\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 uk / news 
 / 2016 / 09 / which -[] makes -[] scams -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--183
+Underfull \hbox (badness 10000) in paragraph at lines 182--188
 []\OT1/ptm/m/n/8.03 Lending Stan-dards Board.  Con-tin-gent re-im-burse-ment
  []
 
 
-Underfull \hbox (badness 3417) in paragraph at lines 177--183
+Underfull \hbox (badness 3417) in paragraph at lines 182--188
 \OT1/ptm/m/n/8.03 model code for au-tho-rised push pay-ment scams.  2021.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--183
+Underfull \hbox (badness 10000) in paragraph at lines 182--188
 []$\OT1/ptm/m/n/8.03 https : / / www\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 lendings
 tandardsboard\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 org\OML/cmm/m/it/8 :\OT1/ptm/m/
 n/8.03 uk / wp -[] content / uploads /
  []
 
 
-Underfull \hbox (badness 2237) in paragraph at lines 185--191
+Underfull \hbox (badness 2237) in paragraph at lines 190--196
 \OT1/ptm/m/n/8.03 li-a-bil-ity for au-tho-rised push pay-ment fraud.  \OT1/ptm/
 m/it/8.03 But-ter-worths
  []
 
 
-Underfull \hbox (badness 1424) in paragraph at lines 185--191
+Underfull \hbox (badness 1424) in paragraph at lines 190--196
 \OT1/ptm/m/it/8.03 Jour-nal of In-ter-na-tional Bank-ing and Fi-nan-cial Law\OT
 1/ptm/m/n/8.03 , 2021.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--191
+Underfull \hbox (badness 10000) in paragraph at lines 190--196
 []$\OT1/ptm/m/n/8.03 https : / / www\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 forumcha
 mbers\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 com / wp -[] content / uploads / 2021 /
  03 /
  []
 
 
-Underfull \hbox (badness 2951) in paragraph at lines 198--204
+Underfull \hbox (badness 2951) in paragraph at lines 203--209
 []\OT1/ptm/m/n/8.03 US House Com-mit-tee on Fi-nan-cial Ser-vices.  Dis-cus-sio
 n
  []
 
 
-Underfull \hbox (badness 3118) in paragraph at lines 198--204
+Underfull \hbox (badness 3118) in paragraph at lines 203--209
 \OT1/ptm/m/n/8.03 draft: To amend the elec-tronic fund trans-fer act to treat
  []
 
 
-Underfull \hbox (badness 2990) in paragraph at lines 198--204
+Underfull \hbox (badness 2990) in paragraph at lines 203--209
 \OT1/ptm/m/n/8.03 fraud-u-lently in-duced elec-tronic fund trans-fers in the sa
 me
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--204
+Underfull \hbox (badness 10000) in paragraph at lines 203--209
 \OT1/ptm/m/n/8.03 man-ner as unau-tho-rized elec-tronic fund trans-fer, 2022.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--204
+Underfull \hbox (badness 10000) in paragraph at lines 203--209
 []$\OT1/ptm/m/n/8.03 https : / / docs\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 house\O
 ML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 gov / meetings / BA / BA00 / 20220428 / 114690
  /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--251
+Underfull \hbox (badness 10000) in paragraph at lines 256--261
 \OT1/ptm/m/n/8.03 public -[] awareness -[] and -[] prevention -[] guides / take
  -[] control -[] of -[] your -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--258
+Underfull \hbox (badness 10000) in paragraph at lines 263--268
 []\OT1/ptm/m/n/8.03 The Fed-eral Re-serve.  Fraud clas-si-fier.  2020.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--258
+Underfull \hbox (badness 10000) in paragraph at lines 263--268
 []$\OT1/ptm/m/n/8.03 https : / / fedpaymentsimprovement\OML/cmm/m/it/8 :\OT1/pt
 m/m/n/8.03 org / wp -[] content / uploads /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--266
+Underfull \hbox (badness 10000) in paragraph at lines 270--276
 []$\OT1/ptm/m/n/8.03 https : / / www\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 ^^Lnanci
 al -[] ombudsman\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 org\OML/cmm/m/it/8 :\OT1/ptm
 /m/n/8.03 uk / ^^Lles / 289009 / 2020 -[] 10 -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--266
+Underfull \hbox (badness 10000) in paragraph at lines 270--276
 \OT1/ptm/m/n/8.03 02 -[] LSB -[] CRM -[] Code -[] Review -[] Financial -[] Ombu
 dsman -[] Service -[]
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 274--278
+Underfull \hbox (badness 10000) in paragraph at lines 284--288
 []\OT1/ptm/m/n/8.03 UK Fi-nance.  2021 half year fraud up-date, 2021.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--278
+Underfull \hbox (badness 10000) in paragraph at lines 284--288
 []$\OT1/ptm/m/n/8.03 https : / / www\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 uk^^Lnan
 ce\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 org\OML/cmm/m/it/8 :\OT1/ptm/m/n/8.03 uk /
  system / ^^Lles / Half -[] year -[] fraud -[]
  []
 
-) (./long-commitment.tex) (./bloom-filter.tex) (./log-definition.tex
+) (./APP-definition.tex) (./long-commitment.tex) (./bloom-filter.tex)
+(./log-definition.tex
 Underfull \hbox (badness 10000) in paragraph at lines 72--73
 []\OML/cmm/m/it/10 ; [];$ $[];$
  []
@@ -1807,14 +1805,24 @@ Overfull \hbox (13.59184pt too wide) detected at line 221
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (10.74658pt too wide) detected at line 323
 []
  []
 
-(./long-privacy-def.tex [17]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+(./long-privacy-def.tex
 Overfull \hbox (19.56696pt too wide) detected at line 54
 []
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (20.13602pt too wide) detected at line 131
@@ -1835,7 +1843,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 162--163
 T1/ptm/m/it/10.03749 ,
  []
 
-)) (./set-XOR-Theorem-proof.tex [18]) (./Generic-encode.tex
+[18])) (./set-XOR-Theorem-proof.tex) (./Generic-encode.tex
 Underfull \hbox (badness 2753) in paragraph at lines 7--10
 []\OT1/ptm/m/n/10.03749 In this sec-tion, we present the generic ver-dict
  []
@@ -1855,25 +1863,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 222--224
 
  []
 
-) (./set-BF-theorem-proof.tex
+) (./set-BF-theorem-proof.tex) (./further-discussion.tex
+Underfull \hbox (badness 5119) in paragraph at lines 3--3
+ []\OT1/ptm/b/n/12.045 H. Fur-ther Dis-cus-sion on the Ver-dict
+ []
 
-LaTeX Warning: Text page 19 contains only floats.
+[19]
+
+LaTeX Warning: Text page 20 contains only floats.
 
 
 Overfull \vbox (3.68747pt too high) has occurred while \output is active []
-
-
-[19]) (./further-discussion.tex
-Underfull \hbox (badness 5119) in paragraph at lines 3--3
- []\OT1/ptm/b/n/12.045 G. Fur-ther Dis-cus-sion on the Ver-dict
- []
 
 
 Underfull \hbox (badness 1442) in paragraph at lines 19--20
 []\OT1/ptm/m/n/10.03749 Note that each vari-ant of our ver-dict encoding-
  []
 
-) (./proof.tex
+) (./proof.tex [20]
 Underfull \hbox (badness 10000) in paragraph at lines 18--24
 []\OT1/ptm/m/n/10.03749 Now, we move on to event $[] \OT1/cmr/m/n/10 :
  []
@@ -1884,10 +1891,9 @@ Underfull \hbox (badness 1762) in paragraph at lines 18--24
  []
 
 
-Underfull \vbox (badness 2617) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
-[21])
+ [21])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1899,16 +1905,14 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[22
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
+[22]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 226.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4B801EEC3536B561C6AF8DA56F3243A8;3732.
+(rerunfilecheck)             Checksum: D0B62444353826A0861E12C87D759758;3805.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1919,10 +1923,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 38906 strings out of 480608
- 894841 string characters out of 5903630
- 1330378 words of memory out of 5000000
- 53728 multiletter control sequences out of 15000+600000
+ 38918 strings out of 480608
+ 895018 string characters out of 5903630
+ 1327514 words of memory out of 5000000
+ 53734 multiletter control sequences out of 15000+600000
  599208 words of font info for 188 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,20n,108p,3727b,2244s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1960,10 +1964,10 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist
 e1/urw/times/utmbi8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8
 a.pfb>
-Output written on main.pdf (22 pages, 527134 bytes).
+Output written on main.pdf (22 pages, 529293 bytes).
 PDF statistics:
- 826 PDF objects out of 1000 (max. 8388607)
- 761 compressed objects within 8 object streams
- 249 named destinations out of 1000 (max. 500000)
- 397 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 841 PDF objects out of 1000 (max. 8388607)
+ 776 compressed objects within 8 object streams
+ 253 named destinations out of 1000 (max. 500000)
+ 405 words of extra memory for PDF output out of 10000 (max. 10000000)
 

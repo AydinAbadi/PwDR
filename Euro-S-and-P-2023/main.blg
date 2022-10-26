@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: ref.bib
+Warning--empty journal in P20-report
+Warning--empty journal in anderson2019measuring
+Warning--empty journal in CoP
+Warning--empty journal in internet-crime-report
+Warning--empty journal in Which?-super-complaint
+Warning--empty journal in CRM-code
+Warning--empty institution in bitcoin
+Warning--empty institution in Lightning-Network
+Warning--empty journal in Fraud-Classifier
+Warning--empty journal in Financial-Ombudsman-Service-response
+You've used 50 entries,
+            2118 wiz_defined-function locations,
+            754 strings with 13327 characters,
+and the built_in function-call counts, 13479 in all, are:
+= -- 1246
+> -- 696
+< -- 3
++ -- 281
+- -- 227
+* -- 719
+:= -- 2378
+add.period$ -- 162
+call.type$ -- 50
+change.case$ -- 260
+chr.to.int$ -- 0
+cite$ -- 60
+duplicate$ -- 544
+empty$ -- 1090
+format.name$ -- 227
+if$ -- 2775
+int.to.chr$ -- 0
+int.to.str$ -- 50
+missing$ -- 40
+newline$ -- 262
+num.names$ -- 104
+pop$ -- 362
+preamble$ -- 1
+purify$ -- 210
+quote$ -- 0
+skip$ -- 386
+stack$ -- 0
+substring$ -- 375
+swap$ -- 74
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 196
+warning$ -- 10
+while$ -- 115
+width$ -- 52
+write$ -- 521
+(There were 10 warnings)
