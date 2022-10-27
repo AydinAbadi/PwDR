@@ -93,7 +93,7 @@ In this section, we present the PwDR protocol in detail.
 \end{enumerate}
 
 
-Let $sk:=(sk_{\st\mathcal{G}}, sk_{\st\mathcal{D}})$ and $pk:=(pk_{\st\mathcal{G}}, {pk}_{\st\mathcal{D}})$. Note, this phase occures only once for all customers.
+Let $sk:=(sk_{\st\mathcal{G}}, sk_{\st\mathcal{D}})$ and $pk:=(pk_{\st\mathcal{G}}, {pk}_{\st\mathcal{D}})$. Note, this phase occurs only once for all customers.
 
 \item\label{RCPoRP::Bank-side-Initiation}  \underline{\textit{Bank-side Initiation}}: $\mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm l)$.
 
@@ -396,7 +396,7 @@ $ \bar {\bm w}_{\st j}= \mathtt{Dec}(\bar k_{\st 2}, \hat{\bm w}_{\st j})$, wher
 \end{enumerate}
 \end{enumerate}
 
-Customer $\mathcal{C}$ must be reimbursed if the final verdict is that (i)  the ``pass'' message or missing message should have been a warning or (ii)  the warning was ineffective and the provided evidence was not invalid, and (iii) the payment has been made. Stated formally, the following relation must hold: 
+Customer $\mathcal{C}$ must be reimbursed if the final verdict is that (i)  the ``pass'' message or missing message should have been a warning or (ii)  the warning was ineffective and the provided evidence was not invalid, and (iii) the payment has been made. To state it formally, the following relation must hold: 
 %
 $$\Big( \underbrace{(v_{\st 1}=1)}_{\st (\text{i})}\vee  \underbrace{(v_{\st 2}=1\ \wedge\ v_{\st 3}=1)}_{\st (\text {ii})}\Big)\wedge\Big(\underbrace{v_{\st 4}=1}_{\st (\text{iii})}\Big)$$
 

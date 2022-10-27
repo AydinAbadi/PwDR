@@ -176,7 +176,7 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 \item if $j=n$, computes a Bloom filter that encodes the combinations of verdict representations (i.e., $w'_{\st j}$)  for verdict $1$. In particular, it takes the following steps. 
 \begin{itemize}[leftmargin=4.2mm]
 %
-\item[$\bullet$] for every integer $i$ in the range $[e,n]$, computes the combinations (without repetition) of $i$ elements from set $\{\alpha_{\st 1},..., \alpha_{\st n}\}$. In the case where  multiple elements are taken at a time (i.e., $i>1$), the elements are XORed with each other. Let $W=\{(\alpha_{\st 1}\oplus... \oplus \alpha_{\st e}), (\alpha_{\st 2}\oplus ... \oplus \alpha_{\st e+1}), ..., (\alpha_{\st 1}\oplus... \oplus \alpha_{\st n})\}$ be the result.  
+\item[$\bullet$] for every integer $i$ in the range $[e,n]$, computes the combinations (without repetition) of $i$ elements from set $\{\alpha_{\st 1},..., \alpha_{\st n}\}$. In the case where multiple elements are taken at a time (i.e., $i>1$), the elements are XORed with each other. Let $W=\{(\alpha_{\st 1}\oplus... \oplus \alpha_{\st e}), (\alpha_{\st 2}\oplus ... \oplus \alpha_{\st e+1}), ..., (\alpha_{\st 1}\oplus... \oplus \alpha_{\st n})\}$ be the result.  
 %
 \item[$\bullet$] constructs an empty Bloom filter. Then, it inserts all elements of $W$ into this Bloom filter. Let $\mathtt{BF}$ be the Bloom filter encoding $W$'s elements. 
 

@@ -33,7 +33,7 @@ In this section, we outline a formal definition of the payment with dispute reso
 
 \vs
 
-\item [$\bullet$] $\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}$.  It is an update request  algorithm. It uses the new payee's detail $f$ and encoding algorithm $\mathtt{Encode}(T_{\st 1},.)$ to generate an encoded update request $\hat  m^{\st\mathcal{(C)}}_{\st 1}$.  It outputs  $\hat  m^{\st\mathcal{(C)}}_{\st 1}$.
+\item [$\bullet$] $\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}$.  It is an update request algorithm. It uses the new payee's detail $f$ and encoding algorithm $\mathtt{Encode}(T_{\st 1},.)$ to generate an encoded update request $\hat  m^{\st\mathcal{(C)}}_{\st 1}$.  It outputs  $\hat  m^{\st\mathcal{(C)}}_{\st 1}$.
 %
 
 \vs
@@ -63,7 +63,7 @@ In this section, we outline a formal definition of the payment with dispute reso
  
  \vs
  
- \item  [$\bullet$] $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, {aux}_{\st f})\rightarrow (\hat z, \hat{\ddot \pi})$. It  generates complaints with the help of auxiliary data ${aux}_{\st f}$.  If $\mathcal{C}$ wants to complain that (i)   ``pass'' message should have been a warning  or (ii) no  message was provided,   it sets $z_{\st 1}$ to ``challenge message''. If its complaint is about the warning's effectiveness,  it sets $z_{\st 2}$ to a combination of an evidence $u\in aux_{\st f}$, the evidence's certificate $sig\in aux_{\st f}$, the certificate's public parameter,   and ``challenge warning'', where the certificate is obtained from  $\mathcal{G}$ via a query, $Q$. If its complaint is  about the   payment, it sets $z_{\st 3}$ to ``challenge payment''. It  generates and outputs (i)  encoded complaints $\hat z$ using  $\mathtt{Encode}(T_{\st 1},.)$, and (ii) encoded secret  parameters $\hat{\ddot \pi}$  using another encoding algorithm $\bar{\mathtt{Encode}}(pk_{\st \mathcal{D}},.)$.   
+ \item  [$\bullet$] $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, {aux}_{\st f})\rightarrow (\hat z, \hat{\ddot \pi})$. It generates complaints with the help of auxiliary data ${aux}_{\st f}$.  If $\mathcal{C}$ wants to complain that (i)   ``pass'' message should have been a warning or (ii) no message was provided,   it sets $z_{\st 1}$ to ``challenge message''. If its complaint is about the warning's effectiveness,  it sets $z_{\st 2}$ to a combination of an evidence $u\in aux_{\st f}$, the evidence's certificate $sig\in aux_{\st f}$, the certificate's public parameter,   and ``challenge warning'', where the certificate is obtained from  $\mathcal{G}$ via a query, $Q$. If its complaint is  about the payment, it sets $z_{\st 3}$ to ``challenge payment''. It  generates and outputs (i)  encoded complaints $\hat z$ using  $\mathtt{Encode}(T_{\st 1},.)$, and (ii) encoded secret  parameters $\hat{\ddot \pi}$  using another encoding algorithm $\bar{\mathtt{Encode}}(pk_{\st \mathcal{D}},.)$.   
 
 \vs
 

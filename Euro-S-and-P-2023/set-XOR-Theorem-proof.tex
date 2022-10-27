@@ -13,7 +13,7 @@ Let set $S=\{s_{\st 1},..., s_{\st m}\}$ be the union of  two disjoint sets $S'$
 \end{theorem}
 
 \begin{proof}
-Let $s_{\st 1}$ and $s$, be two random values picked uniformly at random from $\mathbb{F}_{\st p}$. Let $\bar s=s_{\st 1}\oplus \underbrace{0\oplus... \oplus 0}_{\st |S''|}$. Since  $\bar s=s_{\st 1}$, two values $\bar s$ and $s$ have identical distribution. Thus, $\bar s$ reveals nothing in this case. Next, let $\tilde s=\underbrace{ s_{\st 1}\oplus s_{\st 2}\oplus... \oplus s_{\st j}}_{\st |S'|}$, where $s_{\st i}\in S'$. Since each $s_{\st i}$ is a uniformly random value,  the XOR of them is a uniformly random value too. That means values $\tilde s$ and $s$ have identical distribution. Thus, $\tilde s$ reveals nothing in this case as well. Also, it is not hard to see that the combination of the above two cases reveals nothing too, i.e., $\bar s\oplus \tilde s$ and $s$ have    identical distribution. 
+Let $s_{\st 1}$ and $s$, be two random values picked uniformly at random from $\mathbb{F}_{\st p}$. Let $\bar s=s_{\st 1}\oplus \underbrace{0\oplus... \oplus 0}_{\st |S''|}$. Since  $\bar s=s_{\st 1}$, two values $\bar s$ and $s$ have identical distribution. Thus, $\bar s$ reveals nothing in this case. Next, let $\tilde s=\underbrace{ s_{\st 1}\oplus s_{\st 2}\oplus... \oplus s_{\st j}}_{\st |S'|}$, where $s_{\st i}\in S'$. Since each $s_{\st i}$ is a uniformly random value,  the XOR of them is a uniformly random value too. That means values $\tilde s$ and $s$ have identical distributions. Thus, $\tilde s$ reveals nothing in this case as well. Also, it is not hard to see that the combination of the above two cases reveals nothing too, i.e., $\bar s\oplus \tilde s$ and $s$ have identical distribution. 
 %
 \end{proof}
 
