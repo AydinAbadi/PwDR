@@ -42,11 +42,11 @@
 \BOOKMARK [1][-]{section*.11}{ B: Commitment Scheme}{}% 42
 \BOOKMARK [1][-]{section*.12}{ C: Bloom Filter}{}% 43
 \BOOKMARK [1][-]{section*.13}{ D: Full Version of Definition of Payment with Dispute Resolution Scheme}{}% 44
-\BOOKMARK [1][-]{section*.14}{ E: Further Discussion on Variant 1 Encoding-Decoding Protocol}{}% 45
-\BOOKMARK [1][-]{section*.15}{ F: Generic Verdict Encoding-Decoding Protocol}{}% 46
-\BOOKMARK [1][-]{section*.18}{ G: Variant 2 Encoding-Decoding Protocol's Main Theorem and Proof}{}% 47
-\BOOKMARK [1][-]{section*.19}{ H: Further Discussion on the Verdict Encoding-decoding Protocols}{}% 48
-\BOOKMARK [1][-]{section*.20}{ I: Security Analysis of the PwDR Protocol}{}% 49
-\BOOKMARK [1][-]{section*.21}{ J: Further Discussion on Privacy Definition}{}% 50
-\BOOKMARK [2][-]{subsection.Appendix.J.1}{Case 1}{section*.21}% 51
-\BOOKMARK [2][-]{subsection.Appendix.J.2}{Case 2}{section*.21}% 52
+\BOOKMARK [1][-]{section*.14}{ E: Further Discussion on Privacy Definition}{}% 45
+\BOOKMARK [2][-]{subsection.Appendix.E.1}{Case 1}{section*.14}% 46
+\BOOKMARK [2][-]{subsection.Appendix.E.2}{Case 2}{section*.14}% 47
+\BOOKMARK [1][-]{section*.15}{ F: Further Discussion on Variant 1 Encoding-Decoding Protocol}{}% 48
+\BOOKMARK [1][-]{section*.16}{ G: Generic Verdict Encoding-Decoding Protocol}{}% 49
+\BOOKMARK [1][-]{section*.19}{ H: Variant 2 Encoding-Decoding Protocol's Main Theorem and Proof}{}% 50
+\BOOKMARK [1][-]{section*.20}{ I: Further Discussion on the Verdict Encoding-decoding Protocols}{}% 51
+\BOOKMARK [1][-]{section*.21}{ J: Security Analysis of the PwDR Protocol}{}% 52
