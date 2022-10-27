@@ -1,0 +1,32 @@
+% !TEX root =main.tex
+
+
+\section{Further Discussion on Privacy Definition}\label{sec:Further-Disc-Privacy-Def}
+
+
+In this section, we discuss the intuition behind the privacy definition, i.e., Definition \ref{def-a::privacy}. Below, we explain each case.
+
+%\begin{itemize}
+%
+%\item \textbf{Case 1.} 
+
+\subsection{Case 1} Overall, the idea behind the design of  experiment $\mathsf{Exp}_{\st 3}^{\st\mathcal{A}_{\st 1}}(.)$ is similar to that of the semantical security of an encryption scheme \cite{DBLP:books/crc/KatzLindell2014}. In this experiment, an adversary picks plaintext inputs:  $(f_{\st 0}, f_{\st 1}),(in_{\st f_{\st_{\st 0}}},in_{\st f_{\st _1}}) ({aux}_{\st f_{0}},{aux}_{\st f_{\st1}})$. Then, the experiment (or oracle) flips a coin to pick a random index, $\gamma\stackrel{\st \$}\leftarrow\{0,1\}$, and uses only one element from each pair, i.e., $(f_{\st \gamma}, in_{\st f_{\st_{\st \gamma}}}, {aux}_{\st f_{\gamma}})$, and honestly executes all algorithms of PwDR (given the chosen inputs). In this case, the privacy property states that given the public messages $(g, \hat {\bm m}, \hat{\bm l}, \hat z, \hat{\ddot \pi}, \hat{\bm{w}})$,  adversary $\mathcal{A}_{\st 1}$ should not be able to tell which index the oracle picked (i.e., find the value of $\gamma$), with a probability significantly better than $\frac{1}{2}$; more formally its probability of success should be at most $\frac{1}{2}+\mu(\lambda)$.
+%
+
+%\item \textbf{Case 2.} 
+
+\subsection{Case 2} 
+In this case, we allow adversary $\mathcal{A}_{\st 2}$ to arbitrarily pick the plaintext inputs (on behalf of the client and bank) and feed them to the PwDR algorithms. In this experiment, $\mathcal{A}_{\st 2}$ can craft its input in a way that an arbiter's verdict is in favour of the client or the bank, i.e., $1$ or $0$. For instance, the adversary can generate an invalid claim on behalf of the client; in this case, each arbiter's verdict will be against the client, i.e., $w_{\st j}=0$. 
+
+Therefore, to capture $\mathcal{A}_{\st 2}$'s arbitrary behaviour in picking valid or invalid inputs, we let auditor $\mathcal{D}_{\st i}$ output $0$ and $1$ with probabilities $Pr_{\st i,0}$ and $Pr_{\st i,1}$ respectively. Then, we define $Pr'$ as  $Max(Pr_{\st 1,0},Pr_{\st 1,1}, ...,$ $ Pr_{\st n,0}, $ $Pr_{\st n,1} )$.  
+
+In this case, the privacy property states that given the public messages (and the messages that a dispute resolver receives) another adversary $\mathcal{A}_{\st 3}$ (which does not interact with $\mathcal{A}_{\st 2}$) should not be able to tell the value of each auditor's verdict $w_{\st j}$ with a probability significantly better than $Pr'$; more formally its probability of success should be at most $Pr'+\mu(\lambda)$.
+
+Note that, in $\mathsf{Exp}_{\st 4}^{\st\mathcal{A}_{\st 2}}(.)$, we explicitly invoked $\mathtt{Encode}(.)$ and ${\bar{ \mathtt{Encode}}}(.)$ (defined in the PwDR syntax in Section \ref{sec::def}) to ensure that the messages that $\mathcal{A}_{\st 2}$ generates are correctly encoded; otherwise, if we allowed  $\mathcal{A}_{\st 2}$ to encode the messages, then the privacy notion would not make sense as it could simply avoid doing so.
+
+
+%The idea behind the privacy definition in this is that even if an adversary picks the plaintext inputs arbitrarily and feeds them to the PwDR algorithms, then given the public data, another adversary (who does not collude with the former one) cannot learn each auditor's verdict significantly better than the maximum probability that the previous adversary picked invalid in
+
+
+%
+%\end{itemize}

@@ -124,7 +124,7 @@ As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::
 %
 \vspace{-2.4mm}
 \begin{itemize}[leftmargin=4.2mm]
-\item \noindent\textit{Input.} $\bar{k}_{\st 0}$: a key of  pseudorandom function $\mathtt{PRF}(.)$, $\text{ID}$: a unique identifier, $ w_{\st j}$: a  verdict, $o$: an offset, $e$: a threshold, $n$: the total number of  auditors,  and  $j$: an auditor's index.
+\item \noindent\textit{Input.} $\bar{k}_{\st 0}$: a key of  pseudorandom function $\mathtt{PRF}(.)$, $\text{ID}$: a unique identifier, $ w_{\st j}$: a  verdict, $o$: a counter, $e$: a threshold, $n$: the total number of  auditors,  and  $j$: an auditor's index.
 %
 \item \noindent\textit{Output.} $\bar{  w}_{\st j}$:  an  encoded verdict.  
 %
@@ -206,7 +206,7 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 \end{tcolorbox}
 \end{center}
 \vspace{-2.8mm}
-\caption{Generic Private Verdict Encoding  (GPVE) Protocol. In the figure, $\mathcal{D}_{\st n}$ can generate other parties' $r_{\st i}$ and $\alpha_{\st j}$ values, given $\bar k_{\st 0}$. Note also that $\text{ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text{ID}$ and $o$ are used to ensure each $r_{\st j}$ will be different for each invocation of PVE  although the same key $\bar k_{\st 0}$ is used.} 
+\caption{Generic Private Verdict Encoding  (GPVE) Protocol. In the figure, $\mathcal{D}_{\st n}$ can generate other auditors' $r_{\st i}$ and $\alpha_{\st j}$ values, given $\bar k_{\st 0}$. Note also that $\text{ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text{ID}$ and $o$ are used to ensure each $r_{\st j}$ will be different for each invocation of GPVE  although the same key $\bar k_{\st 0}$ is used.} 
 \label{fig:GPVE}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -269,7 +269,7 @@ Specifically,
 \end{tcolorbox}
 \end{center}
 \vspace{-2mm}
-\caption{Generic Final Verdict Decoding  (GFVD) Protocol} 
+\caption{Generic Final Verdict Decoding  (GFVD) Protocol.} 
 \label{fig:GFVD}
 \end{figure}
 

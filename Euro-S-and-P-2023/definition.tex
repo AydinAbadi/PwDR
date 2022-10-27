@@ -19,7 +19,7 @@ In this section, we outline a formal definition of the payment with dispute reso
 
 \vs
 
-\item [$\bullet$]  $\mathtt{keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$. It  generates and outputs a pair of secret keys $sk:=(sk_{\st\mathcal {G}},sk_{\st\mathcal {D}})$ and public keys $pk:=(pk_{\st\mathcal {G}},pk_{\st\mathcal {D}})$. 
+\item [$\bullet$]  $\mathtt{keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$. It  generates and outputs a pair of secret keys $sk:=(sk_{\st\mathcal {G}}, sk_{\st\mathcal {D}})$ and public keys $pk:=(pk_{\st\mathcal {G}},pk_{\st\mathcal {D}})$, where $sk_{\st\mathcal {D}}$ may include multiple secret keys. 
 %
 
 \vs
@@ -219,7 +219,7 @@ Specifically,  a corrupt bank cannot  (a) make $\mathcal{DR}$ conclude that the 
 %\vspace{-.6mm}
 {\small{
 \begin{center}
-\begin{mybox}[colback=white,  width=80mm, height=56mm, left=-1mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 2}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  {aux})$}
+\begin{mybox}[colback=white,  width=80mm, height=55mm, left=-1mm, drop fuzzy shadow southwest]{$\mathsf{Exp}_{\st 2}^{\st\mathcal{A}}(1^{\st\lambda}\text{, }  {aux})$}
 %\fbox{\begin{minipage}{3.8 in}
 %\vspace{-.6mm}
 $$
@@ -256,7 +256,7 @@ $$
 \end{center}
 }}
 %
-%\vspace{-.5mm}
+\vspace{-.5mm}
 it holds that the following probability is $\mu(\lambda)$:
 
 {\small{
@@ -302,7 +302,7 @@ Informally, a $\mathsf{pwdr}$ scheme is privacy-preserving if it protects the pr
 A $\mathsf{pwdr}$ scheme is secure if it meets security against a malicious victim,  security against a malicious bank, and preserves privacy with respect to definitions \ref{def-a::Security-against-malicious-victim}, \ref{def-a::Security-against-malicious-bank}, and \ref{def-a::privacy} respectively. 
 \end{definition}
 
-
+We refer readers to Appendix \ref{sec:Further-Disc-Privacy-Def}, for further discussion about the privacy definition. 
 %Definition 13 (RC-PoR-P Security). A RC-PoR-P scheme is secure if it satisfies security against a malicious server, security against a malicious client, and preserves privacy, w.r.t. Definitions 10-12.
 
 %\begin{mybox}[colback=white]{Title}

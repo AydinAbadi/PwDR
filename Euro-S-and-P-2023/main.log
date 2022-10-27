@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  26 OCT 2022 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  27 OCT 2022 10:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1545,23 +1545,17 @@ so in-cludes two pro-to-cols,
  []
 
 )) [9]
-Underfull \hbox (badness 10000) in paragraph at lines 109--111
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
 []$[]$[]\OT1/ptm/m/n/10.03749 :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--125
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 []$[]$\OT1/ptm/m/n/10.03749 :
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 122--125
-[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T; f; []\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
-! []$\OT1/ptm/m/n/10.03749 . Cus-tomer
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--183
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 []$[]$\OT1/ptm/m/n/10.03749 :
  []
 
@@ -1569,25 +1563,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--183
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--206
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 []$[]$\OT1/ptm/m/n/10.03749 :
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 234--236
+Underfull \hbox (badness 1430) in paragraph at lines 238--240
 []\OT1/ptm/m/n/10.03749 at time $\OML/cmm/m/it/10 t[]$\OT1/ptm/m/n/10.03749 , s
 ends $[] \OT1/cmr/m/n/10 = []([]\OML/cmm/m/it/10 ; z\OT1/cmr/m/n/10 )$ \OT1/ptm
 /m/n/10.03749 and $[]\OML/cmm/m/it/10 ^^Y \OT1/cmr/m/n/10 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
-[]\OT1/ptm/m/n/10.03749 decrypts $[] \OT1/cmr/m/n/10 = [[]$\OT1/ptm/m/n/10.0374
-9 , $[]\OML/cmm/m/it/10 ; []; []\OT1/cmr/m/n/10 ]$
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
+[]\OT1/ptm/m/n/10.03749 decrypts $[] \OT1/cmr/m/n/10 = [[]\OML/cmm/m/it/10 ; []
+; []; []\OT1/cmr/m/n/10 ]$\OT1/ptm/m/n/10.03749 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
 \OT1/ptm/m/n/10.03749 us-ing $[]\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; :\OT1/cmr
 /m/n/10 )$\OT1/ptm/m/n/10.03749 , where $[] \OMS/cmsy/m/n/10 2 []$\OT1/ptm/m/n/
 10.03749 . Let
@@ -1597,50 +1591,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 259--260
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
-Underfull \hbox (badness 10000) in paragraph at lines 270--272
+Underfull \hbox (badness 10000) in paragraph at lines 278--280
 []\OT1/ptm/m/n/10.03749 if ``chal-lenge mes-sage'' $[] \OML/cmm/m/it/10 z[]$\OT
 1/ptm/m/n/10.03749 , it
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--272
+Underfull \hbox (badness 10000) in paragraph at lines 278--280
 \OT1/ptm/m/n/10.03749 sets $\OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = 0$\OT1/ptm/m
 /n/10.03749 . Oth-er-wise, it runs
  []
 
 
-Underfull \hbox (badness 2326) in paragraph at lines 270--272
+Underfull \hbox (badness 2326) in paragraph at lines 278--280
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 add[]; m[]; []; \OT1/cmr/m/n/10 ^^A\OML/cmm
 /m/it/10 ; []\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 w[]$\OT1/ptm
 /m/n/10.03749 , to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
 []\OT1/ptm/m/n/10.03749 if ``chal-lenge warn-ing'' $[] \OML/cmm/m/it/10 z[]$\OT
-1/ptm/m/n/10.03749 , it
+1/ptm/m/n/10.03749 , it sets
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
-\OT1/ptm/m/n/10.03749 sets $\OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = \OML/cmm/m/i
-t/10 w[] \OT1/cmr/m/n/10 = 0$\OT1/ptm/m/n/10.03749 . Else, it
+Underfull \hbox (badness 3849) in paragraph at lines 281--282
+\OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = 0
+$\OT1/ptm/m/n/10.03749 . Oth-er-wise, it runs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
-\OT1/ptm/m/n/10.03749 runs $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 add[]; z[]; m[]
-;$
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 add[]; z[]; m[]; [][]\OT1/cmr/m/n/10 ) \OMS
+/cmsy/m/n/10 !
  []
 
 
-Underfull \hbox (badness 6110) in paragraph at lines 272--273
-[][]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ! \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 w[];
- w[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10.03749 , to de-ter-mine the
- []
-
-
-Underfull \hbox (badness 1810) in paragraph at lines 301--303
+Underfull \hbox (badness 1810) in paragraph at lines 310--312
 \OT1/ptm/m/n/10.03749 By the end of this step, a vec-tor $[][]$ of
  []
 
@@ -1800,29 +1788,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--73
  []
 
 [15] [16]
-Overfull \hbox (13.59184pt too wide) detected at line 221
+Overfull \hbox (13.59184pt too wide) detected at line 237
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (10.74658pt too wide) detected at line 323
+Overfull \hbox (10.74658pt too wide) detected at line 341
 []
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
-(./long-privacy-def.tex
+[17] (./long-privacy-def.tex
 Overfull \hbox (19.56696pt too wide) detected at line 54
 []
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (20.13602pt too wide) detected at line 131
@@ -1843,7 +1821,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 162--163
 T1/ptm/m/it/10.03749 ,
  []
 
-[18])) (./set-XOR-Theorem-proof.tex) (./Generic-encode.tex
+)) (./set-XOR-Theorem-proof.tex [18]) (./Generic-encode.tex
 Underfull \hbox (badness 2753) in paragraph at lines 7--10
 []\OT1/ptm/m/n/10.03749 In this sec-tion, we present the generic ver-dict
  []
@@ -1863,24 +1841,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 222--224
 
  []
 
-) (./set-BF-theorem-proof.tex) (./further-discussion.tex
-Underfull \hbox (badness 5119) in paragraph at lines 3--3
- []\OT1/ptm/b/n/12.045 H. Fur-ther Dis-cus-sion on the Ver-dict
- []
+) (./set-BF-theorem-proof.tex
 
-[19]
-
-LaTeX Warning: Text page 20 contains only floats.
+LaTeX Warning: Text page 19 contains only floats.
 
 
 Overfull \vbox (3.68747pt too high) has occurred while \output is active []
+
+
+[19]) (./further-discussion.tex
+Underfull \hbox (badness 5119) in paragraph at lines 3--3
+ []\OT1/ptm/b/n/12.045 H. Fur-ther Dis-cus-sion on the Ver-dict
+ []
 
 
 Underfull \hbox (badness 1442) in paragraph at lines 19--20
 []\OT1/ptm/m/n/10.03749 Note that each vari-ant of our ver-dict encoding-
  []
 
-) (./proof.tex [20]
+) (./proof.tex
 Underfull \hbox (badness 10000) in paragraph at lines 18--24
 []\OT1/ptm/m/n/10.03749 Now, we move on to event $[] \OT1/cmr/m/n/10 :
  []
@@ -1890,10 +1869,29 @@ Underfull \hbox (badness 1762) in paragraph at lines 18--24
 \OT1/ptm/m/n/10.03749 that has never been queried to the sign-ing or-a-cle.
  []
 
+[20] [21]) (./Privacy-Def-further-discussion.tex
+Underfull \hbox (badness 3646) in paragraph at lines 13--15
+[]\OT1/ptm/m/n/10.03749 Overall, the idea be-hind the de-sign of ex-per-
+ []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21])
+Underfull \hbox (badness 4001) in paragraph at lines 13--15
+\OT1/ptm/m/n/10.03749 i-ment $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 :\OT1/cmr/m
+/n/10 )$ \OT1/ptm/m/n/10.03749 is sim-i-lar to that of the se-man-
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 13--15
+\OT1/ptm/m/n/10.03749 ti-cal se-cu-rity of an en-cryp-tion scheme [[]26[]]. In
+ []
+
+
+Underfull \hbox (badness 5607) in paragraph at lines 25--26
+[]\OT1/ptm/m/n/10.03749 Note that, in $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 :\
+OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10.03749 , we ex-plic-itly in-voked
+ []
+
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1906,13 +1904,13 @@ Before submitting the final camera ready copy, remember to:
  process uses the appropriate paper size.
 
 [22]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 227.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 227.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 226.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 227.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 227.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D0B62444353826A0861E12C87D759758;3805.
+(rerunfilecheck)             Checksum: F82EE08CCAFA9E102BE5FFBFB2882536;4021.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1923,10 +1921,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 38918 strings out of 480608
- 895018 string characters out of 5903630
- 1327514 words of memory out of 5000000
- 53734 multiletter control sequences out of 15000+600000
+ 38931 strings out of 480608
+ 895349 string characters out of 5903630
+ 1332901 words of memory out of 5000000
+ 53741 multiletter control sequences out of 15000+600000
  599208 words of font info for 188 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,20n,108p,3727b,2244s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1964,10 +1962,10 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2020/texmf-dist
 e1/urw/times/utmbi8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8
 a.pfb>
-Output written on main.pdf (22 pages, 529293 bytes).
+Output written on main.pdf (22 pages, 532751 bytes).
 PDF statistics:
- 841 PDF objects out of 1000 (max. 8388607)
- 776 compressed objects within 8 object streams
- 253 named destinations out of 1000 (max. 500000)
- 405 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 862 PDF objects out of 1000 (max. 8388607)
+ 797 compressed objects within 8 object streams
+ 257 named destinations out of 1000 (max. 500000)
+ 429 words of extra memory for PDF output out of 10000 (max. 10000000)
 

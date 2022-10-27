@@ -24,15 +24,15 @@
 
 
 
-%\vspace{-4mm}
+\vspace{-4mm}
 \section{Payment with Dispute Resolution Protocol}\label{sec::PwDR-Protocol}
 
-%In this section, first we  provide an outline of the PwDR protocol. %Then, we present a few subroutines that will be used in this protocol. After that, we describe the PwDR protocol in detail. 
+In this section, we first present an outline of the PwDR protocol (in Section \ref{An-Overview-of-the-Protocol}). Then, we present a few subroutines (in Sections \ref{Determining-Bank-Message-Status}--\ref{sec::Encoding-Decoding-Verdicts}) that will be used in this protocol. After that, we describe the PwDR protocol in detail (in Section \ref{sec::PwDR-auditorprotocol}). 
 
-\vspace{-.5mm}
+\vspace{-2mm}
 
-\subsection{An Overview of  the  Protocol}
-\vspace{-.5mm}
+\subsection{An Overview of  the  Protocol}\label{An-Overview-of-the-Protocol}
+\vspace{-1mm}
 
 In this section, we provide an overview of the   PwDR. Initially,     $\mathcal{C}$ and   $\mathcal{B}$   agree on a smart contract  $\mathcal{S}$. They also use the SAP to agree on two private statements including two secret keys that will be used to encrypt outgoing messages. When $\mathcal{C}$ wants to transfer money to a new payee, it signs into its online banking.  It generates an update request (that specifies the new payee's detail),  encrypts it, and sends the result to  $\mathcal{S}$. Then, $\mathcal{B}$ decrypts and checks the request, e.g.,  whether it meets its internal policy. Depending on the request, $\mathcal{B}$ generates a pass or warning message. It encrypts the message and sends the result to $\mathcal{S}$. Next, $\mathcal{C}$ checks $\mathcal{B}$'s message and decides whether to make payment. If it decides to do so,  it sends an encrypted payment detail to $\mathcal{S}$. After that, $\mathcal{B}$  decrypts the message and locally transfers the amount of money specified in $\mathcal{C}$'s message. Once the money is transferred, $\mathcal{B}$ sends an encrypted  ``paid'' message to $\mathcal{S}$. 
 
@@ -66,9 +66,9 @@ Once $\mathcal{C}$ realises that it has fallen victim, it raises a dispute. Spec
 
 \input{check-pass}
 
-\vspace{-3mm}
+\vspace{-4mm}
 \subsection{The PwDR Protocol}\label{sec::PwDR-auditorprotocol}
-\vspace{-1mm}
+\vspace{-1.2mm}
 In this section, we present the PwDR protocol in detail. 
 
 
@@ -80,23 +80,27 @@ In this section, we present the PwDR protocol in detail.
 
 \item \underline{\textit{Generating $\mathcal{G}$'s and  $\mathcal{D}_{\st j}$'s  Parameters}}:  $\mathtt{keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$. Parties $\mathcal{G}$ and (only) $\mathcal{D}_{\st j}$   take   steps \ref{signature-keygen} and   \ref{encryption-keygen} respectively. 
 
-
+\vspace{.1mm}
 
 \begin{enumerate}
 \item\label{signature-keygen} calls $\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk_{\st\mathcal{G}}, pk_{\st\mathcal{G}})$ to generate   secret key $sk_{\st\mathcal{G}}$ and   public key $pk_{\st\mathcal{G}}$. It publishes  $pk_{\st\mathcal{G}}$.
 %
-\item\label{encryption-keygen} calls $\tilde{\mathtt{keyGen}}(1^{\st\lambda})\rightarrow({sk}_{\st\mathcal {D}}, {pk}_{\st\mathcal {D}})$ to generate  decrypting secret key ${sk}_{\st\mathcal {D}}$ and encrypting public key ${pk}_{\st\mathcal {D}}$. It publishes the public key ${pk}_{\st\mathcal {D}}$ and sends ${sk}_{\st\mathcal {D}}$ to the rest of the auditors.
+\
+
+
+
+\item\label{encryption-keygen} calls $\tilde{\mathtt{keyGen}}(1^{\st\lambda})\rightarrow(\tilde{sk}_{\st\mathcal {D}}, \tilde{pk}_{\st\mathcal {D}})$ to generate  decrypting secret key $\tilde{sk}_{\st\mathcal {D}}$ and encrypting public key $\tilde{pk}_{\st\mathcal {D}}$. It also generates a key $\bar k_{\st 0}$ for $\mathtt{PRF}$, i.e., $\bar k_{\st 0}\stackrel{\st\$}\leftarrow\{0,1\}^{\st\Lambda}$. It sets ${pk}_{\st\mathcal{D}}=\tilde {pk}_{\st\mathcal{D}}$ and ${sk}_{\st\mathcal {D}}:=(\tilde{sk}_{\st\mathcal {D}}, \bar k_{\st 0})$. It publishes ${pk}_{\st\mathcal {D}}$ and sends ${sk}_{\st\mathcal {D}}$ to the rest of the auditors.
 \end{enumerate}
 
 
-Let $sk:=(sk_{\st\mathcal{G}}, sk_{\st\mathcal{D}})$ and $pk:=(pk_{\st\mathcal{G}}, pk_{\st\mathcal{D}})$. Note, this   phase takes place only once for all customers.
+Let $sk:=(sk_{\st\mathcal{G}}, sk_{\st\mathcal{D}})$ and $pk:=(pk_{\st\mathcal{G}}, {pk}_{\st\mathcal{D}})$. Note, this phase occures only once for all customers.
 
 \item\label{RCPoRP::Bank-side-Initiation}  \underline{\textit{Bank-side Initiation}}: $\mathtt{bankInit}(1^{\st \lambda})\rightarrow (T, pp, \bm l)$.
 
 Bank $\mathcal{B}$ takes the following steps. 
 \begin{enumerate}
 
-\item\label{RCPoRP::setup} picks   secret keys $\bar k_{\st 1}$ and $\bar k_{\st 2}$ for the symmetric key encryption scheme and  pseudorandom function $\mathtt{PRF}$ respectively. It  sets two private statements as $\pi_{\st 1}=\bar k_{\st 1}$ and $\pi_{\st 2}= \bar k_{\st 2}$.
+\item\label{RCPoRP::setup} picks   secret keys $\bar k_{\st 1}$ and $\bar k_{\st 2}$ for the symmetric key encryption scheme. It  sets two private statements as $\pi_{\st 1}=\bar k_{\st 1}$ and $\pi_{\st 2}= \bar k_{\st 2}$.
 %
 \item\label{RCPoRP::set-qp}  calls $\mathtt{SAP.init}(1^{\st\lambda}, adr_{\st\mathcal{B}}, adr_{\st\mathcal{C}}, \pi_{\st i})\rightarrow(r_{
 \st i}, g_{\st i}, adr_{\st\text{SAP}})$ to initiate  agreements on  statements $\pi_{\st i}\in \{\pi_{\st 1}, \pi_{\st 2}\}$  with  $\mathcal{C}$.  Let $T_{\st i}:=(\ddot{\pi}_{\st i}, g_{\st i})$ and $T:=(T_{\st 1}, T_{\st 2})$,  where  $\ddot{\pi}_{\st i}:=(\pi_{\st i}, r_{\st i})$ is the opening of $g_{\st i}$.  It also sets parameter $\Delta$ as a time window between two specific time points, i.e., $\Delta=t_{\st i} - t_{\st i-1}$. Briefly, it is used to impose an upper bound on a message delay.  %It  constructs a vector, $\bm{x}$, of three non-zero distinct $x$-coordinates, i.e., $\bm{x}=[x_{\st 1},..., x_{\st 3}]$, where $x_{\st i}\in \mathbb{F}_{\st p}$.
@@ -113,14 +117,14 @@ Customer $\mathcal{C}$ takes the following steps.
 
 \begin{enumerate}
 %
-\item\label{customer-side-Initiation-SAP-agree} calls   $\mathtt{SAP.agree}(\pi_{\st i}, r_{\st i}, g_{\st i}, adr_{\st\mathcal{B}}, adr_{\st\text{SAP}})\rightarrow (g'_{\st i}, b_{\st i})$, to locally check the correctness of parameters in $T_{\st i}\in T$ and (if accepted) to agree on these parameters, where $(\pi_{\st i}, r_{\st i}) \in \ddot{\pi}_{\st i}\in T_{\st i}$ and $1\leq i \leq 2$. Note,  if both $\mathcal{B}$ and $\mathcal{C}$ are honest, then $g_{\st i}=g'_{\st i}$. It also checks $\Delta$ in  $\mathcal{S}$, e.g., to see whether it is sufficiently large.
+\item\label{customer-side-Initiation-SAP-agree} calls   $\mathtt{SAP.agree}(\pi_{\st i}, r_{\st i}, g_{\st i}, adr_{\st\mathcal{B}}, adr_{\st\text{SAP}})\rightarrow (g'_{\st i}, b_{\st i})$, to locally check the correctness of parameters in $T_{\st i}\in T$ and (if accepted) to agree on these parameters, where $(\pi_{\st i}, r_{\st i}) \in \ddot{\pi}_{\st i}\in T_{\st i}$ and $1\leq i \leq 2$. Note,  if both $\mathcal{B}$ and $\mathcal{C}$ are honest, then $g_{\st i}=g'_{\st i}$. It also checks $\Delta$ in  $\mathcal{S}$, e.g., to see if it is sufficiently large.
 %
 \item if the above checks fail,  it sets $a=0$ and aborts. Otherwise, it sets $a=1$. It sends $a$ to $\mathcal{S}$. 
 \end{enumerate}
 %
 
 \item\label{genUpdateRequest}  {\underline{\textit{Generating  Update Request}}: $\mathtt{genUpdateRequest}(T, f, {\bm l})\rightarrow \hat m^{\st\mathcal{(C)}}_{\st 1}$}.
-%
+
 Customer $\mathcal{C}$ takes the following steps. 
 
 \begin{enumerate}
@@ -166,7 +170,7 @@ Smart contract $\mathcal{S}$ takes the following steps.
 Bank $\mathcal{B}$ takes the following steps. 
 \begin{enumerate}
 %
-\item  checks if the most recent list $\hat{\bm{l}}$ is not empty. If it is empty, it halts. Otherwise, it proceeds to the next step. 
+\item  checks if the most recent list $\hat{\bm{l}}$ is  not empty. If it is empty, it halts. Else, it proceeds to the next step. 
 %
 \item  decrypts each element of $\hat{\bm l}$ and checks its correctness, e.g., checks whether each element meets its internal policy  stated in $aux$. If the check passes, it sets $m_{\st 1}^{\st(\mathcal{B})}= \text{``pass''}$. Otherwise, it sets $m_{\st 1}^{\st(\mathcal{B})}=\text{warning}$, where the warning is a  string that contains a warning's detail concatenated with the string $\text{``warning''}$.
 %
@@ -175,12 +179,12 @@ Bank $\mathcal{B}$ takes the following steps.
 
 
 
-\item\label{clinet-at-T2} \underline{\textit{Generating Payment Request}}: $\mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \\\hat m^{\st\mathcal{(B)}}_{\st1})$ $\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}$.
-%
+\item\label{clinet-at-T2} \underline{\textit{Generating Payment Request}}: $\mathtt{genPaymentRequest}(T, in_{\st f}, \hat{\bm{l}}, \hat m^{\st\mathcal{(B)}}_{\st1})$ $\rightarrow \hat m^{\st\mathcal{(C)}}_{\st2}$.
+
 Customer $\mathcal{C}$ takes the following steps. 
 \begin{enumerate}
 %
-\item\label{decrypt-warning} at time $t_{\st 2}$, decrypts  $\hat{\bm{l}}$ and $\hat m_{\st 1}^{\st(\mathcal{B})}$.  Depending on the warning's content, it sets a payment request $m_{\st 2}^{\st(\mathcal C)}$ to  $\phi$ or  $in_{\st f}$, where $in_{\st f}$ contains the payment's detail, e.g., the payee's detail in $\hat {\bm l}$ and the amount it wants to transfer. 
+\item\label{decrypt-warning} at time $t_{\st 2}$, decrypts  $\hat{\bm{l}}$ and $ \hat m_{\st 1}^{\st(\mathcal{B})}$.  Depending on the warning, it sets a payment request $m_{\st 2}^{\st(\mathcal C)}$ to  $\phi$ or  $in_{\st f}$, where $in_{\st f}$ contains the payment's detail, e.g., the payee's detail in $\hat {\bm l}$ and amount it wants to send. 
 %
 \item\label{send-payment-req} at time $t_{\st 3}$, sends  to $\mathcal{S}$ the encryption of $m_{\st 2}^{\st(\mathcal C)}$, i.e., $\hat m_{\st 2}^{\st(\mathcal{C})} = \mathtt{Enc}(\bar k_{\st 1}, m_{\st 2}^{\st(\mathcal C)})$.
 \end{enumerate}
@@ -198,8 +202,8 @@ Bank $\mathcal{B}$ takes the following steps.
 \end{enumerate}
 %
 
-\item\label{Generating-Complaint}  \underline{\textit{Generating Complaint}}: $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk, \\ {aux}_{\st f})\rightarrow  (\hat z, \hat{\ddot \pi})$. 
-%
+\item\label{Generating-Complaint}  \underline{\textit{Generating Complaint}}: $\mathtt{genComplaint}(\hat m^{\st\mathcal{(B)}}_{\st 1}, \hat m^{\st\mathcal{(B)}}_{\st2}, T, pk,  {aux}_{\st f})\rightarrow  (\hat z, \hat{\ddot \pi})$. 
+
 Customer $\mathcal{C}$ takes the following steps. 
 \begin{enumerate}
 %
@@ -245,18 +249,22 @@ z_{\st 3}=\phi $.
 
 
 \item\label{VerifyingComplaint}  \underline{\textit{Verifying Complaint}}: $\mathtt{verComplaint}(\hat z, \hat{\ddot{\pi}}, g, \hat {\bm m}, \hat{\bm{l}},  j, \\{sk}_{\st\mathcal {D}}, aux, pp)\rightarrow \hat{\bm w}_{\st j}$.
-%
+
 Every $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\st n}\}$ acts as follows.
 \begin{enumerate}
 
 %
-\item at time $t_{\st 7}$, decrypts $\hat{\ddot{\pi}}$, i.e., ${\ddot{\pi}}={\tilde{\mathtt {Dec}}}({sk}_{\st\mathcal {D}}, \hat{\ddot \pi})$. 
+\item at time $t_{\st 7}$, decrypts $\hat{\ddot{\pi}}$, i.e., ${\ddot{\pi}}={\tilde{\mathtt {Dec}}}(\tilde{sk}_{\st\mathcal {D}}, \hat{\ddot \pi})$, where $\tilde{sk}_{\st\mathcal {D}}\in {sk}_{\st\mathcal {D}}$. 
 
 \item checks the validity  of $(\ddot{\pi}_{\st 1}, \ddot{\pi}_{\st 2})$ in $\ddot{\pi}$ by locally running  the SAP's verification, i.e., $\mathtt{SAP.verify}(.)$, for each  $\ddot{\pi}_{\st i}$. It   returns  $s$. If $s=0$, it halts. If $s=1$ for both $\ddot{\pi}_{\st 1}$ and  $\ddot{\pi}_{\st 2}$, it proceeds to the next step. 
 %
 %\item decrypts $\hat m^{\st\mathcal{(C)}}_{\st1}$ and $\hat m^{\st\mathcal{(C)}}_{\st 2}$ and checks if they are not empty. Also, it checks if 
 %%%%%%%%%%%%
-\item decrypts $\hat{\bm m}=[\hat{m}_{\st 1}^{\st(\mathcal C)}$, $\hat{m}_{\st 2}^{\st(\mathcal C)}, \hat{m}_{\st 1}^{\st(\mathcal B)}, \hat{m}_{\st 2}^{\st(\mathcal B)}]$  using $\mathtt{Dec}(\bar k_{\st 1},.)$, where $\bar k_{\st 1}\in\ddot \pi_{\st 1}$. Let $[{m}_{\st 1}^{\st(\mathcal C)},  {m}_{\st 2}^{\st(\mathcal C)},  {m}_{\st 1}^{\st(\mathcal B)}, {m}_{\st 2}^{\st(\mathcal B)}]$ be the result. 
+
+
+\item decrypts $\hat{\bm m}=[\hat{m}_{\st 1}^{\st(\mathcal C)}, \hat{m}_{\st 2}^{\st(\mathcal C)}, \hat{m}_{\st 1}^{\st(\mathcal B)}, \hat{m}_{\st 2}^{\st(\mathcal B)}]$,  using $\mathtt{Dec}(\bar k_{\st 1},.)$, where $\bar k_{\st 1}\in\ddot \pi_{\st 1}$. Let $[{m}_{\st 1}^{\st(\mathcal C)},  {m}_{\st 2}^{\st(\mathcal C)},  {m}_{\st 1}^{\st(\mathcal B)}, {m}_{\st 2}^{\st(\mathcal B)}]$ be the result. 
+
+
 
 \item  checks whether $\mathcal C$ made an update request to its payee's list. To do so, it checks if  $m_{\st 1}^{\st(\mathcal C)}$  is non-empty and (its encryption) was registered by $\mathcal{C}$ in $\mathcal{S}$. Also, it checks whether $\mathcal C$ made a payment request, by checking if $m_{\st 2}^{\st(\mathcal C)}$ is non-empty and (its encryption) was registered by $\mathcal{C}$ in $\mathcal{S}$ at time $t_{\st 3}$.  If either check fails, it halts. 
 %%%%%%%%%%%%
@@ -269,7 +277,8 @@ Every $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\st n}\}$ 
 %
 \item[$\bullet$]  if  ``challenge message'' $\notin z_{\st 1}$, it sets $w_{\st 1,j}= 0$. Otherwise,  it runs $\mathtt{verStat}(add_{\st\mathcal{S}}, m_{\st 1}^{\st(\mathcal{B})},  \bm{l}, \Delta, {aux})\rightarrow w_{\st 1, j}$, to determine if a warning (in $m_{\st 1}^{\st(\mathcal{B})}$) should have been given (instead of the pass or no message). %It sends $d_{\st i}$ to $\mathcal{S}$, at time $T_{\st 8}$. %If  $k=\phi$, then it does nothing  in this step.
 %
-\item[$\bullet$]  if ``challenge warning'' $\notin z_{\st 2}$, it sets $w_{\st 2, j}= w_{\st 3, j}= 0$. Else, it runs $\mathtt{checkWarning}(add_{\st\mathcal{S}}, z_{\st 2}, m_{\st 1}^{\st(\mathcal{B})},$ $  {aux}')\rightarrow (w_{\st 2, j}, w_{\st 3, j})$, to determine the effectiveness of the warning (in $m_{\st 1}^{\st(\mathcal{B})}$). %It sends $(v_{\st i}, \bar v_{\st i})$ to $\mathcal{S}$, at time $T_{\st 9}$.
+
+\item[$\bullet$]  if ``challenge warning'' $\notin z_{\st 2}$, it sets $w_{\st 2, j}= w_{\st 3, j}= 0$.  Otherwise, it runs $\mathtt{checkWarning}(add_{\st\mathcal{S}}, z_{\st 2}, m_{\st 1}^{\st(\mathcal{B})},  {aux}')\rightarrow (w_{\st 2, j}, w_{\st 3, j})$, to determine the effectiveness of the warning (in $m_{\st 1}^{\st(\mathcal{B})}$). %It sends $(v_{\st i}, \bar v_{\st i})$ to $\mathcal{S}$, at time $T_{\st 9}$.
 
 
 
@@ -277,11 +286,11 @@ Every $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\st n}\}$ 
 %
 \end{itemize}
 %
-\item  encodes  its verdicts $(w_{\st 1, j}, w_{\st 2, j}, w_{\st 3, j},  w_{\st 4, j})$ as follows. 
+\item  encodes  its verdicts $(w_{\st 1, j}, w_{\st 2, j}, w_{\st 3, j},  w_{\st 4, j})$: 
 %
 \begin{enumerate}
 %
-\item locally maintains a counter, $o_{\st adr_{\st{c}}}$,  for each $\mathcal{C}$. It sets its initial value to $0$.
+\item locally maintains a counter, $o_{\st adr_{\st{c}}}$,  for each $\mathcal{C}$. It sets its initial value to $0$. It skips this step, if the counter has already been set. 
 %
 
 %\item calls $\mathtt{PVE}(.)$ to represent every verdict as a polynomial. In particular, it performs as follows. $\forall i, 1\leq i \leq 4:$
@@ -290,7 +299,7 @@ Every $\mathcal{D}_{\st j}\in\{\mathcal{D}_{\st 1}, ..., \mathcal{D}_{\st n}\}$ 
 \begin{enumerate}
 %
 
-\item[$\bullet$] calls $\mathtt{PVE}(\bar{k}_{\st 0}, adr_{\st\mathcal{C}},  w_{\st i, j}, o_{\st adr_{\st{c}}}, n,  j)\rightarrow  \bar{  w}_{\st i,j}$. %, and  
+\item[$\bullet$] calls $\mathtt{PVE}(\bar{k}_{\st 0}, adr_{\st\mathcal{C}},  w_{\st i, j}, o_{\st adr_{\st{c}}}, n,  j)\rightarrow  \bar{  w}_{\st i,j}$, where $\bar{k}_{\st 0}\in {sk}_{\st\mathcal {D}}$. %, and  
 \item[$\bullet$] sets $o_{\st adr_{\st{c}}}=o_{\st adr_{\st{c}}}+1$.
 
 %\item[$\bullet$] calls $\mathtt{PVE}(\bar{k}_{\st 0}, adr_{\st\mathcal{C}}, w_{\st i, j}, n, \bm x, \textit{offset}_{\st adr_{\st{c}}}, j)\rightarrow  \bar{\bm w}_{\st i,j}$.
@@ -399,7 +408,7 @@ We also highlight that our protocol does not require the bank to commit any fund
 Below, we present the security theorem of the PwDR protocol and present its formal proof in Appendix \ref{sec::proof}. 
 
 \begin{theorem}\label{theorem::PwDR-security}
-The above PwDR protocol is secure, with regard to Definition \ref{def::PwDR-security}, if the digital signature is existentially unforgeable under chosen message attacks,  the blockchain, SAP, and the verdict encoding-decoding protocols (i.e., PVE and FVD) are secure,  the encryption schemes are semantically secure, and the correctness of PVE and FVD holds. 
+The above PwDR protocol is secure, with regard to Definition \ref{def::PwDR-security}, if the digital signature is existentially unforgeable under chosen message attacks, SAP, and the verdict encoding-decoding protocols (i.e., PVE and FVD) are secure,  the encryption schemes are semantically secure, the blockchain is immutable, and the correctness of PVE and FVD holds. 
 \end{theorem}
 
 
