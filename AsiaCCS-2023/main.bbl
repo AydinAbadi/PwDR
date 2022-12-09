@@ -1,0 +1,540 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{43}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{{A P20 Fraud and Criminal Transactions Working
+  Group Paper}}{{A P20 Fraud and Criminal Transactions Working Group
+  Paper}}{2021}]%
+        {P20-report}
+\bibfield{author}{\bibinfo{person}{{A P20 Fraud and Criminal Transactions
+  Working Group Paper}}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Best Practice Approaches For Combating Payee
+  Scams}.
+\newblock  (\bibinfo{year}{2021}).
+\newblock
+\newblock
+\shownote{\url{https://static1.squarespace.com/static/5efcc6dae323db37b4d01d19/t/60958e7453a1e0728b445470/1620414069082/P20+Report+-+Best+Practice+Approaches+For+Combating+Payee+Scams.pdf}.}
+
+
+\bibitem[\protect\citeauthoryear{Abadi, Murdoch, and Zacharias}{Abadi
+  et~al\mbox{.}}{2021}]%
+        {AbadiMZ21a}
+\bibfield{author}{\bibinfo{person}{Aydin Abadi}, \bibinfo{person}{Steven~J.
+  Murdoch}, {and} \bibinfo{person}{Thomas Zacharias}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Recurring Contingent Payment for Proofs of
+  Retrievability}.
+\newblock \bibinfo{journal}{\emph{{IACR} Cryptol. ePrint Arch.}}
+  (\bibinfo{year}{2021}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Anderson et~al\mbox{.}}{Anderson
+  et~al\mbox{.}}{2007}]%
+        {anderson2007closing}
+\bibfield{author}{\bibinfo{person}{Ross Anderson} {et~al\mbox{.}}}
+  \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{Closing the phishing hole--fraud, risk and
+  nonbanks}. In \bibinfo{booktitle}{\emph{Federal Reserve Bank of Kansas
+  City--Payment System Research Conferences}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Anderson, Barton, B{\"o}lme, Clayton,
+  Gan{\'a}n, Grasso, Levi, Moore, and Vasek}{Anderson et~al\mbox{.}}{2019}]%
+        {anderson2019measuring}
+\bibfield{author}{\bibinfo{person}{Ross Anderson}, \bibinfo{person}{Chris
+  Barton}, \bibinfo{person}{Rainer B{\"o}lme}, \bibinfo{person}{Richard
+  Clayton}, \bibinfo{person}{Carlos Gan{\'a}n}, \bibinfo{person}{Tom Grasso},
+  \bibinfo{person}{Michael Levi}, \bibinfo{person}{Tyler Moore}, {and}
+  \bibinfo{person}{Marie Vasek}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Measuring the changing cost of cybercrime}.
+\newblock  (\bibinfo{year}{2019}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Anonymous}{Anonymous}{2021a}]%
+        {variant-1}
+\bibfield{author}{\bibinfo{person}{Anonymous}.}
+  \bibinfo{year}{2021}\natexlab{a}.
+\newblock \bibinfo{title}{Variant 1: Efficient Verdict Encoding-Decoding
+  Protocol}.
+\newblock
+\newblock
+\newblock
+\shownote{\url{https://github.com/pwdrprotocol/PwDR/blob/main/encoding-decoding.cpp}.}
+
+
+\bibitem[\protect\citeauthoryear{Anonymous}{Anonymous}{2021b}]%
+        {variant-2}
+\bibfield{author}{\bibinfo{person}{Anonymous}.}
+  \bibinfo{year}{2021}\natexlab{b}.
+\newblock \bibinfo{title}{Variant 2: Generic Verdict Encoding-Decoding
+  Protocol}.
+\newblock
+\newblock
+\newblock
+\shownote{\url{https://github.com/pwdrprotocol/PwDR/blob/main/generic-encoding-decoding.cpp}.}
+
+
+\bibitem[\protect\citeauthoryear{Anonymous}{Anonymous}{2022}]%
+        {PwDR-full-ver}
+\bibfield{author}{\bibinfo{person}{Anonymous}.}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \bibinfo{title}{Payment with Dispute Resolution: A Protocol For
+  Reimbursing Frauds Victims (Full Version)}.
+\newblock
+\newblock
+\newblock
+\shownote{\url{https://github.com/pwdrprotocol/PwDR/blob/main/PwDR.pdf}.}
+
+
+\bibitem[\protect\citeauthoryear{Becker, Hutchings, Abu{-}Salma, Anderson,
+  Bohm, Murdoch, Sasse, and Stringhini}{Becker et~al\mbox{.}}{2017}]%
+        {BeckerHAABMSS17}
+\bibfield{author}{\bibinfo{person}{Ingolf Becker}, \bibinfo{person}{Alice
+  Hutchings}, \bibinfo{person}{Ruba Abu{-}Salma}, \bibinfo{person}{Ross~J.
+  Anderson}, \bibinfo{person}{Nicholas Bohm}, \bibinfo{person}{Steven~J.
+  Murdoch}, \bibinfo{person}{M.~Angela Sasse}, {and} \bibinfo{person}{Gianluca
+  Stringhini}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{International comparison of bank fraud
+  reimbursement: customer perceptions and contractual terms}.
+\newblock \bibinfo{journal}{\emph{J. Cybersecur.}} (\bibinfo{year}{2017}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bloom}{Bloom}{1970}]%
+        {DBLP:journals/cacm/Bloom70}
+\bibfield{author}{\bibinfo{person}{Burton~H. Bloom}.}
+  \bibinfo{year}{1970}\natexlab{}.
+\newblock \showarticletitle{Space/Time Trade-offs in Hash Coding with Allowable
+  Errors}.
+\newblock \bibinfo{journal}{\emph{Commun.}} (\bibinfo{year}{1970}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bohm, Brown, and Gladman}{Bohm
+  et~al\mbox{.}}{2000}]%
+        {BohmBG00}
+\bibfield{author}{\bibinfo{person}{Nicholas Bohm}, \bibinfo{person}{Ian Brown},
+  {and} \bibinfo{person}{Brian Gladman}.} \bibinfo{year}{2000}\natexlab{}.
+\newblock \showarticletitle{Electronic Commerce: Who Carries the Risk of
+  Fraud?}
+\newblock \bibinfo{journal}{\emph{J. Inf. Law Technol.}}
+  \bibinfo{volume}{2000} (\bibinfo{year}{2000}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Buchwald}{Buchwald}{2019}]%
+        {buchwald2019smart}
+\bibfield{author}{\bibinfo{person}{Michael Buchwald}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Smart contract dispute resolution: the inescapable
+  flaws of blockchain-based arbitration}.
+\newblock \bibinfo{journal}{\emph{U. Pa. L. Rev.}} (\bibinfo{year}{2019}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{{Confirmation of Payee Team}}{{Confirmation of
+  Payee Team}}{2020}]%
+        {CoP}
+\bibfield{author}{\bibinfo{person}{{Confirmation of Payee Team}}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Confirmation of Payee- Response to consultation
+  CP20/1 and decision on varying Specific Direction 10}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Crosby and Wallach}{Crosby and
+  Wallach}{2009}]%
+        {CrosbyW09}
+\bibfield{author}{\bibinfo{person}{Scott~A. Crosby} {and}
+  \bibinfo{person}{Dan~S. Wallach}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Efficient Data Structures For Tamper-Evident
+  Logging}. In \bibinfo{booktitle}{\emph{{USENIX} Security}},
+  \bibfield{editor}{\bibinfo{person}{Fabian Monrose}} (Ed.).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Dong, Wang, Aldweesh, McCorry, and van
+  Moorsel}{Dong et~al\mbox{.}}{2017}]%
+        {DongWAMM17}
+\bibfield{author}{\bibinfo{person}{Changyu Dong}, \bibinfo{person}{Yilei Wang},
+  \bibinfo{person}{Amjad Aldweesh}, \bibinfo{person}{Patrick McCorry}, {and}
+  \bibinfo{person}{Aad van Moorsel}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Betrayal, Distrust, and Rationality: Smart
+  Counter-Collusion Contracts for Verifiable Cloud Computing}. In
+  \bibinfo{booktitle}{\emph{{CCS}}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Dziembowski, Eckey, and Faust}{Dziembowski
+  et~al\mbox{.}}{2018}]%
+        {DziembowskiEF18}
+\bibfield{author}{\bibinfo{person}{Stefan Dziembowski}, \bibinfo{person}{Lisa
+  Eckey}, {and} \bibinfo{person}{Sebastian Faust}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{FairSwap: How To Fairly Exchange Digital Goods}. In
+  \bibinfo{booktitle}{\emph{{CCS}}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Eckey, Faust, and Schlosser}{Eckey
+  et~al\mbox{.}}{2020}]%
+        {EckeyFS20}
+\bibfield{author}{\bibinfo{person}{Lisa Eckey}, \bibinfo{person}{Sebastian
+  Faust}, {and} \bibinfo{person}{Benjamin Schlosser}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{OptiSwap: Fast Optimistic Fair Exchange}. In
+  \bibinfo{booktitle}{\emph{{ASIA} {CCS}}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Eyal, Gencer, Sirer, and van Renesse}{Eyal
+  et~al\mbox{.}}{2016}]%
+        {EyalGSR16}
+\bibfield{author}{\bibinfo{person}{Ittay Eyal}, \bibinfo{person}{Adem~Efe
+  Gencer}, \bibinfo{person}{Emin~G{\"{u}}n Sirer}, {and}
+  \bibinfo{person}{Robbert van Renesse}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Bitcoin-NG: {A} Scalable Blockchain Protocol}. In
+  \bibinfo{booktitle}{\emph{{NSDI}}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{{Federal Bureau of Investigation
+  (FBI)}}{{Federal Bureau of Investigation (FBI)}}{2020}]%
+        {internet-crime-report}
+\bibfield{author}{\bibinfo{person}{{Federal Bureau of Investigation (FBI)}}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Internet Crime Report}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\newblock
+\shownote{\url{https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf}.}
+
+
+\bibitem[\protect\citeauthoryear{French}{French}{2016}]%
+        {Which?-super-complaint}
+\bibfield{author}{\bibinfo{person}{Adam French}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Which? makes scams super-complaint-Banks must
+  protect those tricked into a bank transfer}.
+\newblock  (\bibinfo{year}{2016}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Garay, Kiayias, and Leonardos}{Garay
+  et~al\mbox{.}}{2015}]%
+        {GarayKL15}
+\bibfield{author}{\bibinfo{person}{Juan~A. Garay}, \bibinfo{person}{Aggelos
+  Kiayias}, {and} \bibinfo{person}{Nikos Leonardos}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{The Bitcoin Backbone Protocol: Analysis and
+  Applications}. In \bibinfo{booktitle}{\emph{{EUROCRYPT}}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Green and Miers}{Green and Miers}{2017}]%
+        {Bolt}
+\bibfield{author}{\bibinfo{person}{Matthew Green} {and} \bibinfo{person}{Ian
+  Miers}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Bolt: Anonymous Payment Channels for Decentralized
+  Currencies}. In \bibinfo{booktitle}{\emph{{CCS}}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{{Hyperledger Foundation}}{{Hyperledger
+  Foundation}}{2018}]%
+        {Hyperledger-Metrics}
+\bibfield{author}{\bibinfo{person}{{Hyperledger Foundation}}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \bibinfo{title}{Hyperledger Blockchain Performance Metrics}.
+\newblock
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Katz and Lindell}{Katz and Lindell}{2014}]%
+        {DBLP:books/crc/KatzLindell2014}
+\bibfield{author}{\bibinfo{person}{Jonathan Katz} {and} \bibinfo{person}{Yehuda
+  Lindell}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Introduction to Modern Cryptography, Second
+  Edition}}.
+\newblock \bibinfo{publisher}{{CRC} Press}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kj{\o}rven}{Kj{\o}rven}{2020}]%
+        {kjorven2020pays}
+\bibfield{author}{\bibinfo{person}{Marte~Eidsand Kj{\o}rven}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Who pays when things go wrong? Online financial
+  fraud and consumer protection in Scandinavia and Europe}.
+\newblock \bibinfo{journal}{\emph{European Business Law Review}}
+  (\bibinfo{year}{2020}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{K{\"{u}}sters, Liedtke, M{\"{u}}ller, Rausch,
+  and Vogt}{K{\"{u}}sters et~al\mbox{.}}{2020}]%
+        {KustersL00020}
+\bibfield{author}{\bibinfo{person}{Ralf K{\"{u}}sters}, \bibinfo{person}{Julian
+  Liedtke}, \bibinfo{person}{Johannes M{\"{u}}ller}, \bibinfo{person}{Daniel
+  Rausch}, {and} \bibinfo{person}{Andreas Vogt}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Ordinos: {A} Verifiable Tally-Hiding E-Voting
+  System}. In \bibinfo{booktitle}{\emph{EuroS{\&}P}}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Laurie, Langley, and K{\"{a}}sper}{Laurie
+  et~al\mbox{.}}{2013}]%
+        {rfc/rfc6962}
+\bibfield{author}{\bibinfo{person}{Ben Laurie}, \bibinfo{person}{Adam Langley},
+  {and} \bibinfo{person}{Emilia K{\"{a}}sper}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Certificate Transparency}.
+\newblock \bibinfo{journal}{\emph{{RFC}}}  \bibinfo{volume}{6962}
+  (\bibinfo{year}{2013}), \bibinfo{pages}{1--27}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.17487/RFC6962}
+\showDOI{\tempurl}
+
+
+\bibitem[\protect\citeauthoryear{{Lending Standards Board}}{{Lending Standards
+  Board}}{2021}]%
+        {CRM-code}
+\bibfield{author}{\bibinfo{person}{{Lending Standards Board}}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Contingent Reimbursement Model Code for Authorised
+  Push Payment Scams}.
+\newblock  (\bibinfo{year}{2021}).
+\newblock
+\newblock
+\shownote{\url{https://www.lendingstandardsboard.org.uk/wp-content/uploads/2021/04/CRM-Code-LSB-Final-April-2021.pdf}.}
+
+
+\bibitem[\protect\citeauthoryear{McIlroy and Sethi-Smith}{McIlroy and
+  Sethi-Smith}{2021}]%
+        {McIlroy2021}
+\bibfield{author}{\bibinfo{person}{David McIlroy} {and} \bibinfo{person}{Ruhi
+  Sethi-Smith}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Prospects for bankers’ liability for authorised
+  push payment fraud}.
+\newblock \bibinfo{journal}{\emph{Butterworths Journal of International Banking
+  and Financial Law}} (\bibinfo{year}{2021}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Nakamoto}{Nakamoto}{2019}]%
+        {bitcoin}
+\bibfield{author}{\bibinfo{person}{Satoshi Nakamoto}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Bitcoin: A peer-to-peer electronic cash
+  system}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{on~Financial~Services}{on~Financial~Services}{2022}]%
+        {the-bill}
+\bibfield{author}{\bibinfo{person}{{US} House~Committee on
+  Financial~Services}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \bibinfo{title}{Discussion draft: To amend the Electronic Fund
+  Transfer Act to treat fraudulently induced electronic fund transfers in the
+  same manner as unauthorized electronic fund transfer}.
+\newblock
+\newblock
+\newblock
+\shownote{\url{https://docs.house.gov/meetings/BA/BA00/20220428/114690/BILLS-117pih-ProtectingConsumersFromPaym-U1.pdf}.}
+
+
+\bibitem[\protect\citeauthoryear{Ortolani}{Ortolani}{2016}]%
+        {ortolani2016self}
+\bibfield{author}{\bibinfo{person}{Pietro Ortolani}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Self-enforcing online dispute resolution: lessons
+  from bitcoin}.
+\newblock \bibinfo{journal}{\emph{Oxford Journal of Legal Studies}}
+  (\bibinfo{year}{2016}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Ortolani}{Ortolani}{2019}]%
+        {ortolani2019impact}
+\bibfield{author}{\bibinfo{person}{Pietro Ortolani}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{The impact of blockchain technologies and smart
+  contracts on dispute resolution: arbitration and court litigation at the
+  crossroads}.
+\newblock \bibinfo{journal}{\emph{Uniform law review}} (\bibinfo{year}{2019}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Poon and Dryja}{Poon and Dryja}{2016}]%
+        {Lightning-Network}
+\bibfield{author}{\bibinfo{person}{Joseph Poon} {and} \bibinfo{person}{Thaddeus
+  Dryja}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{The Bitcoin Lightning Network: Scalable
+  Off-Chain Instant Payments}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport}.
+\newblock
+\newblock
+\shownote{\url{https://lightning.network/lightning-network-paper.pdf}.}
+
+
+\bibitem[\protect\citeauthoryear{Schneier}{Schneier}{1996}]%
+        {Schneier0078909}
+\bibfield{author}{\bibinfo{person}{Bruce Schneier}.}
+  \bibinfo{year}{1996}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Applied cryptography - protocols,
+  algorithms, and source code in C, 2nd Edition}}.
+\newblock \bibinfo{publisher}{Wiley}.
+\newblock
+\showISBNx{978-0-471-11709-4}
+
+
+\bibitem[\protect\citeauthoryear{Soriano{-}Salvador and
+  Muzquiz}{Soriano{-}Salvador and Muzquiz}{2021}]%
+        {Soriano-Salvador21}
+\bibfield{author}{\bibinfo{person}{Enrique Soriano{-}Salvador} {and}
+  \bibinfo{person}{Gorka~Guardiola Muzquiz}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{SealFS: Storage-based tamper-evident logging}.
+\newblock \bibinfo{journal}{\emph{Comput. Secur.}} (\bibinfo{year}{2021}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Taylor and Galica}{Taylor and Galica}{2020}]%
+        {taylor2020new}
+\bibfield{author}{\bibinfo{person}{John~L Taylor} {and} \bibinfo{person}{Tony
+  Galica}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{A New Code to Protect Victims in the UK from
+  Authorised Push Payments Fraud}.
+\newblock \bibinfo{journal}{\emph{Banking \& Finance Law Review}}
+  (\bibinfo{year}{2020}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{{The European Union Agency for Law Enforcement
+  Cooperation}}{{The European Union Agency for Law Enforcement
+  Cooperation}}{2021}]%
+        {europol-notice}
+\bibfield{author}{\bibinfo{person}{{The European Union Agency for Law
+  Enforcement Cooperation}}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{Take control of your digital life. Don't be a victim
+  of cyber scams!}
+\newblock
+\newblock
+\newblock
+\shownote{\url{https://www.europol.europa.eu/activities-services/public-awareness-and-prevention-guides/take-control-of-your-digital-life-don\%E2\%80\%99t-be-victim-of-cyber-scams}.}
+
+
+\bibitem[\protect\citeauthoryear{{The Federal Reserve}}{{The Federal
+  Reserve}}{2020}]%
+        {Fraud-Classifier}
+\bibfield{author}{\bibinfo{person}{{The Federal Reserve}}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Fraud Classifier}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\newblock
+\shownote{\url{https://fedpaymentsimprovement.org/wp-content/uploads/fraudclassifier-industry-adoption-roadmap.pdf}.}
+
+
+\bibitem[\protect\citeauthoryear{{The Financial Ombudsman Service}}{{The
+  Financial Ombudsman Service}}{2020}]%
+        {Financial-Ombudsman-Service-response}
+\bibfield{author}{\bibinfo{person}{{The Financial Ombudsman Service}}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Lending Standards Board Review of the Contingent
+  Reimbursement Model Code for Authorised Push Payment Scams-Financial
+  Ombudsman Service response}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\newblock
+\shownote{\url{https://www.financial-ombudsman.org.uk/files/289009/2020-10-02-LSB-CRM-Code-Review-Financial-Ombudsman-Service-Response.pdf}.}
+
+
+\bibitem[\protect\citeauthoryear{{The International Criminal Police
+  Organization}}{{The International Criminal Police Organization}}{2021}]%
+        {interpol-notce}
+\bibfield{author}{\bibinfo{person}{{The International Criminal Police
+  Organization}}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{Investment fraud via dating apps}.
+\newblock
+\newblock
+\newblock
+\shownote{\url{https://www.interpol.int/en/News-and-Events/News/2021/Investment-fraud-via-dating-apps}.}
+
+
+\bibitem[\protect\citeauthoryear{{UK Finance}}{{UK Finance}}{2021a}]%
+        {2021-Half-Year-Fraud-Update}
+\bibfield{author}{\bibinfo{person}{{UK Finance}}.}
+  \bibinfo{year}{2021}\natexlab{a}.
+\newblock \bibinfo{title}{2021 Half Year Fraud Update}.
+\newblock
+\newblock
+\newblock
+\shownote{\url{https://www.ukfinance.org.uk/system/files/Half-year-fraud-update-2021-FINAL.pdf}.}
+
+
+\bibitem[\protect\citeauthoryear{{UK Finance}}{{UK Finance}}{2021b}]%
+        {overview-of-payment-fraud}
+\bibfield{author}{\bibinfo{person}{{UK Finance}}.}
+  \bibinfo{year}{2021}\natexlab{b}.
+\newblock \bibinfo{title}{THE DEFINITIVE OVERVIEW OF PAYMENT INDUSTRY FRAUD}.
+\newblock
+\newblock
+\newblock
+\shownote{\url{https://www.ukfinance.org.uk/system/files/Fraud\%20The\%20Facts\%202021-\%20FINAL.pdf}.}
+
+
+\bibitem[\protect\citeauthoryear{Wood et~al\mbox{.}}{Wood
+  et~al\mbox{.}}{2014}]%
+        {ethereum}
+\bibfield{author}{\bibinfo{person}{Gavin Wood} {et~al\mbox{.}}}
+  \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Ethereum: A secure decentralised generalised
+  transaction ledger}.
+\newblock \bibinfo{journal}{\emph{Ethereum project yellow paper}}
+  (\bibinfo{year}{2014}).
+\newblock
+
+
+\end{thebibliography}

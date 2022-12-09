@@ -1,0 +1,73 @@
+\subsection{Details on Building Blocks}\label{app:blocks}
+
+\subsubsection{Pseudorandom Function}\label{subsec:PRF}
+
+Informally, a pseudorandom function ($\mathtt{PRF}$) is a deterministic function that takes as input a key and some argument and outputs a value  indistinguishable from that of a truly random function with the same domain and range.  Pseudorandom functions have many applications in cryptography as they provide an efficient and deterministic way to turn  input into a value that looks random. Below, we restate the formal definition of $\mathtt{PRF}$, taken from \cite{DBLP:books/crc/KatzLindell2007}. 
+
+\begin{definition} Let $W:\{0,1\}^{\st\psi}\times \{0,1\}^{\st \eta}\rightarrow \{0,1\}^{\st  \iota}$ be an efficient  keyed function. It is said $W$ is a pseudorandom function if for all probabilistic polynomial-time distinguishers $B$, there is a negligible function, $\mu(.)$, such that:
+
+\begin{equation*}
+\bigg | \Pr[B^{\st W_{\hat{k}}(.)}(1^{\st \psi})=1]- \Pr[B^{\st \omega(.)}(1^{\st \psi})=1] \bigg |\leq \mu(\psi)
+\end{equation*}
+where  the key, $\hat{k}\stackrel{\st\$}\leftarrow\{0,1\}^{\st\psi}$, is chosen uniformly at random and $\omega$ is chosen uniformly at random from the set of functions mapping $\eta$-bit strings to $\iota$-bit strings.
+\end{definition}
+
+\subsubsection{Commitment Scheme}\label{subsec:commit}
+
+
+ A commitment scheme involves two parties,  \emph{sender} and  \emph{receiver}, and includes  two phases: \emph{commit} and  \emph{open}. In the commit phase, the sender  commits to a message: $x$ as $\mathtt{Com}(x,r)=\mathtt{Com}_{\st x}$, that involves a secret value: $r\stackrel{\st\$}\leftarrow \{0,1\}^{\st\lambda}$. In the end of the commit phase,  the commitment $\mathtt{Com}_{\st x}$ is sent to the receiver. In the open phase, the sender sends the opening $\ddot{x}:=(x,r)$ to the receiver who verifies its correctness: $\mathtt{Ver}(\mathtt{Com}_{\st x},\ddot{x})\stackrel{\st ?}=1$ and accepts if the output is $1$.  A commitment scheme must satisfy two properties: (a) \textit{hiding}: it is infeasible for an adversary (i.e., the receiver) to learn any information about the committed  message $x$, until the commitment $\mathtt{Com}_{\st x}$ is opened, and (b) \textit{binding}: it is infeasible for an adversary (i.e., the sender) to open a commitment $\mathtt{Com}_{\st x}$ to different values $\ddot{x}':=(x',r')$ than that was  used in the commit phase, i.e., infeasible to find  $\ddot{x}'$, \textit{s.t.} $\mathtt{Ver}(\mathtt{Com}_{\st x},\ddot{x})=\mathtt{Ver}(\mathtt{Com}_{\st x},\ddot{x}')=1$, where $\ddot{x}\neq \ddot{x}'$.  There exist efficient non-interactive  commitment schemes both in (a) the standard model, e.g., Pedersen scheme \cite{Pedersen91}, and (b)  the random oracle model using the well-known hash-based scheme such that committing  is : $\mathtt{H}(x||r)=\mathtt{Com}_{\st x}$ and $\mathtt{Ver}(\mathtt{Com}_{\st x},\ddot{x})$ requires checking: $\mathtt{H}(x||r)\stackrel{\st ?}=\mathtt{Com}_{\st x}$, where $\mathtt{H}:\{0,1\}^{\st *}\rightarrow \{0,1\}^{\st\lambda}$ is a collision resistant hash function; i.e., the probability to find $x$ and $x'$ such that $\mathtt{H}(x)=\mathtt{H}(x')$ is negligible in the security parameter $\lambda$.
+ 
+ 
+\subsubsection{Publicly Verifiable Non-interactive Zero-knowledge Proof}\label{subsec:PV-NIZK}
+
+In a non-interactive zero-knowledge proof (NIZK), a prover $\mathcal{P}$, given a witness $w$ for some statement $x$ in an NP language $L$, wants to convince a verifier $\mathcal{V}$ of the validity of $x\in L$. The main security property of the scheme is \emph{Zero-knowledge}; meaning,   a potentially malicious verifier  cannot learn anything beyond the validity of the statement.  The procedure is non-interactive, i.e., $\mathcal{P}$ generates a proof $\pi$ and provides $\mathcal{V}$ with $\pi$, who accepts (or rejects) verification. A NIZK is publicly verifiable when any party by obtaining $\pi$ can verify the validity of $x\in L$. Publicly verifiable NIZKs have been constructed under trust assumptions such as the presence of a common reference string, or setup assumptions such as the existence of a random oracle which is used in this work. For a formal definition of NIZKs we refer the reader to~\cite{DBLP:books/cu/Goldreich2001}. 
+ 
+\subsubsection{Symmetric-key Encryption Scheme} \label{subsec:SKE}
+
+A symmetric-key encryption scheme consists of three algorithms $(\mathtt{SKE.keyGen},  \mathtt{Enc}, \mathtt{Dec})$,  defined as follows. (1) $\mathtt{SKE.keyGen}(1^{\st \lambda})\rightarrow k$ is a probabilistic algorithm that outputs a symmetric key $k$. (2) $\mathtt{Enc}(k,m)\rightarrow c$ takes as input $k$ and a message $m$ in some message space and outputs a ciphertext $c$. (3) $\mathtt{Enc}(k,c)\rightarrow m$ takes as input $k$ and a ciphertext $c$ and outputs a message $m$.
+
+The correctness requirement is that for all messages $m$  in the message space, it holds that 
+\[\Pr\Big[\  \  \mathtt{Dec}( k, \mathtt{Enc}(k, m))=m: \mathtt{SKE.keyGen}(1^{\st \lambda})\rightarrow k  \Big]=1\;.\]
+ The symmetric-key encryption scheme satisfies \emph{indistinguishability against chosen-plaintext attacks (IND-CPA)}, if any probabilistic polynomial time (PPT) adversary $\mathcal{A}$ has no more than $\frac{1}{2}+\mathsf{negl}(\lambda)$ probability in winning the following game: the challenger generates a symmetric key $\mathtt{SKE.keyGen}(1^{\st \lambda})\rightarrow k$ . The adversary $\mathcal{A}$ is given access to an encryption oracle $\mathtt{Enc}(k,\cdot)$ and eventually sends to the challenger a pair of messages $m_0,m_1$ of equal length. In turn, the challenger chooses a random bit $b$ and provides $\mathcal{A}$ with a ciphertext $\mathtt{Enc}(k,m_b)\rightarrow c_b$. Upon receiving $c_b$,  $\mathcal{A}$ continues to have access to $\mathtt{Enc}(k,\cdot)$ and wins if its guess $b'$ is equal to $b$.
+ 
+ 
+\subsubsection{Digital Signature Scheme}\label{subsec:DS}
+
+
+A digital signature is a scheme for verifying the authenticity of digital messages. It involves three algorithms, $(\mathtt{Sig.keyGen},  \mathtt{Sig.sign}, $ $\mathtt{Sig.ver})$,  defined as follows. (1) $\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$ is probabilistic algorithm run by  a  signer that outputs a key pair $(sk,pk)$, consisting of secret key $sk$, and public key $pk$. (2) $\mathtt{Sig.sign}(sk, pk, u)\rightarrow sig$ is an algorithm run by the signer. It takes as input  key pair $(sk,pk)$ and a message $u$. It outputs a signature $sig$. (3) $\mathtt{Sig.ver}( pk, u, sig)\rightarrow h\in\{0,1\}$ is an algorithm run by a verifier. It takes as input  public key $pk$,  message $u$, and signature $sig$. It checks the signature's validity.   If the verification passes, then it outputs $1$; otherwise, it outputs $0$.  
+
+A digital signature scheme should meet two properties. (1) \textit{Correctness:} for every input $u$ it holds that:
+%
+\begin{equation*}
+\begin{split}
+\Pr\Big[  \mathtt{Sig.ver}&( pk, u, \mathtt{Sig.sign}(sk, pk, u))=1:\\
+&\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk, pk)  \Big]=1
+\end{split}
+\end{equation*}
+%
+(2) \textit{Existential unforgeability under chosen message attacks (EUF-CMA)}: a probabilistic polynomial time PPT adversary that obtains $pk$ and has access to a signing oracle for messages of its choice, cannot create a valid pair $(u^{\st *},sig^{\st *})$ for a new message $u^{\st *}$, except with a negligible probability, $\sigma$. For a formal definition of digital signatures, we refer readers to~\cite{DBLP:books/crc/KatzLindell2014}. 
+ 
+ 
+ 
+\subsubsection{Merkle Tree}\label{sec::merkle-tree}
+
+
+In the setting where  a Merkle tree is used to remotely check a file, the file  is  split into blocks and the tree is built on top of the file blocks. Usually, for the sake of simplicity, it is assumed the number of blocks, $m$, is a power of $2$. The height of the tree, constructed on $m$ blocks, is $\log_{\st 2}(m)$. The 
+Merkle tree scheme includes three algorithms $(\mathtt{MT.genTree}, \mathtt{MT.prove}, \mathtt{MT.verify})$ as follows: 
+
+%There are  roles invovled, the prover $\mathcal{P}$ and the verifier $\mathcal{V}$. 
+
+
+
+\begin{itemize}
+\item[$\bullet$] The algorithm that constructs a Merkle tree, $\mathtt{MT.genTree}$, is run by $\mathcal{V}$. It takes file blocks, $u:=u_{\st 1},...,u_{\st m}$, as input. Then, it groups the blocks  in pairs. Next,   a collision-resistant hash function, $\mathtt{H}(.)$, is used to hash each pair. After that, the hash values are grouped in pairs and each pair is further hashed, and this process is repeated until only a single hash value, called ``root'', remains. This yields a  tree with the leaves corresponding to the blocks of the input file and the root corresponding to the last remaining hash value.  $\mathcal{V}$ locally stores the root, and sends the file and tree to $\mathcal{P}$.
+
+\item[$\bullet$] The proving algorithm, $\mathtt{MT.prove}$, is run by $\mathcal{P}$. It takes a block index, $i$, and a tree as inputs. It outputs  
+a vector proof, of  $\log_{\st 2}(m)$ elements. The proof asserts the membership of $i$-th block in the tree, and consists of  all the sibling nodes on a path from the $i$-th block to the root of the Merkle tree (including $i$-th block). The proof is given to $\mathcal{V}$.
+
+\item[$\bullet$] The verification algorithm, $\mathtt{MT.verify}$, is run by $\mathcal{V}$. It takes as input $i$-th block, a proof and tree's root. It checks if the $i$-th block corresponds to the root. If the verification passes, it outputs $1$; otherwise, it outputs $0$.
+
+\end{itemize}
+
+The Merkle tree-based scheme has two properties: \emph{correctness} and \emph{security}. Informally, the correctness requires that if both parties run the algorithms correctly, then a proof  is always accepted by  $\mathcal{V}$. The security requires that a computationally bounded malicious $\mathcal{P}$ cannot convince  $\mathcal{V}$ into accepting an incorrect proof, e.g., proof for non-member block. The security  relies on the assumption that it is computationally infeasible to find the hash function's collision.  
+

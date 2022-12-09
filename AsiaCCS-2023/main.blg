@@ -1,0 +1,133 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: ref.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--no journal in P20-report
+Warning--no number and no volume in P20-report
+Warning--page numbers missing in both pages and numpages fields in P20-report
+Warning--no number and no volume in AbadiMZ21a
+Warning--page numbers missing in both pages and numpages fields in AbadiMZ21a
+Warning--empty publisher in anderson2007closing
+Warning--empty address in anderson2007closing
+Warning--page numbers missing in both pages and numpages fields in anderson2007closing
+Warning--no journal in anderson2019measuring
+Warning--no number and no volume in anderson2019measuring
+Warning--page numbers missing in both pages and numpages fields in anderson2019measuring
+Warning--no number and no volume in BeckerHAABMSS17
+Warning--page numbers missing in both pages and numpages fields in BeckerHAABMSS17
+Warning--no number and no volume in DBLP:journals/cacm/Bloom70
+Warning--page numbers missing in both pages and numpages fields in DBLP:journals/cacm/Bloom70
+Warning--page numbers missing in both pages and numpages fields in BohmBG00
+Warning--no number and no volume in buchwald2019smart
+Warning--page numbers missing in both pages and numpages fields in buchwald2019smart
+Warning--no journal in CoP
+Warning--no number and no volume in CoP
+Warning--page numbers missing in both pages and numpages fields in CoP
+Warning--empty publisher in CrosbyW09
+Warning--empty address in CrosbyW09
+Warning--page numbers missing in both pages and numpages fields in CrosbyW09
+Warning--empty publisher in DongWAMM17
+Warning--empty address in DongWAMM17
+Warning--page numbers missing in both pages and numpages fields in DongWAMM17
+Warning--empty publisher in DziembowskiEF18
+Warning--empty address in DziembowskiEF18
+Warning--page numbers missing in both pages and numpages fields in DziembowskiEF18
+Warning--empty publisher in EckeyFS20
+Warning--empty address in EckeyFS20
+Warning--page numbers missing in both pages and numpages fields in EckeyFS20
+Warning--empty publisher in EyalGSR16
+Warning--empty address in EyalGSR16
+Warning--page numbers missing in both pages and numpages fields in EyalGSR16
+Warning--no journal in internet-crime-report
+Warning--no number and no volume in internet-crime-report
+Warning--page numbers missing in both pages and numpages fields in internet-crime-report
+Warning--no journal in Which?-super-complaint
+Warning--no number and no volume in Which?-super-complaint
+Warning--page numbers missing in both pages and numpages fields in Which?-super-complaint
+Warning--empty publisher in GarayKL15
+Warning--empty address in GarayKL15
+Warning--page numbers missing in both pages and numpages fields in GarayKL15
+Warning--empty publisher in Bolt
+Warning--empty address in Bolt
+Warning--page numbers missing in both pages and numpages fields in Bolt
+Warning--empty address in DBLP:books/crc/KatzLindell2014
+Warning--no number and no volume in kjorven2020pays
+Warning--page numbers missing in both pages and numpages fields in kjorven2020pays
+Warning--empty publisher in KustersL00020
+Warning--empty address in KustersL00020
+Warning--page numbers missing in both pages and numpages fields in KustersL00020
+Warning--no journal in CRM-code
+Warning--no number and no volume in CRM-code
+Warning--page numbers missing in both pages and numpages fields in CRM-code
+Warning--no number and no volume in McIlroy2021
+Warning--page numbers missing in both pages and numpages fields in McIlroy2021
+Warning--empty institution in bitcoin
+Warning--no number and no volume in ortolani2016self
+Warning--page numbers missing in both pages and numpages fields in ortolani2016self
+Warning--no number and no volume in ortolani2019impact
+Warning--page numbers missing in both pages and numpages fields in ortolani2019impact
+Warning--empty institution in Lightning-Network
+Warning--empty address in Schneier0078909
+Warning--no number and no volume in Soriano-Salvador21
+Warning--page numbers missing in both pages and numpages fields in Soriano-Salvador21
+Warning--no number and no volume in taylor2020new
+Warning--page numbers missing in both pages and numpages fields in taylor2020new
+Warning--no journal in Fraud-Classifier
+Warning--no number and no volume in Fraud-Classifier
+Warning--page numbers missing in both pages and numpages fields in Fraud-Classifier
+Warning--no journal in Financial-Ombudsman-Service-response
+Warning--no number and no volume in Financial-Ombudsman-Service-response
+Warning--page numbers missing in both pages and numpages fields in Financial-Ombudsman-Service-response
+Warning--no number and no volume in ethereum
+Warning--page numbers missing in both pages and numpages fields in ethereum
+You've used 43 entries,
+            5901 wiz_defined-function locations,
+            1528 strings with 22110 characters,
+and the built_in function-call counts, 40087 in all, are:
+= -- 4732
+> -- 1429
+< -- 0
++ -- 450
+- -- 523
+* -- 2662
+:= -- 4320
+add.period$ -- 222
+call.type$ -- 43
+change.case$ -- 262
+chr.to.int$ -- 41
+cite$ -- 121
+duplicate$ -- 3647
+empty$ -- 2614
+format.name$ -- 595
+if$ -- 9387
+int.to.chr$ -- 4
+int.to.str$ -- 1
+missing$ -- 133
+newline$ -- 407
+num.names$ -- 344
+pop$ -- 1515
+preamble$ -- 1
+purify$ -- 643
+quote$ -- 0
+skip$ -- 1204
+stack$ -- 0
+substring$ -- 2473
+swap$ -- 226
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 954
+warning$ -- 78
+while$ -- 302
+width$ -- 0
+write$ -- 754
+(There were 78 warnings)
