@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  9 DEC 2022 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  30 MAR 2023 09:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1930,10 +1930,6 @@ Class acmart Warning: \vspace should only be used to provide space above/below
 surrounding objects on input line 19.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 21.
 
@@ -1947,7 +1943,7 @@ ion mech-a-nisms can be broadly
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 40.
+(Font)              scaled to size 6.0pt on input line 44.
  [2.2])
 (./Preliminary.tex
 
@@ -2065,114 +2061,107 @@ surrounding objects on input line 20.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 25.
+surrounding objects on input line 28.
 
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 9.0pt on input line 27.
+(Font)              scaled to size 9.0pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 7.3pt on input line 27.
+(Font)              scaled to size 7.3pt on input line 30.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 5.5pt on input line 27.
+(Font)              scaled to size 5.5pt on input line 30.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 27.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7.3> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 27.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5.5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 27.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 30.
 
 LaTeX Font Warning: Font shape `U/lasy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 27.
+(Font)              size <5> substituted on input line 30.
 
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 29.
-
-[4.4]
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 34.
 
+[4.4]
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 39.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 44.
+surrounding objects on input line 46.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 49.
+surrounding objects on input line 52.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 54.
+surrounding objects on input line 57.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 64.
-
-
-Overfull \hbox (1.68193pt too wide) in paragraph at lines 66--67
-[]$[]\LMS/ntxsy/m/n/9 ¹[]\OML/nxlmi/m/it/9 ; []; T; pk; [][]\LMS/ntxsy/m/n/9 º 
-! ¹[]\OML/nxlmi/m/it/9 ; []^^Y\LMS/ntxsy/m/n/9 º$\T1/LinuxLibertineT-TLF/m/n/9 
-(-20) . It gen-er-ates com-
- []
+surrounding objects on input line 62.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 68.
+surrounding objects on input line 72.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 73.
+surrounding objects on input line 76.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 110.
+surrounding objects on input line 81.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 118.
 
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 121.
+(Font)              scaled to size 8.0pt on input line 129.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 6.2pt on input line 121.
+(Font)              scaled to size 6.2pt on input line 129.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.2pt on input line 121.
+(Font)              scaled to size 6.2pt on input line 129.
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 121.
+surrounding objects on input line 129.
 
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 8.0pt on input line 131.
+(Font)              scaled to size 8.0pt on input line 139.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/sb/n' will be
-(Font)              scaled to size 6.2pt on input line 131.
+(Font)              scaled to size 6.2pt on input line 139.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 131.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 139.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6.2> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 131.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 139.
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 151.
+surrounding objects on input line 159.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 151.
+surrounding objects on input line 159.
 
 [5.5]
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 222.
+surrounding objects on input line 230.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 224.
+surrounding objects on input line 232.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 254.
+surrounding objects on input line 262.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 254.
+surrounding objects on input line 262.
 
 (./privacy-def.tex
 
@@ -2215,7 +2204,12 @@ surrounding objects on input line 135.
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 135.
 
-)) [6.6] (./check-pass.tex (./verStat.tex
+)) [6.6]
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 32.
+
+(./check-pass.tex (./verStat.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 8.0pt on input line 26.
 
@@ -2228,16 +2222,20 @@ Class acmart Warning: \vspace should only be used to provide space above/below
 surrounding objects on input line 3.
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 15.
 
 
 Class acmart Warning: A possible image without description on input line 67.
 
-) (./encode.tex
+) (./encode.tex [7.7]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
 (Font)              scaled to size 9.0pt on input line 18.
- [7.7]
+
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 37.
@@ -2272,9 +2270,6 @@ Overfull \hbox (9.45512pt too wide) in paragraph at lines 184--185
 []$[]$\T1/LinuxLibertineT-TLF/m/n/9 (-20) : $[]\LMS/ntxsy/m/n/9 ¹\OML/nxlmi/m/i
 t/9 T; in[]; []; []\LMS/ntxsy/m/n/9 º$
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (8.31659pt too wide) in paragraph at lines 207--208
@@ -2344,18 +2339,18 @@ Class acmart Warning: \vspace should only be used to provide space above/below
 surrounding objects on input line 30.
 
 
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 33.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 33.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 46.
 
-(./diag-1.tex)
+[11.11] (./diag-1.tex)
 
 Class acmart Warning: A possible image without description on input line 55.
 
@@ -2367,7 +2362,7 @@ surrounding objects on input line 57.
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 59.
 
-[11.11]))) (./conclusion.tex
+))) (./conclusion.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 3.
@@ -2402,9 +2397,6 @@ P20 + Report+ -[] +Best + Practice +
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 7.0pt on input line 62.
-
-Underfull \vbox (badness 3029) has occurred while \output is active []
-
 
 Underfull \hbox (badness 3118) in paragraph at lines 459--466
 []\T1/LinuxLibertineT-TLF/m/n/7 (+20) The Eu-ro-pean Union Agency for Law En-fo
@@ -2453,26 +2445,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 483--492
 an . org . uk / ^^[les / 289009 / 2020 -[] 10 -[] 02 -[] LSB -[] CRM -[]
  []
 
-) (./set-XOR-Theorem-proof.tex [12.12]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12.12])
+(./definition-further-discussion.tex) (./set-XOR-Theorem-proof.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 10.
+surrounding objects on input line 11.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 16.
+surrounding objects on input line 17.
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 9.0pt on input line 18.
+(Font)              scaled to size 9.0pt on input line 19.
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 22.
+surrounding objects on input line 23.
 
 ) (./Generic-encode.tex
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 3.
-
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 6.
@@ -2495,24 +2487,14 @@ Class acmart Warning: A possible image without description on input line 278.
 ) (./set-BF-theorem-proof.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 4.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 6.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 15.
 
-[13.13
-
-]) (./further-discussion.tex
+) (./further-discussion.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 2.
 
-) (./proof.tex
+[13.13]) (./proof.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 3.
@@ -2530,6 +2512,9 @@ Class acmart Warning: \vspace should only be used to provide space above/below
 surrounding objects on input line 15.
 
 [14.14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 32.
@@ -2550,6 +2535,7 @@ surrounding objects on input line 51.
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 57.
 
+[15.15]
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 66.
@@ -2573,18 +2559,18 @@ Class acmart Warning: ACM reference format is mandatory
 (acmart)              \settopmatter command..
 
 
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
+Overfull \vbox (1.76024pt too high) has occurred while \output is active []
 
-Package atenddvi Info: Last page = 15.
-[15.15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 336.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 336.
+Package atenddvi Info: Last page = 16.
+
+[16.16]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 337.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 337.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 336.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 336.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 337.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 337.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4FD66C312ADA2EBBB414123C29D9D67D;7759.
+(rerunfilecheck)             Checksum: 2D7E27CFBE3918977373E5EF086142D6;8110.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2595,11 +2581,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 49116 strings out of 480608
- 1051370 string characters out of 5903630
- 1506366 words of memory out of 5000000
- 63055 multiletter control sequences out of 15000+600000
- 821400 words of font info for 568 fonts, out of 8000000 for 9000
+ 49124 strings out of 480608
+ 1051567 string characters out of 5903630
+ 1503316 words of memory out of 5000000
+ 63058 multiletter control sequences out of 15000+600000
+ 821484 words of font info for 569 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  67i,19n,108p,3727b,2301s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
@@ -2643,10 +2629,10 @@ ewtx/txexs.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txm
 iaX.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsya.pf
 b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></us
 r/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (15 pages, 656838 bytes).
+Output written on main.pdf (16 pages, 660800 bytes).
 PDF statistics:
- 707 PDF objects out of 1000 (max. 8388607)
- 634 compressed objects within 7 object streams
- 215 named destinations out of 1000 (max. 500000)
- 72013 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 721 PDF objects out of 1000 (max. 8388607)
+ 647 compressed objects within 7 object streams
+ 217 named destinations out of 1000 (max. 500000)
+ 72021 words of extra memory for PDF output out of 74296 (max. 10000000)
 

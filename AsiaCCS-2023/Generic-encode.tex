@@ -1,6 +1,6 @@
 % !TEX root =main.tex
 
-\vspace{-2mm}
+%\vspace{-2mm}
 
 \section{GPVE \& GFVD}\label{sec::Generic-Verdict-Encoding-Decoding-Protocols}
 \vspace{-1mm}
@@ -8,7 +8,7 @@ In this section, we present the  generic verdict encoding-decoding protocols (i.
 %
 As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::Encoding-Decoding-Verdicts}) after $\mathcal{D}_{\st n}$ generates all combinations of verdict $1$'s  representations, it inserts the combinations into a Bloom filter, to preserve the representations' privacy from $\mathcal{I}$. Note, instead of inserting the combinations into a Bloom filter, we could  \emph{hash}  the combinations and give the hash values to $\mathcal{I}$. However, using a Bloom filter lets us save considerable communication costs. Let us see a concrete example. Let $n=10$, $e=6$, and the hash function be SHA-256.  If the latter (hash-based) approach is used,  $\mathcal{D}_{\st n}$ needs to send  $|W|\times 256= 386\times 256=98,816$ bits to $\mathcal{I}$, whereas  if the former (Bloom filter-based) approach is used, then it only needs to send $|\mathtt{BF}|=22,276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it can save communication costs by at least a factor of  $4$.  
 
-\vspace{-4mm}
+\vspace{-1mm}
 
 
 %

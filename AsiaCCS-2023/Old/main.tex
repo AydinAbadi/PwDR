@@ -1,0 +1,336 @@
+% This is LLNCS.DEM the demonstration file of
+% the LaTeX macro package from Springer-Verlag
+% for Lecture Notes in Computer Science,
+% version 2.4 for LaTeX2e as of 16. April 2010
+%
+
+
+%%
+%%
+%% The first command in your LaTeX source must be the \documentclass command.
+\documentclass[sigconf,anonymous]{acmart}
+\usepackage{setspace}
+\usepackage{colortbl}
+\usepackage[skins]{tcolorbox}
+
+
+\newcommand{\vs}{\vspace{0mm}}
+
+
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+
+
+
+%*****************************************************
+\usepackage{color, colortbl}
+\usepackage{capt-of}
+\usepackage{enumitem}
+\usepackage[makeroom]{cancel}
+%\newcommand{\st}{\scriptscriptstyle}
+
+%----------------------------
+\usepackage{blindtext}
+\usepackage{hyperref}
+%
+\usepackage{enumitem}
+\usepackage{framed}
+\usepackage{esvect}
+\usepackage{tikz}
+\usepackage{latexsym}
+\usepackage{multirow}
+\let\oldReturn\Return
+\usepackage[mathscr]{eucal}
+\usepackage{algpseudocode}
+%\newcommand{\size}{3.3pt}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\usepackage{arydshln}
+\newcommand\hmmax{0}
+\newcommand\bmmax{0}
+\usepackage{algorithm}
+\usepackage{scalerel}
+\usepackage{listings}
+
+
+%\usepackage{fullpage}
+
+\usepackage{array}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+\newcommand{\vars}{\texttt}
+\newcommand{\func}{\textrm}
+\newcommand{\resizeT}{\scalebox{1}}
+\newcommand{\resizeS}{\scalebox{.56}}
+\newcommand{\resizeSS}{\scalebox{.38}}
+
+\usepackage{longtable}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplots, pgfplotstable}
+
+%\usepackage{kbordermatrix}% http://www.hss.caltech.edu/~kcb/TeX/kbordermatrix.sty
+\usepackage{blkarray}% http://ctan.org/pkg/blkarra
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{blindtext}
+\usepackage{multicol}
+
+\definecolor{bubblegum}{rgb}{0.99, 0.76, 0.8}
+
+\newcommand{\TZ}[1]{\textcolor{magenta}{\textbf{Thomas: }{#1}}}
+
+
+\usepackage{makecell, cellspace, caption}
+
+
+
+\definecolor{Gray}{gray}{0.9}
+%\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+%
+
+\usepackage[first=0,last=9]{lcg}
+%\newcommand{\ra}{\rand0.\arabic{rand}}
+
+\usepackage[title]{appendix}
+
+\usepackage{boxedminipage}
+
+\usepackage{multirow}
+
+
+
+
+\usepackage{adjustbox}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{tablefootnote}
+\newtheorem{assumption}{Assumption}
+\newcommand\NameEntry[1]{%
+  \multirow{3}*{%
+    \begin{varwidth}{10em}% --- or minipage, if you prefer a fixed width
+    \flushright #1%
+    \end{varwidth}}}
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\settopmatter{printacmref=false}
+\setcopyright{none}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+
+
+%%%%%%%%%%
+%*****************************************************
+\usepackage{color, colortbl}
+\usepackage{capt-of}
+\usepackage{enumitem}
+\usepackage[makeroom]{cancel}
+\newcommand{\st}{\scriptscriptstyle}
+\usepackage{blindtext}
+%\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{framed}
+\usepackage{esvect}
+\usepackage{tikz}
+\usepackage{latexsym}
+\usepackage{multirow}
+\let\oldReturn\Return
+\usepackage[mathscr]{eucal}
+\usepackage{algpseudocode}
+\newcommand{\size}{3.3pt}
+%\theoremstyle{remark}
+%\newtheorem{remark}{Remark}
+\usepackage{arydshln}
+%\newcommand\hmmax{0}
+%\newcommand\bmmax{0}
+%\usepackage{algorithm}
+\usepackage{scalerel}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+%\newcommand{\vars}{\texttt}
+%\newcommand{\func}{\textrm}
+%\newcommand{\resizeT}{\scalebox{1}}
+%\newcommand{\resizeS}{\scalebox{.56}}
+%\newcommand{\resizeSS}{\scalebox{.38}}
+\usepackage{longtable}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplots, pgfplotstable}
+\usepackage{blkarray}% http://ctan.org/pkg/blkarra
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{blindtext}
+\usepackage{multicol}
+\definecolor{bubblegum}{rgb}{0.99, 0.76, 0.8}
+%\newcommand{\TZ}[1]{\textcolor{magenta}{\textbf{Thomas: }{#1}}}
+\usepackage{makecell, cellspace, caption}
+\definecolor{Gray}{gray}{0.9}
+\usepackage[first=0,last=9]{lcg}
+\newcommand{\ra}{\rand0.\arabic{rand}}
+%\usepackage[title]{appendix}
+\usepackage{boxedminipage}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{tablefootnote}
+
+\usepackage{ragged2e}
+%\newtheorem{assumption}{Assumption}
+%\newcommand\NameEntry[1]{%
+%  \multirow{3}*{%
+%    \begin{varwidth}{10em}% --- or minipage, if you prefer a fixed width
+%    \flushright #1%
+%    \end{varwidth}}}
+%\newcommand{\specialcell}[2][c]{%
+%  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+%\settopmatter{printacmref=false}
+%\setcopyright{none}
+%\renewcommand\footnotetextcopyrightpermission[1]{}
+
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+%\newtheorem{claim}{Claim}
+
+\newtcolorbox{mybox}[2][]{%
+  attach boxed title to top center
+               = {yshift=-11pt},
+               %width=85mm,%
+                  %height=52mm,
+  %colback      = black,
+  colframe     =black,
+  %fonttitle    = \bfseries,
+  colbacktitle = black,
+  title        = #2,#1,
+  enhanced,
+}
+
+\newcommand{\hs}{\hspace{-1mm}}
+\newcommand{\lhs}{\hspace{-1.5mm}}
+\newcommand{\hsp}{\hspace{2mm}}
+
+\usepackage{url}
+%
+%\def\UrlBreaks{\do\/\do-}
+%\usepackage{breakurl}
+%\usepackage[breaklinks,hidelinks]{hyperref}
+
+
+
+
+%%%%%%%%%%
+
+
+
+\begin{document}
+\newtheorem{claim}{Claim}[theorem]
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{Payment with Dispute Resolution: \\ A Protocol for Reimbursing Frauds Victims}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+An ``Authorised Push Payment'' (APP) fraud refers to a case where fraudsters deceive a victim to make payments to bank accounts controlled by them.  The total amount of money stolen via APP frauds is swiftly growing. Although regulators have provided guidelines to improve victims’ protection, the guidelines are vague, the implementation is lacking in transparency, and the victims are not receiving sufficient protection. To  \emph{facilitate victims' reimbursement}, in this work, we propose a protocol called  ``Payment with Dispute Resolution'' (PwDR) and formally define it. The protocol lets an honest victim prove its innocence to a third-party dispute resolver while preserving the protocol participants' \emph{privacy}. It makes black-box use of a standard online banking system. We implement its most computationally-intensive subroutine and analyse its runtime. We also evaluate its asymptotic cost. Our evaluation indicates that the protocol is efficient. It imposes only $O(1)$ overheads to the customer and bank.  Moreover, it takes a dispute resolver only $0.09$ milliseconds to settle a dispute between the two parties.
+\end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10002978.10002979</concept_id>
+<concept_desc>Security and privacy~Cryptography</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Security and privacy~Cryptography}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{Financial fraud, dispute resolution, transparency, accountability}
+
+
+\newenvironment{packed_item}{
+\begin{itemize}
+	\setlength{\topsep}{0pt}
+	\setlength{\partopsep}{0pt}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\newenvironment{packed_enum}{
+\begin{enumerate}
+	\setlength{\topsep}{0pt}
+	\setlength{\partopsep}{0pt}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+%*****************************************************
+
+
+
+
+\maketitle              % typeset the title of the contribution
+%
+%\vspace{-6mm}
+\pagestyle{plain}
+
+
+
+\input{introduction}
+\input{background}
+\input{related-work}
+\input{Preliminary}
+\input{content}
+%\input{future-research}
+\input{conclusion}
+
+
+
+
+
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{ref}
+
+%%
+%% If your work has an appendix, this is the place to put it.
+
+\appendices
+%\input{APP-definition}
+%\input{long-commitment}
+%\input{bloom-filter}
+%\input{log-definition}
+%\input{Privacy-Def-further-discussion}
+\input{set-XOR-Theorem-proof}
+\input{Generic-encode}
+\input{set-BF-theorem-proof}
+\input{further-discussion}
+\input{proof}
+
+
+%\input{long-evaluation}
+
+
+\end{document}

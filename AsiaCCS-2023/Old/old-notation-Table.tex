@@ -1,0 +1,227 @@
+% !TEX root =main.tex
+
+%\break
+
+\clearpage
+
+\section{Notations}\label{sec:notation-table}
+
+We summarise our notations in Table \ref{table:notation-table}.
+
+
+\begin{table*}[!htbp]
+\begin{scriptsize}
+\begin{center}
+\footnotesize{
+\caption{ \small{Notation Table}.}\label{commu-breakdown-party} 
+\renewcommand{\arraystretch}{1}
+\scalebox{1}{
+% 1st table
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} 
+
+\hline 
+
+ {  } \scriptsize \textbf{Symbol}& {  } \scriptsize \textbf{Description}  \\
+    \hline
+    
+     \hline
+
+%Generic
+%\multirow{25}{*}{\rotatebox[origin=c]{90}{\scriptsize \textbf{Generic}}}
+
+  {    }\scriptsize$\mathtt{Enc}(.)$& {    }\scriptsize \text{Encryption algorithm of symmetric key encryption  }\\   
+ %
+   {   }\scriptsize$\mathtt{Dec}(.)$& {   }\scriptsize \text{Decryption algorithm of symmetric key encryption  }\\   
+  %
+   {    }\scriptsize$\mathtt{\tilde{Enc}}(.)$& {    }\scriptsize \text{Encryption algorithm of asymmetric key encryption  }\\   
+  %
+   {   }\scriptsize$\mathtt{\tilde{Dec}}(.)$& {   }\scriptsize \text{Decryption algorithm of asymmetric key encryption  }\\   
+  %
+     {    }\scriptsize$\tilde{\mathtt{keyGen}}(.)$& {    }\scriptsize \text{Key generator algorithm of asymmetric key encryption } \\
+%
+    {   }\scriptsize${\mathtt{Sig.keyGen}}(.)$& {   }\scriptsize \text{Key generator algorithm of digital signature scheme} \\
+ %
+ {    }\scriptsize$\mathtt{verStat}(.)$ & {    }\scriptsize  Algorithm to determine $\mathcal{B}$'s message status \\ 
+%
+ {   }\scriptsize$\mathtt{checkWarning}(.)$ & {   }\scriptsize  Algorithm to check a warning’s effectiveness \\ 
+%
+ {    }\scriptsize$\mathtt{pay}(.)$ & {    }\scriptsize $\mathcal{B}$'s internal algorithm to transfers money\\   
+%
+  {   }\scriptsize$\mathtt{Com}(.)$ & {   }\scriptsize  Commitment's commit\\
+  %
+ {    }\scriptsize$\mathtt{Ver}(.)$ & {    }\scriptsize  Commitment's verify\\   
+%                    
+ {   }\scriptsize$\mathtt{H}(.)$ & {   }\scriptsize Hash function\\
+%
+ {    }\scriptsize$\mathtt{PRF}(.)$ & {    }\scriptsize  Pseudorandom function \\ 
+%
+ {   }\scriptsize$\mathcal{C}$ & {   }\scriptsize Customer  \\  
+%
+ {    }\scriptsize$\mathcal{B}$ & {    }\scriptsize Bank  \\
+%  
+ {   }\scriptsize$\mathcal{D}_{\st 1},... , \mathcal{D}_{\st n}$ & {   }\scriptsize Arbiters  \\  
+%
+ {    }\scriptsize$\mathcal{DR}$ & {    }\scriptsize Dispute resolver  \\  
+%
+ {   }\scriptsize$\mathcal{S}$ & {   }\scriptsize Smart contract  \\  
+%
+ {    }\scriptsize$\mathcal{G}$ & {    }\scriptsize Certificate generator  \\  
+%
+ {   }\scriptsize{SAP} & {   }\scriptsize  Statement agreement protocol\\ 
+%
+ {    }\scriptsize{PVE} & {    }\scriptsize  Private verdict encoding protocol\\ 
+%
+ {   }\scriptsize{FVD} & {   }\scriptsize  Final verdict decoding protocol\\ 
+%
+ {    }\scriptsize{GPVE} & {    }\scriptsize  Generic private verdict encoding protocol\\ 
+%
+ {   }\scriptsize{GFVD} & {   }\scriptsize  Generic final verdict decoding protocol\\ 
+%
+ {    }\scriptsize$\oplus$ & {    }\scriptsize  XOR operator \\ 
+%
+ {   }\scriptsize$\Delta$ & {   }\scriptsize  time parameter \\ 
+%
+ {    }\scriptsize$add_{\st I}$ & {    }\scriptsize  Address of $I$\\ 
+%
+ {   }\scriptsize$aux, aux'$ & {   }\scriptsize  Auxiliary information\\ 
+%
+ {    }\scriptsize$\mathtt{BF}$ & {    }\scriptsize  Bloom filter\\ 
+%
+ {   }\scriptsize$z_{\st 1}$ & {   }\scriptsize  $\mathcal{C}$'s complaint about $\mathcal{B}$'s message status\\ 
+%
+ {    }\scriptsize$z_{\st 2}$ & {    }\scriptsize  $\mathcal{C}$'s complaint about a warning's effectiveness\\
+% 
+ {   }\scriptsize$z_{\st 3}$ & {   }\scriptsize  $\mathcal{C}$'s complaint about payment message  inconsistency\\ 
+%
+ {   }\scriptsize$t_{\st i}$ &\scriptsize  time point\\ 
+
+
+
+                     
+ \hline
+  
+
+
+\end{tabular}
+
+% 2nd table
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} 
+    \hline
+ {  } \scriptsize \textbf{Symbol}& {  } \scriptsize \textbf{Description}  \\
+    \hline
+    
+\hline
+
+
+%---------------------------------
+%\multirow{10}{*}{\rotatebox[origin=c]{90}{\scriptsize  \textbf{Generic}}}
+%
+
+ {   }\scriptsize$\bm{l}$ & {   }\scriptsize  $\mathcal{C}$'s payees list\\ 
+%
+ {    }\scriptsize$\hat{\bm{l}}$ & {    }\scriptsize  $\mathcal{C}$'s encoded payees list\\ 
+%
+
+
+ {   }\scriptsize$ k_{\st 0}$ & {   }\scriptsize   A secret key of $\mathtt{PRF}$\\ 
+%               
+ {    }\scriptsize$f$ & {    }\scriptsize New payee’s detail  \\ 
+ %                            
+ {   }\scriptsize$in_{\st f}$ & {   }\scriptsize Payment detail \\ 
+%
+   {    }\scriptsize$\hat a$ & {    }\scriptsize Encoded $a$ \\     
+%
+ {   }\scriptsize$\hat {m}^{\st(\mathcal{C})}_{\st 1}$ & {   }\scriptsize $\mathcal{C}$'s encoded update request\\     
+%
+ {    }\scriptsize$\hat {m}^{\st(\mathcal{C})}_{\st 2}$ & {    }\scriptsize $\mathcal{C}$'s encoded payment request\\     
+%      
+ {   }\scriptsize$\hat {m}^{\st(\mathcal{B})}_{\st 1}$ & {   }\scriptsize $\mathcal{B}$'s encoded warning message\\     
+%
+ {    }\scriptsize$\hat {m}^{\st(\mathcal{B})}_{\st 2}$ & {    }\scriptsize $\mathcal{B}$'s encoded payment message\\     
+%          
+      {   }\scriptsize$sk$ and $pk$ & {   }\scriptsize Secret  and public keys\\     
+%
+    {    }\scriptsize$sk_{\st\mathcal{D}}$ & {    }\scriptsize Arbiters' secret key\\     
+%    
+ {   }\scriptsize$pp$ & {   }\scriptsize Public parameter\\  
+%
+ {    }\scriptsize$j$ & {    }\scriptsize  Arbiter's index,  $1\leq j\leq n$ \\ 
+%
+ {   }\scriptsize$T, T_{\st 1},T_{\st 2}$ & {   }\scriptsize  Tokens, where  $T:=( T_{\st 1},T_{\st 2})$\\ 
+%
+ {    }\scriptsize$w_{\st 1}$ & {    }\scriptsize  Output of $\mathtt{verStat}(.)$\\ 
+%
+ {   }\scriptsize$(w_{\st 2},w_{\st 3})$ & {   }\scriptsize  Output of $\mathtt{checkWarning}(.)$\\ 
+%
+ {    }\scriptsize$\bar{w}_{\st j}$ & {    }\scriptsize  Output of $\mathtt{PVE}(.)$\\ 
+%
+ {   }\scriptsize$v$ & {   }\scriptsize  Output of $\mathtt{FVD}(.)$\\ 
+%
+ {    }\scriptsize$e$ & {    }\scriptsize  Threshold\\ 
+%            
+  {   }\scriptsize$w_{\st i,j}$ & {   }\scriptsize  Arbiter's plain verdict\\ 
+%     
+ {    }\scriptsize$o$ & {    }\scriptsize  Offset\\  
+ %
+   {   }\scriptsize$r_{\st j}$ & {   }\scriptsize  Pseudorandom value\\   
+ %              
+ {    }\scriptsize$\lambda$ & {    }\scriptsize Security parameter\\  
+%
+ {   }\scriptsize$\mu$ & {   }\scriptsize Negligible function\\  
+
+
+ {    }\scriptsize$in_{\st p}$ & {    }\scriptsize The input of $\mathtt{pay}(.)$\\                    
+%
+ {   }\scriptsize$\pi$ & {   }\scriptsize Private statement\\        
+  %
+   {    }\scriptsize$Pr$ & {    }\scriptsize Probability\\   
+
+%
+ {   }\scriptsize$\phi$ & {   }\scriptsize  Null\\ 
+%
+ {    }\scriptsize$n$ & {    }\scriptsize  Total number of arbiters\\  
+%           
+ {   }\scriptsize$z$ & {   }\scriptsize  $\mathcal{C}$'s complaint, where $z:=(z_{\st 1}, z_{\st 2}, z_{\st 3})$\\ 
+%
+ {    }\scriptsize $g:=(g_{\st 1}, g_{\st 2})$& {    }\scriptsize  Commitment values \\    
+%
+%***********************
+
+\hline 
+                   
+\end{tabular}\label{table:notation-table}
+%
+}}
+\end{center}
+\end{scriptsize}
+\end{table*}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
