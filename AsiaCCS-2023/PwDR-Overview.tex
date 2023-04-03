@@ -1,8 +1,8 @@
 % !TEX root =main.tex
 
-\vspace{-1mm}
+\vspace{-3.3mm}
 \section{Challenges to Overcome}\label{sec:: challenges}
-
+\vspace{-1mm}
 
 Our starting point in defining and designing a payment with dispute resolution scheme is the CRM code, as this code (although vaguely) sets out the primary requirements a victim must meet to be reimbursed.  To design such a scheme, we need to address several challenges. The rest of this section outlines these challenges. 
 
@@ -10,7 +10,7 @@ Our starting point in defining and designing a payment with dispute resolution s
 
 
 
-\vspace{-1.1mm}
+\vspace{-3.5mm}
 \subsection{Challenge 1: Lack of Transparent Logs} 
 In the current online banking system, during a payment journey, messages exchanged between a customer and a bank are logged by the bank and are not accessible to the customer without the bank's collaboration. Even if the bank provides access to the transaction logs, there is no guarantee that the logs have remained intact.
 
@@ -21,9 +21,9 @@ In the current online banking system, during a payment journey, messages exchang
 
 
 
-\vspace{-2mm}
+\vspace{-3mm}
 \subsection{Challenge 2: Lack of Effective Warning's Accurate Definition in Banking}\label{sec::Lack-of-Effective-Warning-Definition}
-
+\vspace{-1mm}
 
 One of the determining factors in the process of allocating liability to an APP fraud victim is following ``warning(s)'', according to the CRM code. However, there exists no publicly available study on the effectiveness of banks' warnings. So, we cannot hold a customer accountable for becoming a fraud victim,  even if the related warnings are ignored. Also, currently,  banks assess whether their own warnings are effective. But, in a fair process, such an assessment is conducted by a neutral third party.  
 
@@ -31,15 +31,19 @@ To address these challenges, we let a warning's effectiveness be determined on a
 
 
 
-\vspace{-2mm}
+\vspace{-3mm}
 
 \subsection{Challenge 3: Linking Off-chain Payments with a Smart Contract}\label{sec::Linking Off-chain-Payments-with-contract}
+
+\vspace{-1mm}
+
 
  Recall that an APP fraud occurs when a payment is made. In the case where a  bank sends  (to the smart contract) a confirmation of payment message, it is not possible to automatically validate such a claim, as the money transfer occurs outside of the blockchain network. To address this challenge, our scheme lets a customer raise a dispute and report it to the smart contract when it detects an inconsistency. In this case, the above auditors investigate and provide their verdicts to the smart contract. Then, dispute resolver $\mathcal{DR}$ extracts them and announces the final verdict. 
 
 
-\vspace{-2mm}
+\vspace{-3mm}
 \subsection{Challenge 4: Preserving Privacy}
+\vspace{-1mm}
 
  Although the use of a public logging mechanism is vital in resolving disputes transparently, if it does not use a  privacy-preserving mechanism, parties' privacy would be violated. To protect the privacy of the bank's and customers' messages from the public, our scheme lets them provably agree on encoding-decoding tokens with which they can encode their messages. 
  

@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{43}
+\begin{thebibliography}{38}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -36,20 +36,6 @@
 \providecommand\bibinfo[2]{#2}
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
-
-\bibitem[\protect\citeauthoryear{{A P20 Fraud and Criminal Transactions Working
-  Group Paper}}{{A P20 Fraud and Criminal Transactions Working Group
-  Paper}}{2021}]%
-        {P20-report}
-\bibfield{author}{\bibinfo{person}{{A P20 Fraud and Criminal Transactions
-  Working Group Paper}}.} \bibinfo{year}{2021}\natexlab{}.
-\newblock \showarticletitle{Best Practice Approaches For Combating Payee
-  Scams}.
-\newblock  (\bibinfo{year}{2021}).
-\newblock
-\newblock
-\shownote{\url{https://static1.squarespace.com/static/5efcc6dae323db37b4d01d19/t/60958e7453a1e0728b445470/1620414069082/P20+Report+-+Best+Practice+Approaches+For+Combating+Payee+Scams.pdf}.}
-
 
 \bibitem[\protect\citeauthoryear{Abadi, Murdoch, and Zacharias}{Abadi
   et~al\mbox{.}}{2021}]%
@@ -350,41 +336,6 @@
 \shownote{\url{https://www.lendingstandardsboard.org.uk/wp-content/uploads/2021/04/CRM-Code-LSB-Final-April-2021.pdf}.}
 
 
-\bibitem[\protect\citeauthoryear{McIlroy and Sethi-Smith}{McIlroy and
-  Sethi-Smith}{2021}]%
-        {McIlroy2021}
-\bibfield{author}{\bibinfo{person}{David McIlroy} {and} \bibinfo{person}{Ruhi
-  Sethi-Smith}.} \bibinfo{year}{2021}\natexlab{}.
-\newblock \showarticletitle{Prospects for bankers’ liability for authorised
-  push payment fraud}.
-\newblock \bibinfo{journal}{\emph{Butterworths Journal of International Banking
-  and Financial Law}} (\bibinfo{year}{2021}).
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{Nakamoto}{Nakamoto}{2019}]%
-        {bitcoin}
-\bibfield{author}{\bibinfo{person}{Satoshi Nakamoto}.}
-  \bibinfo{year}{2019}\natexlab{}.
-\newblock \bibinfo{booktitle}{\emph{Bitcoin: A peer-to-peer electronic cash
-  system}}.
-\newblock \bibinfo{type}{{T}echnical {R}eport}.
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{on~Financial~Services}{on~Financial~Services}{2022}]%
-        {the-bill}
-\bibfield{author}{\bibinfo{person}{{US} House~Committee on
-  Financial~Services}.} \bibinfo{year}{2022}\natexlab{}.
-\newblock \bibinfo{title}{Discussion draft: To amend the Electronic Fund
-  Transfer Act to treat fraudulently induced electronic fund transfers in the
-  same manner as unauthorized electronic fund transfer}.
-\newblock
-\newblock
-\newblock
-\shownote{\url{https://docs.house.gov/meetings/BA/BA00/20220428/114690/BILLS-117pih-ProtectingConsumersFromPaym-U1.pdf}.}
-
-
 \bibitem[\protect\citeauthoryear{Ortolani}{Ortolani}{2016}]%
         {ortolani2016self}
 \bibfield{author}{\bibinfo{person}{Pietro Ortolani}.}
@@ -463,18 +414,6 @@
 \newblock
 \newblock
 \shownote{\url{https://www.europol.europa.eu/activities-services/public-awareness-and-prevention-guides/take-control-of-your-digital-life-don\%E2\%80\%99t-be-victim-of-cyber-scams}.}
-
-
-\bibitem[\protect\citeauthoryear{{The Federal Reserve}}{{The Federal
-  Reserve}}{2020}]%
-        {Fraud-Classifier}
-\bibfield{author}{\bibinfo{person}{{The Federal Reserve}}.}
-  \bibinfo{year}{2020}\natexlab{}.
-\newblock \showarticletitle{Fraud Classifier}.
-\newblock  (\bibinfo{year}{2020}).
-\newblock
-\newblock
-\shownote{\url{https://fedpaymentsimprovement.org/wp-content/uploads/fraudclassifier-industry-adoption-roadmap.pdf}.}
 
 
 \bibitem[\protect\citeauthoryear{{The Financial Ombudsman Service}}{{The

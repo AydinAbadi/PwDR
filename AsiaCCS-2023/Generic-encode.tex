@@ -1,6 +1,6 @@
 % !TEX root =main.tex
 
-%\vspace{-2mm}
+\vspace{-3.2mm}
 
 \section{GPVE \& GFVD}\label{sec::Generic-Verdict-Encoding-Decoding-Protocols}
 \vspace{-1mm}
@@ -116,15 +116,15 @@ As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::
 \begin{figure}[!htp]
 \setlength{\fboxsep}{1.5pt}
 \begin{center}
-    \begin{tcolorbox}[enhanced,width=83mm, height=98mm, left=0mm,
+    \begin{tcolorbox}[enhanced,width=83mm, height=97mm, left=0mm,
     drop fuzzy shadow southwest,
     colframe=black,colback=white]
     {\small{
-   \vspace{-2mm}
+   \vspace{-2.7mm}
 
 \underline{$\mathtt{GPVE}(\bar{k}_{\st 0}, \text{ID},  w_{\st j}, o, e, n,  j)\rightarrow  (\bar{  w}_{\st j}, \mathtt{BF})$}\\
 %
-\vspace{-3.5mm}
+\vspace{-3mm}
 \begin{itemize}[leftmargin=4.2mm]
 \item \noindent\textit{Input.} $\bar{k}_{\st 0}$: a key of  pseudorandom function $\mathtt{PRF}(.)$, $\text{ID}$: a unique identifier, $ w_{\st j}$: a  verdict, $o$: a counter, $e$: a threshold, $n$: the total number of  auditors,  and  $j$: an auditor's index.
 %
@@ -133,6 +133,7 @@ As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::
 %$\bm r_{\st j}$:  $j$-th row of an $n\times m$ matrix, such that  if $i$-th element of $\bm r_{\st j}$ is added with  the rest of elements in $i$-th column of the same matrix, the result would be  $0$. 
 \end{itemize}
 Auditor $\mathcal{D}_{\st j}$ takes the following steps.
+\vspace{-1mm}
 \begin{enumerate}[leftmargin=5.2mm]
 %
 \item\label{ZSPA:val-gen} computes a pseudorandom value, as follows. 
@@ -208,7 +209,7 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 }}
 \end{tcolorbox}
 \end{center}
-\vspace{-3.5mm}
+\vspace{-4mm}
 \caption{Generic Private Verdict Encoding  (GPVE) Protocol. In the figure, $\mathcal{D}_{\st n}$ can generate other auditors' $r_{\st i}$ and $\alpha_{\st j}$ values, given $\bar k_{\st 0}$. Note also that $\text{ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text{ID}$ and $o$ are used to ensure each $r_{\st j}$ will be different for each invocation of GPVE  although the same key $\bar k_{\st 0}$ is used.} 
 \label{fig:GPVE}
 \end{figure}
@@ -217,13 +218,14 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 \begin{figure} [!htb]
 \setlength{\fboxsep}{1.9pt}
 \begin{center}
-    \begin{tcolorbox}[enhanced,width=81mm,height=55mm, left=0mm,
+    \begin{tcolorbox}[enhanced,width=81mm,height=50mm, left=0mm,
     drop fuzzy shadow southwest,
     colframe=black,colback=white]
     \small{
     \vspace{-2.8mm}
 \underline{$\mathtt{GFVD}(n,  \bar{\bm w}, \mathtt{BF})\rightarrow  v$}\\
 %
+    \vspace{-2.8mm}
 \begin{itemize}[leftmargin=4.2mm]
 \item \noindent\textit{Input.} $n$:  the total number of  auditors,  and  $\bar{\bm w}=[\bar{ w}_{\st 1},..., \bar{ w}_{\st n}]$:  a vector of all auditors' encodes  verdicts.
 %
@@ -232,6 +234,8 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 %$\bm r_{\st j}$:  $j$-th row of an $n\times m$ matrix, such that  if $i$-th element of $\bm r_{\st j}$ is added with  the rest of elements in $i$-th column of the same matrix, the result would be  $0$. 
 \end{itemize}
 A third-party $\mathcal{I}$ takes the following steps.
+
+\vspace{-1.2mm}
 \begin{enumerate}[leftmargin=5.2mm]
 %
 %
@@ -247,7 +251,7 @@ $c= \bigoplus\limits^{\st n}_{\st j=1} \bar w_{\st j}$
 \item sets the final verdict $v$ depending on the content of $c$. 
 
 Specifically, 
-\vspace{-3mm}
+\vspace{-3.5mm}
 
 %\begin{itemize}
 %%

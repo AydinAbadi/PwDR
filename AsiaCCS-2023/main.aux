@@ -34,10 +34,6 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2}Background}{1}{section.2}\protected@file@percent }
 \newlabel{sec::background}{{2}{1}{Background}{section.2}{}}
 \citation{Financial-Ombudsman-Service-response}
-\citation{P20-report}
-\citation{Fraud-Classifier}
-\citation{the-bill}
-\citation{kjorven2020pays,McIlroy2021}
 \citation{anderson2019measuring}
 \citation{taylor2020new}
 \citation{kjorven2020pays}
@@ -55,14 +51,16 @@
 \newlabel{sec::related-work}{{3}{2}{Related Work}{section.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Authorised Push Payment Fraud}{2}{subsection.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Dispute Resolution}{2}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Preliminaries}{2}{section.4}\protected@file@percent }
+\newlabel{preliminaries}{{4}{2}{Preliminaries}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Taxonomy and Assumptions}{2}{subsection.4.1}\protected@file@percent }
+\newlabel{Notations-and-Assumptions}{{4.1}{2}{Taxonomy and Assumptions}{subsection.4.1}{}}
 \citation{DBLP:books/crc/KatzLindell2014}
-\citation{bitcoin}
 \citation{ethereum}
 \citation{AbadiMZ21a}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Preliminaries}{3}{section.4}\protected@file@percent }
-\newlabel{preliminaries}{{4}{3}{Preliminaries}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Informal Threat Model and Assumptions}{3}{subsection.4.1}\protected@file@percent }
-\newlabel{Notations-and-Assumptions}{{4.1}{3}{Informal Threat Model and Assumptions}{subsection.4.1}{}}
+\citation{DBLP:books/crc/KatzLindell2014}
+\citation{DBLP:journals/cacm/Bloom70}
+\citation{PwDR-full-ver}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Digital Signature}{3}{subsection.4.2}\protected@file@percent }
 \newlabel{subsec:DS}{{4.2}{3}{Digital Signature}{subsection.4.2}{}}
 \newlabel{sec::def}{{1}{3}{}{definition.1}{}}
@@ -73,14 +71,10 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Statement Agreement Protocol}{3}{subsection.4.5}\protected@file@percent }
 \newlabel{SAP}{{4.5}{3}{Statement Agreement Protocol}{subsection.4.5}{}}
 \newlabel{SAP::deploy-contract}{{1a}{3}{Statement Agreement Protocol}{Item.2}{}}
-\citation{DBLP:books/crc/KatzLindell2014}
-\citation{DBLP:books/crc/KatzLindell2014}
-\citation{DBLP:journals/cacm/Bloom70}
+\newlabel{SAP::check-adr}{{4a}{3}{Statement Agreement Protocol}{Item.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Pseudorandom Function}{3}{subsection.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}Bloom Filter}{3}{subsection.4.7}\protected@file@percent }
 \citation{PwDR-full-ver}
-\citation{PwDR-full-ver}
-\newlabel{SAP::check-adr}{{4a}{4}{Statement Agreement Protocol}{Item.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Pseudorandom Function}{4}{subsection.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}Bloom Filter}{4}{subsection.4.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5}Challenges to Overcome}{4}{section.5}\protected@file@percent }
 \newlabel{sec:: challenges}{{5}{4}{Challenges to Overcome}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Challenge 1: Lack of Transparent Logs}{4}{subsection.5.1}\protected@file@percent }
@@ -93,41 +87,41 @@
 \newlabel{sec::def}{{6}{4}{Definition of Payment with Dispute Resolution Scheme}{section.6}{}}
 \newlabel{def-a::sytax}{{2}{4}{}{definition.2}{}}
 \newlabel{def-a::Security-against-malicious-victim}{{3}{5}{Security against a malicious victim}{definition.3}{}}
+\newlabel{def-a::Security-against-malicious-bank}{{4}{5}{Security against a malicious bank}{definition.4}{}}
 \citation{PwDR-full-ver}
-\newlabel{def-a::Security-against-malicious-bank}{{4}{6}{Security against a malicious bank}{definition.4}{}}
 \newlabel{def-a::privacy}{{5}{6}{Privacy}{definition.5}{}}
 \newlabel{def-a::PwDR-security}{{6}{6}{Security}{definition.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Payment with Dispute Resolution Protocol}{7}{section.7}\protected@file@percent }
-\newlabel{sec::PwDR-Protocol}{{7}{7}{Payment with Dispute Resolution Protocol}{section.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}An Overview of the Protocol}{7}{subsection.7.1}\protected@file@percent }
-\newlabel{An-Overview-of-the-Protocol}{{7.1}{7}{An Overview of the Protocol}{subsection.7.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Payment with Dispute Resolution Protocol}{6}{section.7}\protected@file@percent }
+\newlabel{sec::PwDR-Protocol}{{7}{6}{Payment with Dispute Resolution Protocol}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}An Overview of the Protocol}{6}{subsection.7.1}\protected@file@percent }
+\newlabel{An-Overview-of-the-Protocol}{{7.1}{6}{An Overview of the Protocol}{subsection.7.1}{}}
+\citation{Schneier0078909}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.2}A Subroutine for Determining Bank's Message Status}{7}{subsection.7.2}\protected@file@percent }
 \newlabel{Determining-Bank-Message-Status}{{7.2}{7}{A Subroutine for Determining Bank's Message Status}{subsection.7.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Algorithm to Determine a Bank's Message Status.\relax }}{7}{figure.caption.5}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:verStat}{{1}{7}{Algorithm to Determine a Bank's Message Status.\relax }{figure.caption.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.3}A Subroutine for Checking a Warning's Effectiveness}{7}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Subroutines for Encoding-Decoding Verdicts}{7}{subsection.7.4}\protected@file@percent }
+\newlabel{sec::Encoding-Decoding-Verdicts}{{7.4}{7}{Subroutines for Encoding-Decoding Verdicts}{subsection.7.4}{}}
 \newlabel{check-m}{{2}{7}{A Subroutine for Checking a Warning's Effectiveness}{Item.20}{}}
 \newlabel{return}{{4}{7}{A Subroutine for Checking a Warning's Effectiveness}{Item.22}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Algorithm to Check Warning's Effectiveness.\relax }}{7}{figure.caption.6}\protected@file@percent }
 \newlabel{fig:checkWarning}{{2}{7}{Algorithm to Check Warning's Effectiveness.\relax }{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Subroutines for Encoding-Decoding Verdicts}{7}{subsection.7.4}\protected@file@percent }
-\newlabel{sec::Encoding-Decoding-Verdicts}{{7.4}{7}{Subroutines for Encoding-Decoding Verdicts}{subsection.7.4}{}}
-\citation{Schneier0078909}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.1}Variant 1: Efficient Verdict Encoding-Decoding Protocol}{8}{subsubsection.7.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.1}Variant 1: Efficient Verdict Encoding-Decoding Protocol}{7}{subsubsection.7.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {7.4.2}Variant 2: Generic Verdict Encoding-Decoding Protocol}{8}{subsubsection.7.4.2}\protected@file@percent }
-\newlabel{ZSPA:val-gen}{{1}{8}{Variant 2: Generic Verdict Encoding-Decoding Protocol}{Item.23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Private Verdict Encoding (PVE) Protocol. In the figure, $\mathcal  {D}_{\scriptscriptstyle n}$ can generate other auditors' $r_{\scriptscriptstyle i}$ values, given $\bar  k_{\scriptscriptstyle 0}$. Note, $\text  {ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text  {ID}$ and $o$ are used to ensure that each $r_{\scriptscriptstyle j}$ will be different for each invocation of PVE although the same key $\bar  k_{\scriptscriptstyle 0}$ is used.\relax }}{8}{figure.caption.7}\protected@file@percent }
-\newlabel{fig:PVE}{{3}{8}{Private Verdict Encoding (PVE) Protocol. In the figure, $\mathcal {D}_{\st n}$ can generate other auditors' $r_{\st i}$ values, given $\bar k_{\st 0}$. Note, $\text {ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text {ID}$ and $o$ are used to ensure that each $r_{\st j}$ will be different for each invocation of PVE although the same key $\bar k_{\st 0}$ is used.\relax }{figure.caption.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.5}The PwDR}{8}{subsection.7.5}\protected@file@percent }
 \newlabel{sec::PwDR-auditorprotocol}{{7.5}{8}{The PwDR}{subsection.7.5}{}}
 \newlabel{signature-keygen}{{1a}{8}{The PwDR}{Item.31}{}}
 \newlabel{encryption-keygen}{{1b}{8}{The PwDR}{Item.32}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Final Verdict Decoding (FVD) Protocol.\relax }}{9}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:FVD}{{4}{9}{Final Verdict Decoding (FVD) Protocol.\relax }{figure.caption.8}{}}
-\newlabel{RCPoRP::Bank-side-Initiation}{{2}{9}{The PwDR}{Item.33}{}}
-\newlabel{RCPoRP::setup}{{2a}{9}{The PwDR}{Item.34}{}}
-\newlabel{RCPoRP::set-qp}{{2b}{9}{The PwDR}{Item.35}{}}
+\newlabel{ZSPA:val-gen}{{1}{8}{Variant 2: Generic Verdict Encoding-Decoding Protocol}{Item.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Private Verdict Encoding (PVE) Protocol. In the figure, $\mathcal  {D}_{\scriptscriptstyle n}$ can generate other auditors' $r_{\scriptscriptstyle i}$ values, given $\bar  k_{\scriptscriptstyle 0}$. Note, $\text  {ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text  {ID}$ and $o$ are used to ensure that each $r_{\scriptscriptstyle j}$ will be different for each invocation of PVE although the same key $\bar  k_{\scriptscriptstyle 0}$ is used.\relax }}{8}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:PVE}{{3}{8}{Private Verdict Encoding (PVE) Protocol. In the figure, $\mathcal {D}_{\st n}$ can generate other auditors' $r_{\st i}$ values, given $\bar k_{\st 0}$. Note, $\text {ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text {ID}$ and $o$ are used to ensure that each $r_{\st j}$ will be different for each invocation of PVE although the same key $\bar k_{\st 0}$ is used.\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Final Verdict Decoding (FVD) Protocol.\relax }}{8}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:FVD}{{4}{8}{Final Verdict Decoding (FVD) Protocol.\relax }{figure.caption.8}{}}
+\newlabel{RCPoRP::Bank-side-Initiation}{{2}{8}{The PwDR}{Item.33}{}}
+\newlabel{RCPoRP::setup}{{2a}{8}{The PwDR}{Item.34}{}}
+\newlabel{RCPoRP::set-qp}{{2b}{8}{The PwDR}{Item.35}{}}
 \newlabel{customer-side-Initiation}{{3}{9}{The PwDR}{Item.37}{}}
 \newlabel{customer-side-Initiation-SAP-agree}{{3a}{9}{The PwDR}{Item.38}{}}
 \newlabel{genUpdateRequest}{{4}{9}{The PwDR}{Item.40}{}}
@@ -140,101 +134,100 @@
 \newlabel{Generating-Complaint}{{9}{9}{The PwDR}{Item.54}{}}
 \newlabel{DR::C-sends-complaint}{{9a}{9}{The PwDR}{Item.55}{}}
 \newlabel{VerifyingComplaint}{{10}{9}{The PwDR}{Item.59}{}}
+\newlabel{auditors-verdict}{{10f}{9}{The PwDR}{Item.65}{}}
 \citation{CoP}
 \citation{CrosbyW09,Soriano-Salvador21,rfc/rfc6962}
-\newlabel{auditors-verdict}{{10f}{10}{The PwDR}{Item.65}{}}
 \newlabel{DR::DisputeResolution}{{11}{10}{The PwDR}{Item.71}{}}
 \newlabel{theorem::PwDR-security}{{1}{10}{}{theorem.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {8}Evaluation}{10}{section.8}\protected@file@percent }
 \newlabel{sec::eval-}{{8}{10}{Evaluation}{section.8}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Computation Complexity}{10}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.1}Cost of Customer $\mathcal  {C}$.}{10}{subsubsection.8.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.2}Cost of Bank $\mathcal  {B}$.}{10}{subsubsection.8.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.3}Cost of Auditor $\mathcal  {D}_{\scriptscriptstyle j}$.}{10}{subsubsection.8.1.3}\protected@file@percent }
 \citation{variant-1,variant-2}
+\citation{EyalGSR16}
+\citation{Hyperledger-Metrics}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces  {\small  { The PwDR's asymptotic cost. In the table, $n$ is the number of auditors and $e$ is the threshold.}}\relax }}{11}{table.caption.9}\protected@file@percent }
 \newlabel{table::PwDR-Asymptotic-Cost}{{1}{11}{{\small { The PwDR's asymptotic cost. In the table, $n$ is the number of auditors and $e$ is the threshold.}}\relax }{table.caption.9}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces  {\small  {Parties' run-time (in ms) in verdict encoding-decoding protocols. $n$: the number of auditors and $e$: the threshold.}}\relax }}{11}{table.caption.10}\protected@file@percent }
 \newlabel{table::PwDR-runtime}{{2}{11}{{\small {Parties' run-time (in ms) in verdict encoding-decoding protocols. $n$: the number of auditors and $e$: the threshold.}}\relax }{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.4}Cost of Dispute Resolver $\mathcal  {DR}$.}{11}{subsubsection.8.1.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Communication Cost}{11}{subsection.8.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Concrete Performance Analysis}{11}{subsection.8.3}\protected@file@percent }
-\citation{EyalGSR16}
-\citation{Hyperledger-Metrics}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Transaction Latency}{11}{subsection.8.4}\protected@file@percent }
 \bibstyle{ACM-Reference-Format}
 \bibdata{ref}
-\bibcite{P20-report}{{1}{2021}{{{A P20 Fraud and Criminal Transactions Working Group Paper}}}{{{A P20 Fraud and Criminal Transactions Working Group Paper}}}}
-\bibcite{AbadiMZ21a}{{2}{2021}{{Abadi et~al\mbox  {.}}}{{Abadi, Murdoch, and Zacharias}}}
-\bibcite{anderson2007closing}{{3}{2007}{{Anderson et~al\mbox  {.}}}{{Anderson et~al\mbox  {.}}}}
-\bibcite{anderson2019measuring}{{4}{2019}{{Anderson et~al\mbox  {.}}}{{Anderson, Barton, B{\"o}lme, Clayton, Gan{\'a}n, Grasso, Levi, Moore, and Vasek}}}
-\bibcite{variant-1}{{5}{2021a}{{Anonymous}}{{Anonymous}}}
-\bibcite{variant-2}{{6}{2021b}{{Anonymous}}{{Anonymous}}}
-\bibcite{PwDR-full-ver}{{7}{2022}{{Anonymous}}{{Anonymous}}}
-\bibcite{BeckerHAABMSS17}{{8}{2017}{{Becker et~al\mbox  {.}}}{{Becker, Hutchings, Abu{-}Salma, Anderson, Bohm, Murdoch, Sasse, and Stringhini}}}
-\bibcite{DBLP:journals/cacm/Bloom70}{{9}{1970}{{Bloom}}{{Bloom}}}
-\bibcite{BohmBG00}{{10}{2000}{{Bohm et~al\mbox  {.}}}{{Bohm, Brown, and Gladman}}}
-\bibcite{buchwald2019smart}{{11}{2019}{{Buchwald}}{{Buchwald}}}
-\bibcite{CoP}{{12}{2020}{{{Confirmation of Payee Team}}}{{{Confirmation of Payee Team}}}}
-\bibcite{CrosbyW09}{{13}{2009}{{Crosby and Wallach}}{{Crosby and Wallach}}}
-\bibcite{DongWAMM17}{{14}{2017}{{Dong et~al\mbox  {.}}}{{Dong, Wang, Aldweesh, McCorry, and van Moorsel}}}
-\bibcite{DziembowskiEF18}{{15}{2018}{{Dziembowski et~al\mbox  {.}}}{{Dziembowski, Eckey, and Faust}}}
-\bibcite{EckeyFS20}{{16}{2020}{{Eckey et~al\mbox  {.}}}{{Eckey, Faust, and Schlosser}}}
-\bibcite{EyalGSR16}{{17}{2016}{{Eyal et~al\mbox  {.}}}{{Eyal, Gencer, Sirer, and van Renesse}}}
-\bibcite{internet-crime-report}{{18}{2020}{{{Federal Bureau of Investigation (FBI)}}}{{{Federal Bureau of Investigation (FBI)}}}}
-\bibcite{Which?-super-complaint}{{19}{2016}{{French}}{{French}}}
-\bibcite{GarayKL15}{{20}{2015}{{Garay et~al\mbox  {.}}}{{Garay, Kiayias, and Leonardos}}}
-\bibcite{Bolt}{{21}{2017}{{Green and Miers}}{{Green and Miers}}}
-\bibcite{Hyperledger-Metrics}{{22}{2018}{{{Hyperledger Foundation}}}{{{Hyperledger Foundation}}}}
-\bibcite{DBLP:books/crc/KatzLindell2014}{{23}{2014}{{Katz and Lindell}}{{Katz and Lindell}}}
-\bibcite{kjorven2020pays}{{24}{2020}{{Kj{\o }rven}}{{Kj{\o }rven}}}
-\bibcite{KustersL00020}{{25}{2020}{{K{\"{u}}sters et~al\mbox  {.}}}{{K{\"{u}}sters, Liedtke, M{\"{u}}ller, Rausch, and Vogt}}}
-\bibcite{rfc/rfc6962}{{26}{2013}{{Laurie et~al\mbox  {.}}}{{Laurie, Langley, and K{\"{a}}sper}}}
-\bibcite{CRM-code}{{27}{2021}{{{Lending Standards Board}}}{{{Lending Standards Board}}}}
-\bibcite{McIlroy2021}{{28}{2021}{{McIlroy and Sethi-Smith}}{{McIlroy and Sethi-Smith}}}
-\bibcite{bitcoin}{{29}{2019}{{Nakamoto}}{{Nakamoto}}}
-\bibcite{the-bill}{{30}{2022}{{on~Financial~Services}}{{on~Financial~Services}}}
-\bibcite{ortolani2016self}{{31}{2016}{{Ortolani}}{{Ortolani}}}
-\bibcite{ortolani2019impact}{{32}{2019}{{Ortolani}}{{Ortolani}}}
-\bibcite{Lightning-Network}{{33}{2016}{{Poon and Dryja}}{{Poon and Dryja}}}
-\bibcite{Schneier0078909}{{34}{1996}{{Schneier}}{{Schneier}}}
-\bibcite{Soriano-Salvador21}{{35}{2021}{{Soriano{-}Salvador and Muzquiz}}{{Soriano{-}Salvador and Muzquiz}}}
-\bibcite{taylor2020new}{{36}{2020}{{Taylor and Galica}}{{Taylor and Galica}}}
-\bibcite{europol-notice}{{37}{2021}{{{The European Union Agency for Law Enforcement Cooperation}}}{{{The European Union Agency for Law Enforcement Cooperation}}}}
-\bibcite{Fraud-Classifier}{{38}{2020}{{{The Federal Reserve}}}{{{The Federal Reserve}}}}
-\bibcite{Financial-Ombudsman-Service-response}{{39}{2020}{{{The Financial Ombudsman Service}}}{{{The Financial Ombudsman Service}}}}
-\bibcite{interpol-notce}{{40}{2021}{{{The International Criminal Police Organization}}}{{{The International Criminal Police Organization}}}}
+\bibcite{AbadiMZ21a}{{1}{2021}{{Abadi et~al\mbox  {.}}}{{Abadi, Murdoch, and Zacharias}}}
+\bibcite{anderson2007closing}{{2}{2007}{{Anderson et~al\mbox  {.}}}{{Anderson et~al\mbox  {.}}}}
+\bibcite{anderson2019measuring}{{3}{2019}{{Anderson et~al\mbox  {.}}}{{Anderson, Barton, B{\"o}lme, Clayton, Gan{\'a}n, Grasso, Levi, Moore, and Vasek}}}
+\bibcite{variant-1}{{4}{2021a}{{Anonymous}}{{Anonymous}}}
+\bibcite{variant-2}{{5}{2021b}{{Anonymous}}{{Anonymous}}}
+\bibcite{PwDR-full-ver}{{6}{2022}{{Anonymous}}{{Anonymous}}}
+\bibcite{BeckerHAABMSS17}{{7}{2017}{{Becker et~al\mbox  {.}}}{{Becker, Hutchings, Abu{-}Salma, Anderson, Bohm, Murdoch, Sasse, and Stringhini}}}
+\bibcite{DBLP:journals/cacm/Bloom70}{{8}{1970}{{Bloom}}{{Bloom}}}
+\bibcite{BohmBG00}{{9}{2000}{{Bohm et~al\mbox  {.}}}{{Bohm, Brown, and Gladman}}}
+\bibcite{buchwald2019smart}{{10}{2019}{{Buchwald}}{{Buchwald}}}
+\bibcite{CoP}{{11}{2020}{{{Confirmation of Payee Team}}}{{{Confirmation of Payee Team}}}}
+\bibcite{CrosbyW09}{{12}{2009}{{Crosby and Wallach}}{{Crosby and Wallach}}}
+\bibcite{DongWAMM17}{{13}{2017}{{Dong et~al\mbox  {.}}}{{Dong, Wang, Aldweesh, McCorry, and van Moorsel}}}
+\bibcite{DziembowskiEF18}{{14}{2018}{{Dziembowski et~al\mbox  {.}}}{{Dziembowski, Eckey, and Faust}}}
+\bibcite{EckeyFS20}{{15}{2020}{{Eckey et~al\mbox  {.}}}{{Eckey, Faust, and Schlosser}}}
+\bibcite{EyalGSR16}{{16}{2016}{{Eyal et~al\mbox  {.}}}{{Eyal, Gencer, Sirer, and van Renesse}}}
+\bibcite{internet-crime-report}{{17}{2020}{{{Federal Bureau of Investigation (FBI)}}}{{{Federal Bureau of Investigation (FBI)}}}}
+\bibcite{Which?-super-complaint}{{18}{2016}{{French}}{{French}}}
+\bibcite{GarayKL15}{{19}{2015}{{Garay et~al\mbox  {.}}}{{Garay, Kiayias, and Leonardos}}}
+\bibcite{Bolt}{{20}{2017}{{Green and Miers}}{{Green and Miers}}}
+\bibcite{Hyperledger-Metrics}{{21}{2018}{{{Hyperledger Foundation}}}{{{Hyperledger Foundation}}}}
+\bibcite{DBLP:books/crc/KatzLindell2014}{{22}{2014}{{Katz and Lindell}}{{Katz and Lindell}}}
+\bibcite{kjorven2020pays}{{23}{2020}{{Kj{\o }rven}}{{Kj{\o }rven}}}
+\bibcite{KustersL00020}{{24}{2020}{{K{\"{u}}sters et~al\mbox  {.}}}{{K{\"{u}}sters, Liedtke, M{\"{u}}ller, Rausch, and Vogt}}}
+\bibcite{rfc/rfc6962}{{25}{2013}{{Laurie et~al\mbox  {.}}}{{Laurie, Langley, and K{\"{a}}sper}}}
+\bibcite{CRM-code}{{26}{2021}{{{Lending Standards Board}}}{{{Lending Standards Board}}}}
+\bibcite{ortolani2016self}{{27}{2016}{{Ortolani}}{{Ortolani}}}
+\bibcite{ortolani2019impact}{{28}{2019}{{Ortolani}}{{Ortolani}}}
+\bibcite{Lightning-Network}{{29}{2016}{{Poon and Dryja}}{{Poon and Dryja}}}
+\bibcite{Schneier0078909}{{30}{1996}{{Schneier}}{{Schneier}}}
+\bibcite{Soriano-Salvador21}{{31}{2021}{{Soriano{-}Salvador and Muzquiz}}{{Soriano{-}Salvador and Muzquiz}}}
+\bibcite{taylor2020new}{{32}{2020}{{Taylor and Galica}}{{Taylor and Galica}}}
+\bibcite{europol-notice}{{33}{2021}{{{The European Union Agency for Law Enforcement Cooperation}}}{{{The European Union Agency for Law Enforcement Cooperation}}}}
+\bibcite{Financial-Ombudsman-Service-response}{{34}{2020}{{{The Financial Ombudsman Service}}}{{{The Financial Ombudsman Service}}}}
+\bibcite{interpol-notce}{{35}{2021}{{{The International Criminal Police Organization}}}{{{The International Criminal Police Organization}}}}
+\bibcite{2021-Half-Year-Fraud-Update}{{36}{2021a}{{{UK Finance}}}{{{UK Finance}}}}
+\bibcite{overview-of-payment-fraud}{{37}{2021b}{{{UK Finance}}}{{{UK Finance}}}}
+\bibcite{ethereum}{{38}{2014}{{Wood et~al\mbox  {.}}}{{Wood et~al\mbox  {.}}}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \small  Parties' runtime in the PwDR.\relax }}{12}{figure.caption.11}\protected@file@percent }
 \newlabel{plot::runtime}{{5}{12}{\small Parties' runtime in the PwDR.\relax }{figure.caption.11}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Transaction Latency}{12}{subsection.8.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion}{12}{section.9}\protected@file@percent }
 \newlabel{sec::conclusion}{{9}{12}{Conclusion}{section.9}{}}
 \@writefile{toc}{\contentsline {section}{References}{12}{section*.13}\protected@file@percent }
-\bibcite{2021-Half-Year-Fraud-Update}{{41}{2021a}{{{UK Finance}}}{{{UK Finance}}}}
-\bibcite{overview-of-payment-fraud}{{42}{2021b}{{{UK Finance}}}{{{UK Finance}}}}
-\bibcite{ethereum}{{43}{2014}{{Wood et~al\mbox  {.}}}{{Wood et~al\mbox  {.}}}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Further Discussion on Definition \ref  {def-a::Security-against-malicious-victim}}{13}{appendix.1.A}\protected@file@percent }
-\newlabel{sec::Further-Discussion-on-Definition-Sec-against-victim}{{A}{13}{Further Discussion on Definition \ref {def-a::Security-against-malicious-victim}}{appendix.1.A}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Discussion on PVE-FVD}{13}{appendix.1.B}\protected@file@percent }
-\newlabel{sec::Variant-1-Theorem-proof}{{B}{13}{Discussion on PVE-FVD}{appendix.1.B}{}}
-\newlabel{set-xor}{{2}{13}{}{theorem.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {C}GPVE \& GFVD}{13}{appendix.1.C}\protected@file@percent }
-\newlabel{sec::Generic-Verdict-Encoding-Decoding-Protocols}{{C}{13}{GPVE \& GFVD}{appendix.1.C}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {D}GPVE-GFVE's Proof}{13}{appendix.1.D}\protected@file@percent }
-\newlabel{sec::Variant-2-Theorem-proof}{{D}{13}{GPVE-GFVE's Proof}{appendix.1.D}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {E} (G)PVE-(G)FVD Versus Existing Voting Protocols}{13}{appendix.1.E}\protected@file@percent }
-\newlabel{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol}{{E}{13}{(G)PVE-(G)FVD Versus Existing Voting Protocols}{appendix.1.E}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Discussion on PVE-FVD}{12}{appendix.1.A}\protected@file@percent }
+\newlabel{sec::Variant-1-Theorem-proof}{{A}{12}{Discussion on PVE-FVD}{appendix.1.A}{}}
+\newlabel{set-xor}{{2}{12}{}{theorem.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}GPVE \& GFVD}{13}{appendix.1.B}\protected@file@percent }
+\newlabel{sec::Generic-Verdict-Encoding-Decoding-Protocols}{{B}{13}{GPVE \& GFVD}{appendix.1.B}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}GPVE-GFVE's Proof}{13}{appendix.1.C}\protected@file@percent }
+\newlabel{sec::Variant-2-Theorem-proof}{{C}{13}{GPVE-GFVE's Proof}{appendix.1.C}{}}
+\newlabel{ZSPA:val-gen}{{1}{13}{GPVE \& GFVD}{Item.78}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Generic Private Verdict Encoding (GPVE) Protocol. In the figure, $\mathcal  {D}_{\scriptscriptstyle n}$ can generate other auditors' $r_{\scriptscriptstyle i}$ and $\alpha _{\scriptscriptstyle j}$ values, given $\bar  k_{\scriptscriptstyle 0}$. Note also that $\text  {ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text  {ID}$ and $o$ are used to ensure each $r_{\scriptscriptstyle j}$ will be different for each invocation of GPVE although the same key $\bar  k_{\scriptscriptstyle 0}$ is used.\relax }}{13}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:GPVE}{{6}{13}{Generic Private Verdict Encoding (GPVE) Protocol. In the figure, $\mathcal {D}_{\st n}$ can generate other auditors' $r_{\st i}$ and $\alpha _{\st j}$ values, given $\bar k_{\st 0}$. Note also that $\text {ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text {ID}$ and $o$ are used to ensure each $r_{\st j}$ will be different for each invocation of GPVE although the same key $\bar k_{\st 0}$ is used.\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Generic Final Verdict Decoding (GFVD) Protocol.\relax }}{13}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:GFVD}{{7}{13}{Generic Final Verdict Decoding (GFVD) Protocol.\relax }{figure.caption.15}{}}
 \citation{KustersL00020}
-\newlabel{ZSPA:val-gen}{{1}{14}{GPVE \& GFVD}{Item.78}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Generic Private Verdict Encoding (GPVE) Protocol. In the figure, $\mathcal  {D}_{\scriptscriptstyle n}$ can generate other auditors' $r_{\scriptscriptstyle i}$ and $\alpha _{\scriptscriptstyle j}$ values, given $\bar  k_{\scriptscriptstyle 0}$. Note also that $\text  {ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text  {ID}$ and $o$ are used to ensure each $r_{\scriptscriptstyle j}$ will be different for each invocation of GPVE although the same key $\bar  k_{\scriptscriptstyle 0}$ is used.\relax }}{14}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:GPVE}{{6}{14}{Generic Private Verdict Encoding (GPVE) Protocol. In the figure, $\mathcal {D}_{\st n}$ can generate other auditors' $r_{\st i}$ and $\alpha _{\st j}$ values, given $\bar k_{\st 0}$. Note also that $\text {ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text {ID}$ and $o$ are used to ensure each $r_{\st j}$ will be different for each invocation of GPVE although the same key $\bar k_{\st 0}$ is used.\relax }{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Generic Final Verdict Decoding (GFVD) Protocol.\relax }}{14}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:GFVD}{{7}{14}{Generic Final Verdict Decoding (GFVD) Protocol.\relax }{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D} (G)PVE-(G)FVD Versus Existing Voting Protocols}{14}{appendix.1.D}\protected@file@percent }
+\newlabel{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol}{{D}{14}{(G)PVE-(G)FVD Versus Existing Voting Protocols}{appendix.1.D}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {E}The Deployment of PwDR}{14}{appendix.1.E}\protected@file@percent }
+\newlabel{sec::PwDR-deployment}{{E}{14}{The Deployment of PwDR}{appendix.1.E}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {F}Security Analysis of PwDR}{14}{appendix.1.F}\protected@file@percent }
 \newlabel{sec::proof}{{F}{14}{Security Analysis of PwDR}{appendix.1.F}{}}
 \newlabel{lemma::secure-against-a-malicious-victim}{{1}{14}{}{lemma.1}{}}
 \citation{GarayKL15}
-\newlabel{lemma::secure-against-a-malicious-bank}{{2}{15}{}{lemma.2}{}}
-\newlabel{lemma::privacy}{{3}{15}{}{lemma.3}{}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
 \newlabel{tocindent1}{6.30899pt}
 \newlabel{tocindent2}{10.34999pt}
 \newlabel{tocindent3}{18.198pt}
-\newlabel{TotPages}{{16}{16}{}{page.16}{}}
-\zref@newlabel{LastPage}{\default{F}\page{16}\abspage{16}}
+\newlabel{lemma::secure-against-a-malicious-bank}{{2}{15}{}{lemma.2}{}}
+\newlabel{lemma::privacy}{{3}{15}{}{lemma.3}{}}
+\newlabel{TotPages}{{15}{15}{}{page.15}{}}
+\zref@newlabel{LastPage}{\default{F}\page{15}\abspage{15}}

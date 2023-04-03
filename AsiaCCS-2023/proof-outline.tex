@@ -1,0 +1,25 @@
+% !TEX root =main.tex
+
+
+\begin{proof}[Proof Outline]
+%Briefly, PwDR is secure against a malicious victim due to (1) the binding property of the SAP’s commitment, (2) the existential unforgeability of the digital signature scheme, and (3) the immutability of the blockchain (i.e., the blockchain’s liveness property \cite{GarayKL15}).
+Below, we present an overview of the proof. See Appendix \ref{sec::proof} for detailed proof. PwDR is secure against a malicious $\mathcal{C}$ because a malicious  $\mathcal{C}$ cannot: (1) persuade an auditor (and $\mathcal{DR}$) to accept a different (d)encryption key other than what was agreed between $\mathcal{C}$ and $\mathcal{B}$ in the initiation phase due to the binding property of the SAP’s commitment, (2) come up with a valid signature/certificate on a message that has never been queried to the signing oracle due to the existential unforgeability of the digital signature scheme, and (3) frame an honest $\mathcal{B}$ for providing an invalid message, due to the immutability of the blockchain and the existential unforgeability of the digital signature.
+
+
+
+PwDR is secure against a malicious  $\mathcal{B}$ because (1) malicious  $\mathcal{B}$  cannot persuade $\mathcal{DR}$ to accept a different decryption key due to the SAP’s binding property, 
+ (2) the probability that multiple representations of verdict $1$ cancel out
+each other is negligible due to the correctness of PVE-FVD, and (3) $\mathcal{B}$ cannot frame an honest $\mathcal{C}$ for providing an invalid message due to the immutability of blockchain and the existential unforgeability of the digital signature.
+
+
+
+
+
+
+
+%
+%PwDR is secure against a malicious bank, due to (1) the SAP’s binding property, (2) the correctness of PVE-FVD,  and (3) the existential unforgeability of the digital signature scheme.
+
+
+PwDR's privacy holds due to (1) the security of the symmetric and asymmetric key encryptions against CPA,  (2) the SAP's hiding property, and (3) the privacy-preserving property of PVE-FVD.  
+\end{proof}

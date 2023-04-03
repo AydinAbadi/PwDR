@@ -9,6 +9,7 @@
 The ``Statement Agreement Protocol'' (SAP)   proposed in \cite{AbadiMZ21a} lets two mutually distrusted parties, e.g., $\mathcal{B}$ and $\mathcal{C}$, efficiently agree on a private statement, $\pi$. The SAP  satisfies four properties: (1) neither party can convince a third-party verifier that it has agreed with its counter-party on a different statement than the one both parties previously agreed on, (2) after they agree on a statement,  an honest party can (almost) always prove to the verifier that it has the agreement, (3) the privacy of the statement is preserved (from the public), and (4) after both parties reach an agreement, neither can deny it.  %The SAP uses a  smart contract and commitment scheme. 
 It  assumes that each party  has a blockchain public address,  $adr_{\st\mathcal{R}}$ (where $\mathcal{R}\in\{\mathcal{B,C}\}$). Below, we restate  the  SAP.%, taken from \cite{cryptoeprint:2021:1145}. 
 
+\vspace{-1mm}
 %\setlength{\fboxsep}{1pt}
 %\begin{center}
 %    \begin{tcolorbox}[enhanced,width=5.5in, height=57mm,
@@ -62,6 +63,7 @@ It  assumes that each party  has a blockchain public address,  $adr_{\st\mathcal
 It also ensures $\mathtt{Ver}(g_{_{\st\mathcal B}},\ddot{\pi})=\mathtt{Ver}(g_{_{\st\mathcal C}},\ddot{\pi}) =1$.
    
    \item Outputs $s=1$, if the checks in steps \ref{SAP::check-adr} pass. It outputs $s=0$, otherwise.
+   
     \end{enumerate}
  \end{enumerate}
 % }

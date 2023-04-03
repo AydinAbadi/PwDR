@@ -4,7 +4,7 @@
 
 
 
-\vspace{-2mm}
+\vspace{-3.5mm}
 
 \section{Preliminaries} \label{preliminaries}
 
@@ -15,7 +15,10 @@
 
 \vspace{-1mm}
 
-\subsection{Informal Threat Model and Assumptions}\label{Notations-and-Assumptions}
+\subsection{Taxonomy and Assumptions}\label{Notations-and-Assumptions}
+\vspace{-1mm}
+
+
 
 A payment with a dispute resolution scheme involves six types of parties. Below, we informally explain each type of party's role. 
 %
@@ -23,10 +26,11 @@ A payment with a dispute resolution scheme involves six types of parties. Below,
 %
 We will provide a formal definition of the scheme in Section \ref{sec::def}. 
 %
+\vspace{-2mm}
 \begin{itemize}[leftmargin=3.8mm]
 %
 
-\item[$\bullet$] Customer ($\mathcal{C}$): it is a regular customer of a bank. We call a customer a victim after it falls victim to an APP fraud. We assume a victim is corrupted by a non-colluding active (or malicious) adversary. %; for instance, an unqualified victim  tries to make itself appear qualified for reimbursement. 
+\item[$\bullet$] Customer ($\mathcal{C}$): it is a customer of a bank. We call a customer a victim after it falls victim to an APP fraud. We assume a victim is corrupted by a non-colluding active (or malicious) adversary. %; for instance, an unqualified victim  tries to make itself appear qualified for reimbursement. 
 %
 \item[$\bullet$] Bank ($\mathcal{B}$): it is a regular bank providing online banking. We assume it is corrupted by a non-colluding active adversary. We assume any change to the online banking system's source code is transparent and can be detected. 
 
@@ -41,7 +45,7 @@ We will provide a formal definition of the scheme in Section \ref{sec::def}.
 \item[$\bullet$]  A committee of auditors ($\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}$): it consists of trusted third-party authorities or regulators (e.g.,  FCA, financial ombudsman service). They compile complaints and provide their verdicts.
 %
  %If needed, they can access the banking   backend software to conduct  investigations. 
- We assume they   interacted with each  other once,  to agree on a secret key, $\bar k_{\st 0}$, and a pair of keys $({pk}_{\st\mathcal {D}}, {sk}_{\st\mathcal {D}})$  of an asymmetric key encryption.
+ We assume they   interacted with each  other once,  to agree on a secret key, $\bar k_{\st 0}$, and a pair of keys $({pk}_{\st\mathcal {D}}, {sk}_{\st\mathcal {D}})$  of an asymmetric key encryption secure under a Chosen-Plaintext Attack (CPA).
 %
 \item[$\bullet$]  Dispute resolver ($\mathcal{DR}$): it is an aggregator of auditors' votes (e.g., public court). Given a collection of votes, it extracts and announces the final verdict. We assume it is corrupted by a non-colluding passive adversary. We assume $\mathcal C$ and $\mathcal B$  use a secure channel when they send a message directly to $\mathcal{DR}$. 
 %
@@ -73,15 +77,17 @@ We will provide a formal definition of the scheme in Section \ref{sec::def}.
 
 
 
-\vspace{-3.6mm}
+\vspace{-4mm}
 
 \subsection{Digital Signature}\label{subsec:DS}
+\vspace{-1mm}
+
 
 A digital signature is a scheme for verifying the authenticity of digital messages and is formally defined in \cite{DBLP:books/crc/KatzLindell2014}  as below.
 %
 %Below, we restate its formal definition, taken from \cite{DBLP:books/crc/KatzLindell2014}. 
 %
-%\vspace{-1mm}
+\vspace{-1mm}
 \begin{definition}\label{sec::def}
 A signature scheme  involves three algorithms; namely, $(\mathtt{Sig.keyGen}, $ $\mathtt{Sig.sign}, \mathtt{Sig.ver})$, that are defined as follows. (1) $\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$ is a probabilistic algorithm run by  a  signer. It takes as input a security parameter. It outputs a key pair: $(sk,pk)$, consisting of secret key $sk$, and public key $pk$. (2) $\mathtt{Sig.sign}(sk, pk, u)\rightarrow sig$ is an algorithm run by the signer. It takes as input  key pair: $(sk,pk)$ and a message: $u$. It outputs a signature: $sig$. (3) $\mathtt{Sig.ver}( pk, u, sig)\rightarrow h\in\{0,1\}$ is an algorithm run by a verifier. It takes as input  public key: $pk$,  message: $u$, and signature: $sig$. It checks the signature's validity.   If the verification passes, then it outputs $1$; otherwise, it outputs $0$. 
 \end{definition}
@@ -93,7 +99,7 @@ A signature scheme  involves three algorithms; namely, $(\mathtt{Sig.keyGen}, $ 
 %\end{itemize}
 %\end{definition}
 
-
+\vspace{-1mm}
 A digital signature scheme must meet two properties: (1) \textit{Correctness:} for every input $u$ it holds that:
 %
 $Pr\Big[\  \  \mathtt{Sig.ver}( pk, $ $u, \mathtt{Sig.sign}(sk,$ $ pk,$ $ u))=1\ : \
@@ -174,24 +180,26 @@ where $Q$ is the set of queries that $\mathcal{A}$ sent to the oracle.
 
 \subsection{Smart Contract}\label{subsec:SC}
 
-%\vspace{-1.2mm}
+\vspace{-1mm}
 
- Cryptocurrencies, such as Bitcoin \cite{bitcoin} and Ethereum \cite{ethereum}, beyond offering a decentralised currency,  support computations on transactions. In this setting,  a certain computation logic is encoded in a computer program, called a \emph{``smart contract''}. Although Bitcoin, the first decentralised cryptocurrency, supports smart contracts, the functionality of Bitcoin's smart contracts is limited. To address this limitation, Ethereum was designed. Thus far, Ethereum has been the most predominant cryptocurrency framework that lets users define arbitrary smart contracts.  %To prevent a denial-of-service attack, Ethereum requires a transaction creator to pay a  fee, called \emph{``gas''}. %, depending on the complexity of the contract running on  it.  
+% Cryptocurrencies, such as Bitcoin \cite{bitcoin} and Ethereum \cite{ethereum}, beyond offering a decentralised currency,  support computations on transactions. In this setting,  a certain computation logic is encoded in a computer program, called a \emph{``smart contract''}. Although Bitcoin, the first decentralised cryptocurrency, supports smart contracts, the functionality of Bitcoin's smart contracts is limited. To address this limitation, Ethereum was designed. Thus far, Ethereum has been the most predominant cryptocurrency framework that lets users define arbitrary smart contracts.  %To prevent a denial-of-service attack, Ethereum requires a transaction creator to pay a  fee, called \emph{``gas''}. %, depending on the complexity of the contract running on  it.  
 
+
+A smart contract is a computer program/code; it encodes the terms and conditions of an agreement between parties and often contains a set of variables and functions. A smart contract code is stored on a blockchain and is maintained by the miners who maintain the blockchain.  When (a function of) a smart contract is triggered by an external party, every miner executes the smart contract's code. The program execution’s correctness is guaranteed by the security of the underlying blockchain. Ethereum \cite{ethereum} has been the most predominant cryptocurrency framework that lets users define \emph{arbitrary} smart contracts. 
 
 \input{commitment}
 \input{SAP}
 
-\vspace{-3mm}
+\vspace{-4mm}
 
 \subsection{Pseudorandom Function}
 
 \vspace{-1mm}
 
-A pseudorandom function (as is defined in \cite{DBLP:books/crc/KatzLindell2014}) is a deterministic function that takes a key of length $\Lambda$ and an input; it outputs a value  indistinguishable from that of  a truly random function.  In this paper, we use the pseudorandom function:   $\mathtt {PRF}: \{0,1\}^{\st \Lambda}\times \{0,1\}^{\st *} \rightarrow  \mathbb{F}_p$, where $p$ is a large prime number, $|p|=\lambda$, and $(\Lambda,\lambda)$ are the security parameters. In practice, a pseudorandom function can be obtained from an efficient block cipher, e.g., AES, \cite{DBLP:books/crc/KatzLindell2014}. 
+A pseudorandom function is a deterministic function that takes a key of length $\Lambda$ and an input; it outputs a value  indistinguishable from that of  a truly random function \cite{DBLP:books/crc/KatzLindell2014}.  In this paper, we use the pseudorandom function:   $\mathtt {PRF}: \{0,1\}^{\st \Lambda}\times \{0,1\}^{\st *} \rightarrow  \mathbb{F}_p$, where $p$ is a large prime number, $|p|=\lambda$, and $(\Lambda,\lambda)$ are the security parameters. %In practice, a pseudorandom function can be obtained from an efficient block cipher, e.g., AES, \cite{DBLP:books/crc/KatzLindell2014}. 
 %We refer readers to \cite{DBLP:books/crc/KatzLindell2014} for a formal definition of a pseudorandom function.
 
-\vspace{-2mm}
+\vspace{-2.4mm}
 \subsection{Bloom Filter}
 \vspace{-1mm}
 

@@ -24,7 +24,7 @@
 
 
 
-%\vspace{-1mm}
+\vspace{-3mm}
 \section{Payment with Dispute Resolution Protocol}\label{sec::PwDR-Protocol}
 
 In this section, we first present an outline of the PwDR (in Section \ref{An-Overview-of-the-Protocol}). Then, we present a few subroutines (in Sections \ref{Determining-Bank-Message-Status}--\ref{sec::Encoding-Decoding-Verdicts}) that will be used in this protocol. After that, we describe the PwDR in detail (in Section \ref{sec::PwDR-auditorprotocol}). 
@@ -70,7 +70,7 @@ Once $\mathcal{C}$ realises that it has fallen victim, it raises a dispute. Spec
 
 %\vspace{0mm}
 \subsection{The PwDR}\label{sec::PwDR-auditorprotocol}
-%\vspace{-1.2mm}
+\vspace{-1.2mm}
 In this section, we present the PwDR in detail. 
 
 
@@ -102,7 +102,7 @@ Let $sk:=(sk_{\st\mathcal{G}}, sk_{\st\mathcal{D}})$ and $pk:=(pk_{\st\mathcal{G
 Bank $\mathcal{B}$ takes the following steps. 
 \begin{enumerate}
 
-\item\label{RCPoRP::setup} picks   secret keys $\bar k_{\st 1}$ and $\bar k_{\st 2}$ for the symmetric key encryption scheme. It  sets two private statements as $\pi_{\st 1}=\bar k_{\st 1}$ and $\pi_{\st 2}= \bar k_{\st 2}$.
+\item\label{RCPoRP::setup} picks   secret keys $\bar k_{\st 1}$ and $\bar k_{\st 2}$ for a symmetric key encryption scheme secure against a Chosen-Plaintext Attack (CPA). It  sets two private statements as $\pi_{\st 1}=\bar k_{\st 1}$ and $\pi_{\st 2}= \bar k_{\st 2}$.
 %
 \item\label{RCPoRP::set-qp}  calls $\mathtt{SAP.init}(1^{\st\lambda}, adr_{\st\mathcal{B}}, adr_{\st\mathcal{C}}, \pi_{\st i})\rightarrow(r_{
 \st i}, g_{\st i}, adr_{\st\text{SAP}})$ to initiate  agreements on  statements $\pi_{\st i}\in \{\pi_{\st 1}, \pi_{\st 2}\}$  with  $\mathcal{C}$.  Let $T_{\st i}:=(\ddot{\pi}_{\st i}, g_{\st i})$ and $T:=(T_{\st 1}, T_{\st 2})$,  where  $\ddot{\pi}_{\st i}:=(\pi_{\st i}, r_{\st i})$ is the opening of $g_{\st i}$.  It also sets parameter $\Delta$ as a time window between two specific time points, i.e., $\Delta=t_{\st i} - t_{\st i-1}$. Briefly, it is used to impose an upper bound on a message delay.  %It  constructs a vector, $\bm{x}$, of three non-zero distinct $x$-coordinates, i.e., $\bm{x}=[x_{\st 1},..., x_{\st 3}]$, where $x_{\st i}\in \mathbb{F}_{\st p}$.
@@ -399,21 +399,23 @@ $ \bar {\bm w}_{\st j}= \mathtt{Dec}(\bar k_{\st 2}, \hat{\bm w}_{\st j})$, wher
 \end{enumerate}
 
 Customer $\mathcal{C}$ must be reimbursed if the final verdict is that (i)  the ``pass'' message or missing message should have been a warning or (ii)  the warning was ineffective and the provided evidence was not invalid, and (iii) the payment has been made. To state it formally, the following relation must hold: 
-%
+\vspace{-2mm}
 $$\Big( \underbrace{(v_{\st 1}=1)}_{\st (\text{i})}\vee  \underbrace{(v_{\st 2}=1\ \wedge\ v_{\st 3}=1)}_{\st (\text {ii})}\Big)\wedge\Big(\underbrace{v_{\st 4}=1}_{\st (\text{iii})}\Big)$$
 
 \vspace{-2mm}
 In the above protocol, even $\mathcal{C}$ and $\mathcal{B}$ that know the decryption secret keys, $(\bar k_{\st 1}, \bar k_{\st 2})$, cannot link a certain verdict to an auditor, because:  (a) they do not know the masking random values used by auditors to mask each verdict and (b) the final verdicts $(v_{\st 1},..., v_{\st 4})$ reveal nothing about the number of $1$ or $0$ verdicts, except when all auditors vote $0$.   In the PwDR, we used PVE and FVD only because they are efficient. It is easy to replace them with GPVE and GFVD. 
 
-We also highlight that our protocol does not require the bank to commit any funds to the smart contract, which keeps it consistent with the traditional banking setting. The final (legal) verdict would suffice to enforce the bank to reimburse victims. Furthermore, in the real world, during a payment journey, a customer may receive various warning messages depending on the details it provides, its transaction history, and the checks a bank conducts, e.g., ``Confirmation of Payee'' \cite{CoP}. Thus, we have included warning messages in our protocol to match the real-world banking setting. 
+We highlight that our protocol does not require the bank to commit any funds to the smart contract, which keeps it consistent with the traditional banking setting. The final (legal) verdict would suffice to enforce the bank to reimburse victims. Furthermore, in the real world, during a payment journey, a customer may receive various warning messages depending on the details it provides, its transaction history, and the checks a bank conducts, e.g., ``Confirmation of Payee'' \cite{CoP}. Thus, we have included warning messages in our protocol to match the real-world banking setting. Appendix \ref{sec::PwDR-deployment} provides more discussion about the deployment of PwDR.  
 
 Below, we present the security theorem of the PwDR and present its formal proof in Appendix \ref{sec::proof}. 
-
+\vspace{-1mm}
 \begin{theorem}\label{theorem::PwDR-security}
-The above PwDR is secure, with regard to Definition \ref{def-a::PwDR-security}, if the digital signature is existentially unforgeable under chosen message attacks, SAP, and the verdict encoding-decoding protocols (i.e., PVE and FVD) are secure,  the encryption schemes are semantically secure, the blockchain is immutable, and the correctness of PVE and FVD holds. 
+The above PwDR is secure, with regard to Definition \ref{def-a::PwDR-security}, if the digital signature is existentially unforgeable under chosen message attacks, SAP, and the verdict encoding-decoding protocols (i.e., PVE and FVD) are secure,  the symmetric key encryption and asymmetric key encryption are CPA-secure, the blockchain is immutable, and the correctness of PVE and FVD holds. 
 \end{theorem}
 
+\input{proof-outline}
 
+\vspace{-1.5mm}
 
 Note that since the smart contract in our PwDR merely acts as an immutable bulletin board, one may replace it with any other efficient tamper-evident logging mechanism, e.g., \cite{CrosbyW09,Soriano-Salvador21,rfc/rfc6962}. 
 
