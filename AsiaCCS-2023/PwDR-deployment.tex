@@ -1,5 +1,5 @@
 % !TEX root =main.tex
 
-\vspace{-3mm}
+\vspace{-2.5mm}
 \section{The Deployment of PwDR}\label{sec::PwDR-deployment}
 The PwDR protocol is agnostic to the payment system it is enhancing. From a deployment perspective, the simplest solution is for the payment system provider to act on behalf of the customer in executing the smart contract. Of course, a malicious payment system provider could fail to register correct information in the smart contract but consumer organisations and regulators could check for such behaviour by inserting audit transactions and checking the blockchain. Alternatively, customers could make use of Payment Initiation Service Providers (PISPs) enabled by the Open Banking API of payment systems in the UK and EU. The PISP would be selected by the customer and act on behalf of the customer in both initiating the transfer with the bank and participating in the smart contract. A final option would be for the smart contract client to be integrated directly into the customer’s online banking application either through integrating with documented APIs or by hooking functionality in the customer’s web browser.

@@ -1,7 +1,7 @@
 %!TEX root = main.tex
 
 
-\vspace{-3mm}
+\vspace{-3.4mm}
 
 \section{Related Work}\label{sec::related-work}
 
@@ -16,7 +16,7 @@ Anderson \textit{et al.} \cite{anderson2019measuring} provide an overview of APP
 %
 Kjorven \cite{kjorven2020pays} investigates whether banks or customers should be liable for customers' financial loss to online frauds including APP ones, under Scandinavian and European law. The author states that consumers are often left to deal with the losses caused by APP frauds. She concludes that this should change and a larger portion of the losses should be allocated to banks.
 
- \vspace{-3mm}
+ \vspace{-3.4mm}
 \subsection{Dispute Resolution}
  \vspace{-1mm}
 In payment platforms,  dispute resolution mechanisms can be broadly split into two classes, (a) \emph{centralised} and (b) \emph{decentralised}. In the former class,  at any point in time, a \emph{single party} tries to settle a dispute. In particular, if a customer disputes having made or authorised a transaction, then the related bank tries directly settle the dispute with the customer.  However,  banks' terms and conditions (T\&C) can complicate the dispute resolution process. If they do not reach an agreement, the customer can take its case to a third party (e.g., Financial Ombudsman Service or court) to settle the dispute. In 2000, Bohm \textit{et al.} \cite{BohmBG00} analysed different terms of banks in the UK. They argued that the approach taken by banks is unfair to their customers in some cases. Later,  Anderson  \cite{anderson2007closing} points out that the move to online banking led many financial institutions to impose T\&C  that ultimately would shift the burden of proof in dispute to the customer.    Becker \textit{et al.} \cite{BeckerHAABMSS17} investigate to what extent bank customers know the  T\&C they signed up for. Their study suggests that only 35\% of customers fully understand T\&C and  28\% of customers find important parts of T\&C are unclear.  
@@ -37,7 +37,7 @@ Now we turn our attention to the latter class, i.e., decentralised dispute resol
 % In general, in fair exchange protocols, parties want to ``exchange'' digital items, e.g., coins and files/services. However, in various variants of APP fraud (e.g., CEO, romance, or invoice) victims do not necessarily expect to receive an item in exchange for the money they transfer. Thus, fair exchange protocols cannot fully solve the problem that we want to solve. However, there are very specific cases (e.g., Purchase APP fraud) where fair exchange protocols can be used to deal with APP fraud. 
 
 
-However, (the above) fair exchange schemes (that use blockchain and Merkle tree) cannot fully solve the problem that PwDR solves; because (1) PwDR captures the generic case where users use online banking and \emph{fiat currency} to transfer money, whereas in the fair exchange protocols party \emph{must have and trade in cryptocurrency}, and (2) PwDR captures various variants of APP fraud (e.g., CEO, romance, or invoice) where victims do not necessarily expect to receive an item in exchange for the money they transfer, whereas fair exchange protocols only allow parties want to ``exchange'' digital items, e.g., coins and files/services. Thus, PwDR offers a generic solution that fair exchange protocols cannot offer. 
+However, (the above) fair exchange schemes (including those that use blockchain and Merkle tree) cannot fully solve the problem that PwDR solves; because (1) PwDR captures the generic case where users use online banking and \emph{fiat currency} to transfer money, whereas in the fair exchange protocols party \emph{must have and trade in cryptocurrency}, and (2) PwDR captures various variants of APP fraud (e.g., CEO, romance, or invoice) where victims do not necessarily expect to receive an item in exchange for the money they transfer, whereas fair exchange protocols only allow parties want to exchange digital items, e.g., coins and files/services. Thus, PwDR offers a generic solution that fair exchange protocols cannot offer. 
 
 
 In the context of verifiable (cloud) computation, Dong \textit{et al.} \cite{DongWAMM17} use a combination of smart contracts, game theory, and a   third-party arbiter to design an efficient protocol that lets a client outsource its expensive computation to the cloud servers such that it can efficiently check the result's correctness. In the case of dispute, the protocol lets the parties invoke the  arbiter which efficiently settles the dispute with the assistance of the smart contract. Green \textit{et al.} \cite{Bolt} propose a variant  of  payment channel \cite{Lightning-Network} (which improves cryptocurrencies' scalability) while preserving the users' anonymity. In this scheme, in the case of a dispute between two parties, they can send a set of proofs to a smart contract that settles the disputes between the two. 

@@ -1,9 +1,16 @@
 % !TEX root =main.tex
-%\vspace{-3mm}
-\section{Further Discussion on Definition \ref{def-a::Security-against-malicious-victim}}\label{sec::Further-Discussion-on-Definition-Sec-against-victim}
+\vspace{-3mm}
+\section{More Discussion on Definition \ref{def-a::Security-against-malicious-victim}}\label{sec::Further-Discussion-on-Definition-Sec-against-victim}
 \vspace{-1mm}
 
-The provided definitions aim to be as generic as possible (so they can capture randomised and deterministic protocols). Moreover, they capture the case where $\mathtt{resDispute}(.)$ takes its inputs $\hat{\bm w}$ and  $pp$  from a smart contract $\mathcal{S}$. Since there is a (negligible) probability that a smart contract’s state can be tampered with, the definitions capture such an event as well. However, in a simpler case, where the parties send their messages directly to a  fully trusted party (and the probability of tampering with its state $0$), then the formal definitions can be slightly simplified. 
+Definition  \ref{def-a::Security-against-malicious-victim}
+%
+ %aim to be as generic as possible (so they can capture randomised and deterministic protocols). Moreover, they 
+ captures the case where $\mathtt{resDispute}(.)$ takes its inputs $\hat{\bm w}$ and  $pp$  from a smart contract $\mathcal{S}$. Since there is a (negligible) probability that a smart contract’s state can be tampered with, the definitions also capture such an event. 
+ %
+ Also, the definition aims to be as generic as possible, to capture the case where $\mathtt{resDispute}(.)$ can be either randomised/probabilistic or deterministic (in this paper, our PwDR that realises the definition relies on a deterministic dispute resolution algorithm). 
+ %
+ However, in a simpler case, where the parties send their messages directly to a  fully trusted party (and the probability of tampering with its state $0$) and/or $\mathtt{resDispute}(.)$ is deterministic, the definition can be slightly simplified. 
 
 
 

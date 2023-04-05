@@ -1,6 +1,6 @@
 % !TEX root =main.tex
 
-\vspace{-3.2mm}
+\vspace{-3mm}
 
 \section{GPVE \& GFVD}\label{sec::Generic-Verdict-Encoding-Decoding-Protocols}
 \vspace{-1mm}
@@ -8,7 +8,7 @@ In this section, we present the  generic verdict encoding-decoding protocols (i.
 %
 As    Figure \ref{fig:GPVE} indicates (and as we discussed in Section \ref{sec::Encoding-Decoding-Verdicts}) after $\mathcal{D}_{\st n}$ generates all combinations of verdict $1$'s  representations, it inserts the combinations into a Bloom filter, to preserve the representations' privacy from $\mathcal{I}$. Note, instead of inserting the combinations into a Bloom filter, we could  \emph{hash}  the combinations and give the hash values to $\mathcal{I}$. However, using a Bloom filter lets us save considerable communication costs. Let us see a concrete example. Let $n=10$, $e=6$, and the hash function be SHA-256.  If the latter (hash-based) approach is used,  $\mathcal{D}_{\st n}$ needs to send  $|W|\times 256= 386\times 256=98,816$ bits to $\mathcal{I}$, whereas  if the former (Bloom filter-based) approach is used, then it only needs to send $|\mathtt{BF}|=22,276 $ bits to $\mathcal{I}$. Thus, by using a Bloom filter,  it can save communication costs by at least a factor of  $4$.  
 
-\vspace{-1mm}
+\vspace{-2mm}
 
 
 %
@@ -211,6 +211,7 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 \end{center}
 \vspace{-4mm}
 \caption{Generic Private Verdict Encoding  (GPVE) Protocol. In the figure, $\mathcal{D}_{\st n}$ can generate other auditors' $r_{\st i}$ and $\alpha_{\st j}$ values, given $\bar k_{\st 0}$. Note also that $\text{ID}$ is a unique identifier (e.g., wallet address) of the party for whom a verdict is provided (e.g., a client), and $o$ is a counter that determines how many times a verdict for the same ID holder has been generated in the past. $\text{ID}$ and $o$ are used to ensure each $r_{\st j}$ will be different for each invocation of GPVE  although the same key $\bar k_{\st 0}$ is used.} 
+\vspace{-5mm}
 \label{fig:GPVE}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -218,7 +219,7 @@ $\bar w_{\st j}= w'_{\st j}\oplus r_{\st j}$.
 \begin{figure} [!htb]
 \setlength{\fboxsep}{1.9pt}
 \begin{center}
-    \begin{tcolorbox}[enhanced,width=81mm,height=50mm, left=0mm,
+    \begin{tcolorbox}[enhanced,width=81mm,height=50.3mm, left=0mm,
     drop fuzzy shadow southwest,
     colframe=black,colback=white]
     \small{
@@ -278,6 +279,7 @@ Specifically,
 \end{center}
 \vspace{-4mm}
 \caption{Generic Final Verdict Decoding  (GFVD) Protocol.} 
+\vspace{-5mm}
 \label{fig:GFVD}
 \end{figure}
 
