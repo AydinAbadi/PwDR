@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  5 APR 2023 15:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  5 APR 2023 16:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2255,7 +2255,7 @@ Class acmart Warning: \vspace should only be used to provide space above/below
 surrounding objects on input line 268.
 
 
-Underfull \vbox (badness 3148) has occurred while \output is active []
+Underfull \vbox (badness 3138) has occurred while \output is active []
 
  [5.5]
 
@@ -2741,14 +2741,11 @@ Class acmart Warning: ACM reference format is mandatory
 Package balance Warning: You have called \balance in second column
 (balance)                Columns might not be balanced.
 
+Package atenddvi Info: Last page = 15.
 [15.15]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 338.
 Package atveryend Info: Executing hook `AfterLastShipout' on input line 338.
- (./main.aux
-
-Package atenddvi Warning: Rerun LaTeX, last page not yet found.
-
-)
+ (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 338.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 338.
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -2763,10 +2760,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 49110 strings out of 480608
- 1051295 string characters out of 5903630
+ 49111 strings out of 480608
+ 1051311 string characters out of 5903630
  1506788 words of memory out of 5000000
- 63046 multiletter control sequences out of 15000+600000
+ 63047 multiletter control sequences out of 15000+600000
  821071 words of font info for 566 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  67i,19n,108p,3727b,2301s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2811,10 +2808,10 @@ ewtx/txexs.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txm
 iaX.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsya.pf
 b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></us
 r/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (15 pages, 657235 bytes).
+Output written on main.pdf (15 pages, 666346 bytes).
 PDF statistics:
- 702 PDF objects out of 1000 (max. 8388607)
+ 703 PDF objects out of 1000 (max. 8388607)
  630 compressed objects within 7 object streams
  216 named destinations out of 1000 (max. 500000)
- 72025 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 72029 words of extra memory for PDF output out of 74296 (max. 10000000)
 

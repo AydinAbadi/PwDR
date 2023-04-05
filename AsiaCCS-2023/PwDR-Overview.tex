@@ -1,6 +1,6 @@
 % !TEX root =main.tex
 
-\vspace{-3.3mm}
+\vspace{-3mm}
 \section{Challenges to Overcome}\label{sec:: challenges}
 \vspace{-1mm}
 
@@ -10,7 +10,7 @@ Our starting point in defining and designing a payment with dispute resolution s
 
 
 
-\vspace{-3.5mm}
+\vspace{-3.2mm}
 \subsection{Challenge 1: Lack of Transparent Logs} 
 In the current online banking system, during a payment journey, messages exchanged between a customer and a bank are logged by the bank and are not accessible to the customer without the bank's collaboration. Even if the bank provides access to the transaction logs, there is no guarantee that the logs have remained intact.
 
@@ -31,7 +31,7 @@ To address these challenges, we let a warning's effectiveness be determined on a
 
 
 
-\vspace{-3mm}
+\vspace{-3.1mm}
 
 \subsection{Challenge 3: Linking Off-chain Payments with a Smart Contract}\label{sec::Linking Off-chain-Payments-with-contract}
 
@@ -41,7 +41,7 @@ To address these challenges, we let a warning's effectiveness be determined on a
  Recall that an APP fraud occurs when a payment is made. In the case where a  bank sends  (to the smart contract) a confirmation of payment message, it is not possible to automatically validate such a claim, as the money transfer occurs outside of the blockchain network. To address this challenge, our scheme lets a customer raise a dispute and report it to the smart contract when it detects an inconsistency. In this case, the above auditors investigate and provide their verdicts to the smart contract. Then, dispute resolver $\mathcal{DR}$ extracts them and announces the final verdict. 
 
 
-\vspace{-3mm}
+\vspace{-2.8mm}
 \subsection{Challenge 4: Preserving Privacy}
 \vspace{-1mm}
 

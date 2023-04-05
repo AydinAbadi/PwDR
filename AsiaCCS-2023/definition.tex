@@ -12,7 +12,7 @@ This section outlines a formal definition of the payment with dispute resolution
 %
 %In this section, we outline a formal definition of a  PwDR scheme. We first provide the scheme's syntax.  Then, we   formally define its correctness  and security properties. We refer readers to Appendix \ref{sec::long-def} for a full version of the formal definition. 
 %
-\vspace{-2.2mm}
+\vspace{-1.2mm}
 \begin{definition}\label{def-a::sytax} A $\mathsf{pwdr}$    involves six   types of entities; namely,  bank $\mathcal{B}$, customer $\mathcal{C}$,  smart contract $\mathcal{S}$,  certificate generator $\mathcal{G}$,   set of auditors $\mathcal{D}:\{\mathcal{D}_{\st 1},..., \mathcal{D}_{\st n}\}$, and  dispute resolver $\mathcal{DR}$. It also includes the following    algorithms.  
 
 %\item \item[$\bullet$] $\mathtt{setup}(1^{\st \lambda})\rightarrow k:=(sk,pk)$. %%% this might be needed when other security properties, e.g., privacy, are added to the scheme. 
@@ -115,7 +115,7 @@ Informally, security against a malicious victim states that an APP fraud victim 
 Specifically, a corrupt victim cannot (i) make at least the threshold of the  auditors, $\mathcal{D}_{\st j}$s,  conclude that $\mathcal{B}$ should have provided a warning, although $\mathcal{B}$ has done so, or (ii) make $\mathcal{DR}$ conclude that   the pass message was incorrectly given or a vital warning message was missing despite only less than the threshold of  $\mathcal{D}_{\st j}$s  believing so, or (iii) persuade at least the threshold of $\mathcal{D}_{\st j}$s to  conclude that the warning was ineffective although it was effective, or (iv)  make $\mathcal{DR}$ believe that the warning message was ineffective although only less than the threshold of $\mathcal{D}_{\st j}$s believe it, or (v)  convince  $\mathcal{D}_{\st j}$s to accept an invalid certificate, or  (vi) make $\mathcal{DR}$ believe that at least the threshold of $\mathcal{D}_{\st j}$s accepted the certificate  although they did not. Below, we formally state it. 
 %%%%%%%%%%%%%
 %
-\vspace{-1.6mm}
+\vspace{-1.7mm}
 
 \vs 
 
@@ -123,7 +123,7 @@ Specifically, a corrupt victim cannot (i) make at least the threshold of the  au
 %
 
 
-\vspace{-2mm}
+\vspace{-1.4mm}
 
 {\small{
 \begin{center}
@@ -164,7 +164,7 @@ $$
 }}
 
 
-\vspace{-2mm}
+\vspace{-1mm}
 it holds that the following probability is negligible (i.e., $\mu(\lambda)$):
 %
 %
