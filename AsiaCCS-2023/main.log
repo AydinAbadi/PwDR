@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  5 APR 2023 10:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.22)  5 APR 2023 15:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2483,44 +2483,44 @@ surrounding objects on input line 21.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 25.
+surrounding objects on input line 26.
 
 [10.10]
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 31.
+surrounding objects on input line 33.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 37.
+surrounding objects on input line 39.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 40.
+surrounding objects on input line 42.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 48.
+surrounding objects on input line 50.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 51.
+surrounding objects on input line 53.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 64.
+surrounding objects on input line 66.
 
 (./diag-1.tex)
 
-Class acmart Warning: A possible image without description on input line 73.
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 75.
+Class acmart Warning: A possible image without description on input line 75.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 77.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 79.
 
 [11.11]))) (./conclusion.tex
 
@@ -2662,6 +2662,12 @@ surrounding objects on input line 2.
 Class acmart Warning: \vspace should only be used to provide space above/below 
 surrounding objects on input line 4.
 
+
+Overfull \hbox (4.59364pt too wide) in paragraph at lines 13--14
+\T1/LinuxLibertineT-TLF/m/n/9 (-20) com-pu-ta-tion-ally ex-pen-sive prim-i-tive
+s such as zero-knowledge proofs,
+ []
+
 ) (./PwDR-deployment.tex
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
@@ -2687,35 +2693,35 @@ surrounding objects on input line 15.
 [14.14]
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 32.
+surrounding objects on input line 34.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 37.
+surrounding objects on input line 39.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 42.
+surrounding objects on input line 44.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 49.
+surrounding objects on input line 51.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 52.
+surrounding objects on input line 54.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 58.
+surrounding objects on input line 60.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 67.
+surrounding objects on input line 69.
 
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 73.
+surrounding objects on input line 75.
 
 )
 
@@ -2757,11 +2763,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 49113 strings out of 480608
- 1051370 string characters out of 5903630
- 1506842 words of memory out of 5000000
+ 49110 strings out of 480608
+ 1051295 string characters out of 5903630
+ 1506788 words of memory out of 5000000
  63046 multiletter control sequences out of 15000+600000
- 821540 words of font info for 568 fonts, out of 8000000 for 9000
+ 821071 words of font info for 566 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  67i,19n,108p,3727b,2301s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
@@ -2805,10 +2811,10 @@ ewtx/txexs.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txm
 iaX.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsya.pf
 b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></us
 r/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (15 pages, 657425 bytes).
+Output written on main.pdf (15 pages, 657235 bytes).
 PDF statistics:
- 703 PDF objects out of 1000 (max. 8388607)
- 631 compressed objects within 7 object streams
+ 702 PDF objects out of 1000 (max. 8388607)
+ 630 compressed objects within 7 object streams
  216 named destinations out of 1000 (max. 500000)
  72025 words of extra memory for PDF output out of 74296 (max. 10000000)
 

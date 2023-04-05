@@ -89,7 +89,7 @@ A digital signature is a scheme for verifying the authenticity of digital messag
 %
 \vspace{-1mm}
 \begin{definition}\label{sec::def}
-A signature scheme  involves three algorithms; namely, $(\mathtt{Sig.keyGen}, $ $\mathtt{Sig.sign}, \mathtt{Sig.ver})$, that are defined as follows. (1) $\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$ is a probabilistic algorithm run by  a  signer. It takes as input a security parameter. It outputs a key pair: $(sk,pk)$, consisting of secret key $sk$, and public key $pk$. (2) $\mathtt{Sig.sign}(sk, pk, u)\rightarrow sig$ is an algorithm run by the signer. It takes as input  key pair: $(sk,pk)$ and a message: $u$. It outputs a signature: $sig$. (3) $\mathtt{Sig.ver}( pk, u, sig)\rightarrow h\in\{0,1\}$ is an algorithm run by a verifier. It takes as input  public key: $pk$,  message: $u$, and signature: $sig$. It checks the signature's validity.   If the verification passes, then it outputs $1$; otherwise, it outputs $0$. 
+A signature scheme  involves three algorithms; namely, $(\mathtt{Sig.keyGen}, $ $\mathtt{Sig.sign}, \mathtt{Sig.ver})$ that are defined as follows. (1) $\mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk,pk)$ is a probabilistic algorithm run by  a  signer. It takes as input a security parameter. It outputs a key pair: $(sk,pk)$, consisting of secret key $sk$, and public key $pk$. (2) $\mathtt{Sig.sign}(sk, pk, u)\rightarrow sig$ is an algorithm run by the signer. It takes as input  key pair: $(sk,pk)$ and a message: $u$. It outputs a signature: $sig$. (3) $\mathtt{Sig.ver}( pk, u, sig)\rightarrow h\in\{0,1\}$ is an algorithm run by a verifier. It takes as input  public key: $pk$,  message: $u$, and signature: $sig$. It checks the signature's validity.   If the verification passes, then it outputs $1$; otherwise, it outputs $0$. 
 \end{definition}
 
 %\begin{itemize} 
@@ -128,7 +128,7 @@ $ Pr\Big[
 % 
 %(M(u^{\scriptscriptstyle *},k)\neq \sigma \lor Q(\text{aux},k)\neq q) \wedge\\ (a=1 \ \vee b=1)
     \mathtt{Sig.keyGen}(1^{\st \lambda})\rightarrow (sk, pk),
-  \mathcal{A}^{\mathtt{Sig.sign}(sk,)}(pk)\lhs\rightarrow(u^{\st *}, sig^{\st *}) 
+  \mathcal{A}^{\mathtt{Sig.sign}(sk,)}(pk)\rightarrow(u^{\st *}, sig^{\st *}) 
    \Big]\lhs\leq \mu(\lambda)$}},
 where $Q$ is the set of queries that $\mathcal{A}$ sent to the oracle.
 

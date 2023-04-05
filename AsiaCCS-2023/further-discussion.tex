@@ -1,5 +1,5 @@
 % !TEX root =main.tex
-\vspace{-6mm}
+\vspace{-5mm}
 \section{  (G)PVE-(G)FVD Versus Existing Voting Protocols}\label{sec:: Further-Discussion-on-the-Encoding-decoding-Protocol}
 \vspace{-1mm}
 %In this section, we briefly explain why  existing  solutions are not suitable replacements for the our  verdict encoding-decoding protocols. 
@@ -10,8 +10,8 @@ Each variant of our verdict encoding-decoding protocol is a voting mechanism. It
 
 
 
-The short answer is no. Recently, a provably secure  e-voting protocol that can hide the number of $1$ and $0$ votes has been proposed by K{u}sters \textit{et al.} \cite{KustersL00020}. Although this scheme can satisfy the above \emph{security} requirements, it imposes a high computation cost, as  it involves computationally expensive primitives such as zero-knowledge proofs, threshold public-key encryption scheme, and generic multi-party computation. In contrast, our verdict encoding-decoding protocols rely on much more lightweight operations such as XOR and hash function evaluations.  We also  highlight that our verdict encoding-decoding protocols are in a different setting than the one in which most of the e-voting protocols are. Because the former protocols are in the setting where there exists a small number of auditors (or voters) which are trusted and can interact with each other once; whereas, the latter (e-voting) protocols are in a more  generic setting where there is a large number of  voters, some of which might be malicious, and they are not  required to interact with each other. 
-%
+The short answer is no. Recently, a provably secure  e-voting protocol that can hide the number of $1$ and $0$ votes was proposed by K{u}sters \textit{et al.} \cite{KustersL00020}. Although this scheme can satisfy the above \emph{security} requirements, it imposes a high computation cost, as  it involves computationally expensive primitives such as zero-knowledge proofs, threshold public-key encryption scheme, and generic multi-party computation. In contrast, our verdict encoding-decoding protocols rely on much more lightweight operations such as XOR and hash function evaluations.  We also  highlight that our verdict encoding-decoding protocols are in a different setting than the one in which most of the e-voting protocols are. Because the former protocols are in the setting where there exists a small number of auditors (or voters) which are trusted and can interact with each other once; whereas, the latter (e-voting) protocols are in a more  generic setting where there is a large number of  voters, some of which might be malicious, and they are not  required to interact with each other. 
+
 Note that each variant of our verdict encoding-decoding protocol requires every auditor to provide an encoded vote  in order for $\mathcal{I}$ to extract the final verdict. To let each variant terminate and $\mathcal{I}$ find out the final verdict in the case where a  set of  auditors do not provide their vote, we can integrate the    following idea into each variant. We define a manager auditor, say $\mathcal{D}_{\st n}$, which is always responsive and keeps track of missing votes. After the voting time elapses and $\mathcal{D}_{\st n}$ realises a certain  number of auditors did not provide their encoded vote, it provides $0$ votes on their behalf and masks them using the  auditors' masking values. 
 
 
