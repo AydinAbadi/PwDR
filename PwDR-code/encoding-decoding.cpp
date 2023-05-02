@@ -32,7 +32,6 @@
 // year      = {2023}}
 //===========================
 
-
 #include <iostream>
 #include <math.h>
 #include <string>
